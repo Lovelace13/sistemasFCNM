@@ -193,6 +193,26 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pcIncono {
+            get {
+                object obj = ResourceManager.GetObject("pcIncono", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pcIncono1 {
+            get {
+                object obj = ResourceManager.GetObject("pcIncono1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reportes {
             get {
                 object obj = ResourceManager.GetObject("reportes", resourceCulture);

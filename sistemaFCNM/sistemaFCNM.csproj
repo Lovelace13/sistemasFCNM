@@ -59,10 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\MouseMovimiento.cs" />
-    <Compile Include="Scanner.cs">
+    <Compile Include="Vistas\Scanner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Scanner.Designer.cs">
+    <Compile Include="Vistas\Scanner.Designer.cs">
       <DependentUpon>Scanner.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Form1.cs">
@@ -73,7 +73,7 @@
     </Compile>
     <Compile Include="Clases\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Scanner.resx">
+    <EmbeddedResource Include="Vistas\Scanner.resx">
       <DependentUpon>Scanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Form1.resx">
@@ -173,6 +173,12 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pcIncono.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pcIncono1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

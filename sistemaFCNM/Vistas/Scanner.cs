@@ -28,15 +28,30 @@ namespace sistemaFCNM
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                MessageBox.Show("");
-            }
+            
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void Scanner_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtScanner_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtScanner_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MessageBox.Show("");
+            }
         }
     }
 }

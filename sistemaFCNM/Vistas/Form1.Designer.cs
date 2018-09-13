@@ -42,8 +42,6 @@
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabScanner = new System.Windows.Forms.TabPage();
-            this.tabCpu = new System.Windows.Forms.TabPage();
             this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.panelCabecera.SuspendLayout();
@@ -51,7 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.panelContenedor.SuspendLayout();
-            this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCabecera
@@ -231,35 +228,11 @@
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabScanner);
-            this.tabControl.Controls.Add(this.tabCpu);
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(880, 537);
             this.tabControl.TabIndex = 0;
-            // 
-            // tabScanner
-            // 
-            this.tabScanner.Location = new System.Drawing.Point(4, 22);
-            this.tabScanner.Name = "tabScanner";
-            this.tabScanner.Padding = new System.Windows.Forms.Padding(3);
-            this.tabScanner.Size = new System.Drawing.Size(872, 511);
-            this.tabScanner.TabIndex = 0;
-            this.tabScanner.Text = "Scanner";
-            this.tabScanner.UseVisualStyleBackColor = true;
-            this.tabScanner.Click += new System.EventHandler(this.tabScanner_Click);
-            // 
-            // tabCpu
-            // 
-            this.tabCpu.Location = new System.Drawing.Point(4, 22);
-            this.tabCpu.Name = "tabCpu";
-            this.tabCpu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCpu.Size = new System.Drawing.Size(872, 511);
-            this.tabCpu.TabIndex = 1;
-            this.tabCpu.Text = "CPU";
-            this.tabCpu.UseVisualStyleBackColor = true;
-            this.tabCpu.Click += new System.EventHandler(this.tabCpu_Click);
             // 
             // tmOcultarMenu
             // 
@@ -285,7 +258,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.panelContenedor.ResumeLayout(false);
-            this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -307,8 +279,6 @@
         private System.Windows.Forms.Button btnCpu;
         private System.Windows.Forms.Button btnPantalla;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabScanner;
-        private System.Windows.Forms.TabPage tabCpu;
     }
 }
 
