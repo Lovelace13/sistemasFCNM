@@ -6,7 +6,7 @@ delete from Oficina
 SELECT * FROM tipo_user;
 
 INSERT INTO Usuario(id_usuario,clave,Nombre,tipo_usuario)
-values('jcbodero','1234','JULIO BODERO',1);
+values('arcuenca','1234','ARIANA CUENCA',1);
 
 INSERT INTO Usuario(id_usuario,clave,Nombre,tipo_usuario)
 values('jfloresb','1234','JOSE FLORES',2);
@@ -57,6 +57,13 @@ VALUES ('','','');
 INSERT INTO Radio(caracteristicas,Inventario_Radio)
 VALUES ('','');
 
+
+INSERT INTO Equipo(id_Equipo,Inventario_CPU,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,Parlante,Regulador,Impresora,Proyector)
+VALUES('20180270','928','1993','218','928','218','218','928','573','218','218','1993','573','218');
+
+INSERT INTO Inventario(fecha_inventario,Ayudante,observacion,Equipo)
+VALUES ('2018-07-21','arcuenca','N/A','20180270')
+
 use sistemasFCNM;
 Alter table Microfonos
 add  tipo varchar(20) ;
@@ -74,8 +81,7 @@ add  tipo varchar(20) ;
 --delete from table_name;
 
 alter authorization on database :: sistemasFCNM to SA; 
-
-select * from Caracteristicas;
+select * from Inventario;
 
 --delete from Impresora;
 
