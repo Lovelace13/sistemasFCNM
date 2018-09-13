@@ -1,0 +1,24 @@
+ String sql = "INSERT INTO Caracteristicas (marca,modelo,serie,estado)\n"
+                        + "VALUES ('" + cambiarPalabra(lin[10].toUpperCase()) + "','" + "N/A" + "','" 
+                        + cambiarPalabra(lin[12].toUpperCase()) + "','" + cambiarPalabra(lin[9].toUpperCase()) + "');";
+
+ String sql = "INSERT INTO Caracteristicas (marca,modelo,serie,estado)\n"
+                        + "VALUES ('" + cambiarPalabra(lin[20].toUpperCase()) + "','" + cambiarPalabra(lin[21].toUpperCase())+ "','" 
+                        + cambiarPalabra(lin[22].toUpperCase()) + "','" + cambiarPalabra(lin[19].toUpperCase()) + "');";
+
+
+String sql = "INSERT INTO Oficina(edificio,nombre_oficina,area)\n"
+                        + "VALUES ('" + lin[2] + "','" + lin[3] + "','" + lin[4] + "'); ";
+
+String sql = "INSERT INTO CPU(nombre_PC,inventario_cpu,tipo_PC,Caracteristicas,\n"
+                        + "perfil,tag,code,procesador,memoria,disco,adicional_lote)\n"
+                        + "VALUES('" + cambiarPalabra(lin[6].toUpperCase()) + "','" + cambiarPalabra(lin[7].toUpperCase()) + "',"
+                        + "'" + cambiarPalabra(lin[8].toUpperCase()) + "','" + count + "',"
+                        + "'" + cambiarPalabra(lin[11].toUpperCase()) + "','" + cambiarPalabra(lin[13].toUpperCase()) + "',"
+                        + "'" + cambiarPalabra(lin[14].toUpperCase()) + "','" + cambiarPalabra(lin[15].toUpperCase()) + "',"
+                        + "'" + cambiarPalabra(lin[16].toUpperCase()) + "','" + cambiarPalabra(lin[17].toUpperCase()) + "',"
+                        + "'" + cambiarPalabra(lin[18].toUpperCase()) +"');";
+
+String sql = "INSERT INTO Pantalla(caracteristicas,Inventario_Pantalla,pulgadas)\n"
+                        + "VALUES('"+count+"','"+cambiarPalabra(lin[23].toUpperCase())+"',"
+                        + "'"+cambiarPalabra(lin[24].toUpperCase())+"');";
