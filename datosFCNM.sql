@@ -86,3 +86,7 @@ select * from Inventario;
 --delete from Impresora;
 
 --delete from Caracteristicas where id_caracteristica >= 4972;
+
+SELECT Equipo.id_Equipo,CPU.inventario_cpu
+FROM Equipo
+INNER JOIN CPU ON Equipo.Inventario_CPU = CPU.ID;

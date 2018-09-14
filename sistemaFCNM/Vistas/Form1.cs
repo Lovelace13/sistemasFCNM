@@ -50,48 +50,12 @@ namespace sistemaFCNM
             this.panelCabecera.MouseMove += new System.Windows.Forms.MouseEventHandler(mouseMove.Form1_MouseMove);
         }
 
-        private void tmOcultarMenu_Tick(object sender, EventArgs e)
-        {
-            if (this.panelMenu.Width <= 60)
-            {
-                this.tmOcultarMenu.Enabled = false;
-            }
-            else
-            {
-                this.panelMenu.Width = panelMenu.Width - 20;
-            }
-        }
+       
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void tmMostrarMenu_Tick(object sender, EventArgs e)
-        {
-            if (this.panelMenu.Width >= 220)
-            {
-                this.tmOcultarMenu.Enabled = false;
-            }
-            else
-            {
-                this.panelMenu.Width = panelMenu.Width + 20;
-            }
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            if (this.panelMenu.Width==220)
-            {
-                tmOcultarMenu.Enabled = true;
-            }
-            else if (this.panelMenu.Width == 60)
-            {
-                tmMostrarMenu.Enabled = true;
-            }
-        }
-
-       
 
        
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -115,17 +79,14 @@ namespace sistemaFCNM
         private void button1_Click(object sender, EventArgs e)
         {
             Scanner ventana = new Scanner();
-            TabPage tab = new TabPage { Text = ventana.Text };
-            tabControl.TabPages.Add(tab);
-
-            ventana.TopLevel = false;
-            ventana.Parent = tab;
+            ventana.WindowState = FormWindowState.Maximized;
+            ventana.MdiParent = this;
             ventana.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Datos.ValidarUsuario("","");
         }
 
         
@@ -146,6 +107,14 @@ namespace sistemaFCNM
            
         }
 
-        
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

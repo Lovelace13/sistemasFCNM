@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace sistemaFCNM.Clases
 {
-    class MouseMovimiento
+    
+    public partial class MouseMovimiento: Form
     {
-        private Form1 forma1;
+        private Form forma1;
 
-        public MouseMovimiento (Form1 forma1)
+        public MouseMovimiento (Form forma1)
         {
             this.forma1 = forma1;
         }

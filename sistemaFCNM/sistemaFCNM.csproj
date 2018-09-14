@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>sistemaFCNM</RootNamespace>
     <AssemblyName>sistemaFCNM</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
@@ -25,6 +25,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,8 +46,17 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LibConexionBD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LibConexionBD.dll</HintPath>
+    </Reference>
+    <Reference Include="LibLlenarGrids, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LibLlenarGrids.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,7 +69,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\MouseMovimiento.cs" />
+    <Compile Include="Clases\Datos.cs" />
+    <Compile Include="Clases\MouseMovimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vistas\Scanner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +103,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,6 +194,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pcIncono1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_fcnm1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pcIncono2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\escaner-de-codigo-de-barras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\escaner-de-codigo-de-barras1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\escaner-de-codigo-de-barras2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teclado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\raton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regulador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proyector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\impresora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\altavoces.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
