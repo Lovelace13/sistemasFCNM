@@ -57,6 +57,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\LibLlenarGrids.dll</HintPath>
     </Reference>
+    <Reference Include="LibParametros, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LibParametros.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

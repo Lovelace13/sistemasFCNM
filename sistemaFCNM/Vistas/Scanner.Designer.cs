@@ -36,10 +36,9 @@
             this.lblTeclado = new System.Windows.Forms.Label();
             this.txtMouse = new System.Windows.Forms.TextBox();
             this.lblMouse = new System.Windows.Forms.Label();
-            this.txtInventario = new System.Windows.Forms.TextBox();
+            this.txtCpu = new System.Windows.Forms.TextBox();
             this.txtScanner = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cpuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +51,12 @@
             this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,19 +74,14 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtRegulador = new System.Windows.Forms.TextBox();
+            this.txtParlante = new System.Windows.Forms.TextBox();
+            this.txtImpresora = new System.Windows.Forms.TextBox();
+            this.txtProyector = new System.Windows.Forms.TextBox();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -92,83 +92,89 @@
             // lblCpu
             // 
             this.lblCpu.AutoSize = true;
+            this.lblCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpu.Location = new System.Drawing.Point(65, 103);
             this.lblCpu.Name = "lblCpu";
-            this.lblCpu.Size = new System.Drawing.Size(79, 13);
+            this.lblCpu.Size = new System.Drawing.Size(93, 13);
             this.lblCpu.TabIndex = 18;
             this.lblCpu.Text = "Inventario CPU";
             this.lblCpu.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtPantalla
             // 
-            this.txtPantalla.Location = new System.Drawing.Point(170, 127);
+            this.txtPantalla.Location = new System.Drawing.Point(185, 126);
             this.txtPantalla.Multiline = true;
             this.txtPantalla.Name = "txtPantalla";
-            this.txtPantalla.Size = new System.Drawing.Size(155, 19);
+            this.txtPantalla.Size = new System.Drawing.Size(434, 19);
             this.txtPantalla.TabIndex = 4;
             // 
             // lblPantalla
             // 
             this.lblPantalla.AutoSize = true;
+            this.lblPantalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPantalla.Location = new System.Drawing.Point(65, 130);
             this.lblPantalla.Name = "lblPantalla";
-            this.lblPantalla.Size = new System.Drawing.Size(95, 13);
+            this.lblPantalla.Size = new System.Drawing.Size(114, 13);
             this.lblPantalla.TabIndex = 6;
             this.lblPantalla.Text = "Inventario Pantalla";
             // 
             // txtTeclado
             // 
-            this.txtTeclado.Location = new System.Drawing.Point(170, 153);
+            this.txtTeclado.Location = new System.Drawing.Point(185, 152);
             this.txtTeclado.Multiline = true;
             this.txtTeclado.Name = "txtTeclado";
-            this.txtTeclado.Size = new System.Drawing.Size(155, 19);
+            this.txtTeclado.Size = new System.Drawing.Size(434, 19);
             this.txtTeclado.TabIndex = 5;
             // 
             // lblTeclado
             // 
             this.lblTeclado.AutoSize = true;
+            this.lblTeclado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTeclado.Location = new System.Drawing.Point(65, 156);
             this.lblTeclado.Name = "lblTeclado";
-            this.lblTeclado.Size = new System.Drawing.Size(96, 13);
+            this.lblTeclado.Size = new System.Drawing.Size(114, 13);
             this.lblTeclado.TabIndex = 8;
             this.lblTeclado.Text = "Inventario Teclado";
             // 
             // txtMouse
             // 
-            this.txtMouse.Location = new System.Drawing.Point(170, 177);
+            this.txtMouse.Location = new System.Drawing.Point(185, 176);
             this.txtMouse.Multiline = true;
             this.txtMouse.Name = "txtMouse";
-            this.txtMouse.Size = new System.Drawing.Size(155, 19);
+            this.txtMouse.Size = new System.Drawing.Size(434, 19);
             this.txtMouse.TabIndex = 6;
             // 
             // lblMouse
             // 
             this.lblMouse.AutoSize = true;
+            this.lblMouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMouse.Location = new System.Drawing.Point(65, 183);
             this.lblMouse.Name = "lblMouse";
-            this.lblMouse.Size = new System.Drawing.Size(89, 13);
+            this.lblMouse.Size = new System.Drawing.Size(105, 13);
             this.lblMouse.TabIndex = 10;
             this.lblMouse.Text = "Inventario Mouse";
             // 
-            // txtInventario
+            // txtCpu
             // 
-            this.txtInventario.Location = new System.Drawing.Point(170, 100);
-            this.txtInventario.Multiline = true;
-            this.txtInventario.Name = "txtInventario";
-            this.txtInventario.Size = new System.Drawing.Size(155, 19);
-            this.txtInventario.TabIndex = 1;
-            this.txtInventario.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            this.txtInventario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.txtCpu.Location = new System.Drawing.Point(185, 99);
+            this.txtCpu.Multiline = true;
+            this.txtCpu.Name = "txtCpu";
+            this.txtCpu.Size = new System.Drawing.Size(434, 19);
+            this.txtCpu.TabIndex = 1;
+            this.txtCpu.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.txtCpu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // txtScanner
             // 
-            this.txtScanner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtScanner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtScanner.Location = new System.Drawing.Point(234, 34);
             this.txtScanner.Multiline = true;
             this.txtScanner.Name = "txtScanner";
-            this.txtScanner.Size = new System.Drawing.Size(401, 41);
+            this.txtScanner.Size = new System.Drawing.Size(952, 41);
             this.txtScanner.TabIndex = 0;
             this.txtScanner.TextChanged += new System.EventHandler(this.txtScanner_TextChanged);
+            this.txtScanner.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtScanner_KeyDown);
             this.txtScanner.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtScanner_KeyUp);
             // 
             // menuStrip1
@@ -179,26 +185,11 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(899, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1450, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             this.menuStrip1.Paint += new System.Windows.Forms.PaintEventHandler(this.menuStrip1_Paint);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton5});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(24, 481);
-            this.toolStrip1.TabIndex = 10;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // archivoToolStripMenuItem
             // 
@@ -282,309 +273,20 @@
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de..";
             // 
-            // label1
+            // toolStrip1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(437, 177);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Inventario Parlante";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(437, 153);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Inventario Impresora";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(437, 127);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 13);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Inventario Proyector";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(437, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 13);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Inventario Regulador";
-            // 
-            // gridInventario
-            // 
-            this.gridInventario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridInventario.BackgroundColor = System.Drawing.Color.Khaki;
-            this.gridInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridInventario.Location = new System.Drawing.Point(37, 215);
-            this.gridInventario.Name = "gridInventario";
-            this.gridInventario.Size = new System.Drawing.Size(850, 263);
-            this.gridInventario.TabIndex = 27;
-            this.gridInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridInventario_CellContentClick);
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(809, 27);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(59, 26);
-            this.textBox5.TabIndex = 28;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(763, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Oficina";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(751, 65);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Ayudante";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(809, 59);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(59, 28);
-            this.textBox6.TabIndex = 30;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Blue;
-            this.button1.Location = new System.Drawing.Point(331, 96);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 23);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Mas Detalles";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Blue;
-            this.button2.Location = new System.Drawing.Point(331, 123);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 23);
-            this.button2.TabIndex = 33;
-            this.button2.Text = "Mas Detalles";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Blue;
-            this.button3.Location = new System.Drawing.Point(331, 149);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 23);
-            this.button3.TabIndex = 34;
-            this.button3.Text = "Mas Detalles";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Blue;
-            this.button4.Location = new System.Drawing.Point(331, 175);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(79, 23);
-            this.button4.TabIndex = 35;
-            this.button4.Text = "Mas Detalles";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Blue;
-            this.button5.Location = new System.Drawing.Point(724, 172);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(79, 23);
-            this.button5.TabIndex = 43;
-            this.button5.Text = "Mas Detalles";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Blue;
-            this.button6.Location = new System.Drawing.Point(724, 146);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(79, 23);
-            this.button6.TabIndex = 42;
-            this.button6.Text = "Mas Detalles";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.Blue;
-            this.button7.Location = new System.Drawing.Point(724, 120);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(79, 23);
-            this.button7.TabIndex = 41;
-            this.button7.Text = "Mas Detalles";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Blue;
-            this.button8.Location = new System.Drawing.Point(724, 91);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(79, 23);
-            this.button8.TabIndex = 40;
-            this.button8.Text = "Mas Detalles";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(549, 97);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 19);
-            this.textBox1.TabIndex = 36;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(549, 174);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(155, 19);
-            this.textBox2.TabIndex = 39;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(549, 150);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(155, 19);
-            this.textBox3.TabIndex = 38;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(549, 124);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(155, 19);
-            this.textBox4.TabIndex = 37;
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Image = global::sistemaFCNM.Properties.Resources.Icono_Maximizar;
-            this.btnMaximizar.Location = new System.Drawing.Point(832, 0);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(36, 24);
-            this.btnMaximizar.TabIndex = 47;
-            this.btnMaximizar.UseVisualStyleBackColor = false;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click_1);
-            // 
-            // btnRestaurar
-            // 
-            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurar.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaurar.FlatAppearance.BorderSize = 0;
-            this.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurar.Image = global::sistemaFCNM.Properties.Resources.Icono_Restaurar;
-            this.btnRestaurar.Location = new System.Drawing.Point(832, 0);
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(36, 24);
-            this.btnRestaurar.TabIndex = 46;
-            this.btnRestaurar.UseVisualStyleBackColor = false;
-            this.btnRestaurar.Visible = false;
-            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click_1);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BackColor = System.Drawing.Color.Black;
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = global::sistemaFCNM.Properties.Resources.Icono_Minimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(800, 0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(36, 24);
-            this.btnMinimizar.TabIndex = 45;
-            this.btnMinimizar.UseVisualStyleBackColor = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click_1);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.BackColor = System.Drawing.Color.Red;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = global::sistemaFCNM.Properties.Resources.Icono_cerrar_FN;
-            this.btnCerrar.Location = new System.Drawing.Point(863, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(36, 24);
-            this.btnCerrar.TabIndex = 44;
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripButton5});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(24, 896);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButton1
             // 
@@ -631,6 +333,320 @@
             this.toolStripButton5.Size = new System.Drawing.Size(21, 20);
             this.toolStripButton5.Text = "toolStripButton5";
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(800, 176);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Inventario Parlante";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(800, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Inventario Impresora";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(800, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Inventario Proyector";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(800, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(126, 13);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Inventario Regulador";
+            // 
+            // gridInventario
+            // 
+            this.gridInventario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridInventario.BackgroundColor = System.Drawing.Color.LightSeaGreen;
+            this.gridInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridInventario.Location = new System.Drawing.Point(37, 215);
+            this.gridInventario.Name = "gridInventario";
+            this.gridInventario.Size = new System.Drawing.Size(1401, 678);
+            this.gridInventario.TabIndex = 27;
+            this.gridInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridInventario_CellContentClick);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox5.Location = new System.Drawing.Point(1360, 27);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(59, 26);
+            this.textBox5.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1307, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Oficina";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1230, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "Ayudante";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.Location = new System.Drawing.Point(1305, 59);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(114, 28);
+            this.textBox6.TabIndex = 30;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Blue;
+            this.button1.Location = new System.Drawing.Point(641, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 23);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Mas Detalles";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Blue;
+            this.button2.Location = new System.Drawing.Point(641, 119);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(79, 23);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "Mas Detalles";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Blue;
+            this.button3.Location = new System.Drawing.Point(641, 145);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(79, 23);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Mas Detalles";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Blue;
+            this.button4.Location = new System.Drawing.Point(641, 171);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(79, 23);
+            this.button4.TabIndex = 35;
+            this.button4.Text = "Mas Detalles";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Blue;
+            this.button5.Location = new System.Drawing.Point(1305, 170);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(79, 23);
+            this.button5.TabIndex = 43;
+            this.button5.Text = "Mas Detalles";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.Blue;
+            this.button6.Location = new System.Drawing.Point(1305, 144);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(79, 23);
+            this.button6.TabIndex = 42;
+            this.button6.Text = "Mas Detalles";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.Blue;
+            this.button7.Location = new System.Drawing.Point(1305, 118);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(79, 23);
+            this.button7.TabIndex = 41;
+            this.button7.Text = "Mas Detalles";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.Blue;
+            this.button8.Location = new System.Drawing.Point(1305, 89);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(79, 23);
+            this.button8.TabIndex = 40;
+            this.button8.Text = "Mas Detalles";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // txtRegulador
+            // 
+            this.txtRegulador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRegulador.Location = new System.Drawing.Point(932, 95);
+            this.txtRegulador.Multiline = true;
+            this.txtRegulador.Name = "txtRegulador";
+            this.txtRegulador.Size = new System.Drawing.Size(337, 19);
+            this.txtRegulador.TabIndex = 36;
+            // 
+            // txtParlante
+            // 
+            this.txtParlante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtParlante.Location = new System.Drawing.Point(932, 172);
+            this.txtParlante.Multiline = true;
+            this.txtParlante.Name = "txtParlante";
+            this.txtParlante.Size = new System.Drawing.Size(337, 19);
+            this.txtParlante.TabIndex = 39;
+            // 
+            // txtImpresora
+            // 
+            this.txtImpresora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtImpresora.Location = new System.Drawing.Point(932, 148);
+            this.txtImpresora.Multiline = true;
+            this.txtImpresora.Name = "txtImpresora";
+            this.txtImpresora.Size = new System.Drawing.Size(337, 19);
+            this.txtImpresora.TabIndex = 38;
+            // 
+            // txtProyector
+            // 
+            this.txtProyector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProyector.Location = new System.Drawing.Point(932, 122);
+            this.txtProyector.Multiline = true;
+            this.txtProyector.Name = "txtProyector";
+            this.txtProyector.Size = new System.Drawing.Size(337, 19);
+            this.txtProyector.TabIndex = 37;
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizar.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Image = global::sistemaFCNM.Properties.Resources.Icono_Maximizar;
+            this.btnMaximizar.Location = new System.Drawing.Point(1383, 0);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(36, 24);
+            this.btnMaximizar.TabIndex = 47;
+            this.btnMaximizar.UseVisualStyleBackColor = false;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click_1);
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestaurar.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurar.FlatAppearance.BorderSize = 0;
+            this.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaurar.Image = global::sistemaFCNM.Properties.Resources.Icono_Restaurar;
+            this.btnRestaurar.Location = new System.Drawing.Point(1383, 0);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(36, 24);
+            this.btnRestaurar.TabIndex = 46;
+            this.btnRestaurar.UseVisualStyleBackColor = false;
+            this.btnRestaurar.Visible = false;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click_1);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackColor = System.Drawing.Color.Black;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Image = global::sistemaFCNM.Properties.Resources.Icono_Minimizar;
+            this.btnMinimizar.Location = new System.Drawing.Point(1351, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(36, 24);
+            this.btnMinimizar.TabIndex = 45;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click_1);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackColor = System.Drawing.Color.Red;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = global::sistemaFCNM.Properties.Resources.Icono_cerrar_FN;
+            this.btnCerrar.Location = new System.Drawing.Point(1414, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(36, 24);
+            this.btnCerrar.TabIndex = 44;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::sistemaFCNM.Properties.Resources.pantalla;
@@ -646,8 +662,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(899, 505);
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.ClientSize = new System.Drawing.Size(1450, 920);
             this.Controls.Add(this.btnMaximizar);
             this.Controls.Add(this.btnRestaurar);
             this.Controls.Add(this.btnMinimizar);
@@ -656,10 +672,10 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtRegulador);
+            this.Controls.Add(this.txtParlante);
+            this.Controls.Add(this.txtImpresora);
+            this.Controls.Add(this.txtProyector);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -676,7 +692,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txtScanner);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtInventario);
+            this.Controls.Add(this.txtCpu);
             this.Controls.Add(this.txtMouse);
             this.Controls.Add(this.lblMouse);
             this.Controls.Add(this.txtTeclado);
@@ -694,7 +710,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scanner";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Scanner_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -716,7 +731,7 @@
         private System.Windows.Forms.Label lblTeclado;
         private System.Windows.Forms.TextBox txtMouse;
         private System.Windows.Forms.Label lblMouse;
-        private System.Windows.Forms.TextBox txtInventario;
+        private System.Windows.Forms.TextBox txtCpu;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtScanner;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -755,10 +770,10 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtRegulador;
+        private System.Windows.Forms.TextBox txtParlante;
+        private System.Windows.Forms.TextBox txtImpresora;
+        private System.Windows.Forms.TextBox txtProyector;
         private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnCerrar;

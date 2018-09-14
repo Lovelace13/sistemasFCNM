@@ -79,7 +79,6 @@ namespace sistemaFCNM
         private void button1_Click(object sender, EventArgs e)
         {
             Scanner ventana = new Scanner();
-            ventana.WindowState = FormWindowState.Maximized;
             ventana.MdiParent = this;
             ventana.Show();
         }
