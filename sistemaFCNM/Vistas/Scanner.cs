@@ -94,6 +94,7 @@ namespace sistemaFCNM
         private void btnDetalleCpu_Click(object sender, EventArgs e)
         {
             CPU ventana = new CPU();
+            ventana.MdiParent = Program.form1;
             ventana.Show();
         }
     }
