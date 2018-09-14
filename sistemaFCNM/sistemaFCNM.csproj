@@ -77,25 +77,70 @@
     <Compile Include="Clases\MouseMovimiento.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vistas\CPU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\CPU.Designer.cs">
+      <DependentUpon>CPU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Impresora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Impresora.Designer.cs">
+      <DependentUpon>Impresora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Pantalla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Pantalla.Designer.cs">
+      <DependentUpon>Pantalla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Parlante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Parlante.Designer.cs">
+      <DependentUpon>Parlante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Proyector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Proyector.Designer.cs">
+      <DependentUpon>Proyector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Regulador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Regulador.Designer.cs">
+      <DependentUpon>Regulador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Scanner.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\Scanner.Designer.cs">
       <DependentUpon>Scanner.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Form1.cs">
+    <Compile Include="Vistas\mainPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vistas\mainPrincipal.Designer.cs">
+      <DependentUpon>mainPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\Teclado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Teclado.Designer.cs">
+      <DependentUpon>Teclado.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vistas\CPU.resx">
+      <DependentUpon>CPU.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Scanner.resx">
       <DependentUpon>Scanner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\mainPrincipal.resx">
+      <DependentUpon>mainPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

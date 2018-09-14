@@ -90,3 +90,13 @@ select * from Inventario;
 SELECT Equipo.id_Equipo,CPU.inventario_cpu
 FROM Equipo
 INNER JOIN CPU ON Equipo.Inventario_CPU = CPU.ID;
+
+select e.id_Equipo, p.Inventario_Pantalla,p.pulgadas,car.estado,car.marca,car.modelo,car.serie
+from  Equipo e, Pantalla p, Mouse m, Teclado t, CPU ,Caracteristicas car
+where e.Inventario_CPU= CPU.ID and e.Pantalla=p.ID and e.Mouse=m.ID and e.Teclado=t.ID and car.id_caracteristica = p.caracteristicas  and p.Inventario_Pantalla like '1036%';
+
+select*from Equipo;
+
+--p.Inventario_Pantalla like '1036%'  busqueda por cierto numero
+
+select*from Equipo; 
