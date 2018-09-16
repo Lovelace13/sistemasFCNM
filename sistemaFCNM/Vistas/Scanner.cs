@@ -35,6 +35,7 @@ namespace sistemaFCNM
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+            VariablesUtiles.ventanaActiva = false;
         }
 
 
@@ -61,22 +62,17 @@ namespace sistemaFCNM
         {
             if (e.KeyCode == Keys.Enter)
             {
-                llenarGrid();
-                MessageBox.Show("Conectado");
+                string sql = "select e.id_Equipo,o.nombre_oficina,inv.Ayudante,inv.fecha_inventario,c.inventario_cpu,p.Inventario_Pantalla,t.Inventario_teclado,m.Inventario_Mouse,par.Inventario_Parlante,reg.Inventario_Regulador,im.Inventario_Impresora,pro.Inventario_Proyector,mi.Inventario_Microfono,tel.Inventario_Telefono,pp.Inventario_PantallaProyeccion,ra.Inventario_Radio from  Equipo e,Oficina o, Pantalla p, Mouse m, Teclado t, CPU c,Parlante par, Regulador reg, Impresora im,Proyector pro,Microfonos mi, Telefono tel,Pantalla_Proyeccion pp,Radio ra,Inventario inv where e.Inventario_CPU= c.ID and e.Oficina = o.ID and e.id_Equipo = inv.Equipo and e.Pantalla = p.ID and e.Teclado = t.ID and e.Mouse = m.ID and e.Parlante = par.ID and e.Regulador = reg.ID and e.Impresora = im.ID and e.Telefono = tel.ID and e.PantallaProyeccion = pp.ID and e.Radios = ra.ID and e.Microfono = mi.ID and e.Proyector = pro.ID and e.id_Equipo = '"+txtScanner.Text.Trim()+"';";
+                Datos.llenarGrid(sql, gridInventario);
+                limpiarTxtandWait();
 
             }
         }
 
-        private void llenarGrid()
+
+
+        private void limpiarTxtandWait()
         {
-            LlenarGrids llenarGrids = new LlenarGrids("Parametros.xml");
-            gridInventario.DataSource = null;
-            llenarGrids.SQL = "select e.id_Equipo, p.Inventario_Pantalla,p.pulgadas,car.estado,car.marca,car.modelo,car.serie " +
-            "from Equipo e, Pantalla p, Mouse m, Teclado t, CPU, " +
-            "Caracteristicas car where e.Inventario_CPU = CPU.ID and e.Pantalla = p.ID " +
-            "and e.Mouse = m.ID and e.Teclado = t.ID and car.id_caracteristica = p.caracteristicas  and e.id_Equipo ='" + txtScanner.Text.Trim() + "'; ";
-            //MessageBox.Show(""+txtScanner.Text.Length);
-            llenarGrids.LlenarGridWindows(gridInventario);
             try
             {
                 Thread.Sleep(1200);
@@ -87,14 +83,17 @@ namespace sistemaFCNM
                 throw;
             }
             txtScanner.Clear();
-            
         }
-
         private void btnDetalleCpu_Click(object sender, EventArgs e)
         {
             CPU ventana = new CPU();
             ventana.MdiParent = Program.form1;
             ventana.Show();
+        }
+
+        private void btnDetalleTeclado_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

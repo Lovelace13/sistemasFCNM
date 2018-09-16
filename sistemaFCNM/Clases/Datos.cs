@@ -1,4 +1,5 @@
 ﻿using LibConexionBD;
+using LibLlenarGrids;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace sistemaFCNM.Clases
     {
         private static string mensaje;
         private static ConexionBD conexion = new ConexionBD("Parametros.xml");
+        
 
         public static string Mensaje { get { return mensaje; } }
 
@@ -68,6 +70,14 @@ namespace sistemaFCNM.Clases
             conexion.CerrarConexion();
             return true;
 
+        }
+
+        public static void llenarGrid(string sql, DataGridView gridInventario)
+        {
+            LlenarGrids llenarGrids = new LlenarGrids("Parametros.xml");
+            gridInventario.DataSource = null;
+            llenarGrids.SQL = sql;
+            llenarGrids.LlenarGridWindows(gridInventario);
         }
     }
 }

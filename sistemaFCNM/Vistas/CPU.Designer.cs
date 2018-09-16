@@ -342,7 +342,7 @@
             this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximizar.Image = global::sistemaFCNM.Properties.Resources.Icono_Maximizar;
-            this.btnMaximizar.Location = new System.Drawing.Point(1367, 0);
+            this.btnMaximizar.Location = new System.Drawing.Point(1319, 0);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(36, 24);
             this.btnMaximizar.TabIndex = 70;
@@ -358,7 +358,7 @@
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = global::sistemaFCNM.Properties.Resources.Icono_Minimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(1335, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(1287, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(36, 24);
             this.btnMinimizar.TabIndex = 69;
@@ -374,7 +374,7 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::sistemaFCNM.Properties.Resources.Icono_cerrar_FN;
-            this.btnCerrar.Location = new System.Drawing.Point(1398, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(1350, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(36, 24);
             this.btnCerrar.TabIndex = 68;
@@ -388,7 +388,7 @@
             this.menuSuperior.Location = new System.Drawing.Point(0, 0);
             this.menuSuperior.Name = "menuSuperior";
             this.menuSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuSuperior.Size = new System.Drawing.Size(1434, 24);
+            this.menuSuperior.Size = new System.Drawing.Size(1386, 24);
             this.menuSuperior.TabIndex = 67;
             this.menuSuperior.Text = "menuStrip1";
             // 
@@ -464,7 +464,7 @@
             this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(24, 857);
+            this.toolStrip1.Size = new System.Drawing.Size(24, 764);
             this.toolStrip1.TabIndex = 71;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -518,7 +518,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(1434, 881);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnMaximizar);
             this.Controls.Add(this.btnMinimizar);

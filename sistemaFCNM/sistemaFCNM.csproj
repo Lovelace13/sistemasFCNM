@@ -74,6 +74,7 @@
     <Compile Include="Clases\MouseMovimiento.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Clases\VariablesUtiles.cs" />
     <Compile Include="Vistas\CPU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +86,18 @@
     </Compile>
     <Compile Include="Vistas\Impresora.Designer.cs">
       <DependentUpon>Impresora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Microfono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Microfono.Designer.cs">
+      <DependentUpon>Microfono.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Mouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Mouse.Designer.cs">
+      <DependentUpon>Mouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Pantalla.cs">
       <SubType>Form</SubType>
@@ -98,11 +111,23 @@
     <Compile Include="Vistas\Parlante.Designer.cs">
       <DependentUpon>Parlante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\PProyeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\PProyeccion.Designer.cs">
+      <DependentUpon>PProyeccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Proyector.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\Proyector.Designer.cs">
       <DependentUpon>Proyector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Radio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Radio.Designer.cs">
+      <DependentUpon>Radio.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Regulador.cs">
       <SubType>Form</SubType>
@@ -129,6 +154,12 @@
     </Compile>
     <Compile Include="Vistas\Teclado.Designer.cs">
       <DependentUpon>Teclado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Telefono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Telefono.Designer.cs">
+      <DependentUpon>Telefono.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Vistas\CPU.resx">
       <DependentUpon>CPU.cs</DependentUpon>

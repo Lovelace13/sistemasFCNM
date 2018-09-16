@@ -16,11 +16,11 @@ namespace sistemaFCNM
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            form1 = new Form1();
+            form1 = new mainPrincipal();
             Application.Run(form1);
         }
 
-        public static Form1 form1 ;
+        public static mainPrincipal form1 ;
     }
 
 }
