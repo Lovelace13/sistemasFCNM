@@ -49,17 +49,14 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LibConexionBD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\LibConexionBD.dll</HintPath>
+    <Reference Include="LibConexionBD">
+      <HintPath>Librerias\LibConexionBD.dll</HintPath>
     </Reference>
-    <Reference Include="LibLlenarGrids, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\LibLlenarGrids.dll</HintPath>
+    <Reference Include="LibLlenarGrids">
+      <HintPath>Librerias\LibLlenarGrids.dll</HintPath>
     </Reference>
-    <Reference Include="LibParametros, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\LibParametros.dll</HintPath>
+    <Reference Include="LibParametros">
+      <HintPath>Librerias\LibParametros.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -276,6 +273,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\altavoces.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaseDatos\" />
+    <Folder Include="Librerias\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
