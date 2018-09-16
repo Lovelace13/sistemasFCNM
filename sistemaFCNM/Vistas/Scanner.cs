@@ -59,11 +59,10 @@ namespace sistemaFCNM
 
         private void txtScanner_KeyDown(object sender, KeyEventArgs e)
         {
-
-
             if (e.KeyCode == Keys.Enter)
             {
                 llenarGrid();
+                MessageBox.Show("Conectado");
 
             }
         }

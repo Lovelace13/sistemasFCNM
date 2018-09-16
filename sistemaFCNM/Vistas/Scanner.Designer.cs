@@ -196,7 +196,7 @@
             this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(24, 896);
+            this.toolStrip1.Size = new System.Drawing.Size(24, 764);
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -638,7 +638,7 @@
             this.menuSuperior.Location = new System.Drawing.Point(0, 0);
             this.menuSuperior.Name = "menuSuperior";
             this.menuSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuSuperior.Size = new System.Drawing.Size(1450, 24);
+            this.menuSuperior.Size = new System.Drawing.Size(1386, 24);
             this.menuSuperior.TabIndex = 9;
             this.menuSuperior.Text = "menuStrip1";
             this.menuSuperior.Paint += new System.Windows.Forms.PaintEventHandler(this.menuStrip1_Paint);
@@ -767,7 +767,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1450, 920);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button11);
