@@ -75,6 +75,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clases\VariablesUtiles.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\CPU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,16 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -214,22 +215,10 @@
     <None Include="Resources\scanner1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cpu.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\pantalla.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cpu1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo_fcnm.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\scanner2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\scanner3.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reportes.png" />
@@ -267,9 +256,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pcIncono.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\pcIncono1.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -277,12 +263,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pcIncono2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\escaner-de-codigo-de-barras.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\escaner-de-codigo-de-barras1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\escaner-de-codigo-de-barras2.png" />

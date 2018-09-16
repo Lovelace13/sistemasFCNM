@@ -73,9 +73,9 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Calender_3 {
+        internal static System.Drawing.Bitmap Calender3 {
             get {
-                object obj = ResourceManager.GetObject("Calender 3", resourceCulture);
+                object obj = ResourceManager.GetObject("Calender3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cpu1 {
+        internal static System.Drawing.Bitmap IconocerrarFN {
             get {
-                object obj = ResourceManager.GetObject("cpu1", resourceCulture);
+                object obj = ResourceManager.GetObject("IconocerrarFN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dell_4600c_copy {
+        internal static System.Drawing.Bitmap IconoMaximizar {
             get {
-                object obj = ResourceManager.GetObject("Dell_4600c copy", resourceCulture);
+                object obj = ResourceManager.GetObject("IconoMaximizar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap escaner_de_codigo_de_barras {
+        internal static System.Drawing.Bitmap IconoMinimizar {
             get {
-                object obj = ResourceManager.GetObject("escaner-de-codigo-de-barras", resourceCulture);
+                object obj = ResourceManager.GetObject("IconoMinimizar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,59 +123,9 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap escaner_de_codigo_de_barras1 {
+        internal static System.Drawing.Bitmap IconoRestaurar {
             get {
-                object obj = ResourceManager.GetObject("escaner-de-codigo-de-barras1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap escaner_de_codigo_de_barras2 {
-            get {
-                object obj = ResourceManager.GetObject("escaner-de-codigo-de-barras2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Icono_cerrar_FN {
-            get {
-                object obj = ResourceManager.GetObject("Icono cerrar FN", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Icono_Maximizar {
-            get {
-                object obj = ResourceManager.GetObject("Icono Maximizar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Icono_Minimizar {
-            get {
-                object obj = ResourceManager.GetObject("Icono Minimizar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Icono_Restaurar {
-            get {
-                object obj = ResourceManager.GetObject("Icono Restaurar", resourceCulture);
+                object obj = ResourceManager.GetObject("IconoRestaurar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,16 +153,6 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo_fcnm {
-            get {
-                object obj = ResourceManager.GetObject("logo_fcnm", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap logo_fcnm1 {
             get {
                 object obj = ResourceManager.GetObject("logo_fcnm1", resourceCulture);
@@ -223,9 +163,9 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Mobile_Menu_Icon {
+        internal static System.Drawing.Bitmap MobileMenuIcon {
             get {
-                object obj = ResourceManager.GetObject("Mobile-Menu-Icon", resourceCulture);
+                object obj = ResourceManager.GetObject("MobileMenuIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,19 +183,9 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PC_Case {
+        internal static System.Drawing.Bitmap PCCase {
             get {
-                object obj = ResourceManager.GetObject("PC Case", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pcIncono {
-            get {
-                object obj = ResourceManager.GetObject("pcIncono", resourceCulture);
+                object obj = ResourceManager.GetObject("PCCase", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,16 +233,6 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap regulador {
-            get {
-                object obj = ResourceManager.GetObject("regulador", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap reportes {
             get {
                 object obj = ResourceManager.GetObject("reportes", resourceCulture);
@@ -333,39 +253,9 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap scanner1 {
-            get {
-                object obj = ResourceManager.GetObject("scanner1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap scanner11 {
             get {
                 object obj = ResourceManager.GetObject("scanner11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap scanner2 {
-            get {
-                object obj = ResourceManager.GetObject("scanner2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap scanner3 {
-            get {
-                object obj = ResourceManager.GetObject("scanner3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

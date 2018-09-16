@@ -14,7 +14,7 @@ namespace sistemaFCNM
 {
     public partial class mainPrincipal : Form
     {
-        
+
         public mainPrincipal()
         {
             InitializeComponent();
@@ -69,74 +69,128 @@ namespace sistemaFCNM
 
         private void btnScanner_Click(object sender, EventArgs e)
         {
-            if (!VariablesUtiles.ventanaActiva)
-            {
-                Scanner ventana = new Scanner();
-                ventana.MdiParent = this;
-                ventana.Show();
-                VariablesUtiles.ventanaActiva = true;
-            }
-            else
-            {
-                MessageBox.Show("Debe Cerrar Ventana");
-            }
-           
+            abrirVentanas(new Scanner());
         }
 
         private void btnCpu_Click(object sender, EventArgs e)
         {
-            CPU ventana = new CPU();
-            ventana.MdiParent = this;
-            ventana.Show();
+            abrirVentanas(new CPU());
+            
+
+
         }
 
         private void btnPantalla_Click(object sender, EventArgs e)
         {
-            Pantalla ventana = new Pantalla();
-            ventana.MdiParent = this;
-            ventana.Show();
+            abrirVentanas(new Pantalla());
         }
 
         private void btnTeclado_Click(object sender, EventArgs e)
         {
-            Teclado ventana = new Teclado();
-            ventana.MdiParent = this;
-            ventana.Show();
+            abrirVentanas(new Teclado());
         }
 
         private void btnMouse_Click(object sender, EventArgs e)
         {
-            Mouse ventana = new Mouse();
-            ventana.MdiParent = this;
-            ventana.Show();
+            abrirVentanas(new Mouse());
         }
 
         private void btnRegulador_Click(object sender, EventArgs e)
         {
-            Regulador ventana = new Regulador();
-            ventana.MdiParent = this;
-            ventana.Show();
+            abrirVentanas(new Regulador());
         }
 
         private void btnProyector_Click(object sender, EventArgs e)
         {
-            Proyector ventana= new Proyector();
-            ventana.MdiParent = this;
-            ventana.Show();
+            abrirVentanas(new Proyector());
         }
 
         private void btnImpresora_Click(object sender, EventArgs e)
         {
-            Impresora ventana = new Impresora();
-            ventana.MdiParent = this;
-            ventana.Show();
+            abrirVentanas(new Impresora());
         }
 
         private void btnParlante_Click(object sender, EventArgs e)
         {
-            Parlante ventana = new Parlante();
-            ventana.MdiParent = this;
+            abrirVentanas(new Parlante());
+        }
+
+        private void timerOcultarMenu_Tick(object sender, EventArgs e)
+        {
+            if (panelMenu.Width <= 60)
+            {
+                this.timerOcultarMenu.Enabled = false;
+            }
+            else
+            {
+                this.panelMenu.Width = this.panelMenu.Width - 20;
+            }
+        }
+
+        //Sumara 20 cada  100ms
+        private void timerMostrarMenu_Tick(object sender, EventArgs e)
+        {
+            if (panelMenu.Width >= 220)
+            {
+                this.timerMostrarMenu.Enabled = false;
+            }
+            else
+            {
+                this.panelMenu.Width = this.panelMenu.Width + 20;
+            }
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            if (panelMenu.Width == 220)
+            {
+                timerOcultarMenu.Enabled = true;
+                imgLogoBig.Visible = false;
+                imgLogoMini.Visible = true;
+
+            }
+            else if (panelMenu.Width == 60)
+            {
+                timerMostrarMenu.Enabled = true;
+                imgLogoMini.Visible = false;
+                imgLogoBig.Visible = true;
+            }
+
+        }
+
+        private void abrirVentanas(Form ventana)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+
+            }
+            ventana.TopLevel = false;
+            ventana.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            ventana.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(ventana);
+            this.panelContenedor.Tag = ventana;
             ventana.Show();
+        }
+
+        private void btnMicro_Click(object sender, EventArgs e)
+        {
+            abrirVentanas(new Microfono());
+        }
+
+        private void btnTelefono_Click(object sender, EventArgs e)
+        {
+            abrirVentanas(new Telefono());
+        }
+
+        private void btnPproyeccion_Click(object sender, EventArgs e)
+        {
+            abrirVentanas(new PProyeccion());
+        }
+
+        private void btnRadio_Click(object sender, EventArgs e)
+        {
+            abrirVentanas(new Radio());
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainPrincipal));
             this.panelCabecera = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,16 +37,10 @@
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRadio = new System.Windows.Forms.Button();
+            this.btnPproyeccion = new System.Windows.Forms.Button();
+            this.btnTelefono = new System.Windows.Forms.Button();
+            this.btnMicro = new System.Windows.Forms.Button();
             this.btnParlante = new System.Windows.Forms.Button();
             this.btnImpresora = new System.Windows.Forms.Button();
             this.btnProyector = new System.Windows.Forms.Button();
@@ -55,24 +50,35 @@
             this.btnPantalla = new System.Windows.Forms.Button();
             this.btnCpu = new System.Windows.Forms.Button();
             this.btnScanner = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btnMicro = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.imgLogoMini = new System.Windows.Forms.PictureBox();
+            this.imgLogoBig = new System.Windows.Forms.PictureBox();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.timerOcultarMenu = new System.Windows.Forms.Timer(this.components);
+            this.timerMostrarMenu = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
+            this.panelContenedor = new System.Windows.Forms.FlowLayoutPanel();
             this.panelCabecera.SuspendLayout();
             this.panelMenu.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoMini)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoBig)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCabecera
             // 
-            this.panelCabecera.BackColor = System.Drawing.Color.DarkBlue;
+            this.panelCabecera.BackColor = System.Drawing.Color.Goldenrod;
             this.panelCabecera.Controls.Add(this.label1);
             this.panelCabecera.Controls.Add(this.btnRestaurar);
             this.panelCabecera.Controls.Add(this.btnMinimizar);
@@ -90,7 +96,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(916, 9);
+            this.label1.Location = new System.Drawing.Point(643, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 19);
             this.label1.TabIndex = 4;
@@ -105,7 +111,7 @@
             this.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurar.Image = global::sistemaFCNM.Properties.Resources.Icono_Restaurar;
+            this.btnRestaurar.Image = global::sistemaFCNM.Properties.Resources.IconoRestaurar;
             this.btnRestaurar.Location = new System.Drawing.Point(1311, 0);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(40, 40);
@@ -122,7 +128,7 @@
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = global::sistemaFCNM.Properties.Resources.Icono_Minimizar;
+            this.btnMinimizar.Image = global::sistemaFCNM.Properties.Resources.IconoMinimizar;
             this.btnMinimizar.Location = new System.Drawing.Point(1276, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(40, 40);
@@ -138,7 +144,7 @@
             this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Image = global::sistemaFCNM.Properties.Resources.Icono_Maximizar;
+            this.btnMaximizar.Image = global::sistemaFCNM.Properties.Resources.IconoMaximizar;
             this.btnMaximizar.Location = new System.Drawing.Point(1311, 0);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(40, 40);
@@ -154,7 +160,7 @@
             this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = global::sistemaFCNM.Properties.Resources.Icono_cerrar_FN;
+            this.btnCerrar.Image = global::sistemaFCNM.Properties.Resources.IconocerrarFN;
             this.btnCerrar.Location = new System.Drawing.Point(1346, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(40, 40);
@@ -164,15 +170,10 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.LemonChiffon;
-            this.panelMenu.Controls.Add(this.panel14);
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.panelMenu.Controls.Add(this.panel13);
             this.panelMenu.Controls.Add(this.panel12);
             this.panelMenu.Controls.Add(this.panel11);
-            this.panelMenu.Controls.Add(this.button4);
-            this.panelMenu.Controls.Add(this.button3);
-            this.panelMenu.Controls.Add(this.button2);
-            this.panelMenu.Controls.Add(this.btnMicro);
             this.panelMenu.Controls.Add(this.panel10);
             this.panelMenu.Controls.Add(this.panel9);
             this.panelMenu.Controls.Add(this.panel8);
@@ -180,8 +181,15 @@
             this.panelMenu.Controls.Add(this.panel6);
             this.panelMenu.Controls.Add(this.panel5);
             this.panelMenu.Controls.Add(this.panel4);
+            this.panelMenu.Controls.Add(this.panel3);
             this.panelMenu.Controls.Add(this.panel2);
             this.panelMenu.Controls.Add(this.panel1);
+            this.panelMenu.Controls.Add(this.btnMenu);
+            this.panelMenu.Controls.Add(this.imgLogoBig);
+            this.panelMenu.Controls.Add(this.btnRadio);
+            this.panelMenu.Controls.Add(this.btnPproyeccion);
+            this.panelMenu.Controls.Add(this.btnTelefono);
+            this.panelMenu.Controls.Add(this.btnMicro);
             this.panelMenu.Controls.Add(this.btnParlante);
             this.panelMenu.Controls.Add(this.btnImpresora);
             this.panelMenu.Controls.Add(this.btnProyector);
@@ -191,397 +199,462 @@
             this.panelMenu.Controls.Add(this.btnPantalla);
             this.panelMenu.Controls.Add(this.btnCpu);
             this.panelMenu.Controls.Add(this.btnScanner);
-            this.panelMenu.Controls.Add(this.pictureBox4);
+            this.panelMenu.Controls.Add(this.imgLogoMini);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelMenu.ForeColor = System.Drawing.SystemColors.Window;
             this.panelMenu.Location = new System.Drawing.Point(0, 34);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(177, 754);
+            this.panelMenu.Size = new System.Drawing.Size(220, 786);
             this.panelMenu.TabIndex = 0;
             // 
-            // panel10
+            // btnRadio
             // 
-            this.panel10.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel10.Location = new System.Drawing.Point(0, 501);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(204, 6);
-            this.panel10.TabIndex = 21;
+            this.btnRadio.AutoEllipsis = true;
+            this.btnRadio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRadio.FlatAppearance.BorderSize = 0;
+            this.btnRadio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnRadio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.btnRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRadio.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnRadio.Image = ((System.Drawing.Image)(resources.GetObject("btnRadio.Image")));
+            this.btnRadio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRadio.Location = new System.Drawing.Point(9, 728);
+            this.btnRadio.Name = "btnRadio";
+            this.btnRadio.Size = new System.Drawing.Size(220, 45);
+            this.btnRadio.TabIndex = 13;
+            this.btnRadio.Text = "      Radio";
+            this.btnRadio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRadio.UseVisualStyleBackColor = true;
+            this.btnRadio.Click += new System.EventHandler(this.btnRadio_Click);
             // 
-            // panel9
+            // btnPproyeccion
             // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel9.Location = new System.Drawing.Point(1, 450);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(204, 6);
-            this.panel9.TabIndex = 20;
+            this.btnPproyeccion.AutoEllipsis = true;
+            this.btnPproyeccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPproyeccion.FlatAppearance.BorderSize = 0;
+            this.btnPproyeccion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnPproyeccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.btnPproyeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPproyeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPproyeccion.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnPproyeccion.Image = ((System.Drawing.Image)(resources.GetObject("btnPproyeccion.Image")));
+            this.btnPproyeccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPproyeccion.Location = new System.Drawing.Point(9, 677);
+            this.btnPproyeccion.Name = "btnPproyeccion";
+            this.btnPproyeccion.Size = new System.Drawing.Size(220, 45);
+            this.btnPproyeccion.TabIndex = 12;
+            this.btnPproyeccion.Text = "      P.Proyeccion";
+            this.btnPproyeccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPproyeccion.UseVisualStyleBackColor = true;
+            this.btnPproyeccion.Click += new System.EventHandler(this.btnPproyeccion_Click);
             // 
-            // panel8
+            // btnTelefono
             // 
-            this.panel8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel8.Location = new System.Drawing.Point(0, 399);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(204, 6);
-            this.panel8.TabIndex = 19;
+            this.btnTelefono.AutoEllipsis = true;
+            this.btnTelefono.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTelefono.FlatAppearance.BorderSize = 0;
+            this.btnTelefono.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnTelefono.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.btnTelefono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTelefono.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnTelefono.Image = ((System.Drawing.Image)(resources.GetObject("btnTelefono.Image")));
+            this.btnTelefono.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTelefono.Location = new System.Drawing.Point(9, 626);
+            this.btnTelefono.Name = "btnTelefono";
+            this.btnTelefono.Size = new System.Drawing.Size(220, 45);
+            this.btnTelefono.TabIndex = 11;
+            this.btnTelefono.Text = "      Telefono";
+            this.btnTelefono.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTelefono.UseVisualStyleBackColor = true;
+            this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click);
             // 
-            // panel7
+            // btnMicro
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel7.Location = new System.Drawing.Point(0, 348);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(204, 6);
-            this.panel7.TabIndex = 18;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel6.Location = new System.Drawing.Point(0, 304);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(204, 6);
-            this.panel6.TabIndex = 17;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.Location = new System.Drawing.Point(1, 261);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(204, 6);
-            this.panel5.TabIndex = 16;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Location = new System.Drawing.Point(0, 210);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(204, 6);
-            this.panel4.TabIndex = 15;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(1, 161);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(204, 8);
-            this.panel2.TabIndex = 11;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(204, 10);
-            this.panel3.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(1, 106);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(204, 10);
-            this.panel1.TabIndex = 14;
+            this.btnMicro.AutoEllipsis = true;
+            this.btnMicro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMicro.FlatAppearance.BorderSize = 0;
+            this.btnMicro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnMicro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.btnMicro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMicro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMicro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnMicro.Image = ((System.Drawing.Image)(resources.GetObject("btnMicro.Image")));
+            this.btnMicro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMicro.Location = new System.Drawing.Point(9, 575);
+            this.btnMicro.Name = "btnMicro";
+            this.btnMicro.Size = new System.Drawing.Size(220, 45);
+            this.btnMicro.TabIndex = 10;
+            this.btnMicro.Text = "      Microfono";
+            this.btnMicro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMicro.UseVisualStyleBackColor = true;
+            this.btnMicro.Click += new System.EventHandler(this.btnMicro_Click);
             // 
             // btnParlante
             // 
             this.btnParlante.AutoEllipsis = true;
+            this.btnParlante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnParlante.FlatAppearance.BorderSize = 0;
+            this.btnParlante.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnParlante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.btnParlante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnParlante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnParlante.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnParlante.Image = global::sistemaFCNM.Properties.Resources.altavoces;
+            this.btnParlante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnParlante.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnParlante.Image = ((System.Drawing.Image)(resources.GetObject("btnParlante.Image")));
             this.btnParlante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnParlante.Location = new System.Drawing.Point(0, 513);
+            this.btnParlante.Location = new System.Drawing.Point(9, 524);
             this.btnParlante.Name = "btnParlante";
-            this.btnParlante.Size = new System.Drawing.Size(200, 33);
+            this.btnParlante.Size = new System.Drawing.Size(220, 45);
             this.btnParlante.TabIndex = 9;
-            this.btnParlante.Text = "Parlante";
+            this.btnParlante.Text = "      Parlante";
+            this.btnParlante.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnParlante.UseVisualStyleBackColor = true;
             this.btnParlante.Click += new System.EventHandler(this.btnParlante_Click);
             // 
             // btnImpresora
             // 
             this.btnImpresora.AutoEllipsis = true;
+            this.btnImpresora.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImpresora.FlatAppearance.BorderSize = 0;
+            this.btnImpresora.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnImpresora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.btnImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImpresora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImpresora.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnImpresora.Image = global::sistemaFCNM.Properties.Resources.impresora;
+            this.btnImpresora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImpresora.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora.Image")));
             this.btnImpresora.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImpresora.Location = new System.Drawing.Point(0, 462);
+            this.btnImpresora.Location = new System.Drawing.Point(9, 473);
             this.btnImpresora.Name = "btnImpresora";
-            this.btnImpresora.Size = new System.Drawing.Size(200, 33);
+            this.btnImpresora.Size = new System.Drawing.Size(220, 45);
             this.btnImpresora.TabIndex = 8;
-            this.btnImpresora.Text = "Impresora";
+            this.btnImpresora.Text = "      Impresora";
+            this.btnImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImpresora.UseVisualStyleBackColor = true;
             this.btnImpresora.Click += new System.EventHandler(this.btnImpresora_Click);
             // 
             // btnProyector
             // 
             this.btnProyector.AutoEllipsis = true;
+            this.btnProyector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProyector.FlatAppearance.BorderSize = 0;
+            this.btnProyector.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnProyector.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.btnProyector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProyector.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProyector.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnProyector.Image = global::sistemaFCNM.Properties.Resources.proyector;
+            this.btnProyector.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProyector.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnProyector.Image = ((System.Drawing.Image)(resources.GetObject("btnProyector.Image")));
             this.btnProyector.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProyector.Location = new System.Drawing.Point(0, 411);
+            this.btnProyector.Location = new System.Drawing.Point(9, 422);
             this.btnProyector.Name = "btnProyector";
-            this.btnProyector.Size = new System.Drawing.Size(200, 33);
+            this.btnProyector.Size = new System.Drawing.Size(220, 45);
             this.btnProyector.TabIndex = 7;
-            this.btnProyector.Text = "Proyector";
+            this.btnProyector.Text = "      Proyector";
+            this.btnProyector.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProyector.UseVisualStyleBackColor = true;
             this.btnProyector.Click += new System.EventHandler(this.btnProyector_Click);
             // 
             // btnRegulador
             // 
             this.btnRegulador.AutoEllipsis = true;
+            this.btnRegulador.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegulador.FlatAppearance.BorderSize = 0;
+            this.btnRegulador.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnRegulador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.btnRegulador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegulador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegulador.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRegulador.Image = global::sistemaFCNM.Properties.Resources.PC_Case;
+            this.btnRegulador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegulador.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnRegulador.Image = ((System.Drawing.Image)(resources.GetObject("btnRegulador.Image")));
             this.btnRegulador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegulador.Location = new System.Drawing.Point(0, 360);
+            this.btnRegulador.Location = new System.Drawing.Point(9, 371);
             this.btnRegulador.Name = "btnRegulador";
-            this.btnRegulador.Size = new System.Drawing.Size(200, 33);
+            this.btnRegulador.Size = new System.Drawing.Size(220, 45);
             this.btnRegulador.TabIndex = 6;
-            this.btnRegulador.Text = "Regulador";
+            this.btnRegulador.Text = "      Regulador";
+            this.btnRegulador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegulador.UseVisualStyleBackColor = true;
             this.btnRegulador.Click += new System.EventHandler(this.btnRegulador_Click);
             // 
             // btnMouse
             // 
             this.btnMouse.AutoEllipsis = true;
+            this.btnMouse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMouse.FlatAppearance.BorderSize = 0;
+            this.btnMouse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnMouse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.btnMouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMouse.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMouse.Image = global::sistemaFCNM.Properties.Resources.raton;
+            this.btnMouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMouse.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnMouse.Image = ((System.Drawing.Image)(resources.GetObject("btnMouse.Image")));
             this.btnMouse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMouse.Location = new System.Drawing.Point(0, 316);
+            this.btnMouse.Location = new System.Drawing.Point(9, 320);
             this.btnMouse.Name = "btnMouse";
-            this.btnMouse.Size = new System.Drawing.Size(200, 33);
+            this.btnMouse.Size = new System.Drawing.Size(220, 45);
             this.btnMouse.TabIndex = 5;
-            this.btnMouse.Text = "Mouse";
+            this.btnMouse.Text = "      Mouse";
+            this.btnMouse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMouse.UseVisualStyleBackColor = true;
             this.btnMouse.Click += new System.EventHandler(this.btnMouse_Click);
             // 
             // btnTeclado
             // 
             this.btnTeclado.AutoEllipsis = true;
+            this.btnTeclado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTeclado.FlatAppearance.BorderSize = 0;
+            this.btnTeclado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnTeclado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.btnTeclado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTeclado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTeclado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTeclado.Image = global::sistemaFCNM.Properties.Resources.teclado;
+            this.btnTeclado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTeclado.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnTeclado.Image = ((System.Drawing.Image)(resources.GetObject("btnTeclado.Image")));
             this.btnTeclado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTeclado.Location = new System.Drawing.Point(0, 266);
+            this.btnTeclado.Location = new System.Drawing.Point(9, 269);
             this.btnTeclado.Name = "btnTeclado";
-            this.btnTeclado.Size = new System.Drawing.Size(200, 33);
+            this.btnTeclado.Size = new System.Drawing.Size(220, 45);
             this.btnTeclado.TabIndex = 4;
-            this.btnTeclado.Text = "Teclado";
+            this.btnTeclado.Text = "      Teclado";
+            this.btnTeclado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTeclado.UseVisualStyleBackColor = true;
             this.btnTeclado.Click += new System.EventHandler(this.btnTeclado_Click);
             // 
             // btnPantalla
             // 
             this.btnPantalla.AutoEllipsis = true;
+            this.btnPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPantalla.FlatAppearance.BorderSize = 0;
+            this.btnPantalla.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnPantalla.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.btnPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPantalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPantalla.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPantalla.Image = global::sistemaFCNM.Properties.Resources.imac_off;
+            this.btnPantalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPantalla.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnPantalla.Image = ((System.Drawing.Image)(resources.GetObject("btnPantalla.Image")));
             this.btnPantalla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPantalla.Location = new System.Drawing.Point(3, 222);
+            this.btnPantalla.Location = new System.Drawing.Point(9, 218);
             this.btnPantalla.Name = "btnPantalla";
-            this.btnPantalla.Size = new System.Drawing.Size(200, 33);
+            this.btnPantalla.Size = new System.Drawing.Size(220, 45);
             this.btnPantalla.TabIndex = 3;
-            this.btnPantalla.Text = "Pantalla";
+            this.btnPantalla.Text = "      Pantalla";
+            this.btnPantalla.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPantalla.UseVisualStyleBackColor = true;
             this.btnPantalla.Click += new System.EventHandler(this.btnPantalla_Click);
             // 
             // btnCpu
             // 
             this.btnCpu.AutoEllipsis = true;
+            this.btnCpu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCpu.FlatAppearance.BorderSize = 0;
+            this.btnCpu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnCpu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.btnCpu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCpu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCpu.Image = global::sistemaFCNM.Properties.Resources.Dell_4600c_copy;
+            this.btnCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCpu.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCpu.Image = ((System.Drawing.Image)(resources.GetObject("btnCpu.Image")));
             this.btnCpu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCpu.Location = new System.Drawing.Point(0, 177);
+            this.btnCpu.Location = new System.Drawing.Point(9, 167);
             this.btnCpu.Name = "btnCpu";
-            this.btnCpu.Size = new System.Drawing.Size(200, 33);
+            this.btnCpu.Size = new System.Drawing.Size(220, 45);
             this.btnCpu.TabIndex = 2;
-            this.btnCpu.Text = "CPU";
+            this.btnCpu.Text = "       CPU";
+            this.btnCpu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCpu.UseVisualStyleBackColor = true;
             this.btnCpu.Click += new System.EventHandler(this.btnCpu_Click);
             // 
             // btnScanner
             // 
             this.btnScanner.AutoEllipsis = true;
+            this.btnScanner.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnScanner.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnScanner.FlatAppearance.BorderSize = 0;
+            this.btnScanner.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnScanner.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.btnScanner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnScanner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScanner.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnScanner.Image = global::sistemaFCNM.Properties.Resources.escaner_de_codigo_de_barras2;
+            this.btnScanner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScanner.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnScanner.Image = ((System.Drawing.Image)(resources.GetObject("btnScanner.Image")));
             this.btnScanner.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnScanner.Location = new System.Drawing.Point(3, 122);
+            this.btnScanner.Location = new System.Drawing.Point(9, 117);
             this.btnScanner.Name = "btnScanner";
-            this.btnScanner.Size = new System.Drawing.Size(200, 33);
+            this.btnScanner.Size = new System.Drawing.Size(220, 45);
             this.btnScanner.TabIndex = 1;
-            this.btnScanner.Text = "  Scanear Codigo";
+            this.btnScanner.Text = "      Scanear Codigo";
+            this.btnScanner.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnScanner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnScanner.UseVisualStyleBackColor = true;
             this.btnScanner.Click += new System.EventHandler(this.btnScanner_Click);
             // 
-            // pictureBox4
+            // imgLogoMini
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.LemonChiffon;
-            this.pictureBox4.Image = global::sistemaFCNM.Properties.Resources.logo_fcnm1;
-            this.pictureBox4.Location = new System.Drawing.Point(3, 6);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(164, 84);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
+            this.imgLogoMini.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.imgLogoMini.Image = ((System.Drawing.Image)(resources.GetObject("imgLogoMini.Image")));
+            this.imgLogoMini.Location = new System.Drawing.Point(3, 56);
+            this.imgLogoMini.Name = "imgLogoMini";
+            this.imgLogoMini.Size = new System.Drawing.Size(55, 55);
+            this.imgLogoMini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgLogoMini.TabIndex = 4;
+            this.imgLogoMini.TabStop = false;
+            this.imgLogoMini.Visible = false;
             // 
-            // btnMicro
+            // imgLogoBig
             // 
-            this.btnMicro.AutoEllipsis = true;
-            this.btnMicro.FlatAppearance.BorderSize = 0;
-            this.btnMicro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMicro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMicro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMicro.Image = global::sistemaFCNM.Properties.Resources.altavoces;
-            this.btnMicro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMicro.Location = new System.Drawing.Point(0, 561);
-            this.btnMicro.Name = "btnMicro";
-            this.btnMicro.Size = new System.Drawing.Size(200, 33);
-            this.btnMicro.TabIndex = 10;
-            this.btnMicro.Text = "Microfono";
-            this.btnMicro.UseVisualStyleBackColor = true;
+            this.imgLogoBig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.imgLogoBig.Image = ((System.Drawing.Image)(resources.GetObject("imgLogoBig.Image")));
+            this.imgLogoBig.Location = new System.Drawing.Point(38, 57);
+            this.imgLogoBig.Name = "imgLogoBig";
+            this.imgLogoBig.Size = new System.Drawing.Size(144, 54);
+            this.imgLogoBig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgLogoBig.TabIndex = 14;
+            this.imgLogoBig.TabStop = false;
             // 
-            // button2
+            // btnMenu
             // 
-            this.button2.AutoEllipsis = true;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Image = global::sistemaFCNM.Properties.Resources.altavoces;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 612);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 33);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Telefono";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMenu.Image = global::sistemaFCNM.Properties.Resources.MobileMenuIcon;
+            this.btnMenu.InitialImage = null;
+            this.btnMenu.Location = new System.Drawing.Point(183, 6);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(34, 34);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMenu.TabIndex = 15;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // button3
+            // timerOcultarMenu
             // 
-            this.button3.AutoEllipsis = true;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Image = global::sistemaFCNM.Properties.Resources.altavoces;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 658);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 33);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "P.Proyeccion";
-            this.button3.UseVisualStyleBackColor = true;
+            this.timerOcultarMenu.Tick += new System.EventHandler(this.timerOcultarMenu_Tick);
             // 
-            // button4
+            // timerMostrarMenu
             // 
-            this.button4.AutoEllipsis = true;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Image = global::sistemaFCNM.Properties.Resources.altavoces;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 709);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 33);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Radio";
-            this.button4.UseVisualStyleBackColor = true;
+            this.timerMostrarMenu.Tick += new System.EventHandler(this.timerMostrarMenu_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel1.Location = new System.Drawing.Point(0, 117);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(9, 45);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel2.Location = new System.Drawing.Point(0, 167);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(9, 45);
+            this.panel2.TabIndex = 17;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel3.Location = new System.Drawing.Point(0, 218);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(9, 45);
+            this.panel3.TabIndex = 17;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel4.Location = new System.Drawing.Point(0, 269);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(9, 45);
+            this.panel4.TabIndex = 18;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel5.Location = new System.Drawing.Point(0, 320);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(9, 45);
+            this.panel5.TabIndex = 19;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel6.Location = new System.Drawing.Point(0, 371);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(9, 45);
+            this.panel6.TabIndex = 19;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel7.Location = new System.Drawing.Point(0, 422);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(9, 45);
+            this.panel7.TabIndex = 19;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel8.Location = new System.Drawing.Point(0, 473);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(9, 45);
+            this.panel8.TabIndex = 20;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel9.Location = new System.Drawing.Point(0, 524);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(9, 45);
+            this.panel9.TabIndex = 19;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel10.Location = new System.Drawing.Point(0, 575);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(9, 45);
+            this.panel10.TabIndex = 19;
             // 
             // panel11
             // 
-            this.panel11.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel11.Location = new System.Drawing.Point(0, 552);
+            this.panel11.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel11.Location = new System.Drawing.Point(0, 626);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(204, 6);
-            this.panel11.TabIndex = 22;
+            this.panel11.Size = new System.Drawing.Size(9, 45);
+            this.panel11.TabIndex = 19;
             // 
             // panel12
             // 
-            this.panel12.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel12.Location = new System.Drawing.Point(0, 600);
+            this.panel12.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel12.Location = new System.Drawing.Point(0, 677);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(204, 6);
-            this.panel12.TabIndex = 23;
+            this.panel12.Size = new System.Drawing.Size(9, 45);
+            this.panel12.TabIndex = 21;
             // 
             // panel13
             // 
-            this.panel13.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel13.Location = new System.Drawing.Point(0, 646);
+            this.panel13.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel13.Location = new System.Drawing.Point(0, 728);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(204, 6);
-            this.panel13.TabIndex = 24;
+            this.panel13.Size = new System.Drawing.Size(9, 45);
+            this.panel13.TabIndex = 22;
             // 
-            // panel14
+            // panelContenedor
             // 
-            this.panel14.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel14.Location = new System.Drawing.Point(1, 697);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(204, 6);
-            this.panel14.TabIndex = 25;
+            this.panelContenedor.BackgroundImage = global::sistemaFCNM.Properties.Resources.pcIncono2;
+            this.panelContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelContenedor.Location = new System.Drawing.Point(214, 34);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(1172, 786);
+            this.panelContenedor.TabIndex = 4;
             // 
             // mainPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = global::sistemaFCNM.Properties.Resources.pcIncono2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1386, 820);
+            this.ControlBox = false;
+            this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelCabecera);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IsMdiContainer = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "mainPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
@@ -589,8 +662,9 @@
             this.panelCabecera.ResumeLayout(false);
             this.panelCabecera.PerformLayout();
             this.panelMenu.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoMini)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoBig)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -603,7 +677,7 @@
         private System.Windows.Forms.Button btnMaximizar;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnRestaurar;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox imgLogoMini;
         private System.Windows.Forms.Button btnScanner;
         private System.Windows.Forms.Button btnCpu;
         private System.Windows.Forms.Button btnPantalla;
@@ -614,6 +688,17 @@
         private System.Windows.Forms.Button btnMouse;
         private System.Windows.Forms.Button btnTeclado;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRadio;
+        private System.Windows.Forms.Button btnPproyeccion;
+        private System.Windows.Forms.Button btnTelefono;
+        private System.Windows.Forms.Button btnMicro;
+        private System.Windows.Forms.PictureBox btnMenu;
+        private System.Windows.Forms.PictureBox imgLogoBig;
+        private System.Windows.Forms.Timer timerOcultarMenu;
+        private System.Windows.Forms.Timer timerMostrarMenu;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel8;
@@ -621,17 +706,10 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnMicro;
+        private System.Windows.Forms.FlowLayoutPanel panelContenedor;
     }
 }
 

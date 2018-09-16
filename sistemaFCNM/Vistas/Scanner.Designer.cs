@@ -38,12 +38,12 @@
             this.lblMouse = new System.Windows.Forms.Label();
             this.txtCpu = new System.Windows.Forms.TextBox();
             this.txtScanner = new System.Windows.Forms.TextBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.barraMenu = new System.Windows.Forms.ToolStrip();
+            this.btnPrimero = new System.Windows.Forms.ToolStripButton();
+            this.btnAnterior = new System.Windows.Forms.ToolStripButton();
+            this.btnSiguiente = new System.Windows.Forms.ToolStripButton();
+            this.btnUltimo = new System.Windows.Forms.ToolStripButton();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,6 +72,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -91,10 +94,11 @@
             this.txtRadio = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnDetalleRadio = new System.Windows.Forms.Button();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1.SuspendLayout();
+            this.btnModificar = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
+            this.barraMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuSuperior.SuspendLayout();
@@ -104,7 +108,7 @@
             // 
             this.lblCpu.AutoSize = true;
             this.lblCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpu.Location = new System.Drawing.Point(42, 95);
+            this.lblCpu.Location = new System.Drawing.Point(24, 131);
             this.lblCpu.Name = "lblCpu";
             this.lblCpu.Size = new System.Drawing.Size(93, 13);
             this.lblCpu.TabIndex = 18;
@@ -112,17 +116,17 @@
             // 
             // txtPantalla
             // 
-            this.txtPantalla.Location = new System.Drawing.Point(200, 119);
+            this.txtPantalla.Location = new System.Drawing.Point(187, 152);
             this.txtPantalla.Multiline = true;
             this.txtPantalla.Name = "txtPantalla";
-            this.txtPantalla.Size = new System.Drawing.Size(342, 19);
+            this.txtPantalla.Size = new System.Drawing.Size(198, 19);
             this.txtPantalla.TabIndex = 4;
             // 
             // lblPantalla
             // 
             this.lblPantalla.AutoSize = true;
             this.lblPantalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPantalla.Location = new System.Drawing.Point(43, 121);
+            this.lblPantalla.Location = new System.Drawing.Point(25, 157);
             this.lblPantalla.Name = "lblPantalla";
             this.lblPantalla.Size = new System.Drawing.Size(114, 13);
             this.lblPantalla.TabIndex = 6;
@@ -130,17 +134,17 @@
             // 
             // txtTeclado
             // 
-            this.txtTeclado.Location = new System.Drawing.Point(200, 145);
+            this.txtTeclado.Location = new System.Drawing.Point(187, 178);
             this.txtTeclado.Multiline = true;
             this.txtTeclado.Name = "txtTeclado";
-            this.txtTeclado.Size = new System.Drawing.Size(342, 19);
+            this.txtTeclado.Size = new System.Drawing.Size(198, 19);
             this.txtTeclado.TabIndex = 5;
             // 
             // lblTeclado
             // 
             this.lblTeclado.AutoSize = true;
             this.lblTeclado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTeclado.Location = new System.Drawing.Point(42, 148);
+            this.lblTeclado.Location = new System.Drawing.Point(24, 184);
             this.lblTeclado.Name = "lblTeclado";
             this.lblTeclado.Size = new System.Drawing.Size(114, 13);
             this.lblTeclado.TabIndex = 8;
@@ -148,17 +152,17 @@
             // 
             // txtMouse
             // 
-            this.txtMouse.Location = new System.Drawing.Point(200, 169);
+            this.txtMouse.Location = new System.Drawing.Point(187, 202);
             this.txtMouse.Multiline = true;
             this.txtMouse.Name = "txtMouse";
-            this.txtMouse.Size = new System.Drawing.Size(342, 19);
+            this.txtMouse.Size = new System.Drawing.Size(198, 19);
             this.txtMouse.TabIndex = 6;
             // 
             // lblMouse
             // 
             this.lblMouse.AutoSize = true;
             this.lblMouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMouse.Location = new System.Drawing.Point(43, 175);
+            this.lblMouse.Location = new System.Drawing.Point(25, 211);
             this.lblMouse.Name = "lblMouse";
             this.lblMouse.Size = new System.Drawing.Size(105, 13);
             this.lblMouse.TabIndex = 10;
@@ -166,10 +170,10 @@
             // 
             // txtCpu
             // 
-            this.txtCpu.Location = new System.Drawing.Point(200, 92);
+            this.txtCpu.Location = new System.Drawing.Point(187, 125);
             this.txtCpu.Multiline = true;
             this.txtCpu.Name = "txtCpu";
-            this.txtCpu.Size = new System.Drawing.Size(342, 19);
+            this.txtCpu.Size = new System.Drawing.Size(198, 19);
             this.txtCpu.TabIndex = 1;
             // 
             // txtScanner
@@ -179,81 +183,84 @@
             this.txtScanner.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtScanner.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtScanner.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScanner.Location = new System.Drawing.Point(234, 34);
+            this.txtScanner.Location = new System.Drawing.Point(216, 70);
             this.txtScanner.MaxLength = 100;
             this.txtScanner.Multiline = true;
             this.txtScanner.Name = "txtScanner";
-            this.txtScanner.Size = new System.Drawing.Size(952, 41);
+            this.txtScanner.Size = new System.Drawing.Size(652, 41);
             this.txtScanner.TabIndex = 0;
             this.txtScanner.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtScanner.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtScanner_KeyDown);
             // 
-            // toolStrip1
+            // barraMenu
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton5});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(24, 764);
-            this.toolStrip1.TabIndex = 10;
-            this.toolStrip1.Text = "toolStrip1";
+            this.barraMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnPrimero,
+            this.btnAnterior,
+            this.btnSiguiente,
+            this.btnUltimo,
+            this.btnNuevo,
+            this.btnModificar,
+            this.btnGuardar,
+            this.btnEliminar,
+            this.btnBuscar});
+            this.barraMenu.Location = new System.Drawing.Point(0, 24);
+            this.barraMenu.Name = "barraMenu";
+            this.barraMenu.Size = new System.Drawing.Size(1086, 25);
+            this.barraMenu.TabIndex = 10;
+            this.barraMenu.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // btnPrimero
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(21, 20);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.btnPrimero.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrimero.Image = ((System.Drawing.Image)(resources.GetObject("btnPrimero.Image")));
+            this.btnPrimero.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPrimero.Name = "btnPrimero";
+            this.btnPrimero.Size = new System.Drawing.Size(23, 22);
+            this.btnPrimero.Text = "Primer Registro";
             // 
-            // toolStripButton2
+            // btnAnterior
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(21, 20);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.btnAnterior.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAnterior.Image = ((System.Drawing.Image)(resources.GetObject("btnAnterior.Image")));
+            this.btnAnterior.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(23, 22);
+            this.btnAnterior.Text = "Anterior Registro";
             // 
-            // toolStripButton3
+            // btnSiguiente
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(21, 20);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.btnSiguiente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.Image")));
+            this.btnSiguiente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(23, 22);
+            this.btnSiguiente.Text = "Siguiente Registro";
             // 
-            // toolStripButton4
+            // btnUltimo
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(21, 20);
-            this.toolStripButton4.Text = "toolStripButton4";
+            this.btnUltimo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUltimo.Image = ((System.Drawing.Image)(resources.GetObject("btnUltimo.Image")));
+            this.btnUltimo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUltimo.Name = "btnUltimo";
+            this.btnUltimo.Size = new System.Drawing.Size(23, 22);
+            this.btnUltimo.Text = "Ultimo Registro";
             // 
-            // toolStripButton5
+            // btnNuevo
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(21, 20);
-            this.toolStripButton5.Text = "toolStripButton5";
+            this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(23, 22);
+            this.btnNuevo.Text = "Nuevo ";
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(700, 169);
+            this.label1.Location = new System.Drawing.Point(522, 215);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 13);
             this.label1.TabIndex = 25;
@@ -264,7 +271,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(700, 145);
+            this.label2.Location = new System.Drawing.Point(522, 191);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 13);
             this.label2.TabIndex = 24;
@@ -275,7 +282,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(700, 119);
+            this.label3.Location = new System.Drawing.Point(522, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 13);
             this.label3.TabIndex = 23;
@@ -286,7 +293,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(700, 93);
+            this.label4.Location = new System.Drawing.Point(522, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 13);
             this.label4.TabIndex = 26;
@@ -298,27 +305,31 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridInventario.BackgroundColor = System.Drawing.Color.Azure;
+            this.gridInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridInventario.Location = new System.Drawing.Point(37, 255);
+            this.gridInventario.Location = new System.Drawing.Point(90, 309);
             this.gridInventario.Name = "gridInventario";
-            this.gridInventario.Size = new System.Drawing.Size(1201, 338);
+            this.gridInventario.Size = new System.Drawing.Size(932, 338);
             this.gridInventario.TabIndex = 27;
             // 
             // txtOficina
             // 
             this.txtOficina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOficina.Location = new System.Drawing.Point(1202, 34);
+            this.txtOficina.BackColor = System.Drawing.Color.LightCyan;
+            this.txtOficina.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOficina.Location = new System.Drawing.Point(1014, 109);
             this.txtOficina.Multiline = true;
             this.txtOficina.Name = "txtOficina";
-            this.txtOficina.Size = new System.Drawing.Size(59, 50);
+            this.txtOficina.Size = new System.Drawing.Size(60, 27);
             this.txtOficina.TabIndex = 28;
+            this.txtOficina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1149, 41);
+            this.label5.Location = new System.Drawing.Point(1027, 93);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 29;
@@ -329,7 +340,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1174, 104);
+            this.label6.Location = new System.Drawing.Point(1015, 197);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 31;
@@ -338,20 +349,22 @@
             // txtAyudante
             // 
             this.txtAyudante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAyudante.Location = new System.Drawing.Point(1240, 101);
+            this.txtAyudante.BackColor = System.Drawing.Color.LightCyan;
+            this.txtAyudante.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAyudante.Location = new System.Drawing.Point(985, 210);
             this.txtAyudante.Multiline = true;
             this.txtAyudante.Name = "txtAyudante";
-            this.txtAyudante.Size = new System.Drawing.Size(133, 29);
+            this.txtAyudante.Size = new System.Drawing.Size(89, 25);
             this.txtAyudante.TabIndex = 30;
+            this.txtAyudante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnDetalleCpu
             // 
-            this.btnDetalleCpu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDetalleCpu.FlatAppearance.BorderSize = 0;
             this.btnDetalleCpu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleCpu.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleCpu.Location = new System.Drawing.Point(571, 89);
+            this.btnDetalleCpu.Location = new System.Drawing.Point(391, 123);
             this.btnDetalleCpu.Name = "btnDetalleCpu";
             this.btnDetalleCpu.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleCpu.TabIndex = 32;
@@ -361,12 +374,11 @@
             // 
             // btnDetallePantalla
             // 
-            this.btnDetallePantalla.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDetallePantalla.FlatAppearance.BorderSize = 0;
             this.btnDetallePantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetallePantalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetallePantalla.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetallePantalla.Location = new System.Drawing.Point(571, 111);
+            this.btnDetallePantalla.Location = new System.Drawing.Point(391, 145);
             this.btnDetallePantalla.Name = "btnDetallePantalla";
             this.btnDetallePantalla.Size = new System.Drawing.Size(79, 23);
             this.btnDetallePantalla.TabIndex = 33;
@@ -375,12 +387,11 @@
             // 
             // btnDetalleTeclado
             // 
-            this.btnDetalleTeclado.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDetalleTeclado.FlatAppearance.BorderSize = 0;
             this.btnDetalleTeclado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleTeclado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleTeclado.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleTeclado.Location = new System.Drawing.Point(571, 137);
+            this.btnDetalleTeclado.Location = new System.Drawing.Point(391, 171);
             this.btnDetalleTeclado.Name = "btnDetalleTeclado";
             this.btnDetalleTeclado.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleTeclado.TabIndex = 34;
@@ -390,12 +401,11 @@
             // 
             // btnDetalleMouse
             // 
-            this.btnDetalleMouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDetalleMouse.FlatAppearance.BorderSize = 0;
             this.btnDetalleMouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleMouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleMouse.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleMouse.Location = new System.Drawing.Point(571, 162);
+            this.btnDetalleMouse.Location = new System.Drawing.Point(391, 196);
             this.btnDetalleMouse.Name = "btnDetalleMouse";
             this.btnDetalleMouse.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleMouse.TabIndex = 35;
@@ -409,7 +419,7 @@
             this.btnDetalleParlante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleParlante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleParlante.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleParlante.Location = new System.Drawing.Point(1134, 166);
+            this.btnDetalleParlante.Location = new System.Drawing.Point(873, 211);
             this.btnDetalleParlante.Name = "btnDetalleParlante";
             this.btnDetalleParlante.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleParlante.TabIndex = 43;
@@ -423,7 +433,7 @@
             this.btnDetalleImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleImpresora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleImpresora.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleImpresora.Location = new System.Drawing.Point(1134, 142);
+            this.btnDetalleImpresora.Location = new System.Drawing.Point(873, 187);
             this.btnDetalleImpresora.Name = "btnDetalleImpresora";
             this.btnDetalleImpresora.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleImpresora.TabIndex = 42;
@@ -437,7 +447,7 @@
             this.btnDetalleProyector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleProyector.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleProyector.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleProyector.Location = new System.Drawing.Point(1134, 116);
+            this.btnDetalleProyector.Location = new System.Drawing.Point(873, 161);
             this.btnDetalleProyector.Name = "btnDetalleProyector";
             this.btnDetalleProyector.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleProyector.TabIndex = 41;
@@ -451,7 +461,7 @@
             this.btnDetalleRegulador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleRegulador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleRegulador.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleRegulador.Location = new System.Drawing.Point(1134, 88);
+            this.btnDetalleRegulador.Location = new System.Drawing.Point(873, 133);
             this.btnDetalleRegulador.Name = "btnDetalleRegulador";
             this.btnDetalleRegulador.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleRegulador.TabIndex = 40;
@@ -461,37 +471,37 @@
             // txtRegulador
             // 
             this.txtRegulador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRegulador.Location = new System.Drawing.Point(845, 89);
+            this.txtRegulador.Location = new System.Drawing.Point(654, 133);
             this.txtRegulador.Multiline = true;
             this.txtRegulador.Name = "txtRegulador";
-            this.txtRegulador.Size = new System.Drawing.Size(267, 19);
+            this.txtRegulador.Size = new System.Drawing.Size(198, 19);
             this.txtRegulador.TabIndex = 36;
             // 
             // txtParlante
             // 
             this.txtParlante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtParlante.Location = new System.Drawing.Point(845, 166);
+            this.txtParlante.Location = new System.Drawing.Point(654, 210);
             this.txtParlante.Multiline = true;
             this.txtParlante.Name = "txtParlante";
-            this.txtParlante.Size = new System.Drawing.Size(267, 19);
+            this.txtParlante.Size = new System.Drawing.Size(198, 19);
             this.txtParlante.TabIndex = 39;
             // 
             // txtImpresora
             // 
             this.txtImpresora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImpresora.Location = new System.Drawing.Point(845, 142);
+            this.txtImpresora.Location = new System.Drawing.Point(654, 186);
             this.txtImpresora.Multiline = true;
             this.txtImpresora.Name = "txtImpresora";
-            this.txtImpresora.Size = new System.Drawing.Size(267, 19);
+            this.txtImpresora.Size = new System.Drawing.Size(198, 19);
             this.txtImpresora.TabIndex = 38;
             // 
             // txtProyector
             // 
             this.txtProyector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProyector.Location = new System.Drawing.Point(845, 116);
+            this.txtProyector.Location = new System.Drawing.Point(654, 160);
             this.txtProyector.Multiline = true;
             this.txtProyector.Name = "txtProyector";
-            this.txtProyector.Size = new System.Drawing.Size(267, 19);
+            this.txtProyector.Size = new System.Drawing.Size(198, 19);
             this.txtProyector.TabIndex = 37;
             // 
             // btnMaximizar
@@ -503,8 +513,8 @@
             this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Image = global::sistemaFCNM.Properties.Resources.Icono_Maximizar;
-            this.btnMaximizar.Location = new System.Drawing.Point(1318, 0);
+            this.btnMaximizar.Image = global::sistemaFCNM.Properties.Resources.IconoMaximizar;
+            this.btnMaximizar.Location = new System.Drawing.Point(1018, 0);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(36, 24);
             this.btnMaximizar.TabIndex = 47;
@@ -520,8 +530,8 @@
             this.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurar.Image = global::sistemaFCNM.Properties.Resources.Icono_Restaurar;
-            this.btnRestaurar.Location = new System.Drawing.Point(1318, 0);
+            this.btnRestaurar.Image = global::sistemaFCNM.Properties.Resources.IconoRestaurar;
+            this.btnRestaurar.Location = new System.Drawing.Point(1018, 0);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(36, 24);
             this.btnRestaurar.TabIndex = 46;
@@ -538,8 +548,8 @@
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = global::sistemaFCNM.Properties.Resources.Icono_Minimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(1286, 0);
+            this.btnMinimizar.Image = global::sistemaFCNM.Properties.Resources.IconoMinimizar;
+            this.btnMinimizar.Location = new System.Drawing.Point(986, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(36, 24);
             this.btnMinimizar.TabIndex = 45;
@@ -555,8 +565,8 @@
             this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = global::sistemaFCNM.Properties.Resources.Icono_cerrar_FN;
-            this.btnCerrar.Location = new System.Drawing.Point(1349, 0);
+            this.btnCerrar.Image = global::sistemaFCNM.Properties.Resources.IconocerrarFN;
+            this.btnCerrar.Location = new System.Drawing.Point(1049, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(36, 24);
             this.btnCerrar.TabIndex = 44;
@@ -566,7 +576,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::sistemaFCNM.Properties.Resources.pantalla;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -590,198 +600,6 @@
             this.guardarMenuItem.Size = new System.Drawing.Size(143, 22);
             this.guardarMenuItem.Text = "Guardar";
             // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ayudaToolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.acercaDeToolStripMenuItem});
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // ayudaToolStripMenuItem1
-            // 
-            this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
-            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.ayudaToolStripMenuItem1.Text = "Ayuda";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
-            // 
-            // acercaDeToolStripMenuItem
-            // 
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.acercaDeToolStripMenuItem.Text = "Acerca de..";
-            // 
-            // menuSuperior
-            // 
-            this.menuSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
-            this.menuSuperior.Location = new System.Drawing.Point(0, 0);
-            this.menuSuperior.Name = "menuSuperior";
-            this.menuSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuSuperior.Size = new System.Drawing.Size(1386, 24);
-            this.menuSuperior.TabIndex = 9;
-            this.menuSuperior.Text = "menuStrip1";
-            this.menuSuperior.Paint += new System.Windows.Forms.PaintEventHandler(this.menuStrip1_Paint);
-            // 
-            // txtMicrofono
-            // 
-            this.txtMicrofono.Location = new System.Drawing.Point(200, 194);
-            this.txtMicrofono.Multiline = true;
-            this.txtMicrofono.Name = "txtMicrofono";
-            this.txtMicrofono.Size = new System.Drawing.Size(342, 19);
-            this.txtMicrofono.TabIndex = 48;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(42, 198);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 13);
-            this.label7.TabIndex = 49;
-            this.label7.Text = "Inventario Microfono";
-            // 
-            // btnDetalleMicro
-            // 
-            this.btnDetalleMicro.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDetalleMicro.FlatAppearance.BorderSize = 0;
-            this.btnDetalleMicro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalleMicro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleMicro.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleMicro.Location = new System.Drawing.Point(571, 191);
-            this.btnDetalleMicro.Name = "btnDetalleMicro";
-            this.btnDetalleMicro.Size = new System.Drawing.Size(79, 23);
-            this.btnDetalleMicro.TabIndex = 50;
-            this.btnDetalleMicro.Text = "Mas Detalles";
-            this.btnDetalleMicro.UseVisualStyleBackColor = true;
-            // 
-            // btnDetalleTelef
-            // 
-            this.btnDetalleTelef.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleTelef.FlatAppearance.BorderSize = 0;
-            this.btnDetalleTelef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalleTelef.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleTelef.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleTelef.Location = new System.Drawing.Point(1134, 188);
-            this.btnDetalleTelef.Name = "btnDetalleTelef";
-            this.btnDetalleTelef.Size = new System.Drawing.Size(79, 23);
-            this.btnDetalleTelef.TabIndex = 53;
-            this.btnDetalleTelef.Text = "Mas Detalles";
-            this.btnDetalleTelef.UseVisualStyleBackColor = true;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelefono.Location = new System.Drawing.Point(845, 191);
-            this.txtTelefono.Multiline = true;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(267, 19);
-            this.txtTelefono.TabIndex = 52;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(700, 194);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 13);
-            this.label8.TabIndex = 51;
-            this.label8.Text = "Inventario Telefono";
-            // 
-            // btnDetallePproyeccion
-            // 
-            this.btnDetallePproyeccion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDetallePproyeccion.FlatAppearance.BorderSize = 0;
-            this.btnDetallePproyeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetallePproyeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetallePproyeccion.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetallePproyeccion.Location = new System.Drawing.Point(571, 216);
-            this.btnDetallePproyeccion.Name = "btnDetallePproyeccion";
-            this.btnDetallePproyeccion.Size = new System.Drawing.Size(79, 23);
-            this.btnDetallePproyeccion.TabIndex = 56;
-            this.btnDetallePproyeccion.Text = "Mas Detalles";
-            this.btnDetallePproyeccion.UseVisualStyleBackColor = true;
-            // 
-            // txtProyeccion
-            // 
-            this.txtProyeccion.Location = new System.Drawing.Point(200, 219);
-            this.txtProyeccion.Multiline = true;
-            this.txtProyeccion.Name = "txtProyeccion";
-            this.txtProyeccion.Size = new System.Drawing.Size(342, 19);
-            this.txtProyeccion.TabIndex = 54;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(42, 222);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(147, 13);
-            this.label9.TabIndex = 55;
-            this.label9.Text = "Inventario P. Proyeccion";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1191, 154);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 13);
-            this.label10.TabIndex = 58;
-            this.label10.Text = "Fecha";
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFecha.Location = new System.Drawing.Point(1240, 148);
-            this.txtFecha.Multiline = true;
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(133, 29);
-            this.txtFecha.TabIndex = 57;
-            // 
-            // txtRadio
-            // 
-            this.txtRadio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRadio.Location = new System.Drawing.Point(845, 214);
-            this.txtRadio.Multiline = true;
-            this.txtRadio.Name = "txtRadio";
-            this.txtRadio.Size = new System.Drawing.Size(267, 19);
-            this.txtRadio.TabIndex = 60;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(700, 217);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 13);
-            this.label11.TabIndex = 59;
-            this.label11.Text = "Inventario Radio";
-            // 
-            // btnDetalleRadio
-            // 
-            this.btnDetalleRadio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalleRadio.FlatAppearance.BorderSize = 0;
-            this.btnDetalleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalleRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleRadio.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleRadio.Location = new System.Drawing.Point(1134, 210);
-            this.btnDetalleRadio.Name = "btnDetalleRadio";
-            this.btnDetalleRadio.Size = new System.Drawing.Size(79, 23);
-            this.btnDetalleRadio.TabIndex = 61;
-            this.btnDetalleRadio.Text = "Mas Detalles";
-            this.btnDetalleRadio.UseVisualStyleBackColor = true;
-            // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
@@ -799,13 +617,243 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ayudaToolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.acercaDeToolStripMenuItem});
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // ayudaToolStripMenuItem1
+            // 
+            this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
+            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.ayudaToolStripMenuItem1.Text = "Ayuda";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(129, 6);
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de..";
+            // 
+            // menuSuperior
+            // 
+            this.menuSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.ayudaToolStripMenuItem});
+            this.menuSuperior.Location = new System.Drawing.Point(0, 0);
+            this.menuSuperior.Name = "menuSuperior";
+            this.menuSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuSuperior.Size = new System.Drawing.Size(1086, 24);
+            this.menuSuperior.TabIndex = 9;
+            this.menuSuperior.Text = "menuStrip1";
+            this.menuSuperior.Paint += new System.Windows.Forms.PaintEventHandler(this.menuStrip1_Paint);
+            // 
+            // txtMicrofono
+            // 
+            this.txtMicrofono.Location = new System.Drawing.Point(187, 227);
+            this.txtMicrofono.Multiline = true;
+            this.txtMicrofono.Name = "txtMicrofono";
+            this.txtMicrofono.Size = new System.Drawing.Size(198, 19);
+            this.txtMicrofono.TabIndex = 48;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(24, 234);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 13);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "Inventario Microfono";
+            // 
+            // btnDetalleMicro
+            // 
+            this.btnDetalleMicro.FlatAppearance.BorderSize = 0;
+            this.btnDetalleMicro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalleMicro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalleMicro.ForeColor = System.Drawing.Color.Blue;
+            this.btnDetalleMicro.Location = new System.Drawing.Point(391, 225);
+            this.btnDetalleMicro.Name = "btnDetalleMicro";
+            this.btnDetalleMicro.Size = new System.Drawing.Size(79, 23);
+            this.btnDetalleMicro.TabIndex = 50;
+            this.btnDetalleMicro.Text = "Mas Detalles";
+            this.btnDetalleMicro.UseVisualStyleBackColor = true;
+            // 
+            // btnDetalleTelef
+            // 
+            this.btnDetalleTelef.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleTelef.FlatAppearance.BorderSize = 0;
+            this.btnDetalleTelef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalleTelef.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalleTelef.ForeColor = System.Drawing.Color.Blue;
+            this.btnDetalleTelef.Location = new System.Drawing.Point(873, 233);
+            this.btnDetalleTelef.Name = "btnDetalleTelef";
+            this.btnDetalleTelef.Size = new System.Drawing.Size(79, 23);
+            this.btnDetalleTelef.TabIndex = 53;
+            this.btnDetalleTelef.Text = "Mas Detalles";
+            this.btnDetalleTelef.UseVisualStyleBackColor = true;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTelefono.Location = new System.Drawing.Point(654, 235);
+            this.txtTelefono.Multiline = true;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(198, 19);
+            this.txtTelefono.TabIndex = 52;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(522, 240);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 13);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "Inventario Telefono";
+            // 
+            // btnDetallePproyeccion
+            // 
+            this.btnDetallePproyeccion.FlatAppearance.BorderSize = 0;
+            this.btnDetallePproyeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetallePproyeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetallePproyeccion.ForeColor = System.Drawing.Color.Blue;
+            this.btnDetallePproyeccion.Location = new System.Drawing.Point(391, 250);
+            this.btnDetallePproyeccion.Name = "btnDetallePproyeccion";
+            this.btnDetallePproyeccion.Size = new System.Drawing.Size(79, 23);
+            this.btnDetallePproyeccion.TabIndex = 56;
+            this.btnDetallePproyeccion.Text = "Mas Detalles";
+            this.btnDetallePproyeccion.UseVisualStyleBackColor = true;
+            // 
+            // txtProyeccion
+            // 
+            this.txtProyeccion.Location = new System.Drawing.Point(187, 252);
+            this.txtProyeccion.Multiline = true;
+            this.txtProyeccion.Name = "txtProyeccion";
+            this.txtProyeccion.Size = new System.Drawing.Size(198, 19);
+            this.txtProyeccion.TabIndex = 54;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(24, 258);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(147, 13);
+            this.label9.TabIndex = 55;
+            this.label9.Text = "Inventario P. Proyeccion";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1032, 146);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 13);
+            this.label10.TabIndex = 58;
+            this.label10.Text = "Fecha";
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFecha.BackColor = System.Drawing.Color.LightCyan;
+            this.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFecha.Location = new System.Drawing.Point(985, 162);
+            this.txtFecha.Multiline = true;
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(89, 25);
+            this.txtFecha.TabIndex = 57;
+            this.txtFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtRadio
+            // 
+            this.txtRadio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRadio.Location = new System.Drawing.Point(654, 258);
+            this.txtRadio.Multiline = true;
+            this.txtRadio.Name = "txtRadio";
+            this.txtRadio.Size = new System.Drawing.Size(198, 19);
+            this.txtRadio.TabIndex = 60;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(522, 263);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(101, 13);
+            this.label11.TabIndex = 59;
+            this.label11.Text = "Inventario Radio";
+            // 
+            // btnDetalleRadio
+            // 
+            this.btnDetalleRadio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleRadio.FlatAppearance.BorderSize = 0;
+            this.btnDetalleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalleRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalleRadio.ForeColor = System.Drawing.Color.Blue;
+            this.btnDetalleRadio.Location = new System.Drawing.Point(873, 255);
+            this.btnDetalleRadio.Name = "btnDetalleRadio";
+            this.btnDetalleRadio.Size = new System.Drawing.Size(79, 23);
+            this.btnDetalleRadio.TabIndex = 61;
+            this.btnDetalleRadio.Text = "Mas Detalles";
+            this.btnDetalleRadio.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(23, 22);
+            this.btnModificar.Text = "Modificar";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(23, 22);
+            this.btnGuardar.Text = "Guardar";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(23, 22);
+            this.btnEliminar.Text = "Eliminar";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(23, 22);
+            this.btnBuscar.Text = "Buscar";
+            // 
             // Scanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.BackColor = System.Drawing.Color.Moccasin;
+            this.ClientSize = new System.Drawing.Size(1086, 688);
+            this.ControlBox = false;
             this.Controls.Add(this.btnDetalleRadio);
             this.Controls.Add(this.txtRadio);
             this.Controls.Add(this.label11);
@@ -845,7 +893,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.barraMenu);
             this.Controls.Add(this.txtScanner);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtCpu);
@@ -866,8 +914,8 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scanner";
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.barraMenu.ResumeLayout(false);
+            this.barraMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuSuperior.ResumeLayout(false);
@@ -889,12 +937,12 @@
         private System.Windows.Forms.TextBox txtCpu;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtScanner;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStrip barraMenu;
+        private System.Windows.Forms.ToolStripButton btnPrimero;
+        private System.Windows.Forms.ToolStripButton btnAnterior;
+        private System.Windows.Forms.ToolStripButton btnSiguiente;
+        private System.Windows.Forms.ToolStripButton btnUltimo;
+        private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -944,5 +992,9 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton btnModificar;
+        private System.Windows.Forms.ToolStripButton btnGuardar;
+        private System.Windows.Forms.ToolStripButton btnEliminar;
+        private System.Windows.Forms.ToolStripButton btnBuscar;
     }
 }
