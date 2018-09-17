@@ -63,6 +63,10 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl = new System.Windows.Forms.Label();
             this.gridPantalla = new System.Windows.Forms.DataGridView();
+            this.txtEquipo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnPrevius = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPantalla)).BeginInit();
@@ -71,7 +75,7 @@
             // txtEstado
             // 
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.Location = new System.Drawing.Point(670, 219);
+            this.txtEstado.Location = new System.Drawing.Point(668, 241);
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(172, 31);
@@ -81,7 +85,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(550, 223);
+            this.label10.Location = new System.Drawing.Point(548, 245);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 74;
@@ -90,7 +94,7 @@
             // txtSerie
             // 
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSerie.Location = new System.Drawing.Point(670, 176);
+            this.txtSerie.Location = new System.Drawing.Point(668, 198);
             this.txtSerie.Multiline = true;
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(172, 31);
@@ -100,7 +104,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(550, 180);
+            this.label11.Location = new System.Drawing.Point(548, 202);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 13);
             this.label11.TabIndex = 72;
@@ -109,7 +113,7 @@
             // txtModelo
             // 
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModelo.Location = new System.Drawing.Point(670, 137);
+            this.txtModelo.Location = new System.Drawing.Point(668, 159);
             this.txtModelo.Multiline = true;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(172, 31);
@@ -119,7 +123,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(550, 141);
+            this.label12.Location = new System.Drawing.Point(548, 163);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 70;
@@ -128,7 +132,7 @@
             // txtMarca
             // 
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMarca.Location = new System.Drawing.Point(670, 94);
+            this.txtMarca.Location = new System.Drawing.Point(668, 116);
             this.txtMarca.Multiline = true;
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(172, 31);
@@ -138,7 +142,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(550, 98);
+            this.label13.Location = new System.Drawing.Point(548, 120);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 68;
@@ -147,7 +151,7 @@
             // txtPulgadas
             // 
             this.txtPulgadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPulgadas.Location = new System.Drawing.Point(299, 136);
+            this.txtPulgadas.Location = new System.Drawing.Point(297, 158);
             this.txtPulgadas.Multiline = true;
             this.txtPulgadas.Name = "txtPulgadas";
             this.txtPulgadas.Size = new System.Drawing.Size(56, 32);
@@ -158,7 +162,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(179, 139);
+            this.label7.Location = new System.Drawing.Point(177, 161);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 60;
@@ -168,7 +172,7 @@
             // txtPantalla
             // 
             this.txtPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPantalla.Location = new System.Drawing.Point(299, 94);
+            this.txtPantalla.Location = new System.Drawing.Point(297, 116);
             this.txtPantalla.Multiline = true;
             this.txtPantalla.Name = "txtPantalla";
             this.txtPantalla.Size = new System.Drawing.Size(172, 31);
@@ -179,7 +183,7 @@
             this.lblCpu.AutoSize = true;
             this.lblCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCpu.Location = new System.Drawing.Point(179, 100);
+            this.lblCpu.Location = new System.Drawing.Point(177, 122);
             this.lblCpu.Name = "lblCpu";
             this.lblCpu.Size = new System.Drawing.Size(114, 13);
             this.lblCpu.TabIndex = 48;
@@ -376,16 +380,64 @@
             this.gridPantalla.BackgroundColor = System.Drawing.SystemColors.Control;
             this.gridPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridPantalla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPantalla.Location = new System.Drawing.Point(61, 279);
+            this.gridPantalla.Location = new System.Drawing.Point(59, 301);
             this.gridPantalla.Name = "gridPantalla";
             this.gridPantalla.Size = new System.Drawing.Size(926, 89);
             this.gridPantalla.TabIndex = 108;
+            // 
+            // txtEquipo
+            // 
+            this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEquipo.Enabled = false;
+            this.txtEquipo.Location = new System.Drawing.Point(15, 82);
+            this.txtEquipo.Multiline = true;
+            this.txtEquipo.Name = "txtEquipo";
+            this.txtEquipo.Size = new System.Drawing.Size(132, 19);
+            this.txtEquipo.TabIndex = 112;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 113;
+            this.label1.Text = "#Equipo";
+            // 
+            // btnPrevius
+            // 
+            this.btnPrevius.FlatAppearance.BorderSize = 0;
+            this.btnPrevius.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevius.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevius.Image")));
+            this.btnPrevius.Location = new System.Drawing.Point(794, 504);
+            this.btnPrevius.Name = "btnPrevius";
+            this.btnPrevius.Size = new System.Drawing.Size(36, 34);
+            this.btnPrevius.TabIndex = 115;
+            this.btnPrevius.UseVisualStyleBackColor = true;
+            this.btnPrevius.Click += new System.EventHandler(this.btnPrevius_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.Location = new System.Drawing.Point(863, 504);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(36, 34);
+            this.btnNext.TabIndex = 114;
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // Pantalla
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1064, 646);
+            this.Controls.Add(this.btnPrevius);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.txtEquipo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.gridPantalla);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.barraMenu);
@@ -457,5 +509,9 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.DataGridView gridPantalla;
+        private System.Windows.Forms.TextBox txtEquipo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPrevius;
+        private System.Windows.Forms.Button btnNext;
     }
 }

@@ -20,7 +20,7 @@ namespace sistemaFCNM.Vistas
 
         private void Teclado_Load(object sender, EventArgs e)
         {
-            if (FuncionesUtiles.masdetallesActiva)
+            if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
@@ -53,6 +53,16 @@ namespace sistemaFCNM.Vistas
             txtModelo.Text = gridTeclado.Rows[0].Cells["modelo"].Value.ToString();
             txtSerie.Text = gridTeclado.Rows[0].Cells["serie"].Value.ToString();
 
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Mouse(), mainPrincipal.contenedor);
+        }
+
+        private void btnPrevius_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Pantalla(), mainPrincipal.contenedor);
         }
     }
 }

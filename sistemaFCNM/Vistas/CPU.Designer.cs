@@ -79,6 +79,10 @@
             this.txtCpu = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
             this.gridCpu = new System.Windows.Forms.DataGridView();
+            this.txtEquipo = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrevius = new System.Windows.Forms.Button();
             this.menuSuperior.SuspendLayout();
             this.barraMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).BeginInit();
@@ -110,24 +114,24 @@
             // guardarMenuItem
             // 
             this.guardarMenuItem.Name = "guardarMenuItem";
-            this.guardarMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarMenuItem.Size = new System.Drawing.Size(143, 22);
             this.guardarMenuItem.Text = "Guardar";
             // 
             // guardarCsvMenuItem
             // 
             this.guardarCsvMenuItem.Name = "guardarCsvMenuItem";
-            this.guardarCsvMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarCsvMenuItem.Size = new System.Drawing.Size(143, 22);
             this.guardarCsvMenuItem.Text = "Cerrar Sesion";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // ayudaToolStripMenuItem
@@ -178,6 +182,7 @@
             // btnPrimero
             // 
             this.btnPrimero.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrimero.Enabled = false;
             this.btnPrimero.Image = ((System.Drawing.Image)(resources.GetObject("btnPrimero.Image")));
             this.btnPrimero.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrimero.Name = "btnPrimero";
@@ -187,6 +192,7 @@
             // btnAnterior
             // 
             this.btnAnterior.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAnterior.Enabled = false;
             this.btnAnterior.Image = ((System.Drawing.Image)(resources.GetObject("btnAnterior.Image")));
             this.btnAnterior.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAnterior.Name = "btnAnterior";
@@ -196,6 +202,7 @@
             // btnSiguiente
             // 
             this.btnSiguiente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSiguiente.Enabled = false;
             this.btnSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.Image")));
             this.btnSiguiente.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSiguiente.Name = "btnSiguiente";
@@ -205,6 +212,7 @@
             // btnUltimo
             // 
             this.btnUltimo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUltimo.Enabled = false;
             this.btnUltimo.Image = ((System.Drawing.Image)(resources.GetObject("btnUltimo.Image")));
             this.btnUltimo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUltimo.Name = "btnUltimo";
@@ -556,10 +564,55 @@
             this.gridCpu.BackgroundColor = System.Drawing.SystemColors.Control;
             this.gridCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridCpu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridCpu.Location = new System.Drawing.Point(56, 529);
+            this.gridCpu.Location = new System.Drawing.Point(35, 492);
             this.gridCpu.Name = "gridCpu";
             this.gridCpu.Size = new System.Drawing.Size(926, 89);
             this.gridCpu.TabIndex = 107;
+            this.gridCpu.Visible = false;
+            // 
+            // txtEquipo
+            // 
+            this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEquipo.Enabled = false;
+            this.txtEquipo.Location = new System.Drawing.Point(15, 109);
+            this.txtEquipo.Multiline = true;
+            this.txtEquipo.Name = "txtEquipo";
+            this.txtEquipo.Size = new System.Drawing.Size(132, 19);
+            this.txtEquipo.TabIndex = 108;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(12, 93);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 109;
+            this.label8.Text = "#Equipo";
+            // 
+            // btnNext
+            // 
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.Location = new System.Drawing.Point(863, 504);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(36, 34);
+            this.btnNext.TabIndex = 110;
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnPrevius
+            // 
+            this.btnPrevius.Enabled = false;
+            this.btnPrevius.FlatAppearance.BorderSize = 0;
+            this.btnPrevius.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevius.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevius.Image")));
+            this.btnPrevius.Location = new System.Drawing.Point(794, 504);
+            this.btnPrevius.Name = "btnPrevius";
+            this.btnPrevius.Size = new System.Drawing.Size(36, 34);
+            this.btnPrevius.TabIndex = 111;
+            this.btnPrevius.UseVisualStyleBackColor = true;
             // 
             // CPU
             // 
@@ -569,6 +622,10 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1080, 685);
             this.ControlBox = false;
+            this.Controls.Add(this.btnPrevius);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.txtEquipo);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.gridCpu);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.txtEstado);
@@ -671,5 +728,9 @@
         private System.Windows.Forms.TextBox txtCpu;
         private System.Windows.Forms.Label lblCpu;
         private System.Windows.Forms.DataGridView gridCpu;
+        private System.Windows.Forms.TextBox txtEquipo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnPrevius;
     }
 }

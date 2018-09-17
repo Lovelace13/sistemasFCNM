@@ -114,6 +114,8 @@ namespace sistemaFCNM
 
         private void btnScanner_Click(object sender, EventArgs e)
         {
+            apagarBotones();
+            FuncionesUtiles.siguienteActiva = true;
             FuncionesUtiles.abrirVentanas(new Scanner(),contenedor);
         }
 
@@ -177,6 +179,20 @@ namespace sistemaFCNM
             FuncionesUtiles.abrirVentanas(new Radio(), contenedor);
         }
 
-
+        private void apagarBotones()
+        {
+            btnCpu.Enabled = false;
+            btnPantalla.Enabled = false;
+            btnTeclado.Enabled = false;
+            btnMouse.Enabled = false;
+            btnParlante.Enabled = false;
+            btnImpresora.Enabled = false;
+            btnProyector.Enabled = false;
+            btnRegulador.Enabled = false;
+            btnMicro.Enabled = false;
+            btnTelefono.Enabled = false;
+            btnPproyeccion.Enabled = false;
+            btnRadio.Enabled = false;
+        }
     }
 }

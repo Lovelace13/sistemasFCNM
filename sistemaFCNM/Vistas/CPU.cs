@@ -20,7 +20,7 @@ namespace sistemaFCNM.Vistas
 
         private void CPU_Load(object sender, EventArgs e)
         {
-            if (FuncionesUtiles.masdetallesActiva)
+            if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
@@ -47,6 +47,7 @@ namespace sistemaFCNM.Vistas
             {
                 return;
             }
+            txtEquipo.Text = gridCpu.Rows[0].Cells["id_Equipo"].Value.ToString();
             txtCpu.Text= gridCpu.Rows[0].Cells["inventario_cpu"].Value.ToString();
             txtNombre.Text = gridCpu.Rows[0].Cells["nombre_PC"].Value.ToString();
             txtTipo.Text = gridCpu.Rows[0].Cells["tipo_PC"].Value.ToString();
@@ -61,6 +62,11 @@ namespace sistemaFCNM.Vistas
             txtModelo.Text = gridCpu.Rows[0].Cells["modelo"].Value.ToString();
             txtSerie.Text = gridCpu.Rows[0].Cells["serie"].Value.ToString();
             txtLote.Text = gridCpu.Rows[0].Cells["adicional_lote"].Value.ToString();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Pantalla(), mainPrincipal.contenedor);
         }
     }
 }

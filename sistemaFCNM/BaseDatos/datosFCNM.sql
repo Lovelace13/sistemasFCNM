@@ -107,4 +107,10 @@ select*from Equipo;
 select*from Inventario;
 --p.Inventario_Pantalla like '1036%'  busqueda por cierto numero
 
-select*from CPU; 
+select MAX(ID) as ID from CPU;
+ 
+select e.id_Equipo, reg.Inventario_Telefono,reg.extension,reg.tipo,car.estado,car.marca,
+                car.modelo,car.serie from  Equipo e, Telefono reg,
+                Caracteristicas car where 
+                e.Telefono = reg.ID and car.id_caracteristica = reg.caracteristicas and e.id_Equipo = '20180270';
+

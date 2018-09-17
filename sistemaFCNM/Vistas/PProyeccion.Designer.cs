@@ -63,6 +63,8 @@
             this.txtPproyeccion = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
             this.grid = new System.Windows.Forms.DataGridView();
+            this.btnPrevius = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -381,11 +383,37 @@
             this.grid.Size = new System.Drawing.Size(926, 89);
             this.grid.TabIndex = 136;
             // 
+            // btnPrevius
+            // 
+            this.btnPrevius.FlatAppearance.BorderSize = 0;
+            this.btnPrevius.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevius.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevius.Image")));
+            this.btnPrevius.Location = new System.Drawing.Point(794, 504);
+            this.btnPrevius.Name = "btnPrevius";
+            this.btnPrevius.Size = new System.Drawing.Size(36, 34);
+            this.btnPrevius.TabIndex = 157;
+            this.btnPrevius.UseVisualStyleBackColor = true;
+            this.btnPrevius.Click += new System.EventHandler(this.btnPrevius_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.Location = new System.Drawing.Point(863, 504);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(36, 34);
+            this.btnNext.TabIndex = 156;
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // PProyeccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 607);
+            this.Controls.Add(this.btnPrevius);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDimensiones);
@@ -455,5 +483,7 @@
         private System.Windows.Forms.TextBox txtPproyeccion;
         private System.Windows.Forms.Label lblCpu;
         private System.Windows.Forms.DataGridView grid;
+        private System.Windows.Forms.Button btnPrevius;
+        private System.Windows.Forms.Button btnNext;
     }
 }

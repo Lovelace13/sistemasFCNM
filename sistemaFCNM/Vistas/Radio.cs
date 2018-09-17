@@ -20,7 +20,7 @@ namespace sistemaFCNM.Vistas
 
         private void Radio_Load(object sender, EventArgs e)
         {
-            if (FuncionesUtiles.masdetallesActiva)
+            if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
@@ -54,6 +54,18 @@ namespace sistemaFCNM.Vistas
             txtModelo.Text = grid.Rows[0].Cells["modelo"].Value.ToString();
             txtSerie.Text = grid.Rows[0].Cells["serie"].Value.ToString();
 
+        }
+
+        private void btnPrevius_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new PProyeccion(), mainPrincipal.contenedor);
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            
+            Datos.llenarGrid("select MAX(ID) as ID from CPU;", grid);
+            MessageBox.Show(grid.Rows[0].Cells["ID"].Value.ToString());
         }
     }
 }

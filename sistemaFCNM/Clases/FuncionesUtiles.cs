@@ -10,6 +10,8 @@ namespace sistemaFCNM.Clases
     class FuncionesUtiles
     {
         public static bool masdetallesActiva = false;
+        public static bool siguienteActiva = false;
+        public static bool anteriorActiva = false;
         public static string INVENTARIO_EQUIPO;
 
         public static void abrirVentanas(Form ventana, FlowLayoutPanel panelContenedor)

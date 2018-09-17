@@ -20,7 +20,7 @@ namespace sistemaFCNM.Vistas
 
         private void Microfono_Load(object sender, EventArgs e)
         {
-            if (FuncionesUtiles.masdetallesActiva)
+            if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
@@ -54,6 +54,16 @@ namespace sistemaFCNM.Vistas
             txtModelo.Text = grid.Rows[0].Cells["modelo"].Value.ToString();
             txtSerie.Text = grid.Rows[0].Cells["serie"].Value.ToString();
 
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Telefono(), mainPrincipal.contenedor);
+        }
+
+        private void btnPrevius_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Proyector(), mainPrincipal.contenedor);
         }
     }
 }

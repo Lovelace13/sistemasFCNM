@@ -20,7 +20,7 @@ namespace sistemaFCNM.Vistas
 
         private void Telefono_Load(object sender, EventArgs e)
         {
-            if (FuncionesUtiles.masdetallesActiva)
+            if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
@@ -31,10 +31,10 @@ namespace sistemaFCNM.Vistas
             }
 
 
-            string sql = "select e.id_Equipo, reg.Inventario_Regulador,reg.tipo,car.estado,car.marca," +
-                "car.modelo,car.serie from  Equipo e, Regulador reg," +
+            string sql = "select e.id_Equipo, reg.Inventario_Telefono,reg.extension,reg.tipo,car.estado,car.marca," +
+                "car.modelo,car.serie from  Equipo e, Telefono reg," +
                 "Caracteristicas car where " +
-                "e.Regulador = reg.ID and car.id_caracteristica = reg.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
+                " e.Telefono = reg.ID and car.id_caracteristica = reg.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
 
             Datos.llenarGrid(sql, grid);
             llenarCampos();
@@ -47,14 +47,24 @@ namespace sistemaFCNM.Vistas
             {
                 return;
             }
-            txtTelefono.Text = grid.Rows[0].Cells["Inventario_Regulador"].Value.ToString();
+            txtTelefono.Text = grid.Rows[0].Cells["Inventario_Telefono"].Value.ToString();
             txtTipo.Text = grid.Rows[0].Cells["tipo"].Value.ToString();
-            txtExtension.Text = grid.Rows[0].Cells["tipo"].Value.ToString();
+            txtExtension.Text = grid.Rows[0].Cells["extension"].Value.ToString();
             txtEstado.Text = grid.Rows[0].Cells["estado"].Value.ToString();
             txtMarca.Text = grid.Rows[0].Cells["marca"].Value.ToString();
             txtModelo.Text = grid.Rows[0].Cells["modelo"].Value.ToString();
             txtSerie.Text = grid.Rows[0].Cells["serie"].Value.ToString();
 
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new PProyeccion(), mainPrincipal.contenedor);
+        }
+
+        private void btnPrevius_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Microfono(), mainPrincipal.contenedor);
         }
     }
 }

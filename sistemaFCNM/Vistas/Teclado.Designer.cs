@@ -61,6 +61,8 @@
             this.txtTeclado = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
             this.gridTeclado = new System.Windows.Forms.DataGridView();
+            this.btnPrevius = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTeclado)).BeginInit();
@@ -90,7 +92,7 @@
             this.btnBuscar});
             this.barraMenu.Location = new System.Drawing.Point(0, 24);
             this.barraMenu.Name = "barraMenu";
-            this.barraMenu.Size = new System.Drawing.Size(1032, 25);
+            this.barraMenu.Size = new System.Drawing.Size(1048, 25);
             this.barraMenu.TabIndex = 104;
             this.barraMenu.Text = "toolStrip1";
             // 
@@ -183,7 +185,7 @@
             this.menuSuperior.Location = new System.Drawing.Point(0, 0);
             this.menuSuperior.Name = "menuSuperior";
             this.menuSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuSuperior.Size = new System.Drawing.Size(1032, 24);
+            this.menuSuperior.Size = new System.Drawing.Size(1048, 24);
             this.menuSuperior.TabIndex = 103;
             this.menuSuperior.Text = "menuStrip1";
             // 
@@ -355,14 +357,40 @@
             this.gridTeclado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTeclado.Location = new System.Drawing.Point(49, 294);
             this.gridTeclado.Name = "gridTeclado";
-            this.gridTeclado.Size = new System.Drawing.Size(926, 89);
+            this.gridTeclado.Size = new System.Drawing.Size(942, 128);
             this.gridTeclado.TabIndex = 109;
+            // 
+            // btnPrevius
+            // 
+            this.btnPrevius.FlatAppearance.BorderSize = 0;
+            this.btnPrevius.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevius.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevius.Image")));
+            this.btnPrevius.Location = new System.Drawing.Point(794, 504);
+            this.btnPrevius.Name = "btnPrevius";
+            this.btnPrevius.Size = new System.Drawing.Size(36, 34);
+            this.btnPrevius.TabIndex = 117;
+            this.btnPrevius.UseVisualStyleBackColor = true;
+            this.btnPrevius.Click += new System.EventHandler(this.btnPrevius_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.Location = new System.Drawing.Point(863, 504);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(36, 34);
+            this.btnNext.TabIndex = 116;
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // Teclado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 568);
+            this.ClientSize = new System.Drawing.Size(1048, 607);
+            this.Controls.Add(this.btnPrevius);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.gridTeclado);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.barraMenu);
@@ -428,5 +456,7 @@
         private System.Windows.Forms.TextBox txtTeclado;
         private System.Windows.Forms.Label lblCpu;
         private System.Windows.Forms.DataGridView gridTeclado;
+        private System.Windows.Forms.Button btnPrevius;
+        private System.Windows.Forms.Button btnNext;
     }
 }

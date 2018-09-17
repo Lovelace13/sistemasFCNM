@@ -50,6 +50,7 @@ namespace sistemaFCNM
             {
                 return;
             }
+            txtEquipo.Text = gridInventario.Rows[0].Cells["id_Equipo"].Value.ToString();
             txtCpu.Text = gridInventario.Rows[0].Cells["inventario_cpu"].Value.ToString();
             txtAyudante.Text = gridInventario.Rows[0].Cells["Ayudante"].Value.ToString();
             txtFecha.Text = gridInventario.Rows[0].Cells["fecha_inventario"].Value.ToString();
@@ -189,5 +190,27 @@ namespace sistemaFCNM
             }
             FuncionesUtiles.abrirVentanas(new Radio(), mainPrincipal.contenedor);
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
