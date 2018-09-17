@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sistemaFCNM.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace sistemaFCNM.Vistas
         public CPU()
         {
             InitializeComponent();
+        }
+
+        private void CPU_Load(object sender, EventArgs e)
+        {
+            if (FuncionesUtiles.masdetallesActiva)
+            {
+                string sql = "";
+                FuncionesUtiles.masdetallesActiva = false;
+            }
+            else
+            {
+                string s = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+                MessageBox.Show("Ingrese Id Equipo");
+            }
         }
     }
 }

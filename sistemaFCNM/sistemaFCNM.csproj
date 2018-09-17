@@ -58,6 +58,7 @@
     <Reference Include="LibParametros">
       <HintPath>Librerias\LibParametros.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -74,7 +75,7 @@
     <Compile Include="Clases\MouseMovimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clases\VariablesUtiles.cs" />
+    <Compile Include="Clases\FuncionesUtiles.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -169,6 +170,33 @@
     <EmbeddedResource Include="Vistas\CPU.resx">
       <DependentUpon>CPU.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Impresora.resx">
+      <DependentUpon>Impresora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Microfono.resx">
+      <DependentUpon>Microfono.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Mouse.resx">
+      <DependentUpon>Mouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Pantalla.resx">
+      <DependentUpon>Pantalla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Parlante.resx">
+      <DependentUpon>Parlante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\PProyeccion.resx">
+      <DependentUpon>PProyeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Proyector.resx">
+      <DependentUpon>Proyector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Radio.resx">
+      <DependentUpon>Radio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Regulador.resx">
+      <DependentUpon>Regulador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Scanner.resx">
       <DependentUpon>Scanner.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +207,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Teclado.resx">
+      <DependentUpon>Teclado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Telefono.resx">
+      <DependentUpon>Telefono.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />

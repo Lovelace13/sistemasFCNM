@@ -14,12 +14,16 @@ namespace sistemaFCNM
 {
     public partial class mainPrincipal : Form
     {
+        public static FlowLayoutPanel contenedor;
+
+
 
         public mainPrincipal()
         {
             InitializeComponent();
+            contenedor = this.panelContenedor;
         }
-
+       
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -60,61 +64,11 @@ namespace sistemaFCNM
             }
         }
 
-
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-
-        private void btnScanner_Click(object sender, EventArgs e)
-        {
-            abrirVentanas(new Scanner());
-        }
-
-        private void btnCpu_Click(object sender, EventArgs e)
-        {
-            abrirVentanas(new CPU());
-            
-
-
-        }
-
-        private void btnPantalla_Click(object sender, EventArgs e)
-        {
-            abrirVentanas(new Pantalla());
-        }
-
-        private void btnTeclado_Click(object sender, EventArgs e)
-        {
-            abrirVentanas(new Teclado());
-        }
-
-        private void btnMouse_Click(object sender, EventArgs e)
-        {
-            abrirVentanas(new Mouse());
-        }
-
-        private void btnRegulador_Click(object sender, EventArgs e)
-        {
-            abrirVentanas(new Regulador());
-        }
-
-        private void btnProyector_Click(object sender, EventArgs e)
-        {
-            abrirVentanas(new Proyector());
-        }
-
-        private void btnImpresora_Click(object sender, EventArgs e)
-        {
-            abrirVentanas(new Impresora());
-        }
-
-        private void btnParlante_Click(object sender, EventArgs e)
-        {
-            abrirVentanas(new Parlante());
-        }
-
+               
         private void timerOcultarMenu_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Width <= 60)
@@ -158,39 +112,71 @@ namespace sistemaFCNM
 
         }
 
-        private void abrirVentanas(Form ventana)
+        private void btnScanner_Click(object sender, EventArgs e)
         {
-            if (this.panelContenedor.Controls.Count > 0)
-            {
-                this.panelContenedor.Controls.RemoveAt(0);
+            FuncionesUtiles.abrirVentanas(new Scanner(),contenedor);
+        }
 
-            }
-            ventana.TopLevel = false;
-            ventana.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            ventana.Dock = DockStyle.Fill;
-            this.panelContenedor.Controls.Add(ventana);
-            this.panelContenedor.Tag = ventana;
-            ventana.Show();
+        private void btnCpu_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new CPU(), contenedor);
+        }
+
+        private void btnPantalla_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Pantalla(), contenedor);
+        }
+
+        private void btnTeclado_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Teclado(), contenedor);
+        }
+
+        private void btnMouse_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Mouse(), contenedor);
+        }
+
+        private void btnRegulador_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Regulador(), contenedor);
+        }
+
+        private void btnProyector_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Proyector(), contenedor);
+        }
+
+        private void btnImpresora_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Impresora(), contenedor);
+        }
+
+        private void btnParlante_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.abrirVentanas(new Parlante(), contenedor);
         }
 
         private void btnMicro_Click(object sender, EventArgs e)
         {
-            abrirVentanas(new Microfono());
+            FuncionesUtiles.abrirVentanas(new Microfono(), contenedor);
         }
 
         private void btnTelefono_Click(object sender, EventArgs e)
         {
-            abrirVentanas(new Telefono());
+            FuncionesUtiles.abrirVentanas(new Telefono(), contenedor);
         }
 
         private void btnPproyeccion_Click(object sender, EventArgs e)
         {
-            abrirVentanas(new PProyeccion());
+            FuncionesUtiles.abrirVentanas(new PProyeccion(), contenedor);
         }
 
         private void btnRadio_Click(object sender, EventArgs e)
         {
-            abrirVentanas(new Radio());
+            FuncionesUtiles.abrirVentanas(new Radio(), contenedor);
         }
+
+
     }
 }

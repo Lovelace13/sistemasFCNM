@@ -95,8 +95,16 @@ select e.id_Equipo, p.Inventario_Pantalla,p.pulgadas,car.estado,car.marca,car.mo
 from  Equipo e, Pantalla p, Mouse m, Teclado t, CPU ,Caracteristicas car
 where e.Inventario_CPU= CPU.ID and e.Pantalla=p.ID and e.Mouse=m.ID and e.Teclado=t.ID and car.id_caracteristica = p.caracteristicas  and p.Inventario_Pantalla like '1036%';
 
-select*from Equipo;
+select e.id_Equipo,c.inventario_cpu,c.nombre_PC,c.tipo_PC,c.perfil,
+c.tag,c.code,c.procesador,c.memoria,c.disco,c.adicional_lote,car.estado,car.marca,car.modelo,car.serie
+from  Equipo e,CPU c ,Caracteristicas car
+where e.Inventario_CPU= c.ID and car.id_caracteristica = c.Caracteristicas ;
 
+select e.id_Equipo,o.nombre_oficina,inv.Ayudante,inv.fecha_inventario,c.inventario_cpu,p.Inventario_Pantalla,t.Inventario_teclado,m.Inventario_Mouse,par.Inventario_Parlante,reg.Inventario_Regulador,im.Inventario_Impresora,pro.Inventario_Proyector,mi.Inventario_Microfono,tel.Inventario_Telefono,pp.Inventario_PantallaProyeccion,ra.Inventario_Radio from  Equipo e,Oficina o, Pantalla p, Mouse m, Teclado t, CPU c,Parlante par, Regulador reg, Impresora im,Proyector pro,Microfonos mi, Telefono tel,Pantalla_Proyeccion pp,Radio ra,Inventario inv where e.Inventario_CPU= c.ID and e.Oficina = o.ID and e.id_Equipo = inv.Equipo and e.Pantalla = p.ID and e.Teclado = t.ID and e.Mouse = m.ID and e.Parlante = par.ID and e.Regulador = reg.ID and e.Impresora = im.ID and e.Telefono = tel.ID and e.PantallaProyeccion = pp.ID and e.Radios = ra.ID and e.Microfono = mi.ID and e.Proyector = pro.ID and e.id_Equipo = '';
+
+
+select*from Equipo;
+select*from Inventario;
 --p.Inventario_Pantalla like '1036%'  busqueda por cierto numero
 
-select*from Equipo; 
+select*from CPU; 
