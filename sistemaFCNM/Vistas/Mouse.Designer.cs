@@ -58,10 +58,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtPantalla = new System.Windows.Forms.TextBox();
+            this.txtMouse = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
+            this.gridMouse = new System.Windows.Forms.DataGridView();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMouse)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl
@@ -322,14 +324,14 @@
             this.label13.TabIndex = 83;
             this.label13.Text = "Marca";
             // 
-            // txtPantalla
+            // txtMouse
             // 
-            this.txtPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPantalla.Location = new System.Drawing.Point(265, 92);
-            this.txtPantalla.Multiline = true;
-            this.txtPantalla.Name = "txtPantalla";
-            this.txtPantalla.Size = new System.Drawing.Size(172, 31);
-            this.txtPantalla.TabIndex = 78;
+            this.txtMouse.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMouse.Location = new System.Drawing.Point(265, 92);
+            this.txtMouse.Multiline = true;
+            this.txtMouse.Name = "txtMouse";
+            this.txtMouse.Size = new System.Drawing.Size(172, 31);
+            this.txtMouse.TabIndex = 78;
             // 
             // lblCpu
             // 
@@ -343,12 +345,26 @@
             this.lblCpu.Text = "Inventario Mouse";
             this.lblCpu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // gridMouse
+            // 
+            this.gridMouse.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridMouse.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.gridMouse.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridMouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridMouse.Location = new System.Drawing.Point(66, 286);
+            this.gridMouse.Name = "gridMouse";
+            this.gridMouse.Size = new System.Drawing.Size(926, 89);
+            this.gridMouse.TabIndex = 110;
+            // 
             // Mouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1048, 607);
+            this.Controls.Add(this.gridMouse);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.barraMenu);
             this.Controls.Add(this.menuSuperior);
@@ -360,7 +376,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtPantalla);
+            this.Controls.Add(this.txtMouse);
             this.Controls.Add(this.lblCpu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -368,10 +384,12 @@
             this.Name = "Mouse";
             this.Text = "Mouse";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Mouse_Load);
             this.barraMenu.ResumeLayout(false);
             this.barraMenu.PerformLayout();
             this.menuSuperior.ResumeLayout(false);
             this.menuSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMouse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,7 +426,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtPantalla;
+        private System.Windows.Forms.TextBox txtMouse;
         private System.Windows.Forms.Label lblCpu;
+        private System.Windows.Forms.DataGridView gridMouse;
     }
 }

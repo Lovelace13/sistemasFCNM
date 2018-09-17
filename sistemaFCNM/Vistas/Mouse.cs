@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sistemaFCNM.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,43 @@ namespace sistemaFCNM.Vistas
         public Mouse()
         {
             InitializeComponent();
+        }
+
+        private void Mouse_Load(object sender, EventArgs e)
+        {
+            if (FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = false;
+            }
+            else
+            {
+                FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+
+            }
+
+
+            string sql = "select e.id_Equipo, m.Inventario_Mouse,car.estado,car.marca,"
+                +"car.modelo,car.serie from  Equipo e, Mouse m, CPU ,"
+                +"Caracteristicas car where e.Inventario_CPU = CPU.ID and"
+                +" e.Mouse = m.ID and car.id_caracteristica = m.caracteristicas and e.id_Equipo = '"+FuncionesUtiles.INVENTARIO_EQUIPO+"'; ";
+
+            Datos.llenarGrid(sql, gridMouse);
+            llenarCampos();
+        }
+
+        private void llenarCampos()
+        {
+
+            if (gridMouse.Rows.Count == 1)
+            {
+                return;
+            }
+            txtMouse.Text = gridMouse.Rows[0].Cells["Inventario_Mouse"].Value.ToString();
+            txtEstado.Text = gridMouse.Rows[0].Cells["estado"].Value.ToString();
+            txtMarca.Text = gridMouse.Rows[0].Cells["marca"].Value.ToString();
+            txtModelo.Text = gridMouse.Rows[0].Cells["modelo"].Value.ToString();
+            txtSerie.Text = gridMouse.Rows[0].Cells["serie"].Value.ToString();
+
         }
     }
 }

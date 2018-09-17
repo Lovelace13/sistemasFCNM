@@ -49,38 +49,39 @@
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.lbl = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtSerie = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtModelo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtLote = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtDisco = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtMemoria = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtProcesador = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtTag = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPerfil = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCpu = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
+            this.gridCpu = new System.Windows.Forms.DataGridView();
             this.menuSuperior.SuspendLayout();
             this.barraMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).BeginInit();
             this.SuspendLayout();
             // 
             // menuSuperior
@@ -255,14 +256,6 @@
             this.btnBuscar.Size = new System.Drawing.Size(23, 22);
             this.btnBuscar.Text = "Buscar";
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(614, 642);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(371, 31);
-            this.textBox8.TabIndex = 68;
-            // 
             // lbl
             // 
             this.lbl.AutoSize = true;
@@ -273,14 +266,14 @@
             this.lbl.Text = "----------------------------------Caracteristicas--------------------------------" +
     "----------";
             // 
-            // textBox10
+            // txtEstado
             // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Location = new System.Drawing.Point(668, 212);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(172, 31);
-            this.textBox10.TabIndex = 104;
+            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstado.Location = new System.Drawing.Point(668, 212);
+            this.txtEstado.Multiline = true;
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(172, 31);
+            this.txtEstado.TabIndex = 104;
             // 
             // label10
             // 
@@ -292,14 +285,14 @@
             this.label10.TabIndex = 105;
             this.label10.Text = "Estado";
             // 
-            // textBox11
+            // txtSerie
             // 
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox11.Location = new System.Drawing.Point(668, 169);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(172, 31);
-            this.textBox11.TabIndex = 102;
+            this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSerie.Location = new System.Drawing.Point(668, 169);
+            this.txtSerie.Multiline = true;
+            this.txtSerie.Name = "txtSerie";
+            this.txtSerie.Size = new System.Drawing.Size(172, 31);
+            this.txtSerie.TabIndex = 102;
             // 
             // label11
             // 
@@ -311,14 +304,14 @@
             this.label11.TabIndex = 103;
             this.label11.Text = "Serie";
             // 
-            // textBox12
+            // txtModelo
             // 
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox12.Location = new System.Drawing.Point(668, 130);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(172, 31);
-            this.textBox12.TabIndex = 100;
+            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModelo.Location = new System.Drawing.Point(668, 130);
+            this.txtModelo.Multiline = true;
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(172, 31);
+            this.txtModelo.TabIndex = 100;
             // 
             // label12
             // 
@@ -330,14 +323,14 @@
             this.label12.TabIndex = 101;
             this.label12.Text = "Modelo";
             // 
-            // textBox13
+            // txtMarca
             // 
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox13.Location = new System.Drawing.Point(668, 87);
-            this.textBox13.Multiline = true;
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(172, 31);
-            this.textBox13.TabIndex = 98;
+            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarca.Location = new System.Drawing.Point(668, 87);
+            this.txtMarca.Multiline = true;
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(172, 31);
+            this.txtMarca.TabIndex = 98;
             // 
             // label13
             // 
@@ -349,14 +342,14 @@
             this.label13.TabIndex = 99;
             this.label13.Text = "Marca";
             // 
-            // textBox14
+            // txtLote
             // 
-            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox14.Location = new System.Drawing.Point(297, 301);
-            this.textBox14.Multiline = true;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(172, 31);
-            this.textBox14.TabIndex = 96;
+            this.txtLote.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLote.Location = new System.Drawing.Point(297, 301);
+            this.txtLote.Multiline = true;
+            this.txtLote.Name = "txtLote";
+            this.txtLote.Size = new System.Drawing.Size(172, 31);
+            this.txtLote.TabIndex = 96;
             // 
             // label14
             // 
@@ -370,14 +363,14 @@
             this.label14.Text = "Adicional / Lote";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox15
+            // txtDisco
             // 
-            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox15.Location = new System.Drawing.Point(442, 402);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(56, 32);
-            this.textBox15.TabIndex = 94;
+            this.txtDisco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDisco.Location = new System.Drawing.Point(442, 402);
+            this.txtDisco.Multiline = true;
+            this.txtDisco.Name = "txtDisco";
+            this.txtDisco.Size = new System.Drawing.Size(56, 32);
+            this.txtDisco.TabIndex = 94;
             // 
             // label15
             // 
@@ -389,14 +382,14 @@
             this.label15.TabIndex = 95;
             this.label15.Text = "Disco";
             // 
-            // textBox6
+            // txtMemoria
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Location = new System.Drawing.Point(612, 408);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(56, 32);
-            this.textBox6.TabIndex = 92;
+            this.txtMemoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMemoria.Location = new System.Drawing.Point(612, 408);
+            this.txtMemoria.Multiline = true;
+            this.txtMemoria.Name = "txtMemoria";
+            this.txtMemoria.Size = new System.Drawing.Size(56, 32);
+            this.txtMemoria.TabIndex = 92;
             // 
             // label6
             // 
@@ -408,14 +401,14 @@
             this.label6.TabIndex = 93;
             this.label6.Text = "Memoria";
             // 
-            // textBox7
+            // txtProcesador
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Location = new System.Drawing.Point(297, 402);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(56, 32);
-            this.textBox7.TabIndex = 90;
+            this.txtProcesador.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProcesador.Location = new System.Drawing.Point(297, 402);
+            this.txtProcesador.Multiline = true;
+            this.txtProcesador.Name = "txtProcesador";
+            this.txtProcesador.Size = new System.Drawing.Size(56, 32);
+            this.txtProcesador.TabIndex = 90;
             // 
             // label7
             // 
@@ -429,14 +422,14 @@
             this.label7.Text = "Procesador";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox4
+            // txtCode
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(297, 350);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(371, 31);
-            this.textBox4.TabIndex = 88;
+            this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode.Location = new System.Drawing.Point(297, 350);
+            this.txtCode.Multiline = true;
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(371, 31);
+            this.txtCode.TabIndex = 88;
             // 
             // label4
             // 
@@ -450,14 +443,14 @@
             this.label4.Text = "Code";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox5
+            // txtTag
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(297, 255);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(172, 31);
-            this.textBox5.TabIndex = 86;
+            this.txtTag.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTag.Location = new System.Drawing.Point(297, 255);
+            this.txtTag.Multiline = true;
+            this.txtTag.Name = "txtTag";
+            this.txtTag.Size = new System.Drawing.Size(172, 31);
+            this.txtTag.TabIndex = 86;
             // 
             // label5
             // 
@@ -471,14 +464,14 @@
             this.label5.Text = "Tag";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // txtPerfil
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(297, 212);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(138, 31);
-            this.textBox2.TabIndex = 84;
+            this.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPerfil.Location = new System.Drawing.Point(297, 212);
+            this.txtPerfil.Multiline = true;
+            this.txtPerfil.Name = "txtPerfil";
+            this.txtPerfil.Size = new System.Drawing.Size(138, 31);
+            this.txtPerfil.TabIndex = 84;
             // 
             // label2
             // 
@@ -492,14 +485,14 @@
             this.label2.Text = "Perfil";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // txtTipo
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(297, 173);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(138, 31);
-            this.textBox3.TabIndex = 82;
+            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTipo.Location = new System.Drawing.Point(297, 173);
+            this.txtTipo.Multiline = true;
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(138, 31);
+            this.txtTipo.TabIndex = 82;
             // 
             // label3
             // 
@@ -513,14 +506,14 @@
             this.label3.Text = "Tipo PC";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(297, 131);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 31);
-            this.textBox1.TabIndex = 80;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Location = new System.Drawing.Point(297, 131);
+            this.txtNombre.Multiline = true;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(172, 31);
+            this.txtNombre.TabIndex = 80;
             // 
             // label1
             // 
@@ -555,6 +548,19 @@
             this.lblCpu.Text = "*Inventario CPU";
             this.lblCpu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // gridCpu
+            // 
+            this.gridCpu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridCpu.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.gridCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridCpu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridCpu.Location = new System.Drawing.Point(56, 529);
+            this.gridCpu.Name = "gridCpu";
+            this.gridCpu.Size = new System.Drawing.Size(926, 89);
+            this.gridCpu.TabIndex = 107;
+            // 
             // CPU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -563,37 +569,37 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1080, 685);
             this.ControlBox = false;
+            this.Controls.Add(this.gridCpu);
             this.Controls.Add(this.lbl);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.txtSerie);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.txtModelo);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.txtLote);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.txtDisco);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtMemoria);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtProcesador);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtCode);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtTag);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPerfil);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCpu);
             this.Controls.Add(this.lblCpu);
             this.Controls.Add(this.barraMenu);
-            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.menuSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -608,6 +614,7 @@
             this.menuSuperior.PerformLayout();
             this.barraMenu.ResumeLayout(false);
             this.barraMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -634,35 +641,35 @@
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnBuscar;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label lbl;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtLote;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtDisco;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtMemoria;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtProcesador;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtTag;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPerfil;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCpu;
         private System.Windows.Forms.Label lblCpu;
+        private System.Windows.Forms.DataGridView gridCpu;
     }
 }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PProyeccion));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDimensiones = new System.Windows.Forms.TextBox();
             this.lbl = new System.Windows.Forms.Label();
             this.barraMenu = new System.Windows.Forms.ToolStrip();
             this.btnPrimero = new System.Windows.Forms.ToolStripButton();
@@ -60,10 +60,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtPantalla = new System.Windows.Forms.TextBox();
+            this.txtPproyeccion = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
+            this.grid = new System.Windows.Forms.DataGridView();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,14 +80,14 @@
             this.label1.Text = "Dimensiones";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // txtDimensiones
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(235, 133);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(105, 31);
-            this.textBox1.TabIndex = 134;
+            this.txtDimensiones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDimensiones.Location = new System.Drawing.Point(235, 133);
+            this.txtDimensiones.Multiline = true;
+            this.txtDimensiones.Name = "txtDimensiones";
+            this.txtDimensiones.Size = new System.Drawing.Size(105, 31);
+            this.txtDimensiones.TabIndex = 134;
             // 
             // lbl
             // 
@@ -345,14 +347,14 @@
             this.label13.TabIndex = 124;
             this.label13.Text = "Marca";
             // 
-            // txtPantalla
+            // txtPproyeccion
             // 
-            this.txtPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPantalla.Location = new System.Drawing.Point(235, 90);
-            this.txtPantalla.Multiline = true;
-            this.txtPantalla.Name = "txtPantalla";
-            this.txtPantalla.Size = new System.Drawing.Size(172, 31);
-            this.txtPantalla.TabIndex = 121;
+            this.txtPproyeccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPproyeccion.Location = new System.Drawing.Point(235, 90);
+            this.txtPproyeccion.Multiline = true;
+            this.txtPproyeccion.Name = "txtPproyeccion";
+            this.txtPproyeccion.Size = new System.Drawing.Size(172, 31);
+            this.txtPproyeccion.TabIndex = 121;
             // 
             // lblCpu
             // 
@@ -366,13 +368,27 @@
             this.lblCpu.Text = "Inventario Pantalla Proyeccion";
             this.lblCpu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // grid
+            // 
+            this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid.Location = new System.Drawing.Point(32, 292);
+            this.grid.Name = "grid";
+            this.grid.Size = new System.Drawing.Size(926, 89);
+            this.grid.TabIndex = 136;
+            // 
             // PProyeccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 607);
+            this.Controls.Add(this.grid);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDimensiones);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.barraMenu);
             this.Controls.Add(this.menuSuperior);
@@ -384,7 +400,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtPantalla);
+            this.Controls.Add(this.txtPproyeccion);
             this.Controls.Add(this.lblCpu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -392,10 +408,12 @@
             this.Name = "PProyeccion";
             this.Text = "PProyeccion";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.PProyeccion_Load);
             this.barraMenu.ResumeLayout(false);
             this.barraMenu.PerformLayout();
             this.menuSuperior.ResumeLayout(false);
             this.menuSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,7 +422,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDimensiones;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.ToolStrip barraMenu;
         private System.Windows.Forms.ToolStripButton btnPrimero;
@@ -434,7 +452,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtPantalla;
+        private System.Windows.Forms.TextBox txtPproyeccion;
         private System.Windows.Forms.Label lblCpu;
+        private System.Windows.Forms.DataGridView grid;
     }
 }

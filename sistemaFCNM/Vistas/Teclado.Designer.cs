@@ -58,10 +58,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtPantalla = new System.Windows.Forms.TextBox();
+            this.txtTeclado = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
+            this.gridTeclado = new System.Windows.Forms.DataGridView();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTeclado)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl
@@ -322,14 +324,14 @@
             this.label13.TabIndex = 96;
             this.label13.Text = "Marca";
             // 
-            // txtPantalla
+            // txtTeclado
             // 
-            this.txtPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPantalla.Location = new System.Drawing.Point(251, 103);
-            this.txtPantalla.Multiline = true;
-            this.txtPantalla.Name = "txtPantalla";
-            this.txtPantalla.Size = new System.Drawing.Size(172, 31);
-            this.txtPantalla.TabIndex = 93;
+            this.txtTeclado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTeclado.Location = new System.Drawing.Point(251, 103);
+            this.txtTeclado.Multiline = true;
+            this.txtTeclado.Name = "txtTeclado";
+            this.txtTeclado.Size = new System.Drawing.Size(172, 31);
+            this.txtTeclado.TabIndex = 93;
             // 
             // lblCpu
             // 
@@ -343,11 +345,25 @@
             this.lblCpu.Text = "Inventario Teclado";
             this.lblCpu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // gridTeclado
+            // 
+            this.gridTeclado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridTeclado.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.gridTeclado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridTeclado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridTeclado.Location = new System.Drawing.Point(49, 294);
+            this.gridTeclado.Name = "gridTeclado";
+            this.gridTeclado.Size = new System.Drawing.Size(926, 89);
+            this.gridTeclado.TabIndex = 109;
+            // 
             // Teclado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 568);
+            this.Controls.Add(this.gridTeclado);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.barraMenu);
             this.Controls.Add(this.menuSuperior);
@@ -359,7 +375,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtPantalla);
+            this.Controls.Add(this.txtTeclado);
             this.Controls.Add(this.lblCpu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -367,10 +383,12 @@
             this.Name = "Teclado";
             this.Text = "Teclado";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Teclado_Load);
             this.barraMenu.ResumeLayout(false);
             this.barraMenu.PerformLayout();
             this.menuSuperior.ResumeLayout(false);
             this.menuSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTeclado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,7 +425,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtPantalla;
+        private System.Windows.Forms.TextBox txtTeclado;
         private System.Windows.Forms.Label lblCpu;
+        private System.Windows.Forms.DataGridView gridTeclado;
     }
 }

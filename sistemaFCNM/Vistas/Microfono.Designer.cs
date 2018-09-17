@@ -58,12 +58,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtPantalla = new System.Windows.Forms.TextBox();
+            this.txtMicro = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.grid = new System.Windows.Forms.DataGridView();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl
@@ -324,14 +326,14 @@
             this.label13.TabIndex = 95;
             this.label13.Text = "Marca";
             // 
-            // txtPantalla
+            // txtMicro
             // 
-            this.txtPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPantalla.Location = new System.Drawing.Point(266, 108);
-            this.txtPantalla.Multiline = true;
-            this.txtPantalla.Name = "txtPantalla";
-            this.txtPantalla.Size = new System.Drawing.Size(172, 31);
-            this.txtPantalla.TabIndex = 93;
+            this.txtMicro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMicro.Location = new System.Drawing.Point(266, 108);
+            this.txtMicro.Multiline = true;
+            this.txtMicro.Name = "txtMicro";
+            this.txtMicro.Size = new System.Drawing.Size(172, 31);
+            this.txtMicro.TabIndex = 93;
             // 
             // lblCpu
             // 
@@ -357,22 +359,36 @@
             this.label1.Text = "Tipo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // txtTipo
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(266, 147);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 31);
-            this.textBox1.TabIndex = 106;
+            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTipo.Location = new System.Drawing.Point(266, 147);
+            this.txtTipo.Multiline = true;
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(172, 31);
+            this.txtTipo.TabIndex = 106;
+            // 
+            // grid
+            // 
+            this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid.Location = new System.Drawing.Point(35, 307);
+            this.grid.Name = "grid";
+            this.grid.Size = new System.Drawing.Size(926, 89);
+            this.grid.TabIndex = 136;
             // 
             // Microfono
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 607);
+            this.Controls.Add(this.grid);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.lblCpu);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.barraMenu);
@@ -385,17 +401,19 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtPantalla);
+            this.Controls.Add(this.txtMicro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Microfono";
             this.Text = "Microfono";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Microfono_Load);
             this.barraMenu.ResumeLayout(false);
             this.barraMenu.PerformLayout();
             this.menuSuperior.ResumeLayout(false);
             this.menuSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,9 +450,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtPantalla;
+        private System.Windows.Forms.TextBox txtMicro;
         private System.Windows.Forms.Label lblCpu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTipo;
+        private System.Windows.Forms.DataGridView grid;
     }
 }

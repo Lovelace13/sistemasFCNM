@@ -15,7 +15,7 @@ namespace sistemaFCNM
 {
     public partial class Scanner : Form
     {
-        public static string INVENTARIO_EQUIPO; 
+        
         public Scanner()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace sistemaFCNM
                     "and e.PantallaProyeccion = pp.ID and e.Radios = ra.ID and e.Microfono = mi.ID and e.Proyector = pro.ID and "+
                     "e.id_Equipo = '"+txtScanner.Text.Trim()+"';";
                 Datos.llenarGrid(sql, gridInventario);
-                INVENTARIO_EQUIPO = txtScanner.Text.Trim();
+                FuncionesUtiles.INVENTARIO_EQUIPO = txtScanner.Text.Trim();
                 limpiarTxtandWait();
                 llenarCampos();
 
@@ -92,56 +92,101 @@ namespace sistemaFCNM
 
         private void btnDetalleTeclado_Click(object sender, EventArgs e)
         {
+            if (!FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = true;
+            }
             FuncionesUtiles.abrirVentanas(new Teclado(), mainPrincipal.contenedor);
         }
 
         private void btnDetallePantalla_Click(object sender, EventArgs e)
         {
+            if (!FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = true;
+            }
             FuncionesUtiles.abrirVentanas(new Pantalla(), mainPrincipal.contenedor);
         }
 
         private void btnDetalleMouse_Click(object sender, EventArgs e)
         {
+
+            if (!FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = true;
+            }
             FuncionesUtiles.abrirVentanas(new Mouse(), mainPrincipal.contenedor);
         }
 
         private void btnDetalleMicro_Click(object sender, EventArgs e)
         {
+            if (!FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = true;
+            }
             FuncionesUtiles.abrirVentanas(new Microfono(), mainPrincipal.contenedor);
         }
 
         private void btnDetallePproyeccion_Click(object sender, EventArgs e)
         {
+            if (!FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = true;
+            }
             FuncionesUtiles.abrirVentanas(new PProyeccion(), mainPrincipal.contenedor);
         }
 
         private void btnDetalleRegulador_Click(object sender, EventArgs e)
         {
+            if (!FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = true;
+            }
             FuncionesUtiles.abrirVentanas(new Regulador(), mainPrincipal.contenedor);
         }
 
         private void btnDetalleProyector_Click(object sender, EventArgs e)
         {
+            if (!FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = true;
+            }
             FuncionesUtiles.abrirVentanas(new Proyector(), mainPrincipal.contenedor);
         }
 
         private void btnDetalleImpresora_Click(object sender, EventArgs e)
         {
+            if (!FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = true;
+            }
             FuncionesUtiles.abrirVentanas(new Impresora(), mainPrincipal.contenedor);
         }
 
         private void btnDetalleParlante_Click(object sender, EventArgs e)
         {
+            if (!FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = true;
+            }
             FuncionesUtiles.abrirVentanas(new Parlante(), mainPrincipal.contenedor);
         }
 
         private void btnDetalleTelef_Click(object sender, EventArgs e)
         {
+            if (!FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = true;
+            }
             FuncionesUtiles.abrirVentanas(new Telefono(), mainPrincipal.contenedor);
         }
 
         private void btnDetalleRadio_Click(object sender, EventArgs e)
         {
+            if (!FuncionesUtiles.masdetallesActiva)
+            {
+                FuncionesUtiles.masdetallesActiva = true;
+            }
             FuncionesUtiles.abrirVentanas(new Radio(), mainPrincipal.contenedor);
         }
     }

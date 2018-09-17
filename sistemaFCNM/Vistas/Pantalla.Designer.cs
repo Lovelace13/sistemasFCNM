@@ -62,8 +62,10 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl = new System.Windows.Forms.Label();
+            this.gridPantalla = new System.Windows.Forms.DataGridView();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPantalla)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEstado
@@ -309,24 +311,24 @@
             // guardarMenuItem
             // 
             this.guardarMenuItem.Name = "guardarMenuItem";
-            this.guardarMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarMenuItem.Size = new System.Drawing.Size(143, 22);
             this.guardarMenuItem.Text = "Guardar";
             // 
             // guardarCsvMenuItem
             // 
             this.guardarCsvMenuItem.Name = "guardarCsvMenuItem";
-            this.guardarCsvMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarCsvMenuItem.Size = new System.Drawing.Size(143, 22);
             this.guardarCsvMenuItem.Text = "Cerrar Sesion";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // ayudaToolStripMenuItem
@@ -342,18 +344,18 @@
             // ayudaToolStripMenuItem1
             // 
             this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
-            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
             this.ayudaToolStripMenuItem1.Text = "Ayuda";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(129, 6);
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de..";
             // 
             // lbl
@@ -366,11 +368,25 @@
             this.lbl.Text = "----------------------------------Caracteristicas--------------------------------" +
     "----------";
             // 
+            // gridPantalla
+            // 
+            this.gridPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridPantalla.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.gridPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridPantalla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPantalla.Location = new System.Drawing.Point(61, 279);
+            this.gridPantalla.Name = "gridPantalla";
+            this.gridPantalla.Size = new System.Drawing.Size(926, 89);
+            this.gridPantalla.TabIndex = 108;
+            // 
             // Pantalla
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1064, 646);
+            this.Controls.Add(this.gridPantalla);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.barraMenu);
             this.Controls.Add(this.menuSuperior);
@@ -394,10 +410,12 @@
             this.ShowInTaskbar = false;
             this.Text = "Pantalla";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Pantalla_Load);
             this.barraMenu.ResumeLayout(false);
             this.barraMenu.PerformLayout();
             this.menuSuperior.ResumeLayout(false);
             this.menuSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPantalla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,5 +456,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.DataGridView gridPantalla;
     }
 }
