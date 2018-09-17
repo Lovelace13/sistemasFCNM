@@ -63,6 +63,8 @@
             this.gridMouse = new System.Windows.Forms.DataGridView();
             this.btnPrevius = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.txtEquipo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridMouse)).BeginInit();
@@ -158,6 +160,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(23, 22);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -329,7 +332,7 @@
             // txtMouse
             // 
             this.txtMouse.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMouse.Location = new System.Drawing.Point(265, 92);
+            this.txtMouse.Location = new System.Drawing.Point(269, 135);
             this.txtMouse.Multiline = true;
             this.txtMouse.Name = "txtMouse";
             this.txtMouse.Size = new System.Drawing.Size(172, 31);
@@ -340,7 +343,7 @@
             this.lblCpu.AutoSize = true;
             this.lblCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCpu.Location = new System.Drawing.Point(145, 98);
+            this.lblCpu.Location = new System.Drawing.Point(149, 141);
             this.lblCpu.Name = "lblCpu";
             this.lblCpu.Size = new System.Drawing.Size(105, 13);
             this.lblCpu.TabIndex = 79;
@@ -384,12 +387,34 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // txtEquipo
+            // 
+            this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEquipo.Enabled = false;
+            this.txtEquipo.Location = new System.Drawing.Point(15, 80);
+            this.txtEquipo.Multiline = true;
+            this.txtEquipo.Name = "txtEquipo";
+            this.txtEquipo.Size = new System.Drawing.Size(132, 19);
+            this.txtEquipo.TabIndex = 120;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 121;
+            this.label1.Text = "#Equipo";
+            // 
             // Mouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1048, 607);
+            this.Controls.Add(this.txtEquipo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPrevius);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.gridMouse);
@@ -459,5 +484,7 @@
         private System.Windows.Forms.DataGridView gridMouse;
         private System.Windows.Forms.Button btnPrevius;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.TextBox txtEquipo;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -13,6 +13,7 @@ namespace sistemaFCNM.Clases
         public static bool siguienteActiva = false;
         public static bool anteriorActiva = false;
         public static string INVENTARIO_EQUIPO;
+       
 
         public static void abrirVentanas(Form ventana, FlowLayoutPanel panelContenedor)
         {

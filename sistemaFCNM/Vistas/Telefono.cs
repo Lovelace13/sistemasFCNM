@@ -47,6 +47,7 @@ namespace sistemaFCNM.Vistas
             {
                 return;
             }
+            txtEquipo.Text = grid.Rows[0].Cells["id_Equipo"].Value.ToString();
             txtTelefono.Text = grid.Rows[0].Cells["Inventario_Telefono"].Value.ToString();
             txtTipo.Text = grid.Rows[0].Cells["tipo"].Value.ToString();
             txtExtension.Text = grid.Rows[0].Cells["extension"].Value.ToString();
@@ -65,6 +66,22 @@ namespace sistemaFCNM.Vistas
         private void btnPrevius_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.abrirVentanas(new Microfono(), mainPrincipal.contenedor);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string sql = "update va set va.Inventario_Telefono='" + txtTelefono.Text + "', va.tipo = '" + txtTipo.Text + "',va.extension ='"+txtExtension.Text+"'" +
+              " from Equipo e,Telefono va where e.Telefono = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
+
+            Console.WriteLine(sql);
+            Datos.Insertar(sql);
+
+            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
+                  " from Equipo e,Telefono va, Caracteristicas car " +
+                  " where e.Telefono = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
+
+
+            Datos.Insertar(sql);
         }
     }
 }

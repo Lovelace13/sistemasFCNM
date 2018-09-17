@@ -47,6 +47,7 @@ namespace sistemaFCNM.Vistas
             {
                 return;
             }
+            txtEquipo.Text = grid.Rows[0].Cells["id_Equipo"].Value.ToString();
             txtParlante.Text = grid.Rows[0].Cells["Inventario_Parlante"].Value.ToString();
             txtEstado.Text = grid.Rows[0].Cells["estado"].Value.ToString();
             txtMarca.Text = grid.Rows[0].Cells["marca"].Value.ToString();
@@ -63,6 +64,22 @@ namespace sistemaFCNM.Vistas
         private void btnPrevius_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.abrirVentanas(new Regulador(), mainPrincipal.contenedor);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string sql = "update va set va.Inventario_Parlante='" + txtParlante.Text + "'" +
+               " from Equipo e,Parlante va where e.Parlante = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
+
+
+            Datos.Insertar(sql);
+
+            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
+                  " from Equipo e,Parlante va, Caracteristicas car " +
+                  " where e.Parlante = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
+
+
+            Datos.Insertar(sql);
         }
     }
 }

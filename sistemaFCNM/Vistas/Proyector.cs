@@ -47,6 +47,7 @@ namespace sistemaFCNM.Vistas
             {
                 return;
             }
+            txtEquipo.Text = grid.Rows[0].Cells["id_Equipo"].Value.ToString();
             txtProyector.Text = grid.Rows[0].Cells["Inventario_Proyector"].Value.ToString();
             txtEspolTech.Text = grid.Rows[0].Cells["Inventario_Espoltech"].Value.ToString();
             txtEstado.Text = grid.Rows[0].Cells["estado"].Value.ToString();
@@ -66,6 +67,20 @@ namespace sistemaFCNM.Vistas
             FuncionesUtiles.abrirVentanas(new Impresora(), mainPrincipal.contenedor);
         }
 
-       
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string sql = "update va set va.Inventario_Proyector='" + txtProyector.Text + "', va.Inventario_Espoltech = '" + txtEspolTech.Text + "'" +
+              " from Equipo e,Proyector va where e.Proyector = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
+
+
+            Datos.Insertar(sql);
+
+            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
+                  " from Equipo e,Proyector va, Caracteristicas car " +
+                  " where e.Proyector = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
+
+
+            Datos.Insertar(sql);
+        }
     }
 }

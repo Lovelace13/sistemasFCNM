@@ -47,6 +47,7 @@ namespace sistemaFCNM.Vistas
             {
                 return;
             }
+            txtEquipo.Text = gridTeclado.Rows[0].Cells["id_Equipo"].Value.ToString();
             txtTeclado.Text = gridTeclado.Rows[0].Cells["Inventario_teclado"].Value.ToString();
             txtEstado.Text = gridTeclado.Rows[0].Cells["estado"].Value.ToString();
             txtMarca.Text = gridTeclado.Rows[0].Cells["marca"].Value.ToString();
@@ -63,6 +64,22 @@ namespace sistemaFCNM.Vistas
         private void btnPrevius_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.abrirVentanas(new Pantalla(), mainPrincipal.contenedor);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string sql = "update va set va.Inventario_teclado='" + txtTeclado.Text + "' " +
+              " from Equipo e,Teclado va where e.Teclado= va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
+
+
+            Datos.Insertar(sql);
+
+            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
+                  " from Equipo e,Teclado va, Caracteristicas car " +
+                  " where e.Teclado = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
+
+
+            Datos.Insertar(sql);
         }
     }
 }

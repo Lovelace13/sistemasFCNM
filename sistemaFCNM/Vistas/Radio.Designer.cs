@@ -63,6 +63,8 @@
             this.grid = new System.Windows.Forms.DataGridView();
             this.btnPrevius = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.txtEquipo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -158,6 +160,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(23, 22);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -329,7 +332,7 @@
             // txtRadio
             // 
             this.txtRadio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRadio.Location = new System.Drawing.Point(261, 78);
+            this.txtRadio.Location = new System.Drawing.Point(297, 121);
             this.txtRadio.Multiline = true;
             this.txtRadio.Name = "txtRadio";
             this.txtRadio.Size = new System.Drawing.Size(172, 31);
@@ -340,7 +343,7 @@
             this.lblCpu.AutoSize = true;
             this.lblCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCpu.Location = new System.Drawing.Point(123, 82);
+            this.lblCpu.Location = new System.Drawing.Point(159, 125);
             this.lblCpu.Name = "lblCpu";
             this.lblCpu.Size = new System.Drawing.Size(101, 13);
             this.lblCpu.TabIndex = 120;
@@ -374,15 +377,35 @@
             // 
             // btnNext
             // 
+            this.btnNext.Enabled = false;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.Location = new System.Drawing.Point(863, 504);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(36, 34);
-            this.btnNext.TabIndex = 156;
+            this.btnNext.TabIndex = 158;
             this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // txtEquipo
+            // 
+            this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEquipo.Enabled = false;
+            this.txtEquipo.Location = new System.Drawing.Point(15, 66);
+            this.txtEquipo.Multiline = true;
+            this.txtEquipo.Name = "txtEquipo";
+            this.txtEquipo.Size = new System.Drawing.Size(132, 19);
+            this.txtEquipo.TabIndex = 159;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 160;
+            this.label2.Text = "#Equipo";
             // 
             // Radio
             // 
@@ -390,8 +413,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1048, 607);
-            this.Controls.Add(this.btnPrevius);
+            this.Controls.Add(this.txtEquipo);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnPrevius);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.barraMenu);
@@ -459,5 +484,7 @@
         private System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.Button btnPrevius;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.TextBox txtEquipo;
+        private System.Windows.Forms.Label label2;
     }
 }

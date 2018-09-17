@@ -46,29 +46,26 @@ namespace sistemaFCNM.Clases
             return true;
         }
 
-        public static bool Insertar(string dato)
+        public static void Insertar(string cadena)
         {
             if (!conexion.AbrirConexion()) //Garantizamos conexion Base Datos
             {
                 mensaje = conexion.Error;
                 conexion.CerrarConexion();
-                return false;
+                return ;
             }
 
-            conexion.SQL = "select e.id_Equipo, p.Inventario_Pantalla,p.pulgadas,car.estado,car.marca,car.modelo,car.serie "+
-                "from Equipo e, Pantalla p, Mouse m, Teclado t, CPU, "+
-                "Caracteristicas car where e.Inventario_CPU = CPU.ID and e.Pantalla = p.ID "+
-                "and e.Mouse = m.ID and e.Teclado = t.ID and car.id_caracteristica = p.caracteristicas  and p.Inventario_Pantalla like '"+dato+"%'; ";
+            conexion.SQL = cadena ;
             if (!conexion.EjecutarSentencia(false))
             {
                 mensaje = conexion.Error;
                 conexion.CerrarConexion();
-                return false;
+                return;
             }
 
             mensaje = "Ingreso Correcto";
             conexion.CerrarConexion();
-            return true;
+            return ;
 
         }
 

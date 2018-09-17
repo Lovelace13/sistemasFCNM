@@ -63,6 +63,8 @@
             this.gridTeclado = new System.Windows.Forms.DataGridView();
             this.btnPrevius = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.txtEquipo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTeclado)).BeginInit();
@@ -158,6 +160,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(23, 22);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -329,7 +332,7 @@
             // txtTeclado
             // 
             this.txtTeclado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTeclado.Location = new System.Drawing.Point(251, 103);
+            this.txtTeclado.Location = new System.Drawing.Point(262, 132);
             this.txtTeclado.Multiline = true;
             this.txtTeclado.Name = "txtTeclado";
             this.txtTeclado.Size = new System.Drawing.Size(172, 31);
@@ -340,7 +343,7 @@
             this.lblCpu.AutoSize = true;
             this.lblCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCpu.Location = new System.Drawing.Point(113, 107);
+            this.lblCpu.Location = new System.Drawing.Point(124, 136);
             this.lblCpu.Name = "lblCpu";
             this.lblCpu.Size = new System.Drawing.Size(114, 13);
             this.lblCpu.TabIndex = 94;
@@ -384,11 +387,33 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // txtEquipo
+            // 
+            this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEquipo.Enabled = false;
+            this.txtEquipo.Location = new System.Drawing.Point(15, 80);
+            this.txtEquipo.Multiline = true;
+            this.txtEquipo.Name = "txtEquipo";
+            this.txtEquipo.Size = new System.Drawing.Size(132, 19);
+            this.txtEquipo.TabIndex = 118;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 119;
+            this.label1.Text = "#Equipo";
+            // 
             // Teclado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 607);
+            this.Controls.Add(this.txtEquipo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPrevius);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.gridTeclado);
@@ -458,5 +483,7 @@
         private System.Windows.Forms.DataGridView gridTeclado;
         private System.Windows.Forms.Button btnPrevius;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.TextBox txtEquipo;
+        private System.Windows.Forms.Label label1;
     }
 }

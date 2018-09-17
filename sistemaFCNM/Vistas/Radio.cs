@@ -48,6 +48,7 @@ namespace sistemaFCNM.Vistas
             {
                 return;
             }
+            txtEquipo.Text = grid.Rows[0].Cells["id_Equipo"].Value.ToString();
             txtRadio.Text = grid.Rows[0].Cells["Inventario_Radio"].Value.ToString();
             txtEstado.Text = grid.Rows[0].Cells["estado"].Value.ToString();
             txtMarca.Text = grid.Rows[0].Cells["marca"].Value.ToString();
@@ -64,8 +65,23 @@ namespace sistemaFCNM.Vistas
         private void btnNext_Click(object sender, EventArgs e)
         {
             
-            Datos.llenarGrid("select MAX(ID) as ID from CPU;", grid);
-            MessageBox.Show(grid.Rows[0].Cells["ID"].Value.ToString());
+            
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string sql = "update va set va.Inventario_Radio='" + txtRadio.Text + "'" +
+              " from Equipo e,Radio va where e.Radios = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
+
+
+            Datos.Insertar(sql);
+
+            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
+                  " from Equipo e,Radio va, Caracteristicas car " +
+                  " where e.Radios = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
+
+
+            Datos.Insertar(sql);
         }
     }
 }

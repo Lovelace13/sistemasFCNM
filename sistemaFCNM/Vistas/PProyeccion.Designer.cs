@@ -65,6 +65,8 @@
             this.grid = new System.Windows.Forms.DataGridView();
             this.btnPrevius = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.txtEquipo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -75,7 +77,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(48, 137);
+            this.label1.Location = new System.Drawing.Point(84, 166);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 135;
@@ -85,7 +87,7 @@
             // txtDimensiones
             // 
             this.txtDimensiones.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDimensiones.Location = new System.Drawing.Point(235, 133);
+            this.txtDimensiones.Location = new System.Drawing.Point(271, 162);
             this.txtDimensiones.Multiline = true;
             this.txtDimensiones.Name = "txtDimensiones";
             this.txtDimensiones.Size = new System.Drawing.Size(105, 31);
@@ -181,6 +183,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(23, 22);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -352,7 +355,7 @@
             // txtPproyeccion
             // 
             this.txtPproyeccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPproyeccion.Location = new System.Drawing.Point(235, 90);
+            this.txtPproyeccion.Location = new System.Drawing.Point(271, 119);
             this.txtPproyeccion.Multiline = true;
             this.txtPproyeccion.Name = "txtPproyeccion";
             this.txtPproyeccion.Size = new System.Drawing.Size(172, 31);
@@ -363,7 +366,7 @@
             this.lblCpu.AutoSize = true;
             this.lblCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCpu.Location = new System.Drawing.Point(48, 94);
+            this.lblCpu.Location = new System.Drawing.Point(84, 123);
             this.lblCpu.Name = "lblCpu";
             this.lblCpu.Size = new System.Drawing.Size(181, 13);
             this.lblCpu.TabIndex = 122;
@@ -407,11 +410,33 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // txtEquipo
+            // 
+            this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEquipo.Enabled = false;
+            this.txtEquipo.Location = new System.Drawing.Point(32, 65);
+            this.txtEquipo.Multiline = true;
+            this.txtEquipo.Name = "txtEquipo";
+            this.txtEquipo.Size = new System.Drawing.Size(132, 19);
+            this.txtEquipo.TabIndex = 158;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(29, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 159;
+            this.label2.Text = "#Equipo";
+            // 
             // PProyeccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 607);
+            this.Controls.Add(this.txtEquipo);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPrevius);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.grid);
@@ -485,5 +510,7 @@
         private System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.Button btnPrevius;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.TextBox txtEquipo;
+        private System.Windows.Forms.Label label2;
     }
 }
