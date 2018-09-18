@@ -588,11 +588,10 @@
             this.gridCpu.BackgroundColor = System.Drawing.SystemColors.Control;
             this.gridCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridCpu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridCpu.Location = new System.Drawing.Point(35, 492);
+            this.gridCpu.Location = new System.Drawing.Point(83, 489);
             this.gridCpu.Name = "gridCpu";
-            this.gridCpu.Size = new System.Drawing.Size(926, 89);
+            this.gridCpu.Size = new System.Drawing.Size(926, 111);
             this.gridCpu.TabIndex = 107;
-            this.gridCpu.Visible = false;
             // 
             // txtEquipo
             // 
@@ -619,7 +618,7 @@
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(863, 504);
+            this.btnNext.Location = new System.Drawing.Point(995, 627);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(36, 34);
             this.btnNext.TabIndex = 110;
@@ -632,7 +631,7 @@
             this.btnPrevius.FlatAppearance.BorderSize = 0;
             this.btnPrevius.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevius.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevius.Image")));
-            this.btnPrevius.Location = new System.Drawing.Point(794, 504);
+            this.btnPrevius.Location = new System.Drawing.Point(926, 627);
             this.btnPrevius.Name = "btnPrevius";
             this.btnPrevius.Size = new System.Drawing.Size(36, 34);
             this.btnPrevius.TabIndex = 111;

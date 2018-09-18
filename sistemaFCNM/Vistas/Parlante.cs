@@ -180,6 +180,22 @@ namespace sistemaFCNM.Vistas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+            string sql = "select e.id_Equipo, par.Inventario_Parlante,car.estado,car.marca," +
+                "car.modelo,car.serie from  Equipo e, Parlante par, " +
+                "Caracteristicas car where " +
+                "e.Parlante = par.ID and car.id_caracteristica = par.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "';";
+
+            Datos.llenarGrid(sql, grid);
+            llenarCampos();
+
+            sql = "select e.id_Equipo, par.Inventario_Parlante,car.estado,car.marca," +
+                "car.modelo,car.serie from  Equipo e, Parlante par, " +
+                "Caracteristicas car where " +
+                "e.Parlante = par.ID and car.id_caracteristica = par.caracteristicas ;";
+
+            Datos.llenarGrid(sql, grid);
+
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

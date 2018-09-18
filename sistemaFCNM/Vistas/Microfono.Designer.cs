@@ -394,16 +394,12 @@
             // 
             // grid
             // 
-            this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.grid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid.Enabled = false;
-            this.grid.Location = new System.Drawing.Point(35, 307);
+            this.grid.Location = new System.Drawing.Point(35, 312);
             this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(926, 89);
+            this.grid.Size = new System.Drawing.Size(926, 157);
             this.grid.TabIndex = 136;
             this.grid.Visible = false;
             // 

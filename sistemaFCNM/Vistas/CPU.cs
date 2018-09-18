@@ -182,6 +182,8 @@ namespace sistemaFCNM.Vistas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+
             string sql = "select e.id_Equipo, c.inventario_cpu,c.nombre_PC,c.adicional_lote," +
                   "c.tipo_PC,c.tag,c.code,c.perfil,c.procesador,c.memoria,c.disco," +
                   "car.estado,car.marca,car.modelo,car.serie from  Equipo e, CPU c," +
@@ -189,7 +191,14 @@ namespace sistemaFCNM.Vistas
                   "car.id_caracteristica = c.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
             Datos.llenarGrid(sql, gridCpu);
             llenarCampos();
-            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+
+            sql = "select e.id_Equipo, c.inventario_cpu,c.nombre_PC,c.adicional_lote," +
+                  "c.tipo_PC,c.tag,c.code,c.perfil,c.procesador,c.memoria,c.disco," +
+                  "car.estado,car.marca,car.modelo,car.serie from  Equipo e, CPU c," +
+                  "Caracteristicas car where e.Inventario_CPU = c.ID and " +
+                  "car.id_caracteristica = c.caracteristicas; ";
+            Datos.llenarGrid(sql, gridCpu);
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

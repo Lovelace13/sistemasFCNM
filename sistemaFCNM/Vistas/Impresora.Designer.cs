@@ -300,10 +300,9 @@
             this.grid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid.Enabled = false;
-            this.grid.Location = new System.Drawing.Point(33, 289);
+            this.grid.Location = new System.Drawing.Point(15, 312);
             this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(926, 89);
+            this.grid.Size = new System.Drawing.Size(926, 171);
             this.grid.TabIndex = 122;
             // 
             // btnPrevius
