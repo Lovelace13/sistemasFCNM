@@ -1,6 +1,6 @@
 ﻿namespace sistemaFCNM.Vistas
 {
-    partial class ventanaNuevoRegistro
+    partial class login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventanaNuevoRegistro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.panelCabecera = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.txtEquipo = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.comboEdificio = new System.Windows.Forms.ComboBox();
-            this.comboOficina = new System.Windows.Forms.ComboBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtClave = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gridUsuario = new System.Windows.Forms.DataGridView();
             this.panelCabecera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCabecera
@@ -55,8 +55,8 @@
             this.panelCabecera.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabecera.Location = new System.Drawing.Point(0, 0);
             this.panelCabecera.Name = "panelCabecera";
-            this.panelCabecera.Size = new System.Drawing.Size(500, 34);
-            this.panelCabecera.TabIndex = 3;
+            this.panelCabecera.Size = new System.Drawing.Size(484, 34);
+            this.panelCabecera.TabIndex = 4;
             this.panelCabecera.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCabecera_Paint);
             // 
             // label1
@@ -80,7 +80,7 @@
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = global::sistemaFCNM.Properties.Resources.IconoMinimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(426, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(416, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(40, 40);
             this.btnMinimizar.TabIndex = 2;
@@ -96,137 +96,139 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::sistemaFCNM.Properties.Resources.IconocerrarFN;
-            this.btnCerrar.Location = new System.Drawing.Point(460, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(444, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(40, 40);
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // txtEquipo
-            // 
-            this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEquipo.Location = new System.Drawing.Point(160, 198);
-            this.txtEquipo.Multiline = true;
-            this.txtEquipo.Name = "txtEquipo";
-            this.txtEquipo.Size = new System.Drawing.Size(197, 32);
-            this.txtEquipo.TabIndex = 112;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(100, 209);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 13);
-            this.label12.TabIndex = 113;
-            this.label12.Text = "#Equipo";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(100, 249);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(90, 186);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 115;
-            this.label2.Text = "Edificio";
+            this.label2.Size = new System.Drawing.Size(67, 18);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Usuario";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(102, 297);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(63, 272);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 117;
-            this.label3.Text = "Oficina";
+            this.label3.Size = new System.Drawing.Size(95, 18);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Contraseña";
             // 
-            // btnRegistrar
+            // txtUsuario
             // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.FlatAppearance.BorderSize = 0;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
-            this.btnRegistrar.Location = new System.Drawing.Point(160, 401);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(51, 48);
-            this.btnRegistrar.TabIndex = 118;
-            this.btnRegistrar.UseVisualStyleBackColor = false;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.Location = new System.Drawing.Point(164, 177);
+            this.txtUsuario.Multiline = true;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(204, 36);
+            this.txtUsuario.TabIndex = 7;
             // 
-            // btnCancelar
+            // txtClave
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(306, 401);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(51, 48);
-            this.btnCancelar.TabIndex = 119;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // comboEdificio
-            // 
-            this.comboEdificio.FormattingEnabled = true;
-            this.comboEdificio.Location = new System.Drawing.Point(160, 249);
-            this.comboEdificio.Name = "comboEdificio";
-            this.comboEdificio.Size = new System.Drawing.Size(197, 21);
-            this.comboEdificio.TabIndex = 120;
-            // 
-            // comboOficina
-            // 
-            this.comboOficina.FormattingEnabled = true;
-            this.comboOficina.Location = new System.Drawing.Point(160, 294);
-            this.comboOficina.Name = "comboOficina";
-            this.comboOficina.Size = new System.Drawing.Size(197, 21);
-            this.comboOficina.TabIndex = 121;
+            this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtClave.Location = new System.Drawing.Point(164, 263);
+            this.txtClave.Multiline = true;
+            this.txtClave.Name = "txtClave";
+            this.txtClave.PasswordChar = '*';
+            this.txtClave.Size = new System.Drawing.Size(204, 36);
+            this.txtClave.TabIndex = 8;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(12, 40);
+            this.panel1.Location = new System.Drawing.Point(3, 36);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(133, 125);
-            this.panel1.TabIndex = 122;
+            this.panel1.TabIndex = 9;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
+            this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Location = new System.Drawing.Point(191, 340);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(42, 52);
+            this.btnLogin.TabIndex = 10;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Location = new System.Drawing.Point(294, 340);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(35, 44);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(185, 90);
+            this.panel2.Location = new System.Drawing.Point(217, 108);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(138, 90);
-            this.panel2.TabIndex = 123;
+            this.panel2.Size = new System.Drawing.Size(79, 53);
+            this.panel2.TabIndex = 11;
             // 
-            // ventanaNuevoRegistro
+            // gridUsuario
+            // 
+            this.gridUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridUsuario.Enabled = false;
+            this.gridUsuario.EnableHeadersVisualStyles = false;
+            this.gridUsuario.Location = new System.Drawing.Point(469, 448);
+            this.gridUsuario.Name = "gridUsuario";
+            this.gridUsuario.Size = new System.Drawing.Size(15, 10);
+            this.gridUsuario.TabIndex = 13;
+            this.gridUsuario.Visible = false;
+            // 
+            // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(500, 500);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.comboOficina);
-            this.Controls.Add(this.comboEdificio);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.gridUsuario);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnRegistrar);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtClave);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtEquipo);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.panelCabecera);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ventanaNuevoRegistro";
+            this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ventanaNuevoRegistro";
-            this.Load += new System.EventHandler(this.ventanaNuevoRegistro_Load);
+            this.Text = "login";
             this.panelCabecera.ResumeLayout(false);
             this.panelCabecera.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,15 +240,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.TextBox txtEquipo;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.ComboBox comboEdificio;
-        private System.Windows.Forms.ComboBox comboOficina;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView gridUsuario;
     }
 }

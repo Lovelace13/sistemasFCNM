@@ -16,7 +16,7 @@ namespace sistemaFCNM.Clases
 
         public static string Mensaje { get { return mensaje; } }
 
-        public static bool ValidarUsuario(string usuario, string clave)
+        public static bool ValidarUsuario(string usuario, string clave, DataGridView gridUsuario)
         {
 
             if (!conexion.AbrirConexion()) //Garantizamos conexion Base Datos
@@ -25,22 +25,10 @@ namespace sistemaFCNM.Clases
                 conexion.CerrarConexion();
                 return false;
             }
-            MessageBox.Show("Conecta");
-            conexion.SQL = "";
-
-            if (!conexion.ConsultarValorUnico(false))
-            {
-                mensaje = conexion.Error;
-                conexion.CerrarConexion();
-                return false;
-            }
-
-            if (conexion.ValorUnico == null)
-            {
-                mensaje = "";
-                conexion.CerrarConexion();
-                return false;
-            }
+            
+            
+            llenarGrid("select * from Usuario where id_usuario ='" + usuario +
+                            "' and clave = '" + clave + "'", gridUsuario);
 
             conexion.CerrarConexion();
             return true;

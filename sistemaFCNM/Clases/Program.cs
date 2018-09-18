@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sistemaFCNM.Vistas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -17,7 +18,7 @@ namespace sistemaFCNM
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             form1 = new mainPrincipal();
-            Application.Run(form1);
+            Application.Run(new login());
         }
 
         public static mainPrincipal form1 ;

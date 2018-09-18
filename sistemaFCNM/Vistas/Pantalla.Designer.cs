@@ -67,6 +67,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnPrevius = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPantalla)).BeginInit();
@@ -430,11 +431,22 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(919, 49);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(133, 125);
+            this.panel1.TabIndex = 129;
+            // 
             // Pantalla
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1064, 646);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPrevius);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.txtEquipo);
@@ -514,5 +526,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPrevius;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Panel panel1;
     }
 }

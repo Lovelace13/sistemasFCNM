@@ -52,6 +52,9 @@
     <Reference Include="LibConexionBD">
       <HintPath>Librerias\LibConexionBD.dll</HintPath>
     </Reference>
+    <Reference Include="LibLlenarCombos">
+      <HintPath>Librerias\LibLlenarCombos.dll</HintPath>
+    </Reference>
     <Reference Include="LibLlenarGrids">
       <HintPath>Librerias\LibLlenarGrids.dll</HintPath>
     </Reference>
@@ -92,6 +95,12 @@
     </Compile>
     <Compile Include="Vistas\Impresora.Designer.cs">
       <DependentUpon>Impresora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Microfono.cs">
       <SubType>Form</SubType>
@@ -185,6 +194,9 @@
     <EmbeddedResource Include="Vistas\Impresora.resx">
       <DependentUpon>Impresora.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Microfono.resx">
       <DependentUpon>Microfono.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Telefono.resx">
       <DependentUpon>Telefono.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ventanaNuevoRegistro.resx">
+      <DependentUpon>ventanaNuevoRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />

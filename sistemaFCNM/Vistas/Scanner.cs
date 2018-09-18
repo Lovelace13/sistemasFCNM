@@ -211,6 +211,14 @@ namespace sistemaFCNM
 
         }
 
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            ventanaNuevoRegistro registro = new ventanaNuevoRegistro();
+            registro.Show();
+        }
+
+       
+
         
     }
 }
