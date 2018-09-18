@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Parametros>
+  <Servidor>.</Servidor>
+  <BaseDatos>sistemasFCNM</BaseDatos>
+  <Usuario>Administrador</Usuario>
+  <Clave>Fcnm2018</Clave>
+  <SeguridadIntegrada>True</SeguridadIntegrada>
+</Parametros>
