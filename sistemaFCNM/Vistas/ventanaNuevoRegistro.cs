@@ -66,12 +66,38 @@ namespace sistemaFCNM.Vistas
 
             crearEquipo();
             crearInventario();
-        }
 
+            
+            FuncionesUtiles.INVENTARIO_EQUIPO = txtEquipo.Text.Trim();
+            MessageBox.Show("Ingrese Datos de los equipos "+ FuncionesUtiles.INVENTARIO_EQUIPO);
+            FuncionesUtiles.form1.Visible = true;
+            this.Close();
+        }
+        private string cambiarFecha(string fecha)
+        {
+            string[] arr = fecha.Split('/');
+            return arr[2]+"/"+ agregarCero(arr[1]) + "/" + agregarCero(arr[0]);
+        }
+        private string agregarCero(string numero)
+        {
+            if(numero == "1"|| numero == "2"|| numero == "3"|| numero == "4"
+                || numero == "5"|| numero == "6"|| numero == "7"||numero == "8"
+                || numero == "9")
+            {
+                return "0"+numero;
+            }
+            else
+            {
+                return numero;
+            }
+            
+        }
         private void crearInventario()
         {
-            string sql = "INSERT INTO Inventario(fecha_inventario,Ayudante,observacion,Equipo) VALUES ('2018-09-17','jcbodero','N/A','"+txtEquipo.Text+"')";
+            
+            string sql = "INSERT INTO Inventario(fecha_inventario,Ayudante,observacion,Equipo) VALUES ('"+ cambiarFecha(DateTime.Today.ToString("d")) + "','"+FuncionesUtiles.USUARIO+"','"+FuncionesUtiles.OBSERVACION+"','" + txtEquipo.Text.Trim() + "')";
             Datos.Insertar(sql);
+            Console.WriteLine(sql);
         }
 
         private void crearEquipo()
@@ -164,6 +190,7 @@ namespace sistemaFCNM.Vistas
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+            FuncionesUtiles.form1.Visible = true;
         }                   
 
         private void btnMinimizar_Click(object sender, EventArgs e)

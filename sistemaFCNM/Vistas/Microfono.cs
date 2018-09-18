@@ -24,12 +24,7 @@ namespace sistemaFCNM.Vistas
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
-            else
-            {
-                FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-
-            }
-
+            
 
             string sql = "select e.id_Equipo, pro.Inventario_Microfono,pro.tipo,car.estado,car.marca," +
                 "car.modelo,car.serie from  Equipo e, Microfonos pro," +
@@ -145,6 +140,62 @@ namespace sistemaFCNM.Vistas
                 default:
                     return;
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            ventanaNuevoRegistro registro;
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+
+                    guardar();
+                    this.Close();
+                    registro = new ventanaNuevoRegistro();
+                    registro.Show();
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.siguienteActiva = true;
+                    FuncionesUtiles.desactivarMenu();
+                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
+                    return;
+
+                case "No":
+                    this.Close();
+                    registro = new ventanaNuevoRegistro();
+                    registro.Show();
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.siguienteActiva = true;
+                    FuncionesUtiles.desactivarMenu();
+                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+        private void habilitarBotones()
+        {
+            btnGuardar.Enabled = true;
+            btnEliminar.Enabled = true;           
+            txtTipo.Enabled = true;
+            txtMicro.Enabled = true;
+            txtEstado.Enabled = true;
+            txtMarca.Enabled = true;
+            txtModelo.Enabled = true;
+            txtSerie.Enabled = true;
         }
     }
 }

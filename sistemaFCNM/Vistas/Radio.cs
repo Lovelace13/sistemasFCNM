@@ -24,12 +24,7 @@ namespace sistemaFCNM.Vistas
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
-            else
-            {
-                FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-
-            }
-
+            
 
             string sql = "select e.id_Equipo, pro.Inventario_Radio,car.estado,car.marca," +
          "car.modelo,car.serie from  Equipo e, Radio pro," +
@@ -159,14 +154,20 @@ namespace sistemaFCNM.Vistas
                     this.Close();
                     registro = new ventanaNuevoRegistro();
                     registro.Show();
-
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.siguienteActiva = true;
+                    FuncionesUtiles.desactivarMenu();
+                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
                     return;
 
                 case "No":
                     this.Close();
                     registro = new ventanaNuevoRegistro();
                     registro.Show();
-
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.siguienteActiva = true;
+                    FuncionesUtiles.desactivarMenu();
+                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
                     return;
 
                 case "Cancel":
@@ -175,6 +176,49 @@ namespace sistemaFCNM.Vistas
                 default:
                     return;
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+        private void habilitarBotones()
+        {
+            
+            btnEliminar.Enabled = true;
+            txtRadio.Enabled = true;            
+            txtEstado.Enabled = true;
+            txtMarca.Enabled = true;
+            txtModelo.Enabled = true;
+            txtSerie.Enabled = true;
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.OBSERVACION = Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600);
+
+
+            mainPrincipal.btn13.Enabled = true;
+            mainPrincipal.btn1.Enabled = true;
+            mainPrincipal.btn2.Enabled = true;
+            mainPrincipal.btn3.Enabled = true;
+            mainPrincipal.btn4.Enabled = true;
+            mainPrincipal.btn5.Enabled = true;
+            mainPrincipal.btn6.Enabled = true;
+            mainPrincipal.btn7.Enabled = true;
+            mainPrincipal.btn8.Enabled = true;
+            mainPrincipal.btn9.Enabled = true;
+            mainPrincipal.btn10.Enabled = true;
+            mainPrincipal.btn11.Enabled = true;
+            mainPrincipal.btn12.Enabled = true;
+            FuncionesUtiles.siguienteActiva = false;
+            FuncionesUtiles.INVENTARIO_EQUIPO = "";
+            FuncionesUtiles.masdetallesActiva = false;
         }
     }
 }

@@ -208,31 +208,54 @@ namespace sistemaFCNM
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
 
+            string sql = "select e.id_Equipo,o.nombre_oficina,inv.Ayudante,inv.fecha_inventario," +
+                    "c.inventario_cpu,p.Inventario_Pantalla,t.Inventario_teclado,m.Inventario_Mouse," +
+                    "par.Inventario_Parlante,reg.Inventario_Regulador,im.Inventario_Impresora," +
+                    "pro.Inventario_Proyector,mi.Inventario_Microfono,tel.Inventario_Telefono," +
+                    "pp.Inventario_PantallaProyeccion,ra.Inventario_Radio from  Equipo e,Oficina o, Pantalla p, Mouse m, " +
+                    "Teclado t, CPU c,Parlante par, Regulador reg, Impresora im,Proyector pro,Microfonos mi, " +
+                    "Telefono tel,Pantalla_Proyeccion pp,Radio ra,Inventario inv where e.Inventario_CPU= c.ID and " +
+                    "e.Oficina = o.ID and e.id_Equipo = inv.Equipo and e.Pantalla = p.ID and e.Teclado = t.ID and " +
+                    "e.Mouse = m.ID and e.Parlante = par.ID and e.Regulador = reg.ID and e.Impresora = im.ID and e.Telefono = tel.ID " +
+                    "and e.PantallaProyeccion = pp.ID and e.Radios = ra.ID and e.Microfono = mi.ID and e.Proyector = pro.ID and " +
+                    "e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO.Trim() + "';";
+            Datos.llenarGrid(sql, gridInventario);
+
+            llenarCampos();
+            
+            sql = "select e.id_Equipo,o.nombre_oficina,inv.Ayudante,inv.fecha_inventario," +
+                    "c.inventario_cpu,p.Inventario_Pantalla,t.Inventario_teclado,m.Inventario_Mouse," +
+                    "par.Inventario_Parlante,reg.Inventario_Regulador,im.Inventario_Impresora," +
+                    "pro.Inventario_Proyector,mi.Inventario_Microfono,tel.Inventario_Telefono," +
+                    "pp.Inventario_PantallaProyeccion,ra.Inventario_Radio from  Equipo e,Oficina o, Pantalla p, Mouse m, " +
+                    "Teclado t, CPU c,Parlante par, Regulador reg, Impresora im,Proyector pro,Microfonos mi, " +
+                    "Telefono tel,Pantalla_Proyeccion pp,Radio ra,Inventario inv where e.Inventario_CPU= c.ID and " +
+                    "e.Oficina = o.ID and e.id_Equipo = inv.Equipo and e.Pantalla = p.ID and e.Teclado = t.ID and " +
+                    "e.Mouse = m.ID and e.Parlante = par.ID and e.Regulador = reg.ID and e.Impresora = im.ID and e.Telefono = tel.ID " +
+                    "and e.PantallaProyeccion = pp.ID and e.Radios = ra.ID and e.Microfono = mi.ID and e.Proyector = pro.ID;";
+            Datos.llenarGrid(sql, gridInventario);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             ventanaNuevoRegistro registro = new ventanaNuevoRegistro();
             registro.Show();
+            this.Close();
+            FuncionesUtiles.form1.Visible = false;
+            FuncionesUtiles.siguienteActiva = true;
+
+            FuncionesUtiles.desactivarMenu();
+
+            FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
             FuncionesUtiles.siguienteActiva = false;
-            mainPrincipal.btn1.Enabled = true;
-            mainPrincipal.btn2.Enabled = true;
-            mainPrincipal.btn3.Enabled = true;
-            mainPrincipal.btn4.Enabled = true;
-            mainPrincipal.btn5.Enabled = true;
-            mainPrincipal.btn6.Enabled = true;
-            mainPrincipal.btn7.Enabled = true;
-            mainPrincipal.btn8.Enabled = true;
-            mainPrincipal.btn9.Enabled = true;
-            mainPrincipal.btn10.Enabled = true;
-            mainPrincipal.btn11.Enabled = true;
-            mainPrincipal.btn12.Enabled = true;
+            FuncionesUtiles.activarMenu();
             FuncionesUtiles.INVENTARIO_EQUIPO = "";
         }
 
@@ -242,7 +265,7 @@ namespace sistemaFCNM
         {
             login log = new login();
             log.Show();
-            this.Visible = false;
+            this.Close();
             FuncionesUtiles.form1.Visible = false;
             FuncionesUtiles.INVENTARIO_EQUIPO = "";
 

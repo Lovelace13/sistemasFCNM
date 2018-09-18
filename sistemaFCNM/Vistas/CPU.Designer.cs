@@ -116,25 +116,25 @@
             // guardarMenuItem
             // 
             this.guardarMenuItem.Name = "guardarMenuItem";
-            this.guardarMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarMenuItem.Size = new System.Drawing.Size(143, 22);
             this.guardarMenuItem.Text = "Guardar";
             // 
             // CerrarSesion
             // 
             this.CerrarSesion.Name = "CerrarSesion";
-            this.CerrarSesion.Size = new System.Drawing.Size(152, 22);
+            this.CerrarSesion.Size = new System.Drawing.Size(143, 22);
             this.CerrarSesion.Text = "Cerrar Sesion";
             this.CerrarSesion.Click += new System.EventHandler(this.CerrarSesion_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -241,10 +241,12 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(23, 22);
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGuardar.Enabled = false;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGuardar.Name = "btnGuardar";
@@ -255,6 +257,7 @@
             // btnEliminar
             // 
             this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Name = "btnEliminar";
@@ -269,6 +272,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(23, 22);
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lbl
             // 
@@ -283,6 +287,7 @@
             // txtEstado
             // 
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(668, 212);
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
@@ -302,6 +307,7 @@
             // txtSerie
             // 
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSerie.Enabled = false;
             this.txtSerie.Location = new System.Drawing.Point(668, 169);
             this.txtSerie.Multiline = true;
             this.txtSerie.Name = "txtSerie";
@@ -321,6 +327,7 @@
             // txtModelo
             // 
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModelo.Enabled = false;
             this.txtModelo.Location = new System.Drawing.Point(668, 130);
             this.txtModelo.Multiline = true;
             this.txtModelo.Name = "txtModelo";
@@ -340,6 +347,7 @@
             // txtMarca
             // 
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarca.Enabled = false;
             this.txtMarca.Location = new System.Drawing.Point(668, 87);
             this.txtMarca.Multiline = true;
             this.txtMarca.Name = "txtMarca";
@@ -359,6 +367,7 @@
             // txtLote
             // 
             this.txtLote.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLote.Enabled = false;
             this.txtLote.Location = new System.Drawing.Point(305, 344);
             this.txtLote.Multiline = true;
             this.txtLote.Name = "txtLote";
@@ -380,6 +389,7 @@
             // txtDisco
             // 
             this.txtDisco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDisco.Enabled = false;
             this.txtDisco.Location = new System.Drawing.Point(450, 445);
             this.txtDisco.Multiline = true;
             this.txtDisco.Name = "txtDisco";
@@ -399,6 +409,7 @@
             // txtMemoria
             // 
             this.txtMemoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMemoria.Enabled = false;
             this.txtMemoria.Location = new System.Drawing.Point(620, 451);
             this.txtMemoria.Multiline = true;
             this.txtMemoria.Name = "txtMemoria";
@@ -418,6 +429,7 @@
             // txtProcesador
             // 
             this.txtProcesador.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProcesador.Enabled = false;
             this.txtProcesador.Location = new System.Drawing.Point(305, 445);
             this.txtProcesador.Multiline = true;
             this.txtProcesador.Name = "txtProcesador";
@@ -439,6 +451,7 @@
             // txtCode
             // 
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode.Enabled = false;
             this.txtCode.Location = new System.Drawing.Point(305, 393);
             this.txtCode.Multiline = true;
             this.txtCode.Name = "txtCode";
@@ -460,6 +473,7 @@
             // txtTag
             // 
             this.txtTag.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTag.Enabled = false;
             this.txtTag.Location = new System.Drawing.Point(305, 298);
             this.txtTag.Multiline = true;
             this.txtTag.Name = "txtTag";
@@ -481,6 +495,7 @@
             // txtPerfil
             // 
             this.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPerfil.Enabled = false;
             this.txtPerfil.Location = new System.Drawing.Point(305, 255);
             this.txtPerfil.Multiline = true;
             this.txtPerfil.Name = "txtPerfil";
@@ -502,6 +517,7 @@
             // txtTipo
             // 
             this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTipo.Enabled = false;
             this.txtTipo.Location = new System.Drawing.Point(305, 216);
             this.txtTipo.Multiline = true;
             this.txtTipo.Name = "txtTipo";
@@ -523,6 +539,7 @@
             // txtNombre
             // 
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(305, 174);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
@@ -544,6 +561,7 @@
             // txtCpu
             // 
             this.txtCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCpu.Enabled = false;
             this.txtCpu.Location = new System.Drawing.Point(305, 130);
             this.txtCpu.Multiline = true;
             this.txtCpu.Name = "txtCpu";

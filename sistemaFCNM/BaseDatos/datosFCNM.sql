@@ -137,7 +137,7 @@ where e.Regulador = va.ID and car.id_caracteristica = va.Caracteristicas and e.i
 
 select MAX(Caracteristicas) from Proyector;
 
-select*from CPU;
+select*from Equipo;
 select*from Pantalla;
 select*from Mouse;
 select*from Teclado;
@@ -165,3 +165,5 @@ HAVING COUNT(*) > 1
 ORDER BY nombre_oficina;
 
 select top 1 id  from Oficina where nombre_oficina = '25A-101';
+
+select * from Usuario where id_usuario = 'jcbodero' and clave ='1234' and tipo_usuario=1;

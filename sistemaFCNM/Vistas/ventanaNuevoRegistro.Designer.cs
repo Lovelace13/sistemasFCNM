@@ -80,7 +80,7 @@
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = global::sistemaFCNM.Properties.Resources.IconoMinimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(426, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(415, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(40, 40);
             this.btnMinimizar.TabIndex = 2;
@@ -110,7 +110,7 @@
             this.txtEquipo.Multiline = true;
             this.txtEquipo.Name = "txtEquipo";
             this.txtEquipo.Size = new System.Drawing.Size(197, 32);
-            this.txtEquipo.TabIndex = 112;
+            this.txtEquipo.TabIndex = 0;
             // 
             // label12
             // 
@@ -151,7 +151,7 @@
             this.btnRegistrar.Location = new System.Drawing.Point(160, 401);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(51, 48);
-            this.btnRegistrar.TabIndex = 118;
+            this.btnRegistrar.TabIndex = 3;
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
@@ -164,7 +164,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(306, 401);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(51, 48);
-            this.btnCancelar.TabIndex = 119;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // comboEdificio
@@ -173,7 +173,7 @@
             this.comboEdificio.Location = new System.Drawing.Point(160, 249);
             this.comboEdificio.Name = "comboEdificio";
             this.comboEdificio.Size = new System.Drawing.Size(197, 21);
-            this.comboEdificio.TabIndex = 120;
+            this.comboEdificio.TabIndex = 1;
             // 
             // comboOficina
             // 
@@ -181,7 +181,7 @@
             this.comboOficina.Location = new System.Drawing.Point(160, 294);
             this.comboOficina.Name = "comboOficina";
             this.comboOficina.Size = new System.Drawing.Size(197, 21);
-            this.comboOficina.TabIndex = 121;
+            this.comboOficina.TabIndex = 2;
             // 
             // panel1
             // 

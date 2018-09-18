@@ -13,6 +13,8 @@ namespace sistemaFCNM.Clases
         public static bool siguienteActiva = false;
         public static bool anteriorActiva = false;
         public static string INVENTARIO_EQUIPO;
+        public static string USUARIO;
+        public static string OBSERVACION;
         public static bool nuevoRegistro = false;
         
         public static mainPrincipal form1;
@@ -46,6 +48,40 @@ namespace sistemaFCNM.Clases
             // Process message box results
             return result;
                 
+        }
+
+        public static void desactivarMenu()
+        {
+            mainPrincipal.btn13.Enabled = false;
+            mainPrincipal.btn1.Enabled = false;
+            mainPrincipal.btn2.Enabled = false;
+            mainPrincipal.btn3.Enabled = false;
+            mainPrincipal.btn4.Enabled = false;
+            mainPrincipal.btn5.Enabled = false;
+            mainPrincipal.btn6.Enabled = false;
+            mainPrincipal.btn7.Enabled = false;
+            mainPrincipal.btn8.Enabled = false;
+            mainPrincipal.btn9.Enabled = false;
+            mainPrincipal.btn10.Enabled = false;
+            mainPrincipal.btn11.Enabled = false;
+            mainPrincipal.btn12.Enabled = false;
+        }
+
+        public static void activarMenu()
+        {
+            mainPrincipal.btn13.Enabled = true;
+            mainPrincipal.btn1.Enabled = true;
+            mainPrincipal.btn2.Enabled = true;
+            mainPrincipal.btn3.Enabled = true;
+            mainPrincipal.btn4.Enabled = true;
+            mainPrincipal.btn5.Enabled = true;
+            mainPrincipal.btn6.Enabled = true;
+            mainPrincipal.btn7.Enabled = true;
+            mainPrincipal.btn8.Enabled = true;
+            mainPrincipal.btn9.Enabled = true;
+            mainPrincipal.btn10.Enabled = true;
+            mainPrincipal.btn11.Enabled = true;
+            mainPrincipal.btn12.Enabled = true;
         }
     }
 }

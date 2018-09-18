@@ -76,9 +76,11 @@
             // txtEspolTech
             // 
             this.txtEspolTech.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEspolTech.Enabled = false;
             this.txtEspolTech.Location = new System.Drawing.Point(227, 135);
             this.txtEspolTech.Multiline = true;
             this.txtEspolTech.Name = "txtEspolTech";
+            this.txtEspolTech.ShortcutsEnabled = false;
             this.txtEspolTech.Size = new System.Drawing.Size(172, 31);
             this.txtEspolTech.TabIndex = 133;
             // 
@@ -113,6 +115,7 @@
             // btnPrimero
             // 
             this.btnPrimero.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrimero.Enabled = false;
             this.btnPrimero.Image = ((System.Drawing.Image)(resources.GetObject("btnPrimero.Image")));
             this.btnPrimero.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrimero.Name = "btnPrimero";
@@ -122,6 +125,7 @@
             // btnAnterior
             // 
             this.btnAnterior.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAnterior.Enabled = false;
             this.btnAnterior.Image = ((System.Drawing.Image)(resources.GetObject("btnAnterior.Image")));
             this.btnAnterior.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAnterior.Name = "btnAnterior";
@@ -131,6 +135,7 @@
             // btnSiguiente
             // 
             this.btnSiguiente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSiguiente.Enabled = false;
             this.btnSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.Image")));
             this.btnSiguiente.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSiguiente.Name = "btnSiguiente";
@@ -140,6 +145,7 @@
             // btnUltimo
             // 
             this.btnUltimo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUltimo.Enabled = false;
             this.btnUltimo.Image = ((System.Drawing.Image)(resources.GetObject("btnUltimo.Image")));
             this.btnUltimo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUltimo.Name = "btnUltimo";
@@ -164,10 +170,12 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(23, 22);
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGuardar.Enabled = false;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGuardar.Name = "btnGuardar";
@@ -178,6 +186,7 @@
             // btnEliminar
             // 
             this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Name = "btnEliminar";
@@ -192,6 +201,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(23, 22);
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // menuSuperior
             // 
@@ -219,26 +229,26 @@
             // guardarMenuItem
             // 
             this.guardarMenuItem.Name = "guardarMenuItem";
-            this.guardarMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarMenuItem.Size = new System.Drawing.Size(143, 22);
             this.guardarMenuItem.Text = "Guardar";
             this.guardarMenuItem.Click += new System.EventHandler(this.guardarMenuItem_Click);
             // 
             // guardarCsvMenuItem
             // 
             this.guardarCsvMenuItem.Name = "guardarCsvMenuItem";
-            this.guardarCsvMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarCsvMenuItem.Size = new System.Drawing.Size(143, 22);
             this.guardarCsvMenuItem.Text = "Cerrar Sesion";
             this.guardarCsvMenuItem.Click += new System.EventHandler(this.guardarCsvMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -272,9 +282,11 @@
             // txtEstado
             // 
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(598, 217);
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ShortcutsEnabled = false;
             this.txtEstado.Size = new System.Drawing.Size(172, 31);
             this.txtEstado.TabIndex = 128;
             // 
@@ -291,9 +303,11 @@
             // txtSerie
             // 
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSerie.Enabled = false;
             this.txtSerie.Location = new System.Drawing.Point(598, 174);
             this.txtSerie.Multiline = true;
             this.txtSerie.Name = "txtSerie";
+            this.txtSerie.ShortcutsEnabled = false;
             this.txtSerie.Size = new System.Drawing.Size(172, 31);
             this.txtSerie.TabIndex = 126;
             // 
@@ -310,9 +324,11 @@
             // txtModelo
             // 
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModelo.Enabled = false;
             this.txtModelo.Location = new System.Drawing.Point(598, 135);
             this.txtModelo.Multiline = true;
             this.txtModelo.Name = "txtModelo";
+            this.txtModelo.ShortcutsEnabled = false;
             this.txtModelo.Size = new System.Drawing.Size(172, 31);
             this.txtModelo.TabIndex = 124;
             // 
@@ -329,9 +345,11 @@
             // txtMarca
             // 
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarca.Enabled = false;
             this.txtMarca.Location = new System.Drawing.Point(598, 92);
             this.txtMarca.Multiline = true;
             this.txtMarca.Name = "txtMarca";
+            this.txtMarca.ShortcutsEnabled = false;
             this.txtMarca.Size = new System.Drawing.Size(172, 31);
             this.txtMarca.TabIndex = 122;
             // 
@@ -348,9 +366,11 @@
             // txtProyector
             // 
             this.txtProyector.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProyector.Enabled = false;
             this.txtProyector.Location = new System.Drawing.Point(227, 92);
             this.txtProyector.Multiline = true;
             this.txtProyector.Name = "txtProyector";
+            this.txtProyector.ShortcutsEnabled = false;
             this.txtProyector.Size = new System.Drawing.Size(172, 31);
             this.txtProyector.TabIndex = 120;
             // 

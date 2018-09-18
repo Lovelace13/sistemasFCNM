@@ -24,11 +24,7 @@ namespace sistemaFCNM.Vistas
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
-            else
-            {
-                FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-
-            }
+           
 
 
             string sql = "select e.id_Equipo, reg.Inventario_Telefono,reg.extension,reg.tipo,car.estado,car.marca," +
@@ -159,14 +155,20 @@ namespace sistemaFCNM.Vistas
                     this.Close();
                     registro = new ventanaNuevoRegistro();
                     registro.Show();
-
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.siguienteActiva = true;
+                    FuncionesUtiles.desactivarMenu();
+                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
                     return;
 
                 case "No":
                     this.Close();
                     registro = new ventanaNuevoRegistro();
                     registro.Show();
-
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.siguienteActiva = true;
+                    FuncionesUtiles.desactivarMenu();
+                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
                     return;
 
                 case "Cancel":
@@ -175,6 +177,28 @@ namespace sistemaFCNM.Vistas
                 default:
                     return;
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+        private void habilitarBotones()
+        {
+            btnGuardar.Enabled = true;
+            btnEliminar.Enabled = true;
+            txtTelefono.Enabled = true;
+            txtTipo.Enabled = true;
+            txtExtension.Enabled = true;
+            txtEstado.Enabled = true;
+            txtMarca.Enabled = true;
+            txtModelo.Enabled = true;
+            txtSerie.Enabled = true;
         }
     }
 }

@@ -102,6 +102,7 @@
             // btnPrimero
             // 
             this.btnPrimero.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrimero.Enabled = false;
             this.btnPrimero.Image = ((System.Drawing.Image)(resources.GetObject("btnPrimero.Image")));
             this.btnPrimero.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrimero.Name = "btnPrimero";
@@ -111,6 +112,7 @@
             // btnAnterior
             // 
             this.btnAnterior.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAnterior.Enabled = false;
             this.btnAnterior.Image = ((System.Drawing.Image)(resources.GetObject("btnAnterior.Image")));
             this.btnAnterior.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAnterior.Name = "btnAnterior";
@@ -120,6 +122,7 @@
             // btnSiguiente
             // 
             this.btnSiguiente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSiguiente.Enabled = false;
             this.btnSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.Image")));
             this.btnSiguiente.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSiguiente.Name = "btnSiguiente";
@@ -129,6 +132,7 @@
             // btnUltimo
             // 
             this.btnUltimo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUltimo.Enabled = false;
             this.btnUltimo.Image = ((System.Drawing.Image)(resources.GetObject("btnUltimo.Image")));
             this.btnUltimo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUltimo.Name = "btnUltimo";
@@ -153,10 +157,12 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(23, 22);
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGuardar.Enabled = false;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGuardar.Name = "btnGuardar";
@@ -167,6 +173,7 @@
             // btnEliminar
             // 
             this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Name = "btnEliminar";
@@ -181,10 +188,12 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(23, 22);
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtEstado
             // 
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(623, 224);
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
@@ -204,6 +213,7 @@
             // txtSerie
             // 
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSerie.Enabled = false;
             this.txtSerie.Location = new System.Drawing.Point(623, 181);
             this.txtSerie.Multiline = true;
             this.txtSerie.Name = "txtSerie";
@@ -223,6 +233,7 @@
             // txtModelo
             // 
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModelo.Enabled = false;
             this.txtModelo.Location = new System.Drawing.Point(623, 142);
             this.txtModelo.Multiline = true;
             this.txtModelo.Name = "txtModelo";
@@ -242,6 +253,7 @@
             // txtMarca
             // 
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarca.Enabled = false;
             this.txtMarca.Location = new System.Drawing.Point(623, 99);
             this.txtMarca.Multiline = true;
             this.txtMarca.Name = "txtMarca";
@@ -261,6 +273,7 @@
             // txtImpresora
             // 
             this.txtImpresora.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtImpresora.Enabled = false;
             this.txtImpresora.Location = new System.Drawing.Point(252, 99);
             this.txtImpresora.Multiline = true;
             this.txtImpresora.Name = "txtImpresora";
@@ -287,6 +300,7 @@
             this.grid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid.Enabled = false;
             this.grid.Location = new System.Drawing.Point(33, 289);
             this.grid.Name = "grid";
             this.grid.Size = new System.Drawing.Size(926, 89);

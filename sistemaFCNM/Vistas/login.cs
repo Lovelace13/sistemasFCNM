@@ -26,6 +26,7 @@ namespace sistemaFCNM.Vistas
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            
             if (txtUsuario.Text == "")
             {
                 MessageBox.Show("Ingrese Usuario", "Error");
@@ -43,6 +44,7 @@ namespace sistemaFCNM.Vistas
             {
                 MessageBox.Show("BIENVENIDO " + gridUsuario.Rows[0].Cells["Nombre"].Value.ToString());
                 this.Visible = false;
+                FuncionesUtiles.USUARIO = gridUsuario.Rows[0].Cells["id_usuario"].Value.ToString();
                 FuncionesUtiles.form1 = new mainPrincipal();
                 FuncionesUtiles.form1.Show();
                 

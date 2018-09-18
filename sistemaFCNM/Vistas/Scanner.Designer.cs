@@ -493,26 +493,26 @@
             // guardarMenuItem
             // 
             this.guardarMenuItem.Name = "guardarMenuItem";
-            this.guardarMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarMenuItem.Size = new System.Drawing.Size(143, 22);
             this.guardarMenuItem.Text = "Guardar";
             this.guardarMenuItem.Click += new System.EventHandler(this.guardarMenuItem_Click);
             // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -694,6 +694,7 @@
             this.btnDetallePproyeccion.TabIndex = 130;
             this.btnDetallePproyeccion.Text = "Mas Detalles";
             this.btnDetallePproyeccion.UseVisualStyleBackColor = true;
+            this.btnDetallePproyeccion.Click += new System.EventHandler(this.btnDetallePproyeccion_Click);
             // 
             // txtProyeccion
             // 
@@ -727,6 +728,7 @@
             this.btnDetalleMicro.TabIndex = 127;
             this.btnDetalleMicro.Text = "Mas Detalles";
             this.btnDetalleMicro.UseVisualStyleBackColor = true;
+            this.btnDetalleMicro.Click += new System.EventHandler(this.btnDetalleMicro_Click);
             // 
             // txtMicrofono
             // 
@@ -760,6 +762,7 @@
             this.btnDetallePantalla.TabIndex = 136;
             this.btnDetallePantalla.Text = "Mas Detalles";
             this.btnDetallePantalla.UseVisualStyleBackColor = true;
+            this.btnDetallePantalla.Click += new System.EventHandler(this.btnDetallePantalla_Click);
             // 
             // btnDetalleCpu
             // 

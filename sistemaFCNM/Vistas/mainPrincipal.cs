@@ -27,6 +27,7 @@ namespace sistemaFCNM
         public static Button btn10;
         public static Button btn11;
         public static Button btn12;
+        public static Button btn13;
 
 
         public mainPrincipal()
@@ -45,6 +46,7 @@ namespace sistemaFCNM
             btn10 = this.btnTelefono;
             btn11= this.btnPproyeccion;
             btn12= this.btnRadio;
+            btn13 = this.btnScanner;
         }
        
         private void btnCerrar_Click(object sender, EventArgs e)
