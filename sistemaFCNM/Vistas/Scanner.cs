@@ -88,6 +88,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+            
             FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
         }
 

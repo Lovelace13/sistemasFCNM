@@ -103,15 +103,23 @@ namespace sistemaFCNM.Vistas
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+              
             switch (FuncionesUtiles.ventanaDialogo())
             {
+
                 case "Yes":
 
                     guardar();
+                    FuncionesUtiles.siguienteActiva = false;
+                    FuncionesUtiles.activarMenu();
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
                     this.Close();
                     return;
 
                 case "No":
+                    FuncionesUtiles.siguienteActiva = false;
+                    FuncionesUtiles.activarMenu();
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
                     this.Close();
                     return;
 
