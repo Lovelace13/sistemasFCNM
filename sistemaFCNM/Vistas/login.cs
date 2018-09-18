@@ -41,8 +41,11 @@ namespace sistemaFCNM.Vistas
 
             if (Datos.ValidarUsuario(txtUsuario.Text, txtClave.Text,gridUsuario))
             {
-                MessageBox.Show("BIENVENIDO ");
-                Program.form1.Show();
+                MessageBox.Show("BIENVENIDO " + gridUsuario.Rows[0].Cells["Nombre"].Value.ToString());
+                this.Visible = false;
+                FuncionesUtiles.form1 = new mainPrincipal();
+                FuncionesUtiles.form1.Show();
+                
             }
 
             else
@@ -65,5 +68,6 @@ namespace sistemaFCNM.Vistas
         {
 
         }
+
     }
 }

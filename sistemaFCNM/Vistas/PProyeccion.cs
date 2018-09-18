@@ -69,6 +69,65 @@ namespace sistemaFCNM.Vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            guardar();
+        }
+
+        private void guardarCsvMenuItem_Click(object sender, EventArgs e)
+        {
+            login log;
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    log = new login();
+                    log.Show();
+                    this.Visible = false;
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    return;
+
+                case "No":
+                    log = new login();
+                    log.Show();
+                    this.Visible = false;
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+
+                    guardar();
+                    this.Close();
+                    return;
+
+                case "No":
+                    this.Close();
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+        }
+
+        private void guardar()
+        {
             string sql = "update va set va.Inventario_PantallaProyeccion='" + txtPproyeccion.Text + "', va.Dimensiones = '" + txtDimensiones.Text + "'" +
               " from Equipo e,Pantalla_Proyeccion va where e.PantallaProyeccion = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
 
@@ -81,6 +140,40 @@ namespace sistemaFCNM.Vistas
 
 
             Datos.Insertar(sql);
+        }
+
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            ventanaNuevoRegistro registro;
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+
+                    guardar();
+                    this.Close();
+                    registro = new ventanaNuevoRegistro();
+                    registro.Show();
+
+                    return;
+
+                case "No":
+                    this.Close();
+                    registro = new ventanaNuevoRegistro();
+                    registro.Show();
+
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
         }
     }
 }

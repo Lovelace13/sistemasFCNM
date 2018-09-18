@@ -69,6 +69,9 @@
             this.timerOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.panelContenedor = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panelCabecera.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -79,8 +82,11 @@
             // panelCabecera
             // 
             this.panelCabecera.BackColor = System.Drawing.Color.Goldenrod;
+            this.panelCabecera.Controls.Add(this.button3);
             this.panelCabecera.Controls.Add(this.label1);
+            this.panelCabecera.Controls.Add(this.button2);
             this.panelCabecera.Controls.Add(this.btnRestaurar);
+            this.panelCabecera.Controls.Add(this.button1);
             this.panelCabecera.Controls.Add(this.btnMinimizar);
             this.panelCabecera.Controls.Add(this.btnMaximizar);
             this.panelCabecera.Controls.Add(this.btnCerrar);
@@ -637,10 +643,40 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor.BackgroundImage = global::sistemaFCNM.Properties.Resources.pcIncono2;
             this.panelContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelContenedor.Location = new System.Drawing.Point(220, 35);
+            this.panelContenedor.Location = new System.Drawing.Point(222, 35);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1080, 695);
+            this.panelContenedor.Size = new System.Drawing.Size(1077, 695);
             this.panelContenedor.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(223, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 28);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(326, 1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 28);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(430, 1);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(87, 28);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             // 
             // mainPrincipal
             // 
@@ -713,6 +749,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel panelContenedor;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

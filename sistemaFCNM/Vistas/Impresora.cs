@@ -68,8 +68,103 @@ namespace sistemaFCNM.Vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            guardar();
+        }
+
+        
+
+        private void CerrarSesion_Click(object sender, EventArgs e)
+        {
+            login log;
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    log = new login();
+                    log.Show();
+                    this.Visible = false;
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    return;
+
+                case "No":
+                    log = new login();
+                    log.Show();
+                    this.Visible = false;
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+        }
+
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+
+                    guardar();
+                    this.Close();
+                    return;
+
+                case "No":
+                    this.Close();
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            ventanaNuevoRegistro registro;
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+
+                    guardar();
+                    this.Close();
+                    registro = new ventanaNuevoRegistro();
+                    registro.Show();
+
+                    return;
+
+                case "No":
+                    this.Close();
+                    registro = new ventanaNuevoRegistro();
+                    registro.Show();
+
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+        }
+
+        private void guardar()
+        {
             string sql = "update va set va.Inventario_Impresora='" + txtImpresora.Text + "'" +
-              " from Equipo e,Impresora va where e.Impresora = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
+             " from Equipo e,Impresora va where e.Impresora = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
 
 
             Datos.Insertar(sql);

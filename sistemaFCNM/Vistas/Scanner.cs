@@ -217,8 +217,41 @@ namespace sistemaFCNM
             registro.Show();
         }
 
-       
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FuncionesUtiles.siguienteActiva = false;
+            mainPrincipal.btn1.Enabled = true;
+            mainPrincipal.btn2.Enabled = true;
+            mainPrincipal.btn3.Enabled = true;
+            mainPrincipal.btn4.Enabled = true;
+            mainPrincipal.btn5.Enabled = true;
+            mainPrincipal.btn6.Enabled = true;
+            mainPrincipal.btn7.Enabled = true;
+            mainPrincipal.btn8.Enabled = true;
+            mainPrincipal.btn9.Enabled = true;
+            mainPrincipal.btn10.Enabled = true;
+            mainPrincipal.btn11.Enabled = true;
+            mainPrincipal.btn12.Enabled = true;
+            FuncionesUtiles.INVENTARIO_EQUIPO = "";
+        }
 
         
+           
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            login log = new login();
+            log.Show();
+            this.Visible = false;
+            FuncionesUtiles.form1.Visible = false;
+            FuncionesUtiles.INVENTARIO_EQUIPO = "";
+
+            
+        }
+
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

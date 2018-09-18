@@ -15,13 +15,36 @@ namespace sistemaFCNM
     public partial class mainPrincipal : Form
     {
         public static FlowLayoutPanel contenedor;
-
+        public static Button btn1;
+        public static Button btn2;
+        public static Button btn3;
+        public static Button btn4;
+        public static Button btn5;
+        public static Button btn6;
+        public static Button btn7;
+        public static Button btn8;
+        public static Button btn9;
+        public static Button btn10;
+        public static Button btn11;
+        public static Button btn12;
 
 
         public mainPrincipal()
         {
             InitializeComponent();
             contenedor = this.panelContenedor;
+            btn1 = this.btnCpu;
+            btn2 = this.btnPantalla;
+            btn3 = this.btnTeclado;
+            btn4 = this.btnMouse;
+            btn5 = this.btnParlante;
+            btn6 = this.btnImpresora;
+            btn7 = this.btnProyector;
+            btn8 = this.btnRegulador;
+            btn9 = this.btnMicro;
+            btn10 = this.btnTelefono;
+            btn11= this.btnPproyeccion;
+            btn12= this.btnRadio;
         }
        
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -194,5 +217,8 @@ namespace sistemaFCNM
             btnPproyeccion.Enabled = false;
             btnRadio.Enabled = false;
         }
+        
+
+        
     }
 }

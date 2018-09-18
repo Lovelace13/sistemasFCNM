@@ -14,7 +14,8 @@ namespace sistemaFCNM.Clases
         public static bool anteriorActiva = false;
         public static string INVENTARIO_EQUIPO;
         public static bool nuevoRegistro = false;
-
+        
+        public static mainPrincipal form1;
 
         public static void abrirVentanas(Form ventana, FlowLayoutPanel panelContenedor)
         {
@@ -30,6 +31,21 @@ namespace sistemaFCNM.Clases
             panelContenedor.Tag = ventana;
             ventana.Show();
         }
+        public static string ventanaDialogo()
+        {
+            // Configure the message box to be displayed
+            string messageBoxText = "Guardar Cambios?";
+            string caption = "Guardar";
+            MessageBoxButtons button = MessageBoxButtons.YesNoCancel;
+            MessageBoxIcon icon = MessageBoxIcon.Warning;
+                      
 
+           String result = MessageBox.Show(messageBoxText, caption, button, icon).ToString();
+
+
+            // Process message box results
+            return result;
+                
+        }
     }
 }

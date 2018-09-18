@@ -72,26 +72,114 @@ namespace sistemaFCNM.Vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string sql = "update c set c.inventario_cpu='" + txtCpu.Text +"',c.nombre_PC='"+ txtNombre.Text + "',c.tipo_PC ='"+ txtTipo.Text + "',c.perfil = '"+ txtPerfil.Text + "'," +
-                "c.tag = '"+ txtTag.Text + "',c.code = '"+ txtCode.Text + "',c.procesador = '"+ txtProcesador.Text + "',c.memoria = '"+ txtMemoria.Text + "',c.disco = '"+ txtDisco.Text + "',c.adicional_lote = '" + txtLote.Text + "'" +
-                " from Equipo e,CPU c where e.Inventario_CPU = c.ID and e.id_Equipo = '"+ txtEquipo.Text + "';";
 
-            Datos.Insertar(sql);
-
-            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '"+ txtMarca.Text + "',car.modelo='"+ txtModelo.Text + "',car.serie='"+ txtSerie.Text + "' "+
-                  "from Equipo e,CPU c, Caracteristicas car "+
-                  "where e.Inventario_CPU = c.ID and car.id_caracteristica = c.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
-
-            Datos.Insertar(sql);
-           
-
-
+            guardar();
+            
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            //Datos.llenarGrid("select MAX(ID) as ID from CPU;", grid);
-            //MessageBox.Show(grid.Rows[0].Cells["ID"].Value.ToString());
+            ventanaNuevoRegistro registro;
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+
+                    guardar();
+                    this.Close();
+                    registro = new ventanaNuevoRegistro();
+                    registro.Show();
+
+                    return;
+
+                case "No":
+                    this.Close();
+                    registro = new ventanaNuevoRegistro();
+                    registro.Show();
+
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+
+           
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+
+                    guardar();
+                    this.Close();
+                    return;
+
+                case "No":
+                    this.Close();
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+           
+
+        }
+
+        private void guardar()
+        {
+            string sql = "update c set c.inventario_cpu='" + txtCpu.Text + "',c.nombre_PC='" + txtNombre.Text + "',c.tipo_PC ='" + txtTipo.Text + "',c.perfil = '" + txtPerfil.Text + "'," +
+                "c.tag = '" + txtTag.Text + "',c.code = '" + txtCode.Text + "',c.procesador = '" + txtProcesador.Text + "',c.memoria = '" + txtMemoria.Text + "',c.disco = '" + txtDisco.Text + "',c.adicional_lote = '" + txtLote.Text + "'" +
+                " from Equipo e,CPU c where e.Inventario_CPU = c.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
+
+            Datos.Insertar(sql);
+
+            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
+                  "from Equipo e,CPU c, Caracteristicas car " +
+                  "where e.Inventario_CPU = c.ID and car.id_caracteristica = c.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
+
+            Datos.Insertar(sql);
+        }
+
+        private void CerrarSesion_Click(object sender, EventArgs e)
+        {
+            login log;
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    log = new login();
+                    log.Show();
+                    this.Visible = false;
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    return;
+
+                case "No":
+                    log = new login();
+                    log.Show();
+                    this.Visible = false;
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+           
+        }
+
+        
     }
 }
