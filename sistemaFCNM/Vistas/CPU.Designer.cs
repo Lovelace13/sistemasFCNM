@@ -49,7 +49,6 @@
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.lbl = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
@@ -84,10 +83,13 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevius = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.menuSuperior.SuspendLayout();
             this.barraMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuSuperior
@@ -274,21 +276,11 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(548, 59);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(304, 13);
-            this.lbl.TabIndex = 106;
-            this.lbl.Text = "----------------------------------Caracteristicas--------------------------------" +
-    "----------";
-            // 
             // txtEstado
             // 
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(668, 212);
+            this.txtEstado.Location = new System.Drawing.Point(165, 149);
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(172, 31);
@@ -298,7 +290,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(548, 216);
+            this.label10.Location = new System.Drawing.Point(45, 153);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 105;
@@ -308,7 +300,7 @@
             // 
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSerie.Enabled = false;
-            this.txtSerie.Location = new System.Drawing.Point(668, 169);
+            this.txtSerie.Location = new System.Drawing.Point(165, 106);
             this.txtSerie.Multiline = true;
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(172, 31);
@@ -318,7 +310,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(548, 173);
+            this.label11.Location = new System.Drawing.Point(45, 110);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 13);
             this.label11.TabIndex = 103;
@@ -328,7 +320,7 @@
             // 
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtModelo.Enabled = false;
-            this.txtModelo.Location = new System.Drawing.Point(668, 130);
+            this.txtModelo.Location = new System.Drawing.Point(165, 67);
             this.txtModelo.Multiline = true;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(172, 31);
@@ -338,7 +330,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(548, 134);
+            this.label12.Location = new System.Drawing.Point(45, 71);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 101;
@@ -348,7 +340,7 @@
             // 
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarca.Enabled = false;
-            this.txtMarca.Location = new System.Drawing.Point(668, 87);
+            this.txtMarca.Location = new System.Drawing.Point(165, 24);
             this.txtMarca.Multiline = true;
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(172, 31);
@@ -358,7 +350,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(548, 91);
+            this.label13.Location = new System.Drawing.Point(45, 28);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 99;
@@ -368,7 +360,7 @@
             // 
             this.txtLote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLote.Enabled = false;
-            this.txtLote.Location = new System.Drawing.Point(305, 344);
+            this.txtLote.Location = new System.Drawing.Point(128, 233);
             this.txtLote.Multiline = true;
             this.txtLote.Name = "txtLote";
             this.txtLote.Size = new System.Drawing.Size(172, 31);
@@ -379,7 +371,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label14.Location = new System.Drawing.Point(185, 348);
+            this.label14.Location = new System.Drawing.Point(8, 237);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(98, 13);
             this.label14.TabIndex = 97;
@@ -390,7 +382,7 @@
             // 
             this.txtDisco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDisco.Enabled = false;
-            this.txtDisco.Location = new System.Drawing.Point(450, 445);
+            this.txtDisco.Location = new System.Drawing.Point(273, 334);
             this.txtDisco.Multiline = true;
             this.txtDisco.Name = "txtDisco";
             this.txtDisco.Size = new System.Drawing.Size(56, 32);
@@ -400,7 +392,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(391, 448);
+            this.label15.Location = new System.Drawing.Point(214, 337);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(39, 13);
             this.label15.TabIndex = 95;
@@ -410,7 +402,7 @@
             // 
             this.txtMemoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMemoria.Enabled = false;
-            this.txtMemoria.Location = new System.Drawing.Point(620, 451);
+            this.txtMemoria.Location = new System.Drawing.Point(443, 340);
             this.txtMemoria.Multiline = true;
             this.txtMemoria.Name = "txtMemoria";
             this.txtMemoria.Size = new System.Drawing.Size(56, 32);
@@ -420,7 +412,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(531, 451);
+            this.label6.Location = new System.Drawing.Point(354, 340);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 93;
@@ -430,7 +422,7 @@
             // 
             this.txtProcesador.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProcesador.Enabled = false;
-            this.txtProcesador.Location = new System.Drawing.Point(305, 445);
+            this.txtProcesador.Location = new System.Drawing.Point(128, 334);
             this.txtProcesador.Multiline = true;
             this.txtProcesador.Name = "txtProcesador";
             this.txtProcesador.Size = new System.Drawing.Size(56, 32);
@@ -441,7 +433,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(185, 448);
+            this.label7.Location = new System.Drawing.Point(8, 337);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 13);
             this.label7.TabIndex = 91;
@@ -452,7 +444,7 @@
             // 
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCode.Enabled = false;
-            this.txtCode.Location = new System.Drawing.Point(305, 393);
+            this.txtCode.Location = new System.Drawing.Point(128, 282);
             this.txtCode.Multiline = true;
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(371, 31);
@@ -463,7 +455,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(185, 396);
+            this.label4.Location = new System.Drawing.Point(8, 285);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 89;
@@ -474,7 +466,7 @@
             // 
             this.txtTag.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTag.Enabled = false;
-            this.txtTag.Location = new System.Drawing.Point(305, 298);
+            this.txtTag.Location = new System.Drawing.Point(128, 187);
             this.txtTag.Multiline = true;
             this.txtTag.Name = "txtTag";
             this.txtTag.Size = new System.Drawing.Size(172, 31);
@@ -485,7 +477,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(185, 302);
+            this.label5.Location = new System.Drawing.Point(8, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 13);
             this.label5.TabIndex = 87;
@@ -496,7 +488,7 @@
             // 
             this.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPerfil.Enabled = false;
-            this.txtPerfil.Location = new System.Drawing.Point(305, 255);
+            this.txtPerfil.Location = new System.Drawing.Point(128, 144);
             this.txtPerfil.Multiline = true;
             this.txtPerfil.Name = "txtPerfil";
             this.txtPerfil.Size = new System.Drawing.Size(138, 31);
@@ -507,7 +499,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(185, 259);
+            this.label2.Location = new System.Drawing.Point(8, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 85;
@@ -518,7 +510,7 @@
             // 
             this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTipo.Enabled = false;
-            this.txtTipo.Location = new System.Drawing.Point(305, 216);
+            this.txtTipo.Location = new System.Drawing.Point(128, 105);
             this.txtTipo.Multiline = true;
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(138, 31);
@@ -529,7 +521,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(185, 220);
+            this.label3.Location = new System.Drawing.Point(8, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 83;
@@ -540,7 +532,7 @@
             // 
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Enabled = false;
-            this.txtNombre.Location = new System.Drawing.Point(305, 174);
+            this.txtNombre.Location = new System.Drawing.Point(128, 63);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(172, 31);
@@ -551,7 +543,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(185, 180);
+            this.label1.Location = new System.Drawing.Point(8, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 81;
@@ -562,7 +554,7 @@
             // 
             this.txtCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCpu.Enabled = false;
-            this.txtCpu.Location = new System.Drawing.Point(305, 130);
+            this.txtCpu.Location = new System.Drawing.Point(128, 19);
             this.txtCpu.Multiline = true;
             this.txtCpu.Name = "txtCpu";
             this.txtCpu.Size = new System.Drawing.Size(172, 31);
@@ -573,7 +565,7 @@
             this.lblCpu.AutoSize = true;
             this.lblCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCpu.Location = new System.Drawing.Point(185, 136);
+            this.lblCpu.Location = new System.Drawing.Point(8, 25);
             this.lblCpu.Name = "lblCpu";
             this.lblCpu.Size = new System.Drawing.Size(98, 13);
             this.lblCpu.TabIndex = 79;
@@ -588,7 +580,7 @@
             this.gridCpu.BackgroundColor = System.Drawing.SystemColors.Control;
             this.gridCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridCpu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridCpu.Location = new System.Drawing.Point(83, 489);
+            this.gridCpu.Location = new System.Drawing.Point(87, 521);
             this.gridCpu.Name = "gridCpu";
             this.gridCpu.Size = new System.Drawing.Size(926, 111);
             this.gridCpu.TabIndex = 107;
@@ -597,17 +589,17 @@
             // 
             this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEquipo.Enabled = false;
-            this.txtEquipo.Location = new System.Drawing.Point(12, 93);
+            this.txtEquipo.Location = new System.Drawing.Point(742, 404);
             this.txtEquipo.Multiline = true;
             this.txtEquipo.Name = "txtEquipo";
-            this.txtEquipo.Size = new System.Drawing.Size(132, 19);
+            this.txtEquipo.Size = new System.Drawing.Size(75, 61);
             this.txtEquipo.TabIndex = 108;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 70);
+            this.label8.Location = new System.Drawing.Point(739, 388);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 109;
@@ -642,20 +634,56 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(935, 52);
+            this.panel1.Location = new System.Drawing.Point(935, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(133, 125);
             this.panel1.TabIndex = 123;
             // 
-            // label9
+            // groupBox1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(173, 93);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(346, 13);
-            this.label9.TabIndex = 124;
-            this.label9.Text = "----------------------------------CPU DATOS BASICOS------------------------------" +
-    "------------";
+            this.groupBox1.Controls.Add(this.txtCpu);
+            this.groupBox1.Controls.Add(this.lblCpu);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtTipo);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtPerfil);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtTag);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtCode);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtProcesador);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtMemoria);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.txtLote);
+            this.groupBox1.Controls.Add(this.txtDisco);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Location = new System.Drawing.Point(32, 93);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(519, 411);
+            this.groupBox1.TabIndex = 125;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "CPU DATOS BASICOS";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.txtMarca);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.txtModelo);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txtSerie);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtEstado);
+            this.groupBox2.Location = new System.Drawing.Point(577, 130);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(373, 227);
+            this.groupBox2.TabIndex = 126;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Caracteristicas";
             // 
             // CPU
             // 
@@ -665,42 +693,14 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1080, 685);
             this.ControlBox = false;
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPrevius);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.txtEquipo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.gridCpu);
-            this.Controls.Add(this.lbl);
-            this.Controls.Add(this.txtEstado);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtSerie);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtModelo);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtMarca);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtLote);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.txtDisco);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.txtMemoria);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtProcesador);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtCode);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtTag);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtPerfil);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtTipo);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCpu);
-            this.Controls.Add(this.lblCpu);
             this.Controls.Add(this.barraMenu);
             this.Controls.Add(this.menuSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -717,6 +717,10 @@
             this.barraMenu.ResumeLayout(false);
             this.barraMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -743,7 +747,6 @@
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnBuscar;
-        private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSerie;
@@ -778,6 +781,7 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevius;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
