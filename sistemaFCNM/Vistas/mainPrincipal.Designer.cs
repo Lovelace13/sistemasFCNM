@@ -641,7 +641,7 @@
             this.btnScanner.Name = "btnScanner";
             this.btnScanner.Size = new System.Drawing.Size(220, 42);
             this.btnScanner.TabIndex = 1;
-            this.btnScanner.Text = "      Scanear Codigo";
+            this.btnScanner.Text = "      Escanear Codigo";
             this.btnScanner.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnScanner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnScanner.UseVisualStyleBackColor = true;
