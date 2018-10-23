@@ -231,5 +231,10 @@ namespace sistemaFCNM.Vistas
             txtSerie.Enabled = true;
             txtLote.Enabled = true;
         }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
