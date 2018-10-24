@@ -1,4 +1,6 @@
-﻿namespace sistemaFCNM.Vistas
+﻿using sistemaFCNM.Clases;
+
+namespace sistemaFCNM.Vistas
 {
     partial class CPU
     {
@@ -73,13 +75,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevius = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new sistemaFCNM.Clases.RoundedButton();
+            this.btnEliminar = new sistemaFCNM.Clases.RoundedButton();
+            this.btnGuardar = new sistemaFCNM.Clases.RoundedButton();
+            this.btnNuevo = new sistemaFCNM.Clases.RoundedButton();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -94,7 +96,7 @@
             this.menuSuperior.Location = new System.Drawing.Point(0, 0);
             this.menuSuperior.Name = "menuSuperior";
             this.menuSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuSuperior.Size = new System.Drawing.Size(1080, 24);
+            this.menuSuperior.Size = new System.Drawing.Size(1080, 29);
             this.menuSuperior.TabIndex = 67;
             this.menuSuperior.Text = "menuStrip1";
             // 
@@ -106,8 +108,9 @@
             this.CerrarSesion,
             this.toolStripMenuItem1,
             this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(75, 25);
             this.archivoToolStripMenuItem.Text = "Archivo";
             this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
             // 
@@ -148,8 +151,9 @@
             this.ayudaToolStripMenuItem1,
             this.toolStripMenuItem2,
             this.acercaDeToolStripMenuItem});
+            this.ayudaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(66, 25);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // ayudaToolStripMenuItem1
@@ -171,7 +175,7 @@
             // 
             // txtEstado
             // 
-            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(165, 139);
@@ -193,7 +197,7 @@
             // 
             // txtSerie
             // 
-            this.txtSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSerie.Enabled = false;
             this.txtSerie.Location = new System.Drawing.Point(165, 98);
@@ -215,7 +219,7 @@
             // 
             // txtModelo
             // 
-            this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtModelo.Enabled = false;
             this.txtModelo.Location = new System.Drawing.Point(165, 61);
@@ -237,7 +241,7 @@
             // 
             // txtMarca
             // 
-            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarca.Enabled = false;
             this.txtMarca.Location = new System.Drawing.Point(165, 24);
@@ -259,7 +263,7 @@
             // 
             // txtLote
             // 
-            this.txtLote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtLote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtLote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLote.Enabled = false;
             this.txtLote.Location = new System.Drawing.Point(129, 267);
@@ -283,7 +287,7 @@
             // 
             // txtDisco
             // 
-            this.txtDisco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtDisco.BackColor = System.Drawing.Color.Gainsboro;
             this.txtDisco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDisco.Enabled = false;
             this.txtDisco.Location = new System.Drawing.Point(274, 368);
@@ -304,10 +308,10 @@
             // 
             // txtMemoria
             // 
-            this.txtMemoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtMemoria.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMemoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMemoria.Enabled = false;
-            this.txtMemoria.Location = new System.Drawing.Point(444, 374);
+            this.txtMemoria.Location = new System.Drawing.Point(444, 368);
             this.txtMemoria.Multiline = true;
             this.txtMemoria.Name = "txtMemoria";
             this.txtMemoria.Size = new System.Drawing.Size(56, 32);
@@ -325,7 +329,7 @@
             // 
             // txtProcesador
             // 
-            this.txtProcesador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtProcesador.BackColor = System.Drawing.Color.Gainsboro;
             this.txtProcesador.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProcesador.Enabled = false;
             this.txtProcesador.Location = new System.Drawing.Point(129, 368);
@@ -349,7 +353,7 @@
             // 
             // txtCode
             // 
-            this.txtCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCode.Enabled = false;
             this.txtCode.Location = new System.Drawing.Point(129, 316);
@@ -373,7 +377,7 @@
             // 
             // txtTag
             // 
-            this.txtTag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtTag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtTag.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTag.Enabled = false;
             this.txtTag.Location = new System.Drawing.Point(129, 221);
@@ -397,13 +401,13 @@
             // 
             // txtPerfil
             // 
-            this.txtPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPerfil.Enabled = false;
             this.txtPerfil.Location = new System.Drawing.Point(129, 178);
             this.txtPerfil.Multiline = true;
             this.txtPerfil.Name = "txtPerfil";
-            this.txtPerfil.Size = new System.Drawing.Size(138, 31);
+            this.txtPerfil.Size = new System.Drawing.Size(172, 31);
             this.txtPerfil.TabIndex = 84;
             // 
             // label2
@@ -421,13 +425,13 @@
             // 
             // txtTipo
             // 
-            this.txtTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTipo.Enabled = false;
             this.txtTipo.Location = new System.Drawing.Point(129, 139);
             this.txtTipo.Multiline = true;
             this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(138, 31);
+            this.txtTipo.Size = new System.Drawing.Size(172, 31);
             this.txtTipo.TabIndex = 82;
             // 
             // label3
@@ -445,7 +449,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(129, 97);
@@ -469,7 +473,7 @@
             // 
             // txtCpu
             // 
-            this.txtCpu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCpu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCpu.Enabled = false;
             this.txtCpu.Location = new System.Drawing.Point(129, 53);
@@ -496,9 +500,10 @@
             this.gridCpu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridCpu.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.gridCpu.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.gridCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridCpu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridCpu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(171)))), ((int)(((byte)(131)))));
             this.gridCpu.Location = new System.Drawing.Point(73, 489);
             this.gridCpu.Name = "gridCpu";
             this.gridCpu.Size = new System.Drawing.Size(926, 111);
@@ -506,7 +511,7 @@
             // 
             // txtEquipo
             // 
-            this.txtEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEquipo.Enabled = false;
             this.txtEquipo.ForeColor = System.Drawing.SystemColors.Window;
@@ -529,6 +534,7 @@
             // 
             // btnNext
             // 
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
@@ -536,11 +542,12 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(36, 34);
             this.btnNext.TabIndex = 110;
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevius
             // 
+            this.btnPrevius.BackColor = System.Drawing.Color.Transparent;
             this.btnPrevius.Enabled = false;
             this.btnPrevius.FlatAppearance.BorderSize = 0;
             this.btnPrevius.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -549,20 +556,11 @@
             this.btnPrevius.Name = "btnPrevius";
             this.btnPrevius.Size = new System.Drawing.Size(36, 34);
             this.btnPrevius.TabIndex = 111;
-            this.btnPrevius.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(935, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(133, 125);
-            this.panel1.TabIndex = 123;
+            this.btnPrevius.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtCpu);
             this.groupBox1.Controls.Add(this.lblCpu);
             this.groupBox1.Controls.Add(this.label1);
@@ -585,7 +583,8 @@
             this.groupBox1.Controls.Add(this.txtLote);
             this.groupBox1.Controls.Add(this.txtDisco);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Location = new System.Drawing.Point(12, 88);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(40)))));
+            this.groupBox1.Location = new System.Drawing.Point(12, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(519, 411);
             this.groupBox1.TabIndex = 125;
@@ -594,6 +593,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.txtMarca);
             this.groupBox2.Controls.Add(this.label12);
@@ -609,44 +609,37 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Caracteristicas";
             // 
-            // btnNuevo
+            // panel1
             // 
-            this.btnNuevo.BackColor = System.Drawing.SystemColors.Info;
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(908, 270);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(160, 45);
-            this.btnNuevo.TabIndex = 127;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(935, 32);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(133, 125);
+            this.panel1.TabIndex = 123;
             // 
-            // btnGuardar
+            // btnBuscar
             // 
-            this.btnGuardar.BackColor = System.Drawing.SystemColors.Info;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(908, 322);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(160, 45);
-            this.btnGuardar.TabIndex = 128;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnBuscar.BackColor = System.Drawing.Color.LightGray;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(908, 424);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(160, 45);
+            this.btnBuscar.TabIndex = 130;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.SystemColors.Info;
+            this.btnEliminar.BackColor = System.Drawing.Color.LightGray;
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEliminar.FlatAppearance.BorderSize = 0;
@@ -661,29 +654,50 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // btnBuscar
+            // btnGuardar
             // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.Info;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(908, 424);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(160, 45);
-            this.btnBuscar.TabIndex = 130;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnGuardar.BackColor = System.Drawing.Color.LightGray;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(908, 322);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(160, 45);
+            this.btnGuardar.TabIndex = 128;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.LightGray;
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(908, 270);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(160, 45);
+            this.btnNuevo.TabIndex = 127;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // CPU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(163)))), ((int)(((byte)(131)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 685);
             this.ControlBox = false;
             this.Controls.Add(this.btnBuscar);
@@ -697,6 +711,7 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.gridCpu);
             this.Controls.Add(this.menuSuperior);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -758,17 +773,17 @@
         private System.Windows.Forms.TextBox txtCpu;
         private System.Windows.Forms.Label lblCpu;
         private System.Windows.Forms.DataGridView gridCpu;
-        private System.Windows.Forms.TextBox txtEquipo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevius;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnBuscar;
+        private RoundedButton btnNuevo;
+        private RoundedButton btnGuardar;
+        private RoundedButton btnEliminar;
+        private RoundedButton btnBuscar;
         private System.Windows.Forms.ToolStripMenuItem cargarDocumentoToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtEquipo;
+        private System.Windows.Forms.Panel panel1;
     }
 }
