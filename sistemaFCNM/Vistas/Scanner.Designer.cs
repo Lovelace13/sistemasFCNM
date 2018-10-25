@@ -73,7 +73,6 @@
             this.btnDetalleRadio = new System.Windows.Forms.Button();
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnDetallePproyeccion = new System.Windows.Forms.Button();
             this.txtProyeccion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -88,6 +87,7 @@
             this.lblCpu = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventario)).BeginInit();
             this.menuSuperior.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -96,7 +96,7 @@
             // 
             // txtTeclado
             // 
-            this.txtTeclado.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtTeclado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtTeclado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTeclado.Enabled = false;
             this.txtTeclado.Location = new System.Drawing.Point(167, 75);
@@ -117,7 +117,7 @@
             // 
             // txtMouse
             // 
-            this.txtMouse.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtMouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtMouse.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMouse.Enabled = false;
             this.txtMouse.Location = new System.Drawing.Point(167, 103);
@@ -140,7 +140,7 @@
             // 
             this.txtScanner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtScanner.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtScanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtScanner.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtScanner.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtScanner.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,10 +202,10 @@
             this.gridInventario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridInventario.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.gridInventario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gridInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridInventario.Location = new System.Drawing.Point(84, 376);
+            this.gridInventario.Location = new System.Drawing.Point(84, 445);
             this.gridInventario.Name = "gridInventario";
             this.gridInventario.Size = new System.Drawing.Size(896, 127);
             this.gridInventario.TabIndex = 27;
@@ -213,7 +213,7 @@
             // txtOficina
             // 
             this.txtOficina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOficina.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtOficina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtOficina.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtOficina.Location = new System.Drawing.Point(61, 84);
             this.txtOficina.Multiline = true;
@@ -247,7 +247,7 @@
             // txtAyudante
             // 
             this.txtAyudante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAyudante.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtAyudante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtAyudante.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAyudante.Location = new System.Drawing.Point(32, 190);
             this.txtAyudante.Multiline = true;
@@ -347,7 +347,7 @@
             // txtRegulador
             // 
             this.txtRegulador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRegulador.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtRegulador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtRegulador.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRegulador.Enabled = false;
             this.txtRegulador.Location = new System.Drawing.Point(599, 19);
@@ -359,7 +359,7 @@
             // txtParlante
             // 
             this.txtParlante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtParlante.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtParlante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtParlante.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtParlante.Enabled = false;
             this.txtParlante.Location = new System.Drawing.Point(599, 103);
@@ -371,7 +371,7 @@
             // txtImpresora
             // 
             this.txtImpresora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImpresora.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtImpresora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtImpresora.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtImpresora.Enabled = false;
             this.txtImpresora.Location = new System.Drawing.Point(599, 75);
@@ -383,7 +383,7 @@
             // txtProyector
             // 
             this.txtProyector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProyector.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtProyector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtProyector.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProyector.Enabled = false;
             this.txtProyector.Location = new System.Drawing.Point(599, 47);
@@ -399,33 +399,34 @@
             this.cerrarSesiónToolStripMenuItem,
             this.toolStripMenuItem1,
             this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(75, 25);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // guardarMenuItem
             // 
             this.guardarMenuItem.Name = "guardarMenuItem";
-            this.guardarMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.guardarMenuItem.Size = new System.Drawing.Size(174, 26);
             this.guardarMenuItem.Text = "Guardar";
             this.guardarMenuItem.Click += new System.EventHandler(this.guardarMenuItem_Click);
             // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(171, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -435,25 +436,26 @@
             this.ayudaToolStripMenuItem1,
             this.toolStripMenuItem2,
             this.acercaDeToolStripMenuItem});
+            this.ayudaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(66, 25);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // ayudaToolStripMenuItem1
             // 
             this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
-            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(153, 26);
             this.ayudaToolStripMenuItem1.Text = "Ayuda";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(129, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(150, 6);
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.acercaDeToolStripMenuItem.Text = "Acerca de..";
             // 
             // menuSuperior
@@ -464,7 +466,7 @@
             this.menuSuperior.Location = new System.Drawing.Point(0, 0);
             this.menuSuperior.Name = "menuSuperior";
             this.menuSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuSuperior.Size = new System.Drawing.Size(1080, 24);
+            this.menuSuperior.Size = new System.Drawing.Size(1080, 29);
             this.menuSuperior.TabIndex = 9;
             this.menuSuperior.Text = "menuStrip1";
             // 
@@ -486,7 +488,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelefono.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefono.Enabled = false;
             this.txtTelefono.Location = new System.Drawing.Point(599, 131);
@@ -520,7 +522,7 @@
             // txtFecha
             // 
             this.txtFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFecha.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFecha.Location = new System.Drawing.Point(32, 137);
             this.txtFecha.Multiline = true;
@@ -532,7 +534,7 @@
             // txtRadio
             // 
             this.txtRadio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRadio.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtRadio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtRadio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRadio.Enabled = false;
             this.txtRadio.Location = new System.Drawing.Point(599, 159);
@@ -569,7 +571,7 @@
             // 
             // txtEquipo
             // 
-            this.txtEquipo.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEquipo.Enabled = false;
             this.txtEquipo.Location = new System.Drawing.Point(9, 41);
@@ -588,16 +590,6 @@
             this.label12.TabIndex = 111;
             this.label12.Text = "Equipo";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(5, 31);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(118, 88);
-            this.panel1.TabIndex = 124;
-            // 
             // btnDetallePproyeccion
             // 
             this.btnDetallePproyeccion.FlatAppearance.BorderSize = 0;
@@ -614,7 +606,7 @@
             // 
             // txtProyeccion
             // 
-            this.txtProyeccion.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtProyeccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtProyeccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProyeccion.Enabled = false;
             this.txtProyeccion.Location = new System.Drawing.Point(167, 159);
@@ -649,7 +641,7 @@
             // 
             // txtMicrofono
             // 
-            this.txtMicrofono.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtMicrofono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtMicrofono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMicrofono.Enabled = false;
             this.txtMicrofono.Location = new System.Drawing.Point(167, 131);
@@ -698,7 +690,7 @@
             // 
             // txtCpu
             // 
-            this.txtCpu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtCpu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCpu.Enabled = false;
             this.txtCpu.Location = new System.Drawing.Point(167, 19);
@@ -709,7 +701,7 @@
             // 
             // txtPantalla
             // 
-            this.txtPantalla.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtPantalla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPantalla.Enabled = false;
             this.txtPantalla.Location = new System.Drawing.Point(167, 47);
@@ -740,6 +732,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.btnDetallePantalla);
             this.groupBox1.Controls.Add(this.btnDetalleCpu);
             this.groupBox1.Controls.Add(this.txtCpu);
@@ -776,7 +769,7 @@
             this.groupBox1.Controls.Add(this.lblMouse);
             this.groupBox1.Controls.Add(this.txtTeclado);
             this.groupBox1.Controls.Add(this.lblTeclado);
-            this.groupBox1.Location = new System.Drawing.Point(12, 136);
+            this.groupBox1.Location = new System.Drawing.Point(12, 200);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(920, 199);
             this.groupBox1.TabIndex = 137;
@@ -785,6 +778,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.txtEquipo);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label10);
@@ -793,12 +787,22 @@
             this.groupBox2.Controls.Add(this.txtAyudante);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtOficina);
-            this.groupBox2.Location = new System.Drawing.Point(938, 105);
+            this.groupBox2.Location = new System.Drawing.Point(938, 200);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(132, 230);
             this.groupBox2.TabIndex = 138;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Inventario";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(17, 47);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(133, 125);
+            this.panel1.TabIndex = 139;
             // 
             // Scanner
             // 
@@ -806,14 +810,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Beige;
+            this.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondooo;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 685);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridInventario);
             this.Controls.Add(this.txtScanner);
             this.Controls.Add(this.menuSuperior);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuSuperior;
@@ -881,7 +888,6 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.TextBox txtEquipo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDetallePproyeccion;
         private System.Windows.Forms.TextBox txtProyeccion;
         private System.Windows.Forms.Label label9;
@@ -896,5 +902,6 @@
         private System.Windows.Forms.Label lblCpu;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

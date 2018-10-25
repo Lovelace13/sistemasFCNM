@@ -82,6 +82,7 @@ namespace sistemaFCNM.Vistas
             this.btnEliminar = new sistemaFCNM.Clases.RoundedButton();
             this.btnGuardar = new sistemaFCNM.Clases.RoundedButton();
             this.btnNuevo = new sistemaFCNM.Clases.RoundedButton();
+            this.btn_modificar = new sistemaFCNM.Clases.RoundedButton();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -117,31 +118,31 @@ namespace sistemaFCNM.Vistas
             // guardarMenuItem
             // 
             this.guardarMenuItem.Name = "guardarMenuItem";
-            this.guardarMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.guardarMenuItem.Size = new System.Drawing.Size(212, 26);
             this.guardarMenuItem.Text = "Guardar";
             // 
             // cargarDocumentoToolStripMenuItem
             // 
             this.cargarDocumentoToolStripMenuItem.Name = "cargarDocumentoToolStripMenuItem";
-            this.cargarDocumentoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.cargarDocumentoToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.cargarDocumentoToolStripMenuItem.Text = "Cargar Documento";
             // 
             // CerrarSesion
             // 
             this.CerrarSesion.Name = "CerrarSesion";
-            this.CerrarSesion.Size = new System.Drawing.Size(175, 22);
+            this.CerrarSesion.Size = new System.Drawing.Size(212, 26);
             this.CerrarSesion.Text = "Cerrar Sesion";
             this.CerrarSesion.Click += new System.EventHandler(this.CerrarSesion_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(172, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(209, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -159,18 +160,18 @@ namespace sistemaFCNM.Vistas
             // ayudaToolStripMenuItem1
             // 
             this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
-            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(153, 26);
             this.ayudaToolStripMenuItem1.Text = "Ayuda";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(129, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(150, 6);
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.acercaDeToolStripMenuItem.Text = "Acerca de..";
             // 
             // txtEstado
@@ -504,7 +505,7 @@ namespace sistemaFCNM.Vistas
             this.gridCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridCpu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCpu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(171)))), ((int)(((byte)(131)))));
-            this.gridCpu.Location = new System.Drawing.Point(73, 489);
+            this.gridCpu.Location = new System.Drawing.Point(72, 510);
             this.gridCpu.Name = "gridCpu";
             this.gridCpu.Size = new System.Drawing.Size(926, 111);
             this.gridCpu.TabIndex = 107;
@@ -629,7 +630,7 @@ namespace sistemaFCNM.Vistas
             this.btnBuscar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(908, 424);
+            this.btnBuscar.Location = new System.Drawing.Point(908, 462);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(160, 45);
             this.btnBuscar.TabIndex = 130;
@@ -647,7 +648,7 @@ namespace sistemaFCNM.Vistas
             this.btnEliminar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(908, 373);
+            this.btnEliminar.Location = new System.Drawing.Point(908, 411);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(160, 45);
             this.btnEliminar.TabIndex = 129;
@@ -664,7 +665,7 @@ namespace sistemaFCNM.Vistas
             this.btnGuardar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(908, 322);
+            this.btnGuardar.Location = new System.Drawing.Point(908, 360);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(160, 45);
             this.btnGuardar.TabIndex = 128;
@@ -682,13 +683,31 @@ namespace sistemaFCNM.Vistas
             this.btnNuevo.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(908, 270);
+            this.btnNuevo.Location = new System.Drawing.Point(908, 308);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(160, 45);
             this.btnNuevo.TabIndex = 127;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btn_modificar
+            // 
+            this.btn_modificar.BackColor = System.Drawing.Color.LightGray;
+            this.btn_modificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_modificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_modificar.FlatAppearance.BorderSize = 0;
+            this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_modificar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_modificar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btn_modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_modificar.Location = new System.Drawing.Point(908, 257);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(160, 45);
+            this.btn_modificar.TabIndex = 131;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.UseVisualStyleBackColor = false;
+            this.btn_modificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // CPU
             // 
@@ -700,6 +719,7 @@ namespace sistemaFCNM.Vistas
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 685);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_modificar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGuardar);
@@ -785,5 +805,6 @@ namespace sistemaFCNM.Vistas
         private System.Windows.Forms.ToolStripMenuItem cargarDocumentoToolStripMenuItem;
         private System.Windows.Forms.TextBox txtEquipo;
         private System.Windows.Forms.Panel panel1;
+        private RoundedButton btn_modificar;
     }
 }

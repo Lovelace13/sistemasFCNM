@@ -146,12 +146,16 @@ namespace sistemaFCNM
 
         private void btnCpu_Click(object sender, EventArgs e)
         {
+            
             FuncionesUtiles.abrirVentanas(new CPU(), contenedor);
+            
         }
 
         private void btnPantalla_Click(object sender, EventArgs e)
         {
+            
             FuncionesUtiles.abrirVentanas(new Pantalla(), contenedor);
+            
         }
 
         private void btnTeclado_Click(object sender, EventArgs e)
@@ -218,9 +222,15 @@ namespace sistemaFCNM
             btnTelefono.Enabled = false;
             btnPproyeccion.Enabled = false;
             btnRadio.Enabled = false;
+            
+       }
+
+        private void mainPrincipal_Load(object sender, EventArgs e)
+        {
+            logoEspol.Visible = true;
         }
-        
+    }
+}        
 
         
-    }
-}
+

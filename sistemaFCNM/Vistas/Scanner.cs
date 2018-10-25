@@ -255,6 +255,7 @@ namespace sistemaFCNM
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+           
             FuncionesUtiles.siguienteActiva = false;
             FuncionesUtiles.activarMenu();
             FuncionesUtiles.INVENTARIO_EQUIPO = "";

@@ -376,5 +376,14 @@
     <Folder Include="BaseDatos\" />
     <Folder Include="Librerias\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondooo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\espolLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modificar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

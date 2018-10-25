@@ -44,7 +44,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,10 +56,11 @@
             this.menuSuperior = new System.Windows.Forms.MenuStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new sistemaFCNM.Clases.RoundedButton();
+            this.btnEliminar = new sistemaFCNM.Clases.RoundedButton();
+            this.btnGuardar = new sistemaFCNM.Clases.RoundedButton();
+            this.btnNuevo = new sistemaFCNM.Clases.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.menuSuperior.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -232,16 +232,6 @@
             this.label2.TabIndex = 127;
             this.label2.Text = "Equipo";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(899, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(133, 125);
-            this.panel1.TabIndex = 128;
-            // 
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -348,9 +338,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "IMPRESORA DATOS BASICOS";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::sistemaFCNM.Properties.Resources.espolLogo;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(899, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(133, 125);
+            this.panel1.TabIndex = 128;
+            // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.Info;
+            this.btnBuscar.BackColor = System.Drawing.Color.LightGray;
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
@@ -358,7 +358,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(908, 422);
+            this.btnBuscar.Location = new System.Drawing.Point(908, 436);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(160, 45);
             this.btnBuscar.TabIndex = 134;
@@ -367,7 +367,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.SystemColors.Info;
+            this.btnEliminar.BackColor = System.Drawing.Color.LightGray;
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEliminar.FlatAppearance.BorderSize = 0;
@@ -375,7 +375,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(908, 371);
+            this.btnEliminar.Location = new System.Drawing.Point(908, 385);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(160, 45);
             this.btnEliminar.TabIndex = 133;
@@ -384,7 +384,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.SystemColors.Info;
+            this.btnGuardar.BackColor = System.Drawing.Color.LightGray;
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnGuardar.FlatAppearance.BorderSize = 0;
@@ -392,7 +392,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(908, 320);
+            this.btnGuardar.Location = new System.Drawing.Point(908, 334);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(160, 45);
             this.btnGuardar.TabIndex = 132;
@@ -401,7 +401,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.SystemColors.Info;
+            this.btnNuevo.BackColor = System.Drawing.Color.LightGray;
             this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnNuevo.FlatAppearance.BorderSize = 0;
@@ -409,7 +409,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(908, 270);
+            this.btnNuevo.Location = new System.Drawing.Point(908, 282);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(160, 45);
             this.btnNuevo.TabIndex = 131;
@@ -421,6 +421,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondooo;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 685);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
@@ -433,6 +435,7 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.menuSuperior);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -468,7 +471,6 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.TextBox txtEquipo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CerrarSesion;
@@ -481,9 +483,10 @@
         private System.Windows.Forms.MenuStrip menuSuperior;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Panel panel1;
+        private Clases.RoundedButton btnBuscar;
+        private Clases.RoundedButton btnEliminar;
+        private Clases.RoundedButton btnGuardar;
+        private Clases.RoundedButton btnNuevo;
     }
 }
