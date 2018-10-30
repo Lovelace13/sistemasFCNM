@@ -192,16 +192,6 @@ namespace sistemaFCNM
             FuncionesUtiles.abrirVentanas(new Radio(), mainPrincipal.contenedor);
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 

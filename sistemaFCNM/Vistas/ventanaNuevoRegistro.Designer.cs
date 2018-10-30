@@ -41,8 +41,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.comboEdificio = new System.Windows.Forms.ComboBox();
             this.comboOficina = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelCabecera.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,16 +183,6 @@
             this.comboOficina.Size = new System.Drawing.Size(197, 21);
             this.comboOficina.TabIndex = 2;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(12, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(133, 125);
-            this.panel1.TabIndex = 122;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
@@ -203,14 +193,25 @@
             this.panel2.Size = new System.Drawing.Size(138, 90);
             this.panel2.TabIndex = 123;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::sistemaFCNM.Properties.Resources.espolLogo;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(12, 40);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(133, 125);
+            this.panel1.TabIndex = 129;
+            // 
             // ventanaNuevoRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondooo;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(500, 500);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.comboOficina);
             this.Controls.Add(this.comboEdificio);
             this.Controls.Add(this.btnCancelar);
@@ -220,6 +221,7 @@
             this.Controls.Add(this.txtEquipo);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panelCabecera);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ventanaNuevoRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -246,7 +248,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox comboEdificio;
         private System.Windows.Forms.ComboBox comboOficina;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

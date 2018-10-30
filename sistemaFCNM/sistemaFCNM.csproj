@@ -262,6 +262,9 @@
     <EmbeddedResource Include="Vistas\Telefono.resx">
       <DependentUpon>Telefono.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\vantanaBusqueda.resx">
+      <DependentUpon>vantanaBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ventanaNuevoRegistro.resx">
       <DependentUpon>ventanaNuevoRegistro.cs</DependentUpon>
     </EmbeddedResource>

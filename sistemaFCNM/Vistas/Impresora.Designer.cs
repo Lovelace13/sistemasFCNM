@@ -190,6 +190,7 @@
             // 
             // btnPrevius
             // 
+            this.btnPrevius.BackColor = System.Drawing.Color.Transparent;
             this.btnPrevius.FlatAppearance.BorderSize = 0;
             this.btnPrevius.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevius.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevius.Image")));
@@ -197,19 +198,21 @@
             this.btnPrevius.Name = "btnPrevius";
             this.btnPrevius.Size = new System.Drawing.Size(36, 34);
             this.btnPrevius.TabIndex = 124;
-            this.btnPrevius.UseVisualStyleBackColor = true;
+            this.btnPrevius.UseVisualStyleBackColor = false;
             this.btnPrevius.Click += new System.EventHandler(this.btnPrevius_Click);
             // 
             // btnNext
             // 
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.Location = new System.Drawing.Point(995, 627);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(36, 34);
             this.btnNext.TabIndex = 123;
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // txtEquipo
@@ -248,26 +251,26 @@
             // guardarMenuItem
             // 
             this.guardarMenuItem.Name = "guardarMenuItem";
-            this.guardarMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.guardarMenuItem.Size = new System.Drawing.Size(174, 26);
             this.guardarMenuItem.Text = "Guardar";
             this.guardarMenuItem.Click += new System.EventHandler(this.guardarMenuItem_Click);
             // 
             // CerrarSesion
             // 
             this.CerrarSesion.Name = "CerrarSesion";
-            this.CerrarSesion.Size = new System.Drawing.Size(143, 22);
+            this.CerrarSesion.Size = new System.Drawing.Size(174, 26);
             this.CerrarSesion.Text = "Cerrar Sesion";
             this.CerrarSesion.Click += new System.EventHandler(this.CerrarSesion_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(171, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -285,18 +288,18 @@
             // ayudaToolStripMenuItem1
             // 
             this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
-            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(153, 26);
             this.ayudaToolStripMenuItem1.Text = "Ayuda";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(129, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(150, 6);
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.acercaDeToolStripMenuItem.Text = "Acerca de..";
             // 
             // menuSuperior
