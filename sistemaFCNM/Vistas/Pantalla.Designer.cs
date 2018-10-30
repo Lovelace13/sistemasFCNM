@@ -41,16 +41,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtPantalla = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
-            this.barraMenu = new System.Windows.Forms.ToolStrip();
-            this.btnPrimero = new System.Windows.Forms.ToolStripButton();
-            this.btnAnterior = new System.Windows.Forms.ToolStripButton();
-            this.btnSiguiente = new System.Windows.Forms.ToolStripButton();
-            this.btnUltimo = new System.Windows.Forms.ToolStripButton();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnModificar = new System.Windows.Forms.ToolStripButton();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             this.menuSuperior = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,14 +51,11 @@
             this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl = new System.Windows.Forms.Label();
             this.gridPantalla = new System.Windows.Forms.DataGridView();
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPrevius = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.barraMenu.SuspendLayout();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPantalla)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +64,7 @@
             // 
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(668, 241);
+            this.txtEstado.Location = new System.Drawing.Point(658, 204);
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(172, 31);
@@ -87,7 +74,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(548, 245);
+            this.label10.Location = new System.Drawing.Point(538, 208);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 74;
@@ -97,7 +84,7 @@
             // 
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSerie.Enabled = false;
-            this.txtSerie.Location = new System.Drawing.Point(668, 198);
+            this.txtSerie.Location = new System.Drawing.Point(658, 161);
             this.txtSerie.Multiline = true;
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(172, 31);
@@ -107,7 +94,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(548, 202);
+            this.label11.Location = new System.Drawing.Point(538, 165);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 13);
             this.label11.TabIndex = 72;
@@ -117,7 +104,7 @@
             // 
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtModelo.Enabled = false;
-            this.txtModelo.Location = new System.Drawing.Point(668, 159);
+            this.txtModelo.Location = new System.Drawing.Point(658, 122);
             this.txtModelo.Multiline = true;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(172, 31);
@@ -127,7 +114,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(548, 163);
+            this.label12.Location = new System.Drawing.Point(538, 126);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 70;
@@ -137,7 +124,7 @@
             // 
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarca.Enabled = false;
-            this.txtMarca.Location = new System.Drawing.Point(668, 116);
+            this.txtMarca.Location = new System.Drawing.Point(658, 79);
             this.txtMarca.Multiline = true;
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(172, 31);
@@ -147,7 +134,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(548, 120);
+            this.label13.Location = new System.Drawing.Point(538, 83);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 68;
@@ -196,115 +183,6 @@
             this.lblCpu.TabIndex = 48;
             this.lblCpu.Text = "Inventario Pantalla";
             this.lblCpu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // barraMenu
-            // 
-            this.barraMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnPrimero,
-            this.btnAnterior,
-            this.btnSiguiente,
-            this.btnUltimo,
-            this.btnNuevo,
-            this.btnModificar,
-            this.btnGuardar,
-            this.btnEliminar,
-            this.btnBuscar});
-            this.barraMenu.Location = new System.Drawing.Point(0, 24);
-            this.barraMenu.Name = "barraMenu";
-            this.barraMenu.Size = new System.Drawing.Size(1064, 25);
-            this.barraMenu.TabIndex = 76;
-            this.barraMenu.Text = "toolStrip1";
-            // 
-            // btnPrimero
-            // 
-            this.btnPrimero.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPrimero.Enabled = false;
-            this.btnPrimero.Image = ((System.Drawing.Image)(resources.GetObject("btnPrimero.Image")));
-            this.btnPrimero.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPrimero.Name = "btnPrimero";
-            this.btnPrimero.Size = new System.Drawing.Size(23, 22);
-            this.btnPrimero.Text = "Primer Registro";
-            // 
-            // btnAnterior
-            // 
-            this.btnAnterior.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAnterior.Enabled = false;
-            this.btnAnterior.Image = ((System.Drawing.Image)(resources.GetObject("btnAnterior.Image")));
-            this.btnAnterior.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(23, 22);
-            this.btnAnterior.Text = "Anterior Registro";
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSiguiente.Enabled = false;
-            this.btnSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.Image")));
-            this.btnSiguiente.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(23, 22);
-            this.btnSiguiente.Text = "Siguiente Registro";
-            // 
-            // btnUltimo
-            // 
-            this.btnUltimo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnUltimo.Enabled = false;
-            this.btnUltimo.Image = ((System.Drawing.Image)(resources.GetObject("btnUltimo.Image")));
-            this.btnUltimo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnUltimo.Name = "btnUltimo";
-            this.btnUltimo.Size = new System.Drawing.Size(23, 22);
-            this.btnUltimo.Text = "Ultimo Registro";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(23, 22);
-            this.btnNuevo.Text = "Nuevo ";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(23, 22);
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnGuardar.Enabled = false;
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(23, 22);
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(23, 22);
-            this.btnEliminar.Text = "Eliminar";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(23, 22);
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // menuSuperior
             // 
@@ -382,16 +260,6 @@
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de..";
             // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(550, 66);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(304, 13);
-            this.lbl.TabIndex = 77;
-            this.lbl.Text = "----------------------------------Caracteristicas--------------------------------" +
-    "----------";
-            // 
             // gridPantalla
             // 
             this.gridPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -409,21 +277,21 @@
             // 
             this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEquipo.Enabled = false;
-            this.txtEquipo.Location = new System.Drawing.Point(15, 82);
+            this.txtEquipo.Location = new System.Drawing.Point(297, 79);
             this.txtEquipo.Multiline = true;
             this.txtEquipo.Name = "txtEquipo";
-            this.txtEquipo.Size = new System.Drawing.Size(132, 19);
+            this.txtEquipo.Size = new System.Drawing.Size(172, 31);
             this.txtEquipo.TabIndex = 112;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 66);
+            this.label1.Location = new System.Drawing.Point(177, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 113;
-            this.label1.Text = "#Equipo";
+            this.label1.Text = "Equipo";
             // 
             // btnPrevius
             // 
@@ -449,29 +317,16 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(919, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(133, 125);
-            this.panel1.TabIndex = 129;
-            // 
             // Pantalla
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1064, 646);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPrevius);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.txtEquipo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridPantalla);
-            this.Controls.Add(this.lbl);
-            this.Controls.Add(this.barraMenu);
             this.Controls.Add(this.menuSuperior);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.label10);
@@ -494,8 +349,6 @@
             this.Text = "Pantalla";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Pantalla_Load);
-            this.barraMenu.ResumeLayout(false);
-            this.barraMenu.PerformLayout();
             this.menuSuperior.ResumeLayout(false);
             this.menuSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPantalla)).EndInit();
@@ -518,16 +371,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPantalla;
         private System.Windows.Forms.Label lblCpu;
-        private System.Windows.Forms.ToolStrip barraMenu;
-        private System.Windows.Forms.ToolStripButton btnPrimero;
-        private System.Windows.Forms.ToolStripButton btnAnterior;
-        private System.Windows.Forms.ToolStripButton btnSiguiente;
-        private System.Windows.Forms.ToolStripButton btnUltimo;
-        private System.Windows.Forms.ToolStripButton btnNuevo;
-        private System.Windows.Forms.ToolStripButton btnModificar;
-        private System.Windows.Forms.ToolStripButton btnGuardar;
-        private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.ToolStripButton btnBuscar;
         private System.Windows.Forms.MenuStrip menuSuperior;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarMenuItem;
@@ -538,12 +381,10 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
-        private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.DataGridView gridPantalla;
         private System.Windows.Forms.TextBox txtEquipo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPrevius;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Panel panel1;
     }
 }

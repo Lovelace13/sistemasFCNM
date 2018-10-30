@@ -134,11 +134,6 @@ namespace sistemaFCNM.Vistas
             }
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guardar()
         {
             string sql = "update va set va.Inventario_Impresora='" + txtImpresora.Text + "'" +

@@ -227,7 +227,7 @@ namespace sistemaFCNM
 
         private void mainPrincipal_Load(object sender, EventArgs e)
         {
-            logoEspol.Visible = true;
+            
         }
     }
 }        

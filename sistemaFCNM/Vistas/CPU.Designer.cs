@@ -505,9 +505,9 @@ namespace sistemaFCNM.Vistas
             this.gridCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridCpu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCpu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(171)))), ((int)(((byte)(131)))));
-            this.gridCpu.Location = new System.Drawing.Point(72, 510);
+            this.gridCpu.Location = new System.Drawing.Point(24, 475);
             this.gridCpu.Name = "gridCpu";
-            this.gridCpu.Size = new System.Drawing.Size(926, 111);
+            this.gridCpu.Size = new System.Drawing.Size(866, 138);
             this.gridCpu.TabIndex = 107;
             // 
             // txtEquipo
@@ -630,7 +630,7 @@ namespace sistemaFCNM.Vistas
             this.btnBuscar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(908, 462);
+            this.btnBuscar.Location = new System.Drawing.Point(908, 475);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(160, 45);
             this.btnBuscar.TabIndex = 130;
@@ -648,7 +648,7 @@ namespace sistemaFCNM.Vistas
             this.btnEliminar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(908, 411);
+            this.btnEliminar.Location = new System.Drawing.Point(908, 424);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(160, 45);
             this.btnEliminar.TabIndex = 129;
@@ -665,7 +665,7 @@ namespace sistemaFCNM.Vistas
             this.btnGuardar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(908, 360);
+            this.btnGuardar.Location = new System.Drawing.Point(908, 373);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(160, 45);
             this.btnGuardar.TabIndex = 128;
@@ -683,7 +683,7 @@ namespace sistemaFCNM.Vistas
             this.btnNuevo.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(908, 308);
+            this.btnNuevo.Location = new System.Drawing.Point(908, 321);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(160, 45);
             this.btnNuevo.TabIndex = 127;
@@ -701,7 +701,7 @@ namespace sistemaFCNM.Vistas
             this.btn_modificar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
             this.btn_modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_modificar.Location = new System.Drawing.Point(908, 257);
+            this.btn_modificar.Location = new System.Drawing.Point(908, 270);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(160, 45);
             this.btn_modificar.TabIndex = 131;

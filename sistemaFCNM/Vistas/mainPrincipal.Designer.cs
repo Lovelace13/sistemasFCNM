@@ -72,7 +72,6 @@
             this.timerOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.panelContenedor = new System.Windows.Forms.FlowLayoutPanel();
-            this.logoEspol = new System.Windows.Forms.Panel();
             this.panelCabecera.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -672,23 +671,12 @@
             // 
             this.panelContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelContenedor.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondooo1;
+            this.panelContenedor.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondo2;
             this.panelContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelContenedor.Location = new System.Drawing.Point(223, 35);
+            this.panelContenedor.Location = new System.Drawing.Point(220, 34);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1077, 695);
             this.panelContenedor.TabIndex = 4;
-            // 
-            // logoEspol
-            // 
-            this.logoEspol.BackColor = System.Drawing.Color.Transparent;
-            this.logoEspol.BackgroundImage = global::sistemaFCNM.Properties.Resources.espolLogo;
-            this.logoEspol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.logoEspol.CausesValidation = false;
-            this.logoEspol.Location = new System.Drawing.Point(535, 66);
-            this.logoEspol.Name = "logoEspol";
-            this.logoEspol.Size = new System.Drawing.Size(465, 378);
-            this.logoEspol.TabIndex = 129;
             // 
             // mainPrincipal
             // 
@@ -702,7 +690,6 @@
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelCabecera);
-            this.Controls.Add(this.logoEspol);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -712,7 +699,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.mainPrincipal_Load);
             this.panelCabecera.ResumeLayout(false);
             this.panelCabecera.PerformLayout();
             this.panelMenu.ResumeLayout(false);
@@ -767,7 +753,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel logoEspol;
     }
 }
 

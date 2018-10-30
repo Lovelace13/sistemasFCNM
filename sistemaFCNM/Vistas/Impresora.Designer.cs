@@ -57,6 +57,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_modificar = new sistemaFCNM.Clases.RoundedButton();
             this.btnBuscar = new sistemaFCNM.Clases.RoundedButton();
             this.btnEliminar = new sistemaFCNM.Clases.RoundedButton();
             this.btnGuardar = new sistemaFCNM.Clases.RoundedButton();
@@ -69,7 +70,7 @@
             // 
             // txtEstado
             // 
-            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(148, 145);
@@ -90,7 +91,7 @@
             // 
             // txtSerie
             // 
-            this.txtSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSerie.Enabled = false;
             this.txtSerie.Location = new System.Drawing.Point(148, 102);
@@ -111,7 +112,7 @@
             // 
             // txtModelo
             // 
-            this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtModelo.Enabled = false;
             this.txtModelo.Location = new System.Drawing.Point(148, 63);
@@ -132,7 +133,7 @@
             // 
             // txtMarca
             // 
-            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarca.Enabled = false;
             this.txtMarca.Location = new System.Drawing.Point(148, 20);
@@ -153,7 +154,7 @@
             // 
             // txtImpresora
             // 
-            this.txtImpresora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtImpresora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtImpresora.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtImpresora.Enabled = false;
             this.txtImpresora.Location = new System.Drawing.Point(145, 55);
@@ -179,12 +180,12 @@
             this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.grid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid.Location = new System.Drawing.Point(73, 489);
+            this.grid.Location = new System.Drawing.Point(21, 420);
             this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(926, 111);
+            this.grid.Size = new System.Drawing.Size(871, 147);
             this.grid.TabIndex = 122;
             // 
             // btnPrevius
@@ -213,7 +214,7 @@
             // 
             // txtEquipo
             // 
-            this.txtEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEquipo.Enabled = false;
             this.txtEquipo.Location = new System.Drawing.Point(145, 19);
@@ -239,8 +240,9 @@
             this.CerrarSesion,
             this.toolStripMenuItem1,
             this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(75, 25);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // guardarMenuItem
@@ -275,8 +277,9 @@
             this.ayudaToolStripMenuItem1,
             this.toolStripMenuItem2,
             this.acercaDeToolStripMenuItem});
+            this.ayudaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(66, 25);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // ayudaToolStripMenuItem1
@@ -304,12 +307,13 @@
             this.menuSuperior.Location = new System.Drawing.Point(0, 0);
             this.menuSuperior.Name = "menuSuperior";
             this.menuSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuSuperior.Size = new System.Drawing.Size(1080, 24);
+            this.menuSuperior.Size = new System.Drawing.Size(1080, 29);
             this.menuSuperior.TabIndex = 103;
             this.menuSuperior.Text = "menuStrip1";
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtEstado);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtSerie);
@@ -327,6 +331,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.txtEquipo);
             this.groupBox2.Controls.Add(this.lblCpu);
             this.groupBox2.Controls.Add(this.txtImpresora);
@@ -343,10 +348,27 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::sistemaFCNM.Properties.Resources.espolLogo;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(899, 27);
+            this.panel1.Location = new System.Drawing.Point(935, 32);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(133, 125);
             this.panel1.TabIndex = 128;
+            // 
+            // btn_modificar
+            // 
+            this.btn_modificar.BackColor = System.Drawing.Color.LightGray;
+            this.btn_modificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_modificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_modificar.FlatAppearance.BorderSize = 0;
+            this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_modificar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_modificar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btn_modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_modificar.Location = new System.Drawing.Point(908, 250);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(160, 45);
+            this.btn_modificar.TabIndex = 136;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.UseVisualStyleBackColor = false;
             // 
             // btnBuscar
             // 
@@ -358,10 +380,10 @@
             this.btnBuscar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(908, 436);
+            this.btnBuscar.Location = new System.Drawing.Point(908, 455);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(160, 45);
-            this.btnBuscar.TabIndex = 134;
+            this.btnBuscar.TabIndex = 135;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
@@ -375,10 +397,10 @@
             this.btnEliminar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(908, 385);
+            this.btnEliminar.Location = new System.Drawing.Point(908, 404);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(160, 45);
-            this.btnEliminar.TabIndex = 133;
+            this.btnEliminar.TabIndex = 134;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
@@ -392,10 +414,10 @@
             this.btnGuardar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(908, 334);
+            this.btnGuardar.Location = new System.Drawing.Point(908, 353);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(160, 45);
-            this.btnGuardar.TabIndex = 132;
+            this.btnGuardar.TabIndex = 133;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
@@ -409,10 +431,10 @@
             this.btnNuevo.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(908, 282);
+            this.btnNuevo.Location = new System.Drawing.Point(908, 301);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(160, 45);
-            this.btnNuevo.TabIndex = 131;
+            this.btnNuevo.TabIndex = 132;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             // 
@@ -424,6 +446,7 @@
             this.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondooo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 685);
+            this.Controls.Add(this.btn_modificar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGuardar);
@@ -484,6 +507,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel1;
+        private Clases.RoundedButton btn_modificar;
         private Clases.RoundedButton btnBuscar;
         private Clases.RoundedButton btnEliminar;
         private Clases.RoundedButton btnGuardar;
