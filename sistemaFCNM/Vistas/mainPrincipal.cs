@@ -148,6 +148,7 @@ namespace sistemaFCNM
         {
             
             FuncionesUtiles.abrirVentanas(new CPU(), contenedor);
+            new FrmCpu().Show();
             
         }
 

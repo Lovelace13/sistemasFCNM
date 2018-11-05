@@ -73,7 +73,7 @@
             this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(148, 145);
+            this.txtEstado.Location = new System.Drawing.Point(140, 144);
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(172, 31);
@@ -94,7 +94,7 @@
             this.txtSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSerie.Enabled = false;
-            this.txtSerie.Location = new System.Drawing.Point(148, 102);
+            this.txtSerie.Location = new System.Drawing.Point(140, 101);
             this.txtSerie.Multiline = true;
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(172, 31);
@@ -115,7 +115,7 @@
             this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtModelo.Enabled = false;
-            this.txtModelo.Location = new System.Drawing.Point(148, 63);
+            this.txtModelo.Location = new System.Drawing.Point(140, 62);
             this.txtModelo.Multiline = true;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(172, 31);
@@ -125,7 +125,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(28, 67);
+            this.label12.Location = new System.Drawing.Point(20, 66);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 98;
@@ -136,7 +136,7 @@
             this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarca.Enabled = false;
-            this.txtMarca.Location = new System.Drawing.Point(148, 20);
+            this.txtMarca.Location = new System.Drawing.Point(140, 19);
             this.txtMarca.Multiline = true;
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(172, 31);
@@ -146,7 +146,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(28, 24);
+            this.label13.Location = new System.Drawing.Point(20, 23);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 96;
@@ -325,7 +325,7 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtMarca);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Location = new System.Drawing.Point(453, 101);
+            this.groupBox1.Location = new System.Drawing.Point(553, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(354, 214);
             this.groupBox1.TabIndex = 129;
@@ -339,7 +339,7 @@
             this.groupBox2.Controls.Add(this.lblCpu);
             this.groupBox2.Controls.Add(this.txtImpresora);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(73, 101);
+            this.groupBox2.Location = new System.Drawing.Point(91, 37);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(352, 214);
             this.groupBox2.TabIndex = 130;

@@ -75,7 +75,7 @@
             this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(140, 144);
+            this.txtEstado.Location = new System.Drawing.Point(140, 148);
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(172, 31);
@@ -85,7 +85,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(20, 148);
+            this.label10.Location = new System.Drawing.Point(26, 148);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 74;
@@ -96,7 +96,7 @@
             this.txtSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSerie.Enabled = false;
-            this.txtSerie.Location = new System.Drawing.Point(140, 101);
+            this.txtSerie.Location = new System.Drawing.Point(140, 105);
             this.txtSerie.Multiline = true;
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(172, 31);
@@ -106,7 +106,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(20, 105);
+            this.label11.Location = new System.Drawing.Point(26, 105);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 13);
             this.label11.TabIndex = 72;
@@ -127,7 +127,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(20, 66);
+            this.label12.Location = new System.Drawing.Point(26, 62);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 70;
@@ -148,7 +148,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(20, 23);
+            this.label13.Location = new System.Drawing.Point(26, 19);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 68;
@@ -159,7 +159,7 @@
             this.txtPulgadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPulgadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPulgadas.Enabled = false;
-            this.txtPulgadas.Location = new System.Drawing.Point(150, 115);
+            this.txtPulgadas.Location = new System.Drawing.Point(150, 138);
             this.txtPulgadas.Multiline = true;
             this.txtPulgadas.Name = "txtPulgadas";
             this.txtPulgadas.Size = new System.Drawing.Size(56, 32);
@@ -170,7 +170,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(30, 118);
+            this.label7.Location = new System.Drawing.Point(30, 138);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 60;
@@ -182,7 +182,7 @@
             this.txtPantalla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPantalla.Enabled = false;
-            this.txtPantalla.Location = new System.Drawing.Point(150, 73);
+            this.txtPantalla.Location = new System.Drawing.Point(150, 87);
             this.txtPantalla.Multiline = true;
             this.txtPantalla.Name = "txtPantalla";
             this.txtPantalla.Size = new System.Drawing.Size(172, 31);
@@ -193,7 +193,7 @@
             this.lblCpu.AutoSize = true;
             this.lblCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCpu.Location = new System.Drawing.Point(30, 79);
+            this.lblCpu.Location = new System.Drawing.Point(30, 93);
             this.lblCpu.Name = "lblCpu";
             this.lblCpu.Size = new System.Drawing.Size(114, 13);
             this.lblCpu.TabIndex = 48;

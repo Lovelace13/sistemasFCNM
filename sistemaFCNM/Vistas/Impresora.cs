@@ -20,6 +20,8 @@ namespace sistemaFCNM.Vistas
 
         private void Impresora_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Impresora' Puede moverla o quitarla según sea necesario.
+            
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -184,6 +186,8 @@ namespace sistemaFCNM.Vistas
             txtMarca.Enabled = true;
             txtModelo.Enabled = true;
             txtSerie.Enabled = true;
-        }   
+        }
+
+        
     }
 }
