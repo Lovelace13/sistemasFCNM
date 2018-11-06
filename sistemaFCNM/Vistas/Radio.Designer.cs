@@ -307,9 +307,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(14, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 160;
-            this.label2.Text = "#Equipo";
+            this.label2.Text = "Equipo";
             // 
             // btn_modificar
             // 
@@ -402,7 +402,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtRadio);
             this.groupBox1.Controls.Add(this.lblCpu);
-            this.groupBox1.Location = new System.Drawing.Point(96, 37);
+            this.groupBox1.Location = new System.Drawing.Point(91, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(373, 227);
             this.groupBox1.TabIndex = 166;

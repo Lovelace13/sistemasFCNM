@@ -74,6 +74,7 @@ namespace sistemaFCNM.Vistas
             this.txtCpu = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
             this.gridCpu = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
@@ -86,7 +87,6 @@ namespace sistemaFCNM.Vistas
             this.btnGuardar = new sistemaFCNM.Clases.RoundedButton();
             this.btnNuevo = new sistemaFCNM.Clases.RoundedButton();
             this.btn_modificar = new sistemaFCNM.Clases.RoundedButton();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -117,7 +117,6 @@ namespace sistemaFCNM.Vistas
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(75, 25);
             this.archivoToolStripMenuItem.Text = "Archivo";
-            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
             // 
             // guardarMenuItem
             // 
@@ -549,6 +548,12 @@ namespace sistemaFCNM.Vistas
             this.gridCpu.Size = new System.Drawing.Size(866, 138);
             this.gridCpu.TabIndex = 107;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Id Equipo";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 101;
+            // 
             // txtEquipo
             // 
             this.txtEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -747,12 +752,6 @@ namespace sistemaFCNM.Vistas
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.UseVisualStyleBackColor = false;
             this.btn_modificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Id Equipo";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 101;
             // 
             // CPU
             // 

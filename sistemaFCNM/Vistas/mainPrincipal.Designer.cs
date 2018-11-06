@@ -31,11 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainPrincipal));
             this.panelCabecera = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnRestaurar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -72,21 +69,25 @@
             this.timerOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.panelContenedor = new System.Windows.Forms.FlowLayoutPanel();
+            this.butonPanel = new System.Windows.Forms.Panel();
+            this.btnNuevoInventarioEquipo = new System.Windows.Forms.Button();
+            this.btnCargarDocumento = new System.Windows.Forms.Button();
+            this.btnEliminarUsuario = new System.Windows.Forms.Button();
+            this.btnNuevoUsuario = new System.Windows.Forms.Button();
             this.panelCabecera.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogoBig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogoMini)).BeginInit();
+            this.panelContenedor.SuspendLayout();
+            this.butonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCabecera
             // 
             this.panelCabecera.BackColor = System.Drawing.Color.Goldenrod;
-            this.panelCabecera.Controls.Add(this.button3);
             this.panelCabecera.Controls.Add(this.label1);
-            this.panelCabecera.Controls.Add(this.button2);
             this.panelCabecera.Controls.Add(this.btnRestaurar);
-            this.panelCabecera.Controls.Add(this.button1);
             this.panelCabecera.Controls.Add(this.btnMinimizar);
             this.panelCabecera.Controls.Add(this.btnMaximizar);
             this.panelCabecera.Controls.Add(this.btnCerrar);
@@ -96,16 +97,6 @@
             this.panelCabecera.Size = new System.Drawing.Size(1300, 34);
             this.panelCabecera.TabIndex = 2;
             this.panelCabecera.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCabecera_Paint);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(430, 1);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 28);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
             // 
             // label1
             // 
@@ -118,16 +109,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "INVENTARIO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(326, 1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 28);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
             // 
             // btnRestaurar
             // 
@@ -145,16 +126,6 @@
             this.btnRestaurar.UseVisualStyleBackColor = true;
             this.btnRestaurar.Visible = false;
             this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(223, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 28);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             // 
             // btnMinimizar
             // 
@@ -673,10 +644,111 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondo2;
             this.panelContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelContenedor.Controls.Add(this.butonPanel);
             this.panelContenedor.Location = new System.Drawing.Point(220, 34);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1077, 695);
             this.panelContenedor.TabIndex = 4;
+            // 
+            // butonPanel
+            // 
+            this.butonPanel.BackColor = System.Drawing.Color.Transparent;
+            this.butonPanel.Controls.Add(this.btnNuevoInventarioEquipo);
+            this.butonPanel.Controls.Add(this.btnCargarDocumento);
+            this.butonPanel.Controls.Add(this.btnEliminarUsuario);
+            this.butonPanel.Controls.Add(this.btnNuevoUsuario);
+            this.butonPanel.Location = new System.Drawing.Point(3, 3);
+            this.butonPanel.Name = "butonPanel";
+            this.butonPanel.Size = new System.Drawing.Size(1065, 109);
+            this.butonPanel.TabIndex = 0;
+            // 
+            // btnNuevoInventarioEquipo
+            // 
+            this.btnNuevoInventarioEquipo.AutoEllipsis = true;
+            this.btnNuevoInventarioEquipo.BackgroundImage = global::sistemaFCNM.Properties.Resources.nuevoDocumento;
+            this.btnNuevoInventarioEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNuevoInventarioEquipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoInventarioEquipo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnNuevoInventarioEquipo.FlatAppearance.BorderSize = 0;
+            this.btnNuevoInventarioEquipo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnNuevoInventarioEquipo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.btnNuevoInventarioEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoInventarioEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoInventarioEquipo.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnNuevoInventarioEquipo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoInventarioEquipo.Location = new System.Drawing.Point(671, 12);
+            this.btnNuevoInventarioEquipo.Name = "btnNuevoInventarioEquipo";
+            this.btnNuevoInventarioEquipo.Size = new System.Drawing.Size(89, 83);
+            this.btnNuevoInventarioEquipo.TabIndex = 6;
+            this.btnNuevoInventarioEquipo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevoInventarioEquipo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevoInventarioEquipo.UseVisualStyleBackColor = true;
+            // 
+            // btnCargarDocumento
+            // 
+            this.btnCargarDocumento.AutoEllipsis = true;
+            this.btnCargarDocumento.BackgroundImage = global::sistemaFCNM.Properties.Resources.subirDocumento;
+            this.btnCargarDocumento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCargarDocumento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCargarDocumento.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCargarDocumento.FlatAppearance.BorderSize = 0;
+            this.btnCargarDocumento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnCargarDocumento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.btnCargarDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarDocumento.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCargarDocumento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargarDocumento.Location = new System.Drawing.Point(534, 12);
+            this.btnCargarDocumento.Name = "btnCargarDocumento";
+            this.btnCargarDocumento.Size = new System.Drawing.Size(89, 83);
+            this.btnCargarDocumento.TabIndex = 5;
+            this.btnCargarDocumento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCargarDocumento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCargarDocumento.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarUsuario
+            // 
+            this.btnEliminarUsuario.AutoEllipsis = true;
+            this.btnEliminarUsuario.BackgroundImage = global::sistemaFCNM.Properties.Resources.deleteUser;
+            this.btnEliminarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEliminarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarUsuario.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEliminarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnEliminarUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnEliminarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.btnEliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarUsuario.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnEliminarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(392, 12);
+            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(89, 83);
+            this.btnEliminarUsuario.TabIndex = 4;
+            this.btnEliminarUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEliminarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminarUsuario.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevoUsuario
+            // 
+            this.btnNuevoUsuario.AutoEllipsis = true;
+            this.btnNuevoUsuario.BackgroundImage = global::sistemaFCNM.Properties.Resources.newUser;
+            this.btnNuevoUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNuevoUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoUsuario.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnNuevoUsuario.FlatAppearance.BorderSize = 0;
+            this.btnNuevoUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnNuevoUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.btnNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoUsuario.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnNuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(257, 12);
+            this.btnNuevoUsuario.Name = "btnNuevoUsuario";
+            this.btnNuevoUsuario.Size = new System.Drawing.Size(89, 83);
+            this.btnNuevoUsuario.TabIndex = 3;
+            this.btnNuevoUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevoUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevoUsuario.UseVisualStyleBackColor = true;
             // 
             // mainPrincipal
             // 
@@ -705,6 +777,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogoBig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogoMini)).EndInit();
+            this.panelContenedor.ResumeLayout(false);
+            this.butonPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -750,9 +824,50 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel panelContenedor;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel butonPanel;
+        private System.Windows.Forms.Button btnNuevoUsuario;
+        private System.Windows.Forms.Button btnCargarDocumento;
+        private System.Windows.Forms.Button btnEliminarUsuario;
+        private System.Windows.Forms.Button btnNuevoInventarioEquipo;
+
+
+        public void botonesAdministracion()
+        {
+            // btnNuevoInventarioEquipo
+            // 
+            this.btnNuevoInventarioEquipo.AutoEllipsis = true;
+            this.btnNuevoInventarioEquipo.BackgroundImage = global::sistemaFCNM.Properties.Resources.nuevoDocumento;
+            this.btnNuevoInventarioEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNuevoInventarioEquipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoInventarioEquipo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnNuevoInventarioEquipo.FlatAppearance.BorderSize = 0;
+            this.btnNuevoInventarioEquipo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnNuevoInventarioEquipo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.btnNuevoInventarioEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoInventarioEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoInventarioEquipo.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnNuevoInventarioEquipo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoInventarioEquipo.Location = new System.Drawing.Point(671, 12);
+            this.btnNuevoInventarioEquipo.Name = "btnNuevoInventarioEquipo";
+            this.btnNuevoInventarioEquipo.Size = new System.Drawing.Size(89, 83);
+            this.btnNuevoInventarioEquipo.TabIndex = 6;
+            this.btnNuevoInventarioEquipo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevoInventarioEquipo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevoInventarioEquipo.UseVisualStyleBackColor = true;
+            // 
+            //butonPanel
+            this.butonPanel.BackColor = System.Drawing.Color.Transparent;
+            this.butonPanel.Controls.Add(this.btnNuevoInventarioEquipo);
+            this.butonPanel.Controls.Add(this.btnCargarDocumento);
+            this.butonPanel.Controls.Add(this.btnEliminarUsuario);
+            this.butonPanel.Controls.Add(this.btnNuevoUsuario);
+            this.butonPanel.Location = new System.Drawing.Point(3, 3);
+            this.butonPanel.Name = "butonPanel";
+            this.butonPanel.Size = new System.Drawing.Size(1065, 109);
+            this.butonPanel.TabIndex = 0;
+
+            this.panelContenedor.Controls.Add(this.butonPanel);
+        }
     }
 }
 

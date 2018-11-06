@@ -429,7 +429,7 @@
             this.groupBox1.Controls.Add(this.lblCpu);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtEquipo);
-            this.groupBox1.Location = new System.Drawing.Point(104, 37);
+            this.groupBox1.Location = new System.Drawing.Point(91, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(373, 227);
             this.groupBox1.TabIndex = 154;

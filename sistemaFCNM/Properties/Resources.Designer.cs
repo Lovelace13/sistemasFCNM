@@ -93,6 +93,16 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap deleteUser {
+            get {
+                object obj = ResourceManager.GetObject("deleteUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap espolLogo {
             get {
                 object obj = ResourceManager.GetObject("espolLogo", resourceCulture);
@@ -223,6 +233,26 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap newUser {
+            get {
+                object obj = ResourceManager.GetObject("newUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nuevoDocumento {
+            get {
+                object obj = ResourceManager.GetObject("nuevoDocumento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pantalla {
             get {
                 object obj = ResourceManager.GetObject("pantalla", resourceCulture);
@@ -306,6 +336,16 @@ namespace sistemaFCNM.Properties {
         internal static System.Drawing.Bitmap scanner11 {
             get {
                 object obj = ResourceManager.GetObject("scanner11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap subirDocumento {
+            get {
+                object obj = ResourceManager.GetObject("subirDocumento", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -429,7 +429,7 @@
             this.groupBox1.Controls.Add(this.txtPproyeccion);
             this.groupBox1.Controls.Add(this.txtEquipo);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(62, 87);
+            this.groupBox1.Location = new System.Drawing.Point(91, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(378, 227);
             this.groupBox1.TabIndex = 165;
@@ -446,7 +446,7 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtMarca);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Location = new System.Drawing.Point(468, 86);
+            this.groupBox2.Location = new System.Drawing.Point(553, 37);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(373, 227);
             this.groupBox2.TabIndex = 166;
