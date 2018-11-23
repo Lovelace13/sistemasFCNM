@@ -44,7 +44,7 @@ namespace sistemaFCNM.Vistas
             {
                 MessageBox.Show("BIENVENIDO " + gridUsuario.Rows[0].Cells["Nombre"].Value.ToString());
                 this.Visible = false;
-                FuncionesUtiles.USUARIO = gridUsuario.Rows[0].Cells["id_usuario"].Value.ToString();
+                FuncionesUtiles.USUARIO = gridUsuario.Rows[0].Cells["IdUsuario"].Value.ToString();
                 FuncionesUtiles.form1 = new mainPrincipal();
                 FuncionesUtiles.form1.Show();
                 

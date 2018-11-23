@@ -34,17 +34,6 @@ namespace sistemaFCNM.Vistas
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CPU));
-            this.menuSuperior = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guardarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargarDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
@@ -87,95 +76,10 @@ namespace sistemaFCNM.Vistas
             this.btnGuardar = new sistemaFCNM.Clases.RoundedButton();
             this.btnNuevo = new sistemaFCNM.Clases.RoundedButton();
             this.btn_modificar = new sistemaFCNM.Clases.RoundedButton();
-            this.menuSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuSuperior
-            // 
-            this.menuSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
-            this.menuSuperior.Location = new System.Drawing.Point(0, 0);
-            this.menuSuperior.Name = "menuSuperior";
-            this.menuSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuSuperior.Size = new System.Drawing.Size(1080, 29);
-            this.menuSuperior.TabIndex = 67;
-            this.menuSuperior.Text = "menuStrip1";
-            // 
-            // archivoToolStripMenuItem
-            // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.guardarMenuItem,
-            this.cargarDocumentoToolStripMenuItem,
-            this.CerrarSesion,
-            this.toolStripMenuItem1,
-            this.salirToolStripMenuItem});
-            this.archivoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(75, 25);
-            this.archivoToolStripMenuItem.Text = "Archivo";
-            // 
-            // guardarMenuItem
-            // 
-            this.guardarMenuItem.Name = "guardarMenuItem";
-            this.guardarMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.guardarMenuItem.Text = "Guardar";
-            // 
-            // cargarDocumentoToolStripMenuItem
-            // 
-            this.cargarDocumentoToolStripMenuItem.Name = "cargarDocumentoToolStripMenuItem";
-            this.cargarDocumentoToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.cargarDocumentoToolStripMenuItem.Text = "Cargar Documento";
-            // 
-            // CerrarSesion
-            // 
-            this.CerrarSesion.Name = "CerrarSesion";
-            this.CerrarSesion.Size = new System.Drawing.Size(212, 26);
-            this.CerrarSesion.Text = "Cerrar Sesion";
-            this.CerrarSesion.Click += new System.EventHandler(this.CerrarSesion_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(209, 6);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ayudaToolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.acercaDeToolStripMenuItem});
-            this.ayudaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(66, 25);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // ayudaToolStripMenuItem1
-            // 
-            this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
-            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(153, 26);
-            this.ayudaToolStripMenuItem1.Text = "Ayuda";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(150, 6);
-            // 
-            // acercaDeToolStripMenuItem
-            // 
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
-            this.acercaDeToolStripMenuItem.Text = "Acerca de..";
             // 
             // txtEstado
             // 
@@ -774,7 +678,6 @@ namespace sistemaFCNM.Vistas
             this.Controls.Add(this.btnPrevius);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.gridCpu);
-            this.Controls.Add(this.menuSuperior);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -785,29 +688,16 @@ namespace sistemaFCNM.Vistas
             this.Text = "CPU";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CPU_Load);
-            this.menuSuperior.ResumeLayout(false);
-            this.menuSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuSuperior;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem guardarMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CerrarSesion;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSerie;
@@ -846,7 +736,6 @@ namespace sistemaFCNM.Vistas
         private RoundedButton btnGuardar;
         private RoundedButton btnEliminar;
         private RoundedButton btnBuscar;
-        private System.Windows.Forms.ToolStripMenuItem cargarDocumentoToolStripMenuItem;
         private System.Windows.Forms.TextBox txtEquipo;
         private System.Windows.Forms.Panel panel1;
         private RoundedButton btn_modificar;

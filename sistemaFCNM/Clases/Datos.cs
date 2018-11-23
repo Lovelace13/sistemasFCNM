@@ -27,8 +27,8 @@ namespace sistemaFCNM.Clases
             }
             
             
-            llenarGrid("select * from Usuario where id_usuario ='" + usuario +
-                            "' and clave = '" + clave + "'", gridUsuario);
+            llenarGrid("select * from Usuario where IdUsuario ='" + usuario +
+                            "' and Clave = '" + clave + "'", gridUsuario);
 
             conexion.CerrarConexion();
             return true;

@@ -67,7 +67,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>sistemaFCNM_ClaveTemporal.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LibConexionBD">
@@ -289,7 +290,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="sistemaFCNM_ClaveTemporal.pfx" />
     <None Include="sistemasFCNMDataSet.xsc">
       <DependentUpon>sistemasFCNMDataSet.xsd</DependentUpon>
     </None>
@@ -421,6 +421,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nuevoDocumento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\codigo-qr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cpu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cpu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cpu%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\altavoces1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\impresora.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\impresora1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\raton-de-la-computadora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teclado1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop-pc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proyector1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microfono1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receptor-del-telefono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\walkie-talkie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borrar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nuevo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

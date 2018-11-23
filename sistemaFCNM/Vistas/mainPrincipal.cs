@@ -8,7 +8,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using System.IO;
+using System.Collections;
 
 namespace sistemaFCNM
 {
@@ -94,48 +95,6 @@ namespace sistemaFCNM
             Application.Exit();
         }
                
-        private void timerOcultarMenu_Tick(object sender, EventArgs e)
-        {
-            if (panelMenu.Width <= 60)
-            {
-                this.timerOcultarMenu.Enabled = false;
-            }
-            else
-            {
-                this.panelMenu.Width = this.panelMenu.Width - 20;
-            }
-        }
-
-        //Sumara 20 cada  100ms
-        private void timerMostrarMenu_Tick(object sender, EventArgs e)
-        {
-            if (panelMenu.Width >= 220)
-            {
-                this.timerMostrarMenu.Enabled = false;
-            }
-            else
-            {
-                this.panelMenu.Width = this.panelMenu.Width + 20;
-            }
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            if (panelMenu.Width == 220)
-            {
-                timerOcultarMenu.Enabled = true;
-                imgLogoBig.Visible = false;
-                imgLogoMini.Visible = true;
-
-            }
-            else if (panelMenu.Width == 60)
-            {
-                timerMostrarMenu.Enabled = true;
-                imgLogoMini.Visible = false;
-                imgLogoBig.Visible = true;
-            }
-
-        }
 
         private void btnScanner_Click(object sender, EventArgs e)
         {
@@ -226,10 +185,51 @@ namespace sistemaFCNM
             
        }
 
-        private void mainPrincipal_Load(object sender, EventArgs e)
+        private void btnCargarDocumento_Click(object sender, EventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Archivos csv (*.csv)|*.csv";
+            ofd.Title = "Abrir";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(ofd.FileName);
+            }
+            ofd.Dispose();
+
+
+            StreamReader objReader = new StreamReader(ofd.FileName);
+            string linea = "";
             
+
+            while (linea != null)
+            {
+
+                linea = objReader.ReadLine();
+                try
+                {
+                    String[] campos = linea.Split(';');
+                    Console.WriteLine(campos.Length);
+                }
+                catch (NullReferenceException)
+                {
+                   
+                }
+               
+                
+                
+                
+                    
+               
+                
+                    
+                
+                
+
+            }
+            objReader.Close();
         }
+           
+   
     }
 }        
 
