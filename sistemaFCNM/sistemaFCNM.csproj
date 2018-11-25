@@ -96,6 +96,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Equipo.cs" />
     <Compile Include="Clases\RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>

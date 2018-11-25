@@ -83,5 +83,27 @@ namespace sistemaFCNM.Clases
             mainPrincipal.btn11.Enabled = true;
             mainPrincipal.btn12.Enabled = true;
         }
+
+        public static void agregar(LinkedList<String> lista, int num, String[] campos)
+        {
+            if (campos[num].Length != 0 && !lista.Contains(reemplazar(campos[num])))
+            {
+                lista.AddFirst(reemplazar(campos[num]));
+            }
+            
+        }
+        public static String reemplazar(String dato)
+        {
+            if (dato == "NO APLICA " || dato == "no aplica" || 
+                dato == "" || dato == "NOAPLICA" || dato == "NO APLICA" ||dato== "NO")
+            {
+                return "N/A";
+            }
+            else
+            {
+                return dato.ToUpper();
+            }
+
+        }
     }
 }

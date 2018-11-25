@@ -1,15 +1,15 @@
-INSERT INTO tipo_user(tipo)
-VALUES ('JEFE SISTEMAS'); 
+INSERT INTO TipoUsuario(tipo)
+VALUES ('Ayudante'); 
 
-select* FROM Oficina;
+select* FROM Usuario;
 delete from Oficina
-SELECT * FROM tipo_user;
+SELECT * FROM TipoUsuario;
 
-INSERT INTO Usuario(id_usuario,clave,Nombre,tipo_usuario)
+INSERT INTO Usuario(IdUsuario,clave,Nombre,TipoUsuario)
 values('arcuenca','1234','ARIANA CUENCA',1);
 
-INSERT INTO Usuario(id_usuario,clave,Nombre,tipo_usuario)
-values('jfloresb','1234','JOSE FLORES',2);
+INSERT INTO Usuario(IdUsuario,clave,Nombre,TipoUsuario)
+values('jfloresb','1234','JOSE FLORES',1);
 
 
 insert into Oficina (edificio,nombre_oficina,area)

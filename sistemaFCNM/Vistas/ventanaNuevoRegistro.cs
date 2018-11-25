@@ -67,43 +67,43 @@ namespace sistemaFCNM.Vistas
             crearEquipo();
             crearInventario();
 
-            
+
             FuncionesUtiles.INVENTARIO_EQUIPO = txtEquipo.Text.Trim();
-            MessageBox.Show("Ingrese Datos de los equipos "+ FuncionesUtiles.INVENTARIO_EQUIPO);
+            MessageBox.Show("Ingrese Datos de los equipos " + FuncionesUtiles.INVENTARIO_EQUIPO);
             FuncionesUtiles.form1.Visible = true;
             this.Close();
         }
         private string cambiarFecha(string fecha)
         {
             string[] arr = fecha.Split('/');
-            return arr[2]+"/"+ agregarCero(arr[1]) + "/" + agregarCero(arr[0]);
+            return arr[2] + "/" + agregarCero(arr[1]) + "/" + agregarCero(arr[0]);
         }
         private string agregarCero(string numero)
         {
-            if(numero == "1"|| numero == "2"|| numero == "3"|| numero == "4"
-                || numero == "5"|| numero == "6"|| numero == "7"||numero == "8"
+            if (numero == "1" || numero == "2" || numero == "3" || numero == "4"
+                || numero == "5" || numero == "6" || numero == "7" || numero == "8"
                 || numero == "9")
             {
-                return "0"+numero;
+                return "0" + numero;
             }
             else
             {
                 return numero;
             }
-            
+
         }
         private void crearInventario()
         {
-            
-            string sql = "INSERT INTO Inventario(fecha_inventario,Ayudante,observacion,Equipo) VALUES ('"+ cambiarFecha(DateTime.Today.ToString("d")) + "','"+FuncionesUtiles.USUARIO+"','"+FuncionesUtiles.OBSERVACION+"','" + txtEquipo.Text.Trim() + "')";
+
+            string sql = "INSERT INTO Inventario(fecha_inventario,Ayudante,observacion,Equipo) VALUES ('" + cambiarFecha(DateTime.Today.ToString("d")) + "','" + FuncionesUtiles.USUARIO + "','" + FuncionesUtiles.OBSERVACION + "','" + txtEquipo.Text.Trim() + "')";
             Datos.Insertar(sql);
             Console.WriteLine(sql);
         }
 
         private void crearEquipo()
         {
-            string sql = "INSERT INTO Equipo(id_Equipo,Inventario_CPU,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,Parlante,Regulador,Impresora,Proyector)"+
-                "VALUES('"+txtEquipo.Text.Trim()+ "', (select MAX(ID) from CPU), (select top 1 id  from Oficina where nombre_oficina = '"+comboOficina.SelectedValue+"'), (select MAX(ID) from Microfonos), (select MAX(ID) from Telefono),(select MAX(ID) from Pantalla_Proyeccion), (select MAX(ID) from Radio), (select MAX(ID) from Pantalla), (select MAX(ID) from Teclado), (select MAX(ID) from Mouse), (select MAX(ID) from Parlante), (select MAX(ID) from Regulador), (select MAX(ID) from Impresora), (select MAX(ID) from Proyector)); ";
+            string sql = "INSERT INTO Equipo(id_Equipo,Inventario_CPU,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,Parlante,Regulador,Impresora,Proyector)" +
+                "VALUES('" + txtEquipo.Text.Trim() + "', (select MAX(ID) from CPU), (select top 1 id  from Oficina where nombre_oficina = '" + comboOficina.SelectedValue + "'), (select MAX(ID) from Microfonos), (select MAX(ID) from Telefono),(select MAX(ID) from Pantalla_Proyeccion), (select MAX(ID) from Radio), (select MAX(ID) from Pantalla), (select MAX(ID) from Teclado), (select MAX(ID) from Mouse), (select MAX(ID) from Parlante), (select MAX(ID) from Regulador), (select MAX(ID) from Impresora), (select MAX(ID) from Proyector)); ";
             Datos.Insertar(sql);
         }
 
@@ -169,14 +169,14 @@ namespace sistemaFCNM.Vistas
 
         private void crearPantalla()
         {
-            string sql = "INSERT INTO Pantalla(caracteristicas,Inventario_Pantalla,pulgadas) "+
+            string sql = "INSERT INTO Pantalla(caracteristicas,Inventario_Pantalla,pulgadas) " +
                 "VALUES((select MAX(id_caracteristica) from Caracteristicas), '', ''); ";
             Datos.Insertar(sql);
         }
 
         private void caracteristicas()
         {
-            string sql = "INSERT INTO Caracteristicas (marca,modelo,serie,estado)"+
+            string sql = "INSERT INTO Caracteristicas (marca,modelo,serie,estado)" +
                          "VALUES('', '', '', ''); ";
             Datos.Insertar(sql);
         }
@@ -191,7 +191,7 @@ namespace sistemaFCNM.Vistas
         {
             this.Close();
             FuncionesUtiles.form1.Visible = true;
-        }                   
+        }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
@@ -206,7 +206,7 @@ namespace sistemaFCNM.Vistas
             combos.CampoTexto = "bloque";
             combos.LlenarComboWindows(comboEdificio);
 
-            
+
             combos.SQL = "SELECT nombre_oficina, COUNT(*) AS RecuentoFilas FROM Oficina GROUP BY nombre_oficina HAVING COUNT(*) > 1 ORDER BY nombre_oficina;";
             combos.CampoID = "nombre_oficina";
             combos.CampoTexto = "nombre_oficina";

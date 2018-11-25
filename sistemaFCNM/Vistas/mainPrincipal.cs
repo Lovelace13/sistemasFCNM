@@ -184,7 +184,8 @@ namespace sistemaFCNM
             btnRadio.Enabled = false;
             
        }
-
+        
+        
         private void btnCargarDocumento_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -199,34 +200,53 @@ namespace sistemaFCNM
 
             StreamReader objReader = new StreamReader(ofd.FileName);
             string linea = "";
-            
+            LinkedList<String> oficina = new LinkedList<string>();
+            LinkedList<String> edificio = new LinkedList<string>();
+            LinkedList<String> tipoPC = new LinkedList<string>();
+            LinkedList<String> estado = new LinkedList<string>();
+            LinkedList<String> perfil = new LinkedList<string>();
+            LinkedList<String> marcaCpu = new LinkedList<string>();
+            LinkedList<String> procesador = new LinkedList<string>();
+            LinkedList<String> memoria = new LinkedList<string>();
+            LinkedList<String> disco = new LinkedList<string>();
+
+            LinkedList<String> marcaPantalla = new LinkedList<string>();
+            LinkedList<String> modeloPantalla = new LinkedList<string>();
+            LinkedList<String> pulgadas = new LinkedList<string>();
+
+            LinkedList<String> marcaTeclado = new LinkedList<string>();
+            LinkedList<String> modeloTeclado = new LinkedList<string>();
+
+            LinkedList<String> marcaMouse = new LinkedList<string>();
+            LinkedList<String> modeloMouse = new LinkedList<string>();
 
             while (linea != null)
             {
-
                 linea = objReader.ReadLine();
                 try
                 {
                     String[] campos = linea.Split(';');
-                    Console.WriteLine(campos.Length);
+                    FuncionesUtiles.agregar(oficina, 3, campos);
+                    FuncionesUtiles.agregar(edificio, 2, campos);
+                    FuncionesUtiles.agregar(tipoPC, 8, campos);
+                    FuncionesUtiles.agregar(estado, 9, campos);
+                    FuncionesUtiles.agregar(marcaCpu, 10, campos);
+                    FuncionesUtiles.agregar(procesador, 15, campos);
+                    FuncionesUtiles.agregar(memoria, 16, campos);
+                    FuncionesUtiles.agregar(disco, 17, campos);
+                    FuncionesUtiles.agregar(perfil, 11, campos);
+
                 }
                 catch (NullReferenceException)
                 {
-                   
+                    
                 }
-               
-                
-                
-                
-                    
-               
-                
-                    
-                
-                
-
             }
             objReader.Close();
+            foreach (String list in edificio)
+            {
+                Console.WriteLine(list);
+            }
         }
            
    
