@@ -409,6 +409,7 @@ create table Equipo (IdEquipo varchar(20) PRIMARY KEY,
                      Regulador int,
                      Impresora int ,
                      Proyector int,
+					 Usuario varchar(20),
                      FOREIGN KEY (Oficina) REFERENCES Oficina(ID),
                      FOREIGN KEY (Cpu) REFERENCES CPU(ID),
                      FOREIGN KEY (Microfono) REFERENCES Microfono(ID),
@@ -421,7 +422,8 @@ create table Equipo (IdEquipo varchar(20) PRIMARY KEY,
                      FOREIGN KEY (Parlante) REFERENCES Parlante(ID),
                      FOREIGN KEY (Regulador) REFERENCES Regulador(ID),
                      FOREIGN KEY (Impresora) REFERENCES Impresora(ID),
-                     FOREIGN KEY (Proyector) REFERENCES Proyector(ID));
+                     FOREIGN KEY (Proyector) REFERENCES Proyector(ID),
+					 FOREIGN KEY (Usuario) REFERENCES Usuario(IdUsuario));
 
 create table Inventario (IdInventario INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
                          FechaInventario date not null, 

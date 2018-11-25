@@ -13,6 +13,11 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Impresora : Form
     {
+        private string estado;
+        private string marca;
+        private string serie;
+        private string modelo;
+        private string inventario;
         public Impresora()
         {
             InitializeComponent();

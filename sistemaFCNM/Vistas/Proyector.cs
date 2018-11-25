@@ -13,6 +13,12 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Proyector : Form
     {
+        private string invEspolTech;
+        private string estado;
+        private string marca;
+        private string serie;
+        private string modelo;
+        private string inventario;
         public Proyector()
         {
             InitializeComponent();

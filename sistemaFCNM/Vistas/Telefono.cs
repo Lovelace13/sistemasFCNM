@@ -13,6 +13,13 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Telefono : Form
     {
+        private string tipo;
+        private string extension;
+        private string estado;
+        private string marca;
+        private string serie;
+        private string modelo;
+        private string inventario;
         public Telefono()
         {
             InitializeComponent();

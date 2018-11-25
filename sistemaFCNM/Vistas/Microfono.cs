@@ -13,6 +13,12 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Microfono : Form
     {
+        private string tipo;
+        private string estado;
+        private string marca;
+        private string serie;
+        private string modelo;
+        private string inventario;
         public Microfono()
         {
             InitializeComponent();

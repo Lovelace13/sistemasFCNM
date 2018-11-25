@@ -13,6 +13,12 @@ namespace sistemaFCNM.Vistas
 {
     public partial class PProyeccion : Form
     {
+        private string dimensiones;
+        private string estado;
+        private string marca;
+        private string serie;
+        private string modelo;
+        private string inventario;
         public PProyeccion()
         {
             InitializeComponent();

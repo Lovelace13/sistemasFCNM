@@ -1,15 +1,15 @@
 INSERT INTO TipoUsuario(tipo)
-VALUES ('Ayudante'); 
-
+VALUES ('AYUDANTE'); 
+DBCC CHECKIDENT (TipoUsuario, RESEED, 0)
 select* FROM Usuario;
-delete from Oficina
+delete from TipoUsuario
 SELECT * FROM TipoUsuario;
 
 INSERT INTO Usuario(IdUsuario,clave,Nombre,TipoUsuario)
 values('arcuenca','1234','ARIANA CUENCA',1);
 
 INSERT INTO Usuario(IdUsuario,clave,Nombre,TipoUsuario)
-values('jfloresb','1234','JOSE FLORES',1);
+values('jcbodero','1234','Julio Bodero',2);
 
 
 insert into Oficina (edificio,nombre_oficina,area)
@@ -21,7 +21,9 @@ VALUES('');
 INSERT INTO Caracteristicas (marca,modelo,serie,estado)
 VALUES ('','','','');
 
-INSERT INTO CPU(nombre_PC,inventario_cpu,tipo_PC,Caracteristicas,perfil,tag,code,procesador,memoria,disco,adicional_lote) VALUES('','','',(select MAX(id_caracteristica) from Caracteristicas),'','','','','','','');
+INSERT INTO CpuMemoria values('2T');
+delete from Cpu
+INSERT INTO CPU(NombrePC,InventarioCpu,TipoPC,perfil,tag,code,procesador,memoria,disco,AdicionalLote,Marca,Modelo,Estado,Serie) VALUES('','','',(select MAX(id_caracteristica) from Caracteristicas),'','','','','','','');
 
 INSERT INTO Pantalla(caracteristicas,Inventario_Pantalla,pulgadas)
 VALUES('','','');
@@ -52,8 +54,9 @@ VALUES('20180270','928','1993','218','928','218','218','928','573','218','218','
 INSERT INTO Inventario(fecha_inventario,Ayudante,observacion,Equipo) VALUES ('2018-07-21','arcuenca','N/A','20180270')
 
 use sistemasFCNM;
-Alter table Microfonos
-add  tipo varchar(20) ;
+Alter table Equipo
+add  PcNombre varchar(15) ;
+ALTER TABLE Cpu DROP COLUMN PcNombre ; 
 --use sistemasFCNM;
 
 --select*from Usuario;
@@ -167,3 +170,5 @@ ORDER BY nombre_oficina;
 select top 1 id  from Oficina where nombre_oficina = '25A-101';
 
 select * from Usuario where id_usuario = 'jcbodero' and clave ='1234' and tipo_usuario=1;
+
+select TipoUsuario from Usuario where IdUsuario = ('jcbodero');

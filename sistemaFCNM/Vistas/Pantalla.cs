@@ -13,6 +13,12 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Pantalla : Form
     {
+        private string pulgadas;
+        private string estado;
+        private string marca;
+        private string serie;
+        private string modelo;
+        private string inventario;
         public Pantalla()
         {
             InitializeComponent();

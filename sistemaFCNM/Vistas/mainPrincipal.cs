@@ -8,8 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.IO;
-using System.Collections;
+
 
 namespace sistemaFCNM
 {
@@ -114,58 +113,58 @@ namespace sistemaFCNM
         private void btnPantalla_Click(object sender, EventArgs e)
         {
             
-            FuncionesUtiles.abrirVentanas(new Pantalla(), contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Pantalla(), contenedor);
             
         }
 
         private void btnTeclado_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Teclado(), contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Teclado(), contenedor);
         }
 
         private void btnMouse_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Mouse(), contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Mouse(), contenedor);
         }
 
         private void btnRegulador_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Regulador(), contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Regulador(), contenedor);
         }
 
         private void btnProyector_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Proyector(), contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Proyector(), contenedor);
         }
 
         private void btnImpresora_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Impresora(), contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Impresora(), contenedor);
         }
 
         private void btnParlante_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Parlante(), contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Parlante(), contenedor);
         }
 
         private void btnMicro_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Microfono(), contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Microfono(), contenedor);
         }
 
         private void btnTelefono_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Telefono(), contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Telefono(), contenedor);
         }
 
         private void btnPproyeccion_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new PProyeccion(), contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.PProyeccion(), contenedor);
         }
 
         private void btnRadio_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Radio(), contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Radio(), contenedor);
         }
 
         private void apagarBotones()
@@ -184,72 +183,12 @@ namespace sistemaFCNM
             btnRadio.Enabled = false;
             
        }
-        
-        
+
+
         private void btnCargarDocumento_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Archivos csv (*.csv)|*.csv";
-            ofd.Title = "Abrir";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                MessageBox.Show(ofd.FileName);
-            }
-            ofd.Dispose();
-
-
-            StreamReader objReader = new StreamReader(ofd.FileName);
-            string linea = "";
-            LinkedList<String> oficina = new LinkedList<string>();
-            LinkedList<String> edificio = new LinkedList<string>();
-            LinkedList<String> tipoPC = new LinkedList<string>();
-            LinkedList<String> estado = new LinkedList<string>();
-            LinkedList<String> perfil = new LinkedList<string>();
-            LinkedList<String> marcaCpu = new LinkedList<string>();
-            LinkedList<String> procesador = new LinkedList<string>();
-            LinkedList<String> memoria = new LinkedList<string>();
-            LinkedList<String> disco = new LinkedList<string>();
-
-            LinkedList<String> marcaPantalla = new LinkedList<string>();
-            LinkedList<String> modeloPantalla = new LinkedList<string>();
-            LinkedList<String> pulgadas = new LinkedList<string>();
-
-            LinkedList<String> marcaTeclado = new LinkedList<string>();
-            LinkedList<String> modeloTeclado = new LinkedList<string>();
-
-            LinkedList<String> marcaMouse = new LinkedList<string>();
-            LinkedList<String> modeloMouse = new LinkedList<string>();
-
-            while (linea != null)
-            {
-                linea = objReader.ReadLine();
-                try
-                {
-                    String[] campos = linea.Split(';');
-                    FuncionesUtiles.agregar(oficina, 3, campos);
-                    FuncionesUtiles.agregar(edificio, 2, campos);
-                    FuncionesUtiles.agregar(tipoPC, 8, campos);
-                    FuncionesUtiles.agregar(estado, 9, campos);
-                    FuncionesUtiles.agregar(marcaCpu, 10, campos);
-                    FuncionesUtiles.agregar(procesador, 15, campos);
-                    FuncionesUtiles.agregar(memoria, 16, campos);
-                    FuncionesUtiles.agregar(disco, 17, campos);
-                    FuncionesUtiles.agregar(perfil, 11, campos);
-
-                }
-                catch (NullReferenceException)
-                {
-                    
-                }
-            }
-            objReader.Close();
-            foreach (String list in edificio)
-            {
-                Console.WriteLine(list);
-            }
         }
-           
-   
+            
     }
 }        
 
