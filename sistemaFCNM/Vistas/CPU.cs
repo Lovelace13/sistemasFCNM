@@ -43,7 +43,7 @@ namespace sistemaFCNM.Vistas
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
-            
+           
             string sql = "select e.id_Equipo, c.inventario_cpu,c.nombre_PC,c.adicional_lote," +
                    "c.tipo_PC,c.tag,c.code,c.perfil,c.procesador,c.memoria,c.disco," +
                    "car.estado,car.marca,car.modelo,car.serie from  Equipo e, CPU c," +
@@ -233,8 +233,7 @@ namespace sistemaFCNM.Vistas
         }
         private void habilitarBotones()
         {
-            btnGuardar.Enabled = true;
-            btnEliminar.Enabled = true;
+            
             txtCpu.Enabled = true;
             txtNombre.Enabled = true;
             txtTipo.Enabled = true;

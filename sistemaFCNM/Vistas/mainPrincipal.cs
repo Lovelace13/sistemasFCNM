@@ -1,12 +1,6 @@
 ﻿using sistemaFCNM.Clases;
 using sistemaFCNM.Vistas;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 
@@ -99,7 +93,7 @@ namespace sistemaFCNM
         {
             apagarBotones();
             FuncionesUtiles.siguienteActiva = true;
-            FuncionesUtiles.abrirVentanas(new Scanner(),contenedor);
+            FuncionesUtiles.abrirVentanas(new Equipos(),contenedor);
         }
 
         private void btnCpu_Click(object sender, EventArgs e)
@@ -187,6 +181,8 @@ namespace sistemaFCNM
 
         private void btnCargarDocumento_Click(object sender, EventArgs e)
         {
+            new Datos().crearListaObjetos();
+            
         }
             
     }

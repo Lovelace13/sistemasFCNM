@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace sistemaFCNM
 {
-    public partial class Scanner : Form
+    public partial class Equipos : Form
     {
         private string fecha;
         private string grupo;
@@ -23,9 +23,8 @@ namespace sistemaFCNM
         private string nombreUsuario;
         private string inventario;
         private string observacion;
-        private string fecha;
         private string ayudante;
-        public Scanner()
+        public Equipos()
         {
             InitializeComponent();
         }

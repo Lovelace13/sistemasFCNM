@@ -1,6 +1,6 @@
 ﻿namespace sistemaFCNM
 {
-    partial class Scanner
+    partial class Equipos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Scanner));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Equipos));
             this.txtTeclado = new System.Windows.Forms.TextBox();
             this.lblTeclado = new System.Windows.Forms.Label();
             this.txtMouse = new System.Windows.Forms.TextBox();

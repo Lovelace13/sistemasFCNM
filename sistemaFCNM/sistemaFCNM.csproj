@@ -104,6 +104,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clases\FuncionesUtiles.cs" />
+    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -183,11 +184,11 @@
     <Compile Include="Vistas\Regulador.Designer.cs">
       <DependentUpon>Regulador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Scanner.cs">
+    <Compile Include="Vistas\Equipos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Scanner.Designer.cs">
-      <DependentUpon>Scanner.cs</DependentUpon>
+    <Compile Include="Vistas\Equipos.Designer.cs">
+      <DependentUpon>Equipos.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\mainPrincipal.cs">
       <SubType>Form</SubType>
@@ -254,8 +255,8 @@
     <EmbeddedResource Include="Vistas\Regulador.resx">
       <DependentUpon>Regulador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Scanner.resx">
-      <DependentUpon>Scanner.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\Equipos.resx">
+      <DependentUpon>Equipos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\mainPrincipal.resx">
       <DependentUpon>mainPrincipal.cs</DependentUpon>

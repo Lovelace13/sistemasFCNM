@@ -13,6 +13,7 @@ namespace sistemaFCNM.Vistas
 {
     public partial class login : Form
     {
+        private Usuario user;
         public login()
         {
             InitializeComponent();
@@ -26,7 +27,8 @@ namespace sistemaFCNM.Vistas
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+
+            user = new Usuario(txtUsuario.Text);
             if (txtUsuario.Text == "")
             {
                 MessageBox.Show("Ingrese Usuario", "Error");
@@ -40,11 +42,12 @@ namespace sistemaFCNM.Vistas
                 return;
             }
 
-            if (Datos.ValidarUsuario(txtUsuario.Text, txtClave.Text,gridUsuario))
+            
+            if (user.ValidarUsuario(txtUsuario.Text, txtClave.Text))
             {
-                MessageBox.Show("BIENVENIDO " + gridUsuario.Rows[0].Cells["Nombre"].Value.ToString());
+                MessageBox.Show("BIENVENIDO " + user.NombreUsuario);
                 this.Visible = false;
-                FuncionesUtiles.USUARIO = gridUsuario.Rows[0].Cells["IdUsuario"].Value.ToString();
+                FuncionesUtiles.USUARIO = user.IdUsuario;
                 FuncionesUtiles.form1 = new mainPrincipal();
                 FuncionesUtiles.form1.Show();
                 

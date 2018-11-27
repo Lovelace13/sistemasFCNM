@@ -9,7 +9,7 @@ INSERT INTO Usuario(IdUsuario,clave,Nombre,TipoUsuario)
 values('arcuenca','1234','ARIANA CUENCA',1);
 
 INSERT INTO Usuario(IdUsuario,clave,Nombre,TipoUsuario)
-values('jcbodero','1234','Julio Bodero',2);
+values('jcbodero','1234','Julio Bodero',1);
 
 
 insert into Oficina (edificio,nombre_oficina,area)
@@ -23,7 +23,7 @@ VALUES ('','','','');
 
 INSERT INTO CpuMemoria values('2T');
 delete from Cpu
-INSERT INTO CPU(NombrePC,InventarioCpu,TipoPC,perfil,tag,code,procesador,memoria,disco,AdicionalLote,Marca,Modelo,Estado,Serie) VALUES('','','',(select MAX(id_caracteristica) from Caracteristicas),'','','','','','','');
+INSERT INTO CPU(NombrePC,Inventario,TipoPC,perfil,tag,code,procesador,memoria,disco,AdicionalLote,Marca,Modelo,Estado,Serie) VALUES('','','',(select MAX(id_caracteristica) from Caracteristicas),'','','','','','','');
 
 INSERT INTO Pantalla(caracteristicas,Inventario_Pantalla,pulgadas)
 VALUES('','','');
@@ -81,9 +81,7 @@ SELECT Equipo.id_Equipo,CPU.inventario_cpu
 FROM Equipo
 INNER JOIN CPU ON Equipo.Inventario_CPU = CPU.ID;
 
-select e.id_Equipo, p.Inventario_Pantalla,p.pulgadas,car.estado,car.marca,car.modelo,car.serie
-from  Equipo e, Pantalla p, Mouse m, Teclado t, CPU ,Caracteristicas car
-where e.Inventario_CPU= CPU.ID and e.Pantalla=p.ID and e.Mouse=m.ID and e.Teclado=t.ID and car.id_caracteristica = p.caracteristicas  and p.Inventario_Pantalla like '1036%';
+select e.id_Equipo, p.Inventario_Pantalla,p.pulgadas,car.estado,car.marca,car.modelo,car.serie from  Equipo e, Pantalla p, Mouse m, Teclado t, CPU ,Caracteristicas car where e.Inventario_CPU= CPU.ID and e.Pantalla=p.ID and e.Mouse=m.ID and e.Teclado=t.ID and car.id_caracteristica = p.caracteristicas  and p.Inventario_Pantalla like '1036%';
 
 select e.id_Equipo,c.inventario_cpu,c.nombre_PC,c.tipo_PC,c.perfil,
 c.tag,c.code,c.procesador,c.memoria,c.disco,c.adicional_lote,car.estado,car.marca,car.modelo,car.serie
@@ -169,6 +167,13 @@ ORDER BY nombre_oficina;
 
 select top 1 id  from Oficina where nombre_oficina = '25A-101';
 
-select * from Usuario where id_usuario = 'jcbodero' and clave ='1234' and tipo_usuario=1;
+SELECT Nombre FROM Usuario WHERE IdUsuario = 'jcbodero' and clave ='1234';
 
 select TipoUsuario from Usuario where IdUsuario = ('jcbodero');
+
+INSERT INTO CpuNombre VALUES ('');
+
+SELECT * FROM Cpu;
+
+INSERT INTO CpuNombre(NombrePC) VALUES('DOF-001');
+INSERT INTO Cpu(NombrePC,Inventario,TipoPC,perfil,tag,code,procesador,memoria,disco,AdicionalLote,Marca,Modelo,Estado,Serie) VALUES ((SELECT ID FROM CpuNombre WHERE NombrePC='DOF-001'),'103342',(SELECT ID FROM CpuTipo WHERE TipoPC='DESKTOP'),(SELECT ID FROM CpuPerfil WHERE Perfil='N/A'),(SELECT ID FROM CpuTag WHERE Tag='61TRCZ1'),(SELECT ID FROM CpuCode WHERE Code='13171145581'),(SELECT ID FROM CpuProcesador WHERE Procesador='I7'),(SELECT ID FROM CpuMemoria WHERE Memoria='8GB'),(SELECT ID FROM CpuDisco WHERE Disco='1T'),(SELECT ID FROM CpuAdicionalLote WHERE AdicionalLote='N/A'),(SELECT ID FROM CpuMarca WHERE Marca='DELL'),'1',(SELECT ID FROM Estado WHERE Estado='BUENO'),(SELECT ID FROM CpuSerie WHERE Serie='N/A'));
