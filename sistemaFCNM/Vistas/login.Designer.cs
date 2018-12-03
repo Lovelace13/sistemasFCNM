@@ -137,6 +137,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(204, 36);
             this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.Text = "jcbodero";
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtClave
@@ -151,6 +152,7 @@
             this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(204, 36);
             this.txtClave.TabIndex = 1;
+            this.txtClave.Text = "1234";
             this.txtClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1

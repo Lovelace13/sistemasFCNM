@@ -5,6 +5,7 @@ namespace sistemaFCNM.Clases
 {
     class FuncionesUtiles
     {
+        #region Variables estaticas sistema
         public static bool masdetallesActiva = false;
         public static bool siguienteActiva = false;
         public static bool anteriorActiva = false;
@@ -12,9 +13,10 @@ namespace sistemaFCNM.Clases
         public static string USUARIO;
         public static string OBSERVACION;
         public static bool nuevoRegistro = false;
-
         public static mainPrincipal form1;
+        #endregion
 
+        #region Funciones Estaticas para navegar entre ventanas
         public static void abrirVentanas(Form ventana, FlowLayoutPanel panelContenedor)
         {
             if (panelContenedor.Controls.Count > 0)
@@ -45,7 +47,6 @@ namespace sistemaFCNM.Clases
             return result;
 
         }
-
         public static void desactivarMenu()
         {
             mainPrincipal.btn13.Enabled = false;
@@ -62,7 +63,6 @@ namespace sistemaFCNM.Clases
             mainPrincipal.btn11.Enabled = false;
             mainPrincipal.btn12.Enabled = false;
         }
-
         public static void activarMenu()
         {
             mainPrincipal.btn13.Enabled = true;
@@ -79,6 +79,7 @@ namespace sistemaFCNM.Clases
             mainPrincipal.btn11.Enabled = true;
             mainPrincipal.btn12.Enabled = true;
         }
+        #endregion
 
-    } 
+    }
 }

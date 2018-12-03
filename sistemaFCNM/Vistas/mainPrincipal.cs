@@ -38,11 +38,11 @@ namespace sistemaFCNM
             btn8 = this.btnRegulador;
             btn9 = this.btnMicro;
             btn10 = this.btnTelefono;
-            btn11= this.btnPproyeccion;
-            btn12= this.btnRadio;
+            btn11 = this.btnPproyeccion;
+            btn12 = this.btnRadio;
             btn13 = this.btnScanner;
         }
-       
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -87,28 +87,28 @@ namespace sistemaFCNM
         {
             Application.Exit();
         }
-               
+
 
         private void btnScanner_Click(object sender, EventArgs e)
         {
             apagarBotones();
             FuncionesUtiles.siguienteActiva = true;
-            FuncionesUtiles.abrirVentanas(new Equipos(),contenedor);
+            FuncionesUtiles.abrirVentanas(new Equipos(), contenedor);
         }
 
         private void btnCpu_Click(object sender, EventArgs e)
         {
-            
+
             FuncionesUtiles.abrirVentanas(new CPU(), contenedor);
-            
-            
+
+
         }
 
         private void btnPantalla_Click(object sender, EventArgs e)
         {
-            
+
             FuncionesUtiles.abrirVentanas(new Vistas.Pantalla(), contenedor);
-            
+
         }
 
         private void btnTeclado_Click(object sender, EventArgs e)
@@ -175,18 +175,18 @@ namespace sistemaFCNM
             btnTelefono.Enabled = false;
             btnPproyeccion.Enabled = false;
             btnRadio.Enabled = false;
-            
-       }
+
+        }
 
 
         private void btnCargarDocumento_Click(object sender, EventArgs e)
         {
             new Datos().crearListaObjetos();
-            
-        }
-            
-    }
-}        
 
-        
+        }
+
+    }
+}
+
+
 

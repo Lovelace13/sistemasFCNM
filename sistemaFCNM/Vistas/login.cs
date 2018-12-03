@@ -13,18 +13,23 @@ namespace sistemaFCNM.Vistas
 {
     public partial class login : Form
     {
+        #region Variables Login
         private Usuario user;
+        #endregion}
+
+        #region Constructor
         public login()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Accion Botones Login
         private void panelCabecera_Paint(object sender, PaintEventArgs e)
         {
             MouseMovimiento mouseMove = new MouseMovimiento(this);
             this.panelCabecera.MouseMove += new System.Windows.Forms.MouseEventHandler(mouseMove.Form1_MouseMove);
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
@@ -58,21 +63,22 @@ namespace sistemaFCNM.Vistas
                 MessageBox.Show(Datos.Mensaje);
             }
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        #endregion
 
+        #region Botones cabecera
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
+        #endregion
 
     }
 }
