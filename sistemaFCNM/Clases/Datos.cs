@@ -232,9 +232,6 @@ namespace sistemaFCNM.Clases
                     validarEstados();
                     tablasSistema(campos);
 
-                    Console.WriteLine(campos[2]);
-
-
 
                 }
                 objReader.Close();
@@ -259,6 +256,12 @@ namespace sistemaFCNM.Clases
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "PantallaMarca", "Marca", marcaPantalla);
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "PantallaModelo", "Modelo", modeloPantalla);
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "PantallaPulgadas", "Pulgadas", pulgadas);
+            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "TecladoMarca", "Marca", marcaTeclado);
+            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "TecladoModelo", "Modelo", modeloTeclado);
+            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "MouseMarca", "Marca", marcaMouse);
+            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "MouseModelo", "Modelo", modeloMouse);
+            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "ParlanteMarca", "Marca", marcaParlante);
+            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "ParlanteModelo", "Modelo", modeloParlante);
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "Estado", "Estado", estado);
         }
         private void subirTablas()
@@ -274,6 +277,9 @@ namespace sistemaFCNM.Clases
                     String[] campos = linea.Split(';');
                     tablaCpu(campos);
                     tablaPantalla(campos);
+                    tablaTeclado(campos);
+                    tablaMouse(campos);
+                    tablaParlante(campos);
                 }
                 objReader.Close();
             }
@@ -297,6 +303,9 @@ namespace sistemaFCNM.Clases
             IngresoSql("CpuModelo", "Modelo", "N/A");
 
             IngresoSql(22, campos, "PantallaSerie", "Serie");
+            IngresoSql(27, campos, "TecladoSerie", "Serie");
+            IngresoSql(31, campos, "MouseSerie", "Serie");
+            IngresoSql(35, campos, "ParlanteSerie", "Serie");
         }
         private void tablaCpu(String[] campos)
         {
@@ -331,6 +340,48 @@ namespace sistemaFCNM.Clases
             string campo = "Estado, Marca, Modelo, Serie, Inventario, Pulgadas";
             string cadenaVerf = System.String.Format("SELECT ID FROM {0} WHERE {1} = '{2}';", "Pantalla", "Inventario", reemplazar(campos[23]));
             IngresoSql(cadenaVerf, "Pantalla", campo, values);
+
+        }
+        private void tablaTeclado(string[] campos)
+        {
+            string inventario = reemplazar(campos[28]);
+            string marca = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "TecladoMarca", "Marca", reemplazar(campos[25]));
+            string modelo = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "TecladoModelo", "Modelo", reemplazar(campos[26]));
+            string serie = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "TecladoSerie", "Serie", reemplazar(campos[27]));
+            string estado = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "Estado", "Estado", reemplazar("BUENO"));
+
+            string values = System.String.Format("({0}),({1}),({2}),({3}),'{4}'", estado, marca, modelo, serie, inventario);
+            string campo = "Estado, Marca, Modelo, Serie, Inventario";
+            string cadenaVerf = System.String.Format("SELECT ID FROM {0} WHERE {1} = '{2}';", "Teclado", "Inventario", reemplazar(campos[28]));
+            IngresoSql(cadenaVerf, "Teclado", campo, values);
+
+        }
+        private void tablaMouse(string[] campos)
+        {
+            string inventario = reemplazar(campos[32]);
+            string marca = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "MouseMarca", "Marca", reemplazar(campos[29]));
+            string modelo = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "MouseModelo", "Modelo", reemplazar(campos[30]));
+            string serie = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "MouseSerie", "Serie", reemplazar(campos[31]));
+            string estado = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "Estado", "Estado", reemplazar("BUENO"));
+
+            string values = System.String.Format("({0}),({1}),({2}),({3}),'{4}'", estado, marca, modelo, serie, inventario);
+            string campo = "Estado, Marca, Modelo, Serie, Inventario";
+            string cadenaVerf = System.String.Format("SELECT ID FROM {0} WHERE {1} = '{2}';", "Mouse", "Inventario", reemplazar(campos[32]));
+            IngresoSql(cadenaVerf, "Mouse", campo, values);
+
+        }
+        private void tablaParlante(string[] campos)
+        {
+            string inventario = reemplazar(campos[36]);
+            string marca = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ParlanteMarca", "Marca", reemplazar(campos[33]));
+            string modelo = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ParlanteModelo", "Modelo", reemplazar(campos[34]));
+            string serie = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ParlanteSerie", "Serie", reemplazar(campos[35]));
+            string estado = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "Estado", "Estado", reemplazar("BUENO"));
+
+            string values = System.String.Format("({0}),({1}),({2}),({3}),'{4}'", estado, marca, modelo, serie, inventario);
+            string campo = "Estado, Marca, Modelo, Serie, Inventario";
+            string cadenaVerf = System.String.Format("SELECT ID FROM {0} WHERE {1} = '{2}';", "Parlante", "Inventario", reemplazar(campos[36]));
+            IngresoSql(cadenaVerf, "Parlante", campo, values);
 
         }
         #endregion

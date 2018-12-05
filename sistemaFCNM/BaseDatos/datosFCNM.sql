@@ -173,7 +173,7 @@ select TipoUsuario from Usuario where IdUsuario = ('jcbodero');
 
 INSERT INTO CpuNombre VALUES ('');
 
-SELECT * FROM Pantalla;
+select * FROM Parlante;
 INSERT INTO CpuNombre(NombrePC) VALUES('DOF-001');
-INSERT INTO Cpu(NombrePC,Inventario,TipoPC,perfil,tag,code,procesador,memoria,disco,AdicionalLote,Marca,Modelo,Estado,Serie) VALUES ((SELECT ID FROM CpuNombre WHERE NombrePC='DOF-001'),'103342',(SELECT ID FROM CpuTipo WHERE TipoPC='DESKTOP'),(SELECT ID FROM CpuPerfil WHERE Perfil='N/A'),(SELECT ID FROM CpuTag WHERE Tag='61TRCZ1'),(SELECT ID FROM CpuCode WHERE Code='13171145581'),(SELECT ID FROM CpuProcesador WHERE Procesador='I7'),(SELECT ID FROM CpuMemoria WHERE Memoria='8GB'),(SELECT ID FROM CpuDisco WHERE Disco='1T'),(SELECT ID FROM CpuAdicionalLote WHERE AdicionalLote='N/A'),(SELECT ID FROM CpuMarca WHERE Marca='DELL'),'1',(SELECT ID FROM Estado WHERE Estado='BUENO'),(SELECT ID FROM CpuSerie WHERE Serie='N/A'));
+INSERT INTO Teclado(Marca, Modelo, Serie, Inventario) VALUES ((SELECT ID FROM Estado WHERE Estado='BUENO'),(SELECT ID FROM TecladoMarca WHERE Marca='DELL'),(SELECT ID FROM TecladoModelo WHERE Modelo='KB212-B'),(SELECT ID FROM TecladoSerie WHERE Serie='CN-OC639N-71616-3A4-0ULZ-A00'),'103309-2');
 INSERT INTO Edificio VALUES ('24');
