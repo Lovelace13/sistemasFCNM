@@ -32,6 +32,8 @@ namespace sistemaFCNM.Clases
         private LinkedList<String> marcaParlante = new LinkedList<string>();
         private LinkedList<String> modeloParlante = new LinkedList<string>();
         private LinkedList<String> marcaRegulador = new LinkedList<string>();
+        private LinkedList<String> modeloProyector = new LinkedList<string>();
+        private LinkedList<String> marcaProyector = new LinkedList<string>();
         private LinkedList<String> tipoRegulador = new LinkedList<string>();
         private LinkedList<String> marcaTelefono = new LinkedList<string>();
         private LinkedList<String> tipoTelefono = new LinkedList<string>();
@@ -224,6 +226,8 @@ namespace sistemaFCNM.Clases
                     agregar(modeloMouse, 30, campos);
                     agregar(marcaParlante, 33, campos);
                     agregar(modeloParlante, 34, campos);
+                    agregar(marcaProyector, 38, campos);
+                    agregar(modeloProyector, 39, campos);
                     agregar(marcaRegulador, 44, campos);
                     agregar(tipoRegulador, 43, campos);
                     agregar(tipoTelefono, 55, campos);
@@ -262,6 +266,8 @@ namespace sistemaFCNM.Clases
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "MouseModelo", "Modelo", modeloMouse);
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "ParlanteMarca", "Marca", marcaParlante);
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "ParlanteModelo", "Modelo", modeloParlante);
+            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "ProyectorMarca", "Marca", marcaProyector);
+            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "ProyectorModelo", "Modelo", modeloProyector);
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "Estado", "Estado", estado);
         }
         private void subirTablas()
@@ -280,6 +286,7 @@ namespace sistemaFCNM.Clases
                     tablaTeclado(campos);
                     tablaMouse(campos);
                     tablaParlante(campos);
+                    tablaProyector(campos);
                 }
                 objReader.Close();
             }
@@ -306,6 +313,9 @@ namespace sistemaFCNM.Clases
             IngresoSql(27, campos, "TecladoSerie", "Serie");
             IngresoSql(31, campos, "MouseSerie", "Serie");
             IngresoSql(35, campos, "ParlanteSerie", "Serie");
+            IngresoSql(40, campos, "ProyectorSerie", "Serie");
+
+
         }
         private void tablaCpu(String[] campos)
         {
@@ -382,6 +392,21 @@ namespace sistemaFCNM.Clases
             string campo = "Estado, Marca, Modelo, Serie, Inventario";
             string cadenaVerf = System.String.Format("SELECT ID FROM {0} WHERE {1} = '{2}';", "Parlante", "Inventario", reemplazar(campos[36]));
             IngresoSql(cadenaVerf, "Parlante", campo, values);
+
+        }
+        private void tablaProyector(string[] campos)
+        {
+            string inventarioEspol = reemplazar(campos[42]);
+            string inventarioEspolTech = reemplazar(campos[41]);
+            string marca = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ProyectorMarca", "Marca", reemplazar(campos[38]));
+            string modelo = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ProyectorModelo", "Modelo", reemplazar(campos[39]));
+            string serie = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ProyectorSerie", "Serie", reemplazar(campos[40]));
+            string estado = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "Estado", "Estado", reemplazar(campos[37]));
+
+            string values = System.String.Format("({0}),({1}),({2}),({3}),'{4}','{5}'", estado, marca, modelo, serie, inventarioEspol,inventarioEspolTech);
+            string campo = "Estado, Marca, Modelo, Serie, Inventario,InventarioEspoltech";
+            string cadenaVerf = System.String.Format("SELECT ID FROM {0} WHERE {1} = '{2}';", "Proyector", "Inventario", reemplazar(campos[42]));
+            IngresoSql(cadenaVerf, "Proyector", campo, values);
 
         }
         #endregion
