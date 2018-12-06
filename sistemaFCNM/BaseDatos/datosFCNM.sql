@@ -173,7 +173,7 @@ select TipoUsuario from Usuario where IdUsuario = ('jcbodero');
 
 INSERT INTO CpuNombre VALUES ('');
 
-select * FROM Parlante;
+select * FROM Proyector;
 INSERT INTO CpuNombre(NombrePC) VALUES('DOF-001');
 INSERT INTO Teclado(Marca, Modelo, Serie, Inventario) VALUES ((SELECT ID FROM Estado WHERE Estado='BUENO'),(SELECT ID FROM TecladoMarca WHERE Marca='DELL'),(SELECT ID FROM TecladoModelo WHERE Modelo='KB212-B'),(SELECT ID FROM TecladoSerie WHERE Serie='CN-OC639N-71616-3A4-0ULZ-A00'),'103309-2');
 INSERT INTO Edificio VALUES ('24');
