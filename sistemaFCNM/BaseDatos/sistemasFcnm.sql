@@ -25,6 +25,9 @@ create table Usuario(IdUsuario varchar(20) not null primary key,
                      FOREIGN KEY ( TipoUsuario) REFERENCES TipoUsuario(IdTipo)); 
 
 --Cpu
+create table CpuInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table CpuNombre (ID int identity (1,1) primary key,
                  NombrePC varchar(50)
                  );
@@ -63,7 +66,7 @@ create table CpuSerie (ID int identity (1,1) primary key,
                  );
 
 create table Cpu (ID int identity (1,1) primary key,
-                 Inventario varchar(30),
+                 Inventario int,
                  NombrePC int,
                  TipoPC int,
                  Perfil int ,
@@ -77,6 +80,7 @@ create table Cpu (ID int identity (1,1) primary key,
                  Modelo int,
                  Serie int,
                  Estado int,
+				 FOREIGN KEY (Inventario) REFERENCES CpuInventario(ID),
                  FOREIGN KEY (NombrePC) REFERENCES CpuNombre(ID),
                  FOREIGN KEY (TipoPC) REFERENCES CpuTipo(ID),
                  FOREIGN KEY (Perfil) REFERENCES CpuPerfil(ID),
