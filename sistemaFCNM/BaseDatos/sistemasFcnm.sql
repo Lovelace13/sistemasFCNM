@@ -4,25 +4,49 @@ GO
 
 use SistemasFCNM
 GO
-
-create table Edificio(Bloque varchar(5) not null PRIMARY KEY);
-
+--Ubicacion
+create table Edificio(ID int identity (1,1) not null primary key,
+					  Bloque varchar(5) not null
+					  );
+create table NombreOficina(ID int identity (1,1) not null primary key,
+					  NombreOficina varchar(30) not null
+					  );
+create table AreaOficina(ID int identity (1,1) not null primary key,
+					  Area varchar(30) not null
+					  );
 create table Oficina (ID int not null identity (1,1) primary key,
-                      nombreOficina varchar(30), 
-                      Edificio  varchar(5) not null,
-                      Area varchar(30) not null,
-                      FOREIGN KEY (Edificio) REFERENCES Edificio(bloque));
+                      NombreOficina int not null, 
+                      Edificio int  not null,
+                      Area int not null,
+                      FOREIGN KEY (Edificio) REFERENCES Edificio(ID),
+					  FOREIGN KEY (NombreOficina) REFERENCES NombreOficina(ID),
+					  FOREIGN KEY (Area) REFERENCES AreaOficina(ID),
+					  );
 
-create table TipoUsuario (IdTipo int identity(1,1) primary key,
-                        tipo varchar(20));
-create table Estado (ID int identity (1,1) primary key,
-                 Estado varchar(20)
+
+create table Estado (ID int identity (1,1) not null primary key,
+                 Estado varchar(20) not null
                  );
-create table Usuario(IdUsuario varchar(20) not null primary key,
-                     TipoUsuario int,
-                     Nombre varchar(50) not null,
-                     Clave varchar (20) not null,
-                     FOREIGN KEY ( TipoUsuario) REFERENCES TipoUsuario(IdTipo)); 
+
+--Usuario
+create table IdUsuario (ID int identity(1,1) not null primary key,
+                        Usuario varchar(20));
+create table TipoUsuario (ID int identity(1,1) not null primary key,
+                        Tipo varchar(20) not null);
+create table NombreUsuario (ID int identity(1,1) not null primary key,
+                        Nombre varchar(50));
+create table ClaveUsuario (ID int identity(1,1) not null primary key,
+                        Clave varchar(20));
+create table Usuario(ID int identity(1,1) not null primary key,
+					 Usuario int not null,
+                     Tipo int not null,
+                     Nombre int not null,
+                     Clave int not null,
+                     FOREIGN KEY ( Tipo) REFERENCES TipoUsuario(ID),
+					 FOREIGN KEY ( Usuario) REFERENCES IdUsuario(ID),
+					 FOREIGN KEY ( Nombre) REFERENCES NombreUsuario(ID),
+					 FOREIGN KEY ( Clave) REFERENCES ClaveUsuario(ID)
+					 ); 
 
 --Cpu
 create table CpuInventario (ID int identity (1,1) primary key,
@@ -58,9 +82,6 @@ create table CpuAdicionalLote (ID int identity (1,1) primary key,
 create table CpuMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
-create table CpuModelo (ID int identity (1,1) primary key,
-                 Modelo varchar(70)
-                 );
 create table CpuSerie (ID int identity (1,1) primary key,
                  Serie varchar(70)
                  );
@@ -77,7 +98,6 @@ create table Cpu (ID int identity (1,1) primary key,
                  Disco int,
                  AdicionalLote int,
                  Marca int,
-                 Modelo int,
                  Serie int,
                  Estado int,
 				 FOREIGN KEY (Inventario) REFERENCES CpuInventario(ID),
@@ -91,13 +111,15 @@ create table Cpu (ID int identity (1,1) primary key,
                  FOREIGN KEY (Memoria) REFERENCES CpuMemoria(ID),
                  FOREIGN KEY (AdicionalLote) REFERENCES CpuAdicionalLote(ID),
                  FOREIGN KEY (Marca) REFERENCES CpuMarca(ID),
-                 FOREIGN KEY (Modelo) REFERENCES CpuModelo(ID),
                  FOREIGN KEY (Serie) REFERENCES CpuSerie(ID),
                  FOREIGN KEY (Estado) REFERENCES Estado(ID),
 
                  ); 
 
 --Pantalla
+create table PantallaInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table PantallaMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
@@ -111,12 +133,13 @@ create table PantallaPulgadas (ID int identity (1,1) primary key,
                  Pulgadas varchar(5)
                  );
 create table Pantalla(ID int identity (1,1) primary key,
-                       Inventario varchar(30),
+                       Inventario int,
                        Pulgadas int,
                        Marca int,
                        Modelo int,
                        Serie int,
                        Estado int,
+					   FOREIGN KEY (Inventario) REFERENCES PantallaInventario(ID),
                        FOREIGN KEY (Pulgadas) REFERENCES PantallaPulgadas(ID),
                        FOREIGN KEY (Marca) REFERENCES PantallaMarca(ID),
                        FOREIGN KEY (Modelo) REFERENCES PantallaModelo(ID),
@@ -124,6 +147,9 @@ create table Pantalla(ID int identity (1,1) primary key,
                        FOREIGN KEY (Estado) REFERENCES Estado(ID)
                        );
 --Teclado
+create table TecladoInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table TecladoMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
@@ -134,17 +160,20 @@ create table TecladoSerie (ID int identity (1,1) primary key,
                  Serie varchar(70)
                  );
 create table Teclado (ID int identity (1,1) primary key,
-                      Inventario varchar(30),
+                      Inventario int,
                       Marca int,
                       Modelo int,
                       Serie int,
                       Estado int,
+					  FOREIGN KEY (Inventario) REFERENCES TecladoInventario(ID),
                       FOREIGN KEY (Marca) REFERENCES TecladoMarca(ID),
                       FOREIGN KEY (Modelo) REFERENCES TecladoModelo(ID),
                       FOREIGN KEY (Serie) REFERENCES TecladoSerie(ID),
                       FOREIGN KEY (Estado) REFERENCES Estado(ID));
 --Mouse
-
+create table MouseInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table MouseMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
@@ -155,17 +184,21 @@ create table MouseSerie (ID int identity (1,1) primary key,
                  Serie varchar(70)
                  );
 create table Mouse (ID int identity (1,1) primary key,
-                    Inventario varchar(30),
+                    Inventario int,
                     Marca int,
                     Modelo int,
                     Serie int,
-                    Estado int
+                    Estado int,
+					FOREIGN KEY (Inventario) REFERENCES MouseInventario(ID),
                     FOREIGN KEY (Marca) REFERENCES MouseMarca(ID),
                     FOREIGN KEY (Modelo) REFERENCES MouseModelo(ID),
                     FOREIGN KEY (Serie) REFERENCES MouseSerie(ID),
                     FOREIGN KEY (Estado) REFERENCES Estado(ID)
                     );
 --Parlante
+create table ParlanteInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table ParlanteMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
@@ -176,11 +209,12 @@ create table ParlanteSerie (ID int identity (1,1) primary key,
                  Serie varchar(70)
                  );
 create table Parlante (ID int identity (1,1) primary key,
-                       Inventario varchar(30),
+                       Inventario int,
                        Marca int,
                        Modelo int,
                        Serie int,
-                       Estado int
+                       Estado int,
+					   FOREIGN KEY (Inventario) REFERENCES ParlanteInventario(ID),
                        FOREIGN KEY (Marca) REFERENCES ParlanteMarca(ID),
                        FOREIGN KEY (Modelo) REFERENCES ParlanteModelo(ID),
                        FOREIGN KEY (Serie) REFERENCES ParlanteSerie(ID),
@@ -188,6 +222,9 @@ create table Parlante (ID int identity (1,1) primary key,
                        
                        );
 --Impresora
+create table ImpresoraInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table ImpresoraMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
@@ -198,11 +235,12 @@ create table ImpresoraSerie (ID int identity (1,1) primary key,
                  Serie varchar(70)
                  );
 create table Impresora (ID int identity (1,1) primary key,
-                       Inventario varchar(30)  ,
+                       Inventario int,
                        Marca int,
                        Modelo int,
                        Serie int,
-                       Estado int
+                       Estado int,
+					   FOREIGN KEY (Inventario) REFERENCES ImpresoraInventario(ID),
                        FOREIGN KEY (Marca) REFERENCES ImpresoraMarca(ID),
                        FOREIGN KEY (Modelo) REFERENCES ImpresoraModelo(ID),
                        FOREIGN KEY (Serie) REFERENCES ImpresoraSerie(ID),
@@ -212,6 +250,9 @@ create table Impresora (ID int identity (1,1) primary key,
                        
                        );
 --Regulador
+create table ReguladorInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table ReguladorMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
@@ -226,12 +267,13 @@ create table ReguladorTipo (ID int identity (1,1) primary key,
                  );
 
 create table Regulador (ID int identity (1,1) primary key,
-                        Inventario varchar(30),
+                        Inventario int,
                         Tipo int,
                         Marca int,
                         Modelo int,
                         Serie int,
                         Estado int,
+						FOREIGN KEY (Inventario) REFERENCES ReguladorInventario(ID),
                         FOREIGN KEY (Tipo) REFERENCES ReguladorTipo(ID),
                         FOREIGN KEY (Marca) REFERENCES ReguladorMarca(ID),
                         FOREIGN KEY (Modelo) REFERENCES ReguladorModelo(ID),
@@ -240,6 +282,12 @@ create table Regulador (ID int identity (1,1) primary key,
                         
                         );
 --Proyector
+create table ProyectorInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
+create table ProyectorInventarioEspolTech (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table ProyectorMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
@@ -250,12 +298,14 @@ create table ProyectorSerie (ID int identity (1,1) primary key,
                  Serie varchar(70)
                  );
 create table Proyector (ID int identity (1,1) primary key,
-                        Inventario varchar(30),
-                        InventarioEspoltech varchar(30),
+                        Inventario int,
+                        InventarioEspoltech int,
                         Marca int,
                         Modelo int,
                         Serie int,
                         Estado int,
+						FOREIGN KEY (Inventario) REFERENCES ProyectorInventario(ID),
+						FOREIGN KEY (InventarioEspoltech) REFERENCES ProyectorInventarioEspolTech(ID),
                         FOREIGN KEY (Marca) REFERENCES ProyectorMarca(ID),
                         FOREIGN KEY (Modelo) REFERENCES ProyectorModelo(ID),
                         FOREIGN KEY (Serie) REFERENCES ProyectorSerie(ID),
@@ -264,6 +314,9 @@ create table Proyector (ID int identity (1,1) primary key,
 						);
 
 --Telefono
+create table TelefonoInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table TelefonoMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
@@ -281,13 +334,14 @@ create table TelefonoExtension (ID int identity (1,1) primary key,
                  );
 
 create table Telefono (ID int identity (1,1) primary key,
-                        Inventario varchar(30), 
+                        Inventario int, 
                         Extension int,
                         Tipo int,
                         Marca int,
                         Modelo int,
                         Serie int,
                         Estado int,
+						FOREIGN KEY (Inventario) REFERENCES TelefonoInventario(ID),
                         FOREIGN KEY (Tipo) REFERENCES TelefonoTipo(ID),
                         FOREIGN KEY (Marca) REFERENCES TelefonoMarca(ID),
                         FOREIGN KEY (Modelo) REFERENCES TelefonoModelo(ID),
@@ -296,8 +350,10 @@ create table Telefono (ID int identity (1,1) primary key,
 						FOREIGN KEY (Extension) REFERENCES TelefonoExtension(ID)
 						);
 
---#;Pantalla_Proyeccion
-
+--Pantalla_Proyeccion
+create table PantallaProyeccionInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table PantallaProyeccionMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
@@ -311,12 +367,13 @@ create table PantallaProyeccionDimensiones (ID int identity (1,1) primary key,
                  Dimensiones varchar(10)
                  );
 create table PantallaProyeccion(ID int identity (1,1) primary key,
-                                Inventario varchar(30),
+                                Inventario int,
                                 Dimensiones int,
                                 Marca int,
                                 Modelo int,
                                 Serie int,
                                 Estado int,
+								FOREIGN KEY (Inventario) REFERENCES PantallaProyeccionInventario(ID),
                                 FOREIGN KEY (Dimensiones) REFERENCES PantallaProyeccionDimensiones(ID),
                                 FOREIGN KEY (Marca) REFERENCES PantallaProyeccionMarca(ID),
                                 FOREIGN KEY (Modelo) REFERENCES PantallaProyeccionModelo(ID),
@@ -325,25 +382,33 @@ create table PantallaProyeccion(ID int identity (1,1) primary key,
                                 
                                 );
 --Microfono
+create table MicrofonoInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table MicrofonoMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
-create table MicrofonoModelo (ID int identity (1,1) primary key,
-                 Modelo varchar(70)
+create table MicrofonoTipo (ID int identity (1,1) primary key,
+                 Tipo varchar(70)
                  );
 create table MicrofonoSerie (ID int identity (1,1) primary key,
                  Serie varchar(70)
                  );
 create table Microfono (ID int identity (1,1) primary key,
-                        Inventario varchar(30),
+                        Inventario int,
                         Marca int,
-                        Modelo int,
+                        Tipo int,
                         Serie int,
                         Estado int,
+						FOREIGN KEY (Inventario) REFERENCES MicrofonoInventario(ID),
                         FOREIGN KEY (Marca) REFERENCES MicrofonoMarca(ID),
-                        FOREIGN KEY (Modelo) REFERENCES MicrofonoModelo(ID),
+                        FOREIGN KEY (Tipo) REFERENCES MicrofonoTipo(ID),
                         FOREIGN KEY (Serie) REFERENCES MicrofonoSerie(ID),
                         FOREIGN KEY (Estado) REFERENCES Estado(ID));
+--Radio
+create table RadioInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
 create table RadioMarca (ID int identity (1,1) primary key,
                  Marca varchar(70)
                  );
@@ -354,11 +419,12 @@ create table RadioSerie (ID int identity (1,1) primary key,
                  Serie varchar(70)
                  );
 create table Radio (ID int identity (1,1) primary key,
-                    Inventario varchar(30),
+                    Inventario int,
                     Marca int,
                     Modelo int,
                     Serie int,
                     Estado int,
+					FOREIGN KEY (Inventario) REFERENCES RadioInventario(ID),
                     FOREIGN KEY (Marca) REFERENCES RadioMarca(ID),
                     FOREIGN KEY (Modelo) REFERENCES RadioModelo(ID),
                     FOREIGN KEY (Serie) REFERENCES RadioSerie(ID),
@@ -366,7 +432,12 @@ create table Radio (ID int identity (1,1) primary key,
 					
 					);
 
-create table Equipo (ID varchar(30) PRIMARY KEY,
+--Equipo
+create table EquipoInventario (ID int identity (1,1) primary key,
+                 Inventario varchar(30)
+                 );
+create table Equipo (ID int identity (1,1) primary key,
+					 Inventario int,
                      Cpu int,
                      Oficina int,
                      Microfono int,
@@ -380,7 +451,8 @@ create table Equipo (ID varchar(30) PRIMARY KEY,
                      Regulador int,
                      Impresora int ,
                      Proyector int,
-					 Usuario varchar(20),
+					 Usuario int,
+					 FOREIGN KEY (Inventario) REFERENCES EquipoInventario(ID),
                      FOREIGN KEY (Oficina) REFERENCES Oficina(ID),
                      FOREIGN KEY (Cpu) REFERENCES CPU(ID),
                      FOREIGN KEY (Microfono) REFERENCES Microfono(ID),
@@ -394,15 +466,21 @@ create table Equipo (ID varchar(30) PRIMARY KEY,
                      FOREIGN KEY (Regulador) REFERENCES Regulador(ID),
                      FOREIGN KEY (Impresora) REFERENCES Impresora(ID),
                      FOREIGN KEY (Proyector) REFERENCES Proyector(ID),
-					 FOREIGN KEY (Usuario) REFERENCES Usuario(IdUsuario));
+					 FOREIGN KEY (Usuario) REFERENCES Usuario(ID));
 
+--Inventario 
+create table FechaInventario (ID int identity (1,1) primary key,
+                 Fecha date not null
+                 );
 create table Inventario (ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-                         Fecha date not null, 
-                         Ayudante varchar(20) not null,
+                         Fecha int not null, 
+                         Ayudante int not null,
                          observacion varchar(500), 
-                         Equipo varchar(30) not null,
-                         FOREIGN KEY (Ayudante) REFERENCES Usuario(IdUsuario ),
-                         FOREIGN KEY (Equipo) REFERENCES Equipo(ID));
+                         Equipo int not null,
+                         FOREIGN KEY (Ayudante) REFERENCES Usuario(ID ),
+                         FOREIGN KEY (Equipo) REFERENCES Equipo(ID),
+						 FOREIGN KEY (Fecha) REFERENCES FechaInventario(ID)
+						 );
 
 
 

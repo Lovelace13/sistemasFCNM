@@ -1,17 +1,20 @@
+
+DBCC CHECKIDENT (Equipo, RESEED, 0)
+select* FROM NombreUsuario;
+delete from TipoUsuario
+
+
 INSERT INTO TipoUsuario(tipo)
 VALUES ('AYUDANTE'); 
-DBCC CHECKIDENT (TipoUsuario, RESEED, 0)
-select* FROM Usuario;
-delete from TipoUsuario
-SELECT * FROM TipoUsuario;
-
-INSERT INTO Usuario(IdUsuario,clave,Nombre,TipoUsuario)
-values('arcuenca','1234','ARIANA CUENCA',1);
-
-INSERT INTO Usuario(IdUsuario,clave,Nombre,TipoUsuario)
-values('jcbodero','1234','Julio Bodero',1);
-
-
+INSERT INTO IdUsuario(Usuario)
+VALUES ('jcbodero'); 
+INSERT INTO ClaveUsuario(Clave)
+VALUES ('1234'); 
+INSERT INTO NombreUsuario(Nombre)
+VALUES ('Julio Bodero'); 
+INSERT INTO Usuario(Usuario,clave,Nombre,Tipo)
+values(1,1,1,1);
+INSERT INTO Equipo(Inventario,Cpu,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,Parlante,Regulador,Impresora,Proyector,Usuario) VALUES ((SELECT ID FROM EquipoInventario WHERE Inventario='2018-001'),(SELECT ID FROM Cpu WHERE Inventario='SELECT ID FROM CpuInventario WHERE Inventario='103342''),(SELECT ID FROM Oficina WHERE NombreOficina = 'SELECT ID FROM NombreOficina WHERE NombreOficina='25A-101'' and Edificio = 'SELECT ID FROM Edificio WHERE Bloque='25A''),(SELECT ID FROM Microfono WHERE Inventario='SELECT ID FROM MicrofonoInventario WHERE Inventario='N/A''),(SELECT ID FROM Telefono WHERE Inventario='SELECT ID FROM TelefonoInventario WHERE Inventario='99999-400''),(SELECT ID FROM PantallaProyeccion WHERE Inventario='SELECT ID FROM PantallaProyeccionInventario WHERE Inventario='N/A''),(SELECT ID FROM Radio WHERE Inventario='SELECT ID FROM RadioInventario WHERE Inventario='N/A''),(SELECT ID FROM Pantalla WHERE Inventario='SELECT ID FROM PantallaInventario WHERE Inventario='103309-1''),(SELECT ID FROM Teclado WHERE Inventario='SELECT ID FROM TecladoInventario WHERE Inventario='103309-2''),(SELECT ID FROM Mouse WHERE Inventario='SELECT ID FROM MouseInventario WHERE Inventario='103342-3''),(SELECT ID FROM Parlante WHERE Inventario='SELECT ID FROM ParlanteInventario WHERE Inventario='N/A''),(SELECT ID FROM Regulador WHERE Inventario='SELECT ID FROM ReguladorInventario WHERE Inventario='N/A''),(SELECT ID FROM Impresora WHERE Inventario='SELECT ID FROM ImpresoraInventario WHERE Inventario='N/A''),(SELECT ID FROM Proyector WHERE Inventario='SELECT ID FROM ProyectorInventario WHERE Inventario='N/A''),(SELECT ID FROM Usuario WHERE Usuario='SELECT ID FROM IdUsuario WHERE Usuario='ESPOLWilfredo Angulo''));
 insert into Oficina (edificio,nombre_oficina,area)
 values('31AyB','25AB-001','Prueba');
 
@@ -173,8 +176,24 @@ select TipoUsuario from Usuario where IdUsuario = ('jcbodero');
 
 INSERT INTO CpuNombre VALUES ('');
 
-select * FROM Telefono;
+select * FROM Cpu;
+select * FROM Pantalla;
+select * FROM Teclado;
+select * FROM Mouse;
+select * FROM Regulador;
+select * FROM Proyector;
+select * FROM Parlante;
+select * FROM TelefonoInventario;
+select * FROM Impresora;
+select * FROM Microfono;
+select * FROM PantallaProyeccion;
+select * FROM Radio;
+select * from Edificio;
+select * from Oficina
+SELECT * from Equipo;
 INSERT INTO CpuNombre(NombrePC) VALUES('DOF-001');
-INSERT INTO Teclado(Marca, Modelo, Serie, Inventario) VALUES ((SELECT ID FROM Estado WHERE Estado='BUENO'),(SELECT ID FROM TecladoMarca WHERE Marca='DELL'),(SELECT ID FROM TecladoModelo WHERE Modelo='KB212-B'),(SELECT ID FROM TecladoSerie WHERE Serie='CN-OC639N-71616-3A4-0ULZ-A00'),'103309-2');
 INSERT INTO Edificio VALUES ('24');
-INSERT INTO Regulador(Estado, Marca, Modelo, Serie, Inventario, Tipo) VALUES ((SELECT ID FROM Estado WHERE Estado='BUENO'),(SELECT ID FROM ReguladorMarca WHERE Marca='N/A'),(SELECT ID FROM ReguladorModelo WHERE Modelo='N/A'),(SELECT ID FROM ReguladorSerie WHERE Serie='N/A'),'N/A');
+INSERT INTO FechaInventario (Fecha) values ('2018-06-26');
+select * from FechaInventario;
+SELECT ID FROM Telefono WHERE Inventario = (SELECT ID FROM TelefonoInventario WHERE Inventario='99999-400');
+INSERT INTO Equipo(Inventario,Cpu,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,Parlante,Regulador,Impresora,Proyector,Usuario) VALUES ((SELECT ID FROM EquipoInventario WHERE Inventario='2018-007'),(SELECT ID FROM Cpu WHERE Inventario=(SELECT ID FROM CpuInventario WHERE Inventario='103345')),(SELECT ID FROM Oficina WHERE NombreOficina = (SELECT ID FROM NombreOficina WHERE NombreOficina='25A-105') and Edificio = (SELECT ID FROM Edificio WHERE Bloque='25A')),(SELECT ID FROM Microfono WHERE Inventario=(SELECT ID FROM MicrofonoInventario WHERE Inventario='N/A')),(SELECT ID FROM Telefono WHERE Inventario=(SELECT ID FROM TelefonoInventario WHERE Inventario='99999-404')),(SELECT ID FROM PantallaProyeccion WHERE Inventario=(SELECT ID FROM PantallaProyeccionInventario WHERE Inventario='N/A')),(SELECT ID FROM Radio WHERE Inventario=(SELECT ID FROM RadioInventario WHERE Inventario='N/A')),(SELECT ID FROM Pantalla WHERE Inventario=(SELECT ID FROM PantallaInventario WHERE Inventario='103345-1')),(SELECT ID FROM Teclado WHERE Inventario=(SELECT ID FROM TecladoInventario WHERE Inventario='103345-2')),(SELECT ID FROM Mouse WHERE Inventario=(SELECT ID FROM MouseInventario WHERE Inventario='103345-3')),(SELECT ID FROM Parlante WHERE Inventario=(SELECT ID FROM ParlanteInventario WHERE Inventario='51711-4')),(SELECT ID FROM Regulador WHERE Inventario=(SELECT ID FROM ReguladorInventario WHERE Inventario='54138-13')),(SELECT ID FROM Impresora WHERE Inventario=(SELECT ID FROM ImpresoraInventario WHERE Inventario='99999-500')),(SELECT ID FROM Proyector WHERE Inventario=(SELECT ID FROM ProyectorInventario WHERE Inventario='N/A')),(SELECT ID FROM Usuario WHERE Usuario=(SELECT ID FROM IdUsuario WHERE Usuario='ESPOLFRANCISCA FLORES')));
