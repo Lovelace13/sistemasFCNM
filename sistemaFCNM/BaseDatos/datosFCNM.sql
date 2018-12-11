@@ -189,10 +189,8 @@ select * FROM Microfono;
 select * FROM PantallaProyeccion;
 select * FROM Radio;
 select * from NombreOficina
-select * from AreaOficina;
-select nom.NombrePC from Equipo e 
-inner join Cpu c on e.ID = c.ID 
-inner join CpuNombre nom on c.ID = nom.ID;
+select * from Equipo;
+select e.Cpu,nom.NombrePC from Cpu c inner join Equipo e on e.Cpu = c.ID inner join CpuNombre nom on c.NombrePC = nom.ID;
 
 INSERT INTO CpuNombre(NombrePC) VALUES('DOF-001');
 INSERT INTO Edificio VALUES ('24');
