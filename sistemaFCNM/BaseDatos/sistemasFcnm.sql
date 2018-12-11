@@ -6,13 +6,13 @@ use SistemasFCNM
 GO
 --Ubicacion
 create table Edificio(ID int identity (1,1) not null primary key,
-					  Bloque varchar(5) not null
+					  Bloque varchar(50) not null
 					  );
 create table NombreOficina(ID int identity (1,1) not null primary key,
-					  NombreOficina varchar(30) not null
+					  NombreOficina varchar(50) not null
 					  );
 create table AreaOficina(ID int identity (1,1) not null primary key,
-					  Area varchar(30) not null
+					  Area varchar(50) not null
 					  );
 create table Oficina (ID int not null identity (1,1) primary key,
                       NombreOficina int not null, 
@@ -34,7 +34,7 @@ create table IdUsuario (ID int identity(1,1) not null primary key,
 create table TipoUsuario (ID int identity(1,1) not null primary key,
                         Tipo varchar(20) not null);
 create table NombreUsuario (ID int identity(1,1) not null primary key,
-                        Nombre varchar(50));
+                        Nombre varchar(100));
 create table ClaveUsuario (ID int identity(1,1) not null primary key,
                         Clave varchar(20));
 create table Usuario(ID int identity(1,1) not null primary key,

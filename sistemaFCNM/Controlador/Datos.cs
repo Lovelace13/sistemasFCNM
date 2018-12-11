@@ -208,7 +208,7 @@ namespace sistemaFCNM.Clases
             {
                 estado.AddFirst("GARANTIA");
             }
-            agregar(contra, "root1234");
+            agregar(contra, "qtvwaqbjtfygha");
         }
         private void agregarDatosFijos(string cadenaSql, string nombreTabla, string campo, LinkedList<string> lista)
         {
@@ -262,7 +262,7 @@ namespace sistemaFCNM.Clases
         }
         private void agregar(LinkedList<String> lista, int num, String[] campos)
         {
-            if (campos[num].Length != 0 && !lista.Contains(reemplazar(campos[num])))
+            if (!lista.Contains(reemplazar(campos[num])))
             {
                 lista.AddFirst(reemplazar(campos[num]));
             }
@@ -270,7 +270,7 @@ namespace sistemaFCNM.Clases
         }
         private void agregar(LinkedList<String> lista, String campos)
         {
-            if (campos.Length != 0 && !lista.Contains(reemplazar(campos)))
+            if (!lista.Contains(reemplazar(campos)))
             {
                 lista.AddFirst(reemplazar(campos));
             }
@@ -279,7 +279,7 @@ namespace sistemaFCNM.Clases
         private String reemplazar(String dato)
         {
             if (dato == "NO APLICA " || dato == "no aplica" ||
-            dato == "" || dato == "NOAPLICA" || dato == "NO APLICA" || dato == "NO" || dato == "NO TIENE")
+            dato.Length == 0 || dato == "NOAPLICA" || dato == "NO APLICA" || dato == "NO" || dato == "NO TIENE")
             {
                 return "N/A";
             }
@@ -288,11 +288,6 @@ namespace sistemaFCNM.Clases
                 return dato.ToUpper();
             }
 
-        }
-        private String formarUser(string nombre)
-        {
-            return "ESPOL-"+nombre.Trim();
-       
         }
         public void crearListaObjetos()
         {
@@ -391,7 +386,7 @@ namespace sistemaFCNM.Clases
                     //Usuarios
                     agregar(nombreUsuarios, 5, campos);
                     agregar(grupo, 1, campos);
-                    agregar(user, formarUser(campos[5]));
+                    agregar(user, "NO-USER");
                     
                     //Campos Extra
                     validarEstados();
@@ -508,6 +503,7 @@ namespace sistemaFCNM.Clases
                 StreamReader objReader = new StreamReader(ruta);
 
                 string linea = "";
+                int i = 0;
                 while (linea != null)
                 {
                     linea = objReader.ReadLine();
@@ -527,8 +523,7 @@ namespace sistemaFCNM.Clases
                     tablaOficina(campos);
                     tablaUsuarios(campos);
                     tablaEquipo(campos);
-                    
-                    
+                   
                 }
                 objReader.Close();
             }
@@ -736,10 +731,10 @@ namespace sistemaFCNM.Clases
         }
         private void tablaUsuarios(string[] campos)
         {
-            string usuario = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "IdUsuario", "Usuario", formarUser(campos[5]));
+            string usuario = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "IdUsuario", "Usuario","NO-USER");
             string tipo = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "TipoUsuario", "Tipo", reemplazar(campos[1]));
             string nombre = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "NombreUsuario", "Nombre", reemplazar(campos[5]));
-            string clv = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ClaveUsuario", "Clave","root1234");
+            string clv = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ClaveUsuario", "Clave","qtvwaqbjtfygha");
 
             string values = System.String.Format("({0}),({1}),({2}),({3})", usuario, tipo, nombre,clv);
             string campo = "Usuario, Tipo, Nombre, Clave";
@@ -749,7 +744,7 @@ namespace sistemaFCNM.Clases
         private void tablaEquipo(string[] campos)
         {
             string Inventario = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "EquipoInventario", "Inventario", reemplazar(campos[80])); ;
-            string Cpu = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Cpu", "Inventario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "CpuInventario", "Inventario", reemplazar(campos[7]))); 
+            string Cpu = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Cpu", "Inventario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "CpuInventario", "Inventario", reemplazar(campos[7])));
             string Oficina = System.String.Format("SELECT ID FROM {0} WHERE {1} = ({2}) and {3} = ({4})", "Oficina", "NombreOficina", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "NombreOficina", "NombreOficina", reemplazar(campos[3])), "Edificio", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "Edificio", "Bloque", reemplazar(campos[2])));
             string Microfono = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Microfono", "Inventario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "MicrofonoInventario", "Inventario", reemplazar(campos[68])));
             string Telefono = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Telefono", "Inventario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "TelefonoInventario", "Inventario", reemplazar(campos[60])));
@@ -762,7 +757,7 @@ namespace sistemaFCNM.Clases
             string Regulador = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Regulador", "Inventario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ReguladorInventario", "Inventario", reemplazar(campos[47])));
             string Impresora = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Impresora", "Inventario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ImpresoraInventario", "Inventario", reemplazar(campos[62])));
             string Proyector = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Proyector", "Inventario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ProyectorInventario", "Inventario", reemplazar(campos[42])));
-            string Usuario = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Usuario", "Usuario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "IdUsuario", "Usuario", formarUser(campos[5]).ToUpper()));
+            string Usuario = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Usuario", "Usuario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "IdUsuario", "Usuario", "NO-USER"));
 
             string values = System.String.Format("({0}),({1}),({2}),({3}),({4}),({5}),({6}),({7}),({8}),({9}),({10}),({11}),({12}),({13}),({14})",Inventario,
                 Cpu,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,
