@@ -29,23 +29,14 @@ create table Estado (ID int identity (1,1) not null primary key,
                  );
 
 --Usuario
-create table IdUsuario (ID int identity(1,1) not null primary key,
-                        Usuario varchar(20));
 create table TipoUsuario (ID int identity(1,1) not null primary key,
                         Tipo varchar(20) not null);
-create table NombreUsuario (ID int identity(1,1) not null primary key,
-                        Nombre varchar(100));
-create table ClaveUsuario (ID int identity(1,1) not null primary key,
-                        Clave varchar(20));
 create table Usuario(ID int identity(1,1) not null primary key,
-					 Usuario int not null,
+					 Usuario varchar(20) not null,
                      Tipo int not null,
-                     Nombre int not null,
-                     Clave int not null,
-                     FOREIGN KEY ( Tipo) REFERENCES TipoUsuario(ID),
-					 FOREIGN KEY ( Usuario) REFERENCES IdUsuario(ID),
-					 FOREIGN KEY ( Nombre) REFERENCES NombreUsuario(ID),
-					 FOREIGN KEY ( Clave) REFERENCES ClaveUsuario(ID)
+                     Nombre varchar(100) not null,
+                     Clave varchar(20) not null,
+                     FOREIGN KEY ( Tipo) REFERENCES TipoUsuario(ID)
 					 ); 
 
 --Cpu
