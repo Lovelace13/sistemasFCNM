@@ -72,7 +72,7 @@ namespace sistemaFCNM.Clases
 
             }
 
-            conexion.SQL = System.String.Format("select Nombre from NombreUsuario where ID = (SELECT Nombre FROM Usuario WHERE Usuario = (SELECT ID FROM IdUsuario where Usuario = '{0}') and clave =(SELECT ID FROM ClaveUsuario where Clave = '{1}'));", usuario, clave);
+            conexion.SQL = System.String.Format("select Nombre from Usuario where  IdUsuario = '{0}' and clave = '{1}';", usuario, clave);
             if (!conexion.ConsultarValorUnico(false))
             {
                 mensaje = conexion.Error;

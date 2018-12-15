@@ -201,3 +201,4 @@ SELECT ID FROM Oficina WHERE NombreOficina = (SELECT ID FROM NombreOficina WHERE
 SELECT ID FROM Telefono WHERE Inventario = (SELECT ID FROM TelefonoInventario WHERE Inventario='99999-400');
 SELECT ID FROM Usuario WHERE Usuario=(SELECT ID FROM IdUsuario WHERE Usuario='NO-USER')
 SELECT ID FROM ClaveUsuario WHERE Clave='qtvwaqbjtfygha'
+select Usuario from NombreUsuario where  Usuario = 'jcbodero' and clave = '1234'
