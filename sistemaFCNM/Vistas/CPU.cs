@@ -39,6 +39,12 @@ namespace sistemaFCNM.Vistas
         }
         private void CPU_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Cpu' Puede moverla o quitarla según sea necesario.
+            this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
+            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Cpu' Puede moverla o quitarla según sea necesario.
+            this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
+            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Cpu' Puede moverla o quitarla según sea necesario.
+            this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -248,6 +254,22 @@ namespace sistemaFCNM.Vistas
             txtModelo.Enabled = true;
             txtSerie.Enabled = true;
             txtLote.Enabled = true;
+        }
+
+        private void cpuBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.cpuBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+
+        }
+
+        private void cpuBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.cpuBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+
         }
     }
 }

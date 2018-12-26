@@ -110,9 +110,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="sistemasFCNMDataSet.cs">
-      <DependentUpon>sistemasFCNMDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="sistemasFCNMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -210,12 +207,6 @@
     <Compile Include="Vistas\Telefono.Designer.cs">
       <DependentUpon>Telefono.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\vantanaBusqueda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\vantanaBusqueda.Designer.cs">
-      <DependentUpon>vantanaBusqueda.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\ventanaNuevoRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,9 +262,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Telefono.resx">
       <DependentUpon>Telefono.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\vantanaBusqueda.resx">
-      <DependentUpon>vantanaBusqueda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ventanaNuevoRegistro.resx">
       <DependentUpon>ventanaNuevoRegistro.cs</DependentUpon>

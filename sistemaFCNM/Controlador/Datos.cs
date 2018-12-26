@@ -110,11 +110,8 @@ namespace sistemaFCNM.Clases
         private LinkedList<String> InventarioEquipo = new LinkedList<string>();
         //Inventario
         private LinkedList<String> fechaInventario = new LinkedList<string>();
-        //Usuarios
-        private LinkedList<String> nombreUsuarios = new LinkedList<string>();
-        private LinkedList<String> user = new LinkedList<string>();
-        private LinkedList<String> grupo = new LinkedList<string>();
-        private LinkedList<String> contra = new LinkedList<string>();
+        //Propietario
+        private LinkedList<String> propietario = new LinkedList<string>();
         #endregion
 
         #region Variables y metodos de la clase Datos
@@ -208,7 +205,7 @@ namespace sistemaFCNM.Clases
             {
                 estado.AddFirst("GARANTIA");
             }
-            agregar(contra, "qtvwaqbjtfygha");
+            
         }
         private void agregarDatosFijos(string cadenaSql, string nombreTabla, string campo, LinkedList<string> lista)
         {
@@ -383,11 +380,9 @@ namespace sistemaFCNM.Clases
                     agregar(InventarioRadio, 74, campos);
                     //Equipos
                     agregar(InventarioEquipo, 80, campos);
-                    //Usuarios
-                    agregar(nombreUsuarios, 5, campos);
-                    agregar(grupo, 1, campos);
-                    agregar(user, "NO-USER");
-                    
+                    //Propietario
+                    agregar(propietario, 5, campos);
+
                     //Campos Extra
                     validarEstados();
 
@@ -489,11 +484,9 @@ namespace sistemaFCNM.Clases
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "Estado", "Estado", estado);
             //Equipos 
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "EquipoInventario", "Inventario", InventarioEquipo);
-            //Usuarios 
-            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "IdUsuario", "Usuario", user);
-            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "TipoUsuario", "Tipo", grupo);
-            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "NombreUsuario", "Nombre", nombreUsuarios);
-            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "ClaveUsuario", "Clave", contra);
+            //Propietario
+            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "Propietario", "Usuario", propietario);
+
 
         }
         private void subirTablas()
@@ -521,7 +514,6 @@ namespace sistemaFCNM.Clases
                     tablaPantallaProyeccion(campos);
                     tablaRadio(campos);
                     tablaOficina(campos);
-                    tablaUsuarios(campos);
                     tablaEquipo(campos);
                    
                 }
@@ -729,18 +721,6 @@ namespace sistemaFCNM.Clases
             string cadenaVerf = System.String.Format("SELECT ID FROM {0} WHERE {1} = ({2}) and {3} = ({4})", "Oficina", "NombreOficina", oficina, "Edificio", edificio);
             IngresoSql(cadenaVerf, "Oficina", campo, values);
         }
-        private void tablaUsuarios(string[] campos)
-        {
-            string usuario = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "IdUsuario", "Usuario","NO-USER");
-            string tipo = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "TipoUsuario", "Tipo", reemplazar(campos[1]));
-            string nombre = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "NombreUsuario", "Nombre", reemplazar(campos[5]));
-            string clv = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ClaveUsuario", "Clave","qtvwaqbjtfygha");
-
-            string values = System.String.Format("({0}),({1}),({2}),({3})", usuario, tipo, nombre,clv);
-            string campo = "Usuario, Tipo, Nombre, Clave";
-            string cadenaVerf = System.String.Format("SELECT ID FROM {0} WHERE {1} = ({2});", "Usuario", "Usuario", usuario);
-            IngresoSql(cadenaVerf, "Usuario", campo, values);
-        }
         private void tablaEquipo(string[] campos)
         {
             string Inventario = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "EquipoInventario", "Inventario", reemplazar(campos[80])); ;
@@ -757,12 +737,12 @@ namespace sistemaFCNM.Clases
             string Regulador = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Regulador", "Inventario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ReguladorInventario", "Inventario", reemplazar(campos[47])));
             string Impresora = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Impresora", "Inventario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ImpresoraInventario", "Inventario", reemplazar(campos[62])));
             string Proyector = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Proyector", "Inventario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "ProyectorInventario", "Inventario", reemplazar(campos[42])));
-            string Usuario = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Usuario", "Usuario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "IdUsuario", "Usuario", "NO-USER"));
+            string propietario =System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "Propietario", "Usuario", reemplazar(campos[5]));
 
             string values = System.String.Format("({0}),({1}),({2}),({3}),({4}),({5}),({6}),({7}),({8}),({9}),({10}),({11}),({12}),({13}),({14})",Inventario,
                 Cpu,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,
-                Parlante,Regulador,Impresora,Proyector,Usuario);
-            string campo = "Inventario,Cpu,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,Parlante,Regulador,Impresora,Proyector,Usuario";
+                Parlante,Regulador,Impresora,Proyector,propietario);
+            string campo = "Inventario,Cpu,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,Parlante,Regulador,Impresora,Proyector,Propietario";
             string cadenaVerf = System.String.Format("SELECT ID FROM {0} WHERE {1} = ({2});", "Equipo", "Inventario", Inventario);
             IngresoSql(cadenaVerf, "Equipo", campo, values);
             

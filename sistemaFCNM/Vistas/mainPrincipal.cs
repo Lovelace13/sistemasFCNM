@@ -94,6 +94,7 @@ namespace sistemaFCNM
             apagarBotones();
             FuncionesUtiles.siguienteActiva = true;
             FuncionesUtiles.abrirVentanas(new Equipos(), contenedor);
+            
         }
 
         private void btnCpu_Click(object sender, EventArgs e)

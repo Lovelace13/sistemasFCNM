@@ -427,6 +427,10 @@ create table Radio (ID int identity (1,1) primary key,
 create table EquipoInventario (ID int identity (1,1) primary key,
                  Inventario varchar(30)
                  );
+create table Propietario (ID int identity (1,1) primary key,
+                 Usuario varchar(20)
+                 );
+
 create table Equipo (ID int identity (1,1) primary key,
 					 Inventario int,
                      Cpu int,
@@ -442,7 +446,7 @@ create table Equipo (ID int identity (1,1) primary key,
                      Regulador int,
                      Impresora int ,
                      Proyector int,
-					 Usuario int,
+					 Propietario int,
 					 FOREIGN KEY (Inventario) REFERENCES EquipoInventario(ID),
                      FOREIGN KEY (Oficina) REFERENCES Oficina(ID),
                      FOREIGN KEY (Cpu) REFERENCES CPU(ID),
@@ -457,7 +461,7 @@ create table Equipo (ID int identity (1,1) primary key,
                      FOREIGN KEY (Regulador) REFERENCES Regulador(ID),
                      FOREIGN KEY (Impresora) REFERENCES Impresora(ID),
                      FOREIGN KEY (Proyector) REFERENCES Proyector(ID),
-					 FOREIGN KEY (Usuario) REFERENCES Usuario(ID));
+					 FOREIGN KEY (Propietario) REFERENCES Propietario(ID));
 
 --Inventario 
 create table FechaInventario (ID int identity (1,1) primary key,

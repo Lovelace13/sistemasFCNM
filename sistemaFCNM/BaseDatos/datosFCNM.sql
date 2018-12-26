@@ -1,22 +1,26 @@
 
 DBCC CHECKIDENT (Equipo, RESEED, 0)
-select* FROM Usuario;
+select* FROM Oficina;
 delete from TipoUsuario
-
+select Nombre from Usuario where  Usuario = '{0}' and clave = '{1}';
 
 INSERT INTO TipoUsuario(tipo)
 VALUES ('AYUDANTE'); 
-INSERT INTO IdUsuario(Usuario)
-VALUES ('jcbodero'); 
-INSERT INTO ClaveUsuario(Clave)
-VALUES ('1234'); 
-INSERT INTO NombreUsuario(Nombre)
-VALUES ('Julio Bodero'); 
-INSERT INTO Usuario(Usuario,clave,Nombre,Tipo)
-values(1,1,1,1);
-INSERT INTO Equipo(Inventario,Cpu,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,Parlante,Regulador,Impresora,Proyector,Usuario) VALUES ((SELECT ID FROM EquipoInventario WHERE Inventario='2018-001'),(SELECT ID FROM Cpu WHERE Inventario='SELECT ID FROM CpuInventario WHERE Inventario='103342''),(SELECT ID FROM Oficina WHERE NombreOficina = 'SELECT ID FROM NombreOficina WHERE NombreOficina='25A-101'' and Edificio = 'SELECT ID FROM Edificio WHERE Bloque='25A''),(SELECT ID FROM Microfono WHERE Inventario='SELECT ID FROM MicrofonoInventario WHERE Inventario='N/A''),(SELECT ID FROM Telefono WHERE Inventario='SELECT ID FROM TelefonoInventario WHERE Inventario='99999-400''),(SELECT ID FROM PantallaProyeccion WHERE Inventario='SELECT ID FROM PantallaProyeccionInventario WHERE Inventario='N/A''),(SELECT ID FROM Radio WHERE Inventario='SELECT ID FROM RadioInventario WHERE Inventario='N/A''),(SELECT ID FROM Pantalla WHERE Inventario='SELECT ID FROM PantallaInventario WHERE Inventario='103309-1''),(SELECT ID FROM Teclado WHERE Inventario='SELECT ID FROM TecladoInventario WHERE Inventario='103309-2''),(SELECT ID FROM Mouse WHERE Inventario='SELECT ID FROM MouseInventario WHERE Inventario='103342-3''),(SELECT ID FROM Parlante WHERE Inventario='SELECT ID FROM ParlanteInventario WHERE Inventario='N/A''),(SELECT ID FROM Regulador WHERE Inventario='SELECT ID FROM ReguladorInventario WHERE Inventario='N/A''),(SELECT ID FROM Impresora WHERE Inventario='SELECT ID FROM ImpresoraInventario WHERE Inventario='N/A''),(SELECT ID FROM Proyector WHERE Inventario='SELECT ID FROM ProyectorInventario WHERE Inventario='N/A''),(SELECT ID FROM Usuario WHERE Usuario='SELECT ID FROM IdUsuario WHERE Usuario='ESPOLWilfredo Angulo''));
+
 insert into Oficina (edificio,nombre_oficina,area)
 values('31AyB','25AB-001','Prueba');
+USE [SistemasFCNM]
+GO
+
+INSERT INTO [dbo].[Usuario]
+           ([Usuario]
+           ,[Tipo]
+           ,[Nombre]
+           ,[Clave])
+     VALUES
+           ('jcbodero',1,'Julio Bodero','1234')
+GO
+
 
 INSERT INTO Edificio (bloque)
 VALUES('');
