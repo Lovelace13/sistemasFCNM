@@ -33,21 +33,20 @@ namespace sistemaFCNM
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string sql = "select e.id_Equipo,o.nombre_oficina,inv.Ayudante,inv.fecha_inventario,"+
-                    "c.inventario_cpu,p.Inventario_Pantalla,t.Inventario_teclado,m.Inventario_Mouse,"+
-                    "par.Inventario_Parlante,reg.Inventario_Regulador,im.Inventario_Impresora,"+
-                    "pro.Inventario_Proyector,mi.Inventario_Microfono,tel.Inventario_Telefono,"+
-                    "pp.Inventario_PantallaProyeccion,ra.Inventario_Radio from  Equipo e,Oficina o, Pantalla p, Mouse m, "+
-                    "Teclado t, CPU c,Parlante par, Regulador reg, Impresora im,Proyector pro,Microfonos mi, "+
-                    "Telefono tel,Pantalla_Proyeccion pp,Radio ra,Inventario inv where e.Inventario_CPU= c.ID and "+
-                    "e.Oficina = o.ID and e.id_Equipo = inv.Equipo and e.Pantalla = p.ID and e.Teclado = t.ID and "+
-                    "e.Mouse = m.ID and e.Parlante = par.ID and e.Regulador = reg.ID and e.Impresora = im.ID and e.Telefono = tel.ID "+
-                    "and e.PantallaProyeccion = pp.ID and e.Radios = ra.ID and e.Microfono = mi.ID and e.Proyector = pro.ID and "+
-                    "e.id_Equipo = '"+txtScanner.Text.Trim()+"';";
-                Datos.llenarGrid(sql, gridInventario);
+                string sql = ""+txtScanner.Text.Trim()+"';";
+                //Datos.llenarGrid(sql, gridInventario);
+                equipoBindingSource.Position = equipoBindingSource.Find("Inventario", txtScanner.Text.Trim());
+                try
+                {
+                    this.equipoTableAdapter.FillBy(this.sistemasFCNMDataSet.Equipo, txtScanner.Text.Trim());
+                }
+                catch (System.Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
                 FuncionesUtiles.INVENTARIO_EQUIPO = txtScanner.Text.Trim();
                 limpiarTxtandWait();
-                llenarCampos();
+                //llenarCampos();
 
             }
         }
@@ -262,5 +261,7 @@ namespace sistemaFCNM
             this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
 
         }
+
+       
     }
 }

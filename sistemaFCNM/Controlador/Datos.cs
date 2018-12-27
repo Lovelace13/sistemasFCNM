@@ -382,7 +382,8 @@ namespace sistemaFCNM.Clases
                     agregar(InventarioEquipo, 80, campos);
                     //Propietario
                     agregar(propietario, 5, campos);
-
+                    //Fecha
+                    agregar(fechaInventario, 0, campos);
                     //Campos Extra
                     validarEstados();
 
@@ -484,6 +485,8 @@ namespace sistemaFCNM.Clases
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "Estado", "Estado", estado);
             //Equipos 
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "EquipoInventario", "Inventario", InventarioEquipo);
+            //Fecha
+            agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "FechaInventario", "Fecha", fechaInventario);
             //Propietario
             agregarDatosFijos("INSERT INTO {0} VALUES ('{2}');", "Propietario", "Usuario", propietario);
 
@@ -515,6 +518,7 @@ namespace sistemaFCNM.Clases
                     tablaRadio(campos);
                     tablaOficina(campos);
                     tablaEquipo(campos);
+                    tablaInventario(campos);
                    
                 }
                 objReader.Close();
@@ -746,6 +750,18 @@ namespace sistemaFCNM.Clases
             string cadenaVerf = System.String.Format("SELECT ID FROM {0} WHERE {1} = ({2});", "Equipo", "Inventario", Inventario);
             IngresoSql(cadenaVerf, "Equipo", campo, values);
             
+        }
+        private void tablaInventario(string[] campos)
+        {
+            string FechaInventario = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "FechaInventario", "Fecha", reemplazar(campos[0])); ;
+            string Ayudante = System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "Usuario", "Usuario",reemplazar(campos[79]));
+            string Observacion = campos[78];
+            string Equipo = System.String.Format("SELECT ID FROM {0} WHERE {1}=({2})", "Equipo", "Inventario", System.String.Format("SELECT ID FROM {0} WHERE {1}='{2}'", "EquipoInventario", "Inventario", reemplazar(campos[80])));
+            string values = System.String.Format("({0}),({1}),'{2}',({3})",FechaInventario, Ayudante, Observacion, Equipo);
+            string campo = "Fecha, Ayudante, observacion, Equipo";
+            string cadenaVerf = System.String.Format("SELECT ID FROM {0} WHERE {1} = ({2});", "Inventario", "Equipo", Equipo);
+            IngresoSql(cadenaVerf, "Inventario", campo, values);
+
         }
         #endregion
     }

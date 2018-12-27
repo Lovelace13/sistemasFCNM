@@ -26,38 +26,16 @@ namespace sistemaFCNM.Vistas
 
         private void Parlante_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Parlante' Puede moverla o quitarla según sea necesario.
+            this.parlanteTableAdapter.Fill(this.sistemasFCNMDataSet.Parlante);
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
-           
-
-
-            string sql = "select e.id_Equipo, par.Inventario_Parlante,car.estado,car.marca,"+
-                "car.modelo,car.serie from  Equipo e, Parlante par, "+
-                "Caracteristicas car where "+
-                "e.Parlante = par.ID and car.id_caracteristica = par.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "';";
-
-            Datos.llenarGrid(sql, grid);
-            llenarCampos();
+       
         }
 
-        private void llenarCampos()
-        {
-
-            if (grid.Rows.Count == 1)
-            {
-                return;
-            }
-            txtEquipo.Text = grid.Rows[0].Cells["id_Equipo"].Value.ToString();
-            txtParlante.Text = grid.Rows[0].Cells["Inventario_Parlante"].Value.ToString();
-            txtEstado.Text = grid.Rows[0].Cells["estado"].Value.ToString();
-            txtMarca.Text = grid.Rows[0].Cells["marca"].Value.ToString();
-            txtModelo.Text = grid.Rows[0].Cells["modelo"].Value.ToString();
-            txtSerie.Text = grid.Rows[0].Cells["serie"].Value.ToString();
-
-        }
-
+      
         private void btnNext_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.abrirVentanas(new Impresora(), mainPrincipal.contenedor);
@@ -198,15 +176,15 @@ namespace sistemaFCNM.Vistas
                 "Caracteristicas car where " +
                 "e.Parlante = par.ID and car.id_caracteristica = par.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "';";
 
-            Datos.llenarGrid(sql, grid);
-            llenarCampos();
+            Datos.llenarGrid(sql, gridParlante);
+           
 
             sql = "select e.id_Equipo, par.Inventario_Parlante,car.estado,car.marca," +
                 "car.modelo,car.serie from  Equipo e, Parlante par, " +
                 "Caracteristicas car where " +
                 "e.Parlante = par.ID and car.id_caracteristica = par.caracteristicas ;";
 
-            Datos.llenarGrid(sql, grid);
+            Datos.llenarGrid(sql, gridParlante);
 
 
         }
@@ -217,13 +195,20 @@ namespace sistemaFCNM.Vistas
         }
         private void habilitarBotones()
         {
-            btnGuardar.Enabled = true;
-            btnEliminar.Enabled = true;
+            
             txtParlante.Enabled = true;            
             txtEstado.Enabled = true;
             txtMarca.Enabled = true;
             txtModelo.Enabled = true;
             txtSerie.Enabled = true;
+        }
+
+        private void parlanteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.parlanteBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+
         }
     }
 }

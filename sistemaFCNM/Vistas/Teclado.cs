@@ -25,36 +25,12 @@ namespace sistemaFCNM.Vistas
 
         private void Teclado_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Teclado' Puede moverla o quitarla según sea necesario.
+            this.tecladoTableAdapter.Fill(this.sistemasFCNMDataSet.Teclado);
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
-            
-
-
-            string sql = "select e.id_Equipo, t.Inventario_teclado,car.estado,car.marca,"+
-                         "car.modelo,car.serie from  Equipo e, Teclado t, CPU ,"+
-                         "Caracteristicas car where e.Inventario_CPU = CPU.ID and"+
-                         " e.Teclado = t.ID and car.id_caracteristica = t.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
-
-            Datos.llenarGrid(sql, gridTeclado);
-            llenarCampos();
-        }
-
-        private void llenarCampos()
-        {
-
-            if (gridTeclado.Rows.Count == 1)
-            {
-                return;
-            }
-            txtEquipo.Text = gridTeclado.Rows[0].Cells["id_Equipo"].Value.ToString();
-            txtTeclado.Text = gridTeclado.Rows[0].Cells["Inventario_teclado"].Value.ToString();
-            txtEstado.Text = gridTeclado.Rows[0].Cells["estado"].Value.ToString();
-            txtMarca.Text = gridTeclado.Rows[0].Cells["marca"].Value.ToString();
-            txtModelo.Text = gridTeclado.Rows[0].Cells["modelo"].Value.ToString();
-            txtSerie.Text = gridTeclado.Rows[0].Cells["serie"].Value.ToString();
-
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -197,7 +173,6 @@ namespace sistemaFCNM.Vistas
                          " e.Teclado = t.ID and car.id_caracteristica = t.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
 
             Datos.llenarGrid(sql, gridTeclado);
-            llenarCampos();
 
             sql = "select e.id_Equipo, t.Inventario_teclado,car.estado,car.marca," +
                          "car.modelo,car.serie from  Equipo e, Teclado t, CPU ," +
@@ -214,13 +189,20 @@ namespace sistemaFCNM.Vistas
         }
         private void habilitarBotones()
         {
-            btnGuardar.Enabled = true;
-            btnEliminar.Enabled = true;
+            
             txtTeclado.Enabled = true;
             txtEstado.Enabled = true;
             txtMarca.Enabled = true;
             txtModelo.Enabled = true;
             txtSerie.Enabled = true;
+        }
+
+        private void tecladoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.tecladoBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+
         }
     }
 }

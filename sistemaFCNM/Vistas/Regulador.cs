@@ -26,38 +26,16 @@ namespace sistemaFCNM.Vistas
 
         private void Regulador_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Regulador' Puede moverla o quitarla según sea necesario.
+            this.reguladorTableAdapter.Fill(this.sistemasFCNMDataSet.Regulador);
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
-           
-
-            string sql = "select e.id_Equipo, reg.Inventario_Regulador,reg.tipo,car.estado,car.marca," +
-                "car.modelo,car.serie from  Equipo e, Regulador reg,"+ 
-                "Caracteristicas car where "+
-                "e.Regulador = reg.ID and car.id_caracteristica = reg.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
-
-            Datos.llenarGrid(sql, grid);
-            llenarCampos();
+      
         }
 
-        private void llenarCampos()
-        {
-
-            if (grid.Rows.Count == 1)
-            {
-                return;
-            }
-            txtEquipo.Text = grid.Rows[0].Cells["id_Equipo"].Value.ToString();
-            txtRegulador.Text = grid.Rows[0].Cells["Inventario_Regulador"].Value.ToString();
-            txtTipo.Text = grid.Rows[0].Cells["tipo"].Value.ToString();
-            txtEstado.Text = grid.Rows[0].Cells["estado"].Value.ToString();
-            txtMarca.Text = grid.Rows[0].Cells["marca"].Value.ToString();
-            txtModelo.Text = grid.Rows[0].Cells["modelo"].Value.ToString();
-            txtSerie.Text = grid.Rows[0].Cells["serie"].Value.ToString();
-
-        }
-
+       
         private void btnNext_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.abrirVentanas(new Parlante(), mainPrincipal.contenedor);
@@ -197,15 +175,15 @@ namespace sistemaFCNM.Vistas
                 "Caracteristicas car where " +
                 "e.Regulador = reg.ID and car.id_caracteristica = reg.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
 
-            Datos.llenarGrid(sql, grid);
-            llenarCampos();
+            Datos.llenarGrid(sql, gridRegulador);
+           
 
             sql = "select e.id_Equipo, reg.Inventario_Regulador,reg.tipo,car.estado,car.marca," +
                 "car.modelo,car.serie from  Equipo e, Regulador reg," +
                 "Caracteristicas car where " +
                 "e.Regulador = reg.ID and car.id_caracteristica = reg.caracteristicas ; ";
 
-            Datos.llenarGrid(sql, grid);
+            Datos.llenarGrid(sql, gridRegulador);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -214,14 +192,21 @@ namespace sistemaFCNM.Vistas
         }
         private void habilitarBotones()
         {
-            btnGuardar.Enabled = true;
-            btnEliminar.Enabled = true;
+            
             txtRegulador.Enabled = true;
             txtTipo.Enabled = true;
             txtEstado.Enabled = true;
             txtMarca.Enabled = true;
             txtModelo.Enabled = true;
             txtSerie.Enabled = true;
+        }
+
+        private void reguladorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.reguladorBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+
         }
     }
 }

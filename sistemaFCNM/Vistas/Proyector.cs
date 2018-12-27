@@ -26,38 +26,13 @@ namespace sistemaFCNM.Vistas
 
         private void Proyector_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Proyector' Puede moverla o quitarla según sea necesario.
+            this.proyectorTableAdapter.Fill(this.sistemasFCNMDataSet.Proyector);
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
-            
-
-            string sql = "select e.id_Equipo, pro.Inventario_Proyector,pro.Inventario_Espoltech,car.estado,car.marca," +
-                "car.modelo,car.serie from  Equipo e, Proyector pro," +
-                "Caracteristicas car where " +
-                "e.Proyector = pro.ID and car.id_caracteristica = pro.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "';";
-            
-            Datos.llenarGrid(sql, grid);
-            llenarCampos();
         }
-
-        private void llenarCampos()
-        {
-
-            if (grid.Rows.Count == 1)
-            {
-                return;
-            }
-            txtEquipo.Text = grid.Rows[0].Cells["id_Equipo"].Value.ToString();
-            txtProyector.Text = grid.Rows[0].Cells["Inventario_Proyector"].Value.ToString();
-            txtEspolTech.Text = grid.Rows[0].Cells["Inventario_Espoltech"].Value.ToString();
-            txtEstado.Text = grid.Rows[0].Cells["estado"].Value.ToString();
-            txtMarca.Text = grid.Rows[0].Cells["marca"].Value.ToString();
-            txtModelo.Text = grid.Rows[0].Cells["modelo"].Value.ToString();
-            txtSerie.Text = grid.Rows[0].Cells["serie"].Value.ToString();
-
-        }
-
         private void btnNext_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.abrirVentanas(new Microfono(), mainPrincipal.contenedor);
@@ -197,15 +172,15 @@ namespace sistemaFCNM.Vistas
                 "Caracteristicas car where " +
                 "e.Proyector = pro.ID and car.id_caracteristica = pro.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "';";
 
-            Datos.llenarGrid(sql, grid);
-            llenarCampos();
+            Datos.llenarGrid(sql, gridProyector);
+           
 
            sql = "select e.id_Equipo, pro.Inventario_Proyector,pro.Inventario_Espoltech,car.estado,car.marca," +
                 "car.modelo,car.serie from  Equipo e, Proyector pro," +
                 "Caracteristicas car where " +
                 "e.Proyector = pro.ID and car.id_caracteristica = pro.caracteristicas ;";
 
-            Datos.llenarGrid(sql, grid);
+            Datos.llenarGrid(sql, gridProyector);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -214,14 +189,20 @@ namespace sistemaFCNM.Vistas
         }
         private void habilitarBotones()
         {
-            btnGuardar.Enabled = true;
-            btnEliminar.Enabled = true;
             txtProyector.Enabled = true;
             txtEspolTech.Enabled = true;
             txtEstado.Enabled = true;
             txtMarca.Enabled = true;
             txtModelo.Enabled = true;
             txtSerie.Enabled = true;
+        }
+
+        private void proyectorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.proyectorBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+
         }
     }
 }

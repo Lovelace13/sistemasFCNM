@@ -41,48 +41,16 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Cpu' Puede moverla o quitarla según sea necesario.
             this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
-            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Cpu' Puede moverla o quitarla según sea necesario.
-            this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
-            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Cpu' Puede moverla o quitarla según sea necesario.
-            this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
+           
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
            
-            string sql = "select e.id_Equipo, c.inventario_cpu,c.nombre_PC,c.adicional_lote," +
-                   "c.tipo_PC,c.tag,c.code,c.perfil,c.procesador,c.memoria,c.disco," +
-                   "car.estado,car.marca,car.modelo,car.serie from  Equipo e, CPU c," +
-                   "Caracteristicas car where e.Inventario_CPU = c.ID and "+
-                   "car.id_caracteristica = c.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
-            Datos.llenarGrid(sql, gridCpu);
-            llenarCampos();
+        
         }
 
-        private void llenarCampos()
-        {
-
-            if (gridCpu.Rows.Count == 1)
-            {
-                return;
-            }
-            txtEquipo.Text = gridCpu.Rows[0].Cells["id_Equipo"].Value.ToString();
-            txtCpu.Text= gridCpu.Rows[0].Cells["inventario_cpu"].Value.ToString();
-            txtNombre.Text = gridCpu.Rows[0].Cells["nombre_PC"].Value.ToString();
-            txtTipo.Text = gridCpu.Rows[0].Cells["tipo_PC"].Value.ToString();
-            txtTag.Text = gridCpu.Rows[0].Cells["tag"].Value.ToString();
-            txtCode.Text = gridCpu.Rows[0].Cells["code"].Value.ToString();
-            txtPerfil.Text = gridCpu.Rows[0].Cells["perfil"].Value.ToString();
-            txtProcesador.Text = gridCpu.Rows[0].Cells["procesador"].Value.ToString();
-            txtMemoria.Text = gridCpu.Rows[0].Cells["memoria"].Value.ToString();
-            txtDisco.Text = gridCpu.Rows[0].Cells["disco"].Value.ToString();
-            txtEstado.Text = gridCpu.Rows[0].Cells["estado"].Value.ToString();
-            txtMarca.Text = gridCpu.Rows[0].Cells["marca"].Value.ToString();
-            txtModelo.Text = gridCpu.Rows[0].Cells["modelo"].Value.ToString();
-            txtSerie.Text = gridCpu.Rows[0].Cells["serie"].Value.ToString();
-            txtLote.Text = gridCpu.Rows[0].Cells["adicional_lote"].Value.ToString();
-        }
-
+     
         private void btnNext_Click(object sender, EventArgs e)
         {
             
@@ -222,7 +190,7 @@ namespace sistemaFCNM.Vistas
                   "Caracteristicas car where e.Inventario_CPU = c.ID and " +
                   "car.id_caracteristica = c.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
             Datos.llenarGrid(sql, gridCpu);
-            llenarCampos();
+
 
             sql = "select e.id_Equipo, c.inventario_cpu,c.nombre_PC,c.adicional_lote," +
                   "c.tipo_PC,c.tag,c.code,c.perfil,c.procesador,c.memoria,c.disco," +
@@ -269,6 +237,11 @@ namespace sistemaFCNM.Vistas
             this.Validate();
             this.cpuBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }

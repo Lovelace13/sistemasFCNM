@@ -1,11 +1,11 @@
 
-DBCC CHECKIDENT (Equipo, RESEED, 0)
+DBCC CHECKIDENT (Inventario, RESEED, 0)
 select* FROM Oficina;
 delete from TipoUsuario
 select Nombre from Usuario where  Usuario = '{0}' and clave = '{1}';
 
 INSERT INTO TipoUsuario(tipo)
-VALUES ('AYUDANTE'); 
+VALUES ('ADMINISTRADOR'); 
 
 insert into Oficina (edificio,nombre_oficina,area)
 values('31AyB','25AB-001','Prueba');
@@ -193,16 +193,15 @@ select * FROM Microfono;
 select * FROM PantallaProyeccion;
 select * FROM Radio;
 select * from NombreOficina
-select * from Equipo;
+select *from Inventario;
 select e.Cpu,nom.NombrePC from Cpu c inner join Equipo e on e.Cpu = c.ID inner join CpuNombre nom on c.NombrePC = nom.ID;
 
 INSERT INTO CpuNombre(NombrePC) VALUES('DOF-001');
 INSERT INTO Edificio VALUES ('24');
 INSERT INTO FechaInventario (Fecha) values ('2018-06-26');
-select * from FechaInventario;
-SELECT ID FROM NombreOficina WHERE NombreOficina='25A-232'
-SELECT ID FROM Oficina WHERE NombreOficina = (SELECT ID FROM NombreOficina WHERE NombreOficina='25A-232')
-SELECT ID FROM Telefono WHERE Inventario = (SELECT ID FROM TelefonoInventario WHERE Inventario='99999-400');
-SELECT ID FROM Usuario WHERE Usuario=(SELECT ID FROM IdUsuario WHERE Usuario='NO-USER')
-SELECT ID FROM ClaveUsuario WHERE Clave='qtvwaqbjtfygha'
-select Usuario from NombreUsuario where  Usuario = 'jcbodero' and clave = '1234'
+select * from Inventario;
+INSERT INTO Inventario(Fecha, Ayudante, observacion, Equipo) 
+VALUES ((SELECT ID FROM FechaInventario WHERE Fecha='2018-09-10'),
+(SELECT ID FROM Usuario WHERE Usuario='JCBODERO'),'N/A',
+(SELECT ID FROM Equipo WHERE Inventario=(SELECT ID FROM EquipoInventario WHERE Inventario='2018-233')));
+delete from Usuario;

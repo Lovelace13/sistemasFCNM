@@ -25,37 +25,16 @@ namespace sistemaFCNM.Vistas
 
         private void Mouse_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Mouse' Puede moverla o quitarla según sea necesario.
+            this.mouseTableAdapter.Fill(this.sistemasFCNMDataSet.Mouse);
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
-            
-
-
-            string sql = "select e.id_Equipo, m.Inventario_Mouse,car.estado,car.marca,"
-                +"car.modelo,car.serie from  Equipo e, Mouse m, CPU ,"
-                +"Caracteristicas car where e.Inventario_CPU = CPU.ID and"
-                +" e.Mouse = m.ID and car.id_caracteristica = m.caracteristicas and e.id_Equipo = '"+FuncionesUtiles.INVENTARIO_EQUIPO+"'; ";
-
-            Datos.llenarGrid(sql, gridMouse);
-            llenarCampos();
+   
         }
 
-        private void llenarCampos()
-        {
-
-            if (gridMouse.Rows.Count == 1)
-            {
-                return;
-            }
-            txtEquipo.Text = gridMouse.Rows[0].Cells["id_Equipo"].Value.ToString();
-            txtMouse.Text = gridMouse.Rows[0].Cells["Inventario_Mouse"].Value.ToString();
-            txtEstado.Text = gridMouse.Rows[0].Cells["estado"].Value.ToString();
-            txtMarca.Text = gridMouse.Rows[0].Cells["marca"].Value.ToString();
-            txtModelo.Text = gridMouse.Rows[0].Cells["modelo"].Value.ToString();
-            txtSerie.Text = gridMouse.Rows[0].Cells["serie"].Value.ToString();
-
-        }
+     
 
         private void btnNext_Click(object sender, EventArgs e)
         {
@@ -197,7 +176,7 @@ namespace sistemaFCNM.Vistas
                + " e.Mouse = m.ID and car.id_caracteristica = m.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
 
             Datos.llenarGrid(sql, gridMouse);
-            llenarCampos();
+         
 
             sql = "select e.id_Equipo, m.Inventario_Mouse,car.estado,car.marca,"
                + "car.modelo,car.serie from  Equipo e, Mouse m, CPU ,"
@@ -213,13 +192,20 @@ namespace sistemaFCNM.Vistas
         }
         private void habilitarBotones()
         {
-            btnGuardar.Enabled = true;
-            btnEliminar.Enabled = true;
+           
             txtMouse.Enabled = true;
             txtEstado.Enabled = true;
             txtMarca.Enabled = true;
             txtModelo.Enabled = true;
             txtSerie.Enabled = true;
+        }
+
+        private void mouseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.mouseBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+
         }
     }
 }

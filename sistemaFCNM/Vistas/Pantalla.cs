@@ -26,36 +26,12 @@ namespace sistemaFCNM.Vistas
 
         private void Pantalla_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Pantalla' Puede moverla o quitarla según sea necesario.
+            this.pantallaTableAdapter.Fill(this.sistemasFCNMDataSet.Pantalla);
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
-           
-
-            string sql = "select e.id_Equipo, p.Inventario_Pantalla,p.pulgadas,car.estado,car.marca," +
-                         "car.modelo,car.serie from  Equipo e, Pantalla p," +
-                         "Caracteristicas car where car.id_caracteristica = p.caracteristicas and " +
-                         "e.Pantalla = p.ID and e.id_Equipo = '"+ FuncionesUtiles.INVENTARIO_EQUIPO+ "';";
-            
-            Datos.llenarGrid(sql, gridPantalla);
-            llenarCampos();
-        }
-
-        private void llenarCampos()
-        {
-
-            if (gridPantalla.Rows.Count == 1)
-            {
-                return;
-            }
-            txtEquipo.Text = gridPantalla.Rows[0].Cells["id_Equipo"].Value.ToString();
-            txtPantalla.Text = gridPantalla.Rows[0].Cells["Inventario_Pantalla"].Value.ToString();
-            txtPulgadas.Text = gridPantalla.Rows[0].Cells["pulgadas"].Value.ToString();
-            txtEstado.Text = gridPantalla.Rows[0].Cells["estado"].Value.ToString();
-            txtMarca.Text = gridPantalla.Rows[0].Cells["marca"].Value.ToString();
-            txtModelo.Text = gridPantalla.Rows[0].Cells["modelo"].Value.ToString();
-            txtSerie.Text = gridPantalla.Rows[0].Cells["serie"].Value.ToString();
-            
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -199,7 +175,7 @@ namespace sistemaFCNM.Vistas
                          "e.Pantalla = p.ID and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "';";
 
             Datos.llenarGrid(sql, gridPantalla);
-            llenarCampos();
+         
 
             sql = "select e.id_Equipo, p.Inventario_Pantalla,p.pulgadas,car.estado,car.marca," +
                          "car.modelo,car.serie from  Equipo e, Pantalla p," +
@@ -216,14 +192,21 @@ namespace sistemaFCNM.Vistas
         }
         private void habilitarBotones()
         {
-            btnGuardar.Enabled = true;
-            btnEliminar.Enabled = true;
+           
             txtPantalla.Enabled = true;
             txtPulgadas.Enabled = true;
             txtEstado.Enabled = true;
             txtMarca.Enabled = true;
             txtModelo.Enabled = true;
             txtSerie.Enabled = true;
+        }
+
+        private void pantallaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.pantallaBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+
         }
     }
 }

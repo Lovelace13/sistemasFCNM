@@ -28,18 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Proyector));
             this.txtEspolTech = new System.Windows.Forms.TextBox();
-            this.menuSuperior = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guardarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guardarCsvMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
@@ -51,22 +42,44 @@
             this.txtProyector = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.grid = new System.Windows.Forms.DataGridView();
             this.btnPrevius = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_modificar = new sistemaFCNM.Clases.RoundedButton();
-            this.btnBuscar = new sistemaFCNM.Clases.RoundedButton();
-            this.btnEliminar = new sistemaFCNM.Clases.RoundedButton();
-            this.btnGuardar = new sistemaFCNM.Clases.RoundedButton();
-            this.btnNuevo = new sistemaFCNM.Clases.RoundedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.menuSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
+            this.proyectorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proyectorTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.ProyectorTableAdapter();
+            this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
+            this.proyectorBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.proyectorBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.gridProyector = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectorBindingNavigator)).BeginInit();
+            this.proyectorBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridProyector)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEspolTech
@@ -80,82 +93,6 @@
             this.txtEspolTech.ShortcutsEnabled = false;
             this.txtEspolTech.Size = new System.Drawing.Size(172, 31);
             this.txtEspolTech.TabIndex = 133;
-            // 
-            // menuSuperior
-            // 
-            this.menuSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
-            this.menuSuperior.Location = new System.Drawing.Point(0, 0);
-            this.menuSuperior.Name = "menuSuperior";
-            this.menuSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuSuperior.Size = new System.Drawing.Size(1080, 24);
-            this.menuSuperior.TabIndex = 130;
-            this.menuSuperior.Text = "menuStrip1";
-            // 
-            // archivoToolStripMenuItem
-            // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.guardarMenuItem,
-            this.guardarCsvMenuItem,
-            this.toolStripMenuItem1,
-            this.salirToolStripMenuItem});
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.archivoToolStripMenuItem.Text = "Archivo";
-            // 
-            // guardarMenuItem
-            // 
-            this.guardarMenuItem.Name = "guardarMenuItem";
-            this.guardarMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.guardarMenuItem.Text = "Guardar";
-            this.guardarMenuItem.Click += new System.EventHandler(this.guardarMenuItem_Click);
-            // 
-            // guardarCsvMenuItem
-            // 
-            this.guardarCsvMenuItem.Name = "guardarCsvMenuItem";
-            this.guardarCsvMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.guardarCsvMenuItem.Text = "Cerrar Sesion";
-            this.guardarCsvMenuItem.Click += new System.EventHandler(this.guardarCsvMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ayudaToolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.acercaDeToolStripMenuItem});
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // ayudaToolStripMenuItem1
-            // 
-            this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
-            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
-            this.ayudaToolStripMenuItem1.Text = "Ayuda";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(129, 6);
-            // 
-            // acercaDeToolStripMenuItem
-            // 
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.acercaDeToolStripMenuItem.Text = "Acerca de..";
             // 
             // txtEstado
             // 
@@ -281,19 +218,6 @@
             this.label1.Text = "Inventario Espoltech";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // grid
-            // 
-            this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid.Location = new System.Drawing.Point(24, 475);
-            this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(866, 138);
-            this.grid.TabIndex = 135;
-            // 
             // btnPrevius
             // 
             this.btnPrevius.BackColor = System.Drawing.Color.Transparent;
@@ -341,91 +265,6 @@
             this.label2.TabIndex = 139;
             this.label2.Text = "Equipo";
             // 
-            // btn_modificar
-            // 
-            this.btn_modificar.BackColor = System.Drawing.Color.LightGray;
-            this.btn_modificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_modificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn_modificar.FlatAppearance.BorderSize = 0;
-            this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_modificar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_modificar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
-            this.btn_modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_modificar.Location = new System.Drawing.Point(908, 270);
-            this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(160, 45);
-            this.btn_modificar.TabIndex = 153;
-            this.btn_modificar.Text = "Modificar";
-            this.btn_modificar.UseVisualStyleBackColor = false;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.LightGray;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(908, 475);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(160, 45);
-            this.btnBuscar.TabIndex = 152;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.LightGray;
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(908, 424);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(160, 45);
-            this.btnEliminar.TabIndex = 151;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.LightGray;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(908, 373);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(160, 45);
-            this.btnGuardar.TabIndex = 150;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.LightGray;
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Stencil", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(908, 321);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(160, 45);
-            this.btnNuevo.TabIndex = 149;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtEquipo);
@@ -458,6 +297,294 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Caracteristicas";
             // 
+            // sistemasFCNMDataSet
+            // 
+            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
+            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // proyectorBindingSource
+            // 
+            this.proyectorBindingSource.DataMember = "Proyector";
+            this.proyectorBindingSource.DataSource = this.sistemasFCNMDataSet;
+            // 
+            // proyectorTableAdapter
+            // 
+            this.proyectorTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AreaOficinaTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CpuAdicionalLoteTableAdapter = null;
+            this.tableAdapterManager.CpuCodeTableAdapter = null;
+            this.tableAdapterManager.CpuDiscoTableAdapter = null;
+            this.tableAdapterManager.CpuInventarioTableAdapter = null;
+            this.tableAdapterManager.CpuMarcaTableAdapter = null;
+            this.tableAdapterManager.CpuMemoriaTableAdapter = null;
+            this.tableAdapterManager.CpuNombreTableAdapter = null;
+            this.tableAdapterManager.CpuPerfilTableAdapter = null;
+            this.tableAdapterManager.CpuProcesadorTableAdapter = null;
+            this.tableAdapterManager.CpuSerieTableAdapter = null;
+            this.tableAdapterManager.CpuTagTableAdapter = null;
+            this.tableAdapterManager.CpuTipoTableAdapter = null;
+            this.tableAdapterManager.EdificioTableAdapter = null;
+            this.tableAdapterManager.EquipoInventarioTableAdapter = null;
+            this.tableAdapterManager.EstadoTableAdapter = null;
+            this.tableAdapterManager.FechaInventarioTableAdapter = null;
+            this.tableAdapterManager.ImpresoraInventarioTableAdapter = null;
+            this.tableAdapterManager.ImpresoraMarcaTableAdapter = null;
+            this.tableAdapterManager.ImpresoraModeloTableAdapter = null;
+            this.tableAdapterManager.ImpresoraSerieTableAdapter = null;
+            this.tableAdapterManager.ImpresoraTableAdapter = null;
+            this.tableAdapterManager.InventarioTableAdapter = null;
+            this.tableAdapterManager.MicrofonoInventarioTableAdapter = null;
+            this.tableAdapterManager.MicrofonoMarcaTableAdapter = null;
+            this.tableAdapterManager.MicrofonoSerieTableAdapter = null;
+            this.tableAdapterManager.MicrofonoTableAdapter = null;
+            this.tableAdapterManager.MicrofonoTipoTableAdapter = null;
+            this.tableAdapterManager.MouseInventarioTableAdapter = null;
+            this.tableAdapterManager.MouseMarcaTableAdapter = null;
+            this.tableAdapterManager.MouseModeloTableAdapter = null;
+            this.tableAdapterManager.MouseSerieTableAdapter = null;
+            this.tableAdapterManager.MouseTableAdapter = null;
+            this.tableAdapterManager.NombreOficinaTableAdapter = null;
+            this.tableAdapterManager.OficinaTableAdapter = null;
+            this.tableAdapterManager.PantallaInventarioTableAdapter = null;
+            this.tableAdapterManager.PantallaMarcaTableAdapter = null;
+            this.tableAdapterManager.PantallaModeloTableAdapter = null;
+            this.tableAdapterManager.PantallaProyeccionDimensionesTableAdapter = null;
+            this.tableAdapterManager.PantallaProyeccionInventarioTableAdapter = null;
+            this.tableAdapterManager.PantallaProyeccionMarcaTableAdapter = null;
+            this.tableAdapterManager.PantallaProyeccionModeloTableAdapter = null;
+            this.tableAdapterManager.PantallaProyeccionSerieTableAdapter = null;
+            this.tableAdapterManager.PantallaProyeccionTableAdapter = null;
+            this.tableAdapterManager.PantallaPulgadasTableAdapter = null;
+            this.tableAdapterManager.PantallaSerieTableAdapter = null;
+            this.tableAdapterManager.PantallaTableAdapter = null;
+            this.tableAdapterManager.ParlanteInventarioTableAdapter = null;
+            this.tableAdapterManager.ParlanteMarcaTableAdapter = null;
+            this.tableAdapterManager.ParlanteModeloTableAdapter = null;
+            this.tableAdapterManager.ParlanteSerieTableAdapter = null;
+            this.tableAdapterManager.ParlanteTableAdapter = null;
+            this.tableAdapterManager.PropietarioTableAdapter = null;
+            this.tableAdapterManager.ProyectorInventarioEspolTechTableAdapter = null;
+            this.tableAdapterManager.ProyectorInventarioTableAdapter = null;
+            this.tableAdapterManager.ProyectorMarcaTableAdapter = null;
+            this.tableAdapterManager.ProyectorModeloTableAdapter = null;
+            this.tableAdapterManager.ProyectorSerieTableAdapter = null;
+            this.tableAdapterManager.ProyectorTableAdapter = this.proyectorTableAdapter;
+            this.tableAdapterManager.RadioInventarioTableAdapter = null;
+            this.tableAdapterManager.RadioMarcaTableAdapter = null;
+            this.tableAdapterManager.RadioModeloTableAdapter = null;
+            this.tableAdapterManager.RadioSerieTableAdapter = null;
+            this.tableAdapterManager.RadioTableAdapter = null;
+            this.tableAdapterManager.ReguladorInventarioTableAdapter = null;
+            this.tableAdapterManager.ReguladorMarcaTableAdapter = null;
+            this.tableAdapterManager.ReguladorModeloTableAdapter = null;
+            this.tableAdapterManager.ReguladorSerieTableAdapter = null;
+            this.tableAdapterManager.ReguladorTableAdapter = null;
+            this.tableAdapterManager.ReguladorTipoTableAdapter = null;
+            this.tableAdapterManager.TecladoInventarioTableAdapter = null;
+            this.tableAdapterManager.TecladoMarcaTableAdapter = null;
+            this.tableAdapterManager.TecladoModeloTableAdapter = null;
+            this.tableAdapterManager.TecladoSerieTableAdapter = null;
+            this.tableAdapterManager.TecladoTableAdapter = null;
+            this.tableAdapterManager.TelefonoExtensionTableAdapter = null;
+            this.tableAdapterManager.TelefonoInventarioTableAdapter = null;
+            this.tableAdapterManager.TelefonoMarcaTableAdapter = null;
+            this.tableAdapterManager.TelefonoModeloTableAdapter = null;
+            this.tableAdapterManager.TelefonoSerieTableAdapter = null;
+            this.tableAdapterManager.TelefonoTableAdapter = null;
+            this.tableAdapterManager.TelefonoTipoTableAdapter = null;
+            this.tableAdapterManager.TipoUsuarioTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuarioTableAdapter = null;
+            // 
+            // proyectorBindingNavigator
+            // 
+            this.proyectorBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.proyectorBindingNavigator.BindingSource = this.proyectorBindingSource;
+            this.proyectorBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.proyectorBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.proyectorBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.proyectorBindingNavigatorSaveItem});
+            this.proyectorBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.proyectorBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.proyectorBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.proyectorBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.proyectorBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.proyectorBindingNavigator.Name = "proyectorBindingNavigator";
+            this.proyectorBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.proyectorBindingNavigator.Size = new System.Drawing.Size(1080, 25);
+            this.proyectorBindingNavigator.TabIndex = 156;
+            this.proyectorBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            // 
+            // proyectorBindingNavigatorSaveItem
+            // 
+            this.proyectorBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.proyectorBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("proyectorBindingNavigatorSaveItem.Image")));
+            this.proyectorBindingNavigatorSaveItem.Name = "proyectorBindingNavigatorSaveItem";
+            this.proyectorBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.proyectorBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.proyectorBindingNavigatorSaveItem.Click += new System.EventHandler(this.proyectorBindingNavigatorSaveItem_Click);
+            // 
+            // gridProyector
+            // 
+            this.gridProyector.AutoGenerateColumns = false;
+            this.gridProyector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridProyector.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.gridProyector.DataSource = this.proyectorBindingSource;
+            this.gridProyector.Location = new System.Drawing.Point(147, 270);
+            this.gridProyector.Name = "gridProyector";
+            this.gridProyector.Size = new System.Drawing.Size(740, 220);
+            this.gridProyector.TabIndex = 156;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Inventario";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Inventario";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "InventarioEspoltech";
+            this.dataGridViewTextBoxColumn3.HeaderText = "InventarioEspoltech";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Marca";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Marca";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Modelo";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Modelo";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Serie";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Serie";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Estado";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
             // Proyector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,17 +593,12 @@
             this.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondooo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 685);
+            this.Controls.Add(this.gridProyector);
+            this.Controls.Add(this.proyectorBindingNavigator);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btn_modificar);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnPrevius);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.grid);
-            this.Controls.Add(this.menuSuperior);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -485,13 +607,16 @@
             this.Text = "Proyector";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Proyector_Load);
-            this.menuSuperior.ResumeLayout(false);
-            this.menuSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectorBindingNavigator)).EndInit();
+            this.proyectorBindingNavigator.ResumeLayout(false);
+            this.proyectorBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridProyector)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -500,16 +625,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtEspolTech;
-        private System.Windows.Forms.MenuStrip menuSuperior;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem guardarMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem guardarCsvMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSerie;
@@ -521,17 +636,36 @@
         private System.Windows.Forms.TextBox txtProyector;
         private System.Windows.Forms.Label lblCpu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.Button btnPrevius;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.TextBox txtEquipo;
         private System.Windows.Forms.Label label2;
-        private Clases.RoundedButton btn_modificar;
-        private Clases.RoundedButton btnBuscar;
-        private Clases.RoundedButton btnEliminar;
-        private Clases.RoundedButton btnGuardar;
-        private Clases.RoundedButton btnNuevo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private sistemasFCNMDataSet sistemasFCNMDataSet;
+        private System.Windows.Forms.BindingSource proyectorBindingSource;
+        private sistemasFCNMDataSetTableAdapters.ProyectorTableAdapter proyectorTableAdapter;
+        private sistemasFCNMDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator proyectorBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton proyectorBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView gridProyector;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

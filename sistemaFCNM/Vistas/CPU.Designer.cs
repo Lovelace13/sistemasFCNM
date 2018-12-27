@@ -33,6 +33,8 @@ namespace sistemaFCNM.Vistas
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CPU));
             this.txtEstado = new System.Windows.Forms.TextBox();
+            this.cpuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -67,25 +69,22 @@ namespace sistemaFCNM.Vistas
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevius = new System.Windows.Forms.Button();
-            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
-            this.cpuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cpuTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.CpuTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
             this.cpuBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.cpuBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.gridCpu = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,10 +98,10 @@ namespace sistemaFCNM.Vistas
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cpuBindingNavigator)).BeginInit();
             this.cpuBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).BeginInit();
@@ -112,19 +111,30 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Estado", true));
             this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(165, 139);
+            this.txtEstado.Location = new System.Drawing.Point(165, 102);
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(172, 31);
             this.txtEstado.TabIndex = 104;
+            // 
+            // cpuBindingSource
+            // 
+            this.cpuBindingSource.DataMember = "Cpu";
+            this.cpuBindingSource.DataSource = this.sistemasFCNMDataSet;
+            // 
+            // sistemasFCNMDataSet
+            // 
+            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
+            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(45, 153);
+            this.label10.Location = new System.Drawing.Point(45, 116);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 105;
@@ -134,8 +144,9 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSerie.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Serie", true));
             this.txtSerie.Enabled = false;
-            this.txtSerie.Location = new System.Drawing.Point(165, 98);
+            this.txtSerie.Location = new System.Drawing.Point(165, 65);
             this.txtSerie.Multiline = true;
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(172, 31);
@@ -146,7 +157,7 @@ namespace sistemaFCNM.Vistas
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(45, 110);
+            this.label11.Location = new System.Drawing.Point(45, 71);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 13);
             this.label11.TabIndex = 103;
@@ -154,32 +165,25 @@ namespace sistemaFCNM.Vistas
             // 
             // txtModelo
             // 
-            this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModelo.Enabled = false;
-            this.txtModelo.Location = new System.Drawing.Point(165, 61);
-            this.txtModelo.Multiline = true;
+            this.txtModelo.Location = new System.Drawing.Point(0, 0);
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(172, 31);
-            this.txtModelo.TabIndex = 100;
+            this.txtModelo.Size = new System.Drawing.Size(100, 20);
+            this.txtModelo.TabIndex = 107;
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(45, 71);
+            this.label12.Location = new System.Drawing.Point(0, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 13);
-            this.label12.TabIndex = 101;
-            this.label12.Text = "Modelo";
+            this.label12.Size = new System.Drawing.Size(100, 23);
+            this.label12.TabIndex = 106;
             // 
             // txtMarca
             // 
             this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Marca", true));
             this.txtMarca.Enabled = false;
-            this.txtMarca.Location = new System.Drawing.Point(165, 24);
+            this.txtMarca.Location = new System.Drawing.Point(165, 28);
             this.txtMarca.Multiline = true;
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(172, 31);
@@ -190,7 +194,7 @@ namespace sistemaFCNM.Vistas
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(45, 28);
+            this.label13.Location = new System.Drawing.Point(45, 37);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 99;
@@ -200,6 +204,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtLote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtLote.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLote.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "AdicionalLote", true));
             this.txtLote.Enabled = false;
             this.txtLote.Location = new System.Drawing.Point(129, 267);
             this.txtLote.Multiline = true;
@@ -213,7 +218,7 @@ namespace sistemaFCNM.Vistas
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label14.Location = new System.Drawing.Point(9, 271);
+            this.label14.Location = new System.Drawing.Point(4, 271);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(98, 13);
             this.label14.TabIndex = 97;
@@ -224,6 +229,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtDisco.BackColor = System.Drawing.Color.Gainsboro;
             this.txtDisco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDisco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Disco", true));
             this.txtDisco.Enabled = false;
             this.txtDisco.Location = new System.Drawing.Point(274, 368);
             this.txtDisco.Multiline = true;
@@ -245,6 +251,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtMemoria.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMemoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMemoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Memoria", true));
             this.txtMemoria.Enabled = false;
             this.txtMemoria.Location = new System.Drawing.Point(444, 368);
             this.txtMemoria.Multiline = true;
@@ -266,6 +273,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtProcesador.BackColor = System.Drawing.Color.Gainsboro;
             this.txtProcesador.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProcesador.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Procesador", true));
             this.txtProcesador.Enabled = false;
             this.txtProcesador.Location = new System.Drawing.Point(129, 368);
             this.txtProcesador.Multiline = true;
@@ -279,7 +287,7 @@ namespace sistemaFCNM.Vistas
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(9, 371);
+            this.label7.Location = new System.Drawing.Point(31, 371);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 13);
             this.label7.TabIndex = 91;
@@ -290,6 +298,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Code", true));
             this.txtCode.Enabled = false;
             this.txtCode.Location = new System.Drawing.Point(129, 316);
             this.txtCode.Multiline = true;
@@ -303,7 +312,7 @@ namespace sistemaFCNM.Vistas
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(9, 319);
+            this.label4.Location = new System.Drawing.Point(66, 319);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 89;
@@ -314,6 +323,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtTag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtTag.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTag.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Tag", true));
             this.txtTag.Enabled = false;
             this.txtTag.Location = new System.Drawing.Point(129, 221);
             this.txtTag.Multiline = true;
@@ -327,7 +337,7 @@ namespace sistemaFCNM.Vistas
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(9, 225);
+            this.label5.Location = new System.Drawing.Point(73, 225);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 13);
             this.label5.TabIndex = 87;
@@ -338,6 +348,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPerfil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Perfil", true));
             this.txtPerfil.Enabled = false;
             this.txtPerfil.Location = new System.Drawing.Point(129, 178);
             this.txtPerfil.Multiline = true;
@@ -351,7 +362,7 @@ namespace sistemaFCNM.Vistas
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(9, 182);
+            this.label2.Location = new System.Drawing.Point(66, 182);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 85;
@@ -362,6 +373,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "TipoPC", true));
             this.txtTipo.Enabled = false;
             this.txtTipo.Location = new System.Drawing.Point(129, 139);
             this.txtTipo.Multiline = true;
@@ -375,7 +387,7 @@ namespace sistemaFCNM.Vistas
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(9, 143);
+            this.label3.Location = new System.Drawing.Point(50, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 83;
@@ -386,6 +398,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "NombrePC", true));
             this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(129, 97);
             this.txtNombre.Multiline = true;
@@ -399,7 +412,7 @@ namespace sistemaFCNM.Vistas
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(9, 103);
+            this.label1.Location = new System.Drawing.Point(32, 103);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 81;
@@ -410,6 +423,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.txtCpu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCpu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Inventario", true));
             this.txtCpu.Enabled = false;
             this.txtCpu.Location = new System.Drawing.Point(129, 53);
             this.txtCpu.Multiline = true;
@@ -447,7 +461,7 @@ namespace sistemaFCNM.Vistas
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(9, 24);
+            this.label8.Location = new System.Drawing.Point(56, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 13);
             this.label8.TabIndex = 109;
@@ -485,6 +499,7 @@ namespace sistemaFCNM.Vistas
             this.groupBox1.TabIndex = 125;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CPU DATOS BASICOS";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
@@ -540,16 +555,6 @@ namespace sistemaFCNM.Vistas
             this.btnPrevius.TabIndex = 111;
             this.btnPrevius.UseVisualStyleBackColor = false;
             // 
-            // sistemasFCNMDataSet
-            // 
-            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
-            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cpuBindingSource
-            // 
-            this.cpuBindingSource.DataMember = "Cpu";
-            this.cpuBindingSource.DataSource = this.sistemasFCNMDataSet;
-            // 
             // cpuTableAdapter
             // 
             this.cpuTableAdapter.ClearBeforeFill = true;
@@ -558,6 +563,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.tableAdapterManager.AreaOficinaTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.CpuAdicionalLoteTableAdapter = null;
             this.tableAdapterManager.CpuCodeTableAdapter = null;
             this.tableAdapterManager.CpuDiscoTableAdapter = null;
@@ -568,7 +574,6 @@ namespace sistemaFCNM.Vistas
             this.tableAdapterManager.CpuPerfilTableAdapter = null;
             this.tableAdapterManager.CpuProcesadorTableAdapter = null;
             this.tableAdapterManager.CpuSerieTableAdapter = null;
-            this.tableAdapterManager.CpuTableAdapter = this.cpuTableAdapter;
             this.tableAdapterManager.CpuTagTableAdapter = null;
             this.tableAdapterManager.CpuTipoTableAdapter = null;
             this.tableAdapterManager.EdificioTableAdapter = null;
@@ -674,6 +679,31 @@ namespace sistemaFCNM.Vistas
             this.cpuBindingNavigator.TabIndex = 127;
             this.cpuBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -706,16 +736,9 @@ namespace sistemaFCNM.Vistas
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -738,26 +761,8 @@ namespace sistemaFCNM.Vistas
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // cpuBindingNavigatorSaveItem
             // 
@@ -773,7 +778,6 @@ namespace sistemaFCNM.Vistas
             this.gridCpu.AutoGenerateColumns = false;
             this.gridCpu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCpu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
@@ -788,17 +792,10 @@ namespace sistemaFCNM.Vistas
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.gridCpu.DataSource = this.cpuBindingSource;
-            this.gridCpu.Location = new System.Drawing.Point(18, 441);
+            this.gridCpu.Location = new System.Drawing.Point(12, 453);
             this.gridCpu.Name = "gridCpu";
-            this.gridCpu.Size = new System.Drawing.Size(1213, 220);
+            this.gridCpu.Size = new System.Drawing.Size(1039, 220);
             this.gridCpu.TabIndex = 127;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -905,12 +902,12 @@ namespace sistemaFCNM.Vistas
             this.Text = "CPU";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CPU_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cpuBindingNavigator)).EndInit();
             this.cpuBindingNavigator.ResumeLayout(false);
             this.cpuBindingNavigator.PerformLayout();

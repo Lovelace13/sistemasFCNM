@@ -25,36 +25,13 @@ namespace sistemaFCNM.Vistas
 
         private void Radio_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Radio' Puede moverla o quitarla según sea necesario.
+            this.radioTableAdapter.Fill(this.sistemasFCNMDataSet.Radio);
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
             }
-            
-
-            string sql = "select e.id_Equipo, pro.Inventario_Radio,car.estado,car.marca," +
-         "car.modelo,car.serie from  Equipo e, Radio pro," +
-         "Caracteristicas car where " +
-         " e.Radios = pro.ID and car.id_caracteristica = pro.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
-
-
-            Datos.llenarGrid(sql, grid);
-            llenarCampos();
-        }
-
-        private void llenarCampos()
-        {
-
-            if (grid.Rows.Count == 1)
-            {
-                return;
-            }
-            txtEquipo.Text = grid.Rows[0].Cells["id_Equipo"].Value.ToString();
-            txtRadio.Text = grid.Rows[0].Cells["Inventario_Radio"].Value.ToString();
-            txtEstado.Text = grid.Rows[0].Cells["estado"].Value.ToString();
-            txtMarca.Text = grid.Rows[0].Cells["marca"].Value.ToString();
-            txtModelo.Text = grid.Rows[0].Cells["modelo"].Value.ToString();
-            txtSerie.Text = grid.Rows[0].Cells["serie"].Value.ToString();
-
+    
         }
 
         private void btnPrevius_Click(object sender, EventArgs e)
@@ -198,8 +175,8 @@ namespace sistemaFCNM.Vistas
         " e.Radios = pro.ID and car.id_caracteristica = pro.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
 
 
-            Datos.llenarGrid(sql, grid);
-            llenarCampos();
+            Datos.llenarGrid(sql, gridRadio);
+            
 
             sql = "select e.id_Equipo, pro.Inventario_Radio,car.estado,car.marca," +
         "car.modelo,car.serie from  Equipo e, Radio pro," +
@@ -207,7 +184,7 @@ namespace sistemaFCNM.Vistas
         " e.Radios = pro.ID and car.id_caracteristica = pro.caracteristicas ; ";
 
 
-            Datos.llenarGrid(sql, grid);
+            Datos.llenarGrid(sql, gridRadio);
 
 
         }
@@ -218,8 +195,6 @@ namespace sistemaFCNM.Vistas
         }
         private void habilitarBotones()
         {
-            
-            btnEliminar.Enabled = true;
             txtRadio.Enabled = true;            
             txtEstado.Enabled = true;
             txtMarca.Enabled = true;
@@ -248,6 +223,14 @@ namespace sistemaFCNM.Vistas
             FuncionesUtiles.siguienteActiva = false;
             FuncionesUtiles.INVENTARIO_EQUIPO = "";
             FuncionesUtiles.masdetallesActiva = false;
+        }
+
+        private void radioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.radioBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+
         }
     }
 }
