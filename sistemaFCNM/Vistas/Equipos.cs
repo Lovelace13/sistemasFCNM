@@ -9,31 +9,22 @@ namespace sistemaFCNM
 {
     public partial class Equipos : Form
     {
-        private string fecha;
-        private string grupo;
-        private string edificio;
-        private string oficina;
-        private string area;
-        private string nombreUsuario;
-        private string inventario;
-        private string observacion;
-        private string ayudante;
+
         private Thread th;
         private ServidorSocket server;
-        private Boolean EnterActivado = false;
         private LinkedList<String> listaqr = new LinkedList<string>();
         public Equipos()
         {
             InitializeComponent();
         }
-              
+
         private void txtScanner_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
             if (e.KeyCode == Keys.Enter)
             {
-                string sql = ""+txtScanner.Text.Trim()+"';";
-               
+                string sql = "" + txtScanner.Text.Trim() + "';";
+
                 equipoBindingSource.Position = equipoBindingSource.Find("Inventario", txtScanner.Text.Trim());
                 try
                 {
@@ -63,7 +54,6 @@ namespace sistemaFCNM
                 throw;
             }
             txtScanner.Clear();
-            EnterActivado = false; //Validar un solo enter
         }
         private void btnDetalleCpu_Click(object sender, EventArgs e)
         {
@@ -71,7 +61,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
-            
+
             FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
         }
 
@@ -187,8 +177,8 @@ namespace sistemaFCNM
             string sql = "";
             Datos.llenarGrid(sql, gridInventario);
 
-        
-            
+
+
             sql = "";
             Datos.llenarGrid(sql, gridInventario);
         }
@@ -214,8 +204,8 @@ namespace sistemaFCNM
             FuncionesUtiles.INVENTARIO_EQUIPO = "";
         }
 
-        
-           
+
+
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             login log = new login();
@@ -224,7 +214,7 @@ namespace sistemaFCNM
             FuncionesUtiles.form1.Visible = false;
             FuncionesUtiles.INVENTARIO_EQUIPO = "";
 
-            
+
         }
 
         private void guardarMenuItem_Click(object sender, EventArgs e)
@@ -239,25 +229,41 @@ namespace sistemaFCNM
             this.th = new Thread(new ThreadStart(server.StartListening));
             th.Start();
             timer1.Enabled = true; //Inicio Tiempo para leer codigo qr
-           
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(server.Data== null)
+            if (server.Data == null)
             {
                 return;
             }
-           
-            if(server.Data.Length !=0 && !listaqr.Contains(server.Data))
+
+            if (server.Data.Length != 0 && !listaqr.Contains(server.Data))
             {
                 listView1.Items.Add(server.Data);
                 listaqr.AddFirst(server.Data);
-              
-            }
-           
-                
 
+            }
+
+
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedIndices.Count <= 0)
+            {
+                return;
+            }
+            int intselectedindex = listView1.SelectedIndices[0];
+            if (intselectedindex >= 0)
+            {
+                String text = listView1.Items[intselectedindex].Text;
+
+                //do something
+                //MessageBox.Show(listView1.Items[intselectedindex].Text); 
+            }
         }
     }
 }
