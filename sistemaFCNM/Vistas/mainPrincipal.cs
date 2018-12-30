@@ -94,6 +94,8 @@ namespace sistemaFCNM
             apagarBotones();
             FuncionesUtiles.siguienteActiva = true;
             FuncionesUtiles.abrirVentanas(new Equipos(), contenedor);
+            Form1 progres = new Form1();
+            progres.Show();
             
         }
 

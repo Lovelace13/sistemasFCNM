@@ -10,7 +10,7 @@ namespace sistemaFCNM
     public partial class Equipos : Form
     {
 
-        private Thread th;
+        private Thread HiloServerQR;
         private ServidorSocket server;
         private LinkedList<String> listaqr = new LinkedList<string>();
         public Equipos()
@@ -23,21 +23,7 @@ namespace sistemaFCNM
 
             if (e.KeyCode == Keys.Enter)
             {
-                string sql = "" + txtScanner.Text.Trim() + "';";
-
-                equipoBindingSource.Position = equipoBindingSource.Find("Inventario", txtScanner.Text.Trim());
-                try
-                {
-                    this.equipoTableAdapter.FillBy(this.sistemasFCNMDataSet.Equipo, txtScanner.Text.Trim());
-                }
-                catch (System.Exception ex)
-                {
-                    System.Windows.Forms.MessageBox.Show(ex.Message);
-                }
-                FuncionesUtiles.INVENTARIO_EQUIPO = txtScanner.Text.Trim();
-                limpiarTxtandWait();
-
-
+                busqueda();
             }
         }
 
@@ -226,8 +212,8 @@ namespace sistemaFCNM
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Equipo' Puede moverla o quitarla según sea necesario.
             this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
             this.server = new ServidorSocket("192.168.1.8", 100);
-            this.th = new Thread(new ThreadStart(server.StartListening));
-            th.Start();
+            this.HiloServerQR = new Thread(new ThreadStart(server.StartListening));
+            HiloServerQR.Start();
             timer1.Enabled = true; //Inicio Tiempo para leer codigo qr
 
         }
@@ -243,10 +229,9 @@ namespace sistemaFCNM
             {
                 listView1.Items.Add(server.Data);
                 listaqr.AddFirst(server.Data);
+                
 
             }
-
-
 
         }
 
@@ -259,11 +244,43 @@ namespace sistemaFCNM
             int intselectedindex = listView1.SelectedIndices[0];
             if (intselectedindex >= 0)
             {
-                String text = listView1.Items[intselectedindex].Text;
-
-                //do something
-                //MessageBox.Show(listView1.Items[intselectedindex].Text); 
+                txtScanner.Text=(listView1.Items[intselectedindex].Text);
+                this.progressBar1.Maximum = 100;
+                this.progressBar1.Step = 1;
+                this.progressBar1.Value = 0;
+                new Thread(new ThreadStart(() =>
+                {
+                   
+                    for (int i = 0; i < 100; i++)
+                    {
+                        if (this.progressBar1.InvokeRequired)
+                            this.progressBar1.Invoke(new ThreadStart(() =>
+                            {
+                                this.progressBar1.PerformStep();
+                            }));
+                        else
+                            this.progressBar1.PerformStep();
+                    }
+                })).Start();
+                busqueda();
+                server.CerrarConexion();
+                HiloServerQR.Interrupt();
+                HiloServerQR.Join();
             }
+        }
+        private void busqueda()
+        {
+            equipoBindingSource.Position = equipoBindingSource.Find("Inventario", txtScanner.Text.Trim());
+            try
+            {
+                this.equipoTableAdapter.FillBy(this.sistemasFCNMDataSet.Equipo, txtScanner.Text.Trim());
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+            FuncionesUtiles.INVENTARIO_EQUIPO = txtScanner.Text.Trim();
+            limpiarTxtandWait();
         }
     }
 }

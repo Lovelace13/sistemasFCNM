@@ -96,7 +96,9 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.equipoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.gridInventario = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,8 +113,7 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -184,11 +185,11 @@
             this.txtScanner.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtScanner.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtScanner.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScanner.Location = new System.Drawing.Point(185, 64);
+            this.txtScanner.Location = new System.Drawing.Point(151, 64);
             this.txtScanner.MaxLength = 100;
             this.txtScanner.Multiline = true;
             this.txtScanner.Name = "txtScanner";
-            this.txtScanner.Size = new System.Drawing.Size(703, 41);
+            this.txtScanner.Size = new System.Drawing.Size(764, 41);
             this.txtScanner.TabIndex = 0;
             this.txtScanner.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtScanner.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtScanner_KeyDown);
@@ -243,7 +244,7 @@
             this.txtOficina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtOficina.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtOficina.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "NombreOficina", true));
-            this.txtOficina.Location = new System.Drawing.Point(33, 84);
+            this.txtOficina.Location = new System.Drawing.Point(42, 84);
             this.txtOficina.Multiline = true;
             this.txtOficina.Name = "txtOficina";
             this.txtOficina.Size = new System.Drawing.Size(60, 27);
@@ -255,7 +256,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(46, 68);
+            this.label5.Location = new System.Drawing.Point(55, 68);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 29;
@@ -266,7 +267,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(34, 172);
+            this.label6.Location = new System.Drawing.Point(43, 172);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 31;
@@ -278,7 +279,7 @@
             this.txtAyudante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtAyudante.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAyudante.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Nombre", true));
-            this.txtAyudante.Location = new System.Drawing.Point(4, 190);
+            this.txtAyudante.Location = new System.Drawing.Point(13, 190);
             this.txtAyudante.Multiline = true;
             this.txtAyudante.Name = "txtAyudante";
             this.txtAyudante.Size = new System.Drawing.Size(89, 25);
@@ -469,7 +470,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(51, 121);
+            this.label10.Location = new System.Drawing.Point(60, 121);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 58;
@@ -481,7 +482,7 @@
             this.txtFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFecha.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Fecha", true));
-            this.txtFecha.Location = new System.Drawing.Point(4, 137);
+            this.txtFecha.Location = new System.Drawing.Point(13, 137);
             this.txtFecha.Multiline = true;
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(89, 25);
@@ -750,9 +751,9 @@
             this.groupBox2.Controls.Add(this.txtAyudante);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtOficina);
-            this.groupBox2.Location = new System.Drawing.Point(936, 12);
+            this.groupBox2.Location = new System.Drawing.Point(944, 34);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(104, 230);
+            this.groupBox2.Size = new System.Drawing.Size(113, 230);
             this.groupBox2.TabIndex = 138;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Inventario";
@@ -887,7 +888,7 @@
             this.equipoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.equipoBindingNavigator.Name = "equipoBindingNavigator";
             this.equipoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.equipoBindingNavigator.Size = new System.Drawing.Size(1137, 25);
+            this.equipoBindingNavigator.Size = new System.Drawing.Size(1222, 25);
             this.equipoBindingNavigator.TabIndex = 140;
             this.equipoBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -992,7 +993,6 @@
             this.gridInventario.AutoGenerateColumns = false;
             this.gridInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
             this.Usuario,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -1008,18 +1008,32 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.gridInventario.DataSource = this.equipoBindingSource;
-            this.gridInventario.Location = new System.Drawing.Point(18, 348);
+            this.gridInventario.Location = new System.Drawing.Point(115, 348);
             this.gridInventario.Name = "gridInventario";
             this.gridInventario.ReadOnly = true;
             this.gridInventario.Size = new System.Drawing.Size(1022, 265);
             this.gridInventario.TabIndex = 140;
             // 
-            // dataGridViewTextBoxColumn1
+            // timer1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView1.Location = new System.Drawing.Point(1063, 40);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(119, 219);
+            this.listView1.TabIndex = 141;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Inventario Pendiente";
+            this.columnHeader1.Width = 118;
             // 
             // Usuario
             // 
@@ -1119,18 +1133,12 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
-            // timer1
+            // progressBar1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(1046, 28);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(79, 209);
-            this.listView1.TabIndex = 141;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.progressBar1.Location = new System.Drawing.Point(18, 650);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.TabIndex = 142;
             // 
             // Equipos
             // 
@@ -1140,8 +1148,9 @@
             this.BackColor = System.Drawing.Color.Beige;
             this.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondooo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1137, 685);
+            this.ClientSize = new System.Drawing.Size(1222, 685);
             this.ControlBox = false;
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.gridInventario);
             this.Controls.Add(this.equipoBindingNavigator);
@@ -1242,7 +1251,9 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton equipoBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView gridInventario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -1257,7 +1268,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
