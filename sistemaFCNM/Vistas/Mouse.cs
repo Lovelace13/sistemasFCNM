@@ -13,11 +13,7 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Mouse : Form
     {
-        private string estado;
-        private string marca;
-        private string serie;
-        private string modelo;
-        private string inventario;
+      
         public Mouse()
         {
             InitializeComponent();
@@ -30,6 +26,7 @@ namespace sistemaFCNM.Vistas
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
+                this.mouseTableAdapter.FillBy(this.sistemasFCNMDataSet.Mouse, FuncionesUtiles.ID_MOUSE);
             }
    
         }

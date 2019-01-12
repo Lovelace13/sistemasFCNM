@@ -13,12 +13,7 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Pantalla : Form
     {
-        private string pulgadas;
-        private string estado;
-        private string marca;
-        private string serie;
-        private string modelo;
-        private string inventario;
+        
         public Pantalla()
         {
             InitializeComponent();
@@ -31,6 +26,7 @@ namespace sistemaFCNM.Vistas
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
+                this.pantallaTableAdapter.FillBy(this.sistemasFCNMDataSet.Pantalla, FuncionesUtiles.ID_PANTALLA);
             }
         }
 

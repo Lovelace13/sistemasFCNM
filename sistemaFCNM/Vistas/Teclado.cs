@@ -13,11 +13,6 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Teclado : Form
     {
-        private string estado;
-        private string marca;
-        private string serie;
-        private string modelo;
-        private string inventario;
         public Teclado()
         {
             InitializeComponent();
@@ -30,6 +25,7 @@ namespace sistemaFCNM.Vistas
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
+                this.tecladoTableAdapter.FillBy(this.sistemasFCNMDataSet.Teclado, FuncionesUtiles.ID_TECLADO);
             }
         }
 

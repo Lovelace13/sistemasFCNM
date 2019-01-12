@@ -116,6 +116,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="sistemasFCNMDataSet.cs">
+      <DependentUpon>sistemasFCNMDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="sistemasFCNMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

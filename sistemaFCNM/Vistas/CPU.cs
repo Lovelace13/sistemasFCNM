@@ -14,20 +14,7 @@ namespace sistemaFCNM.Vistas
 {
     public partial class CPU : Form
     {
-        private string pcNombre;
-        private string tipoPc;
-        private string perfil;
-        private string tag;
-        private string code;
-        private string procesador;
-        private string memoria;
-        private string discoDuro;
-        private string estado;
-        private string marca;
-        private string serie;
-        private string modelo;
-        private string inventario;
-
+      
         public CPU()
         {
             InitializeComponent();
@@ -45,6 +32,7 @@ namespace sistemaFCNM.Vistas
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
+                this.cpuTableAdapter.FillBy(this.sistemasFCNMDataSet.Cpu,FuncionesUtiles.ID_CPU);
             }
            
         
@@ -241,6 +229,11 @@ namespace sistemaFCNM.Vistas
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridCpu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

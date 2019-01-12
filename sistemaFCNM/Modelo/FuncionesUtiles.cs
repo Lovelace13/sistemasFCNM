@@ -10,6 +10,14 @@ namespace sistemaFCNM.Clases
         public static bool siguienteActiva = false;
         public static bool anteriorActiva = false;
         public static string INVENTARIO_EQUIPO;
+        public static Int32 ID_CPU;
+        public static Int32 ID_PANTALLA;
+        public static Int32 ID_MOUSE;
+        public static Int32 ID_TECLADO;
+        public static Int32 ID_PARLANTE;
+        public static Int32 ID_REGULADOR;
+        public static Int32 ID_IMPRESORA;
+        public static Int32 ID_PROYECTOR;
         public static string USUARIO;
         public static string OBSERVACION;
         public static bool nuevoRegistro = false;

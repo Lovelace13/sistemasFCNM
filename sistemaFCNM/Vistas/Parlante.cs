@@ -13,11 +13,6 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Parlante : Form
     {
-        private string estado;
-        private string marca;
-        private string serie;
-        private string modelo;
-        private string inventario;
 
         public Parlante()
         {
@@ -31,11 +26,12 @@ namespace sistemaFCNM.Vistas
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
+                this.parlanteTableAdapter.FillBy(this.sistemasFCNMDataSet.Parlante, FuncionesUtiles.ID_PARLANTE);
             }
-       
+
         }
 
-      
+
         private void btnNext_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.abrirVentanas(new Impresora(), mainPrincipal.contenedor);
@@ -106,14 +102,14 @@ namespace sistemaFCNM.Vistas
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             switch (FuncionesUtiles.ventanaDialogo())
             {
                 case "Yes":
                     FuncionesUtiles.siguienteActiva = false;
                     FuncionesUtiles.activarMenu();
                     FuncionesUtiles.INVENTARIO_EQUIPO = "";
-                   
+
                     guardar();
                     this.Close();
                     return;
@@ -177,7 +173,7 @@ namespace sistemaFCNM.Vistas
                 "e.Parlante = par.ID and car.id_caracteristica = par.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "';";
 
             Datos.llenarGrid(sql, gridParlante);
-           
+
 
             sql = "select e.id_Equipo, par.Inventario_Parlante,car.estado,car.marca," +
                 "car.modelo,car.serie from  Equipo e, Parlante par, " +
@@ -195,8 +191,8 @@ namespace sistemaFCNM.Vistas
         }
         private void habilitarBotones()
         {
-            
-            txtParlante.Enabled = true;            
+
+            txtParlante.Enabled = true;
             txtEstado.Enabled = true;
             txtMarca.Enabled = true;
             txtModelo.Enabled = true;

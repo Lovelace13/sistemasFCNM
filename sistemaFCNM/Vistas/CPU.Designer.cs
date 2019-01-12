@@ -84,20 +84,20 @@ namespace sistemaFCNM.Vistas
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cpuBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.gridCpu = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridCpu = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -206,10 +206,10 @@ namespace sistemaFCNM.Vistas
             this.txtLote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLote.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "AdicionalLote", true));
             this.txtLote.Enabled = false;
-            this.txtLote.Location = new System.Drawing.Point(129, 267);
+            this.txtLote.Location = new System.Drawing.Point(144, 146);
             this.txtLote.Multiline = true;
             this.txtLote.Name = "txtLote";
-            this.txtLote.Size = new System.Drawing.Size(172, 31);
+            this.txtLote.Size = new System.Drawing.Size(193, 31);
             this.txtLote.TabIndex = 96;
             // 
             // label14
@@ -218,7 +218,7 @@ namespace sistemaFCNM.Vistas
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label14.Location = new System.Drawing.Point(4, 271);
+            this.label14.Location = new System.Drawing.Point(19, 150);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(98, 13);
             this.label14.TabIndex = 97;
@@ -231,17 +231,17 @@ namespace sistemaFCNM.Vistas
             this.txtDisco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDisco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Disco", true));
             this.txtDisco.Enabled = false;
-            this.txtDisco.Location = new System.Drawing.Point(274, 368);
+            this.txtDisco.Location = new System.Drawing.Point(289, 194);
             this.txtDisco.Multiline = true;
             this.txtDisco.Name = "txtDisco";
-            this.txtDisco.Size = new System.Drawing.Size(56, 32);
+            this.txtDisco.Size = new System.Drawing.Size(48, 32);
             this.txtDisco.TabIndex = 94;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(215, 371);
+            this.label15.Location = new System.Drawing.Point(244, 197);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(39, 13);
             this.label15.TabIndex = 95;
@@ -253,7 +253,7 @@ namespace sistemaFCNM.Vistas
             this.txtMemoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMemoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Memoria", true));
             this.txtMemoria.Enabled = false;
-            this.txtMemoria.Location = new System.Drawing.Point(444, 368);
+            this.txtMemoria.Location = new System.Drawing.Point(144, 247);
             this.txtMemoria.Multiline = true;
             this.txtMemoria.Name = "txtMemoria";
             this.txtMemoria.Size = new System.Drawing.Size(56, 32);
@@ -263,7 +263,7 @@ namespace sistemaFCNM.Vistas
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(355, 374);
+            this.label6.Location = new System.Drawing.Point(63, 263);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 93;
@@ -275,7 +275,7 @@ namespace sistemaFCNM.Vistas
             this.txtProcesador.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProcesador.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Procesador", true));
             this.txtProcesador.Enabled = false;
-            this.txtProcesador.Location = new System.Drawing.Point(129, 368);
+            this.txtProcesador.Location = new System.Drawing.Point(144, 194);
             this.txtProcesador.Multiline = true;
             this.txtProcesador.Name = "txtProcesador";
             this.txtProcesador.Size = new System.Drawing.Size(56, 32);
@@ -287,7 +287,7 @@ namespace sistemaFCNM.Vistas
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(31, 371);
+            this.label7.Location = new System.Drawing.Point(46, 197);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 13);
             this.label7.TabIndex = 91;
@@ -300,7 +300,7 @@ namespace sistemaFCNM.Vistas
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Code", true));
             this.txtCode.Enabled = false;
-            this.txtCode.Location = new System.Drawing.Point(129, 316);
+            this.txtCode.Location = new System.Drawing.Point(129, 263);
             this.txtCode.Multiline = true;
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(371, 31);
@@ -312,7 +312,7 @@ namespace sistemaFCNM.Vistas
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(66, 319);
+            this.label4.Location = new System.Drawing.Point(66, 266);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 89;
@@ -478,24 +478,16 @@ namespace sistemaFCNM.Vistas
             this.groupBox1.Controls.Add(this.txtTipo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtPerfil);
+            this.groupBox1.Controls.Add(this.txtCode);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtEquipo);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtTag);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtCode);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtProcesador);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtMemoria);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.txtLote);
-            this.groupBox1.Controls.Add(this.txtDisco);
-            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(24)))), ((int)(((byte)(40)))));
             this.groupBox1.Location = new System.Drawing.Point(12, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(519, 411);
+            this.groupBox1.Size = new System.Drawing.Size(519, 302);
             this.groupBox1.TabIndex = 125;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CPU DATOS BASICOS";
@@ -512,9 +504,17 @@ namespace sistemaFCNM.Vistas
             this.groupBox2.Controls.Add(this.txtSerie);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtEstado);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.txtDisco);
+            this.groupBox2.Controls.Add(this.txtLote);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.txtMemoria);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.txtProcesador);
             this.groupBox2.Location = new System.Drawing.Point(553, 37);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(373, 227);
+            this.groupBox2.Size = new System.Drawing.Size(376, 302);
             this.groupBox2.TabIndex = 126;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Caracteristicas";
@@ -524,7 +524,7 @@ namespace sistemaFCNM.Vistas
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(935, 32);
+            this.panel1.Location = new System.Drawing.Point(1015, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(133, 125);
             this.panel1.TabIndex = 123;
@@ -584,7 +584,7 @@ namespace sistemaFCNM.Vistas
             this.tableAdapterManager.ImpresoraMarcaTableAdapter = null;
             this.tableAdapterManager.ImpresoraModeloTableAdapter = null;
             this.tableAdapterManager.ImpresoraSerieTableAdapter = null;
-            this.tableAdapterManager.ImpresoraTableAdapter = null;
+            //this.tableAdapterManager.ImpresoraTableAdapter = null;
             this.tableAdapterManager.InventarioTableAdapter = null;
             this.tableAdapterManager.MicrofonoInventarioTableAdapter = null;
             this.tableAdapterManager.MicrofonoMarcaTableAdapter = null;
@@ -595,7 +595,7 @@ namespace sistemaFCNM.Vistas
             this.tableAdapterManager.MouseMarcaTableAdapter = null;
             this.tableAdapterManager.MouseModeloTableAdapter = null;
             this.tableAdapterManager.MouseSerieTableAdapter = null;
-            this.tableAdapterManager.MouseTableAdapter = null;
+           // this.tableAdapterManager.MouseTableAdapter = null;
             this.tableAdapterManager.NombreOficinaTableAdapter = null;
             this.tableAdapterManager.OficinaTableAdapter = null;
             this.tableAdapterManager.PantallaInventarioTableAdapter = null;
@@ -609,19 +609,18 @@ namespace sistemaFCNM.Vistas
             this.tableAdapterManager.PantallaProyeccionTableAdapter = null;
             this.tableAdapterManager.PantallaPulgadasTableAdapter = null;
             this.tableAdapterManager.PantallaSerieTableAdapter = null;
-            this.tableAdapterManager.PantallaTableAdapter = null;
             this.tableAdapterManager.ParlanteInventarioTableAdapter = null;
             this.tableAdapterManager.ParlanteMarcaTableAdapter = null;
             this.tableAdapterManager.ParlanteModeloTableAdapter = null;
             this.tableAdapterManager.ParlanteSerieTableAdapter = null;
-            this.tableAdapterManager.ParlanteTableAdapter = null;
+           // this.tableAdapterManager.ParlanteTableAdapter = null;
             this.tableAdapterManager.PropietarioTableAdapter = null;
             this.tableAdapterManager.ProyectorInventarioEspolTechTableAdapter = null;
             this.tableAdapterManager.ProyectorInventarioTableAdapter = null;
             this.tableAdapterManager.ProyectorMarcaTableAdapter = null;
             this.tableAdapterManager.ProyectorModeloTableAdapter = null;
             this.tableAdapterManager.ProyectorSerieTableAdapter = null;
-            this.tableAdapterManager.ProyectorTableAdapter = null;
+            //this.tableAdapterManager.ProyectorTableAdapter = null;
             this.tableAdapterManager.RadioInventarioTableAdapter = null;
             this.tableAdapterManager.RadioMarcaTableAdapter = null;
             this.tableAdapterManager.RadioModeloTableAdapter = null;
@@ -631,13 +630,13 @@ namespace sistemaFCNM.Vistas
             this.tableAdapterManager.ReguladorMarcaTableAdapter = null;
             this.tableAdapterManager.ReguladorModeloTableAdapter = null;
             this.tableAdapterManager.ReguladorSerieTableAdapter = null;
-            this.tableAdapterManager.ReguladorTableAdapter = null;
+            //this.tableAdapterManager.ReguladorTableAdapter = null;
             this.tableAdapterManager.ReguladorTipoTableAdapter = null;
             this.tableAdapterManager.TecladoInventarioTableAdapter = null;
             this.tableAdapterManager.TecladoMarcaTableAdapter = null;
             this.tableAdapterManager.TecladoModeloTableAdapter = null;
             this.tableAdapterManager.TecladoSerieTableAdapter = null;
-            this.tableAdapterManager.TecladoTableAdapter = null;
+           // this.tableAdapterManager.TecladoTableAdapter = null;
             this.tableAdapterManager.TelefonoExtensionTableAdapter = null;
             this.tableAdapterManager.TelefonoInventarioTableAdapter = null;
             this.tableAdapterManager.TelefonoMarcaTableAdapter = null;
@@ -773,8 +772,101 @@ namespace sistemaFCNM.Vistas
             this.cpuBindingNavigatorSaveItem.Text = "Guardar datos";
             this.cpuBindingNavigatorSaveItem.Click += new System.EventHandler(this.cpuBindingNavigatorSaveItem_Click_1);
             // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Estado";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Serie";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Serie";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Marca";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Marca";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "AdicionalLote";
+            this.dataGridViewTextBoxColumn11.HeaderText = "AdicionalLote";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Disco";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Disco";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Memoria";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Memoria";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Procesador";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Procesador";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Code";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Code";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Tag";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Tag";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Perfil";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Perfil";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "TipoPC";
+            this.dataGridViewTextBoxColumn4.HeaderText = "TipoPC";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NombrePC";
+            this.dataGridViewTextBoxColumn3.HeaderText = "NombrePC";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Inventario";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Inventario";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
             // gridCpu
             // 
+            this.gridCpu.AllowUserToAddRows = false;
+            this.gridCpu.AllowUserToDeleteRows = false;
             this.gridCpu.AutoGenerateColumns = false;
             this.gridCpu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCpu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -792,88 +884,12 @@ namespace sistemaFCNM.Vistas
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.gridCpu.DataSource = this.cpuBindingSource;
-            this.gridCpu.Location = new System.Drawing.Point(12, 453);
+            this.gridCpu.Location = new System.Drawing.Point(24, 345);
             this.gridCpu.Name = "gridCpu";
+            this.gridCpu.ReadOnly = true;
             this.gridCpu.Size = new System.Drawing.Size(1039, 220);
             this.gridCpu.TabIndex = 127;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Inventario";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Inventario";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NombrePC";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NombrePC";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "TipoPC";
-            this.dataGridViewTextBoxColumn4.HeaderText = "TipoPC";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Perfil";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Perfil";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Tag";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Tag";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Code";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Code";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Procesador";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Procesador";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Memoria";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Memoria";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Disco";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Disco";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "AdicionalLote";
-            this.dataGridViewTextBoxColumn11.HeaderText = "AdicionalLote";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Marca";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Marca";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Serie";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Serie";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Estado";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Estado";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.gridCpu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCpu_CellContentClick);
             // 
             // CPU
             // 
@@ -970,20 +986,20 @@ namespace sistemaFCNM.Vistas
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton cpuBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView gridCpu;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridView gridCpu;
     }
 }

@@ -13,12 +13,7 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Proyector : Form
     {
-        private string invEspolTech;
-        private string estado;
-        private string marca;
-        private string serie;
-        private string modelo;
-        private string inventario;
+       
         public Proyector()
         {
             InitializeComponent();
@@ -31,6 +26,7 @@ namespace sistemaFCNM.Vistas
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
+                this.proyectorTableAdapter.FillBy(this.sistemasFCNMDataSet.Proyector,FuncionesUtiles.ID_PROYECTOR);
             }
         }
         private void btnNext_Click(object sender, EventArgs e)

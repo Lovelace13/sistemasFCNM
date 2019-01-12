@@ -499,7 +499,7 @@ namespace sistemaFCNM.Clases
                 StreamReader objReader = new StreamReader(ruta);
 
                 string linea = "";
-                int i = 0;
+               
                 while (linea != null)
                 {
                     linea = objReader.ReadLine();

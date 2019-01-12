@@ -280,6 +280,14 @@ namespace sistemaFCNM
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
             FuncionesUtiles.INVENTARIO_EQUIPO = txtScanner.Text.Trim();
+            FuncionesUtiles.ID_CPU = int.Parse(""+ this.equipoTableAdapter.getIdCpu(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.ID_PANTALLA = int.Parse("" + this.equipoTableAdapter.getIdPantalla(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.ID_MOUSE = int.Parse("" + this.equipoTableAdapter.getIdMouse(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.ID_TECLADO = int.Parse("" + this.equipoTableAdapter.getIdTeclado(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.ID_PARLANTE = int.Parse("" + this.equipoTableAdapter.getIdParlante(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.ID_REGULADOR = int.Parse("" + this.equipoTableAdapter.getIdRegulador(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.ID_IMPRESORA = int.Parse("" + this.equipoTableAdapter.getIdImpresora(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.ID_PROYECTOR = int.Parse("" + this.equipoTableAdapter.getIdProyector(FuncionesUtiles.INVENTARIO_EQUIPO));
             limpiarTxtandWait();
         }
     }
