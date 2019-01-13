@@ -13,12 +13,7 @@ namespace sistemaFCNM.Vistas
 {
     public partial class PProyeccion : Form
     {
-        private string dimensiones;
-        private string estado;
-        private string marca;
-        private string serie;
-        private string modelo;
-        private string inventario;
+       
         public PProyeccion()
         {
             InitializeComponent();
@@ -31,6 +26,7 @@ namespace sistemaFCNM.Vistas
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
+                this.pantallaProyeccionTableAdapter.FillBy(this.sistemasFCNMDataSet.PantallaProyeccion, FuncionesUtiles.ID_PANTALLAPROY);
             }
           
         }
@@ -135,37 +131,7 @@ namespace sistemaFCNM.Vistas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            ventanaNuevoRegistro registro;
-            switch (FuncionesUtiles.ventanaDialogo())
-            {
-                case "Yes":
-
-                    guardar();
-                    this.Close();
-                    registro = new ventanaNuevoRegistro();
-                    registro.Show();
-                    FuncionesUtiles.form1.Visible = false;
-                    FuncionesUtiles.siguienteActiva = true;
-                    FuncionesUtiles.desactivarMenu();
-                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
-                    return;
-
-                case "No":
-                    this.Close();
-                    registro = new ventanaNuevoRegistro();
-                    registro.Show();
-                    FuncionesUtiles.form1.Visible = false;
-                    FuncionesUtiles.siguienteActiva = true;
-                    FuncionesUtiles.desactivarMenu();
-                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
-                    return;
-
-                case "Cancel":
-                    return;
-
-                default:
-                    return;
-            }
+           
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

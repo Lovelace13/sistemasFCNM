@@ -347,7 +347,7 @@
             this.tableAdapterManager.MicrofonoInventarioTableAdapter = null;
             this.tableAdapterManager.MicrofonoMarcaTableAdapter = null;
             this.tableAdapterManager.MicrofonoSerieTableAdapter = null;
-            this.tableAdapterManager.MicrofonoTableAdapter = null;
+           // this.tableAdapterManager.MicrofonoTableAdapter = null;
             this.tableAdapterManager.MicrofonoTipoTableAdapter = null;
             this.tableAdapterManager.MouseInventarioTableAdapter = null;
             this.tableAdapterManager.MouseMarcaTableAdapter = null;
@@ -364,7 +364,7 @@
             this.tableAdapterManager.PantallaProyeccionMarcaTableAdapter = null;
             this.tableAdapterManager.PantallaProyeccionModeloTableAdapter = null;
             this.tableAdapterManager.PantallaProyeccionSerieTableAdapter = null;
-            this.tableAdapterManager.PantallaProyeccionTableAdapter = null;
+            //this.tableAdapterManager.PantallaProyeccionTableAdapter = null;
             this.tableAdapterManager.PantallaPulgadasTableAdapter = null;
             this.tableAdapterManager.PantallaSerieTableAdapter = null;
             this.tableAdapterManager.ParlanteInventarioTableAdapter = null;
@@ -383,7 +383,7 @@
             this.tableAdapterManager.RadioMarcaTableAdapter = null;
             this.tableAdapterManager.RadioModeloTableAdapter = null;
             this.tableAdapterManager.RadioSerieTableAdapter = null;
-            this.tableAdapterManager.RadioTableAdapter = null;
+            //this.tableAdapterManager.RadioTableAdapter = null;
             this.tableAdapterManager.ReguladorInventarioTableAdapter = null;
             this.tableAdapterManager.ReguladorMarcaTableAdapter = null;
             this.tableAdapterManager.ReguladorModeloTableAdapter = null;
@@ -400,7 +400,7 @@
             this.tableAdapterManager.TelefonoMarcaTableAdapter = null;
             this.tableAdapterManager.TelefonoModeloTableAdapter = null;
             this.tableAdapterManager.TelefonoSerieTableAdapter = null;
-            this.tableAdapterManager.TelefonoTableAdapter = null;
+            //this.tableAdapterManager.TelefonoTableAdapter = null;
             this.tableAdapterManager.TelefonoTipoTableAdapter = null;
             this.tableAdapterManager.TipoUsuarioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -670,7 +670,7 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton pantallaBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView gridPantalla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;

@@ -319,7 +319,6 @@
             this.tableAdapterManager.MicrofonoInventarioTableAdapter = null;
             this.tableAdapterManager.MicrofonoMarcaTableAdapter = null;
             this.tableAdapterManager.MicrofonoSerieTableAdapter = null;
-            this.tableAdapterManager.MicrofonoTableAdapter = null;
             this.tableAdapterManager.MicrofonoTipoTableAdapter = null;
             this.tableAdapterManager.MouseInventarioTableAdapter = null;
             this.tableAdapterManager.MouseMarcaTableAdapter = null;
@@ -335,7 +334,6 @@
             this.tableAdapterManager.PantallaProyeccionMarcaTableAdapter = null;
             this.tableAdapterManager.PantallaProyeccionModeloTableAdapter = null;
             this.tableAdapterManager.PantallaProyeccionSerieTableAdapter = null;
-            this.tableAdapterManager.PantallaProyeccionTableAdapter = null;
             this.tableAdapterManager.PantallaPulgadasTableAdapter = null;
             this.tableAdapterManager.PantallaSerieTableAdapter = null;
             this.tableAdapterManager.ParlanteInventarioTableAdapter = null;
@@ -348,12 +346,10 @@
             this.tableAdapterManager.ProyectorMarcaTableAdapter = null;
             this.tableAdapterManager.ProyectorModeloTableAdapter = null;
             this.tableAdapterManager.ProyectorSerieTableAdapter = null;
-            //this.tableAdapterManager.ProyectorTableAdapter = null;
             this.tableAdapterManager.RadioInventarioTableAdapter = null;
             this.tableAdapterManager.RadioMarcaTableAdapter = null;
             this.tableAdapterManager.RadioModeloTableAdapter = null;
             this.tableAdapterManager.RadioSerieTableAdapter = null;
-            this.tableAdapterManager.RadioTableAdapter = null;
             this.tableAdapterManager.ReguladorInventarioTableAdapter = null;
             this.tableAdapterManager.ReguladorMarcaTableAdapter = null;
             this.tableAdapterManager.ReguladorModeloTableAdapter = null;
@@ -368,7 +364,6 @@
             this.tableAdapterManager.TelefonoMarcaTableAdapter = null;
             this.tableAdapterManager.TelefonoModeloTableAdapter = null;
             this.tableAdapterManager.TelefonoSerieTableAdapter = null;
-            this.tableAdapterManager.TelefonoTableAdapter = null;
             this.tableAdapterManager.TelefonoTipoTableAdapter = null;
             this.tableAdapterManager.TipoUsuarioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -500,6 +495,8 @@
             // 
             // gridImpresora
             // 
+            this.gridImpresora.AllowUserToAddRows = false;
+            this.gridImpresora.AllowUserToDeleteRows = false;
             this.gridImpresora.AutoGenerateColumns = false;
             this.gridImpresora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridImpresora.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -511,6 +508,7 @@
             this.gridImpresora.DataSource = this.impresoraBindingSource;
             this.gridImpresora.Location = new System.Drawing.Point(281, 257);
             this.gridImpresora.Name = "gridImpresora";
+            this.gridImpresora.ReadOnly = true;
             this.gridImpresora.Size = new System.Drawing.Size(543, 220);
             this.gridImpresora.TabIndex = 131;
             // 
@@ -519,30 +517,35 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Inventario";
             this.dataGridViewTextBoxColumn2.HeaderText = "Inventario";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Marca";
             this.dataGridViewTextBoxColumn3.HeaderText = "Marca";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Modelo";
             this.dataGridViewTextBoxColumn4.HeaderText = "Modelo";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Serie";
             this.dataGridViewTextBoxColumn5.HeaderText = "Serie";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Estado";
             this.dataGridViewTextBoxColumn6.HeaderText = "Estado";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // Impresora
             // 
@@ -618,7 +621,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton impresoraBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView gridImpresora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;

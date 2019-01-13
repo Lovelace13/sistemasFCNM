@@ -87,12 +87,33 @@ namespace sistemaFCNM.Clases
                 return false;
                
             }
+            this.nombreUsuario = conexion.ValorUnico.ToString();
 
+            conexion.SQL = System.String.Format("SELECT TipoUsuario.Tipo FROM   Usuario INNER JOIN TipoUsuario ON Usuario.Tipo = TipoUsuario.ID where Usuario = '{0}' and clave = '{1}';", usuario, clave);
+            if (!conexion.ConsultarValorUnico(false))
+            {
+                mensaje = conexion.Error;
+                conexion.CerrarConexion();
+                return false;
+
+            }
+            if (conexion.ValorUnico == null)
+            {
+                mensaje = "No Existe Datos";
+                conexion.CerrarConexion();
+                return false;
+
+            }
+            this.tipoUsuario = conexion.ValorUnico.ToString(); 
             conexion.CerrarConexion();
-            this. nombreUsuario = conexion.ValorUnico.ToString();
+            
+            
+            
             return true;
            
         }
+
+        
 
     }
 }

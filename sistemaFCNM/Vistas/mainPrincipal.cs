@@ -94,7 +94,7 @@ namespace sistemaFCNM
             apagarBotones();
             FuncionesUtiles.siguienteActiva = true;
             FuncionesUtiles.abrirVentanas(new Equipos(), contenedor);
-            Form1 progres = new Form1();
+            BarraProgreso progres = new BarraProgreso();
             progres.Show();
             
         }
@@ -181,13 +181,24 @@ namespace sistemaFCNM
 
         }
 
-
-        private void btnCargarDocumento_Click(object sender, EventArgs e)
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Datos().crearListaObjetos();
-
+            Application.Exit();
         }
 
+        private void CerrarSesion_Click(object sender, EventArgs e)
+        {
+            login log = new login();
+            log.Show();
+            this.Close();
+            FuncionesUtiles.form1.Visible = false;
+            FuncionesUtiles.INVENTARIO_EQUIPO = "";
+        }
+
+        private void cargarDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Datos().crearListaObjetos();
+        }
     }
 }
 

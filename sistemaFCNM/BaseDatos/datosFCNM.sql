@@ -1,7 +1,7 @@
 
 DBCC CHECKIDENT (Inventario, RESEED, 0)
-select* FROM Oficina;
-delete from TipoUsuario
+select* FROM Usuario;
+delete from Usuario
 select Nombre from Usuario where  Usuario = '{0}' and clave = '{1}';
 
 INSERT INTO TipoUsuario(tipo)
@@ -18,7 +18,7 @@ INSERT INTO [dbo].[Usuario]
            ,[Nombre]
            ,[Clave])
      VALUES
-           ('jcbodero',1,'Julio Bodero','1234')
+           ('jfloresb',2,'JOSE FLORES','1234')
 GO
 
 

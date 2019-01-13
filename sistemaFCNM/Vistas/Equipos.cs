@@ -151,10 +151,7 @@ namespace sistemaFCNM
             FuncionesUtiles.abrirVentanas(new Vistas.Radio(), mainPrincipal.contenedor);
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -171,9 +168,7 @@ namespace sistemaFCNM
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            ventanaNuevoRegistro registro = new ventanaNuevoRegistro();
-            registro.Show();
-            this.Close();
+            
             FuncionesUtiles.form1.Visible = false;
             FuncionesUtiles.siguienteActiva = true;
 
@@ -192,21 +187,7 @@ namespace sistemaFCNM
 
 
 
-        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            login log = new login();
-            log.Show();
-            this.Close();
-            FuncionesUtiles.form1.Visible = false;
-            FuncionesUtiles.INVENTARIO_EQUIPO = "";
-
-
-        }
-
-        private void guardarMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
         private void Equipos_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Equipo' Puede moverla o quitarla según sea necesario.
@@ -288,7 +269,46 @@ namespace sistemaFCNM
             FuncionesUtiles.ID_REGULADOR = int.Parse("" + this.equipoTableAdapter.getIdRegulador(FuncionesUtiles.INVENTARIO_EQUIPO));
             FuncionesUtiles.ID_IMPRESORA = int.Parse("" + this.equipoTableAdapter.getIdImpresora(FuncionesUtiles.INVENTARIO_EQUIPO));
             FuncionesUtiles.ID_PROYECTOR = int.Parse("" + this.equipoTableAdapter.getIdProyector(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.ID_MICROFONO = int.Parse("" + this.equipoTableAdapter.getIdMicrofono(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.ID_TELEFONO = int.Parse("" + this.equipoTableAdapter.getIdTelefono(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.ID_PANTALLAPROY = int.Parse("" + this.equipoTableAdapter.getIdPantallaProyeccion(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.ID_RADIO = int.Parse("" + this.equipoTableAdapter.getIdRadio(FuncionesUtiles.INVENTARIO_EQUIPO));
             limpiarTxtandWait();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void equipoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.equipoTableAdapter.actualizarEquipo(txtEquipo.Text.Trim(),FuncionesUtiles.INVENTARIO_EQUIPO);
+        }
+
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            this.txtCpu.Enabled = true;
+            this.txtImpresora.Enabled = true;
+            this.txtMicrofono.Enabled = true;
+            this.txtMouse.Enabled = true;
+            this.txtOficina.Enabled = true;
+            this.txtPantalla.Enabled = true;
+            this.txtParlante.Enabled = true;
+            this.txtProyeccion.Enabled = true;
+            this.txtProyector.Enabled = true;
+            this.txtRadio.Enabled = true;
+            this.txtRegulador.Enabled = true;
+            this.txtTeclado.Enabled = true;
+            this.txtTelefono.Enabled = true;
+            this.txtResponsable.Enabled = true;
+
         }
     }
 }

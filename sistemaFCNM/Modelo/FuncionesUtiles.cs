@@ -18,6 +18,10 @@ namespace sistemaFCNM.Clases
         public static Int32 ID_REGULADOR;
         public static Int32 ID_IMPRESORA;
         public static Int32 ID_PROYECTOR;
+        public static Int32 ID_MICROFONO;
+        public static Int32 ID_TELEFONO;
+        public static Int32 ID_PANTALLAPROY;
+        public static Int32 ID_RADIO;
         public static string USUARIO;
         public static string OBSERVACION;
         public static bool nuevoRegistro = false;

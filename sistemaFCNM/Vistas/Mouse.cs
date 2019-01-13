@@ -131,15 +131,14 @@ namespace sistemaFCNM.Vistas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            ventanaNuevoRegistro registro;
+           
             switch (FuncionesUtiles.ventanaDialogo())
             {
                 case "Yes":
 
                     guardar();
                     this.Close();
-                    registro = new ventanaNuevoRegistro();
-                    registro.Show();
+                   
                     FuncionesUtiles.form1.Visible = false;
                     FuncionesUtiles.siguienteActiva = true;
                     FuncionesUtiles.desactivarMenu();
@@ -148,8 +147,7 @@ namespace sistemaFCNM.Vistas
 
                 case "No":
                     this.Close();
-                    registro = new ventanaNuevoRegistro();
-                    registro.Show();
+                   
                     FuncionesUtiles.form1.Visible = false;
                     FuncionesUtiles.siguienteActiva = true;
                     FuncionesUtiles.desactivarMenu();

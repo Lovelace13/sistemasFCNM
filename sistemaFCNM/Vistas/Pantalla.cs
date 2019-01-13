@@ -127,39 +127,7 @@ namespace sistemaFCNM.Vistas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            ventanaNuevoRegistro registro;
-            switch (FuncionesUtiles.ventanaDialogo())
-            {
-                case "Yes":
-
-                    guardar();
-                    this.Close();
-                    registro = new ventanaNuevoRegistro();
-                    registro.Show();
-                    FuncionesUtiles.form1.Visible = false;
-                    FuncionesUtiles.siguienteActiva = true;
-                    FuncionesUtiles.desactivarMenu();
-                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
-
-                    return;
-
-                case "No":
-                    this.Close();
-                    registro = new ventanaNuevoRegistro();
-                    registro.Show();
-                    FuncionesUtiles.form1.Visible = false;
-                    FuncionesUtiles.siguienteActiva = true;
-                    FuncionesUtiles.desactivarMenu();
-                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
-
-                    return;
-
-                case "Cancel":
-                    return;
-
-                default:
-                    return;
-            }
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

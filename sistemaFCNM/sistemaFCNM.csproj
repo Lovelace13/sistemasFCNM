@@ -130,11 +130,11 @@
     <Compile Include="Vistas\CPU.Designer.cs">
       <DependentUpon>CPU.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Form1.cs">
+    <Compile Include="Vistas\BarraProgreso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vistas\BarraProgreso.Designer.cs">
+      <DependentUpon>BarraProgreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Impresora.cs">
       <SubType>Form</SubType>
@@ -147,6 +147,12 @@
     </Compile>
     <Compile Include="Vistas\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\MenuAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\MenuAdministrador.Designer.cs">
+      <DependentUpon>MenuAdministrador.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Microfono.cs">
       <SubType>Form</SubType>
@@ -178,7 +184,7 @@
     <Compile Include="Vistas\PProyeccion.Designer.cs">
       <DependentUpon>PProyeccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\ProgressReport.cs" />
+    <Compile Include="Modelo\ProgressReport.cs" />
     <Compile Include="Vistas\Proyector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,23 +229,20 @@
     <Compile Include="Vistas\Telefono.Designer.cs">
       <DependentUpon>Telefono.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\ventanaNuevoRegistro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\ventanaNuevoRegistro.Designer.cs">
-      <DependentUpon>ventanaNuevoRegistro.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Vistas\CPU.resx">
       <DependentUpon>CPU.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\BarraProgreso.resx">
+      <DependentUpon>BarraProgreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Impresora.resx">
       <DependentUpon>Impresora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\MenuAdministrador.resx">
+      <DependentUpon>MenuAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Microfono.resx">
       <DependentUpon>Microfono.cs</DependentUpon>
@@ -281,9 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Telefono.resx">
       <DependentUpon>Telefono.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\ventanaNuevoRegistro.resx">
-      <DependentUpon>ventanaNuevoRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
@@ -485,6 +485,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descargar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DESCARGA.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

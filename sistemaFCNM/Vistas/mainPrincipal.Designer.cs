@@ -50,15 +50,6 @@
             this.btnCpu = new System.Windows.Forms.Button();
             this.btnScanner = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.FlowLayoutPanel();
-            this.butonPanel = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnNuevoInventarioEquipo = new System.Windows.Forms.Button();
-            this.btnCargarDocumento = new System.Windows.Forms.Button();
-            this.btnEliminarUsuario = new System.Windows.Forms.Button();
-            this.btnNuevoUsuario = new System.Windows.Forms.Button();
             this.menuSuperior = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +64,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panelCabecera.SuspendLayout();
             this.panelMenu.SuspendLayout();
-            this.butonPanel.SuspendLayout();
             this.menuSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,13 +118,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(561, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 19);
+            this.label1.Size = new System.Drawing.Size(129, 18);
             this.label1.TabIndex = 4;
-            this.label1.Text = "INVENTARIO";
+            this.label1.Text = "Inventario FCNM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnMaximizar
@@ -171,7 +161,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.DarkRed;
+            this.panelMenu.BackColor = System.Drawing.SystemColors.Highlight;
             this.panelMenu.Controls.Add(this.btnRadio);
             this.panelMenu.Controls.Add(this.btnPproyeccion);
             this.panelMenu.Controls.Add(this.btnTelefono);
@@ -188,9 +178,9 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMenu.ForeColor = System.Drawing.SystemColors.Window;
-            this.panelMenu.Location = new System.Drawing.Point(0, 24);
+            this.panelMenu.Location = new System.Drawing.Point(0, 48);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(71, 706);
+            this.panelMenu.Size = new System.Drawing.Size(75, 682);
             this.panelMenu.TabIndex = 0;
             // 
             // btnRadio
@@ -472,214 +462,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondo2;
             this.panelContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelContenedor.Location = new System.Drawing.Point(69, 46);
+            this.panelContenedor.Location = new System.Drawing.Point(71, 46);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1196, 684);
+            this.panelContenedor.Size = new System.Drawing.Size(1229, 684);
             this.panelContenedor.TabIndex = 4;
-            // 
-            // butonPanel
-            // 
-            this.butonPanel.BackColor = System.Drawing.Color.Silver;
-            this.butonPanel.Controls.Add(this.button4);
-            this.butonPanel.Controls.Add(this.button3);
-            this.butonPanel.Controls.Add(this.button2);
-            this.butonPanel.Controls.Add(this.button1);
-            this.butonPanel.Controls.Add(this.btnNuevoInventarioEquipo);
-            this.butonPanel.Controls.Add(this.btnCargarDocumento);
-            this.butonPanel.Controls.Add(this.btnEliminarUsuario);
-            this.butonPanel.Controls.Add(this.btnNuevoUsuario);
-            this.butonPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.butonPanel.Location = new System.Drawing.Point(1262, 24);
-            this.butonPanel.Name = "butonPanel";
-            this.butonPanel.Size = new System.Drawing.Size(38, 706);
-            this.butonPanel.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.AutoEllipsis = true;
-            this.button4.BackgroundImage = global::sistemaFCNM.Properties.Resources.Borrar2;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Window;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-2, 187);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(42, 31);
-            this.button4.TabIndex = 10;
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.AutoEllipsis = true;
-            this.button3.BackgroundImage = global::sistemaFCNM.Properties.Resources.Modificar1;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(-2, 224);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(42, 31);
-            this.button3.TabIndex = 9;
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.AutoEllipsis = true;
-            this.button2.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(-2, 261);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 31);
-            this.button2.TabIndex = 8;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.AutoEllipsis = true;
-            this.button1.BackgroundImage = global::sistemaFCNM.Properties.Resources.Guardar;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-2, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 31);
-            this.button1.TabIndex = 7;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevoInventarioEquipo
-            // 
-            this.btnNuevoInventarioEquipo.AutoEllipsis = true;
-            this.btnNuevoInventarioEquipo.BackgroundImage = global::sistemaFCNM.Properties.Resources.Nuevo;
-            this.btnNuevoInventarioEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNuevoInventarioEquipo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoInventarioEquipo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnNuevoInventarioEquipo.FlatAppearance.BorderSize = 0;
-            this.btnNuevoInventarioEquipo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnNuevoInventarioEquipo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.btnNuevoInventarioEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoInventarioEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoInventarioEquipo.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnNuevoInventarioEquipo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoInventarioEquipo.Location = new System.Drawing.Point(-2, 77);
-            this.btnNuevoInventarioEquipo.Name = "btnNuevoInventarioEquipo";
-            this.btnNuevoInventarioEquipo.Size = new System.Drawing.Size(40, 31);
-            this.btnNuevoInventarioEquipo.TabIndex = 6;
-            this.btnNuevoInventarioEquipo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNuevoInventarioEquipo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevoInventarioEquipo.UseVisualStyleBackColor = true;
-            // 
-            // btnCargarDocumento
-            // 
-            this.btnCargarDocumento.AutoEllipsis = true;
-            this.btnCargarDocumento.BackgroundImage = global::sistemaFCNM.Properties.Resources.subirDocumento;
-            this.btnCargarDocumento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCargarDocumento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCargarDocumento.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCargarDocumento.FlatAppearance.BorderSize = 0;
-            this.btnCargarDocumento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnCargarDocumento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.btnCargarDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargarDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarDocumento.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCargarDocumento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargarDocumento.Location = new System.Drawing.Point(-2, 114);
-            this.btnCargarDocumento.Name = "btnCargarDocumento";
-            this.btnCargarDocumento.Size = new System.Drawing.Size(40, 31);
-            this.btnCargarDocumento.TabIndex = 5;
-            this.btnCargarDocumento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCargarDocumento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCargarDocumento.UseVisualStyleBackColor = true;
-            this.btnCargarDocumento.Click += new System.EventHandler(this.btnCargarDocumento_Click);
-            // 
-            // btnEliminarUsuario
-            // 
-            this.btnEliminarUsuario.AutoEllipsis = true;
-            this.btnEliminarUsuario.BackgroundImage = global::sistemaFCNM.Properties.Resources.deleteUser;
-            this.btnEliminarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEliminarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarUsuario.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEliminarUsuario.FlatAppearance.BorderSize = 0;
-            this.btnEliminarUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnEliminarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.btnEliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarUsuario.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEliminarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(-2, 40);
-            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
-            this.btnEliminarUsuario.Size = new System.Drawing.Size(40, 31);
-            this.btnEliminarUsuario.TabIndex = 4;
-            this.btnEliminarUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEliminarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminarUsuario.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevoUsuario
-            // 
-            this.btnNuevoUsuario.AutoEllipsis = true;
-            this.btnNuevoUsuario.BackgroundImage = global::sistemaFCNM.Properties.Resources.newUser;
-            this.btnNuevoUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNuevoUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoUsuario.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnNuevoUsuario.FlatAppearance.BorderSize = 0;
-            this.btnNuevoUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnNuevoUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.btnNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoUsuario.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnNuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoUsuario.Location = new System.Drawing.Point(-2, 0);
-            this.btnNuevoUsuario.Name = "btnNuevoUsuario";
-            this.btnNuevoUsuario.Size = new System.Drawing.Size(40, 34);
-            this.btnNuevoUsuario.TabIndex = 3;
-            this.btnNuevoUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNuevoUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevoUsuario.UseVisualStyleBackColor = true;
             // 
             // menuSuperior
             // 
+            this.menuSuperior.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.ayudaToolStripMenuItem});
-            this.menuSuperior.Location = new System.Drawing.Point(71, 24);
+            this.menuSuperior.Location = new System.Drawing.Point(0, 24);
             this.menuSuperior.Name = "menuSuperior";
             this.menuSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuSuperior.Size = new System.Drawing.Size(1191, 24);
+            this.menuSuperior.Size = new System.Drawing.Size(1300, 24);
             this.menuSuperior.TabIndex = 68;
             this.menuSuperior.Text = "menuStrip1";
             // 
@@ -700,19 +497,21 @@
             // 
             this.guardarMenuItem.Name = "guardarMenuItem";
             this.guardarMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.guardarMenuItem.Text = "Guardar";
+            this.guardarMenuItem.Text = "Crear Equipo";
             // 
             // cargarDocumentoToolStripMenuItem
             // 
             this.cargarDocumentoToolStripMenuItem.Name = "cargarDocumentoToolStripMenuItem";
             this.cargarDocumentoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.cargarDocumentoToolStripMenuItem.Text = "Cargar Documento";
+            this.cargarDocumentoToolStripMenuItem.Click += new System.EventHandler(this.cargarDocumentoToolStripMenuItem_Click);
             // 
             // CerrarSesion
             // 
             this.CerrarSesion.Name = "CerrarSesion";
             this.CerrarSesion.Size = new System.Drawing.Size(175, 22);
             this.CerrarSesion.Text = "Cerrar Sesion";
+            this.CerrarSesion.Click += new System.EventHandler(this.CerrarSesion_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -724,6 +523,7 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -766,11 +566,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1300, 730);
             this.ControlBox = false;
-            this.Controls.Add(this.menuSuperior);
-            this.Controls.Add(this.butonPanel);
-            this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.menuSuperior);
             this.Controls.Add(this.panelCabecera);
+            this.Controls.Add(this.panelContenedor);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -783,7 +582,6 @@
             this.panelCabecera.ResumeLayout(false);
             this.panelCabecera.PerformLayout();
             this.panelMenu.ResumeLayout(false);
-            this.butonPanel.ResumeLayout(false);
             this.menuSuperior.ResumeLayout(false);
             this.menuSuperior.PerformLayout();
             this.ResumeLayout(false);
@@ -813,49 +611,11 @@
         private System.Windows.Forms.Button btnTelefono;
         private System.Windows.Forms.Button btnMicro;
         private System.Windows.Forms.FlowLayoutPanel panelContenedor;
-        private System.Windows.Forms.Panel butonPanel;
-        private System.Windows.Forms.Button btnNuevoUsuario;
-        private System.Windows.Forms.Button btnCargarDocumento;
-        private System.Windows.Forms.Button btnEliminarUsuario;
-        private System.Windows.Forms.Button btnNuevoInventarioEquipo;
 
 
         public void botonesAdministracion()
         {
-            // btnNuevoInventarioEquipo
-            // 
-            this.btnNuevoInventarioEquipo.AutoEllipsis = true;
-            this.btnNuevoInventarioEquipo.BackgroundImage = global::sistemaFCNM.Properties.Resources.nuevoDocumento;
-            this.btnNuevoInventarioEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNuevoInventarioEquipo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoInventarioEquipo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnNuevoInventarioEquipo.FlatAppearance.BorderSize = 0;
-            this.btnNuevoInventarioEquipo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnNuevoInventarioEquipo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.btnNuevoInventarioEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoInventarioEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoInventarioEquipo.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnNuevoInventarioEquipo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoInventarioEquipo.Location = new System.Drawing.Point(671, 12);
-            this.btnNuevoInventarioEquipo.Name = "btnNuevoInventarioEquipo";
-            this.btnNuevoInventarioEquipo.Size = new System.Drawing.Size(89, 83);
-            this.btnNuevoInventarioEquipo.TabIndex = 6;
-            this.btnNuevoInventarioEquipo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNuevoInventarioEquipo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevoInventarioEquipo.UseVisualStyleBackColor = true;
-            // 
-            //butonPanel
-            this.butonPanel.BackColor = System.Drawing.Color.Transparent;
-            this.butonPanel.Controls.Add(this.btnNuevoInventarioEquipo);
-            this.butonPanel.Controls.Add(this.btnCargarDocumento);
-            this.butonPanel.Controls.Add(this.btnEliminarUsuario);
-            this.butonPanel.Controls.Add(this.btnNuevoUsuario);
-            this.butonPanel.Location = new System.Drawing.Point(3, 3);
-            this.butonPanel.Name = "butonPanel";
-            this.butonPanel.Size = new System.Drawing.Size(1065, 109);
-            this.butonPanel.TabIndex = 0;
-
-            this.panelContenedor.Controls.Add(this.butonPanel);
+            
         }
 
         private System.Windows.Forms.MenuStrip menuSuperior;
@@ -870,10 +630,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.Button btnRestaurar;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

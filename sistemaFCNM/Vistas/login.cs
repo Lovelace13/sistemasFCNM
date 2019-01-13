@@ -50,11 +50,22 @@ namespace sistemaFCNM.Vistas
             
             if (user.ValidarUsuario(txtUsuario.Text, txtClave.Text))
             {
-                MessageBox.Show("BIENVENIDO " + user.NombreUsuario);
-                this.Visible = false;
-                FuncionesUtiles.USUARIO = user.IdUsuario;
-                FuncionesUtiles.form1 = new mainPrincipal();
-                FuncionesUtiles.form1.Show();
+                if(user.TipoUsuario == "AYUDANTE")
+                {
+                    MessageBox.Show("BIENVENIDO " + user.NombreUsuario);
+                    this.Visible = false;
+                    FuncionesUtiles.USUARIO = user.IdUsuario;
+                    FuncionesUtiles.form1 = new mainPrincipal();
+                    FuncionesUtiles.form1.Show();
+                }
+                else if(user.TipoUsuario == "ADMINISTRADOR")
+                {
+                    MenuAdministrador admin = new MenuAdministrador();
+                    this.Visible = false;
+                    FuncionesUtiles.USUARIO = user.NombreUsuario;
+                    admin.Show();
+                }
+                
                 
             }
 

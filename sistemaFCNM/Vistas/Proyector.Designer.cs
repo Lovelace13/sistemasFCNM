@@ -53,22 +53,20 @@
             this.proyectorTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.ProyectorTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
             this.proyectorBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.proyectorBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.gridProyector = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -315,6 +313,7 @@
             // 
             this.tableAdapterManager.AreaOficinaTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.CpuAdicionalLoteTableAdapter = null;
             this.tableAdapterManager.CpuCodeTableAdapter = null;
             this.tableAdapterManager.CpuDiscoTableAdapter = null;
@@ -335,18 +334,15 @@
             this.tableAdapterManager.ImpresoraMarcaTableAdapter = null;
             this.tableAdapterManager.ImpresoraModeloTableAdapter = null;
             this.tableAdapterManager.ImpresoraSerieTableAdapter = null;
-            //this.tableAdapterManager.ImpresoraTableAdapter = null;
             this.tableAdapterManager.InventarioTableAdapter = null;
             this.tableAdapterManager.MicrofonoInventarioTableAdapter = null;
             this.tableAdapterManager.MicrofonoMarcaTableAdapter = null;
             this.tableAdapterManager.MicrofonoSerieTableAdapter = null;
-            this.tableAdapterManager.MicrofonoTableAdapter = null;
             this.tableAdapterManager.MicrofonoTipoTableAdapter = null;
             this.tableAdapterManager.MouseInventarioTableAdapter = null;
             this.tableAdapterManager.MouseMarcaTableAdapter = null;
             this.tableAdapterManager.MouseModeloTableAdapter = null;
             this.tableAdapterManager.MouseSerieTableAdapter = null;
-            //this.tableAdapterManager.MouseTableAdapter = null;
             this.tableAdapterManager.NombreOficinaTableAdapter = null;
             this.tableAdapterManager.OficinaTableAdapter = null;
             this.tableAdapterManager.PantallaInventarioTableAdapter = null;
@@ -357,44 +353,36 @@
             this.tableAdapterManager.PantallaProyeccionMarcaTableAdapter = null;
             this.tableAdapterManager.PantallaProyeccionModeloTableAdapter = null;
             this.tableAdapterManager.PantallaProyeccionSerieTableAdapter = null;
-            this.tableAdapterManager.PantallaProyeccionTableAdapter = null;
             this.tableAdapterManager.PantallaPulgadasTableAdapter = null;
             this.tableAdapterManager.PantallaSerieTableAdapter = null;
-            //this.tableAdapterManager.PantallaTableAdapter = null;
             this.tableAdapterManager.ParlanteInventarioTableAdapter = null;
             this.tableAdapterManager.ParlanteMarcaTableAdapter = null;
             this.tableAdapterManager.ParlanteModeloTableAdapter = null;
             this.tableAdapterManager.ParlanteSerieTableAdapter = null;
-            //this.tableAdapterManager.ParlanteTableAdapter = null;
             this.tableAdapterManager.PropietarioTableAdapter = null;
             this.tableAdapterManager.ProyectorInventarioEspolTechTableAdapter = null;
             this.tableAdapterManager.ProyectorInventarioTableAdapter = null;
             this.tableAdapterManager.ProyectorMarcaTableAdapter = null;
             this.tableAdapterManager.ProyectorModeloTableAdapter = null;
             this.tableAdapterManager.ProyectorSerieTableAdapter = null;
-            //this.tableAdapterManager.ProyectorTableAdapter = this.proyectorTableAdapter;
             this.tableAdapterManager.RadioInventarioTableAdapter = null;
             this.tableAdapterManager.RadioMarcaTableAdapter = null;
             this.tableAdapterManager.RadioModeloTableAdapter = null;
             this.tableAdapterManager.RadioSerieTableAdapter = null;
-            this.tableAdapterManager.RadioTableAdapter = null;
             this.tableAdapterManager.ReguladorInventarioTableAdapter = null;
             this.tableAdapterManager.ReguladorMarcaTableAdapter = null;
             this.tableAdapterManager.ReguladorModeloTableAdapter = null;
             this.tableAdapterManager.ReguladorSerieTableAdapter = null;
-            //this.tableAdapterManager.ReguladorTableAdapter = null;
             this.tableAdapterManager.ReguladorTipoTableAdapter = null;
             this.tableAdapterManager.TecladoInventarioTableAdapter = null;
             this.tableAdapterManager.TecladoMarcaTableAdapter = null;
             this.tableAdapterManager.TecladoModeloTableAdapter = null;
             this.tableAdapterManager.TecladoSerieTableAdapter = null;
-            //this.tableAdapterManager.TecladoTableAdapter = null;
             this.tableAdapterManager.TelefonoExtensionTableAdapter = null;
             this.tableAdapterManager.TelefonoInventarioTableAdapter = null;
             this.tableAdapterManager.TelefonoMarcaTableAdapter = null;
             this.tableAdapterManager.TelefonoModeloTableAdapter = null;
             this.tableAdapterManager.TelefonoSerieTableAdapter = null;
-            this.tableAdapterManager.TelefonoTableAdapter = null;
             this.tableAdapterManager.TelefonoTipoTableAdapter = null;
             this.tableAdapterManager.TipoUsuarioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -430,6 +418,31 @@
             this.proyectorBindingNavigator.TabIndex = 156;
             this.proyectorBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -462,16 +475,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -494,26 +500,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // proyectorBindingNavigatorSaveItem
             // 
@@ -526,64 +514,57 @@
             // 
             // gridProyector
             // 
+            this.gridProyector.AllowUserToAddRows = false;
+            this.gridProyector.AllowUserToDeleteRows = false;
             this.gridProyector.AutoGenerateColumns = false;
             this.gridProyector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProyector.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.gridProyector.DataSource = this.proyectorBindingSource;
-            this.gridProyector.Location = new System.Drawing.Point(147, 270);
+            this.gridProyector.Location = new System.Drawing.Point(266, 270);
             this.gridProyector.Name = "gridProyector";
-            this.gridProyector.Size = new System.Drawing.Size(740, 220);
+            this.gridProyector.ReadOnly = true;
+            this.gridProyector.Size = new System.Drawing.Size(543, 220);
             this.gridProyector.TabIndex = 156;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Inventario";
             this.dataGridViewTextBoxColumn2.HeaderText = "Inventario";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "InventarioEspoltech";
-            this.dataGridViewTextBoxColumn3.HeaderText = "InventarioEspoltech";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Marca";
             this.dataGridViewTextBoxColumn4.HeaderText = "Marca";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Modelo";
             this.dataGridViewTextBoxColumn5.HeaderText = "Modelo";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Serie";
             this.dataGridViewTextBoxColumn6.HeaderText = "Serie";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Estado";
             this.dataGridViewTextBoxColumn7.HeaderText = "Estado";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // Proyector
             // 
@@ -660,9 +641,9 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton proyectorBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView gridProyector;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;

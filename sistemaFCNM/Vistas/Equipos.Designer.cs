@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Equipos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtTeclado = new System.Windows.Forms.TextBox();
             this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
@@ -79,6 +82,8 @@
             this.lblCpu = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtResponsable = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.equipoTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.EquipoTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
@@ -96,12 +101,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.equipoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.gridInventario = new System.Windows.Forms.DataGridView();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,7 +113,12 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -129,11 +134,13 @@
             this.txtTeclado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTeclado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Teclado", true));
             this.txtTeclado.Enabled = false;
+            this.txtTeclado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTeclado.Location = new System.Drawing.Point(167, 75);
             this.txtTeclado.Multiline = true;
             this.txtTeclado.Name = "txtTeclado";
             this.txtTeclado.Size = new System.Drawing.Size(198, 19);
             this.txtTeclado.TabIndex = 5;
+            this.txtTeclado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // equipoBindingSource
             // 
@@ -161,11 +168,13 @@
             this.txtMouse.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMouse.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Mouse", true));
             this.txtMouse.Enabled = false;
+            this.txtMouse.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMouse.Location = new System.Drawing.Point(167, 103);
             this.txtMouse.Multiline = true;
             this.txtMouse.Name = "txtMouse";
             this.txtMouse.Size = new System.Drawing.Size(198, 19);
             this.txtMouse.TabIndex = 6;
+            this.txtMouse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblMouse
             // 
@@ -244,7 +253,7 @@
             this.txtOficina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtOficina.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtOficina.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "NombreOficina", true));
-            this.txtOficina.Location = new System.Drawing.Point(42, 84);
+            this.txtOficina.Location = new System.Drawing.Point(70, 84);
             this.txtOficina.Multiline = true;
             this.txtOficina.Name = "txtOficina";
             this.txtOficina.Size = new System.Drawing.Size(60, 27);
@@ -256,7 +265,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(55, 68);
+            this.label5.Location = new System.Drawing.Point(83, 68);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 29;
@@ -267,7 +276,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(43, 172);
+            this.label6.Location = new System.Drawing.Point(71, 172);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 31;
@@ -279,10 +288,11 @@
             this.txtAyudante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtAyudante.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAyudante.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Nombre", true));
-            this.txtAyudante.Location = new System.Drawing.Point(13, 190);
+            this.txtAyudante.Enabled = false;
+            this.txtAyudante.Location = new System.Drawing.Point(9, 190);
             this.txtAyudante.Multiline = true;
             this.txtAyudante.Name = "txtAyudante";
-            this.txtAyudante.Size = new System.Drawing.Size(89, 25);
+            this.txtAyudante.Size = new System.Drawing.Size(121, 25);
             this.txtAyudante.TabIndex = 30;
             this.txtAyudante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -381,11 +391,13 @@
             this.txtRegulador.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRegulador.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Regulador", true));
             this.txtRegulador.Enabled = false;
+            this.txtRegulador.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegulador.Location = new System.Drawing.Point(599, 19);
             this.txtRegulador.Multiline = true;
             this.txtRegulador.Name = "txtRegulador";
             this.txtRegulador.Size = new System.Drawing.Size(198, 19);
             this.txtRegulador.TabIndex = 36;
+            this.txtRegulador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtParlante
             // 
@@ -394,11 +406,13 @@
             this.txtParlante.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtParlante.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Parlante", true));
             this.txtParlante.Enabled = false;
+            this.txtParlante.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtParlante.Location = new System.Drawing.Point(599, 103);
             this.txtParlante.Multiline = true;
             this.txtParlante.Name = "txtParlante";
             this.txtParlante.Size = new System.Drawing.Size(198, 19);
             this.txtParlante.TabIndex = 39;
+            this.txtParlante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtImpresora
             // 
@@ -407,11 +421,13 @@
             this.txtImpresora.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtImpresora.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Impresora", true));
             this.txtImpresora.Enabled = false;
+            this.txtImpresora.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImpresora.Location = new System.Drawing.Point(599, 75);
             this.txtImpresora.Multiline = true;
             this.txtImpresora.Name = "txtImpresora";
             this.txtImpresora.Size = new System.Drawing.Size(198, 19);
             this.txtImpresora.TabIndex = 38;
+            this.txtImpresora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtProyector
             // 
@@ -420,11 +436,13 @@
             this.txtProyector.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProyector.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Proyector", true));
             this.txtProyector.Enabled = false;
+            this.txtProyector.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProyector.Location = new System.Drawing.Point(599, 47);
             this.txtProyector.Multiline = true;
             this.txtProyector.Name = "txtProyector";
             this.txtProyector.Size = new System.Drawing.Size(198, 19);
             this.txtProyector.TabIndex = 37;
+            this.txtProyector.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnDetalleTelef
             // 
@@ -448,11 +466,13 @@
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Telefono", true));
             this.txtTelefono.Enabled = false;
+            this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(599, 131);
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(198, 19);
             this.txtTelefono.TabIndex = 52;
+            this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -470,7 +490,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(60, 121);
+            this.label10.Location = new System.Drawing.Point(88, 121);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 58;
@@ -482,7 +502,7 @@
             this.txtFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFecha.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Fecha", true));
-            this.txtFecha.Location = new System.Drawing.Point(13, 137);
+            this.txtFecha.Location = new System.Drawing.Point(41, 137);
             this.txtFecha.Multiline = true;
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(89, 25);
@@ -496,11 +516,13 @@
             this.txtRadio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRadio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Radios", true));
             this.txtRadio.Enabled = false;
+            this.txtRadio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRadio.Location = new System.Drawing.Point(599, 159);
             this.txtRadio.Multiline = true;
             this.txtRadio.Name = "txtRadio";
             this.txtRadio.Size = new System.Drawing.Size(198, 19);
             this.txtRadio.TabIndex = 60;
+            this.txtRadio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
@@ -534,21 +556,21 @@
             this.txtEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEquipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Inventario", true));
             this.txtEquipo.Enabled = false;
-            this.txtEquipo.Location = new System.Drawing.Point(9, 41);
+            this.txtEquipo.Location = new System.Drawing.Point(18, 41);
             this.txtEquipo.Multiline = true;
             this.txtEquipo.Name = "txtEquipo";
-            this.txtEquipo.Size = new System.Drawing.Size(112, 19);
+            this.txtEquipo.Size = new System.Drawing.Size(112, 24);
             this.txtEquipo.TabIndex = 110;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 25);
+            this.label12.Location = new System.Drawing.Point(23, 25);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(46, 13);
+            this.label12.Size = new System.Drawing.Size(107, 13);
             this.label12.TabIndex = 111;
-            this.label12.Text = "Equipo";
+            this.label12.Text = "Inventario Equipo";
             // 
             // btnDetallePproyeccion
             // 
@@ -570,11 +592,13 @@
             this.txtProyeccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProyeccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "PantallaProyeccion", true));
             this.txtProyeccion.Enabled = false;
+            this.txtProyeccion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProyeccion.Location = new System.Drawing.Point(167, 159);
             this.txtProyeccion.Multiline = true;
             this.txtProyeccion.Name = "txtProyeccion";
             this.txtProyeccion.Size = new System.Drawing.Size(198, 19);
             this.txtProyeccion.TabIndex = 128;
+            this.txtProyeccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -606,11 +630,13 @@
             this.txtMicrofono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMicrofono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Microfono", true));
             this.txtMicrofono.Enabled = false;
+            this.txtMicrofono.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMicrofono.Location = new System.Drawing.Point(167, 131);
             this.txtMicrofono.Multiline = true;
             this.txtMicrofono.Name = "txtMicrofono";
             this.txtMicrofono.Size = new System.Drawing.Size(198, 19);
             this.txtMicrofono.TabIndex = 125;
+            this.txtMicrofono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -656,11 +682,13 @@
             this.txtCpu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCpu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Cpu", true));
             this.txtCpu.Enabled = false;
+            this.txtCpu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpu.Location = new System.Drawing.Point(167, 19);
             this.txtCpu.Multiline = true;
             this.txtCpu.Name = "txtCpu";
             this.txtCpu.Size = new System.Drawing.Size(198, 19);
             this.txtCpu.TabIndex = 131;
+            this.txtCpu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPantalla
             // 
@@ -668,11 +696,13 @@
             this.txtPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPantalla.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Pantalla", true));
             this.txtPantalla.Enabled = false;
+            this.txtPantalla.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPantalla.Location = new System.Drawing.Point(167, 47);
             this.txtPantalla.Multiline = true;
             this.txtPantalla.Name = "txtPantalla";
             this.txtPantalla.Size = new System.Drawing.Size(198, 19);
             this.txtPantalla.TabIndex = 132;
+            this.txtPantalla.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblPantalla
             // 
@@ -743,6 +773,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.txtResponsable);
+            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.txtEquipo);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label10);
@@ -753,10 +785,34 @@
             this.groupBox2.Controls.Add(this.txtOficina);
             this.groupBox2.Location = new System.Drawing.Point(944, 34);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(113, 230);
+            this.groupBox2.Size = new System.Drawing.Size(141, 305);
             this.groupBox2.TabIndex = 138;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Inventario";
+            // 
+            // txtResponsable
+            // 
+            this.txtResponsable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResponsable.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Usuario", true));
+            this.txtResponsable.Enabled = false;
+            this.txtResponsable.Location = new System.Drawing.Point(10, 261);
+            this.txtResponsable.Multiline = true;
+            this.txtResponsable.Name = "txtResponsable";
+            this.txtResponsable.Size = new System.Drawing.Size(121, 25);
+            this.txtResponsable.TabIndex = 114;
+            this.txtResponsable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(50, 235);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 13);
+            this.label13.TabIndex = 113;
+            this.label13.Text = "Responsable";
             // 
             // panel1
             // 
@@ -797,18 +853,15 @@
             this.tableAdapterManager.ImpresoraMarcaTableAdapter = null;
             this.tableAdapterManager.ImpresoraModeloTableAdapter = null;
             this.tableAdapterManager.ImpresoraSerieTableAdapter = null;
-            //this.tableAdapterManager.ImpresoraTableAdapter = null;
             this.tableAdapterManager.InventarioTableAdapter = null;
             this.tableAdapterManager.MicrofonoInventarioTableAdapter = null;
             this.tableAdapterManager.MicrofonoMarcaTableAdapter = null;
             this.tableAdapterManager.MicrofonoSerieTableAdapter = null;
-            this.tableAdapterManager.MicrofonoTableAdapter = null;
             this.tableAdapterManager.MicrofonoTipoTableAdapter = null;
             this.tableAdapterManager.MouseInventarioTableAdapter = null;
             this.tableAdapterManager.MouseMarcaTableAdapter = null;
             this.tableAdapterManager.MouseModeloTableAdapter = null;
             this.tableAdapterManager.MouseSerieTableAdapter = null;
-            //this.tableAdapterManager.MouseTableAdapter = null;
             this.tableAdapterManager.NombreOficinaTableAdapter = null;
             this.tableAdapterManager.OficinaTableAdapter = null;
             this.tableAdapterManager.PantallaInventarioTableAdapter = null;
@@ -819,44 +872,36 @@
             this.tableAdapterManager.PantallaProyeccionMarcaTableAdapter = null;
             this.tableAdapterManager.PantallaProyeccionModeloTableAdapter = null;
             this.tableAdapterManager.PantallaProyeccionSerieTableAdapter = null;
-            this.tableAdapterManager.PantallaProyeccionTableAdapter = null;
             this.tableAdapterManager.PantallaPulgadasTableAdapter = null;
             this.tableAdapterManager.PantallaSerieTableAdapter = null;
-            //this.tableAdapterManager.PantallaTableAdapter = null;
             this.tableAdapterManager.ParlanteInventarioTableAdapter = null;
             this.tableAdapterManager.ParlanteMarcaTableAdapter = null;
             this.tableAdapterManager.ParlanteModeloTableAdapter = null;
             this.tableAdapterManager.ParlanteSerieTableAdapter = null;
-            //this.tableAdapterManager.ParlanteTableAdapter = null;
             this.tableAdapterManager.PropietarioTableAdapter = null;
             this.tableAdapterManager.ProyectorInventarioEspolTechTableAdapter = null;
             this.tableAdapterManager.ProyectorInventarioTableAdapter = null;
             this.tableAdapterManager.ProyectorMarcaTableAdapter = null;
             this.tableAdapterManager.ProyectorModeloTableAdapter = null;
             this.tableAdapterManager.ProyectorSerieTableAdapter = null;
-            //this.tableAdapterManager.ProyectorTableAdapter = null;
             this.tableAdapterManager.RadioInventarioTableAdapter = null;
             this.tableAdapterManager.RadioMarcaTableAdapter = null;
             this.tableAdapterManager.RadioModeloTableAdapter = null;
             this.tableAdapterManager.RadioSerieTableAdapter = null;
-            this.tableAdapterManager.RadioTableAdapter = null;
             this.tableAdapterManager.ReguladorInventarioTableAdapter = null;
             this.tableAdapterManager.ReguladorMarcaTableAdapter = null;
             this.tableAdapterManager.ReguladorModeloTableAdapter = null;
             this.tableAdapterManager.ReguladorSerieTableAdapter = null;
-            //this.tableAdapterManager.ReguladorTableAdapter = null;
             this.tableAdapterManager.ReguladorTipoTableAdapter = null;
             this.tableAdapterManager.TecladoInventarioTableAdapter = null;
             this.tableAdapterManager.TecladoMarcaTableAdapter = null;
             this.tableAdapterManager.TecladoModeloTableAdapter = null;
             this.tableAdapterManager.TecladoSerieTableAdapter = null;
-            //this.tableAdapterManager.TecladoTableAdapter = null;
             this.tableAdapterManager.TelefonoExtensionTableAdapter = null;
             this.tableAdapterManager.TelefonoInventarioTableAdapter = null;
             this.tableAdapterManager.TelefonoMarcaTableAdapter = null;
             this.tableAdapterManager.TelefonoModeloTableAdapter = null;
             this.tableAdapterManager.TelefonoSerieTableAdapter = null;
-            this.tableAdapterManager.TelefonoTableAdapter = null;
             this.tableAdapterManager.TelefonoTipoTableAdapter = null;
             this.tableAdapterManager.TipoUsuarioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -880,7 +925,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.equipoBindingNavigatorSaveItem});
+            this.equipoBindingNavigatorSaveItem,
+            this.btnEditar});
             this.equipoBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.equipoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.equipoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -895,11 +941,12 @@
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Image = global::sistemaFCNM.Properties.Resources.Nuevo;
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -911,11 +958,12 @@
             // bindingNavigatorDeleteItem
             // 
             this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Image = global::sistemaFCNM.Properties.Resources.Borrar2;
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -980,22 +1028,34 @@
             // equipoBindingNavigatorSaveItem
             // 
             this.equipoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.equipoBindingNavigatorSaveItem.Enabled = false;
-            this.equipoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("equipoBindingNavigatorSaveItem.Image")));
+            this.equipoBindingNavigatorSaveItem.Image = global::sistemaFCNM.Properties.Resources.Guardar;
             this.equipoBindingNavigatorSaveItem.Name = "equipoBindingNavigatorSaveItem";
             this.equipoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.equipoBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.equipoBindingNavigatorSaveItem.Click += new System.EventHandler(this.equipoBindingNavigatorSaveItem_Click);
             // 
             // gridInventario
             // 
             this.gridInventario.AllowUserToAddRows = false;
             this.gridInventario.AllowUserToDeleteRows = false;
             this.gridInventario.AutoGenerateColumns = false;
+            this.gridInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gridInventario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gridInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridInventario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.gridInventario.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.gridInventario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gridInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Usuario,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
@@ -1008,11 +1068,130 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.gridInventario.DataSource = this.equipoBindingSource;
-            this.gridInventario.Location = new System.Drawing.Point(115, 348);
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridInventario.DefaultCellStyle = dataGridViewCellStyle8;
+            this.gridInventario.EnableHeadersVisualStyles = false;
+            this.gridInventario.Location = new System.Drawing.Point(77, 345);
+            this.gridInventario.MultiSelect = false;
             this.gridInventario.Name = "gridInventario";
             this.gridInventario.ReadOnly = true;
-            this.gridInventario.Size = new System.Drawing.Size(1022, 265);
-            this.gridInventario.TabIndex = 140;
+            this.gridInventario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridInventario.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.gridInventario.RowHeadersVisible = false;
+            this.gridInventario.RowHeadersWidth = 9;
+            this.gridInventario.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.gridInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridInventario.Size = new System.Drawing.Size(1095, 265);
+            this.gridInventario.TabIndex = 130;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Cpu";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Cpu";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Impresora";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Impresora";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Microfono";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Microfono";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 97;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Mouse";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Mouse";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 73;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Pantalla";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Pantalla";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 86;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "PantallaProyeccion";
+            this.dataGridViewTextBoxColumn8.HeaderText = "PantallaProyeccion";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 157;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Radios";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Radios";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Proyector";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Proyector";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 93;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Regulador";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Regulador";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 99;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Telefono";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Telefono";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 86;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Teclado";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Teclado";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 83;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Parlante";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Parlante";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 86;
             // 
             // timer1
             // 
@@ -1020,9 +1199,13 @@
             // 
             // listView1
             // 
+            this.listView1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
-            this.listView1.Location = new System.Drawing.Point(1063, 40);
+            this.listView1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.listView1.Location = new System.Drawing.Point(1091, 40);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(119, 219);
             this.listView1.TabIndex = 141;
@@ -1032,106 +1215,8 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Inventario Pendiente";
+            this.columnHeader1.Text = "QR Inventario";
             this.columnHeader1.Width = 118;
-            // 
-            // Usuario
-            // 
-            this.Usuario.DataPropertyName = "Usuario";
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Cpu";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Cpu";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Inventario";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Inventario";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Impresora";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Impresora";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Microfono";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Microfono";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Mouse";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Mouse";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Pantalla";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Pantalla";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "PantallaProyeccion";
-            this.dataGridViewTextBoxColumn8.HeaderText = "PantallaProyeccion";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Radios";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Radios";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Proyector";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Proyector";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Regulador";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Regulador";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Telefono";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Telefono";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Teclado";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Teclado";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Parlante";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Parlante";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
             // progressBar1
             // 
@@ -1139,6 +1224,25 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(100, 23);
             this.progressBar1.TabIndex = 142;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditar.Image = global::sistemaFCNM.Properties.Resources.Modificar1;
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(23, 22);
+            this.btnEditar.Text = "Boton Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 23);
+            this.toolStripButton2.Text = "btnBuscar";
             // 
             // Equipos
             // 
@@ -1254,9 +1358,10 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.TextBox txtResponsable;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -1268,6 +1373,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }
