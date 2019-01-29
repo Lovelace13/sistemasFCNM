@@ -12,7 +12,7 @@ namespace sistemaFCNM.Controlador
         private static EquipoTableAdapter equipo = new EquipoTableAdapter();
         public static void buscarEquipo(string inventario)
         {
-            equipo.GetDataBy(inventario);
+            equipo.GetDataByData(inventario);
         }
     }
 }
