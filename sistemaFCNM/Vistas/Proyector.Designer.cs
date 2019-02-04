@@ -30,7 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Proyector));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtEspolTech = new System.Windows.Forms.TextBox();
+            this.proyectorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
@@ -48,8 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
-            this.proyectorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proyectorTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.ProyectorTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
             this.proyectorBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -66,15 +69,17 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.proyectorBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.gridProyector = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.espolTechDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proyectorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proyectorBindingNavigator)).BeginInit();
             this.proyectorBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProyector)).BeginInit();
@@ -84,6 +89,7 @@
             // 
             this.txtEspolTech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEspolTech.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEspolTech.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proyectorBindingSource, "EspolTech", true));
             this.txtEspolTech.Enabled = false;
             this.txtEspolTech.Location = new System.Drawing.Point(160, 123);
             this.txtEspolTech.Multiline = true;
@@ -92,10 +98,21 @@
             this.txtEspolTech.Size = new System.Drawing.Size(172, 31);
             this.txtEspolTech.TabIndex = 133;
             // 
+            // proyectorBindingSource
+            // 
+            this.proyectorBindingSource.DataMember = "Proyector";
+            this.proyectorBindingSource.DataSource = this.sistemasFCNMDataSet;
+            // 
+            // sistemasFCNMDataSet
+            // 
+            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
+            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtEstado
             // 
             this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proyectorBindingSource, "Estado", true));
             this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(162, 144);
             this.txtEstado.Multiline = true;
@@ -118,6 +135,7 @@
             // 
             this.txtSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSerie.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proyectorBindingSource, "Serie", true));
             this.txtSerie.Enabled = false;
             this.txtSerie.Location = new System.Drawing.Point(162, 101);
             this.txtSerie.Multiline = true;
@@ -140,6 +158,7 @@
             // 
             this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proyectorBindingSource, "Modelo", true));
             this.txtModelo.Enabled = false;
             this.txtModelo.Location = new System.Drawing.Point(162, 62);
             this.txtModelo.Multiline = true;
@@ -162,6 +181,7 @@
             // 
             this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proyectorBindingSource, "Marca", true));
             this.txtMarca.Enabled = false;
             this.txtMarca.Location = new System.Drawing.Point(162, 19);
             this.txtMarca.Multiline = true;
@@ -184,6 +204,7 @@
             // 
             this.txtProyector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtProyector.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProyector.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proyectorBindingSource, "Inventario", true));
             this.txtProyector.Enabled = false;
             this.txtProyector.Location = new System.Drawing.Point(160, 80);
             this.txtProyector.Multiline = true;
@@ -271,7 +292,7 @@
             this.groupBox1.Controls.Add(this.txtEspolTech);
             this.groupBox1.Controls.Add(this.txtProyector);
             this.groupBox1.Controls.Add(this.lblCpu);
-            this.groupBox1.Location = new System.Drawing.Point(91, 37);
+            this.groupBox1.Location = new System.Drawing.Point(85, 56);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(373, 227);
             this.groupBox1.TabIndex = 154;
@@ -288,22 +309,12 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtMarca);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Location = new System.Drawing.Point(553, 37);
+            this.groupBox2.Location = new System.Drawing.Point(556, 56);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(373, 227);
             this.groupBox2.TabIndex = 155;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Caracteristicas";
-            // 
-            // sistemasFCNMDataSet
-            // 
-            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
-            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // proyectorBindingSource
-            // 
-            this.proyectorBindingSource.DataMember = "Proyector";
-            this.proyectorBindingSource.DataSource = this.sistemasFCNMDataSet;
             // 
             // proyectorTableAdapter
             // 
@@ -517,54 +528,118 @@
             this.gridProyector.AllowUserToAddRows = false;
             this.gridProyector.AllowUserToDeleteRows = false;
             this.gridProyector.AutoGenerateColumns = false;
-            this.gridProyector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridProyector.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gridProyector.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gridProyector.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gridProyector.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridProyector.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.gridProyector.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.gridProyector.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProyector.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridProyector.ColumnHeadersHeight = 28;
+            this.gridProyector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridProyector.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
+            this.inventarioDataGridViewTextBoxColumn,
+            this.marcaDataGridViewTextBoxColumn,
+            this.modeloDataGridViewTextBoxColumn,
+            this.serieDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.espolTechDataGridViewTextBoxColumn});
             this.gridProyector.DataSource = this.proyectorBindingSource;
-            this.gridProyector.Location = new System.Drawing.Point(266, 270);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridProyector.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gridProyector.EnableHeadersVisualStyles = false;
+            this.gridProyector.Location = new System.Drawing.Point(236, 337);
+            this.gridProyector.MultiSelect = false;
             this.gridProyector.Name = "gridProyector";
             this.gridProyector.ReadOnly = true;
-            this.gridProyector.Size = new System.Drawing.Size(543, 220);
-            this.gridProyector.TabIndex = 156;
+            this.gridProyector.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProyector.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.gridProyector.RowHeadersVisible = false;
+            this.gridProyector.RowHeadersWidth = 15;
+            this.gridProyector.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gridProyector.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.gridProyector.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridProyector.Size = new System.Drawing.Size(607, 265);
+            this.gridProyector.TabIndex = 157;
             // 
-            // dataGridViewTextBoxColumn2
+            // inventarioDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Inventario";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Inventario";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.inventarioDataGridViewTextBoxColumn.DataPropertyName = "Inventario";
+            this.inventarioDataGridViewTextBoxColumn.HeaderText = "Inventario";
+            this.inventarioDataGridViewTextBoxColumn.Name = "inventarioDataGridViewTextBoxColumn";
+            this.inventarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.inventarioDataGridViewTextBoxColumn.Width = 97;
             // 
-            // dataGridViewTextBoxColumn4
+            // marcaDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Marca";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Marca";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            this.marcaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.marcaDataGridViewTextBoxColumn.Width = 75;
             // 
-            // dataGridViewTextBoxColumn5
+            // modeloDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Modelo";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Modelo";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
+            this.modeloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modeloDataGridViewTextBoxColumn.Width = 81;
             // 
-            // dataGridViewTextBoxColumn6
+            // serieDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Serie";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Serie";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.serieDataGridViewTextBoxColumn.DataPropertyName = "Serie";
+            this.serieDataGridViewTextBoxColumn.HeaderText = "Serie";
+            this.serieDataGridViewTextBoxColumn.Name = "serieDataGridViewTextBoxColumn";
+            this.serieDataGridViewTextBoxColumn.ReadOnly = true;
+            this.serieDataGridViewTextBoxColumn.Width = 64;
             // 
-            // dataGridViewTextBoxColumn7
+            // estadoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Estado";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Estado";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // espolTechDataGridViewTextBoxColumn
+            // 
+            this.espolTechDataGridViewTextBoxColumn.DataPropertyName = "EspolTech";
+            this.espolTechDataGridViewTextBoxColumn.HeaderText = "EspolTech";
+            this.espolTechDataGridViewTextBoxColumn.Name = "espolTechDataGridViewTextBoxColumn";
+            this.espolTechDataGridViewTextBoxColumn.ReadOnly = true;
+            this.espolTechDataGridViewTextBoxColumn.Width = 96;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::sistemaFCNM.Properties.Resources.espolLogo;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(943, 56);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(133, 125);
+            this.panel1.TabIndex = 158;
             // 
             // Proyector
             // 
@@ -574,6 +649,7 @@
             this.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondooo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 685);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridProyector);
             this.Controls.Add(this.proyectorBindingNavigator);
             this.Controls.Add(this.groupBox2);
@@ -588,12 +664,12 @@
             this.Text = "Proyector";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Proyector_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.proyectorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proyectorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proyectorBindingNavigator)).EndInit();
             this.proyectorBindingNavigator.ResumeLayout(false);
             this.proyectorBindingNavigator.PerformLayout();
@@ -641,12 +717,12 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton proyectorBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView gridProyector;
-        //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inventarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn espolTechDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel1;
     }
 }

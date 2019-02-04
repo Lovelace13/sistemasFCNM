@@ -7,7 +7,7 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="60" ViewPortY="60" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:AreaOficina" ZOrder="93" X="581" Y="11910" Height="115" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Cpu" ZOrder="1" X="325" Y="70" Height="324" Width="167" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:Cpu" ZOrder="3" X="325" Y="70" Height="324" Width="167" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:CpuAdicionalLote" ZOrder="92" X="562" Y="70" Height="115" Width="247" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:CpuCode" ZOrder="91" X="562" Y="255" Height="115" Width="197" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:CpuDisco" ZOrder="90" X="562" Y="440" Height="115" Width="199" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
@@ -21,8 +21,8 @@
     <Shape ID="DesignTable:CpuTag" ZOrder="82" X="562" Y="1920" Height="115" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:CpuTipo" ZOrder="81" X="562" Y="2105" Height="115" Width="193" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Edificio" ZOrder="80" X="581" Y="12095" Height="115" Width="187" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Equipo" ZOrder="2" X="70" Y="70" Height="381" Width="259" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:Estado" ZOrder="8" X="741" Y="2294" Height="115" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:Equipo" ZOrder="1" X="70" Y="70" Height="419" Width="259" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:Estado" ZOrder="9" X="741" Y="2294" Height="115" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:FechaInventario" ZOrder="78" X="599" Y="12892" Height="115" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Impresora" ZOrder="77" X="325" Y="2475" Height="191" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:ImpresoraInventario" ZOrder="76" X="598" Y="2475" Height="115" Width="263" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
@@ -30,23 +30,23 @@
     <Shape ID="DesignTable:ImpresoraModelo" ZOrder="74" X="598" Y="2845" Height="115" Width="248" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:ImpresoraSerie" ZOrder="73" X="598" Y="3030" Height="115" Width="232" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Inventario" ZOrder="72" X="325" Y="12650" Height="172" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:Microfono" ZOrder="5" X="325" Y="3215" Height="191" Width="205" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:Microfono" ZOrder="6" X="325" Y="3215" Height="191" Width="205" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:MicrofonoInventario" ZOrder="71" X="600" Y="3215" Height="115" Width="265" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:MicrofonoMarca" ZOrder="70" X="600" Y="3400" Height="115" Width="241" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:MicrofonoSerie" ZOrder="69" X="600" Y="3585" Height="115" Width="234" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:MicrofonoTipo" ZOrder="68" X="600" Y="3770" Height="115" Width="231" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Mouse" ZOrder="10" X="320" Y="442" Height="191" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:MouseInventario" ZOrder="9" X="517" Y="3955" Height="115" Width="243" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:Mouse" ZOrder="11" X="320" Y="442" Height="191" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:MouseInventario" ZOrder="10" X="517" Y="3955" Height="115" Width="243" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:MouseMarca" ZOrder="67" X="578" Y="4140" Height="115" Width="219" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:MouseModelo" ZOrder="66" X="578" Y="4325" Height="115" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:MouseSerie" ZOrder="65" X="578" Y="4510" Height="115" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:NombreOficina" ZOrder="64" X="581" Y="12280" Height="115" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Oficina" ZOrder="63" X="325" Y="11910" Height="153" Width="186" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
-    <Shape ID="DesignTable:Pantalla" ZOrder="11" X="325" Y="5620" Height="210" Width="191" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
+    <Shape ID="DesignTable:Pantalla" ZOrder="12" X="325" Y="5620" Height="210" Width="191" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:PantallaInventario" ZOrder="62" X="586" Y="5620" Height="115" Width="251" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:PantallaMarca" ZOrder="61" X="586" Y="5805" Height="115" Width="227" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:PantallaModelo" ZOrder="60" X="586" Y="5990" Height="115" Width="236" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:PantallaProyeccion" ZOrder="4" X="325" Y="4695" Height="210" Width="255" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
+    <Shape ID="DesignTable:PantallaProyeccion" ZOrder="5" X="325" Y="4695" Height="210" Width="255" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:PantallaProyeccionDimensiones" ZOrder="59" X="650" Y="4695" Height="115" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:PantallaProyeccionInventario" ZOrder="58" X="650" Y="4880" Height="115" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:PantallaProyeccionMarca" ZOrder="57" X="650" Y="5065" Height="115" Width="291" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
@@ -54,47 +54,47 @@
     <Shape ID="DesignTable:PantallaProyeccionSerie" ZOrder="55" X="650" Y="5435" Height="115" Width="284" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:PantallaPulgadas" ZOrder="54" X="586" Y="6175" Height="115" Width="244" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:PantallaSerie" ZOrder="53" X="586" Y="6360" Height="115" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Parlante" ZOrder="7" X="314" Y="6545" Height="191" Width="193" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:Parlante" ZOrder="8" X="314" Y="6545" Height="191" Width="193" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:ParlanteInventario" ZOrder="52" X="588" Y="6545" Height="115" Width="252" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:ParlanteMarca" ZOrder="51" X="588" Y="6730" Height="115" Width="229" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:ParlanteModelo" ZOrder="50" X="588" Y="6915" Height="115" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:ParlanteSerie" ZOrder="49" X="588" Y="7100" Height="115" Width="221" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Proyector" ZOrder="47" X="325" Y="7285" Height="210" Width="201" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
-    <Shape ID="DesignTable:ProyectorInventario" ZOrder="46" X="596" Y="7285" Height="115" Width="261" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:ProyectorInventarioEspolTech" ZOrder="45" X="596" Y="7470" Height="115" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:ProyectorMarca" ZOrder="44" X="596" Y="7655" Height="115" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:ProyectorModelo" ZOrder="43" X="596" Y="7840" Height="115" Width="246" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:ProyectorSerie" ZOrder="42" X="596" Y="8025" Height="115" Width="230" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Radio" ZOrder="41" X="325" Y="8210" Height="191" Width="178" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:RadioInventario" ZOrder="40" X="573" Y="8210" Height="115" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:RadioMarca" ZOrder="39" X="573" Y="8395" Height="115" Width="214" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:RadioModelo" ZOrder="38" X="573" Y="8580" Height="115" Width="223" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:RadioSerie" ZOrder="37" X="573" Y="8765" Height="115" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Regulador" ZOrder="6" X="325" Y="8950" Height="210" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:ReguladorInventario" ZOrder="36" X="599" Y="8950" Height="115" Width="264" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:ReguladorMarca" ZOrder="35" X="599" Y="9135" Height="115" Width="240" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:ReguladorModelo" ZOrder="34" X="599" Y="9320" Height="115" Width="249" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:ReguladorSerie" ZOrder="33" X="599" Y="9505" Height="115" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:ReguladorTipo" ZOrder="32" X="599" Y="9690" Height="115" Width="230" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Teclado" ZOrder="31" X="325" Y="9875" Height="191" Width="190" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:TecladoInventario" ZOrder="30" X="585" Y="9875" Height="115" Width="249" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:TecladoMarca" ZOrder="29" X="585" Y="10060" Height="115" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:TecladoModelo" ZOrder="28" X="585" Y="10245" Height="115" Width="234" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:TecladoSerie" ZOrder="27" X="585" Y="10430" Height="115" Width="218" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Telefono" ZOrder="26" X="325" Y="10615" Height="229" Width="196" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
-    <Shape ID="DesignTable:TelefonoExtension" ZOrder="25" X="591" Y="10615" Height="115" Width="252" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:TelefonoInventario" ZOrder="24" X="591" Y="10800" Height="115" Width="255" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:TelefonoMarca" ZOrder="23" X="591" Y="10985" Height="115" Width="232" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:TelefonoModelo" ZOrder="22" X="591" Y="11170" Height="115" Width="241" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:TelefonoSerie" ZOrder="21" X="591" Y="11355" Height="115" Width="225" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:TelefonoTipo" ZOrder="20" X="591" Y="11540" Height="115" Width="222" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:TipoUsuario" ZOrder="19" X="858" Y="12650" Height="115" Width="215" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Usuario" ZOrder="3" X="599" Y="12650" Height="172" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:Proyector" ZOrder="2" X="325" Y="7285" Height="210" Width="201" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
+    <Shape ID="DesignTable:ProyectorInventario" ZOrder="47" X="596" Y="7285" Height="115" Width="261" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:ProyectorInventarioEspolTech" ZOrder="46" X="596" Y="7470" Height="115" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:ProyectorMarca" ZOrder="45" X="596" Y="7655" Height="115" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:ProyectorModelo" ZOrder="44" X="596" Y="7840" Height="115" Width="246" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:ProyectorSerie" ZOrder="43" X="596" Y="8025" Height="115" Width="230" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:Radio" ZOrder="42" X="325" Y="8210" Height="191" Width="178" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:RadioInventario" ZOrder="41" X="573" Y="8210" Height="115" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:RadioMarca" ZOrder="40" X="573" Y="8395" Height="115" Width="214" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:RadioModelo" ZOrder="39" X="573" Y="8580" Height="115" Width="223" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:RadioSerie" ZOrder="38" X="573" Y="8765" Height="115" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:Regulador" ZOrder="7" X="325" Y="8950" Height="210" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
+    <Shape ID="DesignTable:ReguladorInventario" ZOrder="37" X="599" Y="8950" Height="115" Width="264" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:ReguladorMarca" ZOrder="36" X="599" Y="9135" Height="115" Width="240" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:ReguladorModelo" ZOrder="35" X="599" Y="9320" Height="115" Width="249" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:ReguladorSerie" ZOrder="34" X="599" Y="9505" Height="115" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:ReguladorTipo" ZOrder="33" X="599" Y="9690" Height="115" Width="230" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:Teclado" ZOrder="32" X="325" Y="9875" Height="191" Width="190" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:TecladoInventario" ZOrder="31" X="585" Y="9875" Height="115" Width="249" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:TecladoMarca" ZOrder="30" X="585" Y="10060" Height="115" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:TecladoModelo" ZOrder="29" X="585" Y="10245" Height="115" Width="234" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:TecladoSerie" ZOrder="28" X="585" Y="10430" Height="115" Width="218" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:Telefono" ZOrder="27" X="325" Y="10615" Height="229" Width="196" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
+    <Shape ID="DesignTable:TelefonoExtension" ZOrder="26" X="591" Y="10615" Height="115" Width="252" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:TelefonoInventario" ZOrder="25" X="591" Y="10800" Height="115" Width="255" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:TelefonoMarca" ZOrder="24" X="591" Y="10985" Height="115" Width="232" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:TelefonoModelo" ZOrder="23" X="591" Y="11170" Height="115" Width="241" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:TelefonoSerie" ZOrder="22" X="591" Y="11355" Height="115" Width="225" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:TelefonoTipo" ZOrder="21" X="591" Y="11540" Height="115" Width="222" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:TipoUsuario" ZOrder="20" X="858" Y="12650" Height="115" Width="215" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:Usuario" ZOrder="4" X="599" Y="12650" Height="172" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:EquipoInventario" ZOrder="79" X="325" Y="11725" Height="115" Width="244" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Propietario" ZOrder="48" X="325" Y="12465" Height="115" Width="210" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:FK__Inventari__Ayuda__0B5CAFEA" ZOrder="18" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Inventari__Ayuda__0B5CAFEA" ZOrder="19" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>599</X>
@@ -106,11 +106,11 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__Inventari__Equip__0C50D423" ZOrder="17" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Inventari__Equip__0C50D423" ZOrder="18" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>220</X>
-          <Y>451</Y>
+          <Y>489</Y>
         </Point>
         <Point>
           <X>220</X>
@@ -122,7 +122,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__Inventari__Fecha__0D44F85C" ZOrder="16" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Inventari__Fecha__0D44F85C" ZOrder="17" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>764</X>
@@ -138,7 +138,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__Oficina__Area__182C9B23" ZOrder="15" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Oficina__Area__182C9B23" ZOrder="16" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>581</X>
@@ -150,7 +150,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__Oficina__Edifici__164452B1" ZOrder="14" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Oficina__Edifici__164452B1" ZOrder="15" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>581</X>
@@ -166,7 +166,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__Oficina__NombreO__173876EA" ZOrder="13" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Oficina__NombreO__173876EA" ZOrder="14" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>756</X>
@@ -182,7 +182,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__Usuario__Tipo__1ED998B2" ZOrder="12" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Usuario__Tipo__1ED998B2" ZOrder="13" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>858</X>

@@ -30,7 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtEstado = new System.Windows.Forms.TextBox();
+            this.pantallaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -49,8 +54,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
-            this.pantallaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pantallaTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.PantallaTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
             this.pantallaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -67,16 +70,17 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.pantallaBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.gridPantalla = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pulgadasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pantallaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pantallaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pantallaBindingNavigator)).BeginInit();
             this.pantallaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPantalla)).BeginInit();
@@ -86,12 +90,23 @@
             // 
             this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Estado", true));
             this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(140, 148);
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(172, 31);
             this.txtEstado.TabIndex = 73;
+            // 
+            // pantallaBindingSource
+            // 
+            this.pantallaBindingSource.DataMember = "Pantalla";
+            this.pantallaBindingSource.DataSource = this.sistemasFCNMDataSet;
+            // 
+            // sistemasFCNMDataSet
+            // 
+            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
+            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label10
             // 
@@ -107,6 +122,7 @@
             // 
             this.txtSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSerie.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Serie", true));
             this.txtSerie.Enabled = false;
             this.txtSerie.Location = new System.Drawing.Point(140, 105);
             this.txtSerie.Multiline = true;
@@ -128,6 +144,7 @@
             // 
             this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Modelo", true));
             this.txtModelo.Enabled = false;
             this.txtModelo.Location = new System.Drawing.Point(140, 62);
             this.txtModelo.Multiline = true;
@@ -149,6 +166,7 @@
             // 
             this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Marca", true));
             this.txtMarca.Enabled = false;
             this.txtMarca.Location = new System.Drawing.Point(140, 19);
             this.txtMarca.Multiline = true;
@@ -170,6 +188,7 @@
             // 
             this.txtPulgadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPulgadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPulgadas.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Pulgadas", true));
             this.txtPulgadas.Enabled = false;
             this.txtPulgadas.Location = new System.Drawing.Point(150, 138);
             this.txtPulgadas.Multiline = true;
@@ -193,6 +212,7 @@
             // 
             this.txtPantalla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPantalla.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Inventario", true));
             this.txtPantalla.Enabled = false;
             this.txtPantalla.Location = new System.Drawing.Point(150, 87);
             this.txtPantalla.Multiline = true;
@@ -303,16 +323,6 @@
             this.panel1.Size = new System.Drawing.Size(133, 125);
             this.panel1.TabIndex = 154;
             // 
-            // sistemasFCNMDataSet
-            // 
-            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
-            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pantallaBindingSource
-            // 
-            this.pantallaBindingSource.DataMember = "Pantalla";
-            this.pantallaBindingSource.DataSource = this.sistemasFCNMDataSet;
-            // 
             // pantallaTableAdapter
             // 
             this.pantallaTableAdapter.ClearBeforeFill = true;
@@ -342,18 +352,15 @@
             this.tableAdapterManager.ImpresoraMarcaTableAdapter = null;
             this.tableAdapterManager.ImpresoraModeloTableAdapter = null;
             this.tableAdapterManager.ImpresoraSerieTableAdapter = null;
-            //this.tableAdapterManager.ImpresoraTableAdapter = null;
             this.tableAdapterManager.InventarioTableAdapter = null;
             this.tableAdapterManager.MicrofonoInventarioTableAdapter = null;
             this.tableAdapterManager.MicrofonoMarcaTableAdapter = null;
             this.tableAdapterManager.MicrofonoSerieTableAdapter = null;
-           // this.tableAdapterManager.MicrofonoTableAdapter = null;
             this.tableAdapterManager.MicrofonoTipoTableAdapter = null;
             this.tableAdapterManager.MouseInventarioTableAdapter = null;
             this.tableAdapterManager.MouseMarcaTableAdapter = null;
             this.tableAdapterManager.MouseModeloTableAdapter = null;
             this.tableAdapterManager.MouseSerieTableAdapter = null;
-            //this.tableAdapterManager.MouseTableAdapter = null;
             this.tableAdapterManager.NombreOficinaTableAdapter = null;
             this.tableAdapterManager.OficinaTableAdapter = null;
             this.tableAdapterManager.PantallaInventarioTableAdapter = null;
@@ -364,43 +371,36 @@
             this.tableAdapterManager.PantallaProyeccionMarcaTableAdapter = null;
             this.tableAdapterManager.PantallaProyeccionModeloTableAdapter = null;
             this.tableAdapterManager.PantallaProyeccionSerieTableAdapter = null;
-            //this.tableAdapterManager.PantallaProyeccionTableAdapter = null;
             this.tableAdapterManager.PantallaPulgadasTableAdapter = null;
             this.tableAdapterManager.PantallaSerieTableAdapter = null;
             this.tableAdapterManager.ParlanteInventarioTableAdapter = null;
             this.tableAdapterManager.ParlanteMarcaTableAdapter = null;
             this.tableAdapterManager.ParlanteModeloTableAdapter = null;
             this.tableAdapterManager.ParlanteSerieTableAdapter = null;
-            //this.tableAdapterManager.ParlanteTableAdapter = null;
             this.tableAdapterManager.PropietarioTableAdapter = null;
             this.tableAdapterManager.ProyectorInventarioEspolTechTableAdapter = null;
             this.tableAdapterManager.ProyectorInventarioTableAdapter = null;
             this.tableAdapterManager.ProyectorMarcaTableAdapter = null;
             this.tableAdapterManager.ProyectorModeloTableAdapter = null;
             this.tableAdapterManager.ProyectorSerieTableAdapter = null;
-            //this.tableAdapterManager.ProyectorTableAdapter = null;
             this.tableAdapterManager.RadioInventarioTableAdapter = null;
             this.tableAdapterManager.RadioMarcaTableAdapter = null;
             this.tableAdapterManager.RadioModeloTableAdapter = null;
             this.tableAdapterManager.RadioSerieTableAdapter = null;
-            //this.tableAdapterManager.RadioTableAdapter = null;
             this.tableAdapterManager.ReguladorInventarioTableAdapter = null;
             this.tableAdapterManager.ReguladorMarcaTableAdapter = null;
             this.tableAdapterManager.ReguladorModeloTableAdapter = null;
             this.tableAdapterManager.ReguladorSerieTableAdapter = null;
-            //this.tableAdapterManager.ReguladorTableAdapter = null;
             this.tableAdapterManager.ReguladorTipoTableAdapter = null;
             this.tableAdapterManager.TecladoInventarioTableAdapter = null;
             this.tableAdapterManager.TecladoMarcaTableAdapter = null;
             this.tableAdapterManager.TecladoModeloTableAdapter = null;
             this.tableAdapterManager.TecladoSerieTableAdapter = null;
-            //this.tableAdapterManager.TecladoTableAdapter = null;
             this.tableAdapterManager.TelefonoExtensionTableAdapter = null;
             this.tableAdapterManager.TelefonoInventarioTableAdapter = null;
             this.tableAdapterManager.TelefonoMarcaTableAdapter = null;
             this.tableAdapterManager.TelefonoModeloTableAdapter = null;
             this.tableAdapterManager.TelefonoSerieTableAdapter = null;
-            //this.tableAdapterManager.TelefonoTableAdapter = null;
             this.tableAdapterManager.TelefonoTipoTableAdapter = null;
             this.tableAdapterManager.TipoUsuarioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -424,7 +424,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.pantallaBindingNavigatorSaveItem});
+            this.pantallaBindingNavigatorSaveItem,
+            this.btnEditar});
             this.pantallaBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.pantallaBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.pantallaBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -535,62 +536,119 @@
             this.gridPantalla.AllowUserToAddRows = false;
             this.gridPantalla.AllowUserToDeleteRows = false;
             this.gridPantalla.AutoGenerateColumns = false;
-            this.gridPantalla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPantalla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gridPantalla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gridPantalla.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gridPantalla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridPantalla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.gridPantalla.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.gridPantalla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPantalla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridPantalla.ColumnHeadersHeight = 28;
+            this.gridPantalla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridPantalla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
+            this.estadoDataGridViewTextBoxColumn,
+            this.inventarioDataGridViewTextBoxColumn,
+            this.pulgadasDataGridViewTextBoxColumn,
+            this.marcaDataGridViewTextBoxColumn,
+            this.modeloDataGridViewTextBoxColumn,
+            this.serieDataGridViewTextBoxColumn});
             this.gridPantalla.DataSource = this.pantallaBindingSource;
-            this.gridPantalla.Location = new System.Drawing.Point(172, 309);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridPantalla.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gridPantalla.EnableHeadersVisualStyles = false;
+            this.gridPantalla.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.gridPantalla.Location = new System.Drawing.Point(146, 337);
+            this.gridPantalla.MultiSelect = false;
             this.gridPantalla.Name = "gridPantalla";
             this.gridPantalla.ReadOnly = true;
-            this.gridPantalla.Size = new System.Drawing.Size(645, 220);
-            this.gridPantalla.TabIndex = 155;
+            this.gridPantalla.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPantalla.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.gridPantalla.RowHeadersVisible = false;
+            this.gridPantalla.RowHeadersWidth = 15;
+            this.gridPantalla.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gridPantalla.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.gridPantalla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridPantalla.Size = new System.Drawing.Size(722, 265);
+            this.gridPantalla.TabIndex = 156;
             // 
-            // dataGridViewTextBoxColumn2
+            // estadoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Inventario";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Inventario";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Width = 75;
             // 
-            // dataGridViewTextBoxColumn3
+            // inventarioDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Pulgadas";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Pulgadas";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.inventarioDataGridViewTextBoxColumn.DataPropertyName = "Inventario";
+            this.inventarioDataGridViewTextBoxColumn.HeaderText = "Inventario";
+            this.inventarioDataGridViewTextBoxColumn.Name = "inventarioDataGridViewTextBoxColumn";
+            this.inventarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.inventarioDataGridViewTextBoxColumn.Width = 97;
             // 
-            // dataGridViewTextBoxColumn4
+            // pulgadasDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Marca";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Marca";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.pulgadasDataGridViewTextBoxColumn.DataPropertyName = "Pulgadas";
+            this.pulgadasDataGridViewTextBoxColumn.HeaderText = "Pulgadas";
+            this.pulgadasDataGridViewTextBoxColumn.Name = "pulgadasDataGridViewTextBoxColumn";
+            this.pulgadasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pulgadasDataGridViewTextBoxColumn.Width = 93;
             // 
-            // dataGridViewTextBoxColumn5
+            // marcaDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Modelo";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Modelo";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            this.marcaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.marcaDataGridViewTextBoxColumn.Width = 75;
             // 
-            // dataGridViewTextBoxColumn6
+            // modeloDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Serie";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Serie";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
+            this.modeloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modeloDataGridViewTextBoxColumn.Width = 81;
             // 
-            // dataGridViewTextBoxColumn7
+            // serieDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Estado";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Estado";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.serieDataGridViewTextBoxColumn.DataPropertyName = "Serie";
+            this.serieDataGridViewTextBoxColumn.HeaderText = "Serie";
+            this.serieDataGridViewTextBoxColumn.Name = "serieDataGridViewTextBoxColumn";
+            this.serieDataGridViewTextBoxColumn.ReadOnly = true;
+            this.serieDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(23, 22);
+            this.btnEditar.Text = "toolStripButton1";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // Pantalla
             // 
@@ -616,12 +674,12 @@
             this.Text = "Pantalla";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Pantalla_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pantallaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pantallaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pantallaBindingNavigator)).EndInit();
             this.pantallaBindingNavigator.ResumeLayout(false);
             this.pantallaBindingNavigator.PerformLayout();
@@ -670,12 +728,12 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton pantallaBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView gridPantalla;
-        //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inventarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pulgadasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripButton btnEditar;
     }
 }

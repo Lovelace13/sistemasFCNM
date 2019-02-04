@@ -906,7 +906,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdCpu" Modifier="Public" Name="getIdCpu" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="getIdCpu">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdCpu" Modifier="Public" Name="getIdCpu" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="getIdCpu">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.Cpu
@@ -919,7 +919,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdImpresora" Modifier="Public" Name="getIdImpresora" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="getIdImpresora">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdImpresora" Modifier="Public" Name="getIdImpresora" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="getIdImpresora">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.Impresora
@@ -932,7 +932,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdMicrofono" Modifier="Public" Name="getIdMicrofono" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="getIdMicrofono">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdMicrofono" Modifier="Public" Name="getIdMicrofono" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="getIdMicrofono">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.Microfono
@@ -945,7 +945,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdMouse" Modifier="Public" Name="getIdMouse" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="getIdMouse">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdMouse" Modifier="Public" Name="getIdMouse" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="getIdMouse">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.Mouse
@@ -958,7 +958,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdPantalla" Modifier="Public" Name="getIdPantalla" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="getIdPantalla">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdPantalla" Modifier="Public" Name="getIdPantalla" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="getIdPantalla">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.Pantalla
@@ -971,7 +971,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdPantallaProyeccion" Modifier="Public" Name="getIdPantallaProyeccion" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="getIdPantallaProyeccion">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdPantallaProyeccion" Modifier="Public" Name="getIdPantallaProyeccion" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="getIdPantallaProyeccion">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.PantallaProyeccion
@@ -984,7 +984,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdParlante" Modifier="Public" Name="getIdParlante" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="getIdParlante">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdParlante" Modifier="Public" Name="getIdParlante" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="getIdParlante">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.Parlante
@@ -997,7 +997,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdProyector" Modifier="Public" Name="getIdProyector" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="getIdProyector">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdProyector" Modifier="Public" Name="getIdProyector" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="getIdProyector">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.Proyector
@@ -1010,7 +1010,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdRadio" Modifier="Public" Name="getIdRadio" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="getIdRadio">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdRadio" Modifier="Public" Name="getIdRadio" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="getIdRadio">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.Radios
@@ -1023,7 +1023,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdRegulador" Modifier="Public" Name="getIdRegulador" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="getIdRegulador">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdRegulador" Modifier="Public" Name="getIdRegulador" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="getIdRegulador">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.Regulador
@@ -1036,7 +1036,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdTeclado" Modifier="Public" Name="getIdTeclado" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="getIdTeclado">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdTeclado" Modifier="Public" Name="getIdTeclado" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="getIdTeclado">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.Teclado
@@ -1049,7 +1049,7 @@ WHERE        (EquipoInventario.Inventario = @Inventario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdTelefono" Modifier="Public" Name="getIdTelefono" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy14" UserSourceName="getIdTelefono">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectName="SistemasFCNM.dbo.Equipo" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getIdTelefono" Modifier="Public" Name="getIdTelefono" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="getIdTelefono">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Equipo.Telefono
@@ -2872,10 +2872,10 @@ SELECT ID, Serie FROM ParlanteSerie WHERE (ID = @ID)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProyectorTableAdapter" GeneratorDataComponentClassName="ProyectorTableAdapter" Name="Proyector" UserDataComponentName="ProyectorTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        ProyectorInventario.Inventario, ProyectorInventarioEspolTech.Inventario AS Expr1, ProyectorMarca.Marca, ProyectorModelo.Modelo, ProyectorSerie.Serie, Estado.Estado
+                    <CommandText>SELECT        ProyectorInventario.Inventario, ProyectorInventarioEspolTech.Inventario AS EspolTech, ProyectorMarca.Marca, ProyectorModelo.Modelo, ProyectorSerie.Serie, Estado.Estado
 FROM            Proyector INNER JOIN
                          ProyectorInventario ON Proyector.Inventario = ProyectorInventario.ID INNER JOIN
                          ProyectorInventarioEspolTech ON Proyector.InventarioEspoltech = ProyectorInventarioEspolTech.ID INNER JOIN
@@ -2890,11 +2890,11 @@ FROM            Proyector INNER JOIN
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="Inventario" DataSetColumn="Inventario" />
-              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
               <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
               <Mapping SourceColumn="Modelo" DataSetColumn="Modelo" />
               <Mapping SourceColumn="Serie" DataSetColumn="Serie" />
               <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="EspolTech" DataSetColumn="EspolTech" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="sistemasFCNMConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
@@ -5512,13 +5512,6 @@ SELECT ID, Usuario FROM Propietario WHERE (ID = @ID)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -5544,6 +5537,13 @@ SELECT ID, Usuario FROM Propietario WHERE (ID = @ID)</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EspolTech" msprop:Generator_ColumnVarNameInTable="columnEspolTech" msprop:Generator_ColumnPropNameInRow="EspolTech" msprop:Generator_ColumnPropNameInTable="EspolTechColumn" msprop:Generator_UserColumnName="EspolTech" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

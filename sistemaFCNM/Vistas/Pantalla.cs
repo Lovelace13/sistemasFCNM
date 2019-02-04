@@ -172,5 +172,10 @@ namespace sistemaFCNM.Vistas
             this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
 
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
     }
 }

@@ -157,10 +157,7 @@ namespace sistemaFCNM.Vistas
 
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            habilitarBotones();
-        }
+       
         private void habilitarBotones()
         {
             
@@ -182,17 +179,7 @@ namespace sistemaFCNM.Vistas
 
         private void cpuBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.cpuBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
-
-        }
-
-        private void cpuBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.cpuBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+          
 
         }
 
@@ -204,6 +191,21 @@ namespace sistemaFCNM.Vistas
         private void gridCpu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            this.habilitarBotones();
         }
     }
 }

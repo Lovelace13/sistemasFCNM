@@ -83,18 +83,6 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-            string sql = "update va set va.Inventario_Microfono='" + txtMicro.Text + "', va.tipo = '" + txtTipo.Text + "'" +
-              " from Equipo e, Microfonos va where e.Microfono = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
-
-
-            Datos.Insertar(sql);
-
-            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
-                  " from Equipo e,Microfonos va, Caracteristicas car " +
-                  " where e.Microfono = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
-
-
-            Datos.Insertar(sql);
         }
 
         private void guardarMenuItem_Click(object sender, EventArgs e)
@@ -165,7 +153,6 @@ namespace sistemaFCNM.Vistas
             txtMicro.Enabled = true;
             txtEstado.Enabled = true;
             txtMarca.Enabled = true;
-            txtModelo.Enabled = true;
             txtSerie.Enabled = true;
         }
 
