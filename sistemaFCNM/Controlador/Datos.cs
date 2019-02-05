@@ -1,5 +1,6 @@
 ﻿using LibConexionBD;
 using LibLlenarGrids;
+using sistemaFCNM.sistemasFCNMDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -240,6 +241,19 @@ namespace sistemaFCNM.Clases
         private void IngresoSql(string nombreTabla, string campo, string values)
         {
             InsertarTablas("INSERT INTO {0}({1}) VALUES ('{2}');", nombreTabla, campo, values);
+        }
+        public static String[] _obtenerCampoNombreOficina()
+        {
+            LinkedList<String> ofi = new LinkedList<string>();
+            NombreOficinaTableAdapter oficina = new NombreOficinaTableAdapter();
+            for (int i = 0; i < oficina.GetData().Rows.Count; i++)
+            {
+                string var = oficina.GetData().Rows[i]["NombreOficina"].ToString();
+                ofi.AddFirst(var);
+            }
+
+            return ofi.ToArray();
+
         }
         #endregion
 

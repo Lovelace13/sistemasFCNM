@@ -34,8 +34,9 @@ namespace sistemaFCNM.Vistas
                 FuncionesUtiles.masdetallesActiva = false;
                 this.cpuTableAdapter.FillBy(this.sistemasFCNMDataSet.Cpu,FuncionesUtiles.ID_CPU);
             }
+
            
-        
+
         }
 
      

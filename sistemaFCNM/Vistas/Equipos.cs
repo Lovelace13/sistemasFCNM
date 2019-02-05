@@ -1,4 +1,6 @@
 ﻿using sistemaFCNM.Clases;
+using sistemaFCNM.Controlador;
+using sistemaFCNM.sistemasFCNMDataSetTableAdapters;
 using sistemaFCNM.Vistas;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,9 @@ namespace sistemaFCNM
         private Thread HiloServerQR;
         private ServidorSocket server;
         private LinkedList<String> listaqr = new LinkedList<string>();
+        private string InventarioAnterior;
+        private Boolean flat = false;
+        private String CpuAnterior;
         public Equipos()
         {
             InitializeComponent();
@@ -23,7 +28,7 @@ namespace sistemaFCNM
 
             if (e.KeyCode == Keys.Enter)
             {
-                busqueda();
+                busqueda(txtScanner.Text.Trim());
             }
         }
 
@@ -57,6 +62,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+
             FuncionesUtiles.abrirVentanas(new Vistas.Teclado(), mainPrincipal.contenedor);
         }
 
@@ -66,6 +72,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+
             FuncionesUtiles.abrirVentanas(new Vistas.Pantalla(), mainPrincipal.contenedor);
         }
 
@@ -76,6 +83,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+
             FuncionesUtiles.abrirVentanas(new Vistas.Mouse(), mainPrincipal.contenedor);
         }
 
@@ -85,6 +93,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+
             FuncionesUtiles.abrirVentanas(new Vistas.Microfono(), mainPrincipal.contenedor);
         }
 
@@ -94,6 +103,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+
             FuncionesUtiles.abrirVentanas(new PProyeccion(), mainPrincipal.contenedor);
         }
 
@@ -103,6 +113,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+
             FuncionesUtiles.abrirVentanas(new Vistas.Regulador(), mainPrincipal.contenedor);
         }
 
@@ -112,6 +123,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+
             FuncionesUtiles.abrirVentanas(new Vistas.Proyector(), mainPrincipal.contenedor);
         }
 
@@ -121,6 +133,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+
             FuncionesUtiles.abrirVentanas(new Vistas.Impresora(), mainPrincipal.contenedor);
         }
 
@@ -130,6 +143,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+
             FuncionesUtiles.abrirVentanas(new Vistas.Parlante(), mainPrincipal.contenedor);
         }
 
@@ -139,6 +153,7 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+
             FuncionesUtiles.abrirVentanas(new Vistas.Telefono(), mainPrincipal.contenedor);
         }
 
@@ -148,10 +163,11 @@ namespace sistemaFCNM
             {
                 FuncionesUtiles.masdetallesActiva = true;
             }
+
             FuncionesUtiles.abrirVentanas(new Vistas.Radio(), mainPrincipal.contenedor);
         }
 
-       
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -168,7 +184,7 @@ namespace sistemaFCNM
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            
+
             FuncionesUtiles.form1.Visible = false;
             FuncionesUtiles.siguienteActiva = true;
 
@@ -187,9 +203,10 @@ namespace sistemaFCNM
 
 
 
-       
+
         private void Equipos_Load(object sender, EventArgs e)
         {
+            FuncionesUtiles.INVENTARIO_EQUIPO = "";
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Equipo' Puede moverla o quitarla según sea necesario.
             this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
             this.server = new ServidorSocket("192.168.1.8", 100);
@@ -210,7 +227,7 @@ namespace sistemaFCNM
             {
                 listView1.Items.Add(server.Data);
                 listaqr.AddFirst(server.Data);
-                
+
 
             }
 
@@ -225,13 +242,13 @@ namespace sistemaFCNM
             int intselectedindex = listView1.SelectedIndices[0];
             if (intselectedindex >= 0)
             {
-                txtScanner.Text=(listView1.Items[intselectedindex].Text);
+                txtScanner.Text = (listView1.Items[intselectedindex].Text);
                 this.progressBar1.Maximum = 100;
                 this.progressBar1.Step = 1;
                 this.progressBar1.Value = 0;
                 new Thread(new ThreadStart(() =>
                 {
-                   
+
                     for (int i = 0; i < 100; i++)
                     {
                         if (this.progressBar1.InvokeRequired)
@@ -243,25 +260,25 @@ namespace sistemaFCNM
                             this.progressBar1.PerformStep();
                     }
                 })).Start();
-                busqueda();
+                busqueda(txtScanner.Text.Trim());
                 server.CerrarConexion();
                 HiloServerQR.Interrupt();
                 HiloServerQR.Join();
             }
         }
-        private void busqueda()
+        private void busqueda(string NumeroInventario)
         {
-            equipoBindingSource.Position = equipoBindingSource.Find("Inventario", txtScanner.Text.Trim());
+            this.equipoBindingSource.Position = this.equipoBindingSource.Find("Inventario", NumeroInventario);
             try
             {
-                this.equipoTableAdapter.FillBy(this.sistemasFCNMDataSet.Equipo, txtScanner.Text.Trim());
+                this.equipoTableAdapter.FillBy(this.sistemasFCNMDataSet.Equipo, NumeroInventario);
             }
             catch (System.Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-            FuncionesUtiles.INVENTARIO_EQUIPO = txtScanner.Text.Trim();
-            FuncionesUtiles.ID_CPU = int.Parse(""+ this.equipoTableAdapter.getIdCpu(FuncionesUtiles.INVENTARIO_EQUIPO));
+            FuncionesUtiles.INVENTARIO_EQUIPO = NumeroInventario;
+            FuncionesUtiles.ID_CPU = int.Parse("" + this.equipoTableAdapter.getIdCpu(FuncionesUtiles.INVENTARIO_EQUIPO));
             FuncionesUtiles.ID_PANTALLA = int.Parse("" + this.equipoTableAdapter.getIdPantalla(FuncionesUtiles.INVENTARIO_EQUIPO));
             FuncionesUtiles.ID_MOUSE = int.Parse("" + this.equipoTableAdapter.getIdMouse(FuncionesUtiles.INVENTARIO_EQUIPO));
             FuncionesUtiles.ID_TECLADO = int.Parse("" + this.equipoTableAdapter.getIdTeclado(FuncionesUtiles.INVENTARIO_EQUIPO));
@@ -288,7 +305,39 @@ namespace sistemaFCNM
 
         private void equipoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.equipoTableAdapter.actualizarEquipo(txtEquipo.Text.Trim(),FuncionesUtiles.INVENTARIO_EQUIPO);
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+                    if (GuardadoValido())
+                    {
+                        CpuTableAdapter cpu = new CpuTableAdapter();
+                        cpu.updateCpuInv(this.CpuAnterior, txtCpu.Text.Trim());
+
+                        FuncionesEquipo._actualizarInventarios(txtEquipo.Text.Trim(), txtCpu.Text.Trim(),
+                        txtImpresora.Text.Trim(), txtMicrofono.Text.Trim(), txtMouse.Text.Trim(), txtResponsable.Text.Trim(),
+                        txtPantalla.Text.Trim(), txtParlante.Text.Trim(), txtProyector.Text.Trim(), txtRadio.Text.Trim(),
+                        txtRegulador.Text.Trim(), txtTeclado.Text.Trim(), txtTelefono.Text.Trim(), txtProyeccion.Text.Trim());
+                        FuncionesEquipo._actualizarInventarioEquipo(txtEquipo.Text.Trim(), this.InventarioAnterior);
+
+                        
+
+                        this.flat = false;
+                        this.txtEquipo.Enabled = false;
+                        this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                    }
+                    
+                    
+                    return;
+                case "No":
+                    this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                    return;
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+
         }
 
 
@@ -298,7 +347,7 @@ namespace sistemaFCNM
             this.txtImpresora.Enabled = true;
             this.txtMicrofono.Enabled = true;
             this.txtMouse.Enabled = true;
-            this.txtOficina.Enabled = true;
+            this.comboOficina.Enabled = true;
             this.txtPantalla.Enabled = true;
             this.txtParlante.Enabled = true;
             this.txtProyeccion.Enabled = true;
@@ -309,6 +358,62 @@ namespace sistemaFCNM
             this.txtTelefono.Enabled = true;
             this.txtResponsable.Enabled = true;
 
+            comboOficina.Items.AddRange(Datos._obtenerCampoNombreOficina());
+
+            CpuAnterior = txtCpu.Text.Trim();
+
         }
+
+        private void btnEditarNumeroInventario_Click(object sender, EventArgs e)
+        {
+            if (!flat)
+            {
+                this.InventarioAnterior = txtEquipo.Text.Trim();
+                txtEquipo.Enabled = true;
+                this.flat = true;
+            }
+
+        }
+
+        private void btnBusquedaCpu_Click(object sender, EventArgs e)
+        {
+            CpuInventarioTableAdapter cpuInv = new CpuInventarioTableAdapter();
+            try
+            {
+                if (cpuInv.obtenerInventario(txtCpu.Text.Trim()).Length != 0)
+                {
+
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+
+            }
+        }
+
+        private Boolean GuardadoValido()
+        {
+            CpuInventarioTableAdapter cpuInv = new CpuInventarioTableAdapter();
+            try
+            {
+                if (cpuInv.obtenerInventario(txtCpu.Text.Trim()).Length != 0)
+                {
+                    
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+                this.txtCpu.Focus();
+                return false;
+
+            }
+
+            return true;
+        }
+
+       
     }
 }
