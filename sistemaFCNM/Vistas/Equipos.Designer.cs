@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtTeclado = new System.Windows.Forms.TextBox();
+            this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
             this.lblTeclado = new System.Windows.Forms.Label();
             this.txtMouse = new System.Windows.Forms.TextBox();
             this.lblMouse = new System.Windows.Forms.Label();
@@ -78,6 +80,18 @@
             this.lblPantalla = new System.Windows.Forms.Label();
             this.lblCpu = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBusquedaRadio = new System.Windows.Forms.Button();
+            this.btnBusquedaTelef = new System.Windows.Forms.Button();
+            this.btnBusquedaPar = new System.Windows.Forms.Button();
+            this.btnBusquedaImpr = new System.Windows.Forms.Button();
+            this.btnBusquedaProy = new System.Windows.Forms.Button();
+            this.btnBusquedaRegulador = new System.Windows.Forms.Button();
+            this.btnBusquedaPP = new System.Windows.Forms.Button();
+            this.btnBusquedaMicro = new System.Windows.Forms.Button();
+            this.btnBusquedaMouse = new System.Windows.Forms.Button();
+            this.btnBusquedaTeclado = new System.Windows.Forms.Button();
+            this.btnBusquedaPantalla = new System.Windows.Forms.Button();
+            this.btnBusquedaCpu = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboOficina = new System.Windows.Forms.ComboBox();
             this.txtResponsable = new System.Windows.Forms.TextBox();
@@ -98,24 +112,6 @@
             this.equipoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.gridInventario = new System.Windows.Forms.DataGridView();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.btnEditarNumeroInventario = new System.Windows.Forms.Button();
-            this.btnBusquedaRegulador = new System.Windows.Forms.Button();
-            this.btnBusquedaProy = new System.Windows.Forms.Button();
-            this.btnBusquedaPar = new System.Windows.Forms.Button();
-            this.btnBusquedaImpr = new System.Windows.Forms.Button();
-            this.btnBusquedaRadio = new System.Windows.Forms.Button();
-            this.btnBusquedaTelef = new System.Windows.Forms.Button();
-            this.btnBusquedaPP = new System.Windows.Forms.Button();
-            this.btnBusquedaMicro = new System.Windows.Forms.Button();
-            this.btnBusquedaMouse = new System.Windows.Forms.Button();
-            this.btnBusquedaTeclado = new System.Windows.Forms.Button();
-            this.btnBusquedaPantalla = new System.Windows.Forms.Button();
-            this.btnBusquedaCpu = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -128,17 +124,20 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.equipoTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.EquipoTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.equipoBindingNavigator)).BeginInit();
             this.equipoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTeclado
@@ -154,6 +153,16 @@
             this.txtTeclado.Size = new System.Drawing.Size(198, 19);
             this.txtTeclado.TabIndex = 5;
             this.txtTeclado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // equipoBindingSource
+            // 
+            this.equipoBindingSource.DataMember = "Equipo";
+            this.equipoBindingSource.DataSource = this.sistemasFCNMDataSet;
+            // 
+            // sistemasFCNMDataSet
+            // 
+            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
+            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblTeclado
             // 
@@ -773,10 +782,154 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inventario Asociado";
             // 
+            // btnBusquedaRadio
+            // 
+            this.btnBusquedaRadio.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaRadio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaRadio.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaRadio.Location = new System.Drawing.Point(874, 152);
+            this.btnBusquedaRadio.Name = "btnBusquedaRadio";
+            this.btnBusquedaRadio.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaRadio.TabIndex = 149;
+            this.btnBusquedaRadio.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaTelef
+            // 
+            this.btnBusquedaTelef.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaTelef.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaTelef.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaTelef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaTelef.Location = new System.Drawing.Point(874, 125);
+            this.btnBusquedaTelef.Name = "btnBusquedaTelef";
+            this.btnBusquedaTelef.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaTelef.TabIndex = 148;
+            this.btnBusquedaTelef.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaPar
+            // 
+            this.btnBusquedaPar.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaPar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaPar.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaPar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaPar.Location = new System.Drawing.Point(874, 96);
+            this.btnBusquedaPar.Name = "btnBusquedaPar";
+            this.btnBusquedaPar.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaPar.TabIndex = 147;
+            this.btnBusquedaPar.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaImpr
+            // 
+            this.btnBusquedaImpr.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaImpr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaImpr.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaImpr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaImpr.Location = new System.Drawing.Point(874, 69);
+            this.btnBusquedaImpr.Name = "btnBusquedaImpr";
+            this.btnBusquedaImpr.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaImpr.TabIndex = 146;
+            this.btnBusquedaImpr.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaProy
+            // 
+            this.btnBusquedaProy.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaProy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaProy.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaProy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaProy.Location = new System.Drawing.Point(874, 42);
+            this.btnBusquedaProy.Name = "btnBusquedaProy";
+            this.btnBusquedaProy.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaProy.TabIndex = 145;
+            this.btnBusquedaProy.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaRegulador
+            // 
+            this.btnBusquedaRegulador.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaRegulador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaRegulador.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaRegulador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaRegulador.Location = new System.Drawing.Point(874, 15);
+            this.btnBusquedaRegulador.Name = "btnBusquedaRegulador";
+            this.btnBusquedaRegulador.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaRegulador.TabIndex = 144;
+            this.btnBusquedaRegulador.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaPP
+            // 
+            this.btnBusquedaPP.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaPP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaPP.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaPP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaPP.Location = new System.Drawing.Point(445, 156);
+            this.btnBusquedaPP.Name = "btnBusquedaPP";
+            this.btnBusquedaPP.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaPP.TabIndex = 155;
+            this.btnBusquedaPP.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaMicro
+            // 
+            this.btnBusquedaMicro.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaMicro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaMicro.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaMicro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaMicro.Location = new System.Drawing.Point(445, 129);
+            this.btnBusquedaMicro.Name = "btnBusquedaMicro";
+            this.btnBusquedaMicro.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaMicro.TabIndex = 154;
+            this.btnBusquedaMicro.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaMouse
+            // 
+            this.btnBusquedaMouse.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaMouse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaMouse.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaMouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaMouse.Location = new System.Drawing.Point(445, 100);
+            this.btnBusquedaMouse.Name = "btnBusquedaMouse";
+            this.btnBusquedaMouse.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaMouse.TabIndex = 153;
+            this.btnBusquedaMouse.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaTeclado
+            // 
+            this.btnBusquedaTeclado.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaTeclado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaTeclado.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaTeclado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaTeclado.Location = new System.Drawing.Point(445, 73);
+            this.btnBusquedaTeclado.Name = "btnBusquedaTeclado";
+            this.btnBusquedaTeclado.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaTeclado.TabIndex = 152;
+            this.btnBusquedaTeclado.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaPantalla
+            // 
+            this.btnBusquedaPantalla.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaPantalla.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaPantalla.Location = new System.Drawing.Point(445, 46);
+            this.btnBusquedaPantalla.Name = "btnBusquedaPantalla";
+            this.btnBusquedaPantalla.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaPantalla.TabIndex = 151;
+            this.btnBusquedaPantalla.UseVisualStyleBackColor = true;
+            // 
+            // btnBusquedaCpu
+            // 
+            this.btnBusquedaCpu.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.btnBusquedaCpu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusquedaCpu.FlatAppearance.BorderSize = 0;
+            this.btnBusquedaCpu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaCpu.Location = new System.Drawing.Point(445, 19);
+            this.btnBusquedaCpu.Name = "btnBusquedaCpu";
+            this.btnBusquedaCpu.Size = new System.Drawing.Size(23, 24);
+            this.btnBusquedaCpu.TabIndex = 150;
+            this.btnBusquedaCpu.UseVisualStyleBackColor = true;
+            this.btnBusquedaCpu.Click += new System.EventHandler(this.btnBusquedaCpu_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.btnEditarNumeroInventario);
             this.groupBox2.Controls.Add(this.comboOficina);
             this.groupBox2.Controls.Add(this.txtResponsable);
             this.groupBox2.Controls.Add(this.label13);
@@ -1043,205 +1196,6 @@
             this.gridInventario.Size = new System.Drawing.Size(1114, 265);
             this.gridInventario.TabIndex = 130;
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.listView1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.listView1.Location = new System.Drawing.Point(1091, 40);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(119, 219);
-            this.listView1.TabIndex = 141;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "QR Inventario";
-            this.columnHeader1.Width = 118;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(18, 650);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 23);
-            this.progressBar1.TabIndex = 142;
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 23);
-            this.toolStripButton2.Text = "btnBuscar";
-            // 
-            // btnEditarNumeroInventario
-            // 
-            this.btnEditarNumeroInventario.BackgroundImage = global::sistemaFCNM.Properties.Resources.Modificar;
-            this.btnEditarNumeroInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEditarNumeroInventario.FlatAppearance.BorderSize = 0;
-            this.btnEditarNumeroInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarNumeroInventario.Location = new System.Drawing.Point(0, 41);
-            this.btnEditarNumeroInventario.Name = "btnEditarNumeroInventario";
-            this.btnEditarNumeroInventario.Size = new System.Drawing.Size(23, 24);
-            this.btnEditarNumeroInventario.TabIndex = 143;
-            this.btnEditarNumeroInventario.UseVisualStyleBackColor = true;
-            this.btnEditarNumeroInventario.Click += new System.EventHandler(this.btnEditarNumeroInventario_Click);
-            // 
-            // btnBusquedaRegulador
-            // 
-            this.btnBusquedaRegulador.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaRegulador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaRegulador.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaRegulador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaRegulador.Location = new System.Drawing.Point(874, 15);
-            this.btnBusquedaRegulador.Name = "btnBusquedaRegulador";
-            this.btnBusquedaRegulador.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaRegulador.TabIndex = 144;
-            this.btnBusquedaRegulador.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaProy
-            // 
-            this.btnBusquedaProy.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaProy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaProy.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaProy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaProy.Location = new System.Drawing.Point(874, 42);
-            this.btnBusquedaProy.Name = "btnBusquedaProy";
-            this.btnBusquedaProy.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaProy.TabIndex = 145;
-            this.btnBusquedaProy.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaPar
-            // 
-            this.btnBusquedaPar.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaPar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaPar.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaPar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaPar.Location = new System.Drawing.Point(874, 96);
-            this.btnBusquedaPar.Name = "btnBusquedaPar";
-            this.btnBusquedaPar.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaPar.TabIndex = 147;
-            this.btnBusquedaPar.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaImpr
-            // 
-            this.btnBusquedaImpr.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaImpr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaImpr.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaImpr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaImpr.Location = new System.Drawing.Point(874, 69);
-            this.btnBusquedaImpr.Name = "btnBusquedaImpr";
-            this.btnBusquedaImpr.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaImpr.TabIndex = 146;
-            this.btnBusquedaImpr.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaRadio
-            // 
-            this.btnBusquedaRadio.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaRadio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaRadio.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaRadio.Location = new System.Drawing.Point(874, 152);
-            this.btnBusquedaRadio.Name = "btnBusquedaRadio";
-            this.btnBusquedaRadio.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaRadio.TabIndex = 149;
-            this.btnBusquedaRadio.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaTelef
-            // 
-            this.btnBusquedaTelef.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaTelef.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaTelef.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaTelef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaTelef.Location = new System.Drawing.Point(874, 125);
-            this.btnBusquedaTelef.Name = "btnBusquedaTelef";
-            this.btnBusquedaTelef.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaTelef.TabIndex = 148;
-            this.btnBusquedaTelef.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaPP
-            // 
-            this.btnBusquedaPP.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaPP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaPP.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaPP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaPP.Location = new System.Drawing.Point(445, 156);
-            this.btnBusquedaPP.Name = "btnBusquedaPP";
-            this.btnBusquedaPP.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaPP.TabIndex = 155;
-            this.btnBusquedaPP.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaMicro
-            // 
-            this.btnBusquedaMicro.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaMicro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaMicro.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaMicro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaMicro.Location = new System.Drawing.Point(445, 129);
-            this.btnBusquedaMicro.Name = "btnBusquedaMicro";
-            this.btnBusquedaMicro.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaMicro.TabIndex = 154;
-            this.btnBusquedaMicro.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaMouse
-            // 
-            this.btnBusquedaMouse.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaMouse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaMouse.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaMouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaMouse.Location = new System.Drawing.Point(445, 100);
-            this.btnBusquedaMouse.Name = "btnBusquedaMouse";
-            this.btnBusquedaMouse.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaMouse.TabIndex = 153;
-            this.btnBusquedaMouse.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaTeclado
-            // 
-            this.btnBusquedaTeclado.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaTeclado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaTeclado.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaTeclado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaTeclado.Location = new System.Drawing.Point(445, 73);
-            this.btnBusquedaTeclado.Name = "btnBusquedaTeclado";
-            this.btnBusquedaTeclado.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaTeclado.TabIndex = 152;
-            this.btnBusquedaTeclado.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaPantalla
-            // 
-            this.btnBusquedaPantalla.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaPantalla.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaPantalla.Location = new System.Drawing.Point(445, 46);
-            this.btnBusquedaPantalla.Name = "btnBusquedaPantalla";
-            this.btnBusquedaPantalla.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaPantalla.TabIndex = 151;
-            this.btnBusquedaPantalla.UseVisualStyleBackColor = true;
-            // 
-            // btnBusquedaCpu
-            // 
-            this.btnBusquedaCpu.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.btnBusquedaCpu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusquedaCpu.FlatAppearance.BorderSize = 0;
-            this.btnBusquedaCpu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaCpu.Location = new System.Drawing.Point(445, 19);
-            this.btnBusquedaCpu.Name = "btnBusquedaCpu";
-            this.btnBusquedaCpu.Size = new System.Drawing.Size(23, 24);
-            this.btnBusquedaCpu.TabIndex = 150;
-            this.btnBusquedaCpu.UseVisualStyleBackColor = true;
-            this.btnBusquedaCpu.Click += new System.EventHandler(this.btnBusquedaCpu_Click);
-            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Cpu";
@@ -1337,15 +1291,46 @@
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
             this.dataGridViewTextBoxColumn14.Width = 86;
             // 
-            // equipoBindingSource
+            // timer1
             // 
-            this.equipoBindingSource.DataMember = "Equipo";
-            this.equipoBindingSource.DataSource = this.sistemasFCNMDataSet;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // sistemasFCNMDataSet
+            // listView1
             // 
-            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
-            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.listView1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.listView1.Location = new System.Drawing.Point(1091, 40);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(119, 219);
+            this.listView1.TabIndex = 141;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "QR Inventario";
+            this.columnHeader1.Width = 118;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(18, 650);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.TabIndex = 142;
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 23);
+            this.toolStripButton2.Text = "btnBuscar";
             // 
             // equipoTableAdapter
             // 
@@ -1459,6 +1444,8 @@
             this.Text = "Scanner";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Equipos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1467,8 +1454,6 @@
             this.equipoBindingNavigator.ResumeLayout(false);
             this.equipoBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1561,7 +1546,6 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ComboBox comboOficina;
-        private System.Windows.Forms.Button btnEditarNumeroInventario;
         private System.Windows.Forms.Button btnBusquedaRadio;
         private System.Windows.Forms.Button btnBusquedaTelef;
         private System.Windows.Forms.Button btnBusquedaPar;

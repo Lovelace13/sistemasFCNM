@@ -15,8 +15,8 @@ namespace sistemaFCNM
         private Thread HiloServerQR;
         private ServidorSocket server;
         private LinkedList<String> listaqr = new LinkedList<string>();
-        private string InventarioAnterior;
-        private Boolean flat = false;
+        private String InventarioAnterior;
+        private int IDAnterior;
         private String CpuAnterior;
         public Equipos()
         {
@@ -311,17 +311,21 @@ namespace sistemaFCNM
                     if (GuardadoValido())
                     {
                         CpuTableAdapter cpu = new CpuTableAdapter();
-                        cpu.updateCpuInv(this.CpuAnterior, txtCpu.Text.Trim());
+                        cpu.UpdateInventario(this.CpuAnterior, txtCpu.Text.Trim());
 
                         FuncionesEquipo._actualizarInventarios(txtEquipo.Text.Trim(), txtCpu.Text.Trim(),
                         txtImpresora.Text.Trim(), txtMicrofono.Text.Trim(), txtMouse.Text.Trim(), txtResponsable.Text.Trim(),
                         txtPantalla.Text.Trim(), txtParlante.Text.Trim(), txtProyector.Text.Trim(), txtRadio.Text.Trim(),
                         txtRegulador.Text.Trim(), txtTeclado.Text.Trim(), txtTelefono.Text.Trim(), txtProyeccion.Text.Trim());
+
+
+                        this.equipoTableAdapter.UpdateEquipo(this.InventarioAnterior, this.IDAnterior);
                         FuncionesEquipo._actualizarInventarioEquipo(txtEquipo.Text.Trim(), this.InventarioAnterior);
-
                         
+                       
 
-                        this.flat = false;
+
+                        gridInventario.Enabled = true;
                         this.txtEquipo.Enabled = false;
                         this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
                     }
@@ -343,6 +347,7 @@ namespace sistemaFCNM
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            //Habilitar Cajas de texto
             this.txtCpu.Enabled = true;
             this.txtImpresora.Enabled = true;
             this.txtMicrofono.Enabled = true;
@@ -357,23 +362,21 @@ namespace sistemaFCNM
             this.txtTeclado.Enabled = true;
             this.txtTelefono.Enabled = true;
             this.txtResponsable.Enabled = true;
+            this.txtEquipo.Enabled = true;
 
+            //LLenar Lista de Oficina
             comboOficina.Items.AddRange(Datos._obtenerCampoNombreOficina());
 
-            CpuAnterior = txtCpu.Text.Trim();
+            //Deshabilitar tabla de inventarios
+            gridInventario.Enabled = false;
 
+            //Guardar valores anteriores
+            this.CpuAnterior = txtCpu.Text.Trim();
+            this.IDAnterior = (int) this.equipoTableAdapter.ObtenerIDEquipo(txtEquipo.Text.Trim());
+           
         }
 
-        private void btnEditarNumeroInventario_Click(object sender, EventArgs e)
-        {
-            if (!flat)
-            {
-                this.InventarioAnterior = txtEquipo.Text.Trim();
-                txtEquipo.Enabled = true;
-                this.flat = true;
-            }
-
-        }
+        
 
         private void btnBusquedaCpu_Click(object sender, EventArgs e)
         {
@@ -396,6 +399,7 @@ namespace sistemaFCNM
         private Boolean GuardadoValido()
         {
             CpuInventarioTableAdapter cpuInv = new CpuInventarioTableAdapter();
+            EquipoInventarioTableAdapter equipoInv = new EquipoInventarioTableAdapter();
             try
             {
                 if (cpuInv.obtenerInventario(txtCpu.Text.Trim()).Length != 0)
@@ -407,13 +411,25 @@ namespace sistemaFCNM
             catch (NullReferenceException)
             {
                 this.txtCpu.Focus();
+                MessageBox.Show("No se encuentra en Inventario de CPU");
                 return false;
 
+            }
+            try
+            {
+                if (equipoInv.ObtenerInventarioEquipo(txtEquipo.Text.Trim()).ToString().Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtEquipo.Focus();
+                MessageBox.Show("No se encuentra en Inventario de EQUIPO");
+                return false;
             }
 
             return true;
         }
-
-       
     }
 }

@@ -9,6 +9,10 @@
 
 namespace sistemaFCNM.sistemasFCNMDataSetTableAdapters
 {
+    partial class ImpresoraInventarioTableAdapter
+    {
+    }
+
     partial class TipoUsuarioTableAdapter
     {
     }
