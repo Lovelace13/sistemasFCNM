@@ -4,11 +4,26 @@
 
     partial class sistemasFCNMDataSet
     {
+        partial class MouseDataTable
+        {
+        }
     }
 }
 
 namespace sistemaFCNM.sistemasFCNMDataSetTableAdapters
 {
+    partial class MouseTableAdapter
+    {
+    }
+
+    partial class CpuInventarioTableAdapter
+    {
+    }
+
+    partial class ProyectorTableAdapter
+    {
+    }
+
     partial class ImpresoraInventarioTableAdapter
     {
     }

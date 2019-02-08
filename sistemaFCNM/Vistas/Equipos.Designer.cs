@@ -131,6 +131,7 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.equipoTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.EquipoTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
+            this.btnModifEquipo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -930,6 +931,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.btnModifEquipo);
             this.groupBox2.Controls.Add(this.comboOficina);
             this.groupBox2.Controls.Add(this.txtResponsable);
             this.groupBox2.Controls.Add(this.label13);
@@ -1415,6 +1417,19 @@
             this.tableAdapterManager.UpdateOrder = sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
             // 
+            // btnModifEquipo
+            // 
+            this.btnModifEquipo.BackgroundImage = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btnModifEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnModifEquipo.FlatAppearance.BorderSize = 0;
+            this.btnModifEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifEquipo.Location = new System.Drawing.Point(0, 41);
+            this.btnModifEquipo.Name = "btnModifEquipo";
+            this.btnModifEquipo.Size = new System.Drawing.Size(23, 24);
+            this.btnModifEquipo.TabIndex = 156;
+            this.btnModifEquipo.UseVisualStyleBackColor = true;
+            this.btnModifEquipo.Click += new System.EventHandler(this.btnModifEquipo_Click);
+            // 
             // Equipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1558,5 +1573,6 @@
         private System.Windows.Forms.Button btnBusquedaTeclado;
         private System.Windows.Forms.Button btnBusquedaPantalla;
         private System.Windows.Forms.Button btnBusquedaCpu;
+        private System.Windows.Forms.Button btnModifEquipo;
     }
 }

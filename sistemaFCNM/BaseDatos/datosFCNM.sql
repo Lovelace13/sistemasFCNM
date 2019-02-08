@@ -18,7 +18,7 @@ INSERT INTO [dbo].[Usuario]
            ,[Nombre]
            ,[Clave])
      VALUES
-           ('jfloresb',2,'JOSE FLORES','1234')
+           ('jcbodero',1,'JULIO BODERO','1234')
 GO
 
 

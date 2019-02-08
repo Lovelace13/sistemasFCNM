@@ -91,17 +91,6 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-            string sql = "update c set c.inventario_cpu='" + txtCpu.Text + "',c.nombre_PC='" + txtNombre.Text + "',c.tipo_PC ='" + txtTipo.Text + "',c.perfil = '" + txtPerfil.Text + "'," +
-                "c.tag = '" + txtTag.Text + "',c.code = '" + txtCode.Text + "',c.procesador = '" + txtProcesador.Text + "',c.memoria = '" + txtMemoria.Text + "',c.disco = '" + txtDisco.Text + "',c.adicional_lote = '" + txtLote.Text + "'" +
-                " from Equipo e,CPU c where e.Inventario_CPU = c.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
-
-            Datos.Insertar(sql);
-
-            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
-                  "from Equipo e,CPU c, Caracteristicas car " +
-                  "where e.Inventario_CPU = c.ID and car.id_caracteristica = c.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
-
-            Datos.Insertar(sql);
         }
 
         private void CerrarSesion_Click(object sender, EventArgs e)
@@ -139,22 +128,7 @@ namespace sistemaFCNM.Vistas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-
-            string sql = "select e.id_Equipo, c.inventario_cpu,c.nombre_PC,c.adicional_lote," +
-                  "c.tipo_PC,c.tag,c.code,c.perfil,c.procesador,c.memoria,c.disco," +
-                  "car.estado,car.marca,car.modelo,car.serie from  Equipo e, CPU c," +
-                  "Caracteristicas car where e.Inventario_CPU = c.ID and " +
-                  "car.id_caracteristica = c.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
-            Datos.llenarGrid(sql, gridCpu);
-
-
-            sql = "select e.id_Equipo, c.inventario_cpu,c.nombre_PC,c.adicional_lote," +
-                  "c.tipo_PC,c.tag,c.code,c.perfil,c.procesador,c.memoria,c.disco," +
-                  "car.estado,car.marca,car.modelo,car.serie from  Equipo e, CPU c," +
-                  "Caracteristicas car where e.Inventario_CPU = c.ID and " +
-                  "car.id_caracteristica = c.caracteristicas; ";
-            Datos.llenarGrid(sql, gridCpu);
+           
 
         }
 

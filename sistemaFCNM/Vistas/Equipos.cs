@@ -18,6 +18,18 @@ namespace sistemaFCNM
         private String InventarioAnterior;
         private int IDAnterior;
         private String CpuAnterior;
+        private string ImpresoraAnterior;
+        private string MouseAnterior;
+        private string MicroAnterior;
+        private string PPAnterior;
+        private string PantallaAnterior;
+        private string ParlanteAnterior;
+        private string ProyectorAnterior;
+        private string RadioAnterior;
+        private string ReguladorAnterior;
+        private string TecladoAnterior;
+        private string TelefonoAnterior;
+
         public Equipos()
         {
             InitializeComponent();
@@ -308,36 +320,14 @@ namespace sistemaFCNM
             switch (FuncionesUtiles.ventanaDialogo())
             {
                 case "Yes":
-                    if (GuardadoValido())
-                    {
-                        CpuTableAdapter cpu = new CpuTableAdapter();
-                        cpu.UpdateInventario(this.CpuAnterior, txtCpu.Text.Trim());
-
-                        FuncionesEquipo._actualizarInventarios(txtEquipo.Text.Trim(), txtCpu.Text.Trim(),
-                        txtImpresora.Text.Trim(), txtMicrofono.Text.Trim(), txtMouse.Text.Trim(), txtResponsable.Text.Trim(),
-                        txtPantalla.Text.Trim(), txtParlante.Text.Trim(), txtProyector.Text.Trim(), txtRadio.Text.Trim(),
-                        txtRegulador.Text.Trim(), txtTeclado.Text.Trim(), txtTelefono.Text.Trim(), txtProyeccion.Text.Trim());
-
-
-                        this.equipoTableAdapter.UpdateEquipo(this.InventarioAnterior, this.IDAnterior);
-                        FuncionesEquipo._actualizarInventarioEquipo(txtEquipo.Text.Trim(), this.InventarioAnterior);
-                        
-                       
-
-
-                        gridInventario.Enabled = true;
-                        this.txtEquipo.Enabled = false;
-                        this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
-                    }
-                    
-                    
+                    if (GuardadoValido()){guardado();}
                     return;
                 case "No":
+                    ApagarBotones();
                     this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
                     return;
                 case "Cancel":
                     return;
-
                 default:
                     return;
             }
@@ -346,6 +336,215 @@ namespace sistemaFCNM
 
 
         private void btnEditar_Click(object sender, EventArgs e)
+        {
+            HabilitarBotones();
+
+            //LLenar Lista de Oficina
+            comboOficina.Items.AddRange(Datos._obtenerCampoNombreOficina());
+
+            //Deshabilitar tabla de inventarios
+            gridInventario.Enabled = false;
+
+            //Guardar valores anteriores
+            this.CpuAnterior = txtCpu.Text.Trim();
+            this.ImpresoraAnterior = txtImpresora.Text.Trim();
+            this.MouseAnterior = txtMouse.Text.Trim();
+            this.MicroAnterior = txtMicrofono.Text.Trim();
+            this.PPAnterior = txtProyeccion.Text.Trim();
+            this.PantallaAnterior = txtPantalla.Text.Trim();
+            this.ParlanteAnterior = txtParlante.Text.Trim();
+            this.ProyectorAnterior = txtProyector.Text.Trim();
+            this.RadioAnterior = txtRadio.Text.Trim();
+            this.ReguladorAnterior = txtRegulador.Text.Trim();
+            this.TecladoAnterior = txtTeclado.Text.Trim();
+            this.TelefonoAnterior = txtTelefono.Text.Trim();
+        }
+
+
+
+        private void btnBusquedaCpu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FuncionesEquipo.cpu.obtenerInventario(txtCpu.Text.Trim()).Length != 0)
+                {
+
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+
+            }
+        }
+
+        private Boolean GuardadoValido()
+        {
+
+
+            try
+            {
+                if (FuncionesEquipo.cpu.obtenerInventario(txtCpu.Text.Trim()).Length != 0)
+                {
+
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+                this.txtCpu.Focus();
+                MessageBox.Show("No se encuentra en Inventario de CPU");
+                return false;
+
+            }
+            try
+            {
+                if (FuncionesEquipo.impresora.ObtenerInventario(txtImpresora.Text.Trim()).Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtImpresora.Focus();
+                MessageBox.Show("No se encuentra en Inventario de IMPRESORA");
+                return false;
+            }
+            try
+            {
+                if (FuncionesEquipo.micro.ObtenerInventario(txtMicrofono.Text.Trim()).ToString().Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtMicrofono.Focus();
+                MessageBox.Show("No se encuentra en Inventario de MICROFONO");
+                return false;
+            }
+            try
+            {
+                if (FuncionesEquipo.mouse.ObtenerInventario(txtMouse.Text.Trim()).Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtMouse.Focus();
+                MessageBox.Show("No se encuentra en Inventario de MOUSE");
+                return false;
+            }
+            try
+            {
+                if (FuncionesEquipo.pantalla.ObtenerInventario(txtPantalla.Text.Trim()).Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtPantalla.Focus();
+                MessageBox.Show("No se encuentra en Inventario de PANTALLA");
+                return false;
+            }
+
+            try
+            {
+                if (FuncionesEquipo.parlante.ObtenerInventario(txtParlante.Text.Trim()).Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtParlante.Focus();
+                MessageBox.Show("No se encuentra en Inventario de PARLANTE");
+                return false;
+            }
+            try
+            {
+                if (FuncionesEquipo.pp.ObtenerInventario(txtProyeccion.Text.Trim()).Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtProyeccion.Focus();
+                MessageBox.Show("No se encuentra en Inventario de PANTALLA DE PROYECCION");
+                return false;
+            }
+            try
+            {
+                if (FuncionesEquipo.proyector.ObtenerInventario(txtProyector.Text.Trim()).Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtProyector.Focus();
+                MessageBox.Show("No se encuentra en Inventario de PROYECTOR");
+                return false;
+            }
+            try
+            {
+                if (FuncionesEquipo.radio.ObtenerInventario(txtRadio.Text.Trim()).Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtRadio.Focus();
+                MessageBox.Show("No se encuentra en Inventario de RADIO");
+                return false;
+            }
+            try
+            {
+                if (FuncionesEquipo.regulador.ObtenerInventario(txtRegulador.Text.Trim()).Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtRegulador.Focus();
+                MessageBox.Show("No se encuentra en Inventario de REGULADOR");
+                return false;
+            }
+            try
+            {
+                if (FuncionesEquipo.teclado.ObtenerInventario(txtTeclado.Text.Trim()).Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtTeclado.Focus();
+                MessageBox.Show("No se encuentra en Inventario de TECLADO");
+                return false;
+            }
+            try
+            {
+                if (FuncionesEquipo.telefono.ObtenerInventario(txtTelefono.Text.Trim()).Length != 0)
+                {
+
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.txtTelefono.Focus();
+                MessageBox.Show("No se encuentra en Inventario de TELEFONO");
+                return false;
+            }
+            return true;
+        }
+        private void HabilitarBotones()
         {
             //Habilitar Cajas de texto
             this.txtCpu.Enabled = true;
@@ -362,74 +561,304 @@ namespace sistemaFCNM
             this.txtTeclado.Enabled = true;
             this.txtTelefono.Enabled = true;
             this.txtResponsable.Enabled = true;
+
+        }
+        private void ApagarBotones()
+        {
+            //Apagar Cajas de texto
+            this.txtCpu.Enabled = false;
+            this.txtImpresora.Enabled = false;
+            this.txtMicrofono.Enabled = false;
+            this.txtMouse.Enabled = false;
+            this.comboOficina.Enabled = false;
+            this.txtPantalla.Enabled = false;
+            this.txtParlante.Enabled = false;
+            this.txtProyeccion.Enabled = false;
+            this.txtProyector.Enabled = false;
+            this.txtRadio.Enabled = false;
+            this.txtRegulador.Enabled = false;
+            this.txtTeclado.Enabled = false;
+            this.txtTelefono.Enabled = false;
+            this.txtResponsable.Enabled = false;
+            this.txtEquipo.Enabled = false;
+        }
+
+        private void btnModifEquipo_Click(object sender, EventArgs e)
+        {
             this.txtEquipo.Enabled = true;
-
-            //LLenar Lista de Oficina
-            comboOficina.Items.AddRange(Datos._obtenerCampoNombreOficina());
-
-            //Deshabilitar tabla de inventarios
             gridInventario.Enabled = false;
-
-            //Guardar valores anteriores
-            this.CpuAnterior = txtCpu.Text.Trim();
-            this.IDAnterior = (int) this.equipoTableAdapter.ObtenerIDEquipo(txtEquipo.Text.Trim());
-           
+            this.InventarioAnterior = txtEquipo.Text.Trim();
+            this.IDAnterior = (int)this.equipoTableAdapter.ObtenerIDEquipo(txtEquipo.Text.Trim());
         }
 
-        
-
-        private void btnBusquedaCpu_Click(object sender, EventArgs e)
+        private void guardado()
         {
-            CpuInventarioTableAdapter cpuInv = new CpuInventarioTableAdapter();
-            try
+            //GUARDADO CPU
+            if (txtCpu.Text.Trim() != "N/A")
             {
-                if (cpuInv.obtenerInventario(txtCpu.Text.Trim()).Length != 0)
+                try
                 {
+                    FuncionesEquipo._actualizarInventarioCPU(FuncionesEquipo.equipo.BuscarIDCpu_Inventario(txtCpu.Text.Trim()).ToString()
+                    , this.CpuAnterior);
 
+
+                    FuncionesEquipo._actualizarInventarioCPU(txtEquipo.Text.Trim(), txtCpu.Text.Trim());
                 }
-
-            }
-            catch (NullReferenceException)
-            {
-                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
-
-            }
-        }
-
-        private Boolean GuardadoValido()
-        {
-            CpuInventarioTableAdapter cpuInv = new CpuInventarioTableAdapter();
-            EquipoInventarioTableAdapter equipoInv = new EquipoInventarioTableAdapter();
-            try
-            {
-                if (cpuInv.obtenerInventario(txtCpu.Text.Trim()).Length != 0)
+                catch (NullReferenceException)
                 {
-                    
-                }
-
-            }
-            catch (NullReferenceException)
-            {
-                this.txtCpu.Focus();
-                MessageBox.Show("No se encuentra en Inventario de CPU");
-                return false;
-
-            }
-            try
-            {
-                if (equipoInv.ObtenerInventarioEquipo(txtEquipo.Text.Trim()).ToString().Length != 0)
-                {
+                    FuncionesEquipo._actualizarInventarioCPU(txtEquipo.Text.Trim(), txtCpu.Text.Trim());
 
                 }
             }
-            catch (NullReferenceException)
+            else if (txtCpu.Text.Trim() == "N/A")
             {
-                this.txtEquipo.Focus();
-                MessageBox.Show("No se encuentra en Inventario de EQUIPO");
-                return false;
+                FuncionesEquipo._actualizarInventarioCPU(txtEquipo.Text.Trim(), txtCpu.Text.Trim());
             }
 
-            return true;
+            //GUARDADO IMPRESORA
+            if (txtImpresora.Text.Trim() != "N/A")
+            {
+                try
+                {
+                    FuncionesEquipo._actualizarInventarioImpresora(FuncionesEquipo.equipo.BuscarIDImpresora_Inventario(txtImpresora.Text.Trim()).ToString()
+                    , this.ImpresoraAnterior);
+
+
+                    FuncionesEquipo._actualizarInventarioImpresora(txtEquipo.Text.Trim(), txtImpresora.Text.Trim());
+                }
+                catch (NullReferenceException)
+                {
+                    FuncionesEquipo._actualizarInventarioImpresora(txtEquipo.Text.Trim(), txtImpresora.Text.Trim());
+
+                }
+            }
+            else if (txtImpresora.Text.Trim() == "N/A")
+            {
+                FuncionesEquipo._actualizarInventarioImpresora(txtEquipo.Text.Trim(), txtImpresora.Text.Trim());
+            }
+            //GUARDADO MICROFONO
+            if (txtMicrofono.Text.Trim() != "N/A")
+            {
+                try
+                {
+                    FuncionesEquipo._actualizarInventarioMicro(FuncionesEquipo.equipo.BuscarIDMicro_Inventario(txtMicrofono.Text.Trim()).ToString()
+                    , this.MicroAnterior);
+
+
+                    FuncionesEquipo._actualizarInventarioMicro(txtEquipo.Text.Trim(), txtMicrofono.Text.Trim());
+                }
+                catch (NullReferenceException)
+                {
+                    FuncionesEquipo._actualizarInventarioMicro(txtEquipo.Text.Trim(), txtMicrofono.Text.Trim());
+
+                }
+            }
+            else if (txtMicrofono.Text.Trim() == "N/A")
+            {
+                FuncionesEquipo._actualizarInventarioMicro(txtEquipo.Text.Trim(), txtMicrofono.Text.Trim());
+            }
+
+            //GUARDADO MOUSE
+            if (txtMouse.Text.Trim() != "N/A")
+            {
+                try
+                {
+                    FuncionesEquipo._actualizarInventarioMouse(FuncionesEquipo.equipo.BuscarIDMouse_Inventario(txtMouse.Text.Trim()).ToString()
+                    , this.MouseAnterior);
+
+
+                    FuncionesEquipo._actualizarInventarioMouse(txtEquipo.Text.Trim(), txtMouse.Text.Trim());
+                }
+                catch (NullReferenceException)
+                {
+                    FuncionesEquipo._actualizarInventarioMouse(txtEquipo.Text.Trim(), txtMouse.Text.Trim());
+
+                }
+            }
+            else if (txtMouse.Text.Trim() == "N/A")
+            {
+                FuncionesEquipo._actualizarInventarioMouse(txtEquipo.Text.Trim(), txtMouse.Text.Trim());
+            }
+            //GUARDADO PANTALLA
+            if (txtPantalla.Text.Trim() != "N/A")
+            {
+                try
+                {
+                    FuncionesEquipo._actualizarInventarioPantlla(FuncionesEquipo.equipo.BuscarIDPantalla_Inventario(txtPantalla.Text.Trim()).ToString()
+                    , this.PantallaAnterior);
+
+
+                    FuncionesEquipo._actualizarInventarioPantlla(txtEquipo.Text.Trim(), txtPantalla.Text.Trim());
+                }
+                catch (NullReferenceException)
+                {
+                    FuncionesEquipo._actualizarInventarioPantlla(txtEquipo.Text.Trim(), txtPantalla.Text.Trim());
+
+                }
+            }
+            else if (txtPantalla.Text.Trim() == "N/A")
+            {
+                FuncionesEquipo._actualizarInventarioPantlla(txtEquipo.Text.Trim(), txtPantalla.Text.Trim());
+            }
+            //GUARDADO PANTALLA PROYECCION
+            if (txtProyeccion.Text.Trim() != "N/A")
+            {
+                try
+                {
+                    FuncionesEquipo._actualizarInventarioPantallaProy(FuncionesEquipo.equipo.BuscarIDPP_Inventario(txtProyeccion.Text.Trim()).ToString()
+                    , this.PPAnterior);
+
+
+                    FuncionesEquipo._actualizarInventarioPantallaProy(txtEquipo.Text.Trim(), txtProyeccion.Text.Trim());
+                }
+                catch (NullReferenceException)
+                {
+                    FuncionesEquipo._actualizarInventarioPantallaProy(txtEquipo.Text.Trim(), txtProyeccion.Text.Trim());
+
+                }
+            }
+            else if (txtProyeccion.Text.Trim() == "N/A")
+            {
+                FuncionesEquipo._actualizarInventarioPantallaProy(txtEquipo.Text.Trim(), txtProyeccion.Text.Trim());
+            }
+            //GUARDADO RADIOS
+            if (txtRadio.Text.Trim() != "N/A")
+            {
+                try
+                {
+                    FuncionesEquipo._actualizarInventarioRadio(FuncionesEquipo.equipo.BuscarIDRadio_Inventario(txtRadio.Text.Trim()).ToString()
+                    , this.RadioAnterior);
+
+
+                    FuncionesEquipo._actualizarInventarioRadio(txtEquipo.Text.Trim(), txtRadio.Text.Trim());
+                }
+                catch (NullReferenceException)
+                {
+                    FuncionesEquipo._actualizarInventarioRadio(txtEquipo.Text.Trim(), txtRadio.Text.Trim());
+
+                }
+            }
+            else if (txtRadio.Text.Trim() == "N/A")
+            {
+                FuncionesEquipo._actualizarInventarioRadio(txtEquipo.Text.Trim(), txtRadio.Text.Trim());
+            }
+            //GUARDADO PROYECTOR
+            if (txtProyector.Text.Trim() != "N/A")
+            {
+                try
+                {
+                    FuncionesEquipo._actualizarInventarioProyector(FuncionesEquipo.equipo.BuscarIDProyector_Inventario(txtProyector.Text.Trim()).ToString()
+                    , this.ProyectorAnterior);
+
+
+                    FuncionesEquipo._actualizarInventarioProyector(txtEquipo.Text.Trim(), txtProyector.Text.Trim());
+                }
+                catch (NullReferenceException)
+                {
+                    FuncionesEquipo._actualizarInventarioProyector(txtEquipo.Text.Trim(), txtProyector.Text.Trim());
+
+                }
+            }
+            else if (txtProyector.Text.Trim() == "N/A")
+            {
+                FuncionesEquipo._actualizarInventarioProyector(txtEquipo.Text.Trim(), txtProyector.Text.Trim());
+            }
+            //GUARDADO REGULADOR 
+            if (txtRegulador.Text.Trim() != "N/A")
+            {
+                try
+                {
+                    FuncionesEquipo._actualizarInventarioRegulador(FuncionesEquipo.equipo.BuscarIDRegulador_Inventario(txtRegulador.Text.Trim()).ToString()
+                    , this.ReguladorAnterior);
+
+
+                    FuncionesEquipo._actualizarInventarioRegulador(txtEquipo.Text.Trim(), txtRegulador.Text.Trim());
+                }
+                catch (NullReferenceException)
+                {
+                    FuncionesEquipo._actualizarInventarioRegulador(txtEquipo.Text.Trim(), txtRegulador.Text.Trim());
+                }
+            }
+            else if (txtRegulador.Text.Trim() == "N/A")
+            {
+                FuncionesEquipo._actualizarInventarioRegulador(txtEquipo.Text.Trim(), txtRegulador.Text.Trim());
+            }
+            //GUARDADO TELEFONO
+            if (txtTelefono.Text.Trim() != "N/A")
+            {
+                try
+                {
+                    FuncionesEquipo._actualizarInventarioTelefono(FuncionesEquipo.equipo.BuscarIDTelefono_Inventario(txtTelefono.Text.Trim()).ToString()
+                    , this.TelefonoAnterior);
+
+
+                    FuncionesEquipo._actualizarInventarioTelefono(txtEquipo.Text.Trim(), txtTelefono.Text.Trim());
+                }
+                catch (NullReferenceException)
+                {
+                    FuncionesEquipo._actualizarInventarioTelefono(txtEquipo.Text.Trim(), txtTelefono.Text.Trim());
+                }
+            }
+            else if (txtTelefono.Text.Trim() == "N/A")
+            {
+                FuncionesEquipo._actualizarInventarioTelefono(txtEquipo.Text.Trim(), txtTelefono.Text.Trim());
+            }
+            //GUARDADO TECLADO
+            if (txtTeclado.Text.Trim() != "N/A")
+            {
+                try
+                {
+                    FuncionesEquipo._actualizarInventarioTeclado(FuncionesEquipo.equipo.BuscarIDTeclado_Inventario(txtTeclado.Text.Trim()).ToString()
+                    , this.TecladoAnterior);
+
+
+                    FuncionesEquipo._actualizarInventarioTeclado(txtEquipo.Text.Trim(), txtTeclado.Text.Trim());
+                }
+                catch (NullReferenceException)
+                {
+                    FuncionesEquipo._actualizarInventarioTeclado(txtEquipo.Text.Trim(), txtTeclado.Text.Trim());
+                }
+            }
+            else if (txtTeclado.Text.Trim() == "N/A")
+            {
+                FuncionesEquipo._actualizarInventarioTeclado(txtEquipo.Text.Trim(), txtTeclado.Text.Trim());
+            }
+            //GUARDADO PARLANTE
+            if (txtParlante.Text.Trim() != "N/A")
+            {
+                try
+                {
+                    FuncionesEquipo._actualizarInventarioParlante(FuncionesEquipo.equipo.BuscarIDParlante_Inventario(txtParlante.Text.Trim()).ToString()
+                    , this.ParlanteAnterior);
+
+
+                    FuncionesEquipo._actualizarInventarioParlante(txtEquipo.Text.Trim(), txtParlante.Text.Trim());
+                }
+                catch (NullReferenceException)
+                {
+                    FuncionesEquipo._actualizarInventarioParlante(txtEquipo.Text.Trim(), txtParlante.Text.Trim());
+                }
+            }
+            else if (txtParlante.Text.Trim() == "N/A")
+            {
+                FuncionesEquipo._actualizarInventarioParlante(txtEquipo.Text.Trim(), txtParlante.Text.Trim());
+            }
+            //GUARDADO OFICINA
+            try
+            {
+                FuncionesEquipo._actualizarOficina(comboOficina.SelectedItem.ToString(), txtEquipo.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                FuncionesEquipo._actualizarOficina(comboOficina.Text, txtEquipo.Text.Trim());
+            }
+            
+            
+            ApagarBotones();
+            gridInventario.Enabled = true;
+            this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
         }
     }
+
 }
