@@ -109,18 +109,7 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-            string sql = "update va set va.Inventario_Regulador='" + txtRegulador.Text + "', va.tipo = '" + txtTipo.Text + "'" +
-                " from Equipo e,Regulador va where e.Regulador = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
-
-
-            Datos.Insertar(sql);
-
-            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
-                  " from Equipo e,Regulador va, Caracteristicas car " +
-                  " where e.Regulador = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
-
-
-            Datos.Insertar(sql);
+           
         }
 
         private void guardarMenuItem_Click(object sender, EventArgs e)
@@ -136,20 +125,7 @@ namespace sistemaFCNM.Vistas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-            string sql = "select e.id_Equipo, reg.Inventario_Regulador,reg.tipo,car.estado,car.marca," +
-                "car.modelo,car.serie from  Equipo e, Regulador reg," +
-                "Caracteristicas car where " +
-                "e.Regulador = reg.ID and car.id_caracteristica = reg.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
-
-            Datos.llenarGrid(sql, gridRegulador);
            
-
-            sql = "select e.id_Equipo, reg.Inventario_Regulador,reg.tipo,car.estado,car.marca," +
-                "car.modelo,car.serie from  Equipo e, Regulador reg," +
-                "Caracteristicas car where " +
-                "e.Regulador = reg.ID and car.id_caracteristica = reg.caracteristicas ; ";
-
-            Datos.llenarGrid(sql, gridRegulador);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -160,10 +136,10 @@ namespace sistemaFCNM.Vistas
         {
             
             txtRegulador.Enabled = true;
-            txtTipo.Enabled = true;
-            txtEstado.Enabled = true;
-            txtMarca.Enabled = true;
-            txtModelo.Enabled = true;
+            comboTipo.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
             txtSerie.Enabled = true;
         }
 

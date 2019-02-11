@@ -110,18 +110,7 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-            string sql = "update va set va.Inventario_PantallaProyeccion='" + txtPproyeccion.Text + "', va.Dimensiones = '" + txtDimensiones.Text + "'" +
-              " from Equipo e,Pantalla_Proyeccion va where e.PantallaProyeccion = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
-
-
-            Datos.Insertar(sql);
-
-            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
-                  " from Equipo e,Pantalla_Proyeccion va, Caracteristicas car " +
-                  " where e.PantallaProyeccion = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
-
-
-            Datos.Insertar(sql);
+           
         }
 
         private void guardarMenuItem_Click(object sender, EventArgs e)
@@ -137,21 +126,7 @@ namespace sistemaFCNM.Vistas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-            string sql = "select e.id_Equipo, pro.Inventario_PantallaProyeccion,pro.Dimensiones,car.estado,car.marca," +
-                "car.modelo,car.serie from  Equipo e, Pantalla_Proyeccion pro," +
-                "Caracteristicas car where " +
-                " e.PantallaProyeccion=pro.ID and car.id_caracteristica = pro.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
-
-            Datos.llenarGrid(sql, gridPP);
-            
-
-            sql = "select e.id_Equipo, pro.Inventario_PantallaProyeccion,pro.Dimensiones,car.estado,car.marca," +
-                "car.modelo,car.serie from  Equipo e, Pantalla_Proyeccion pro," +
-                "Caracteristicas car where " +
-                " e.PantallaProyeccion=pro.ID and car.id_caracteristica = pro.caracteristicas ; ";
-
-            Datos.llenarGrid(sql, gridPP);
-
+           
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -163,10 +138,10 @@ namespace sistemaFCNM.Vistas
         {
             
             txtPproyeccion.Enabled = true;
-            txtDimensiones.Enabled = true;
-            txtEstado.Enabled = true;
-            txtMarca.Enabled = true;
-            txtModelo.Enabled = true;
+            comboDimensiones.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
             txtSerie.Enabled = true;
         }
 

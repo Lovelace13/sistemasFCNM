@@ -83,18 +83,7 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-            string sql = "update va set va.Inventario_Proyector='" + txtProyector.Text + "', va.Inventario_Espoltech = '" + txtEspolTech.Text + "'" +
-             " from Equipo e,Proyector va where e.Proyector = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
-
-
-            Datos.Insertar(sql);
-
-            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
-                  " from Equipo e,Proyector va, Caracteristicas car " +
-                  " where e.Proyector = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
-
-
-            Datos.Insertar(sql);
+           
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,20 +122,7 @@ namespace sistemaFCNM.Vistas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-            string sql = "select e.id_Equipo, pro.Inventario_Proyector,pro.Inventario_Espoltech,car.estado,car.marca," +
-                "car.modelo,car.serie from  Equipo e, Proyector pro," +
-                "Caracteristicas car where " +
-                "e.Proyector = pro.ID and car.id_caracteristica = pro.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "';";
-
-            Datos.llenarGrid(sql, gridProyector);
-           
-
-           sql = "select e.id_Equipo, pro.Inventario_Proyector,pro.Inventario_Espoltech,car.estado,car.marca," +
-                "car.modelo,car.serie from  Equipo e, Proyector pro," +
-                "Caracteristicas car where " +
-                "e.Proyector = pro.ID and car.id_caracteristica = pro.caracteristicas ;";
-
-            Datos.llenarGrid(sql, gridProyector);
+        
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -157,9 +133,9 @@ namespace sistemaFCNM.Vistas
         {
             txtProyector.Enabled = true;
             txtEspolTech.Enabled = true;
-            txtEstado.Enabled = true;
-            txtMarca.Enabled = true;
-            txtModelo.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
             txtSerie.Enabled = true;
         }
 

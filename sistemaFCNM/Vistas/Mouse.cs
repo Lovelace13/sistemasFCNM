@@ -110,18 +110,7 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-            string sql = "update va set va.Inventario_Mouse='" + txtMouse.Text + "'" +
-               " from Equipo e,Mouse va where e.Mouse = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
-
-
-            Datos.Insertar(sql);
-
-            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
-                  " from Equipo e,Mouse va, Caracteristicas car " +
-                  " where e.Mouse = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
-
-
-            Datos.Insertar(sql);
+           
         }
 
         private void guardarMenuItem_Click(object sender, EventArgs e)
@@ -164,21 +153,7 @@ namespace sistemaFCNM.Vistas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-            string sql = "select e.id_Equipo, m.Inventario_Mouse,car.estado,car.marca,"
-               + "car.modelo,car.serie from  Equipo e, Mouse m, CPU ,"
-               + "Caracteristicas car where e.Inventario_CPU = CPU.ID and"
-               + " e.Mouse = m.ID and car.id_caracteristica = m.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
-
-            Datos.llenarGrid(sql, gridMouse);
-         
-
-            sql = "select e.id_Equipo, m.Inventario_Mouse,car.estado,car.marca,"
-               + "car.modelo,car.serie from  Equipo e, Mouse m, CPU ,"
-               + "Caracteristicas car where e.Inventario_CPU = CPU.ID and"
-               + " e.Mouse = m.ID and car.id_caracteristica = m.caracteristicas ; ";
-
-            Datos.llenarGrid(sql, gridMouse);
+           
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -189,9 +164,9 @@ namespace sistemaFCNM.Vistas
         {
            
             txtMouse.Enabled = true;
-            txtEstado.Enabled = true;
-            txtMarca.Enabled = true;
-            txtModelo.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
             txtSerie.Enabled = true;
         }
 

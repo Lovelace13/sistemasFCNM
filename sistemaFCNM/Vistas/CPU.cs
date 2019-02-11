@@ -1,4 +1,5 @@
 ﻿using sistemaFCNM.Clases;
+using sistemaFCNM.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,13 @@ namespace sistemaFCNM.Vistas
 {
     public partial class CPU : Form
     {
-      
+        private string InventarioAnterior;
+        private string LoteAnterior;
+        private string CodeAnterior;
+        private string NombreAnterior;
+        private string SerieAnterior;
+        private string TagAnterior;
+
         public CPU()
         {
             InitializeComponent();
@@ -138,23 +145,254 @@ namespace sistemaFCNM.Vistas
             
             txtCpu.Enabled = true;
             txtNombre.Enabled = true;
-            txtTipo.Enabled = true;
+            comboTipo.Enabled = true;
             txtTag.Enabled = true;
             txtCode.Enabled = true;
-            txtPerfil.Enabled = true;
-            txtProcesador.Enabled = true;
-            txtMemoria.Enabled = true;
-            txtDisco.Enabled = true;
-            txtEstado.Enabled = true;
-            txtMarca.Enabled = true;
+            comboPerfil.Enabled = true;
+            comboProcesador.Enabled = true;
+            comboMemoria.Enabled = true;
+            comboDisco.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
             txtModelo.Enabled = true;
             txtSerie.Enabled = true;
             txtLote.Enabled = true;
         }
+        private void ApagarBotones()
+        {
+
+            txtCpu.Enabled = false;
+            txtNombre.Enabled = false;
+            comboTipo.Enabled = false;
+            txtTag.Enabled = false;
+            txtCode.Enabled = false;
+            comboPerfil.Enabled = false;
+            comboProcesador.Enabled = false;
+            comboMemoria.Enabled = false;
+            comboDisco.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            txtModelo.Enabled = false;
+            txtSerie.Enabled = false;
+            txtLote.Enabled = false;
+        }
 
         private void cpuBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-          
+            //Update Inventario
+            try
+            {
+                if(this.cpuTableAdapter.ObtenerIDCPU(txtCpu.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtCpu.Text.Trim())
+                {
+                    MessageBox.Show("Inventario Repetido ");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.cpuTableAdapter.UpdateInventario(txtCpu.Text.Trim(), this.InventarioAnterior);
+
+
+            }
+            //Update Adicional Lote
+            try
+            {
+                if (txtLote.Text.Trim() != "N/A")
+                {
+                    if (this.cpuTableAdapter.ObtenerAdicionalLote(txtLote.Text.Trim()).ToString().Length != 0 && this.LoteAnterior!="N/A")
+                    {
+                        this.cpuTableAdapter.UpdateAdicionalLote(txtLote.Text.Trim(), txtCpu.Text.Trim());
+                    }
+                    else
+                    {
+
+                        this.cpuTableAdapter.UpdateTablaCpuLote((int)this.cpuTableAdapter.ObtenerAdicionalLote(txtLote.Text.Trim()), txtCpu.Text.Trim());
+                    }
+
+                }
+                else
+                {
+
+                    this.cpuTableAdapter.UpdateTablaCpuLote((int)this.cpuTableAdapter.ObtenerAdicionalLote(txtLote.Text.Trim()), txtCpu.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.cpuTableAdapter.InsertAdicionalote(txtLote.Text.Trim());
+                this.cpuTableAdapter.UpdateTablaCpuLote((int)this.cpuTableAdapter.ObtenerAdicionalLote(txtLote.Text.Trim()), txtCpu.Text.Trim());
+            }
+            //Update CODE
+            try
+            {
+                if (txtCode.Text.Trim() != "N/A")
+                {
+                    if (this.cpuTableAdapter.ObtenerCode(txtCode.Text.Trim()).ToString().Length != 0 && this.CodeAnterior != "N/A")
+                    {
+                        this.cpuTableAdapter.UpdateCode(txtCode.Text.Trim(), txtCpu.Text.Trim());
+                    }
+                    else
+                    {
+
+                        this.cpuTableAdapter.UpdateTablaCpuCode((int)this.cpuTableAdapter.ObtenerCode(txtCode.Text.Trim()), txtCpu.Text.Trim());
+                    }
+                }
+                else
+                {
+
+                    this.cpuTableAdapter.UpdateTablaCpuCode((int)this.cpuTableAdapter.ObtenerCode(txtCode.Text.Trim()), txtCpu.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.cpuTableAdapter.InsertCode(txtCode.Text.Trim());
+                this.cpuTableAdapter.UpdateTablaCpuCode((int)this.cpuTableAdapter.ObtenerCode(txtCode.Text.Trim()), txtCpu.Text.Trim());
+            }
+            //Update Nombre
+            try
+            {
+                if (txtNombre.Text.Trim() != "N/A")
+                {
+                    if (this.cpuTableAdapter.ObtenerNombrePc(txtNombre.Text.Trim()).ToString().Length != 0 && this.NombreAnterior != "N/A")
+                    {
+                        this.cpuTableAdapter.UpdateNombrePc(txtNombre.Text.Trim(), txtCpu.Text.Trim());
+                    }
+                    else
+                    {
+
+                        this.cpuTableAdapter.UpdateTablaCpuNombre((int)this.cpuTableAdapter.ObtenerNombrePc(txtNombre.Text.Trim()), txtCpu.Text.Trim());
+                    }
+                }
+                else
+                {
+
+                    this.cpuTableAdapter.UpdateTablaCpuNombre((int)this.cpuTableAdapter.ObtenerNombrePc(txtNombre.Text.Trim()), txtCpu.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.cpuTableAdapter.InsertNombre(txtNombre.Text.Trim());
+                this.cpuTableAdapter.UpdateTablaCpuNombre((int)this.cpuTableAdapter.ObtenerNombrePc(txtNombre.Text.Trim()), txtCpu.Text.Trim());
+            }
+
+            //Update Serie
+            try
+            {
+                if (txtSerie.Text.Trim() != "N/A")
+                {
+                    if (this.cpuTableAdapter.ObtenerSerie(txtSerie.Text.Trim()).ToString().Length != 0 && this.SerieAnterior != "N/A")
+                    {
+                        this.cpuTableAdapter.UpdateSerie(txtSerie.Text.Trim(), txtCpu.Text.Trim());
+                    }
+                    else
+                    {
+                        this.cpuTableAdapter.UpdateTablaCpuSerie((int)this.cpuTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtCpu.Text.Trim());
+                    }
+                }
+                else
+                {
+
+                    this.cpuTableAdapter.UpdateTablaCpuSerie((int)this.cpuTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtCpu.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.cpuTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                this.cpuTableAdapter.UpdateTablaCpuSerie((int)this.cpuTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtCpu.Text.Trim());
+            }
+
+            //Update Tag
+            try
+            {
+                if (txtTag.Text.Trim() != "N/A")
+                {
+                    if (this.cpuTableAdapter.ObtenerTag(txtTag.Text.Trim()).ToString().Length != 0 && this.TagAnterior != "N/A")
+                    {
+                        this.cpuTableAdapter.UpdateTag(txtTag.Text.Trim(), txtCpu.Text.Trim());
+                    }
+                    else
+                    {
+                        this.cpuTableAdapter.UpdateTablaCpuTag((int)this.cpuTableAdapter.ObtenerTag(txtTag.Text.Trim()), txtCpu.Text.Trim());
+                    }
+                }
+                else
+                {
+
+                    this.cpuTableAdapter.UpdateTablaCpuTag((int)this.cpuTableAdapter.ObtenerTag(txtTag.Text.Trim()), txtCpu.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.cpuTableAdapter.InsertTag(txtTag.Text.Trim());
+                this.cpuTableAdapter.UpdateTablaCpuTag((int)this.cpuTableAdapter.ObtenerTag(txtTag.Text.Trim()), txtCpu.Text.Trim());
+            }
+            //Guardado TipoPC
+            try
+            {
+                this.cpuTableAdapter.UpdateTablaCpuTipo(this.cpuTableAdapter.ObtenerTipo(comboTipo.SelectedItem.ToString()), txtCpu.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.cpuTableAdapter.UpdateTablaCpuTipo(this.cpuTableAdapter.ObtenerTipo(comboTipo.Text), txtCpu.Text.Trim());
+            }
+
+            //Guardado Perfil
+            try
+            {
+                this.cpuTableAdapter.UpdateTablaCpuPerfil(this.cpuTableAdapter.ObtenerPerfil(comboPerfil.SelectedItem.ToString()), txtCpu.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.cpuTableAdapter.UpdateTablaCpuPerfil(this.cpuTableAdapter.ObtenerPerfil(comboPerfil.Text), txtCpu.Text.Trim());
+            }
+            //Guardado Estado
+            try
+            {
+                this.cpuTableAdapter.UpdateTablaCpuEstado(FuncionesEquipo.estado.ObtenerEstado(comboEstado.SelectedItem.ToString()), txtCpu.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.cpuTableAdapter.UpdateTablaCpuEstado(FuncionesEquipo.estado.ObtenerEstado(comboEstado.Text), txtCpu.Text.Trim());
+            }
+            //Guardado Procesador
+            try
+            {
+                this.cpuTableAdapter.UpdateTablaCpuProcesador(this.cpuTableAdapter.ObtenerProcesador(comboProcesador.SelectedItem.ToString()), txtCpu.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.cpuTableAdapter.UpdateTablaCpuProcesador(this.cpuTableAdapter.ObtenerProcesador(comboProcesador.Text), txtCpu.Text.Trim());
+            }
+            //Guardado Memoria
+            try
+            {
+                this.cpuTableAdapter.UpdateTablaCpuMemoria(this.cpuTableAdapter.ObtenerMemoria(comboMemoria.SelectedItem.ToString()), txtCpu.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.cpuTableAdapter.UpdateTablaCpuMemoria(this.cpuTableAdapter.ObtenerMemoria(comboMemoria.Text), txtCpu.Text.Trim());
+            }
+            //Guardado Disco
+            try
+            {
+                this.cpuTableAdapter.UpdateTablaCpuDisco(this.cpuTableAdapter.ObtenerDisco(comboDisco.SelectedItem.ToString()), txtCpu.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.cpuTableAdapter.UpdateTablaCpuDisco(this.cpuTableAdapter.ObtenerDisco(comboDisco.Text), txtCpu.Text.Trim());
+            }
+            this.gridCpu.Enabled = true;
+            this.ApagarBotones();
+            this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
 
         }
 
@@ -181,6 +419,22 @@ namespace sistemaFCNM.Vistas
         private void btnEditar_Click(object sender, EventArgs e)
         {
             this.habilitarBotones();
+            this.InventarioAnterior = txtCpu.Text.Trim();
+            this.LoteAnterior = txtLote.Text.Trim();
+            this.CodeAnterior = txtCode.Text.Trim();
+            this.NombreAnterior = txtNombre.Text.Trim();
+            this.SerieAnterior = txtSerie.Text.Trim();
+            this.TagAnterior = txtTag.Text.Trim();
+
+            this.gridCpu.Enabled = false;
+
+            comboTipo.Items.AddRange(Datos._obtenerTipoPC());
+            comboPerfil.Items.AddRange(Datos._obtenerPerfil());
+            comboMarca.Items.AddRange(Datos._obtenerMarca());
+            comboEstado.Items.AddRange(Datos._obtenerEstado());
+            comboProcesador.Items.AddRange(Datos._obtenerProcesador());
+            comboDisco.Items.AddRange(Datos._obtenerDisco());
+            comboMemoria.Items.AddRange(Datos._obtenerMemoria());
         }
     }
 }

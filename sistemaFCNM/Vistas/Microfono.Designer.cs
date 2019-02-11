@@ -33,18 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.microfonoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtMicro = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTipo = new System.Windows.Forms.TextBox();
             this.btnPrevius = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.txtEquipo = new System.Windows.Forms.TextBox();
@@ -73,6 +70,9 @@
             this.inventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboTipo = new System.Windows.Forms.ComboBox();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.microfonoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -81,18 +81,6 @@
             this.microfonoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridMicrofono)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Estado", true));
-            this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(150, 109);
-            this.txtEstado.Multiline = true;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(172, 31);
-            this.txtEstado.TabIndex = 100;
             // 
             // microfonoBindingSource
             // 
@@ -135,18 +123,6 @@
             this.label11.Size = new System.Drawing.Size(36, 13);
             this.label11.TabIndex = 99;
             this.label11.Text = "Serie";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Marca", true));
-            this.txtMarca.Enabled = false;
-            this.txtMarca.Location = new System.Drawing.Point(150, 19);
-            this.txtMarca.Multiline = true;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(172, 31);
-            this.txtMarca.TabIndex = 94;
             // 
             // label13
             // 
@@ -193,18 +169,6 @@
             this.label1.TabIndex = 107;
             this.label1.Text = "Tipo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtTipo
-            // 
-            this.txtTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Tipo", true));
-            this.txtTipo.Enabled = false;
-            this.txtTipo.Location = new System.Drawing.Point(158, 115);
-            this.txtTipo.Multiline = true;
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(172, 31);
-            this.txtTipo.TabIndex = 106;
             // 
             // btnPrevius
             // 
@@ -256,11 +220,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.comboTipo);
             this.groupBox1.Controls.Add(this.txtMicro);
             this.groupBox1.Controls.Add(this.lblCpu);
             this.groupBox1.Controls.Add(this.txtEquipo);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtTipo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(85, 56);
             this.groupBox1.Name = "groupBox1";
@@ -272,12 +236,12 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.txtMarca);
+            this.groupBox2.Controls.Add(this.comboEstado);
+            this.groupBox2.Controls.Add(this.comboMarca);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtSerie);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txtEstado);
             this.groupBox2.Location = new System.Drawing.Point(556, 56);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(356, 221);
@@ -601,6 +565,36 @@
             this.serieDataGridViewTextBoxColumn.ReadOnly = true;
             this.serieDataGridViewTextBoxColumn.Width = 64;
             // 
+            // comboTipo
+            // 
+            this.comboTipo.Enabled = false;
+            this.comboTipo.FormattingEnabled = true;
+            this.comboTipo.Location = new System.Drawing.Point(158, 119);
+            this.comboTipo.Name = "comboTipo";
+            this.comboTipo.Size = new System.Drawing.Size(172, 21);
+            this.comboTipo.TabIndex = 119;
+            this.comboTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Tipo", true));
+            // 
+            // comboEstado
+            // 
+            this.comboEstado.Enabled = false;
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(150, 111);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(172, 21);
+            this.comboEstado.TabIndex = 118;
+            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Estado", true));
+            // 
+            // comboMarca
+            // 
+            this.comboMarca.Enabled = false;
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(150, 19);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(172, 21);
+            this.comboMarca.TabIndex = 117;
+            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Marca", true));
+            // 
             // Microfono
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -639,16 +633,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtMicro;
         private System.Windows.Forms.Label lblCpu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Button btnPrevius;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.TextBox txtEquipo;
@@ -679,5 +670,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn inventarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn serieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboTipo;
+        private System.Windows.Forms.ComboBox comboEstado;
+        private System.Windows.Forms.ComboBox comboMarca;
     }
 }

@@ -34,16 +34,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtDimensiones = new System.Windows.Forms.TextBox();
             this.pantallaProyeccionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtModelo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtPproyeccion = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
@@ -52,7 +48,11 @@
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboDimensiones = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboModelo = new System.Windows.Forms.ComboBox();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pantallaProyeccionTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.PantallaProyeccionTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
@@ -97,18 +97,6 @@
             this.label1.Text = "Dimensiones";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtDimensiones
-            // 
-            this.txtDimensiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtDimensiones.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDimensiones.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaProyeccionBindingSource, "Dimensiones", true));
-            this.txtDimensiones.Enabled = false;
-            this.txtDimensiones.Location = new System.Drawing.Point(197, 121);
-            this.txtDimensiones.Multiline = true;
-            this.txtDimensiones.Name = "txtDimensiones";
-            this.txtDimensiones.Size = new System.Drawing.Size(105, 31);
-            this.txtDimensiones.TabIndex = 134;
-            // 
             // pantallaProyeccionBindingSource
             // 
             this.pantallaProyeccionBindingSource.DataMember = "PantallaProyeccion";
@@ -118,18 +106,6 @@
             // 
             this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
             this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaProyeccionBindingSource, "Estado", true));
-            this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(153, 144);
-            this.txtEstado.Multiline = true;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(172, 31);
-            this.txtEstado.TabIndex = 129;
             // 
             // label10
             // 
@@ -163,18 +139,6 @@
             this.label11.TabIndex = 128;
             this.label11.Text = "Serie";
             // 
-            // txtModelo
-            // 
-            this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaProyeccionBindingSource, "Modelo", true));
-            this.txtModelo.Enabled = false;
-            this.txtModelo.Location = new System.Drawing.Point(153, 62);
-            this.txtModelo.Multiline = true;
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(172, 31);
-            this.txtModelo.TabIndex = 125;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -184,18 +148,6 @@
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 126;
             this.label12.Text = "Modelo";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaProyeccionBindingSource, "Marca", true));
-            this.txtMarca.Enabled = false;
-            this.txtMarca.Location = new System.Drawing.Point(153, 19);
-            this.txtMarca.Multiline = true;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(172, 31);
-            this.txtMarca.TabIndex = 123;
             // 
             // label13
             // 
@@ -280,8 +232,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboDimensiones);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtDimensiones);
             this.groupBox1.Controls.Add(this.lblCpu);
             this.groupBox1.Controls.Add(this.txtPproyeccion);
             this.groupBox1.Controls.Add(this.txtEquipo);
@@ -293,15 +245,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PANTALLA PROYECCION DATOS BASICOS";
             // 
+            // comboDimensiones
+            // 
+            this.comboDimensiones.DataSource = this.pantallaProyeccionBindingSource;
+            this.comboDimensiones.DisplayMember = "Dimensiones";
+            this.comboDimensiones.Enabled = false;
+            this.comboDimensiones.FormattingEnabled = true;
+            this.comboDimensiones.Location = new System.Drawing.Point(197, 122);
+            this.comboDimensiones.Name = "comboDimensiones";
+            this.comboDimensiones.Size = new System.Drawing.Size(96, 21);
+            this.comboDimensiones.TabIndex = 160;
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtEstado);
+            this.groupBox2.Controls.Add(this.comboModelo);
+            this.groupBox2.Controls.Add(this.comboEstado);
+            this.groupBox2.Controls.Add(this.comboMarca);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtSerie);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txtModelo);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.txtMarca);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Location = new System.Drawing.Point(553, 37);
             this.groupBox2.Name = "groupBox2";
@@ -309,6 +272,39 @@
             this.groupBox2.TabIndex = 166;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Caracteristicas";
+            // 
+            // comboModelo
+            // 
+            this.comboModelo.DataSource = this.pantallaProyeccionBindingSource;
+            this.comboModelo.DisplayMember = "Modelo";
+            this.comboModelo.Enabled = false;
+            this.comboModelo.FormattingEnabled = true;
+            this.comboModelo.Location = new System.Drawing.Point(153, 58);
+            this.comboModelo.Name = "comboModelo";
+            this.comboModelo.Size = new System.Drawing.Size(172, 21);
+            this.comboModelo.TabIndex = 133;
+            // 
+            // comboEstado
+            // 
+            this.comboEstado.DataSource = this.pantallaProyeccionBindingSource;
+            this.comboEstado.DisplayMember = "Estado";
+            this.comboEstado.Enabled = false;
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(153, 144);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(172, 21);
+            this.comboEstado.TabIndex = 132;
+            // 
+            // comboMarca
+            // 
+            this.comboMarca.DataSource = this.pantallaProyeccionBindingSource;
+            this.comboMarca.DisplayMember = "Marca";
+            this.comboMarca.Enabled = false;
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(153, 15);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(172, 21);
+            this.comboMarca.TabIndex = 131;
             // 
             // panel1
             // 
@@ -675,14 +671,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDimensiones;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtPproyeccion;
         private System.Windows.Forms.Label lblCpu;
@@ -717,5 +709,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn serieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboModelo;
+        private System.Windows.Forms.ComboBox comboEstado;
+        private System.Windows.Forms.ComboBox comboMarca;
+        private System.Windows.Forms.ComboBox comboDimensiones;
     }
 }

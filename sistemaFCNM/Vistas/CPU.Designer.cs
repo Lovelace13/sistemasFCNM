@@ -35,29 +35,24 @@ namespace sistemaFCNM.Vistas
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.cpuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtLote = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtDisco = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtMemoria = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtProcesador = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTag = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPerfil = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTipo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,6 +61,7 @@ namespace sistemaFCNM.Vistas
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboTipo = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNext = new System.Windows.Forms.Button();
@@ -83,6 +79,7 @@ namespace sistemaFCNM.Vistas
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cpuBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.gridCpu = new System.Windows.Forms.DataGridView();
             this.adicionalLoteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,31 +94,32 @@ namespace sistemaFCNM.Vistas
             this.tagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoPCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
             this.cpuTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.CpuTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.comboPerfil = new System.Windows.Forms.ComboBox();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
+            this.comboMemoria = new System.Windows.Forms.ComboBox();
+            this.comboDisco = new System.Windows.Forms.ComboBox();
+            this.comboProcesador = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cpuBindingNavigator)).BeginInit();
             this.cpuBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtEstado
+            // cpuBindingSource
             // 
-            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Estado", true));
-            this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(165, 102);
-            this.txtEstado.Multiline = true;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(172, 31);
-            this.txtEstado.TabIndex = 104;
+            this.cpuBindingSource.DataMember = "Cpu";
+            this.cpuBindingSource.DataSource = this.sistemasFCNMDataSet;
+            // 
+            // sistemasFCNMDataSet
+            // 
+            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
+            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label10
             // 
@@ -171,18 +169,6 @@ namespace sistemaFCNM.Vistas
             this.label12.Size = new System.Drawing.Size(100, 23);
             this.label12.TabIndex = 106;
             // 
-            // txtMarca
-            // 
-            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Marca", true));
-            this.txtMarca.Enabled = false;
-            this.txtMarca.Location = new System.Drawing.Point(165, 28);
-            this.txtMarca.Multiline = true;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(172, 31);
-            this.txtMarca.TabIndex = 98;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -219,18 +205,6 @@ namespace sistemaFCNM.Vistas
             this.label14.Text = "Adicional / Lote";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtDisco
-            // 
-            this.txtDisco.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtDisco.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDisco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Disco", true));
-            this.txtDisco.Enabled = false;
-            this.txtDisco.Location = new System.Drawing.Point(289, 194);
-            this.txtDisco.Multiline = true;
-            this.txtDisco.Name = "txtDisco";
-            this.txtDisco.Size = new System.Drawing.Size(48, 32);
-            this.txtDisco.TabIndex = 94;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -241,18 +215,6 @@ namespace sistemaFCNM.Vistas
             this.label15.TabIndex = 95;
             this.label15.Text = "Disco";
             // 
-            // txtMemoria
-            // 
-            this.txtMemoria.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtMemoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMemoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Memoria", true));
-            this.txtMemoria.Enabled = false;
-            this.txtMemoria.Location = new System.Drawing.Point(144, 247);
-            this.txtMemoria.Multiline = true;
-            this.txtMemoria.Name = "txtMemoria";
-            this.txtMemoria.Size = new System.Drawing.Size(56, 32);
-            this.txtMemoria.TabIndex = 92;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -262,18 +224,6 @@ namespace sistemaFCNM.Vistas
             this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 93;
             this.label6.Text = "Memoria";
-            // 
-            // txtProcesador
-            // 
-            this.txtProcesador.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtProcesador.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtProcesador.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Procesador", true));
-            this.txtProcesador.Enabled = false;
-            this.txtProcesador.Location = new System.Drawing.Point(144, 194);
-            this.txtProcesador.Multiline = true;
-            this.txtProcesador.Name = "txtProcesador";
-            this.txtProcesador.Size = new System.Drawing.Size(56, 32);
-            this.txtProcesador.TabIndex = 90;
             // 
             // label7
             // 
@@ -338,18 +288,6 @@ namespace sistemaFCNM.Vistas
             this.label5.Text = "Tag";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtPerfil
-            // 
-            this.txtPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPerfil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Perfil", true));
-            this.txtPerfil.Enabled = false;
-            this.txtPerfil.Location = new System.Drawing.Point(129, 178);
-            this.txtPerfil.Multiline = true;
-            this.txtPerfil.Name = "txtPerfil";
-            this.txtPerfil.Size = new System.Drawing.Size(172, 31);
-            this.txtPerfil.TabIndex = 84;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -362,18 +300,6 @@ namespace sistemaFCNM.Vistas
             this.label2.TabIndex = 85;
             this.label2.Text = "Perfil";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtTipo
-            // 
-            this.txtTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "TipoPC", true));
-            this.txtTipo.Enabled = false;
-            this.txtTipo.Location = new System.Drawing.Point(129, 139);
-            this.txtTipo.Multiline = true;
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(172, 31);
-            this.txtTipo.TabIndex = 82;
             // 
             // label3
             // 
@@ -464,14 +390,14 @@ namespace sistemaFCNM.Vistas
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.comboPerfil);
+            this.groupBox1.Controls.Add(this.comboTipo);
             this.groupBox1.Controls.Add(this.txtCpu);
             this.groupBox1.Controls.Add(this.lblCpu);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtTipo);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtPerfil);
             this.groupBox1.Controls.Add(this.txtCode);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtEquipo);
@@ -487,25 +413,35 @@ namespace sistemaFCNM.Vistas
             this.groupBox1.Text = "CPU DATOS BASICOS";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // comboTipo
+            // 
+            this.comboTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "TipoPC", true));
+            this.comboTipo.Enabled = false;
+            this.comboTipo.FormattingEnabled = true;
+            this.comboTipo.Location = new System.Drawing.Point(129, 146);
+            this.comboTipo.Name = "comboTipo";
+            this.comboTipo.Size = new System.Drawing.Size(172, 21);
+            this.comboTipo.TabIndex = 110;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.comboMemoria);
+            this.groupBox2.Controls.Add(this.comboDisco);
+            this.groupBox2.Controls.Add(this.comboProcesador);
+            this.groupBox2.Controls.Add(this.comboEstado);
+            this.groupBox2.Controls.Add(this.comboMarca);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.txtMarca);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtModelo);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtSerie);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txtEstado);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.txtDisco);
             this.groupBox2.Controls.Add(this.txtLote);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.txtMemoria);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.txtProcesador);
             this.groupBox2.Location = new System.Drawing.Point(553, 37);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(376, 302);
@@ -675,6 +611,16 @@ namespace sistemaFCNM.Vistas
             this.cpuBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.cpuBindingNavigatorSaveItem.Text = "Guardar datos";
             this.cpuBindingNavigatorSaveItem.Click += new System.EventHandler(this.cpuBindingNavigatorSaveItem_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(23, 22);
+            this.btnEditar.Text = "toolStripButton1";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // gridCpu
             // 
@@ -847,16 +793,6 @@ namespace sistemaFCNM.Vistas
             this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
             this.estadoDataGridViewTextBoxColumn.Width = 75;
             // 
-            // cpuBindingSource
-            // 
-            this.cpuBindingSource.DataMember = "Cpu";
-            this.cpuBindingSource.DataSource = this.sistemasFCNMDataSet;
-            // 
-            // sistemasFCNMDataSet
-            // 
-            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
-            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cpuTableAdapter
             // 
             this.cpuTableAdapter.ClearBeforeFill = true;
@@ -940,15 +876,65 @@ namespace sistemaFCNM.Vistas
             this.tableAdapterManager.UpdateOrder = sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
             // 
-            // btnEditar
+            // comboPerfil
             // 
-            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(23, 22);
-            this.btnEditar.Text = "toolStripButton1";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.comboPerfil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Perfil", true));
+            this.comboPerfil.Enabled = false;
+            this.comboPerfil.FormattingEnabled = true;
+            this.comboPerfil.Location = new System.Drawing.Point(129, 182);
+            this.comboPerfil.Name = "comboPerfil";
+            this.comboPerfil.Size = new System.Drawing.Size(172, 21);
+            this.comboPerfil.TabIndex = 111;
+            // 
+            // comboMarca
+            // 
+            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Marca", true));
+            this.comboMarca.Enabled = false;
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(165, 29);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(172, 21);
+            this.comboMarca.TabIndex = 112;
+            // 
+            // comboEstado
+            // 
+            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Estado", true));
+            this.comboEstado.Enabled = false;
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(165, 113);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(172, 21);
+            this.comboEstado.TabIndex = 113;
+            // 
+            // comboMemoria
+            // 
+            this.comboMemoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Memoria", true));
+            this.comboMemoria.Enabled = false;
+            this.comboMemoria.FormattingEnabled = true;
+            this.comboMemoria.Location = new System.Drawing.Point(144, 260);
+            this.comboMemoria.Name = "comboMemoria";
+            this.comboMemoria.Size = new System.Drawing.Size(63, 21);
+            this.comboMemoria.TabIndex = 132;
+            // 
+            // comboDisco
+            // 
+            this.comboDisco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Disco", true));
+            this.comboDisco.Enabled = false;
+            this.comboDisco.FormattingEnabled = true;
+            this.comboDisco.Location = new System.Drawing.Point(289, 197);
+            this.comboDisco.Name = "comboDisco";
+            this.comboDisco.Size = new System.Drawing.Size(58, 21);
+            this.comboDisco.TabIndex = 133;
+            // 
+            // comboProcesador
+            // 
+            this.comboProcesador.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Procesador", true));
+            this.comboProcesador.Enabled = false;
+            this.comboProcesador.FormattingEnabled = true;
+            this.comboProcesador.Location = new System.Drawing.Point(144, 197);
+            this.comboProcesador.Name = "comboProcesador";
+            this.comboProcesador.Size = new System.Drawing.Size(63, 21);
+            this.comboProcesador.TabIndex = 134;
             // 
             // CPU
             // 
@@ -977,6 +963,8 @@ namespace sistemaFCNM.Vistas
             this.Text = "CPU";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CPU_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -985,37 +973,28 @@ namespace sistemaFCNM.Vistas
             this.cpuBindingNavigator.ResumeLayout(false);
             this.cpuBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtLote;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtDisco;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtMemoria;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtProcesador;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTag;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPerfil;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
@@ -1060,5 +1039,12 @@ namespace sistemaFCNM.Vistas
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoPCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.ComboBox comboTipo;
+        private System.Windows.Forms.ComboBox comboPerfil;
+        private System.Windows.Forms.ComboBox comboMemoria;
+        private System.Windows.Forms.ComboBox comboDisco;
+        private System.Windows.Forms.ComboBox comboProcesador;
+        private System.Windows.Forms.ComboBox comboEstado;
+        private System.Windows.Forms.ComboBox comboMarca;
     }
 }

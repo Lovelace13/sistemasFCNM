@@ -33,17 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.pantallaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtModelo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtPulgadas = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPantalla = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
@@ -52,7 +48,11 @@
             this.btnPrevius = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboPulgadas = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboModelo = new System.Windows.Forms.ComboBox();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pantallaTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.PantallaTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
@@ -69,6 +69,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.pantallaBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.gridPantalla = new System.Windows.Forms.DataGridView();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,7 +77,6 @@
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.pantallaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -85,18 +85,6 @@
             this.pantallaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPantalla)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Estado", true));
-            this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(140, 148);
-            this.txtEstado.Multiline = true;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(172, 31);
-            this.txtEstado.TabIndex = 73;
             // 
             // pantallaBindingSource
             // 
@@ -124,7 +112,7 @@
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSerie.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Serie", true));
             this.txtSerie.Enabled = false;
-            this.txtSerie.Location = new System.Drawing.Point(140, 105);
+            this.txtSerie.Location = new System.Drawing.Point(140, 94);
             this.txtSerie.Multiline = true;
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(172, 31);
@@ -140,18 +128,6 @@
             this.label11.TabIndex = 72;
             this.label11.Text = "Serie";
             // 
-            // txtModelo
-            // 
-            this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Modelo", true));
-            this.txtModelo.Enabled = false;
-            this.txtModelo.Location = new System.Drawing.Point(140, 62);
-            this.txtModelo.Multiline = true;
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(172, 31);
-            this.txtModelo.TabIndex = 69;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -162,18 +138,6 @@
             this.label12.TabIndex = 70;
             this.label12.Text = "Modelo";
             // 
-            // txtMarca
-            // 
-            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Marca", true));
-            this.txtMarca.Enabled = false;
-            this.txtMarca.Location = new System.Drawing.Point(140, 19);
-            this.txtMarca.Multiline = true;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(172, 31);
-            this.txtMarca.TabIndex = 67;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -183,18 +147,6 @@
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 68;
             this.label13.Text = "Marca";
-            // 
-            // txtPulgadas
-            // 
-            this.txtPulgadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtPulgadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPulgadas.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Pulgadas", true));
-            this.txtPulgadas.Enabled = false;
-            this.txtPulgadas.Location = new System.Drawing.Point(150, 138);
-            this.txtPulgadas.Multiline = true;
-            this.txtPulgadas.Name = "txtPulgadas";
-            this.txtPulgadas.Size = new System.Drawing.Size(56, 32);
-            this.txtPulgadas.TabIndex = 59;
             // 
             // label7
             // 
@@ -282,12 +234,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.comboPulgadas);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblCpu);
             this.groupBox1.Controls.Add(this.txtPantalla);
             this.groupBox1.Controls.Add(this.txtEquipo);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtPulgadas);
             this.groupBox1.Location = new System.Drawing.Point(85, 56);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(373, 227);
@@ -295,16 +247,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PANTALLA DATOS BASICOS";
             // 
+            // comboPulgadas
+            // 
+            this.comboPulgadas.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Pulgadas", true));
+            this.comboPulgadas.Enabled = false;
+            this.comboPulgadas.FormattingEnabled = true;
+            this.comboPulgadas.Location = new System.Drawing.Point(150, 138);
+            this.comboPulgadas.Name = "comboPulgadas";
+            this.comboPulgadas.Size = new System.Drawing.Size(54, 21);
+            this.comboPulgadas.TabIndex = 114;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.txtMarca);
+            this.groupBox2.Controls.Add(this.comboModelo);
+            this.groupBox2.Controls.Add(this.comboEstado);
+            this.groupBox2.Controls.Add(this.comboMarca);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.txtModelo);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtSerie);
-            this.groupBox2.Controls.Add(this.txtEstado);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Location = new System.Drawing.Point(556, 56);
             this.groupBox2.Name = "groupBox2";
@@ -312,6 +274,36 @@
             this.groupBox2.TabIndex = 117;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Caracteristicas";
+            // 
+            // comboModelo
+            // 
+            this.comboModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Modelo", true));
+            this.comboModelo.Enabled = false;
+            this.comboModelo.FormattingEnabled = true;
+            this.comboModelo.Location = new System.Drawing.Point(140, 59);
+            this.comboModelo.Name = "comboModelo";
+            this.comboModelo.Size = new System.Drawing.Size(172, 21);
+            this.comboModelo.TabIndex = 116;
+            // 
+            // comboEstado
+            // 
+            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Estado", true));
+            this.comboEstado.Enabled = false;
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(140, 145);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(172, 21);
+            this.comboEstado.TabIndex = 115;
+            // 
+            // comboMarca
+            // 
+            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaBindingSource, "Marca", true));
+            this.comboMarca.Enabled = false;
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(140, 16);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(172, 21);
+            this.comboMarca.TabIndex = 114;
             // 
             // panel1
             // 
@@ -531,6 +523,16 @@
             this.pantallaBindingNavigatorSaveItem.Text = "Guardar datos";
             this.pantallaBindingNavigatorSaveItem.Click += new System.EventHandler(this.pantallaBindingNavigatorSaveItem_Click);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(23, 22);
+            this.btnEditar.Text = "toolStripButton1";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // gridPantalla
             // 
             this.gridPantalla.AllowUserToAddRows = false;
@@ -640,16 +642,6 @@
             this.serieDataGridViewTextBoxColumn.ReadOnly = true;
             this.serieDataGridViewTextBoxColumn.Width = 64;
             // 
-            // btnEditar
-            // 
-            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(23, 22);
-            this.btnEditar.Text = "toolStripButton1";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
             // Pantalla
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -690,16 +682,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtPulgadas;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPantalla;
         private System.Windows.Forms.Label lblCpu;
@@ -735,5 +722,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn serieDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.ComboBox comboPulgadas;
+        private System.Windows.Forms.ComboBox comboModelo;
+        private System.Windows.Forms.ComboBox comboEstado;
+        private System.Windows.Forms.ComboBox comboMarca;
     }
 }

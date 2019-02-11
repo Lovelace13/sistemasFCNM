@@ -18,190 +18,55 @@ INSERT INTO [dbo].[Usuario]
            ,[Nombre]
            ,[Clave])
      VALUES
-           ('jcbodero',1,'JULIO BODERO','1234')
+           ('jfloresb',2,'JOSE FLORES','1234')
 GO
 
+SELECT        CpuInventario.Inventario AS Cpu, Equipo.ID, EquipoInventario.Inventario, ImpresoraInventario.Inventario AS Impresora, MicrofonoInventario.Inventario AS Microfono, MouseInventario.Inventario AS Mouse, 
+                         PantallaInventario.Inventario AS Pantalla, PantallaProyeccionInventario.Inventario AS PantallaProyeccion, RadioInventario.Inventario AS Radios, ProyectorInventario.Inventario AS Proyector, 
+                         ReguladorInventario.Inventario AS Regulador, TelefonoInventario.Inventario AS Telefono, TecladoInventario.Inventario AS Teclado, ParlanteInventario.Inventario AS Parlante, Propietario.Usuario, FechaInventario.Fecha, 
+                         Usuario.Nombre, Inventario.observacion, NombreOficina.NombreOficina
+FROM            Equipo INNER JOIN
+                         Cpu ON Equipo.Cpu = Cpu.ID INNER JOIN
+                         CpuInventario ON Cpu.Inventario = CpuInventario.ID INNER JOIN
+                         EquipoInventario ON Equipo.Inventario = EquipoInventario.ID INNER JOIN
+                         Impresora ON Equipo.Impresora = Impresora.ID INNER JOIN
+                         ImpresoraInventario ON Impresora.Inventario = ImpresoraInventario.ID INNER JOIN
+                         Microfono ON Equipo.Microfono = Microfono.ID INNER JOIN
+                         MicrofonoInventario ON Microfono.Inventario = MicrofonoInventario.ID INNER JOIN
+                         Mouse ON Equipo.Mouse = Mouse.ID INNER JOIN
+                         MouseInventario ON Mouse.Inventario = MouseInventario.ID INNER JOIN
+                         Pantalla ON Equipo.Pantalla = Pantalla.ID INNER JOIN
+                         PantallaInventario ON Pantalla.Inventario = PantallaInventario.ID INNER JOIN
+                         PantallaProyeccion ON Equipo.PantallaProyeccion = PantallaProyeccion.ID INNER JOIN
+                         PantallaProyeccionInventario ON PantallaProyeccion.Inventario = PantallaProyeccionInventario.ID INNER JOIN
+                         Parlante ON Equipo.Parlante = Parlante.ID INNER JOIN
+                         ParlanteInventario ON Parlante.Inventario = ParlanteInventario.ID INNER JOIN
+                         Proyector ON Equipo.Proyector = Proyector.ID INNER JOIN
+                         ProyectorInventario ON Proyector.Inventario = ProyectorInventario.ID INNER JOIN
+                         Radio ON Equipo.Radios = Radio.ID INNER JOIN
+                         RadioInventario ON Radio.Inventario = RadioInventario.ID INNER JOIN
+                         Regulador ON Equipo.Regulador = Regulador.ID INNER JOIN
+                         ReguladorInventario ON Regulador.Inventario = ReguladorInventario.ID INNER JOIN
+                         Teclado ON Equipo.Teclado = Teclado.ID INNER JOIN
+                         TecladoInventario ON Teclado.Inventario = TecladoInventario.ID INNER JOIN
+                         Telefono ON Equipo.Telefono = Telefono.ID INNER JOIN
+                         TelefonoInventario ON Telefono.Inventario = TelefonoInventario.ID INNER JOIN
+                         Propietario ON Equipo.Propietario = Propietario.ID INNER JOIN
+                         Inventario ON Equipo.ID = Inventario.Equipo INNER JOIN
+                         FechaInventario ON Inventario.Fecha = FechaInventario.ID INNER JOIN
+                         Usuario ON Inventario.Ayudante = Usuario.ID INNER JOIN
+                         Oficina ON Equipo.Oficina = Oficina.ID INNER JOIN
+                         NombreOficina ON Oficina.NombreOficina = NombreOficina.ID
+select * from ImpresoraInventario
 
-INSERT INTO Edificio (bloque)
-VALUES('');
+SELECT        Cpu.ID
+FROM            Cpu INNER JOIN
+                         CpuInventario ON Cpu.Inventario = CpuInventario.ID
+WHERE        (CpuInventario.Inventario = '103345')
 
-INSERT INTO Caracteristicas (marca,modelo,serie,estado)
-VALUES ('','','','');
-
-INSERT INTO CpuMemoria values('2T');
-delete from Cpu
-INSERT INTO CPU(NombrePC,Inventario,TipoPC,perfil,tag,code,procesador,memoria,disco,AdicionalLote,Marca,Modelo,Estado,Serie) VALUES('','','',(select MAX(id_caracteristica) from Caracteristicas),'','','','','','','');
-
-INSERT INTO Pantalla(caracteristicas,Inventario_Pantalla,pulgadas)
-VALUES('','','');
-INSERT INTO Teclado(caracteristicas,Inventario_teclado) VALUES('','');
-
-INSERT INTO Mouse (caracteristicas,Inventario_Mouse) VALUES('','');
-
-INSERT INTO Parlante(caracteristicas,Inventario_Parlante) VALUES('','');
-
-INSERT INTO Proyector(caracteristicas,Inventario_Espoltech,Inventario_Proyector) VALUES('','','');
-
-INSERT INTO Regulador(caracteristicas,tipo,Inventario_Regulador) VALUES('','','');
-
-INSERT INTO Telefono(caracteristicas,tipo,extension,Inventario_Telefono) VALUES((select MAX(id_caracteristica) from Caracteristicas),'','','');
-
-INSERT INTO Impresora(caracteristicas,Inventario_Impresora) VALUES ('','');
-
-INSERT INTO Microfonos(caracteristicas,tipo,Inventario_Microfono) VALUES ('','','');
-
-INSERT INTO Pantalla_Proyeccion(caracteristicas,Dimensiones,Inventario_PantallaProyeccion) VALUES ('','','');
-
-INSERT INTO Radio(caracteristicas,Inventario_Radio) VALUES ('','');
-
-
-INSERT INTO Equipo(id_Equipo,Inventario_CPU,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,Parlante,Regulador,Impresora,Proyector)
-VALUES('20180270','928','1993','218','928','218','218','928','573','218','218','1993','573','218');
-
-INSERT INTO Inventario(fecha_inventario,Ayudante,observacion,Equipo) VALUES ('2018-07-21','arcuenca','N/A','20180270')
-
-use sistemasFCNM;
-Alter table Equipo
-add  PcNombre varchar(15) ;
-ALTER TABLE Cpu DROP COLUMN PcNombre ; 
---use sistemasFCNM;
-
---select*from Usuario;
-
-
---INSERT INTO Oficina(numero_oficina, edificio, area, Usuario)
---VALUES ('xx','xx', 'xx','xx'); 
-
---INSERT INTO Usuario(tipo_usuario,nombre_Usuario)
---VALUES ('ADMINISTRATIVO','GERONIMO VILLON'); 
-
---delete from table_name;
-
-alter authorization on database :: sistemasFCNM to SA; 
-select * from Inventario;
-
---delete from Impresora;
-
---delete from Caracteristicas where id_caracteristica >= 4972;
-
-SELECT Equipo.id_Equipo,CPU.inventario_cpu
-FROM Equipo
-INNER JOIN CPU ON Equipo.Inventario_CPU = CPU.ID;
-
-select e.id_Equipo, p.Inventario_Pantalla,p.pulgadas,car.estado,car.marca,car.modelo,car.serie from  Equipo e, Pantalla p, Mouse m, Teclado t, CPU ,Caracteristicas car where e.Inventario_CPU= CPU.ID and e.Pantalla=p.ID and e.Mouse=m.ID and e.Teclado=t.ID and car.id_caracteristica = p.caracteristicas  and p.Inventario_Pantalla like '1036%';
-
-select e.id_Equipo,c.inventario_cpu,c.nombre_PC,c.tipo_PC,c.perfil,
-c.tag,c.code,c.procesador,c.memoria,c.disco,c.adicional_lote,car.estado,car.marca,car.modelo,car.serie
-from  Equipo e,CPU c ,Caracteristicas car
-where e.Inventario_CPU= c.ID and car.id_caracteristica = c.Caracteristicas ;
-
-select e.id_Equipo,o.nombre_oficina,inv.Ayudante,inv.fecha_inventario,c.inventario_cpu,p.Inventario_Pantalla,t.Inventario_teclado,m.Inventario_Mouse,par.Inventario_Parlante,reg.Inventario_Regulador,im.Inventario_Impresora,pro.Inventario_Proyector,mi.Inventario_Microfono,tel.Inventario_Telefono,pp.Inventario_PantallaProyeccion,ra.Inventario_Radio from  Equipo e,Oficina o, Pantalla p, Mouse m, Teclado t, CPU c,Parlante par, Regulador reg, Impresora im,Proyector pro,Microfonos mi, Telefono tel,Pantalla_Proyeccion pp,Radio ra,Inventario inv where e.Inventario_CPU= c.ID and e.Oficina = o.ID and e.id_Equipo = inv.Equipo and e.Pantalla = p.ID and e.Teclado = t.ID and e.Mouse = m.ID and e.Parlante = par.ID and e.Regulador = reg.ID and e.Impresora = im.ID and e.Telefono = tel.ID and e.PantallaProyeccion = pp.ID and e.Radios = ra.ID and e.Microfono = mi.ID and e.Proyector = pro.ID and e.id_Equipo = '20180270';
-
-
-select*from Pantalla;
-DELETE from Pantalla WHERE Caracteristicas>2841;
---p.Inventario_Pantalla like '1036%'  busqueda por cierto numero
-
-select* from Caracteristicas where id_caracteristica = (select MAX(id_caracteristica) from Caracteristicas);
- 
-select e.id_Equipo, reg.Inventario_Telefono,reg.extension,reg.tipo,car.estado,car.marca,
-                car.modelo,car.serie from  Equipo e, Telefono reg,
-                Caracteristicas car where 
-                e.Telefono = reg.ID and car.id_caracteristica = reg.caracteristicas and e.id_Equipo = '20180270';
-
-update c set c.perfil ='N/A',c.code =''
-from  Equipo e,CPU c ,Caracteristicas car
-where e.Inventario_CPU= c.ID and car.id_caracteristica = c.Caracteristicas ;
-
-
-update c set c.inventario_cpu='',c.nombre_PC='',c.tipo_PC ='',c.perfil = '',
-c.tag = '',c.code ='',c.procesador='',c.memoria='',c.disco='',c.adicional_lote=''
-from  Equipo e,CPU c
-where e.Inventario_CPU= c.ID and e.id_Equipo = '';
-
-update car set car.estado='',car.marca = '',car.modelo='',car.serie=''
-from  Equipo e,CPU c,Caracteristicas car
-where e.Inventario_CPU= c.ID and car.id_caracteristica = c.Caracteristicas and e.id_Equipo = ''; 
-
-update va set va.Inventario_Pantalla = '',va.pulgadas = ''
-from  Equipo e,Pantalla va
-where e.Pantalla= va.ID and e.id_Equipo = '';
-
-update car set car.estado='PRUEBA',car.marca = 'DELL',car.modelo='P2214HB',
-car.serie='CN-0KW14V-74261-3B7-0A4L'  
-from Equipo e,Pantalla va, Caracteristicas car 
-where e.Pantalla = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '20180270'; 
-
-update car set car.estado='PRUEBA',car.marca = 'DELL',car.modelo='P2214HB',
-car.serie='CN-0KW14V-74261-3B7-0A4L'  
-from Equipo e,Teclado va, Caracteristicas car 
-where e.Teclado = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '20180270'; 
-
-update car set car.estado='PRUEBA',car.marca = 'DELL',car.modelo='P2214HB',
-car.serie='CN-0KW14V-74261-3B7-0A4L'  
-from Equipo e,Regulador va, Caracteristicas car 
-where e.Regulador = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '20180270'; 
-
-
-select MAX(Caracteristicas) from Proyector;
-
-select*from Equipo;
-select*from Pantalla;
-select*from Mouse;
-select*from Teclado;
-select*from Parlante;
-select*from Impresora;
-select*from Regulador;
-select*from Pantalla_Proyeccion;
-select*from Telefono;
-select*from Radio;
-select*from Microfonos;
-select*from Proyector;
-select*from Caracteristicas;
-
-select * from Oficina where ID = (1776);
-
-INSERT INTO Equipo(id_Equipo,Inventario_CPU,Oficina,Microfono,Telefono,PantallaProyeccion,Radios,Pantalla,Teclado,Mouse,Parlante,Regulador,Impresora,Proyector)
-VALUES('12345', (select MAX(ID) from CPU), '1993', (select MAX(ID) from Microfonos), (select MAX(ID) from Telefono),(select MAX(ID) from Pantalla_Proyeccion), (select MAX(ID) from Radio), (select MAX(ID) from Pantalla), (select MAX(ID) from Teclado), (select MAX(ID) from Mouse), (select MAX(ID) from Parlante), (select MAX(ID) from Regulador), (select MAX(ID) from Impresora), (select MAX(ID) from Proyector));
-
-select bloque from Edificio union select '[Seleccione Edificio]';
-
-SELECT nombre_oficina, COUNT(*) AS RecuentoFilas
-FROM Oficina 
-GROUP BY nombre_oficina
-HAVING COUNT(*) > 1
-ORDER BY nombre_oficina;
-
-select top 1 id  from Oficina where nombre_oficina = '25A-101';
-
-SELECT Nombre FROM Usuario WHERE IdUsuario = 'jcbodero' and clave ='1234';
-
-select TipoUsuario from Usuario where IdUsuario = ('jcbodero');
-
-INSERT INTO CpuNombre VALUES ('');
-
-select * FROM Cpu;
-select * FROM Pantalla;
-select * FROM Teclado;
-select * FROM Mouse;
-select * FROM Regulador;
-select * FROM Proyector;
-select * FROM Parlante;
-select * FROM TelefonoInventario;
-select * FROM Impresora;
-select * FROM Microfono;
-select * FROM PantallaProyeccion;
-select * FROM Radio;
-select * from NombreOficina
-select *from Inventario;
-select e.Cpu,nom.NombrePC from Cpu c inner join Equipo e on e.Cpu = c.ID inner join CpuNombre nom on c.NombrePC = nom.ID;
-
-INSERT INTO CpuNombre(NombrePC) VALUES('DOF-001');
-INSERT INTO Edificio VALUES ('24');
-INSERT INTO FechaInventario (Fecha) values ('2018-06-26');
-select * from Inventario;
-INSERT INTO Inventario(Fecha, Ayudante, observacion, Equipo) 
-VALUES ((SELECT ID FROM FechaInventario WHERE Fecha='2018-09-10'),
-(SELECT ID FROM Usuario WHERE Usuario='JCBODERO'),'N/A',
-(SELECT ID FROM Equipo WHERE Inventario=(SELECT ID FROM EquipoInventario WHERE Inventario='2018-233')));
-delete from Usuario;
+UPDATE       Cpu
+SET                Inventario = 7
+FROM            Cpu INNER JOIN
+                         Equipo ON Cpu.ID = Equipo.Cpu INNER JOIN
+                         EquipoInventario ON Equipo.Inventario = EquipoInventario.ID
+WHERE        (EquipoInventario.Inventario = '2018-007')

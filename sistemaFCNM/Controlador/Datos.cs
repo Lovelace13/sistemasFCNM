@@ -255,6 +255,136 @@ namespace sistemaFCNM.Clases
             return ofi.ToArray();
 
         }
+        public static String[] _obtenerTipoPC()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            CpuTipoTableAdapter tabla = new CpuTipoTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["TipoPC"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerPerfil()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            CpuPerfilTableAdapter tabla = new CpuPerfilTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Perfil"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMarca()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            CpuMarcaTableAdapter tabla = new CpuMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerEstado()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            EstadoTableAdapter tabla = new EstadoTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Estado"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerProcesador()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            CpuProcesadorTableAdapter tabla = new CpuProcesadorTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Procesador"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerDisco()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            CpuDiscoTableAdapter tabla = new CpuDiscoTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Disco"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMemoria()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            CpuMemoriaTableAdapter tabla = new CpuMemoriaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Memoria"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerPulgadas()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            PantallaPulgadasTableAdapter tabla = new PantallaPulgadasTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Pulgadas"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMarcaPantalla()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            PantallaMarcaTableAdapter tabla = new PantallaMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerModeloPantalla()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            PantallaModeloTableAdapter tabla = new PantallaModeloTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Modelo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
         #endregion
 
         #region Funciones de Texto Plano

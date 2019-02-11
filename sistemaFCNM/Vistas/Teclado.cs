@@ -106,18 +106,7 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-            string sql = "update va set va.Inventario_teclado='" + txtTeclado.Text + "' " +
-               " from Equipo e,Teclado va where e.Teclado= va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
-
-
-            Datos.Insertar(sql);
-
-            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
-                  " from Equipo e,Teclado va, Caracteristicas car " +
-                  " where e.Teclado = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
-
-
-            Datos.Insertar(sql);
+           
         }
 
         private void guardarMenuItem_Click(object sender, EventArgs e)
@@ -133,20 +122,7 @@ namespace sistemaFCNM.Vistas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-            string sql = "select e.id_Equipo, t.Inventario_teclado,car.estado,car.marca," +
-                         "car.modelo,car.serie from  Equipo e, Teclado t, CPU ," +
-                         "Caracteristicas car where e.Inventario_CPU = CPU.ID and" +
-                         " e.Teclado = t.ID and car.id_caracteristica = t.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "'; ";
-
-            Datos.llenarGrid(sql, gridTeclado);
-
-            sql = "select e.id_Equipo, t.Inventario_teclado,car.estado,car.marca," +
-                         "car.modelo,car.serie from  Equipo e, Teclado t, CPU ," +
-                         "Caracteristicas car where e.Inventario_CPU = CPU.ID and" +
-                         " e.Teclado = t.ID and car.id_caracteristica = t.caracteristicas ; ";
-
-            Datos.llenarGrid(sql, gridTeclado);
-
+           
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -157,9 +133,9 @@ namespace sistemaFCNM.Vistas
         {
             
             txtTeclado.Enabled = true;
-            txtEstado.Enabled = true;
-            txtMarca.Enabled = true;
-            txtModelo.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
             txtSerie.Enabled = true;
         }
 

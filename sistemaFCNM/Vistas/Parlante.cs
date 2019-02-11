@@ -81,18 +81,7 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-            string sql = "update va set va.Inventario_Parlante='" + txtParlante.Text + "'" +
-              " from Equipo e,Parlante va where e.Parlante = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
-
-
-            Datos.Insertar(sql);
-
-            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
-                  " from Equipo e,Parlante va, Caracteristicas car " +
-                  " where e.Parlante = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
-
-
-            Datos.Insertar(sql);
+           
         }
 
         private void guardarMenuItem_Click(object sender, EventArgs e)
@@ -136,22 +125,7 @@ namespace sistemaFCNM.Vistas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-            string sql = "select e.id_Equipo, par.Inventario_Parlante,car.estado,car.marca," +
-                "car.modelo,car.serie from  Equipo e, Parlante par, " +
-                "Caracteristicas car where " +
-                "e.Parlante = par.ID and car.id_caracteristica = par.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "';";
-
-            Datos.llenarGrid(sql, gridParlante);
-
-
-            sql = "select e.id_Equipo, par.Inventario_Parlante,car.estado,car.marca," +
-                "car.modelo,car.serie from  Equipo e, Parlante par, " +
-                "Caracteristicas car where " +
-                "e.Parlante = par.ID and car.id_caracteristica = par.caracteristicas ;";
-
-            Datos.llenarGrid(sql, gridParlante);
-
+            
 
         }
 
@@ -163,9 +137,9 @@ namespace sistemaFCNM.Vistas
         {
 
             txtParlante.Enabled = true;
-            txtEstado.Enabled = true;
-            txtMarca.Enabled = true;
-            txtModelo.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
             txtSerie.Enabled = true;
         }
 

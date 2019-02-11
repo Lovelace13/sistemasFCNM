@@ -119,37 +119,15 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-            string sql = "update va set va.Inventario_Impresora='" + txtImpresora.Text + "'" +
-             " from Equipo e,Impresora va where e.Impresora = va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
+           
 
 
-            Datos.Insertar(sql);
-
-            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
-                  " from Equipo e,Impresora va, Caracteristicas car " +
-                  " where e.Impresora = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
-
-
-            Datos.Insertar(sql);
+           
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-            string sql = "select e.id_Equipo, imp.Inventario_Impresora,car.estado,car.marca," +
-               "car.modelo,car.serie from  Equipo e, Impresora imp," +
-               "Caracteristicas car where " +
-               "e.Impresora = imp.ID and car.id_caracteristica = imp.caracteristicas and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "';";
-
-            Datos.llenarGrid(sql, gridImpresora);
             
-
-            sql = "select e.id_Equipo, imp.Inventario_Impresora,car.estado,car.marca," +
-               "car.modelo,car.serie from  Equipo e, Impresora imp," +
-               "Caracteristicas car where " +
-               "e.Impresora = imp.ID and car.id_caracteristica = imp.caracteristicas;";
-
-            Datos.llenarGrid(sql, gridImpresora);
 
         }
 
@@ -162,9 +140,9 @@ namespace sistemaFCNM.Vistas
         {
            
             txtImpresora.Enabled = true;
-            txtEstado.Enabled = true;
-            txtMarca.Enabled = true;
-            txtModelo.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
             txtSerie.Enabled = true;
         }
 

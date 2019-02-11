@@ -4,6 +4,10 @@
 
     partial class sistemasFCNMDataSet
     {
+        partial class CpuDataTable
+        {
+        }
+
         partial class MouseDataTable
         {
         }

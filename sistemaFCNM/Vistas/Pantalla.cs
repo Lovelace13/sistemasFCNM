@@ -83,18 +83,7 @@ namespace sistemaFCNM.Vistas
         }
         public void guardar()
         {
-            string sql = "update va set va.Inventario_Pantalla='" + txtPantalla.Text + "',va.pulgadas ='" + txtPulgadas.Text + "' " +
-                " from Equipo e,Pantalla va where e.Pantalla= va.ID and e.id_Equipo = '" + txtEquipo.Text + "';";
-
-
-            Datos.Insertar(sql);
-
-            sql = "update car set car.estado='" + txtEstado.Text + "',car.marca = '" + txtMarca.Text + "',car.modelo='" + txtModelo.Text + "',car.serie='" + txtSerie.Text + "' " +
-                  " from Equipo e,Pantalla va, Caracteristicas car " +
-                  " where e.Pantalla = va.ID and car.id_caracteristica = va.Caracteristicas and e.id_Equipo = '" + txtEquipo.Text + "'; ";
-
-
-            Datos.Insertar(sql);
+            
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -132,22 +121,7 @@ namespace sistemaFCNM.Vistas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-            string sql = "select e.id_Equipo, p.Inventario_Pantalla,p.pulgadas,car.estado,car.marca," +
-                         "car.modelo,car.serie from  Equipo e, Pantalla p," +
-                         "Caracteristicas car where car.id_caracteristica = p.caracteristicas and " +
-                         "e.Pantalla = p.ID and e.id_Equipo = '" + FuncionesUtiles.INVENTARIO_EQUIPO + "';";
-
-            Datos.llenarGrid(sql, gridPantalla);
-         
-
-            sql = "select e.id_Equipo, p.Inventario_Pantalla,p.pulgadas,car.estado,car.marca," +
-                         "car.modelo,car.serie from  Equipo e, Pantalla p," +
-                         "Caracteristicas car where car.id_caracteristica = p.caracteristicas and " +
-                         "e.Pantalla = p.ID ;";
-
-            Datos.llenarGrid(sql, gridPantalla);
-
+           
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -158,11 +132,17 @@ namespace sistemaFCNM.Vistas
         {
            
             txtPantalla.Enabled = true;
-            txtPulgadas.Enabled = true;
-            txtEstado.Enabled = true;
-            txtMarca.Enabled = true;
-            txtModelo.Enabled = true;
+            comboPulgadas.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
             txtSerie.Enabled = true;
+
+            comboEstado.Items.AddRange(Datos._obtenerEstado());
+            comboPulgadas.Items.AddRange(Datos._obtenerPulgadas());
+            comboMarca.Items.AddRange(Datos._obtenerMarcaPantalla());
+            comboModelo.Items.AddRange(Datos._obtenerModeloPantalla());
+
         }
 
         private void pantallaBindingNavigatorSaveItem_Click(object sender, EventArgs e)

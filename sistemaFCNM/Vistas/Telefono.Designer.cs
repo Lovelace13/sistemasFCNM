@@ -34,27 +34,27 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtExtension = new System.Windows.Forms.TextBox();
             this.telefonoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtModelo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblCpu = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTipo = new System.Windows.Forms.TextBox();
             this.btnPrevius = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboTipo = new System.Windows.Forms.ComboBox();
+            this.txtExtension = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboModelo = new System.Windows.Forms.ComboBox();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.telefonoTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TelefonoTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
@@ -100,18 +100,6 @@
             this.label1.Text = "Extension";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtExtension
-            // 
-            this.txtExtension.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtExtension.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtExtension.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.telefonoBindingSource, "Extension", true));
-            this.txtExtension.Enabled = false;
-            this.txtExtension.Location = new System.Drawing.Point(215, 109);
-            this.txtExtension.Multiline = true;
-            this.txtExtension.Name = "txtExtension";
-            this.txtExtension.Size = new System.Drawing.Size(105, 31);
-            this.txtExtension.TabIndex = 149;
-            // 
             // telefonoBindingSource
             // 
             this.telefonoBindingSource.DataMember = "Telefono";
@@ -121,18 +109,6 @@
             // 
             this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
             this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.telefonoBindingSource, "Estado", true));
-            this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(165, 144);
-            this.txtEstado.Multiline = true;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(172, 31);
-            this.txtEstado.TabIndex = 144;
             // 
             // label10
             // 
@@ -166,18 +142,6 @@
             this.label11.TabIndex = 143;
             this.label11.Text = "Serie";
             // 
-            // txtModelo
-            // 
-            this.txtModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.telefonoBindingSource, "Modelo", true));
-            this.txtModelo.Enabled = false;
-            this.txtModelo.Location = new System.Drawing.Point(165, 62);
-            this.txtModelo.Multiline = true;
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(172, 31);
-            this.txtModelo.TabIndex = 140;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -187,18 +151,6 @@
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 141;
             this.label12.Text = "Modelo";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.telefonoBindingSource, "Marca", true));
-            this.txtMarca.Enabled = false;
-            this.txtMarca.Location = new System.Drawing.Point(165, 19);
-            this.txtMarca.Multiline = true;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(172, 31);
-            this.txtMarca.TabIndex = 138;
             // 
             // label13
             // 
@@ -245,18 +197,6 @@
             this.label2.TabIndex = 152;
             this.label2.Text = "Tipo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtTipo
-            // 
-            this.txtTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.telefonoBindingSource, "Tipo", true));
-            this.txtTipo.Enabled = false;
-            this.txtTipo.Location = new System.Drawing.Point(215, 152);
-            this.txtTipo.Multiline = true;
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(105, 31);
-            this.txtTipo.TabIndex = 151;
             // 
             // btnPrevius
             // 
@@ -307,10 +247,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboTipo);
             this.groupBox1.Controls.Add(this.txtEquipo);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtTipo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtExtension);
             this.groupBox1.Controls.Add(this.txtTelefono);
@@ -322,15 +262,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TELEFONO DATOS BASICOS";
             // 
+            // comboTipo
+            // 
+            this.comboTipo.DataSource = this.telefonoBindingSource;
+            this.comboTipo.DisplayMember = "Tipo";
+            this.comboTipo.Enabled = false;
+            this.comboTipo.FormattingEnabled = true;
+            this.comboTipo.Location = new System.Drawing.Point(215, 156);
+            this.comboTipo.Name = "comboTipo";
+            this.comboTipo.Size = new System.Drawing.Size(105, 21);
+            this.comboTipo.TabIndex = 159;
+            // 
+            // txtExtension
+            // 
+            this.txtExtension.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtExtension.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtExtension.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.telefonoBindingSource, "Extension", true));
+            this.txtExtension.Enabled = false;
+            this.txtExtension.Location = new System.Drawing.Point(215, 109);
+            this.txtExtension.Multiline = true;
+            this.txtExtension.Name = "txtExtension";
+            this.txtExtension.Size = new System.Drawing.Size(105, 31);
+            this.txtExtension.TabIndex = 149;
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtEstado);
+            this.groupBox2.Controls.Add(this.comboModelo);
+            this.groupBox2.Controls.Add(this.comboEstado);
+            this.groupBox2.Controls.Add(this.comboMarca);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtSerie);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txtModelo);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.txtMarca);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Location = new System.Drawing.Point(553, 37);
             this.groupBox2.Name = "groupBox2";
@@ -338,6 +301,39 @@
             this.groupBox2.TabIndex = 164;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Caracteristicas";
+            // 
+            // comboModelo
+            // 
+            this.comboModelo.DataSource = this.telefonoBindingSource;
+            this.comboModelo.DisplayMember = "Modelo";
+            this.comboModelo.Enabled = false;
+            this.comboModelo.FormattingEnabled = true;
+            this.comboModelo.Location = new System.Drawing.Point(165, 63);
+            this.comboModelo.Name = "comboModelo";
+            this.comboModelo.Size = new System.Drawing.Size(172, 21);
+            this.comboModelo.TabIndex = 148;
+            // 
+            // comboEstado
+            // 
+            this.comboEstado.DataSource = this.telefonoBindingSource;
+            this.comboEstado.DisplayMember = "Estado";
+            this.comboEstado.Enabled = false;
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(165, 149);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(172, 21);
+            this.comboEstado.TabIndex = 147;
+            // 
+            // comboMarca
+            // 
+            this.comboMarca.DataSource = this.telefonoBindingSource;
+            this.comboMarca.DisplayMember = "Marca";
+            this.comboMarca.Enabled = false;
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(165, 20);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(172, 21);
+            this.comboMarca.TabIndex = 146;
             // 
             // panel1
             // 
@@ -713,19 +709,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtExtension;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblCpu;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Button btnPrevius;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.TextBox txtEquipo;
@@ -758,5 +749,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn serieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboTipo;
+        private System.Windows.Forms.TextBox txtExtension;
+        private System.Windows.Forms.ComboBox comboModelo;
+        private System.Windows.Forms.ComboBox comboEstado;
+        private System.Windows.Forms.ComboBox comboMarca;
     }
 }

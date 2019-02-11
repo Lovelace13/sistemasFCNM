@@ -22,6 +22,7 @@ namespace sistemaFCNM.Controlador
         public static ReguladorTableAdapter regulador = new ReguladorTableAdapter();
         public static TecladoTableAdapter teclado = new TecladoTableAdapter();
         public static TelefonoTableAdapter telefono = new TelefonoTableAdapter();
+        public static EstadoTableAdapter estado = new EstadoTableAdapter();
 
 
         public static void buscarEquipo(string inventario)
