@@ -153,5 +153,13 @@ namespace sistemaFCNM.Vistas
             this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+            comboEstado.Items.AddRange(Datos._obtenerEstado());
+            comboMarca.Items.AddRange(Datos._obtenerMarcaImpresora());
+            comboModelo.Items.AddRange(Datos._obtenerModeloImpresora());
+        }
     }
 }

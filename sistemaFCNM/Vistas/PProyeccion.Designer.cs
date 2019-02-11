@@ -76,6 +76,7 @@
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnModificar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.pantallaProyeccionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -247,8 +248,7 @@
             // 
             // comboDimensiones
             // 
-            this.comboDimensiones.DataSource = this.pantallaProyeccionBindingSource;
-            this.comboDimensiones.DisplayMember = "Dimensiones";
+            this.comboDimensiones.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaProyeccionBindingSource, "Dimensiones", true));
             this.comboDimensiones.Enabled = false;
             this.comboDimensiones.FormattingEnabled = true;
             this.comboDimensiones.Location = new System.Drawing.Point(197, 122);
@@ -275,8 +275,7 @@
             // 
             // comboModelo
             // 
-            this.comboModelo.DataSource = this.pantallaProyeccionBindingSource;
-            this.comboModelo.DisplayMember = "Modelo";
+            this.comboModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaProyeccionBindingSource, "Modelo", true));
             this.comboModelo.Enabled = false;
             this.comboModelo.FormattingEnabled = true;
             this.comboModelo.Location = new System.Drawing.Point(153, 58);
@@ -286,8 +285,7 @@
             // 
             // comboEstado
             // 
-            this.comboEstado.DataSource = this.pantallaProyeccionBindingSource;
-            this.comboEstado.DisplayMember = "Estado";
+            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaProyeccionBindingSource, "Estado", true));
             this.comboEstado.Enabled = false;
             this.comboEstado.FormattingEnabled = true;
             this.comboEstado.Location = new System.Drawing.Point(153, 144);
@@ -297,8 +295,7 @@
             // 
             // comboMarca
             // 
-            this.comboMarca.DataSource = this.pantallaProyeccionBindingSource;
-            this.comboMarca.DisplayMember = "Marca";
+            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pantallaProyeccionBindingSource, "Marca", true));
             this.comboMarca.Enabled = false;
             this.comboMarca.FormattingEnabled = true;
             this.comboMarca.Location = new System.Drawing.Point(153, 15);
@@ -417,7 +414,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.pantallaProyeccionBindingNavigatorSaveItem});
+            this.pantallaProyeccionBindingNavigatorSaveItem,
+            this.btnModificar});
             this.pantallaProyeccionBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.pantallaProyeccionBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.pantallaProyeccionBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -631,6 +629,16 @@
             this.serieDataGridViewTextBoxColumn.ReadOnly = true;
             this.serieDataGridViewTextBoxColumn.Width = 64;
             // 
+            // btnModificar
+            // 
+            this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnModificar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(23, 22);
+            this.btnModificar.Text = "toolStripButton1";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
+            // 
             // PProyeccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -713,5 +721,6 @@
         private System.Windows.Forms.ComboBox comboEstado;
         private System.Windows.Forms.ComboBox comboMarca;
         private System.Windows.Forms.ComboBox comboDimensiones;
+        private System.Windows.Forms.ToolStripButton btnModificar;
     }
 }

@@ -67,6 +67,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.radioBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.gridRadio = new System.Windows.Forms.DataGridView();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -247,8 +248,7 @@
             // 
             // comboModelo
             // 
-            this.comboModelo.DataSource = this.radioBindingSource;
-            this.comboModelo.DisplayMember = "modelo";
+            this.comboModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.radioBindingSource, "Modelo", true));
             this.comboModelo.Enabled = false;
             this.comboModelo.FormattingEnabled = true;
             this.comboModelo.Location = new System.Drawing.Point(156, 63);
@@ -258,8 +258,7 @@
             // 
             // comboEstado
             // 
-            this.comboEstado.DataSource = this.radioBindingSource;
-            this.comboEstado.DisplayMember = "Estado";
+            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.radioBindingSource, "Estado", true));
             this.comboEstado.Enabled = false;
             this.comboEstado.FormattingEnabled = true;
             this.comboEstado.Location = new System.Drawing.Point(156, 149);
@@ -269,8 +268,7 @@
             // 
             // comboMarca
             // 
-            this.comboMarca.DataSource = this.radioBindingSource;
-            this.comboMarca.DisplayMember = "Marca";
+            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.radioBindingSource, "Marca", true));
             this.comboMarca.Enabled = false;
             this.comboMarca.FormattingEnabled = true;
             this.comboMarca.Location = new System.Drawing.Point(156, 20);
@@ -389,7 +387,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.radioBindingNavigatorSaveItem});
+            this.radioBindingNavigatorSaveItem,
+            this.btnModificar});
             this.radioBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.radioBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.radioBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -494,6 +493,16 @@
             this.radioBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.radioBindingNavigatorSaveItem.Text = "Guardar datos";
             this.radioBindingNavigatorSaveItem.Click += new System.EventHandler(this.radioBindingNavigatorSaveItem_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnModificar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(23, 22);
+            this.btnModificar.Text = "toolStripButton1";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // gridRadio
             // 
@@ -673,5 +682,6 @@
         private System.Windows.Forms.ComboBox comboModelo;
         private System.Windows.Forms.ComboBox comboEstado;
         private System.Windows.Forms.ComboBox comboMarca;
+        private System.Windows.Forms.ToolStripButton btnModificar;
     }
 }

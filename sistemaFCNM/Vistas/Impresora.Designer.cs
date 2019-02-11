@@ -47,6 +47,9 @@
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboModelo = new System.Windows.Forms.ComboBox();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.impresoraTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.ImpresoraTableAdapter();
@@ -70,9 +73,7 @@
             this.inventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboModelo = new System.Windows.Forms.ComboBox();
-            this.comboEstado = new System.Windows.Forms.ComboBox();
-            this.comboMarca = new System.Windows.Forms.ComboBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.impresoraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -234,6 +235,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Caracteristicas";
             // 
+            // comboModelo
+            // 
+            this.comboModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.impresoraBindingSource, "Modelo", true));
+            this.comboModelo.Enabled = false;
+            this.comboModelo.FormattingEnabled = true;
+            this.comboModelo.Location = new System.Drawing.Point(140, 58);
+            this.comboModelo.Name = "comboModelo";
+            this.comboModelo.Size = new System.Drawing.Size(172, 21);
+            this.comboModelo.TabIndex = 119;
+            // 
+            // comboEstado
+            // 
+            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.impresoraBindingSource, "Estado", true));
+            this.comboEstado.Enabled = false;
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(140, 144);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(172, 21);
+            this.comboEstado.TabIndex = 118;
+            // 
+            // comboMarca
+            // 
+            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.impresoraBindingSource, "Marca", true));
+            this.comboMarca.Enabled = false;
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(140, 15);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(172, 21);
+            this.comboMarca.TabIndex = 117;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
@@ -359,7 +390,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.impresoraBindingNavigatorSaveItem});
+            this.impresoraBindingNavigatorSaveItem,
+            this.toolStripButton1});
             this.impresoraBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.impresoraBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.impresoraBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -564,35 +596,15 @@
             this.modeloDataGridViewTextBoxColumn.ReadOnly = true;
             this.modeloDataGridViewTextBoxColumn.Width = 81;
             // 
-            // comboModelo
+            // toolStripButton1
             // 
-            this.comboModelo.Enabled = false;
-            this.comboModelo.FormattingEnabled = true;
-            this.comboModelo.Location = new System.Drawing.Point(140, 58);
-            this.comboModelo.Name = "comboModelo";
-            this.comboModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.impresoraBindingSource, "Modelo", true));
-            this.comboModelo.Size = new System.Drawing.Size(172, 21);
-            this.comboModelo.TabIndex = 119;
-            // 
-            // comboEstado
-            // 
-            this.comboEstado.Enabled = false;
-            this.comboEstado.FormattingEnabled = true;
-            this.comboEstado.Location = new System.Drawing.Point(140, 144);
-            this.comboEstado.Name = "comboEstado";
-            this.comboEstado.Size = new System.Drawing.Size(172, 21);
-            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.impresoraBindingSource, "Estado", true));
-            this.comboEstado.TabIndex = 118;
-            // 
-            // comboMarca
-            // 
-            this.comboMarca.Enabled = false;
-            this.comboMarca.FormattingEnabled = true;
-            this.comboMarca.Location = new System.Drawing.Point(140, 15);
-            this.comboMarca.Name = "comboMarca";
-            this.comboMarca.Size = new System.Drawing.Size(172, 21);
-            this.comboMarca.TabIndex = 117;
-            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.impresoraBindingSource, "Marca", true));
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "modificar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // Impresora
             // 
@@ -673,5 +685,6 @@
         private System.Windows.Forms.ComboBox comboModelo;
         private System.Windows.Forms.ComboBox comboEstado;
         private System.Windows.Forms.ComboBox comboMarca;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

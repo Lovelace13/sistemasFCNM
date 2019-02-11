@@ -385,6 +385,305 @@ namespace sistemaFCNM.Clases
             return lista.ToArray();
 
         }
+        public static String[] _obtenerMarcaImpresora()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            ImpresoraMarcaTableAdapter tabla = new ImpresoraMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerModeloImpresora()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            ImpresoraModeloTableAdapter tabla = new ImpresoraModeloTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Modelo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMarcaMicro()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            MicrofonoMarcaTableAdapter tabla = new MicrofonoMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerTipoMicro()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            MicrofonoTipoTableAdapter tabla = new MicrofonoTipoTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Tipo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMarcaMouse()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            MouseMarcaTableAdapter tabla = new MouseMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerModeloMouse()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            MouseModeloTableAdapter tabla = new MouseModeloTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Modelo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMarcaParlante()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            ParlanteMarcaTableAdapter tabla = new ParlanteMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerModeloParlante()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            ParlanteModeloTableAdapter tabla = new ParlanteModeloTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Modelo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMarcaPP()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            PantallaProyeccionMarcaTableAdapter tabla = new PantallaProyeccionMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerModeloPP()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            PantallaProyeccionModeloTableAdapter tabla = new PantallaProyeccionModeloTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Modelo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerDimensionesPP()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            PantallaProyeccionDimensionesTableAdapter tabla = new PantallaProyeccionDimensionesTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Dimensiones"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMarcaProyector()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            ProyectorMarcaTableAdapter tabla = new ProyectorMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerModeloProyector()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            ProyectorModeloTableAdapter tabla = new ProyectorModeloTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Modelo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMarcaRadio()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            RadioMarcaTableAdapter tabla = new RadioMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerModeloRadio()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            RadioModeloTableAdapter tabla = new RadioModeloTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Modelo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMarcaRegulador()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            ReguladorMarcaTableAdapter tabla = new ReguladorMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerModeloregulador()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            ReguladorModeloTableAdapter tabla = new ReguladorModeloTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Modelo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerTipoRegulador()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            ReguladorTipoTableAdapter tabla = new ReguladorTipoTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Tipo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMarcaTeclado()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            TecladoMarcaTableAdapter tabla = new TecladoMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerModeloTeclado()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            TecladoModeloTableAdapter tabla = new TecladoModeloTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Modelo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerMarcaTelefono()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            TelefonoMarcaTableAdapter tabla = new TelefonoMarcaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Marca"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerModeloTelefono()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            TelefonoModeloTableAdapter tabla = new TelefonoModeloTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Modelo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerTipoTelefono()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            TelefonoTipoTableAdapter tabla = new TelefonoTipoTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Tipo"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
         #endregion
 
         #region Funciones de Texto Plano

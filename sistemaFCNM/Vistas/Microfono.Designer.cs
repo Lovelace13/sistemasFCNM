@@ -47,7 +47,10 @@
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboTipo = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.microfonoTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.MicrofonoTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
@@ -70,9 +73,7 @@
             this.inventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboTipo = new System.Windows.Forms.ComboBox();
-            this.comboEstado = new System.Windows.Forms.ComboBox();
-            this.comboMarca = new System.Windows.Forms.ComboBox();
+            this.btnModificar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.microfonoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -233,6 +234,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "MICROFONO DATOS BASICOS";
             // 
+            // comboTipo
+            // 
+            this.comboTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Tipo", true));
+            this.comboTipo.Enabled = false;
+            this.comboTipo.FormattingEnabled = true;
+            this.comboTipo.Location = new System.Drawing.Point(158, 119);
+            this.comboTipo.Name = "comboTipo";
+            this.comboTipo.Size = new System.Drawing.Size(172, 21);
+            this.comboTipo.TabIndex = 119;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
@@ -248,6 +259,26 @@
             this.groupBox2.TabIndex = 143;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Caracteristicas";
+            // 
+            // comboEstado
+            // 
+            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Estado", true));
+            this.comboEstado.Enabled = false;
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(150, 111);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(172, 21);
+            this.comboEstado.TabIndex = 118;
+            // 
+            // comboMarca
+            // 
+            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Marca", true));
+            this.comboMarca.Enabled = false;
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(150, 19);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(172, 21);
+            this.comboMarca.TabIndex = 117;
             // 
             // panel1
             // 
@@ -360,7 +391,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.microfonoBindingNavigatorSaveItem});
+            this.microfonoBindingNavigatorSaveItem,
+            this.btnModificar});
             this.microfonoBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.microfonoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.microfonoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -565,35 +597,15 @@
             this.serieDataGridViewTextBoxColumn.ReadOnly = true;
             this.serieDataGridViewTextBoxColumn.Width = 64;
             // 
-            // comboTipo
+            // btnModificar
             // 
-            this.comboTipo.Enabled = false;
-            this.comboTipo.FormattingEnabled = true;
-            this.comboTipo.Location = new System.Drawing.Point(158, 119);
-            this.comboTipo.Name = "comboTipo";
-            this.comboTipo.Size = new System.Drawing.Size(172, 21);
-            this.comboTipo.TabIndex = 119;
-            this.comboTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Tipo", true));
-            // 
-            // comboEstado
-            // 
-            this.comboEstado.Enabled = false;
-            this.comboEstado.FormattingEnabled = true;
-            this.comboEstado.Location = new System.Drawing.Point(150, 111);
-            this.comboEstado.Name = "comboEstado";
-            this.comboEstado.Size = new System.Drawing.Size(172, 21);
-            this.comboEstado.TabIndex = 118;
-            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Estado", true));
-            // 
-            // comboMarca
-            // 
-            this.comboMarca.Enabled = false;
-            this.comboMarca.FormattingEnabled = true;
-            this.comboMarca.Location = new System.Drawing.Point(150, 19);
-            this.comboMarca.Name = "comboMarca";
-            this.comboMarca.Size = new System.Drawing.Size(172, 21);
-            this.comboMarca.TabIndex = 117;
-            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microfonoBindingSource, "Marca", true));
+            this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnModificar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(23, 22);
+            this.btnModificar.Text = "toolStripButton1";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // Microfono
             // 
@@ -673,5 +685,6 @@
         private System.Windows.Forms.ComboBox comboTipo;
         private System.Windows.Forms.ComboBox comboEstado;
         private System.Windows.Forms.ComboBox comboMarca;
+        private System.Windows.Forms.ToolStripButton btnModificar;
     }
 }

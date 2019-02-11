@@ -73,6 +73,7 @@
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnModificar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.parlanteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -234,8 +235,7 @@
             // 
             // comboModelo
             // 
-            this.comboModelo.DataSource = this.parlanteBindingSource;
-            this.comboModelo.DisplayMember = "Modelo";
+            this.comboModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parlanteBindingSource, "Modelo", true));
             this.comboModelo.Enabled = false;
             this.comboModelo.FormattingEnabled = true;
             this.comboModelo.Location = new System.Drawing.Point(144, 59);
@@ -245,8 +245,7 @@
             // 
             // comboEstado
             // 
-            this.comboEstado.DataSource = this.parlanteBindingSource;
-            this.comboEstado.DisplayMember = "Estado";
+            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parlanteBindingSource, "Estado", true));
             this.comboEstado.Enabled = false;
             this.comboEstado.FormattingEnabled = true;
             this.comboEstado.Location = new System.Drawing.Point(144, 145);
@@ -256,8 +255,7 @@
             // 
             // comboMarca
             // 
-            this.comboMarca.DataSource = this.parlanteBindingSource;
-            this.comboMarca.DisplayMember = "Marca";
+            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parlanteBindingSource, "Marca", true));
             this.comboMarca.Enabled = false;
             this.comboMarca.FormattingEnabled = true;
             this.comboMarca.Location = new System.Drawing.Point(144, 16);
@@ -390,7 +388,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.parlanteBindingNavigatorSaveItem});
+            this.parlanteBindingNavigatorSaveItem,
+            this.btnModificar});
             this.parlanteBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.parlanteBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.parlanteBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -595,6 +594,16 @@
             this.serieDataGridViewTextBoxColumn.ReadOnly = true;
             this.serieDataGridViewTextBoxColumn.Width = 64;
             // 
+            // btnModificar
+            // 
+            this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnModificar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(23, 22);
+            this.btnModificar.Text = "toolStripButton1";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
+            // 
             // Parlante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -674,5 +683,6 @@
         private System.Windows.Forms.ComboBox comboModelo;
         private System.Windows.Forms.ComboBox comboEstado;
         private System.Windows.Forms.ComboBox comboMarca;
+        private System.Windows.Forms.ToolStripButton btnModificar;
     }
 }

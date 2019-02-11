@@ -171,5 +171,13 @@ namespace sistemaFCNM.Vistas
             this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
 
         }
+
+        private void btnModificar_Click_1(object sender, EventArgs e)
+        {
+            habilitarBotones();
+            comboEstado.Items.AddRange(Datos._obtenerEstado());
+            comboMarca.Items.AddRange(Datos._obtenerMarcaRadio());
+            comboModelo.Items.AddRange(Datos._obtenerModeloRadio());
+        }
     }
 }

@@ -69,6 +69,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.reguladorBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.gridRegulador = new System.Windows.Forms.DataGridView();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -235,8 +236,6 @@
             // 
             // comboTipo
             // 
-            this.comboTipo.DataSource = this.reguladorBindingSource;
-            this.comboTipo.DisplayMember = "Tipo";
             this.comboTipo.Enabled = false;
             this.comboTipo.FormattingEnabled = true;
             this.comboTipo.Location = new System.Drawing.Point(160, 120);
@@ -263,8 +262,7 @@
             // 
             // comboModelo
             // 
-            this.comboModelo.DataSource = this.reguladorBindingSource;
-            this.comboModelo.DisplayMember = "Modelo";
+            this.comboModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reguladorBindingSource, "Modelo", true));
             this.comboModelo.Enabled = false;
             this.comboModelo.FormattingEnabled = true;
             this.comboModelo.Location = new System.Drawing.Point(153, 58);
@@ -274,8 +272,7 @@
             // 
             // comboEstado
             // 
-            this.comboEstado.DataSource = this.reguladorBindingSource;
-            this.comboEstado.DisplayMember = "Estado";
+            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reguladorBindingSource, "Estado", true));
             this.comboEstado.Enabled = false;
             this.comboEstado.FormattingEnabled = true;
             this.comboEstado.Location = new System.Drawing.Point(153, 144);
@@ -285,8 +282,7 @@
             // 
             // comboMarca
             // 
-            this.comboMarca.DataSource = this.reguladorBindingSource;
-            this.comboMarca.DisplayMember = "Marca";
+            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reguladorBindingSource, "Marca", true));
             this.comboMarca.Enabled = false;
             this.comboMarca.FormattingEnabled = true;
             this.comboMarca.Location = new System.Drawing.Point(153, 15);
@@ -417,7 +413,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.reguladorBindingNavigatorSaveItem});
+            this.reguladorBindingNavigatorSaveItem,
+            this.btnModificar});
             this.reguladorBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.reguladorBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.reguladorBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -522,6 +519,16 @@
             this.reguladorBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.reguladorBindingNavigatorSaveItem.Text = "Guardar datos";
             this.reguladorBindingNavigatorSaveItem.Click += new System.EventHandler(this.reguladorBindingNavigatorSaveItem_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnModificar.Image = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(23, 22);
+            this.btnModificar.Text = "toolStripButton1";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // gridRegulador
             // 
@@ -712,5 +719,6 @@
         private System.Windows.Forms.ComboBox comboMarca;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.ComboBox comboTipo;
+        private System.Windows.Forms.ToolStripButton btnModificar;
     }
 }
