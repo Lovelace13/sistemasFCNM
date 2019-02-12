@@ -13,7 +13,9 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Pantalla : Form
     {
-        
+        private String InventarioAnterior;
+        private string SerieAnterior;
+
         public Pantalla()
         {
             InitializeComponent();
@@ -143,13 +145,58 @@ namespace sistemaFCNM.Vistas
             comboMarca.Items.AddRange(Datos._obtenerMarcaPantalla());
             comboModelo.Items.AddRange(Datos._obtenerModeloPantalla());
 
+            this.InventarioAnterior = txtPantalla.Text.Trim();
+            this.SerieAnterior = txtSerie.Text.Trim();
+
+            gridPantalla.Enabled = false;
         }
 
         private void pantallaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.pantallaBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+            //Update Inventario
+            try
+            {
+                if (this.pantallaTableAdapter.ObtenerIdPantalla(txtPantalla.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtPantalla.Text.Trim())
+                {
+                    MessageBox.Show("Inventario Repetido ");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.pantallaTableAdapter.UpdatePantalla(txtPantalla.Text.Trim(), this.InventarioAnterior);
+
+
+            }
+            //Update Serie
+            try
+            {
+                if (txtSerie.Text.Trim() != "N/A")
+                {
+                    if (this.pantallaTableAdapter.ObtenerSerie(txtSerie.Text.Trim()).ToString().Length != 0 && this.SerieAnterior != "N/A")
+                    {
+                        this.pantallaTableAdapter.UpdateSerie(txtSerie.Text.Trim(), txtPantalla.Text.Trim());
+                    }
+                    else
+                    {
+
+                        this.pantallaTableAdapter.UpdateTablaPantallaSerie((int)this.pantallaTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtPantalla.Text.Trim());
+                    }
+
+                }
+                else
+                {
+
+                    this.pantallaTableAdapter.UpdateTablaPantallaSerie((int)this.pantallaTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtPantalla.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.pantallaTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                this.pantallaTableAdapter.UpdateTablaPantallaSerie((int)this.pantallaTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtPantalla.Text.Trim());
+            }
+            this.pantallaTableAdapter.Fill(this.sistemasFCNMDataSet.Pantalla);
+            gridPantalla.Enabled = true;
 
         }
 
