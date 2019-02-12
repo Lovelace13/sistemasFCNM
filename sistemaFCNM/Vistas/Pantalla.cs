@@ -178,8 +178,17 @@ namespace sistemaFCNM.Vistas
                     }
                     else
                     {
+                        try
+                        {
+                            this.pantallaTableAdapter.UpdateTablaPantallaSerie((int)this.pantallaTableAdapter.ObtenerSerie(txtSerie.Text), txtPantalla.Text.Trim());
+                        }
+                        catch (InvalidOperationException)
+                        {
 
-                        this.pantallaTableAdapter.UpdateTablaPantallaSerie((int)this.pantallaTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtPantalla.Text.Trim());
+                            this.pantallaTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                            this.pantallaTableAdapter.UpdateTablaPantallaSerie((int)this.pantallaTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtPantalla.Text.Trim());
+                        }
+                        
                     }
 
                 }
