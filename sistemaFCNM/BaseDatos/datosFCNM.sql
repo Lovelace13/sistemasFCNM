@@ -1,8 +1,11 @@
 
 DBCC CHECKIDENT (Inventario, RESEED, 0)
-select* FROM Usuario;
+select* FROM TipoUsuario;
 delete from Usuario
 select Nombre from Usuario where  Usuario = '{0}' and clave = '{1}';
+
+INSERT INTO TipoUsuario(tipo)
+VALUES ('AYUDANTE'); 
 
 INSERT INTO TipoUsuario(tipo)
 VALUES ('ADMINISTRADOR'); 
@@ -19,6 +22,14 @@ INSERT INTO [dbo].[Usuario]
            ,[Clave])
      VALUES
            ('jfloresb',2,'JOSE FLORES','1234')
+GO
+INSERT INTO [dbo].[Usuario]
+           ([Usuario]
+           ,[Tipo]
+           ,[Nombre]
+           ,[Clave])
+     VALUES
+           ('jcbodero',1,'JULIO BODERO','1234')
 GO
 
 SELECT        CpuInventario.Inventario AS Cpu, Equipo.ID, EquipoInventario.Inventario, ImpresoraInventario.Inventario AS Impresora, MicrofonoInventario.Inventario AS Microfono, MouseInventario.Inventario AS Mouse, 
