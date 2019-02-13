@@ -150,7 +150,15 @@ namespace sistemaFCNM.Vistas
 
             gridPantalla.Enabled = false;
         }
-
+        public void ApagarBotones()
+        {
+            txtPantalla.Enabled = false;
+            comboPulgadas.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            comboModelo.Enabled = false;
+            txtSerie.Enabled = false;
+        }
         private void pantallaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             //Update Inventario
@@ -204,7 +212,25 @@ namespace sistemaFCNM.Vistas
                 this.pantallaTableAdapter.InsertSerie(txtSerie.Text.Trim());
                 this.pantallaTableAdapter.UpdateTablaPantallaSerie((int)this.pantallaTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtPantalla.Text.Trim());
             }
+            //Update Combos
+            try
+            {
+                this.pantallaTableAdapter.UpdateTablaPantalla(this.pantallaTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
+                this.pantallaTableAdapter.ObtenerPulgadas(comboPulgadas.SelectedItem.ToString()), this.pantallaTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
+                this.pantallaTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()), txtPantalla.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.pantallaTableAdapter.UpdateTablaPantalla(this.pantallaTableAdapter.ObtenerMarca(comboMarca.Text),
+                 this.pantallaTableAdapter.ObtenerPulgadas(comboPulgadas.Text), this.pantallaTableAdapter.ObtenerModelo(comboModelo.Text),
+                 this.pantallaTableAdapter.ObtenerEstado(comboEstado.Text), txtPantalla.Text.Trim());
+            }
+            
+
+
             this.pantallaTableAdapter.Fill(this.sistemasFCNMDataSet.Pantalla);
+            ApagarBotones();
             gridPantalla.Enabled = true;
 
         }
