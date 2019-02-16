@@ -13,7 +13,9 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Impresora : Form
     {
-        
+        private string InventarioAnterior;
+        private string SerieAnterior;
+
         public Impresora()
         {
             InitializeComponent();
@@ -148,10 +150,85 @@ namespace sistemaFCNM.Vistas
 
         private void impresoraBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.impresoraBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+            //Update Inventario
+            try
+            {
+                if (this.impresoraTableAdapter.ObtenerIdImpresora(txtImpresora.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtImpresora.Text.Trim())
+                {
+                    MessageBox.Show("Inventario Repetido ");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.impresoraTableAdapter.UpdateInventario(txtImpresora.Text.Trim(), this.InventarioAnterior);
 
+
+            }
+            //Update Serie
+            try
+            {
+                if (txtSerie.Text.Trim() != "N/A")
+                {
+                    if (this.impresoraTableAdapter.ObtenerSerie(txtSerie.Text.Trim()).ToString().Length != 0 && this.SerieAnterior != "N/A")
+                    {
+                        this.impresoraTableAdapter.UpdateSerie(txtSerie.Text.Trim(), txtImpresora.Text.Trim());
+                    }
+                    else
+                    {
+                        try
+                        {
+                            this.impresoraTableAdapter.UpdateTablaImpresoraSerie((int)this.impresoraTableAdapter.ObtenerSerie(txtSerie.Text), txtImpresora.Text.Trim());
+                        }
+                        catch (InvalidOperationException)
+                        {
+
+                            this.impresoraTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                            this.impresoraTableAdapter.UpdateTablaImpresoraSerie((int)this.impresoraTableAdapter.ObtenerSerie(txtSerie.Text), txtImpresora.Text.Trim());
+                        }
+
+                    }
+
+                }
+                else
+                {
+                    this.impresoraTableAdapter.UpdateTablaImpresoraSerie((int)this.impresoraTableAdapter.ObtenerSerie(txtSerie.Text), txtImpresora.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.impresoraTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                this.impresoraTableAdapter.UpdateTablaImpresoraSerie((int)this.impresoraTableAdapter.ObtenerSerie(txtSerie.Text), txtImpresora.Text.Trim());
+            }
+
+            //Update Combos
+            try
+            {
+                this.impresoraTableAdapter.UpdateTablaImpresora(this.impresoraTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
+                this.impresoraTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
+                this.impresoraTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()), txtImpresora.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.impresoraTableAdapter.UpdateTablaImpresora(this.impresoraTableAdapter.ObtenerMarca(comboMarca.Text),
+                this.impresoraTableAdapter.ObtenerModelo(comboModelo.Text),
+                this.impresoraTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
+            }
+
+            this.impresoraTableAdapter.Fill(this.sistemasFCNMDataSet.Impresora);
+            ApagarBotones();
+            gridImpresora.Enabled = true;
+
+        }
+
+        private void ApagarBotones()
+        {
+            txtImpresora.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            comboModelo.Enabled = false;
+            txtSerie.Enabled = false;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -160,6 +237,12 @@ namespace sistemaFCNM.Vistas
             comboEstado.Items.AddRange(Datos._obtenerEstado());
             comboMarca.Items.AddRange(Datos._obtenerMarcaImpresora());
             comboModelo.Items.AddRange(Datos._obtenerModeloImpresora());
+
+            this.InventarioAnterior = txtImpresora.Text.Trim();
+            this.SerieAnterior = txtSerie.Text.Trim();
+
+            gridImpresora.Enabled = false;
+
         }
     }
 }

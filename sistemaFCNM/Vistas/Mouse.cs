@@ -13,7 +13,9 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Mouse : Form
     {
-      
+        private string InventarioAnterior;
+        private string SerieAnterior;
+
         public Mouse()
         {
             InitializeComponent();
@@ -172,18 +174,100 @@ namespace sistemaFCNM.Vistas
 
         private void mouseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.mouseBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+            //Update Inventario
+            try
+            {
+                if (this.mouseTableAdapter.ObtenerIdMouse(txtMouse.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtMouse.Text.Trim())
+                {
+                    MessageBox.Show("Inventario Repetido ");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.mouseTableAdapter.UpdateInventario(txtMouse.Text.Trim(), this.InventarioAnterior);
+
+
+            }
+            //Update Serie
+            try
+            {
+                if (txtSerie.Text.Trim() != "N/A")
+                {
+                    if (this.mouseTableAdapter.ObtenerSerie(txtSerie.Text.Trim()).ToString().Length != 0 && this.SerieAnterior != "N/A")
+                    {
+                        this.mouseTableAdapter.UpdateSerie(txtSerie.Text.Trim(), txtMouse.Text.Trim());
+                    }
+                    else
+                    {
+                        try
+                        {
+                            this.mouseTableAdapter.UpdateTablaMouseSerie((int)this.mouseTableAdapter.ObtenerSerie(txtSerie.Text), txtMouse.Text.Trim());
+                        }
+                        catch (InvalidOperationException)
+                        {
+
+                            this.mouseTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                            this.mouseTableAdapter.UpdateTablaMouseSerie((int)this.mouseTableAdapter.ObtenerSerie(txtSerie.Text), txtMouse.Text.Trim());
+                        }
+
+                    }
+
+                }
+                else
+                {
+                    this.mouseTableAdapter.UpdateTablaMouseSerie((int)this.mouseTableAdapter.ObtenerSerie(txtSerie.Text), txtMouse.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.mouseTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                this.mouseTableAdapter.UpdateTablaMouseSerie((int)this.mouseTableAdapter.ObtenerSerie(txtSerie.Text), txtMouse.Text.Trim());
+            }
+
+            //Update Combos
+            try
+            {
+                this.mouseTableAdapter.UpdateTablaMouse(this.mouseTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
+                this.mouseTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
+                this.mouseTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()), txtMouse.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.mouseTableAdapter.UpdateTablaMouse(this.mouseTableAdapter.ObtenerMarca(comboMarca.Text),
+                this.mouseTableAdapter.ObtenerModelo(comboModelo.Text),
+                this.mouseTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
+            }
+
+            this.mouseTableAdapter.Fill(this.sistemasFCNMDataSet.Mouse);
+            ApagarBotones();
+            gridMouse.Enabled = true;
 
         }
 
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
+
             habilitarBotones();
+
             comboEstado.Items.AddRange(Datos._obtenerEstado());
             comboMarca.Items.AddRange(Datos._obtenerMarcaMouse());
             comboModelo.Items.AddRange(Datos._obtenerModeloMouse());
+
+            this.InventarioAnterior = txtMouse.Text.Trim();
+            this.SerieAnterior = txtSerie.Text.Trim();
+
+            gridMouse.Enabled = false;
+        }
+
+        private void ApagarBotones()
+        {
+            txtMouse.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            comboModelo.Enabled = false;
+            txtSerie.Enabled = false;
         }
     }
 }
