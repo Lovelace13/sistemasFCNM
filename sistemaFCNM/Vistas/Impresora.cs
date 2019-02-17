@@ -153,10 +153,12 @@ namespace sistemaFCNM.Vistas
             //Update Inventario
             try
             {
+               
                 if (this.impresoraTableAdapter.ObtenerIdImpresora(txtImpresora.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtImpresora.Text.Trim())
                 {
                     MessageBox.Show("Inventario Repetido ");
                 }
+               
             }
             catch (NullReferenceException)
             {

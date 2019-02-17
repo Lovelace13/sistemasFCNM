@@ -13,6 +13,8 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Parlante : Form
     {
+        private string InventarioAnterior;
+        private string SerieAnterior;
 
         public Parlante()
         {
@@ -145,10 +147,88 @@ namespace sistemaFCNM.Vistas
 
         private void parlanteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.parlanteBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+            //Update Inventario
+            try
+            {
 
+                if (this.parlanteTableAdapter.ObtenerIdParlante(txtParlante.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtParlante.Text.Trim())
+                {
+                    MessageBox.Show("Inventario Repetido ");
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+                this.parlanteTableAdapter.UpdateInventario(txtParlante.Text.Trim(), this.InventarioAnterior);
+
+
+            }
+            //Update Serie
+            try
+            {
+                if (txtSerie.Text.Trim() != "N/A")
+                {
+                    if (this.parlanteTableAdapter.ObtenerSerie(txtSerie.Text.Trim()).ToString().Length != 0 && this.SerieAnterior != "N/A")
+                    {
+                        this.parlanteTableAdapter.UpdateSerie(txtSerie.Text.Trim(), txtParlante.Text.Trim());
+                    }
+                    else
+                    {
+                        try
+                        {
+                            this.parlanteTableAdapter.UpdateTablaParlanteSerie((int)this.parlanteTableAdapter.ObtenerSerie(txtSerie.Text), txtParlante.Text.Trim());
+                        }
+                        catch (InvalidOperationException)
+                        {
+
+                            this.parlanteTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                            this.parlanteTableAdapter.UpdateTablaParlanteSerie((int)this.parlanteTableAdapter.ObtenerSerie(txtSerie.Text), txtParlante.Text.Trim());
+                        }
+
+                    }
+
+                }
+                else
+                {
+                    this.parlanteTableAdapter.UpdateTablaParlanteSerie((int)this.parlanteTableAdapter.ObtenerSerie(txtSerie.Text), txtParlante.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.parlanteTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                this.parlanteTableAdapter.UpdateTablaParlanteSerie((int)this.parlanteTableAdapter.ObtenerSerie(txtSerie.Text), txtParlante.Text.Trim());
+            }
+
+            //Update Combos
+            try
+            {
+                this.parlanteTableAdapter.UpdateTablaParlante(this.parlanteTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
+                this.parlanteTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
+                this.parlanteTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()), txtParlante.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.parlanteTableAdapter.UpdateTablaParlante(this.parlanteTableAdapter.ObtenerMarca(comboMarca.Text),
+                this.parlanteTableAdapter.ObtenerModelo(comboModelo.Text),
+                this.parlanteTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
+            }
+
+            this.parlanteTableAdapter.Fill(this.sistemasFCNMDataSet.Parlante);
+            ApagarBotones();
+            gridParlante.Enabled = true;
+
+
+        }
+
+        private void ApagarBotones()
+        {
+            txtParlante.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            comboModelo.Enabled = false;
+            txtSerie.Enabled = false;
         }
 
         private void btnModificar_Click_1(object sender, EventArgs e)
@@ -157,6 +237,11 @@ namespace sistemaFCNM.Vistas
             comboEstado.Items.AddRange(Datos._obtenerEstado());
             comboMarca.Items.AddRange(Datos._obtenerMarcaParlante());
             comboModelo.Items.AddRange(Datos._obtenerModeloParlante());
+
+            this.InventarioAnterior = txtParlante.Text.Trim();
+            this.SerieAnterior = txtSerie.Text.Trim();
+
+            gridParlante.Enabled = false;
         }
     }
 }

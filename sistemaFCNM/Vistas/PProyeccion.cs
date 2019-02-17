@@ -13,7 +13,9 @@ namespace sistemaFCNM.Vistas
 {
     public partial class PProyeccion : Form
     {
-       
+        private string InventarioAnterior;
+        private string SerieAnterior;
+
         public PProyeccion()
         {
             InitializeComponent();
@@ -147,10 +149,90 @@ namespace sistemaFCNM.Vistas
 
         private void pantallaProyeccionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.pantallaProyeccionBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+            //Update Inventario
+            try
+            {
+                if (this.pantallaProyeccionTableAdapter.ObtenerIdPP(txtPproyeccion.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtPproyeccion.Text.Trim())
+                {
+                    MessageBox.Show("Inventario Repetido ");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.pantallaProyeccionTableAdapter.UpdateInventario(txtPproyeccion.Text.Trim(), this.InventarioAnterior);
 
+
+            }
+            //Update Serie
+            try
+            {
+                if (txtSerie.Text.Trim() != "N/A")
+                {
+                    if (this.pantallaProyeccionTableAdapter.ObtenerSerie(txtSerie.Text.Trim()).ToString().Length != 0 && this.SerieAnterior != "N/A")
+                    {
+                        this.pantallaProyeccionTableAdapter.UpdateSerie(txtSerie.Text.Trim(), txtPproyeccion.Text.Trim());
+                    }
+                    else
+                    {
+                        try
+                        {
+                            this.pantallaProyeccionTableAdapter.UpdateTablaPPSerie((int)this.pantallaProyeccionTableAdapter.ObtenerSerie(txtSerie.Text), txtPproyeccion.Text.Trim());
+                        }
+                        catch (InvalidOperationException)
+                        {
+
+                            this.pantallaProyeccionTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                            this.pantallaProyeccionTableAdapter.UpdateTablaPPSerie((int)this.pantallaProyeccionTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtPproyeccion.Text.Trim());
+                        }
+
+                    }
+
+                }
+                else
+                {
+
+                    this.pantallaProyeccionTableAdapter.UpdateTablaPPSerie((int)this.pantallaProyeccionTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtPproyeccion.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.pantallaProyeccionTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                this.pantallaProyeccionTableAdapter.UpdateTablaPPSerie((int)this.pantallaProyeccionTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtPproyeccion.Text.Trim());
+            }
+            //Update Combos
+            try
+            {
+                this.pantallaProyeccionTableAdapter.UpdateTablaPP(this.pantallaProyeccionTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
+                this.pantallaProyeccionTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
+                this.pantallaProyeccionTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()), 
+                this.pantallaProyeccionTableAdapter.ObtenerDimensiones(comboDimensiones.SelectedItem.ToString()), txtPproyeccion.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.pantallaProyeccionTableAdapter.UpdateTablaPP(this.pantallaProyeccionTableAdapter.ObtenerMarca(comboMarca.Text),
+                 this.pantallaProyeccionTableAdapter.ObtenerModelo(comboModelo.Text),
+                 this.pantallaProyeccionTableAdapter.ObtenerEstado(comboEstado.Text),
+                 this.pantallaProyeccionTableAdapter.ObtenerDimensiones(comboDimensiones.Text), txtPproyeccion.Text.Trim());
+            }
+
+
+
+            this.pantallaProyeccionTableAdapter.Fill(this.sistemasFCNMDataSet.PantallaProyeccion);
+            ApagarBotones();
+            gridPP.Enabled = true;
+
+        }
+
+        private void ApagarBotones()
+        {
+            txtPproyeccion.Enabled = false;
+            comboDimensiones.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            comboModelo.Enabled = false;
+            txtSerie.Enabled = false;
         }
 
         private void btnModificar_Click_1(object sender, EventArgs e)
@@ -160,6 +242,11 @@ namespace sistemaFCNM.Vistas
             comboMarca.Items.AddRange(Datos._obtenerMarcaPP());
             comboModelo.Items.AddRange(Datos._obtenerModeloPP());
             comboDimensiones.Items.AddRange(Datos._obtenerDimensionesPP());
+
+            this.InventarioAnterior = txtPproyeccion.Text.Trim();
+            this.SerieAnterior = txtSerie.Text.Trim();
+
+            gridPP.Enabled = false;
         }
     }
 }

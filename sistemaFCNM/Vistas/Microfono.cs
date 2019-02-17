@@ -13,7 +13,9 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Microfono : Form
     {
-        
+        private string InventarioAnterior;
+        private string SerieAnterior;
+
         public Microfono()
         {
             InitializeComponent();
@@ -144,10 +146,90 @@ namespace sistemaFCNM.Vistas
 
         private void microfonoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.microfonoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+            //Update Inventario
+            try
+            {
+                
+                if (this.microfonoTableAdapter.ObtenerIdMicro(txtMicro.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtMicro.Text.Trim())
+                {
+                    MessageBox.Show("Inventario Repetido ");
+                }
+                else if (this.microfonoTableAdapter.ObtenerIdMicro(txtMicro.Text.Trim()).ToString().Length== 0 && this.InventarioAnterior != txtMicro.Text.Trim())
+                {
+                    this.microfonoTableAdapter.UpdateInventario(txtMicro.Text.Trim(), this.InventarioAnterior);
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.microfonoTableAdapter.UpdateInventario(txtMicro.Text.Trim(), this.InventarioAnterior);
 
+
+            }
+            //Update Serie
+            try
+            {
+                if (txtSerie.Text.Trim() != "N/A")
+                {
+                    if (this.microfonoTableAdapter.ObtenerSerie(txtSerie.Text.Trim()).ToString().Length != 0 && this.SerieAnterior != "N/A")
+                    {
+                        this.microfonoTableAdapter.UpdateSerie(txtSerie.Text.Trim(), txtMicro.Text.Trim());
+                    }
+                    else
+                    {
+                        try
+                        {
+                            this.microfonoTableAdapter.UpdateTablaMicrofonoSerie((int)this.microfonoTableAdapter.ObtenerSerie(txtSerie.Text), txtMicro.Text.Trim());
+                        }
+                        catch (InvalidOperationException)
+                        {
+
+                            this.microfonoTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                            this.microfonoTableAdapter.UpdateTablaMicrofonoSerie((int)this.microfonoTableAdapter.ObtenerSerie(txtSerie.Text), txtMicro.Text.Trim());
+                        }
+
+                    }
+
+                }
+                else
+                {
+                    this.microfonoTableAdapter.UpdateTablaMicrofonoSerie((int)this.microfonoTableAdapter.ObtenerSerie(txtSerie.Text), txtMicro.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.microfonoTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                this.microfonoTableAdapter.UpdateTablaMicrofonoSerie((int)this.microfonoTableAdapter.ObtenerSerie(txtSerie.Text), txtMicro.Text.Trim());
+            }
+
+            //Update Combos
+            try
+            {
+                this.microfonoTableAdapter.UpdateTablaMicrofono(this.microfonoTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
+                this.microfonoTableAdapter.ObtenerTipo(comboTipo.SelectedItem.ToString()),
+                this.microfonoTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()), txtMicro.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.microfonoTableAdapter.UpdateTablaMicrofono(this.microfonoTableAdapter.ObtenerMarca(comboMarca.Text),
+                this.microfonoTableAdapter.ObtenerTipo(comboTipo.Text),
+                this.microfonoTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
+            }
+
+            this.microfonoTableAdapter.Fill(this.sistemasFCNMDataSet.Microfono);
+            ApagarBotones();
+            gridMicrofono.Enabled = true;
+
+        }
+
+        private void ApagarBotones()
+        {
+            comboTipo.Enabled = false;
+            txtMicro.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            txtSerie.Enabled = false;
         }
 
         private void btnModificar_Click_1(object sender, EventArgs e)
@@ -156,6 +238,11 @@ namespace sistemaFCNM.Vistas
             comboEstado.Items.AddRange(Datos._obtenerEstado());
             comboMarca.Items.AddRange(Datos._obtenerMarcaMicro());
             comboTipo.Items.AddRange(Datos._obtenerTipoMicro());
+
+            this.InventarioAnterior = txtMicro.Text.Trim();
+            this.SerieAnterior = txtSerie.Text.Trim();
+
+            gridMicrofono.Enabled = false;
         }
     }
 }

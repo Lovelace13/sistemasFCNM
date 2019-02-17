@@ -13,7 +13,10 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Regulador : Form
     {
-        
+        private string InventarioAnterior;
+
+        public string SerieAnterior { get; private set; }
+
         public Regulador()
         {
             InitializeComponent();
@@ -145,10 +148,90 @@ namespace sistemaFCNM.Vistas
 
         private void reguladorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.reguladorBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+            //Update Inventario
+            try
+            {
+                if (this.reguladorTableAdapter.ObtenerIdRegulador(txtRegulador.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtRegulador.Text.Trim())
+                {
+                    MessageBox.Show("Inventario Repetido ");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.reguladorTableAdapter.UpdateRegulador(txtRegulador.Text.Trim(), this.InventarioAnterior);
 
+
+            }
+            //Update Serie
+            try
+            {
+                if (txtSerie.Text.Trim() != "N/A")
+                {
+                    if (this.reguladorTableAdapter.ObtenerSerie(txtSerie.Text.Trim()).ToString().Length != 0 && this.SerieAnterior != "N/A")
+                    {
+                        this.reguladorTableAdapter.UpdateSerie(txtSerie.Text.Trim(), txtRegulador.Text.Trim());
+                    }
+                    else
+                    {
+                        try
+                        {
+                            this.reguladorTableAdapter.UpdateTablaReguladorSerie((int)this.reguladorTableAdapter.ObtenerSerie(txtSerie.Text), txtRegulador.Text.Trim());
+                        }
+                        catch (InvalidOperationException)
+                        {
+
+                            this.reguladorTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                            this.reguladorTableAdapter.UpdateTablaReguladorSerie((int)this.reguladorTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtRegulador.Text.Trim());
+                        }
+
+                    }
+
+                }
+                else
+                {
+
+                    this.reguladorTableAdapter.UpdateTablaReguladorSerie((int)this.reguladorTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtRegulador.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.reguladorTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                this.reguladorTableAdapter.UpdateTablaReguladorSerie((int)this.reguladorTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtRegulador.Text.Trim());
+            }
+            //Update Combos
+            try
+            {
+                this.reguladorTableAdapter.UpdateTablaRegulador(this.reguladorTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
+                this.reguladorTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
+                this.reguladorTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()),
+                this.reguladorTableAdapter.ObtenerTipo(comboTipo.SelectedItem.ToString()), txtRegulador.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.reguladorTableAdapter.UpdateTablaRegulador(this.reguladorTableAdapter.ObtenerMarca(comboMarca.Text),
+                this.reguladorTableAdapter.ObtenerModelo(comboModelo.Text),
+                 this.reguladorTableAdapter.ObtenerEstado(comboEstado.Text), 
+                 this.reguladorTableAdapter.ObtenerTipo(comboTipo.Text), txtRegulador.Text.Trim());
+            }
+
+
+
+            this.reguladorTableAdapter.Fill(this.sistemasFCNMDataSet.Regulador);
+            ApagarBotones();
+            gridRegulador.Enabled = true;
+
+        }
+
+        private void ApagarBotones()
+        {
+            txtRegulador.Enabled = false;
+            comboTipo.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            comboModelo.Enabled = false;
+            txtSerie.Enabled = false;
         }
 
         private void btnModificar_Click_1(object sender, EventArgs e)
@@ -158,6 +241,11 @@ namespace sistemaFCNM.Vistas
             comboMarca.Items.AddRange(Datos._obtenerMarcaRegulador());
             comboModelo.Items.AddRange(Datos._obtenerModeloregulador());
             comboTipo.Items.AddRange(Datos._obtenerTipoRegulador());
+
+            this.InventarioAnterior = txtRegulador.Text.Trim();
+            this.SerieAnterior = txtSerie.Text.Trim();
+
+            gridRegulador.Enabled = false;
         }
     }
 }

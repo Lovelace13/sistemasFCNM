@@ -13,6 +13,9 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Teclado : Form
     {
+        private string InventarioAnterior;
+        private string SerieAnterior;
+
         public Teclado()
         {
             InitializeComponent();
@@ -141,10 +144,87 @@ namespace sistemaFCNM.Vistas
 
         private void tecladoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.tecladoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+            //Update Inventario
+            try
+            {
+                if (this.tecladoTableAdapter.ObtenerIdTeclado(txtTeclado.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtTeclado.Text.Trim())
+                {
+                    MessageBox.Show("Inventario Repetido ");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.tecladoTableAdapter.UpdateTeclado(txtTeclado.Text.Trim(), this.InventarioAnterior);
 
+
+            }
+            //Update Serie
+            try
+            {
+                if (txtSerie.Text.Trim() != "N/A")
+                {
+                    if (this.tecladoTableAdapter.ObtenerSerie(txtSerie.Text.Trim()).ToString().Length != 0 && this.SerieAnterior != "N/A")
+                    {
+                        this.tecladoTableAdapter.UpdateSerie(txtSerie.Text.Trim(), txtTeclado.Text.Trim());
+                    }
+                    else
+                    {
+                        try
+                        {
+                            this.tecladoTableAdapter.UpdateTablaTecladoSerie((int)this.tecladoTableAdapter.ObtenerSerie(txtSerie.Text), txtTeclado.Text.Trim());
+                        }
+                        catch (InvalidOperationException)
+                        {
+
+                            this.tecladoTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                            this.tecladoTableAdapter.UpdateTablaTecladoSerie((int)this.tecladoTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtTeclado.Text.Trim());
+                        }
+
+                    }
+
+                }
+                else
+                {
+
+                    this.tecladoTableAdapter.UpdateTablaTecladoSerie((int)this.tecladoTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtTeclado.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.tecladoTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                this.tecladoTableAdapter.UpdateTablaTecladoSerie((int)this.tecladoTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtTeclado.Text.Trim());
+            }
+            //Update Combos
+            try
+            {
+                this.tecladoTableAdapter.UpdateTablaTeclado(this.tecladoTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
+                this.tecladoTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
+                this.tecladoTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()), txtTeclado.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.tecladoTableAdapter.UpdateTablaTeclado(this.tecladoTableAdapter.ObtenerMarca(comboMarca.Text),
+                 this.tecladoTableAdapter.ObtenerModelo(comboModelo.Text),
+                 this.tecladoTableAdapter.ObtenerEstado(comboEstado.Text), txtTeclado.Text.Trim());
+            }
+
+
+
+            this.tecladoTableAdapter.Fill(this.sistemasFCNMDataSet.Teclado);
+            ApagarBotones();
+            gridTeclado.Enabled = true;
+
+        }
+
+        private void ApagarBotones()
+        {
+            txtTeclado.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            comboModelo.Enabled = false;
+            txtSerie.Enabled = false;
         }
 
         private void btnModificar_Click_1(object sender, EventArgs e)
@@ -153,6 +233,11 @@ namespace sistemaFCNM.Vistas
             comboEstado.Items.AddRange(Datos._obtenerEstado());
             comboMarca.Items.AddRange(Datos._obtenerMarcaTeclado());
             comboModelo.Items.AddRange(Datos._obtenerModeloTeclado());
+
+            this.InventarioAnterior = txtTeclado.Text.Trim();
+            this.SerieAnterior = txtSerie.Text.Trim();
+
+            gridTeclado.Enabled = false;
         }
     }
 }

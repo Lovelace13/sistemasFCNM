@@ -13,7 +13,10 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Radio : Form
     {
-       
+        private string InventarioAnterior;
+
+        public string SerieAnterior { get; private set; }
+
         public Radio()
         {
             InitializeComponent();
@@ -165,11 +168,87 @@ namespace sistemaFCNM.Vistas
         }
 
         private void radioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.radioBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+        {  //Update Inventario
+            try
+            {
+                if (this.radioTableAdapter.ObtenerIdRadio(txtRadio.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtRadio.Text.Trim())
+                {
+                    MessageBox.Show("Inventario Repetido ");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.radioTableAdapter.UpdateInventario(txtRadio.Text.Trim(), this.InventarioAnterior);
 
+
+            }
+            //Update Serie
+            try
+            {
+                if (txtSerie.Text.Trim() != "N/A")
+                {
+                    if (this.radioTableAdapter.ObtenerSerie(txtSerie.Text.Trim()).ToString().Length != 0 && this.SerieAnterior != "N/A")
+                    {
+                        this.radioTableAdapter.UpdateSerie(txtSerie.Text.Trim(), txtRadio.Text.Trim());
+                    }
+                    else
+                    {
+                        try
+                        {
+                            this.radioTableAdapter.UpdateTablaRadioSerie((int)this.radioTableAdapter.ObtenerSerie(txtSerie.Text), txtRadio.Text.Trim());
+                        }
+                        catch (InvalidOperationException)
+                        {
+
+                            this.radioTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                            this.radioTableAdapter.UpdateTablaRadioSerie((int)this.radioTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtRadio.Text.Trim());
+                        }
+
+                    }
+
+                }
+                else
+                {
+
+                    this.radioTableAdapter.UpdateTablaRadioSerie((int)this.radioTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtRadio.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.radioTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                this.radioTableAdapter.UpdateTablaRadioSerie((int)this.radioTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtRadio.Text.Trim());
+            }
+            //Update Combos
+            try
+            {
+                this.radioTableAdapter.UpdateTablaRadio(this.radioTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
+                this.radioTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
+                this.radioTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()), txtRadio.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.radioTableAdapter.UpdateTablaRadio(this.radioTableAdapter.ObtenerMarca(comboMarca.Text),
+                this.radioTableAdapter.ObtenerModelo(comboModelo.Text),
+                 this.radioTableAdapter.ObtenerEstado(comboEstado.Text), txtRadio.Text.Trim());
+            }
+
+
+
+            this.radioTableAdapter.Fill(this.sistemasFCNMDataSet.Radio);
+            ApagarBotones();
+            gridRadio.Enabled = true;
+
+        }
+
+        private void ApagarBotones()
+        {
+            txtRadio.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            comboModelo.Enabled = false;
+            txtSerie.Enabled = false;
         }
 
         private void btnModificar_Click_1(object sender, EventArgs e)
@@ -178,6 +257,11 @@ namespace sistemaFCNM.Vistas
             comboEstado.Items.AddRange(Datos._obtenerEstado());
             comboMarca.Items.AddRange(Datos._obtenerMarcaRadio());
             comboModelo.Items.AddRange(Datos._obtenerModeloRadio());
+
+            this.InventarioAnterior = txtRadio.Text.Trim();
+            this.SerieAnterior = txtSerie.Text.Trim();
+
+            gridRadio.Enabled = false;
         }
     }
 }

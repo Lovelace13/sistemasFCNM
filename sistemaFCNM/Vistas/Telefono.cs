@@ -13,7 +13,10 @@ namespace sistemaFCNM.Vistas
 {
     public partial class Telefono : Form
     {
-       
+        private string InventarioAnterior;
+        private string SerieAnterior;
+        private string ExtensionAnterior;
+
         public Telefono()
         {
             InitializeComponent();
@@ -145,10 +148,128 @@ namespace sistemaFCNM.Vistas
 
         private void telefonoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.telefonoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemasFCNMDataSet);
+            //Update Inventario
+            try
+            {
+                if (this.telefonoTableAdapter.ObtenerIdTelefono(txtTelefono.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtTelefono.Text.Trim())
+                {
+                    MessageBox.Show("Inventario Repetido ");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                this.telefonoTableAdapter.UpdateInventario(txtTelefono.Text.Trim(), this.InventarioAnterior);
 
+
+            }
+            //Update Serie
+            try
+            {
+                if (txtSerie.Text.Trim() != "N/A")
+                {
+                    if (this.telefonoTableAdapter.ObtenerSerie(txtSerie.Text.Trim()).ToString().Length != 0 && this.SerieAnterior != "N/A")
+                    {
+                        this.telefonoTableAdapter.UpdateSerie(txtSerie.Text.Trim(), txtTelefono.Text.Trim());
+                    }
+                    else
+                    {
+                        try
+                        {
+                            this.telefonoTableAdapter.UpdateTablaTelefonoSerie((int)this.telefonoTableAdapter.ObtenerSerie(txtSerie.Text), txtTelefono.Text.Trim());
+                        }
+                        catch (InvalidOperationException)
+                        {
+
+                            this.telefonoTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                            this.telefonoTableAdapter.UpdateTablaTelefonoSerie((int)this.telefonoTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtTelefono.Text.Trim());
+                        }
+
+                    }
+
+                }
+                else
+                {
+
+                    this.telefonoTableAdapter.UpdateTablaTelefonoSerie((int)this.telefonoTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtTelefono.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.telefonoTableAdapter.InsertSerie(txtSerie.Text.Trim());
+                this.telefonoTableAdapter.UpdateTablaTelefonoSerie((int)this.telefonoTableAdapter.ObtenerSerie(txtSerie.Text.Trim()), txtTelefono.Text.Trim());
+            }
+            //Update Extension
+            try
+            {
+                if (txtExtension.Text.Trim() != "N/A")
+                {
+                    if (this.telefonoTableAdapter.ObtenerExtension(txtExtension.Text.Trim()).ToString().Length != 0 && this.ExtensionAnterior != "N/A")
+                    {
+                        this.telefonoTableAdapter.UpdateExtension(txtExtension.Text.Trim(), txtTelefono.Text.Trim());
+                    }
+                    else
+                    {
+                        try
+                        {
+                            this.telefonoTableAdapter.UpdateTablaTelefonoExtension((int)this.telefonoTableAdapter.ObtenerExtension(txtExtension.Text), txtTelefono.Text.Trim());
+                        }
+                        catch (InvalidOperationException)
+                        {
+
+                            this.telefonoTableAdapter.InsertExtencion(txtExtension.Text.Trim());
+                            this.telefonoTableAdapter.UpdateTablaTelefonoExtension((int)this.telefonoTableAdapter.ObtenerExtension(txtExtension.Text.Trim()), txtTelefono.Text.Trim());
+                        }
+
+                    }
+
+                }
+                else
+                {
+
+                    this.telefonoTableAdapter.UpdateTablaTelefonoExtension((int)this.telefonoTableAdapter.ObtenerExtension(txtExtension.Text.Trim()), txtTelefono.Text.Trim());
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                this.telefonoTableAdapter.InsertExtencion(txtExtension.Text.Trim());
+                this.telefonoTableAdapter.UpdateTablaTelefonoExtension((int)this.telefonoTableAdapter.ObtenerExtension(txtExtension.Text.Trim()), txtTelefono.Text.Trim());
+            }
+            //Update Combos
+            try
+            {
+                this.telefonoTableAdapter.UpdateTablaTelefono(this.telefonoTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
+                this.telefonoTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
+                this.telefonoTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()),
+                this.telefonoTableAdapter.ObtenerTipo(comboTipo.SelectedItem.ToString()), txtTelefono.Text.Trim());
+            }
+            catch (NullReferenceException)
+            {
+
+                this.telefonoTableAdapter.UpdateTablaTelefono(this.telefonoTableAdapter.ObtenerMarca(comboMarca.Text),
+                this.telefonoTableAdapter.ObtenerModelo(comboModelo.Text),
+                this.telefonoTableAdapter.ObtenerEstado(comboEstado.Text),
+                this.telefonoTableAdapter.ObtenerTipo(comboTipo.Text), txtTelefono.Text.Trim());
+            }
+
+
+
+            this.telefonoTableAdapter.Fill(this.sistemasFCNMDataSet.Telefono);
+            ApagarBotones();
+            gridTelefono.Enabled = true;
+
+        }
+
+        private void ApagarBotones()
+        {
+            txtTelefono.Enabled = false;
+            comboTipo.Enabled = false;
+            txtExtension.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            comboModelo.Enabled = false;
+            txtSerie.Enabled = false;
         }
 
         private void btnModificar_Click_1(object sender, EventArgs e)
@@ -158,6 +279,12 @@ namespace sistemaFCNM.Vistas
             comboMarca.Items.AddRange(Datos._obtenerMarcaTelefono());
             comboModelo.Items.AddRange(Datos._obtenerModeloTelefono());
             comboTipo.Items.AddRange(Datos._obtenerTipoTelefono());
+
+            this.InventarioAnterior = txtTelefono.Text.Trim();
+            this.SerieAnterior = txtSerie.Text.Trim();
+            this.ExtensionAnterior = txtExtension.Text.Trim();
+
+            gridTelefono.Enabled = false;
         }
     }
 }
