@@ -91,11 +91,11 @@ namespace sistemaFCNM
 
         private void btnScanner_Click(object sender, EventArgs e)
         {
-            apagarBotones();
+            
             FuncionesUtiles.siguienteActiva = true;
             FuncionesUtiles.abrirVentanas(new Equipos(), contenedor);
-            BarraProgreso progres = new BarraProgreso();
-            progres.Show();
+           
+           
             
         }
 
