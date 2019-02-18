@@ -198,7 +198,7 @@
             this.btnRadio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRadio.Location = new System.Drawing.Point(-8, 582);
             this.btnRadio.Name = "btnRadio";
-            this.btnRadio.Size = new System.Drawing.Size(79, 42);
+            this.btnRadio.Size = new System.Drawing.Size(82, 42);
             this.btnRadio.TabIndex = 13;
             this.btnRadio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRadio.UseVisualStyleBackColor = true;
@@ -217,7 +217,7 @@
             this.btnPproyeccion.Image = ((System.Drawing.Image)(resources.GetObject("btnPproyeccion.Image")));
             this.btnPproyeccion.Location = new System.Drawing.Point(-8, 534);
             this.btnPproyeccion.Name = "btnPproyeccion";
-            this.btnPproyeccion.Size = new System.Drawing.Size(79, 42);
+            this.btnPproyeccion.Size = new System.Drawing.Size(83, 42);
             this.btnPproyeccion.TabIndex = 12;
             this.btnPproyeccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPproyeccion.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@
             this.btnTelefono.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTelefono.Location = new System.Drawing.Point(-5, 486);
             this.btnTelefono.Name = "btnTelefono";
-            this.btnTelefono.Size = new System.Drawing.Size(79, 42);
+            this.btnTelefono.Size = new System.Drawing.Size(84, 42);
             this.btnTelefono.TabIndex = 11;
             this.btnTelefono.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTelefono.UseVisualStyleBackColor = true;
@@ -259,7 +259,7 @@
             this.btnMicro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMicro.Location = new System.Drawing.Point(-8, 438);
             this.btnMicro.Name = "btnMicro";
-            this.btnMicro.Size = new System.Drawing.Size(79, 42);
+            this.btnMicro.Size = new System.Drawing.Size(87, 42);
             this.btnMicro.TabIndex = 10;
             this.btnMicro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMicro.UseVisualStyleBackColor = true;
@@ -280,7 +280,7 @@
             this.btnParlante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnParlante.Location = new System.Drawing.Point(-8, 294);
             this.btnParlante.Name = "btnParlante";
-            this.btnParlante.Size = new System.Drawing.Size(79, 42);
+            this.btnParlante.Size = new System.Drawing.Size(87, 42);
             this.btnParlante.TabIndex = 9;
             this.btnParlante.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnParlante.UseVisualStyleBackColor = true;
@@ -301,7 +301,7 @@
             this.btnImpresora.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImpresora.Location = new System.Drawing.Point(-8, 342);
             this.btnImpresora.Name = "btnImpresora";
-            this.btnImpresora.Size = new System.Drawing.Size(79, 42);
+            this.btnImpresora.Size = new System.Drawing.Size(87, 42);
             this.btnImpresora.TabIndex = 8;
             this.btnImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImpresora.UseVisualStyleBackColor = true;
@@ -322,7 +322,7 @@
             this.btnProyector.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProyector.Location = new System.Drawing.Point(-8, 390);
             this.btnProyector.Name = "btnProyector";
-            this.btnProyector.Size = new System.Drawing.Size(79, 42);
+            this.btnProyector.Size = new System.Drawing.Size(87, 42);
             this.btnProyector.TabIndex = 7;
             this.btnProyector.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProyector.UseVisualStyleBackColor = true;
@@ -385,7 +385,7 @@
             this.btnTeclado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTeclado.Location = new System.Drawing.Point(-5, 150);
             this.btnTeclado.Name = "btnTeclado";
-            this.btnTeclado.Size = new System.Drawing.Size(79, 42);
+            this.btnTeclado.Size = new System.Drawing.Size(84, 42);
             this.btnTeclado.TabIndex = 4;
             this.btnTeclado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTeclado.UseVisualStyleBackColor = true;
@@ -404,9 +404,9 @@
             this.btnPantalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPantalla.ForeColor = System.Drawing.SystemColors.Window;
             this.btnPantalla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPantalla.Location = new System.Drawing.Point(-8, 102);
+            this.btnPantalla.Location = new System.Drawing.Point(-5, 102);
             this.btnPantalla.Name = "btnPantalla";
-            this.btnPantalla.Size = new System.Drawing.Size(79, 42);
+            this.btnPantalla.Size = new System.Drawing.Size(84, 42);
             this.btnPantalla.TabIndex = 3;
             this.btnPantalla.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPantalla.UseVisualStyleBackColor = true;
@@ -449,7 +449,7 @@
             this.btnScanner.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnScanner.Location = new System.Drawing.Point(-8, 6);
             this.btnScanner.Name = "btnScanner";
-            this.btnScanner.Size = new System.Drawing.Size(79, 42);
+            this.btnScanner.Size = new System.Drawing.Size(94, 42);
             this.btnScanner.TabIndex = 1;
             this.btnScanner.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnScanner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
