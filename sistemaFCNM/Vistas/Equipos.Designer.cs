@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Equipos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtTeclado = new System.Windows.Forms.TextBox();
             this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
@@ -80,6 +80,18 @@
             this.lblPantalla = new System.Windows.Forms.Label();
             this.lblCpu = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnBusquedaRadio = new System.Windows.Forms.Button();
             this.btnBusquedaTelef = new System.Windows.Forms.Button();
             this.btnBusquedaPar = new System.Windows.Forms.Button();
@@ -93,6 +105,7 @@
             this.btnBusquedaPantalla = new System.Windows.Forms.Button();
             this.btnBusquedaCpu = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnModifEquipo = new System.Windows.Forms.Button();
             this.comboOficina = new System.Windows.Forms.ComboBox();
             this.txtResponsable = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -131,7 +144,8 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.equipoTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.EquipoTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
-            this.btnModifEquipo = new System.Windows.Forms.Button();
+            this.txtIp = new System.Windows.Forms.TextBox();
+            this.btnEncender = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -148,7 +162,7 @@
             this.txtTeclado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Teclado", true));
             this.txtTeclado.Enabled = false;
             this.txtTeclado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTeclado.Location = new System.Drawing.Point(167, 75);
+            this.txtTeclado.Location = new System.Drawing.Point(133, 73);
             this.txtTeclado.Multiline = true;
             this.txtTeclado.Name = "txtTeclado";
             this.txtTeclado.Size = new System.Drawing.Size(198, 19);
@@ -169,7 +183,7 @@
             // 
             this.lblTeclado.AutoSize = true;
             this.lblTeclado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTeclado.Location = new System.Drawing.Point(47, 76);
+            this.lblTeclado.Location = new System.Drawing.Point(13, 74);
             this.lblTeclado.Name = "lblTeclado";
             this.lblTeclado.Size = new System.Drawing.Size(118, 13);
             this.lblTeclado.TabIndex = 8;
@@ -182,7 +196,7 @@
             this.txtMouse.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Mouse", true));
             this.txtMouse.Enabled = false;
             this.txtMouse.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMouse.Location = new System.Drawing.Point(167, 103);
+            this.txtMouse.Location = new System.Drawing.Point(133, 101);
             this.txtMouse.Multiline = true;
             this.txtMouse.Name = "txtMouse";
             this.txtMouse.Size = new System.Drawing.Size(198, 19);
@@ -193,7 +207,7 @@
             // 
             this.lblMouse.AutoSize = true;
             this.lblMouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMouse.Location = new System.Drawing.Point(56, 103);
+            this.lblMouse.Location = new System.Drawing.Point(22, 101);
             this.lblMouse.Name = "lblMouse";
             this.lblMouse.Size = new System.Drawing.Size(109, 13);
             this.lblMouse.TabIndex = 10;
@@ -221,7 +235,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(475, 108);
+            this.label1.Location = new System.Drawing.Point(464, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 25;
@@ -232,7 +246,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(467, 80);
+            this.label2.Location = new System.Drawing.Point(456, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 13);
             this.label2.TabIndex = 24;
@@ -243,7 +257,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(468, 52);
+            this.label3.Location = new System.Drawing.Point(457, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 13);
             this.label3.TabIndex = 23;
@@ -254,7 +268,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(464, 24);
+            this.label4.Location = new System.Drawing.Point(453, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 13);
             this.label4.TabIndex = 26;
@@ -302,7 +316,7 @@
             this.btnDetalleTeclado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleTeclado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleTeclado.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleTeclado.Location = new System.Drawing.Point(371, 74);
+            this.btnDetalleTeclado.Location = new System.Drawing.Point(326, 72);
             this.btnDetalleTeclado.Name = "btnDetalleTeclado";
             this.btnDetalleTeclado.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleTeclado.TabIndex = 34;
@@ -316,7 +330,7 @@
             this.btnDetalleMouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleMouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleMouse.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleMouse.Location = new System.Drawing.Point(371, 102);
+            this.btnDetalleMouse.Location = new System.Drawing.Point(326, 100);
             this.btnDetalleMouse.Name = "btnDetalleMouse";
             this.btnDetalleMouse.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleMouse.TabIndex = 35;
@@ -331,7 +345,7 @@
             this.btnDetalleParlante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleParlante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleParlante.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleParlante.Location = new System.Drawing.Point(800, 98);
+            this.btnDetalleParlante.Location = new System.Drawing.Point(789, 98);
             this.btnDetalleParlante.Name = "btnDetalleParlante";
             this.btnDetalleParlante.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleParlante.TabIndex = 43;
@@ -346,7 +360,7 @@
             this.btnDetalleImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleImpresora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleImpresora.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleImpresora.Location = new System.Drawing.Point(800, 70);
+            this.btnDetalleImpresora.Location = new System.Drawing.Point(789, 70);
             this.btnDetalleImpresora.Name = "btnDetalleImpresora";
             this.btnDetalleImpresora.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleImpresora.TabIndex = 42;
@@ -361,7 +375,7 @@
             this.btnDetalleProyector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleProyector.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleProyector.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleProyector.Location = new System.Drawing.Point(800, 42);
+            this.btnDetalleProyector.Location = new System.Drawing.Point(789, 42);
             this.btnDetalleProyector.Name = "btnDetalleProyector";
             this.btnDetalleProyector.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleProyector.TabIndex = 41;
@@ -376,7 +390,7 @@
             this.btnDetalleRegulador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleRegulador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleRegulador.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleRegulador.Location = new System.Drawing.Point(800, 14);
+            this.btnDetalleRegulador.Location = new System.Drawing.Point(789, 14);
             this.btnDetalleRegulador.Name = "btnDetalleRegulador";
             this.btnDetalleRegulador.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleRegulador.TabIndex = 40;
@@ -392,7 +406,7 @@
             this.txtRegulador.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Regulador", true));
             this.txtRegulador.Enabled = false;
             this.txtRegulador.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegulador.Location = new System.Drawing.Point(596, 19);
+            this.txtRegulador.Location = new System.Drawing.Point(585, 19);
             this.txtRegulador.Multiline = true;
             this.txtRegulador.Name = "txtRegulador";
             this.txtRegulador.Size = new System.Drawing.Size(198, 19);
@@ -407,7 +421,7 @@
             this.txtParlante.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Parlante", true));
             this.txtParlante.Enabled = false;
             this.txtParlante.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParlante.Location = new System.Drawing.Point(596, 103);
+            this.txtParlante.Location = new System.Drawing.Point(585, 103);
             this.txtParlante.Multiline = true;
             this.txtParlante.Name = "txtParlante";
             this.txtParlante.Size = new System.Drawing.Size(198, 19);
@@ -422,7 +436,7 @@
             this.txtImpresora.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Impresora", true));
             this.txtImpresora.Enabled = false;
             this.txtImpresora.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImpresora.Location = new System.Drawing.Point(596, 75);
+            this.txtImpresora.Location = new System.Drawing.Point(585, 75);
             this.txtImpresora.Multiline = true;
             this.txtImpresora.Name = "txtImpresora";
             this.txtImpresora.Size = new System.Drawing.Size(198, 19);
@@ -437,7 +451,7 @@
             this.txtProyector.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Proyector", true));
             this.txtProyector.Enabled = false;
             this.txtProyector.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProyector.Location = new System.Drawing.Point(596, 47);
+            this.txtProyector.Location = new System.Drawing.Point(585, 47);
             this.txtProyector.Multiline = true;
             this.txtProyector.Name = "txtProyector";
             this.txtProyector.Size = new System.Drawing.Size(198, 19);
@@ -451,7 +465,7 @@
             this.btnDetalleTelef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleTelef.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleTelef.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleTelef.Location = new System.Drawing.Point(800, 126);
+            this.btnDetalleTelef.Location = new System.Drawing.Point(789, 126);
             this.btnDetalleTelef.Name = "btnDetalleTelef";
             this.btnDetalleTelef.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleTelef.TabIndex = 53;
@@ -467,7 +481,7 @@
             this.txtTelefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Telefono", true));
             this.txtTelefono.Enabled = false;
             this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(596, 131);
+            this.txtTelefono.Location = new System.Drawing.Point(585, 131);
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(198, 19);
@@ -479,7 +493,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(472, 136);
+            this.label8.Location = new System.Drawing.Point(461, 136);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(122, 13);
             this.label8.TabIndex = 51;
@@ -518,7 +532,7 @@
             this.txtRadio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Radios", true));
             this.txtRadio.Enabled = false;
             this.txtRadio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRadio.Location = new System.Drawing.Point(596, 159);
+            this.txtRadio.Location = new System.Drawing.Point(585, 159);
             this.txtRadio.Multiline = true;
             this.txtRadio.Name = "txtRadio";
             this.txtRadio.Size = new System.Drawing.Size(198, 19);
@@ -530,7 +544,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(489, 164);
+            this.label11.Location = new System.Drawing.Point(478, 164);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(105, 13);
             this.label11.TabIndex = 59;
@@ -543,7 +557,7 @@
             this.btnDetalleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleRadio.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleRadio.Location = new System.Drawing.Point(800, 154);
+            this.btnDetalleRadio.Location = new System.Drawing.Point(789, 154);
             this.btnDetalleRadio.Name = "btnDetalleRadio";
             this.btnDetalleRadio.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleRadio.TabIndex = 61;
@@ -579,7 +593,7 @@
             this.btnDetallePproyeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetallePproyeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetallePproyeccion.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetallePproyeccion.Location = new System.Drawing.Point(371, 158);
+            this.btnDetallePproyeccion.Location = new System.Drawing.Point(326, 156);
             this.btnDetallePproyeccion.Name = "btnDetallePproyeccion";
             this.btnDetallePproyeccion.Size = new System.Drawing.Size(79, 23);
             this.btnDetallePproyeccion.TabIndex = 130;
@@ -594,7 +608,7 @@
             this.txtProyeccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "PantallaProyeccion", true));
             this.txtProyeccion.Enabled = false;
             this.txtProyeccion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProyeccion.Location = new System.Drawing.Point(167, 159);
+            this.txtProyeccion.Location = new System.Drawing.Point(133, 157);
             this.txtProyeccion.Multiline = true;
             this.txtProyeccion.Name = "txtProyeccion";
             this.txtProyeccion.Size = new System.Drawing.Size(198, 19);
@@ -605,11 +619,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, 164);
+            this.label9.Location = new System.Drawing.Point(15, 157);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(151, 13);
+            this.label9.Size = new System.Drawing.Size(112, 13);
             this.label9.TabIndex = 129;
-            this.label9.Text = "Inventario P. Proyeccion:";
+            this.label9.Text = "Inv P. Proyeccion:";
             // 
             // btnDetalleMicro
             // 
@@ -617,7 +631,7 @@
             this.btnDetalleMicro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleMicro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleMicro.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleMicro.Location = new System.Drawing.Point(371, 130);
+            this.btnDetalleMicro.Location = new System.Drawing.Point(326, 128);
             this.btnDetalleMicro.Name = "btnDetalleMicro";
             this.btnDetalleMicro.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleMicro.TabIndex = 127;
@@ -632,7 +646,7 @@
             this.txtMicrofono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Microfono", true));
             this.txtMicrofono.Enabled = false;
             this.txtMicrofono.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMicrofono.Location = new System.Drawing.Point(167, 131);
+            this.txtMicrofono.Location = new System.Drawing.Point(133, 129);
             this.txtMicrofono.Multiline = true;
             this.txtMicrofono.Name = "txtMicrofono";
             this.txtMicrofono.Size = new System.Drawing.Size(198, 19);
@@ -643,7 +657,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(37, 131);
+            this.label7.Location = new System.Drawing.Point(3, 129);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(128, 13);
             this.label7.TabIndex = 126;
@@ -655,7 +669,7 @@
             this.btnDetallePantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetallePantalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetallePantalla.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetallePantalla.Location = new System.Drawing.Point(371, 46);
+            this.btnDetallePantalla.Location = new System.Drawing.Point(326, 44);
             this.btnDetallePantalla.Name = "btnDetallePantalla";
             this.btnDetallePantalla.Size = new System.Drawing.Size(79, 23);
             this.btnDetallePantalla.TabIndex = 136;
@@ -669,7 +683,7 @@
             this.btnDetalleCpu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleCpu.ForeColor = System.Drawing.Color.Blue;
-            this.btnDetalleCpu.Location = new System.Drawing.Point(371, 18);
+            this.btnDetalleCpu.Location = new System.Drawing.Point(326, 16);
             this.btnDetalleCpu.Name = "btnDetalleCpu";
             this.btnDetalleCpu.Size = new System.Drawing.Size(79, 23);
             this.btnDetalleCpu.TabIndex = 135;
@@ -684,7 +698,7 @@
             this.txtCpu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Cpu", true));
             this.txtCpu.Enabled = false;
             this.txtCpu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCpu.Location = new System.Drawing.Point(167, 19);
+            this.txtCpu.Location = new System.Drawing.Point(133, 17);
             this.txtCpu.Multiline = true;
             this.txtCpu.Name = "txtCpu";
             this.txtCpu.Size = new System.Drawing.Size(198, 19);
@@ -698,7 +712,7 @@
             this.txtPantalla.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Pantalla", true));
             this.txtPantalla.Enabled = false;
             this.txtPantalla.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPantalla.Location = new System.Drawing.Point(167, 47);
+            this.txtPantalla.Location = new System.Drawing.Point(133, 45);
             this.txtPantalla.Multiline = true;
             this.txtPantalla.Name = "txtPantalla";
             this.txtPantalla.Size = new System.Drawing.Size(198, 19);
@@ -709,7 +723,7 @@
             // 
             this.lblPantalla.AutoSize = true;
             this.lblPantalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPantalla.Location = new System.Drawing.Point(47, 50);
+            this.lblPantalla.Location = new System.Drawing.Point(13, 48);
             this.lblPantalla.Name = "lblPantalla";
             this.lblPantalla.Size = new System.Drawing.Size(118, 13);
             this.lblPantalla.TabIndex = 133;
@@ -719,7 +733,7 @@
             // 
             this.lblCpu.AutoSize = true;
             this.lblCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpu.Location = new System.Drawing.Point(68, 24);
+            this.lblCpu.Location = new System.Drawing.Point(34, 22);
             this.lblCpu.Name = "lblCpu";
             this.lblCpu.Size = new System.Drawing.Size(97, 13);
             this.lblCpu.TabIndex = 134;
@@ -728,6 +742,18 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.button8);
+            this.groupBox1.Controls.Add(this.button9);
+            this.groupBox1.Controls.Add(this.button10);
+            this.groupBox1.Controls.Add(this.button11);
+            this.groupBox1.Controls.Add(this.button12);
+            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnBusquedaRadio);
             this.groupBox1.Controls.Add(this.btnBusquedaTelef);
             this.groupBox1.Controls.Add(this.btnBusquedaPar);
@@ -783,17 +809,174 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inventario Asociado";
             // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Location = new System.Drawing.Point(891, 153);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(20, 20);
+            this.button7.TabIndex = 167;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(891, 125);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(20, 20);
+            this.button8.TabIndex = 166;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Location = new System.Drawing.Point(891, 97);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(20, 20);
+            this.button9.TabIndex = 165;
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Location = new System.Drawing.Point(891, 71);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(20, 20);
+            this.button10.TabIndex = 164;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Location = new System.Drawing.Point(891, 45);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(20, 20);
+            this.button11.TabIndex = 163;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackgroundImage = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Location = new System.Drawing.Point(891, 17);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(20, 20);
+            this.button12.TabIndex = 162;
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(427, 156);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(20, 20);
+            this.button6.TabIndex = 161;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(427, 128);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(20, 20);
+            this.button5.TabIndex = 160;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(427, 100);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(20, 20);
+            this.button4.TabIndex = 159;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(427, 74);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(20, 20);
+            this.button3.TabIndex = 158;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(427, 48);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(20, 20);
+            this.button2.TabIndex = 157;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(427, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.TabIndex = 156;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnBusquedaRadio
             // 
             this.btnBusquedaRadio.BackgroundImage = global::sistemaFCNM.Properties.Resources.Buscar;
             this.btnBusquedaRadio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaRadio.FlatAppearance.BorderSize = 0;
             this.btnBusquedaRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaRadio.Location = new System.Drawing.Point(874, 152);
+            this.btnBusquedaRadio.Location = new System.Drawing.Point(863, 152);
             this.btnBusquedaRadio.Name = "btnBusquedaRadio";
             this.btnBusquedaRadio.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaRadio.TabIndex = 149;
             this.btnBusquedaRadio.UseVisualStyleBackColor = true;
+            this.btnBusquedaRadio.Click += new System.EventHandler(this.btnBusquedaRadio_Click);
             // 
             // btnBusquedaTelef
             // 
@@ -801,11 +984,12 @@
             this.btnBusquedaTelef.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaTelef.FlatAppearance.BorderSize = 0;
             this.btnBusquedaTelef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaTelef.Location = new System.Drawing.Point(874, 125);
+            this.btnBusquedaTelef.Location = new System.Drawing.Point(863, 125);
             this.btnBusquedaTelef.Name = "btnBusquedaTelef";
             this.btnBusquedaTelef.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaTelef.TabIndex = 148;
             this.btnBusquedaTelef.UseVisualStyleBackColor = true;
+            this.btnBusquedaTelef.Click += new System.EventHandler(this.btnBusquedaTelef_Click);
             // 
             // btnBusquedaPar
             // 
@@ -813,11 +997,12 @@
             this.btnBusquedaPar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaPar.FlatAppearance.BorderSize = 0;
             this.btnBusquedaPar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaPar.Location = new System.Drawing.Point(874, 96);
+            this.btnBusquedaPar.Location = new System.Drawing.Point(863, 96);
             this.btnBusquedaPar.Name = "btnBusquedaPar";
             this.btnBusquedaPar.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaPar.TabIndex = 147;
             this.btnBusquedaPar.UseVisualStyleBackColor = true;
+            this.btnBusquedaPar.Click += new System.EventHandler(this.btnBusquedaPar_Click);
             // 
             // btnBusquedaImpr
             // 
@@ -825,11 +1010,12 @@
             this.btnBusquedaImpr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaImpr.FlatAppearance.BorderSize = 0;
             this.btnBusquedaImpr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaImpr.Location = new System.Drawing.Point(874, 69);
+            this.btnBusquedaImpr.Location = new System.Drawing.Point(863, 69);
             this.btnBusquedaImpr.Name = "btnBusquedaImpr";
             this.btnBusquedaImpr.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaImpr.TabIndex = 146;
             this.btnBusquedaImpr.UseVisualStyleBackColor = true;
+            this.btnBusquedaImpr.Click += new System.EventHandler(this.btnBusquedaImpr_Click);
             // 
             // btnBusquedaProy
             // 
@@ -837,11 +1023,12 @@
             this.btnBusquedaProy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaProy.FlatAppearance.BorderSize = 0;
             this.btnBusquedaProy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaProy.Location = new System.Drawing.Point(874, 42);
+            this.btnBusquedaProy.Location = new System.Drawing.Point(863, 42);
             this.btnBusquedaProy.Name = "btnBusquedaProy";
             this.btnBusquedaProy.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaProy.TabIndex = 145;
             this.btnBusquedaProy.UseVisualStyleBackColor = true;
+            this.btnBusquedaProy.Click += new System.EventHandler(this.btnBusquedaProy_Click);
             // 
             // btnBusquedaRegulador
             // 
@@ -849,11 +1036,12 @@
             this.btnBusquedaRegulador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaRegulador.FlatAppearance.BorderSize = 0;
             this.btnBusquedaRegulador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaRegulador.Location = new System.Drawing.Point(874, 15);
+            this.btnBusquedaRegulador.Location = new System.Drawing.Point(863, 15);
             this.btnBusquedaRegulador.Name = "btnBusquedaRegulador";
             this.btnBusquedaRegulador.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaRegulador.TabIndex = 144;
             this.btnBusquedaRegulador.UseVisualStyleBackColor = true;
+            this.btnBusquedaRegulador.Click += new System.EventHandler(this.btnBusquedaRegulador_Click);
             // 
             // btnBusquedaPP
             // 
@@ -861,11 +1049,12 @@
             this.btnBusquedaPP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaPP.FlatAppearance.BorderSize = 0;
             this.btnBusquedaPP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaPP.Location = new System.Drawing.Point(445, 156);
+            this.btnBusquedaPP.Location = new System.Drawing.Point(398, 155);
             this.btnBusquedaPP.Name = "btnBusquedaPP";
             this.btnBusquedaPP.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaPP.TabIndex = 155;
             this.btnBusquedaPP.UseVisualStyleBackColor = true;
+            this.btnBusquedaPP.Click += new System.EventHandler(this.btnBusquedaPP_Click);
             // 
             // btnBusquedaMicro
             // 
@@ -873,11 +1062,12 @@
             this.btnBusquedaMicro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaMicro.FlatAppearance.BorderSize = 0;
             this.btnBusquedaMicro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaMicro.Location = new System.Drawing.Point(445, 129);
+            this.btnBusquedaMicro.Location = new System.Drawing.Point(398, 128);
             this.btnBusquedaMicro.Name = "btnBusquedaMicro";
             this.btnBusquedaMicro.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaMicro.TabIndex = 154;
             this.btnBusquedaMicro.UseVisualStyleBackColor = true;
+            this.btnBusquedaMicro.Click += new System.EventHandler(this.btnBusquedaMicro_Click);
             // 
             // btnBusquedaMouse
             // 
@@ -885,11 +1075,12 @@
             this.btnBusquedaMouse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaMouse.FlatAppearance.BorderSize = 0;
             this.btnBusquedaMouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaMouse.Location = new System.Drawing.Point(445, 100);
+            this.btnBusquedaMouse.Location = new System.Drawing.Point(398, 99);
             this.btnBusquedaMouse.Name = "btnBusquedaMouse";
             this.btnBusquedaMouse.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaMouse.TabIndex = 153;
             this.btnBusquedaMouse.UseVisualStyleBackColor = true;
+            this.btnBusquedaMouse.Click += new System.EventHandler(this.btnBusquedaMouse_Click);
             // 
             // btnBusquedaTeclado
             // 
@@ -897,11 +1088,12 @@
             this.btnBusquedaTeclado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaTeclado.FlatAppearance.BorderSize = 0;
             this.btnBusquedaTeclado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaTeclado.Location = new System.Drawing.Point(445, 73);
+            this.btnBusquedaTeclado.Location = new System.Drawing.Point(398, 72);
             this.btnBusquedaTeclado.Name = "btnBusquedaTeclado";
             this.btnBusquedaTeclado.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaTeclado.TabIndex = 152;
             this.btnBusquedaTeclado.UseVisualStyleBackColor = true;
+            this.btnBusquedaTeclado.Click += new System.EventHandler(this.btnBusquedaTeclado_Click);
             // 
             // btnBusquedaPantalla
             // 
@@ -909,11 +1101,12 @@
             this.btnBusquedaPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaPantalla.FlatAppearance.BorderSize = 0;
             this.btnBusquedaPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaPantalla.Location = new System.Drawing.Point(445, 46);
+            this.btnBusquedaPantalla.Location = new System.Drawing.Point(398, 45);
             this.btnBusquedaPantalla.Name = "btnBusquedaPantalla";
             this.btnBusquedaPantalla.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaPantalla.TabIndex = 151;
             this.btnBusquedaPantalla.UseVisualStyleBackColor = true;
+            this.btnBusquedaPantalla.Click += new System.EventHandler(this.btnBusquedaPantalla_Click);
             // 
             // btnBusquedaCpu
             // 
@@ -921,7 +1114,7 @@
             this.btnBusquedaCpu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBusquedaCpu.FlatAppearance.BorderSize = 0;
             this.btnBusquedaCpu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaCpu.Location = new System.Drawing.Point(445, 19);
+            this.btnBusquedaCpu.Location = new System.Drawing.Point(398, 18);
             this.btnBusquedaCpu.Name = "btnBusquedaCpu";
             this.btnBusquedaCpu.Size = new System.Drawing.Size(23, 24);
             this.btnBusquedaCpu.TabIndex = 150;
@@ -948,6 +1141,19 @@
             this.groupBox2.TabIndex = 138;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Inventario";
+            // 
+            // btnModifEquipo
+            // 
+            this.btnModifEquipo.BackgroundImage = global::sistemaFCNM.Properties.Resources.Modificar;
+            this.btnModifEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnModifEquipo.FlatAppearance.BorderSize = 0;
+            this.btnModifEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifEquipo.Location = new System.Drawing.Point(0, 41);
+            this.btnModifEquipo.Name = "btnModifEquipo";
+            this.btnModifEquipo.Size = new System.Drawing.Size(23, 24);
+            this.btnModifEquipo.TabIndex = 156;
+            this.btnModifEquipo.UseVisualStyleBackColor = true;
+            this.btnModifEquipo.Click += new System.EventHandler(this.btnModifEquipo_Click);
             // 
             // comboOficina
             // 
@@ -1144,14 +1350,14 @@
             this.gridInventario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.gridInventario.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.gridInventario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gridInventario.ColumnHeadersHeight = 28;
             this.gridInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1168,28 +1374,28 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.gridInventario.DataSource = this.equipoBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridInventario.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridInventario.DefaultCellStyle = dataGridViewCellStyle8;
             this.gridInventario.EnableHeadersVisualStyles = false;
             this.gridInventario.Location = new System.Drawing.Point(58, 345);
             this.gridInventario.MultiSelect = false;
             this.gridInventario.Name = "gridInventario";
             this.gridInventario.ReadOnly = true;
             this.gridInventario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridInventario.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridInventario.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.gridInventario.RowHeadersVisible = false;
             this.gridInventario.RowHeadersWidth = 15;
             this.gridInventario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -1417,18 +1623,33 @@
             this.tableAdapterManager.UpdateOrder = sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
             // 
-            // btnModifEquipo
+            // txtIp
             // 
-            this.btnModifEquipo.BackgroundImage = global::sistemaFCNM.Properties.Resources.Modificar;
-            this.btnModifEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnModifEquipo.FlatAppearance.BorderSize = 0;
-            this.btnModifEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifEquipo.Location = new System.Drawing.Point(0, 41);
-            this.btnModifEquipo.Name = "btnModifEquipo";
-            this.btnModifEquipo.Size = new System.Drawing.Size(23, 24);
-            this.btnModifEquipo.TabIndex = 156;
-            this.btnModifEquipo.UseVisualStyleBackColor = true;
-            this.btnModifEquipo.Click += new System.EventHandler(this.btnModifEquipo_Click);
+            this.txtIp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtIp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.equipoBindingSource, "Regulador", true));
+            this.txtIp.Enabled = false;
+            this.txtIp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIp.Location = new System.Drawing.Point(1091, 267);
+            this.txtIp.Multiline = true;
+            this.txtIp.Name = "txtIp";
+            this.txtIp.Size = new System.Drawing.Size(119, 25);
+            this.txtIp.TabIndex = 143;
+            this.txtIp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnEncender
+            // 
+            this.btnEncender.BackgroundImage = global::sistemaFCNM.Properties.Resources.Salir1;
+            this.btnEncender.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEncender.FlatAppearance.BorderSize = 0;
+            this.btnEncender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncender.Location = new System.Drawing.Point(1149, 302);
+            this.btnEncender.Name = "btnEncender";
+            this.btnEncender.Size = new System.Drawing.Size(23, 24);
+            this.btnEncender.TabIndex = 157;
+            this.btnEncender.UseVisualStyleBackColor = true;
+            this.btnEncender.Click += new System.EventHandler(this.btnEncender_Click);
             // 
             // Equipos
             // 
@@ -1440,6 +1661,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1222, 685);
             this.ControlBox = false;
+            this.Controls.Add(this.btnEncender);
+            this.Controls.Add(this.txtIp);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.gridInventario);
@@ -1574,5 +1797,19 @@
         private System.Windows.Forms.Button btnBusquedaPantalla;
         private System.Windows.Forms.Button btnBusquedaCpu;
         private System.Windows.Forms.Button btnModifEquipo;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtIp;
+        private System.Windows.Forms.Button btnEncender;
     }
 }

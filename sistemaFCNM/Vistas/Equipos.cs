@@ -11,7 +11,7 @@ namespace sistemaFCNM
 {
     public partial class Equipos : Form
     {
-
+        #region Variables Inventario
         private Thread HiloServerQR;
         private ServidorSocket server;
         private LinkedList<String> listaqr = new LinkedList<string>();
@@ -29,12 +29,14 @@ namespace sistemaFCNM
         private string ReguladorAnterior;
         private string TecladoAnterior;
         private string TelefonoAnterior;
+        #endregion
 
         public Equipos()
         {
             InitializeComponent();
         }
 
+        #region Funciones Equipo
         private void txtScanner_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -43,8 +45,6 @@ namespace sistemaFCNM
                 busqueda(txtScanner.Text.Trim());
             }
         }
-
-
         private void limpiarTxtandWait()
         {
             try
@@ -67,7 +67,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
         }
-
         private void btnDetalleTeclado_Click(object sender, EventArgs e)
         {
             if (!FuncionesUtiles.masdetallesActiva)
@@ -77,7 +76,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new Vistas.Teclado(), mainPrincipal.contenedor);
         }
-
         private void btnDetallePantalla_Click(object sender, EventArgs e)
         {
             if (!FuncionesUtiles.masdetallesActiva)
@@ -87,7 +85,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new Vistas.Pantalla(), mainPrincipal.contenedor);
         }
-
         private void btnDetalleMouse_Click(object sender, EventArgs e)
         {
 
@@ -98,7 +95,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new Vistas.Mouse(), mainPrincipal.contenedor);
         }
-
         private void btnDetalleMicro_Click(object sender, EventArgs e)
         {
             if (!FuncionesUtiles.masdetallesActiva)
@@ -108,7 +104,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new Vistas.Microfono(), mainPrincipal.contenedor);
         }
-
         private void btnDetallePproyeccion_Click(object sender, EventArgs e)
         {
             if (!FuncionesUtiles.masdetallesActiva)
@@ -118,7 +113,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new PProyeccion(), mainPrincipal.contenedor);
         }
-
         private void btnDetalleRegulador_Click(object sender, EventArgs e)
         {
             if (!FuncionesUtiles.masdetallesActiva)
@@ -128,7 +122,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new Vistas.Regulador(), mainPrincipal.contenedor);
         }
-
         private void btnDetalleProyector_Click(object sender, EventArgs e)
         {
             if (!FuncionesUtiles.masdetallesActiva)
@@ -138,7 +131,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new Vistas.Proyector(), mainPrincipal.contenedor);
         }
-
         private void btnDetalleImpresora_Click(object sender, EventArgs e)
         {
             if (!FuncionesUtiles.masdetallesActiva)
@@ -148,7 +140,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new Vistas.Impresora(), mainPrincipal.contenedor);
         }
-
         private void btnDetalleParlante_Click(object sender, EventArgs e)
         {
             if (!FuncionesUtiles.masdetallesActiva)
@@ -158,7 +149,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new Vistas.Parlante(), mainPrincipal.contenedor);
         }
-
         private void btnDetalleTelef_Click(object sender, EventArgs e)
         {
             if (!FuncionesUtiles.masdetallesActiva)
@@ -168,7 +158,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new Vistas.Telefono(), mainPrincipal.contenedor);
         }
-
         private void btnDetalleRadio_Click(object sender, EventArgs e)
         {
             if (!FuncionesUtiles.masdetallesActiva)
@@ -178,9 +167,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new Vistas.Radio(), mainPrincipal.contenedor);
         }
-
-
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
@@ -193,7 +179,6 @@ namespace sistemaFCNM
             sql = "";
             Datos.llenarGrid(sql, gridInventario);
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
 
@@ -204,7 +189,6 @@ namespace sistemaFCNM
 
             FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
         }
-
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -212,22 +196,12 @@ namespace sistemaFCNM
             FuncionesUtiles.activarMenu();
             FuncionesUtiles.INVENTARIO_EQUIPO = "";
         }
-
-
-
-
         private void Equipos_Load(object sender, EventArgs e)
         {
             FuncionesUtiles.INVENTARIO_EQUIPO = "";
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Equipo' Puede moverla o quitarla según sea necesario.
             this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
-            this.server = new ServidorSocket("192.168.1.8", 100);
-            this.HiloServerQR = new Thread(new ThreadStart(server.StartListening));
-            HiloServerQR.Start();
-            timer1.Enabled = true; //Inicio Tiempo para leer codigo qr
-
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (server.Data == null)
@@ -244,7 +218,6 @@ namespace sistemaFCNM
             }
 
         }
-
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listView1.SelectedIndices.Count <= 0)
@@ -304,17 +277,57 @@ namespace sistemaFCNM
             FuncionesUtiles.ID_RADIO = int.Parse("" + this.equipoTableAdapter.getIdRadio(FuncionesUtiles.INVENTARIO_EQUIPO));
             limpiarTxtandWait();
         }
-
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
 
         }
-
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVO EQUIPO", "Ingrese Numero de INventario Equipo", "", 600);
+            try
+            {
+                
+                if(this.equipoTableAdapter.ObtenerInventarioEquipo(NuevoInventario).ToString().Length != 0)
+                {
+                    MessageBox.Show("Numero Ingresado ya Exite");
+                    return;
+                }
+                
+            }
+            catch (NullReferenceException)
+            {
 
+                this.equipoTableAdapter.InsertInventario(NuevoInventario);
+
+                int var1 = (int)this.equipoTableAdapter.ObtenerInventarioEquipo(NuevoInventario);
+                int var2 = (int)FuncionesEquipo.cpu.ObtenerIDCPU("N/A");
+                int var3 = (int)this.equipoTableAdapter.getIdNombreOficina("N/A");
+                int var4 = (int)FuncionesEquipo.micro.ObtenerIdMicro("N/A");
+                int var5 = (int)FuncionesEquipo.telefono.ObtenerIdTelefono("N/A");
+                int var6 = (int)FuncionesEquipo.pp.ObtenerIdPP("N/A");
+                int var7 = (int)FuncionesEquipo.radio.ObtenerIdRadio("N/A");
+                int var8 = (int)FuncionesEquipo.pantalla.ObtenerIdPantalla("N/A");
+                int var9 = (int)FuncionesEquipo.teclado.ObtenerIdTeclado("N/A");
+                int var10 = (int)FuncionesEquipo.mouse.ObtenerIdMouse("N/A");
+                int var11 = (int)FuncionesEquipo.parlante.ObtenerIdParlante("N/A");
+                int var12 = (int)FuncionesEquipo.regulador.ObtenerIdRegulador("N/A");
+                int var13 = (int)FuncionesEquipo.impresora.ObtenerIdImpresora("N/A");
+                int var14 = (int)FuncionesEquipo.proyector.ObtenerIdProyector("N/A");
+                int var15 = (int)this.equipoTableAdapter.getIdPropietario("JOSE FLORES");
+
+
+                this.equipoTableAdapter.InsertEquipo((int)this.equipoTableAdapter.ObtenerInventarioEquipo(NuevoInventario),
+                    (int)FuncionesEquipo.cpu.ObtenerIDCPU("N/A"),(int)this.equipoTableAdapter.getIdNombreOficina("N/A"), (int)FuncionesEquipo.micro.ObtenerIdMicro("N/A"),
+                    (int)FuncionesEquipo.telefono.ObtenerIdTelefono("N/A"), (int)FuncionesEquipo.pp.ObtenerIdPP("N/A"),
+                    (int)FuncionesEquipo.radio.ObtenerIdRadio("N/A"), (int)FuncionesEquipo.pantalla.ObtenerIdPantalla("N/A"), (int)FuncionesEquipo.teclado.ObtenerIdTeclado("N/A"),
+                    (int)FuncionesEquipo.mouse.ObtenerIdMouse("N/A"), (int)FuncionesEquipo.parlante.ObtenerIdParlante("N/A"), (int)FuncionesEquipo.regulador.ObtenerIdRegulador("N/A"),
+                    (int)FuncionesEquipo.impresora.ObtenerIdImpresora("N/A"), (int)FuncionesEquipo.proyector.ObtenerIdProyector("N/A"),(int) this.equipoTableAdapter.getIdPropietario("JOSE FLORES"));
+
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                busqueda(NuevoInventario);
+            }
+            
         }
-
         private void equipoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             switch (FuncionesUtiles.ventanaDialogo())
@@ -333,8 +346,6 @@ namespace sistemaFCNM
             }
 
         }
-
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             HabilitarBotones();
@@ -359,26 +370,6 @@ namespace sistemaFCNM
             this.TecladoAnterior = txtTeclado.Text.Trim();
             this.TelefonoAnterior = txtTelefono.Text.Trim();
         }
-
-
-
-        private void btnBusquedaCpu_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (FuncionesEquipo.cpu.obtenerInventario(txtCpu.Text.Trim()).Length != 0)
-                {
-
-                }
-
-            }
-            catch (NullReferenceException)
-            {
-                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
-
-            }
-        }
-
         private Boolean GuardadoValido()
         {
 
@@ -582,7 +573,6 @@ namespace sistemaFCNM
             this.txtResponsable.Enabled = false;
             this.txtEquipo.Enabled = false;
         }
-
         private void btnModifEquipo_Click(object sender, EventArgs e)
         {
             this.txtEquipo.Enabled = true;
@@ -590,7 +580,6 @@ namespace sistemaFCNM
             this.InventarioAnterior = txtEquipo.Text.Trim();
             this.IDAnterior = (int)this.equipoTableAdapter.ObtenerIDEquipo(txtEquipo.Text.Trim());
         }
-
         private void guardado()
         {
             //GUARDADO CPU
@@ -859,6 +848,347 @@ namespace sistemaFCNM
             gridInventario.Enabled = true;
             this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
         }
+        private void btnEncender_Click(object sender, EventArgs e)
+        {
+            this.server = new ServidorSocket(txtIp.Text.Trim(), 100);
+            this.HiloServerQR = new Thread(new ThreadStart(server.StartListening));
+            HiloServerQR.Start();
+            timer1.Enabled = true; //Inicio Tiempo para leer codigo qr
+        }
+        #endregion
+
+        #region botones habilitar busqueda
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.txtCpu.Enabled = true;
+            this.txtCpu.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.txtPantalla.Enabled = true;
+            this.txtPantalla.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.txtTeclado.Enabled = true;
+            this.txtTeclado.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.txtMouse.Enabled = true;
+            this.txtMouse.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.txtMicrofono.Enabled = true;
+            this.txtMicrofono.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.txtProyeccion.Enabled = true;
+            this.txtProyeccion.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.txtRegulador.Enabled = true;
+            this.txtRegulador.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.txtProyector.Enabled = true;
+            this.txtProyector.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.txtImpresora.Enabled = true;
+            this.txtImpresora.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.txtParlante.Enabled = true;
+            this.txtParlante.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.txtTelefono.Enabled = true;
+            this.txtTelefono.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.txtRadio.Enabled = true;
+            this.txtRadio.Text = "";
+            MessageBox.Show("Ingrese Numero de Inventario");
+        }
+        #endregion
+
+        #region funciones busqueda Individual
+        private void btnBusquedaCpu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoCpu(txtCpu.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtCpu.Enabled = false;
+        }
+        private void btnBusquedaPantalla_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoPantalla(txtPantalla.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtPantalla.Enabled = false;
+        }    
+        private void btnBusquedaTeclado_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoTeclado(txtTeclado.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtTeclado.Enabled = false;
+        }
+        private void btnBusquedaMouse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoMouse(txtMouse.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtMouse.Enabled = false;
+        }
+        private void btnBusquedaMicro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoMicro(txtMicrofono.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtMicrofono.Enabled = false;
+        }
+        private void btnBusquedaPP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoPP(txtProyeccion.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtProyeccion.Enabled = false;
+        }
+        private void btnBusquedaRegulador_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoRegulador(txtRegulador.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtRegulador.Enabled = false;
+        }
+        private void btnBusquedaProy_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoProyector(txtProyector.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtProyector.Enabled = false;
+        }
+        private void btnBusquedaImpr_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoImpresora(txtImpresora.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtImpresora.Enabled = false;
+        }
+        private void btnBusquedaPar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoParlante(txtParlante.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtParlante.Enabled = false;
+        }
+        private void btnBusquedaTelef_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoTelefono(txtTelefono.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtTelefono.Enabled = false;
+        }
+        private void btnBusquedaRadio_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inventario = this.equipoTableAdapter.ObtenerInventarioEquipoRadio(txtRadio.Text.Trim());
+                if (inventario.Length != 0)
+                {
+                    FuncionesUtiles.INVENTARIO_EQUIPO = inventario;
+                    busqueda(FuncionesUtiles.INVENTARIO_EQUIPO);
+                }
+
+
+            }
+            catch (NullReferenceException)
+            {
+                this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+                MessageBox.Show("Inventario No Extiste!!!");
+
+            }
+            this.txtRadio.Enabled = false;
+        }
+
+        #endregion
+
+       
     }
 
 }
