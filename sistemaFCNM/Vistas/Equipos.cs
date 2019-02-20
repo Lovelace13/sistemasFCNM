@@ -323,6 +323,30 @@ namespace sistemaFCNM
                     (int)FuncionesEquipo.mouse.ObtenerIdMouse("N/A"), (int)FuncionesEquipo.parlante.ObtenerIdParlante("N/A"), (int)FuncionesEquipo.regulador.ObtenerIdRegulador("N/A"),
                     (int)FuncionesEquipo.impresora.ObtenerIdImpresora("N/A"), (int)FuncionesEquipo.proyector.ObtenerIdProyector("N/A"),(int) this.equipoTableAdapter.getIdPropietario("JOSE FLORES"));
 
+                FechaInventarioTableAdapter fecha = new FechaInventarioTableAdapter();
+                int var16 = 0;
+                try
+                {
+                    if(fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd")).ToString().Length != 0)
+                    {
+                        var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                    }
+                }
+                catch (NullReferenceException)
+                {
+
+                    fecha.InsertFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                    var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                }
+                
+                UsuarioTableAdapter usuario = new UsuarioTableAdapter();
+                int var17 =(int) usuario.ObtenerIDUsuario(FuncionesUtiles.USUARIO);
+
+                int var18 = (int) this.equipoTableAdapter.getIdEquipo(NuevoInventario);
+
+                InventarioTableAdapter inventario = new InventarioTableAdapter();
+                inventario.InsertInventario(var16, var17, "", var18);
+
                 this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
                 busqueda(NuevoInventario);
             }
