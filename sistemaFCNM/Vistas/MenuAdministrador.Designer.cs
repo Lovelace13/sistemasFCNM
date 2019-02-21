@@ -138,6 +138,7 @@
             this.btnDescargar.Size = new System.Drawing.Size(103, 74);
             this.btnDescargar.TabIndex = 13;
             this.btnDescargar.UseVisualStyleBackColor = false;
+            this.btnDescargar.Click += new System.EventHandler(this.btnDescargar_Click);
             // 
             // btnSalir
             // 

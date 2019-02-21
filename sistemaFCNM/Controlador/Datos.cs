@@ -1206,6 +1206,100 @@ namespace sistemaFCNM.Clases
             IngresoSql(cadenaVerf, "Inventario", campo, values);
 
         }
+        public static void DescargarCsv()
+        {
+            EquipoTableAdapter tabla = new EquipoTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+                {
+                    
+                    //Write a line of text
+                   
+                }
+
+            int x;
+
+            try
+            {
+                //Open the File
+                StreamWriter sw = new StreamWriter("C:\\Users\\JULIO\\Downloads\\Test1.txt", true, Encoding.ASCII);
+
+                //Writeout the numbers 1 to 10 on the same line.
+                for (x = 0; x < 10; x++)
+                {
+                    string colum1 = tabla.GetData().Rows[x]["Inventario"].ToString();
+                    string colum2 = tabla.GetData().Rows[x]["Cpu"].ToString();
+                    sw.Write(colum1);
+                    sw.Write(",");
+                    sw.Write(colum2);
+                    sw.Write("\n");
+                }
+
+                //close the file
+                sw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Executing finally block.");
+            }
+
+
+            
+        }
+
+        public static void writeCSV(DataGridView gridIn, string outputFile)
+        {
+            //test to see if the DataGridView has any rows
+            if (gridIn.RowCount > 0)
+            {
+                string value = "";
+                DataGridViewRow dr = new DataGridViewRow();
+                StreamWriter swOut = new StreamWriter(outputFile);
+
+                //write header rows to csv
+                for (int i = 0; i <= gridIn.Columns.Count - 1; i++)
+                {
+                    if (i > 0)
+                    {
+                        swOut.Write(",");
+                    }
+                    swOut.Write(gridIn.Columns[i].HeaderText);
+                }
+
+                swOut.WriteLine();
+
+                //write DataGridView rows to csv
+                for (int j = 0; j <= gridIn.Rows.Count - 1; j++)
+                {
+                    if (j > 0)
+                    {
+                        swOut.WriteLine();
+                    }
+
+                    dr = gridIn.Rows[j];
+
+                    for (int i = 0; i <= gridIn.Columns.Count - 1; i++)
+                    {
+                        if (i > 0)
+                        {
+                            swOut.Write(",");
+                        }
+
+                        value = dr.Cells[i].Value.ToString();
+                        //replace comma's with spaces
+                        value = value.Replace(',', ' ');
+                        //replace embedded newlines with spaces
+                        value = value.Replace(Environment.NewLine, " ");
+
+                        swOut.Write(value);
+                    }
+                }
+                swOut.Close();
+            }
+        }
         #endregion
     }
 

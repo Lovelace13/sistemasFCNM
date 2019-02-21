@@ -201,6 +201,8 @@ namespace sistemaFCNM
             FuncionesUtiles.INVENTARIO_EQUIPO = "";
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Equipo' Puede moverla o quitarla según sea necesario.
             this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
+
+            Datos.writeCSV(gridInventario, "C:\\Users\\JULIO\\Downloads\\equipos.csv"); 
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
