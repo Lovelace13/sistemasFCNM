@@ -1,4 +1,5 @@
 ﻿using sistemaFCNM.Clases;
+using sistemaFCNM.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -242,6 +243,32 @@ namespace sistemaFCNM.Vistas
             this.SerieAnterior = txtSerie.Text.Trim();
 
             gridParlante.Enabled = false;
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVA PARLANTE", "Ingrese Numero de Inventario Parlante", "", 600);
+            if (NuevoInventario == "") { return; }
+            try
+            {
+                if (this.parlanteTableAdapter.ObtenerInventario(NuevoInventario).ToString().Length != 0) { MessageBox.Show("Inventario Existe"); return; }
+            }
+            catch (NullReferenceException)
+            {
+                this.parlanteTableAdapter.InsertInventarioParlante(NuevoInventario);
+                int var0 = (int)FuncionesEquipo.estado.ObtenerEstado("BUENO");
+                int var1 = (int)this.parlanteTableAdapter.ObtenerMarca("N/A");
+                int var2 = (int)this.parlanteTableAdapter.ObtenerModelo("N/A");
+                int var3 = (int)this.parlanteTableAdapter.ObtenerSerie("N/A");
+                int var5 = (int)this.parlanteTableAdapter.ObtenerIdInventarioParlante(NuevoInventario);
+
+
+                this.parlanteTableAdapter.InsertParlante(var5, var1, var2, var3, var0);
+                MessageBox.Show("Nuevo Inventario Creado!!");
+                this.parlanteTableAdapter.Fill(this.sistemasFCNMDataSet.Parlante);
+                this.parlanteTableAdapter.FillBy(this.sistemasFCNMDataSet.Parlante, (int)this.parlanteTableAdapter.ObtenerIdParlante(NuevoInventario));
+
+            }
         }
     }
 }

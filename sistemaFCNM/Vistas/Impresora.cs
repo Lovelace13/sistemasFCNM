@@ -1,4 +1,5 @@
 ﻿using sistemaFCNM.Clases;
+using sistemaFCNM.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -245,6 +246,32 @@ namespace sistemaFCNM.Vistas
 
             gridImpresora.Enabled = false;
 
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVA IMPRESORA", "Ingrese Numero de Inventario Impresora", "", 600);
+            if (NuevoInventario == "") { return; }
+            try
+            {
+                if (this.impresoraTableAdapter.ObtenerInventario(NuevoInventario).ToString().Length != 0) { MessageBox.Show("Inventario Existe"); return; }
+            }
+            catch (NullReferenceException)
+            {
+                this.impresoraTableAdapter.InsertInventarioImpresora(NuevoInventario);
+                int var0 = (int)FuncionesEquipo.estado.ObtenerEstado("BUENO");
+                int var1 = (int)this.impresoraTableAdapter.ObtenerMarca("N/A");
+                int var2 = (int)this.impresoraTableAdapter.ObtenerModelo("N/A");
+                int var3 = (int)this.impresoraTableAdapter.ObtenerSerie("N/A");
+                int var5 = (int)this.impresoraTableAdapter.ObtenerIdInventarioImpresora(NuevoInventario);
+
+
+                this.impresoraTableAdapter.InsertImpresora(var5,var1, var2, var3, var0);
+                MessageBox.Show("Nuevo Inventario Creado!!");
+                this.impresoraTableAdapter.Fill(this.sistemasFCNMDataSet.Impresora);
+                this.impresoraTableAdapter.FillBy(this.sistemasFCNMDataSet.Impresora, (int)this.impresoraTableAdapter.ObtenerIdImpresora(NuevoInventario));
+
+            }
         }
     }
 }

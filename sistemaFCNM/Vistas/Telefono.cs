@@ -1,4 +1,5 @@
 ﻿using sistemaFCNM.Clases;
+using sistemaFCNM.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace sistemaFCNM.Vistas
         private string InventarioAnterior;
         private string SerieAnterior;
         private string ExtensionAnterior;
+
 
         public Telefono()
         {
@@ -285,6 +287,34 @@ namespace sistemaFCNM.Vistas
             this.ExtensionAnterior = txtExtension.Text.Trim();
 
             gridTelefono.Enabled = false;
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVO TELEFONO", "Ingrese Numero de Inventario Telefono", "", 600);
+            if (NuevoInventario == "") { return; }
+            try
+            {
+                if (this.telefonoTableAdapter.ObtenerInventario(NuevoInventario).ToString().Length != 0) { MessageBox.Show("Inventario Existe"); return; }
+            }
+            catch (NullReferenceException)
+            {
+                this.telefonoTableAdapter.InsertInventarioTelefono(NuevoInventario);
+                int var0 = (int)FuncionesEquipo.estado.ObtenerEstado("BUENO");
+                int var1 = (int)this.telefonoTableAdapter.ObtenerMarca("N/A");
+                int var2 = (int)this.telefonoTableAdapter.ObtenerModelo("N/A");
+                int var3 = (int)this.telefonoTableAdapter.ObtenerSerie("N/A");
+                int var4 = (int)this.telefonoTableAdapter.ObtenerTipo("N/A");
+                int var5 = (int)this.telefonoTableAdapter.ObtenerInventarioTelefono(NuevoInventario);
+                int var6 = (int)this.telefonoTableAdapter.ObtenerExtension("N/A");
+
+
+                this.telefonoTableAdapter.InsertTelefono(var5, var6, var4, var1, var2, var3,var0);
+                MessageBox.Show("Nuevo Inventario Creado!!");
+                this.telefonoTableAdapter.Fill(this.sistemasFCNMDataSet.Telefono);
+                this.telefonoTableAdapter.FillBy(this.sistemasFCNMDataSet.Telefono, (int)this.telefonoTableAdapter.ObtenerIdTelefono(NuevoInventario));
+
+            }
         }
     }
 }

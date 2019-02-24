@@ -1,4 +1,5 @@
 ﻿using sistemaFCNM.Clases;
+using sistemaFCNM.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -238,6 +239,32 @@ namespace sistemaFCNM.Vistas
             this.SerieAnterior = txtSerie.Text.Trim();
 
             gridTeclado.Enabled = false;
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVO TECLADO", "Ingrese Numero de Inventario Teclado", "", 600);
+            if (NuevoInventario == "") { return; }
+            try
+            {
+                if (this.tecladoTableAdapter.ObtenerInventario(NuevoInventario).ToString().Length != 0) { MessageBox.Show("Inventario Existe"); return; }
+            }
+            catch (NullReferenceException)
+            {
+                this.tecladoTableAdapter.InsertInventarioTeclado(NuevoInventario);
+                int var0 = (int)FuncionesEquipo.estado.ObtenerEstado("BUENO");
+                int var1 = (int)this.tecladoTableAdapter.ObtenerMarca("N/A");
+                int var2 = (int)this.tecladoTableAdapter.ObtenerModelo("N/A");
+                int var3 = (int)this.tecladoTableAdapter.ObtenerSerie("N/A");
+                int var5 = (int)this.tecladoTableAdapter.ObtenerInventarioTeclado(NuevoInventario);
+
+
+                this.tecladoTableAdapter.InsertTeclado(var5, var1, var2, var3, var0);
+                MessageBox.Show("Nuevo Inventario Creado!!");
+                this.tecladoTableAdapter.Fill(this.sistemasFCNMDataSet.Teclado);
+                this.tecladoTableAdapter.FillBy(this.sistemasFCNMDataSet.Teclado, (int)this.tecladoTableAdapter.ObtenerIdTeclado(NuevoInventario));
+
+            }
         }
     }
 }

@@ -278,11 +278,7 @@ namespace sistemaFCNM
             FuncionesUtiles.ID_PANTALLAPROY = int.Parse("" + this.equipoTableAdapter.getIdPantallaProyeccion(FuncionesUtiles.INVENTARIO_EQUIPO));
             FuncionesUtiles.ID_RADIO = int.Parse("" + this.equipoTableAdapter.getIdRadio(FuncionesUtiles.INVENTARIO_EQUIPO));
             limpiarTxtandWait();
-        }
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        }     
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVO EQUIPO", "Ingrese Numero de Inventario Equipo", "", 600);
@@ -888,6 +884,17 @@ namespace sistemaFCNM
             this.HiloServerQR = new Thread(new ThreadStart(server.StartListening));
             HiloServerQR.Start();
             timer1.Enabled = true; //Inicio Tiempo para leer codigo qr
+            MessageBox.Show("Servidor Conectado!!");
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            new RegistroOficina().Show();
+
+        }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Datos.writeCSV(gridInventario, "C:\\Users\\JULIO\\Downloads\\EquiposReporte.csv");
+            MessageBox.Show("Descargado!!");
         }
         #endregion
 
@@ -1223,11 +1230,7 @@ namespace sistemaFCNM
 
         #endregion
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            new RegistroOficina().Show();
-            
-        }
+       
     }
 
 }

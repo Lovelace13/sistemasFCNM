@@ -1,4 +1,5 @@
 ﻿using sistemaFCNM.Clases;
+using sistemaFCNM.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -247,6 +248,33 @@ namespace sistemaFCNM.Vistas
             this.SerieAnterior = txtSerie.Text.Trim();
 
             gridPP.Enabled = false;
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVA PANTALLA PROYECCION", "Ingrese Numero de Inventario Pantalla Proyeccion", "", 600);
+            if (NuevoInventario == "") { return; }
+            try
+            {
+                if (this.pantallaProyeccionTableAdapter.ObtenerInventario(NuevoInventario).ToString().Length != 0) { MessageBox.Show("Inventario Existe"); return; }
+            }
+            catch (NullReferenceException)
+            {
+                pantallaProyeccionTableAdapter.InsertInventarioPP(NuevoInventario);
+                int var0 = (int)FuncionesEquipo.estado.ObtenerEstado("BUENO");
+                int var1 = (int)this.pantallaProyeccionTableAdapter.ObtenerMarca("N/A");
+                int var2 = (int)this.pantallaProyeccionTableAdapter.ObtenerModelo("N/A");
+                int var3 = (int)this.pantallaProyeccionTableAdapter.ObtenerSerie("N/A");
+                int var4 = (int)this.pantallaProyeccionTableAdapter.ObtenerDimensiones("N/A");
+                int var5 = (int)this.pantallaProyeccionTableAdapter.ObtenerIdInventarioPP(NuevoInventario);
+
+
+                this.pantallaProyeccionTableAdapter.InsertPP(var5, var4, var1, var2, var3, var0);
+                MessageBox.Show("Nuevo Inventario Creado!!");
+                this.pantallaProyeccionTableAdapter.Fill(this.sistemasFCNMDataSet.PantallaProyeccion);
+                this.pantallaProyeccionTableAdapter.FillBy(this.sistemasFCNMDataSet.PantallaProyeccion, (int)this.pantallaProyeccionTableAdapter.ObtenerIdPP(NuevoInventario));
+
+            }
         }
     }
 }

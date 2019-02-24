@@ -434,6 +434,8 @@ namespace sistemaFCNM.Vistas
                     return;
 
                 case "No":
+                    ApagarBotones();
+                    gridCpu.Enabled = true;
                     this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
                     return;
 

@@ -1,4 +1,5 @@
 ﻿using sistemaFCNM.Clases;
+using sistemaFCNM.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace sistemaFCNM.Vistas
     public partial class Radio : Form
     {
         private string InventarioAnterior;
+
 
         public string SerieAnterior { get; private set; }
 
@@ -223,14 +225,14 @@ namespace sistemaFCNM.Vistas
             try
             {
                 this.radioTableAdapter.UpdateTablaRadio(this.radioTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
-                this.radioTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
+                (int)this.radioTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
                 this.radioTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()), txtRadio.Text.Trim());
             }
             catch (NullReferenceException)
             {
 
                 this.radioTableAdapter.UpdateTablaRadio(this.radioTableAdapter.ObtenerMarca(comboMarca.Text),
-                this.radioTableAdapter.ObtenerModelo(comboModelo.Text),
+               (int) this.radioTableAdapter.ObtenerModelo(comboModelo.Text),
                  this.radioTableAdapter.ObtenerEstado(comboEstado.Text), txtRadio.Text.Trim());
             }
 
@@ -262,6 +264,32 @@ namespace sistemaFCNM.Vistas
             this.SerieAnterior = txtSerie.Text.Trim();
 
             gridRadio.Enabled = false;
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVA RADIO", "Ingrese Numero de Inventario Radio", "", 600);
+            if (NuevoInventario == "") { return; }
+            try
+            {
+                if (this.radioTableAdapter.ObtenerInventario(NuevoInventario).ToString().Length != 0) { MessageBox.Show("Inventario Existe"); return; }
+            }
+            catch (NullReferenceException)
+            {
+                this.radioTableAdapter.InsertInventarioRadio(NuevoInventario);
+                int var0 = (int)FuncionesEquipo.estado.ObtenerEstado("BUENO");
+                int var1 = (int)this.radioTableAdapter.ObtenerMarca("N/A");
+                int var2 = (int)this.radioTableAdapter.ObtenerModelo("N/A");
+                int var3 = (int)this.radioTableAdapter.ObtenerSerie("N/A");
+                int var5 = (int)this.radioTableAdapter.ObtenerIdInventarioRadio(NuevoInventario);
+
+
+                this.radioTableAdapter.InsertRadio(var5, var1, var2, var3, var0);
+                MessageBox.Show("Nuevo Inventario Creado!!");
+                this.radioTableAdapter.Fill(this.sistemasFCNMDataSet.Radio);
+                this.radioTableAdapter.FillBy(this.sistemasFCNMDataSet.Radio, (int)this.radioTableAdapter.ObtenerIdRadio(NuevoInventario));
+
+            }
         }
     }
 }

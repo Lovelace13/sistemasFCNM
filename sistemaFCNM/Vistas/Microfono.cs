@@ -1,4 +1,5 @@
 ﻿using sistemaFCNM.Clases;
+using sistemaFCNM.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -243,6 +244,32 @@ namespace sistemaFCNM.Vistas
             this.SerieAnterior = txtSerie.Text.Trim();
 
             gridMicrofono.Enabled = false;
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVA MICROFONO", "Ingrese Numero de Inventario Microfono", "", 600);
+            if (NuevoInventario == "") { return; }
+            try
+            {
+                if (this.microfonoTableAdapter.ObtenerInventario(NuevoInventario).ToString().Length != 0) { MessageBox.Show("Inventario Existe"); return; }
+            }
+            catch (NullReferenceException)
+            {
+                this.microfonoTableAdapter.InsertInventarioMicro(NuevoInventario);
+                int var0 = (int)FuncionesEquipo.estado.ObtenerEstado("BUENO");
+                int var1 = (int)this.microfonoTableAdapter.ObtenerMarca("N/A");
+                int var2 = (int)this.microfonoTableAdapter.ObtenerTipo("N/A");
+                int var3 = (int)this.microfonoTableAdapter.ObtenerSerie("N/A");
+                int var5 = (int)this.microfonoTableAdapter.ObtenerIdInventarioMicro(NuevoInventario);
+
+
+                this.microfonoTableAdapter.InsertMicro(var5, var1, var2, var3, var0);
+                MessageBox.Show("Nuevo Inventario Creado!!");
+                this.microfonoTableAdapter.Fill(this.sistemasFCNMDataSet.Microfono);
+                this.microfonoTableAdapter.FillBy(this.sistemasFCNMDataSet.Microfono, (int)this.microfonoTableAdapter.ObtenerIdMicro(NuevoInventario));
+
+            }
         }
     }
 }

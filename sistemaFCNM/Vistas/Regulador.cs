@@ -1,4 +1,5 @@
 ﻿using sistemaFCNM.Clases;
+using sistemaFCNM.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -246,6 +247,33 @@ namespace sistemaFCNM.Vistas
             this.SerieAnterior = txtSerie.Text.Trim();
 
             gridRegulador.Enabled = false;
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVO REGULADOR", "Ingrese Numero de Inventario Regulador", "", 600);
+            if (NuevoInventario == "") { return; }
+            try
+            {
+                if (this.reguladorTableAdapter.ObtenerInventario(NuevoInventario).ToString().Length != 0) { MessageBox.Show("Inventario Existe"); return; }
+            }
+            catch (NullReferenceException)
+            {
+                this.reguladorTableAdapter.InsertInventarioRegulador(NuevoInventario);
+                int var0 = (int)FuncionesEquipo.estado.ObtenerEstado("BUENO");
+                int var1 = (int)this.reguladorTableAdapter.ObtenerMarca("N/A");
+                int var2 = (int)this.reguladorTableAdapter.ObtenerModelo("N/A");
+                int var3 = (int)this.reguladorTableAdapter.ObtenerSerie("N/A");
+                int var4 = (int)this.reguladorTableAdapter.ObtenerTipo("N/A");
+                int var5 = (int)this.reguladorTableAdapter.ObtenerInventarioRegulador(NuevoInventario);
+
+
+                this.reguladorTableAdapter.InsertRegulador(var5, var4, var1, var2, var3, var0);
+                MessageBox.Show("Nuevo Inventario Creado!!");
+                this.reguladorTableAdapter.Fill(this.sistemasFCNMDataSet.Regulador);
+                this.reguladorTableAdapter.FillBy(this.sistemasFCNMDataSet.Regulador, (int)this.reguladorTableAdapter.ObtenerIdRegulador(NuevoInventario));
+
+            }
         }
     }
 }

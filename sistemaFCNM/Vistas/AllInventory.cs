@@ -41,6 +41,7 @@ namespace sistemaFCNM.Vistas
         private void btnDescargar_Click(object sender, EventArgs e)
         {
             Datos.writeCSV(gridInventarioAll, "C:\\Users\\JULIO\\Downloads\\InventarioReporte.csv");
+            MessageBox.Show("Descargado!!");
         }
     }
 }
