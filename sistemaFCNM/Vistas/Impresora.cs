@@ -1,5 +1,6 @@
 ﻿using sistemaFCNM.Clases;
 using sistemaFCNM.Controlador;
+using sistemaFCNM.sistemasFCNMDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,10 +34,10 @@ namespace sistemaFCNM.Vistas
                 FuncionesUtiles.masdetallesActiva = false;
                 this.impresoraTableAdapter.FillBy(this.sistemasFCNMDataSet.Impresora, FuncionesUtiles.ID_IMPRESORA);
             }
-    
+
         }
 
-     
+
 
         private void btnNext_Click(object sender, EventArgs e)
         {
@@ -53,7 +54,7 @@ namespace sistemaFCNM.Vistas
             guardar();
         }
 
-        
+
 
         private void CerrarSesion_Click(object sender, EventArgs e)
         {
@@ -87,14 +88,10 @@ namespace sistemaFCNM.Vistas
             }
         }
 
-        private void guardarMenuItem_Click(object sender, EventArgs e)
-        {
-            guardar();
-        }
-
+       
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
             switch (FuncionesUtiles.ventanaDialogo())
             {
                 case "Yes":
@@ -122,44 +119,15 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-           
-
-
-           
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            habilitarBotones();
-        }
-
-        private void habilitarBotones()
-        {
-           
-            txtImpresora.Enabled = true;
-            comboEstado.Enabled = true;
-            comboMarca.Enabled = true;
-            comboModelo.Enabled = true;
-            txtSerie.Enabled = true;
-        }
-
-        private void impresoraBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
             //Update Inventario
             try
             {
-               
+
                 if (this.impresoraTableAdapter.ObtenerIdImpresora(txtImpresora.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtImpresora.Text.Trim())
                 {
                     MessageBox.Show("Inventario Repetido ");
                 }
-               
+
             }
             catch (NullReferenceException)
             {
@@ -219,9 +187,59 @@ namespace sistemaFCNM.Vistas
                 this.impresoraTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
             }
 
-            this.impresoraTableAdapter.Fill(this.sistemasFCNMDataSet.Impresora);
-            ApagarBotones();
-            gridImpresora.Enabled = true;
+            FuncionesUtiles.OBSERVACION += "Impresora: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
+
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+
+        private void habilitarBotones()
+        {
+
+            txtImpresora.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
+            txtSerie.Enabled = true;
+        }
+
+        private void impresoraBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    this.gridImpresora.Enabled = true;
+                    this.ApagarBotones();
+                    this.impresoraTableAdapter.Fill(this.sistemasFCNMDataSet.Impresora);
+                    return;
+
+                case "No":
+                    this.gridImpresora.Enabled = true;
+                    this.ApagarBotones();
+                    this.impresoraTableAdapter.Fill(this.sistemasFCNMDataSet.Impresora);
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+
 
         }
 
@@ -266,7 +284,7 @@ namespace sistemaFCNM.Vistas
                 int var5 = (int)this.impresoraTableAdapter.ObtenerIdInventarioImpresora(NuevoInventario);
 
 
-                this.impresoraTableAdapter.InsertImpresora(var5,var1, var2, var3, var0);
+                this.impresoraTableAdapter.InsertImpresora(var5, var1, var2, var3, var0);
                 MessageBox.Show("Nuevo Inventario Creado!!");
                 this.impresoraTableAdapter.Fill(this.sistemasFCNMDataSet.Impresora);
                 this.impresoraTableAdapter.FillBy(this.sistemasFCNMDataSet.Impresora, (int)this.impresoraTableAdapter.ObtenerIdImpresora(NuevoInventario));

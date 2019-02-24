@@ -113,43 +113,6 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-           
-        }
-
-        private void guardarMenuItem_Click(object sender, EventArgs e)
-        {
-            guardar();
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-           
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            habilitarBotones();
-        }
-
-        private void habilitarBotones()
-        {
-            
-            txtPproyeccion.Enabled = true;
-            comboDimensiones.Enabled = true;
-            comboEstado.Enabled = true;
-            comboMarca.Enabled = true;
-            comboModelo.Enabled = true;
-            txtSerie.Enabled = true;
-        }
-
-        private void pantallaProyeccionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
             //Update Inventario
             try
             {
@@ -206,7 +169,7 @@ namespace sistemaFCNM.Vistas
             {
                 this.pantallaProyeccionTableAdapter.UpdateTablaPP(this.pantallaProyeccionTableAdapter.ObtenerMarca(comboMarca.SelectedItem.ToString()),
                 this.pantallaProyeccionTableAdapter.ObtenerModelo(comboModelo.SelectedItem.ToString()),
-                this.pantallaProyeccionTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()), 
+                this.pantallaProyeccionTableAdapter.ObtenerEstado(comboEstado.SelectedItem.ToString()),
                 this.pantallaProyeccionTableAdapter.ObtenerDimensiones(comboDimensiones.SelectedItem.ToString()), txtPproyeccion.Text.Trim());
             }
             catch (NullReferenceException)
@@ -218,11 +181,69 @@ namespace sistemaFCNM.Vistas
                  this.pantallaProyeccionTableAdapter.ObtenerDimensiones(comboDimensiones.Text), txtPproyeccion.Text.Trim());
             }
 
+            FuncionesUtiles.OBSERVACION += "Pantalla Proyeccion: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
+        }
 
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
 
-            this.pantallaProyeccionTableAdapter.Fill(this.sistemasFCNMDataSet.PantallaProyeccion);
-            ApagarBotones();
-            gridPP.Enabled = true;
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+           
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+
+        private void habilitarBotones()
+        {
+            
+            txtPproyeccion.Enabled = true;
+            comboDimensiones.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
+            txtSerie.Enabled = true;
+        }
+
+        private void pantallaProyeccionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    this.pantallaProyeccionTableAdapter.Fill(this.sistemasFCNMDataSet.PantallaProyeccion);
+                    ApagarBotones();
+                    gridPP.Enabled = true;
+                    return;
+
+                case "No":
+                    this.pantallaProyeccionTableAdapter.Fill(this.sistemasFCNMDataSet.PantallaProyeccion);
+                    ApagarBotones();
+                    gridPP.Enabled = true;
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+
+           
 
         }
 

@@ -1,5 +1,6 @@
 ﻿using sistemaFCNM.Clases;
 using sistemaFCNM.Controlador;
+using sistemaFCNM.sistemasFCNMDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,70 +85,6 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-           
-        }
-
-        private void guardarMenuItem_Click(object sender, EventArgs e)
-        {
-            guardar();
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            switch (FuncionesUtiles.ventanaDialogo())
-            {
-                case "Yes":
-                    FuncionesUtiles.siguienteActiva = false;
-                    FuncionesUtiles.activarMenu();
-                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
-
-                    guardar();
-                    this.Close();
-                    return;
-
-                case "No":
-                    FuncionesUtiles.siguienteActiva = false;
-                    FuncionesUtiles.activarMenu();
-                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
-                    this.Close();
-                    return;
-
-                case "Cancel":
-                    return;
-
-                default:
-                    return;
-            }
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            habilitarBotones();
-        }
-        private void habilitarBotones()
-        {
-
-            txtParlante.Enabled = true;
-            comboEstado.Enabled = true;
-            comboMarca.Enabled = true;
-            comboModelo.Enabled = true;
-            txtSerie.Enabled = true;
-        }
-
-        private void parlanteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
             //Update Inventario
             try
             {
@@ -215,10 +152,96 @@ namespace sistemaFCNM.Vistas
                 this.parlanteTableAdapter.ObtenerModelo(comboModelo.Text),
                 this.parlanteTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
             }
+            FuncionesUtiles.OBSERVACION += "Parlante: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
+        }
 
-            this.parlanteTableAdapter.Fill(this.sistemasFCNMDataSet.Parlante);
-            ApagarBotones();
-            gridParlante.Enabled = true;
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+                    FuncionesUtiles.siguienteActiva = false;
+                    FuncionesUtiles.activarMenu();
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+
+                    guardar();
+                    this.Close();
+                    return;
+
+                case "No":
+                    FuncionesUtiles.siguienteActiva = false;
+                    FuncionesUtiles.activarMenu();
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    this.Close();
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+        private void habilitarBotones()
+        {
+
+            txtParlante.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
+            txtSerie.Enabled = true;
+        }
+
+        private void parlanteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    this.parlanteTableAdapter.Fill(this.sistemasFCNMDataSet.Parlante);
+                    ApagarBotones();
+                    gridParlante.Enabled = true;
+                    return;
+
+                case "No":
+                    this.parlanteTableAdapter.Fill(this.sistemasFCNMDataSet.Parlante);
+                    ApagarBotones();
+                    gridParlante.Enabled = true;
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+           
 
 
         }

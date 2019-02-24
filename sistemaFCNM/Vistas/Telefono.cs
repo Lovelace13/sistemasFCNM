@@ -115,41 +115,6 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-        }
-
-        private void guardarMenuItem_Click(object sender, EventArgs e)
-        {
-            guardar();
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            habilitarBotones();
-        }
-        private void habilitarBotones()
-        {
-            
-            txtTelefono.Enabled = true;
-            comboTipo.Enabled = true;
-            txtExtension.Enabled = true;
-            comboEstado.Enabled = true;
-            comboMarca.Enabled = true;
-            comboModelo.Enabled = true;
-            txtSerie.Enabled = true;
-        }
-
-        private void telefonoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
             //Update Inventario
             try
             {
@@ -255,11 +220,68 @@ namespace sistemaFCNM.Vistas
                 this.telefonoTableAdapter.ObtenerTipo(comboTipo.Text), txtTelefono.Text.Trim());
             }
 
+            FuncionesUtiles.OBSERVACION += "Telefono: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
 
+        }
 
-            this.telefonoTableAdapter.Fill(this.sistemasFCNMDataSet.Telefono);
-            ApagarBotones();
-            gridTelefono.Enabled = true;
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+        private void habilitarBotones()
+        {
+            
+            txtTelefono.Enabled = true;
+            comboTipo.Enabled = true;
+            txtExtension.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
+            txtSerie.Enabled = true;
+        }
+
+        private void telefonoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    this.telefonoTableAdapter.Fill(this.sistemasFCNMDataSet.Telefono);
+                    ApagarBotones();
+                    gridTelefono.Enabled = true;
+                    return;
+
+                case "No":
+                    this.telefonoTableAdapter.Fill(this.sistemasFCNMDataSet.Telefono);
+                    ApagarBotones();
+                    gridTelefono.Enabled = true;
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+           
 
         }
 

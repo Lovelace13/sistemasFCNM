@@ -1,5 +1,6 @@
 ﻿using sistemaFCNM.Clases;
 using sistemaFCNM.Controlador;
+using sistemaFCNM.sistemasFCNMDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -113,68 +114,6 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-           
-        }
-
-        private void guardarMenuItem_Click(object sender, EventArgs e)
-        {
-            guardar();
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-           
-            switch (FuncionesUtiles.ventanaDialogo())
-            {
-                case "Yes":
-
-                    guardar();
-                    this.Close();
-                   
-                    FuncionesUtiles.form1.Visible = false;
-                    FuncionesUtiles.siguienteActiva = true;
-                    FuncionesUtiles.desactivarMenu();
-                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
-                    return;
-
-                case "No":
-                    this.Close();
-                   
-                    FuncionesUtiles.form1.Visible = false;
-                    FuncionesUtiles.siguienteActiva = true;
-                    FuncionesUtiles.desactivarMenu();
-                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
-                    return;
-
-                case "Cancel":
-                    return;
-
-                default:
-                    return;
-            }
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            habilitarBotones();
-        }
-        private void habilitarBotones()
-        {
-           
-            txtMouse.Enabled = true;
-            comboEstado.Enabled = true;
-            comboMarca.Enabled = true;
-            comboModelo.Enabled = true;
-            txtSerie.Enabled = true;
-        }
-
-        private void mouseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
             //Update Inventario
             try
             {
@@ -240,10 +179,96 @@ namespace sistemaFCNM.Vistas
                 this.mouseTableAdapter.ObtenerModelo(comboModelo.Text),
                 this.mouseTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
             }
+            FuncionesUtiles.OBSERVACION += "Mouse: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
 
-            this.mouseTableAdapter.Fill(this.sistemasFCNMDataSet.Mouse);
-            ApagarBotones();
-            gridMouse.Enabled = true;
+
+        }
+
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+           
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+
+                    guardar();
+                    this.Close();
+                   
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.siguienteActiva = true;
+                    FuncionesUtiles.desactivarMenu();
+                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
+                    return;
+
+                case "No":
+                    this.Close();
+                   
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.siguienteActiva = true;
+                    FuncionesUtiles.desactivarMenu();
+                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+        private void habilitarBotones()
+        {
+           
+            txtMouse.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
+            txtSerie.Enabled = true;
+        }
+
+        private void mouseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    this.mouseTableAdapter.Fill(this.sistemasFCNMDataSet.Mouse);
+                    ApagarBotones();
+                    gridMouse.Enabled = true;
+                    return;
+
+                case "No":
+                    this.mouseTableAdapter.Fill(this.sistemasFCNMDataSet.Mouse);
+                    ApagarBotones();
+                    gridMouse.Enabled = true;
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+
+           
 
         }
 

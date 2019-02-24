@@ -113,42 +113,6 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-           
-        }
-
-        private void guardarMenuItem_Click(object sender, EventArgs e)
-        {
-            guardar();
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-           
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            habilitarBotones();
-        }
-        private void habilitarBotones()
-        {
-            
-            txtRegulador.Enabled = true;
-            comboTipo.Enabled = true;
-            comboEstado.Enabled = true;
-            comboMarca.Enabled = true;
-            comboModelo.Enabled = true;
-            txtSerie.Enabled = true;
-        }
-
-        private void reguladorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
             //Update Inventario
             try
             {
@@ -213,15 +177,72 @@ namespace sistemaFCNM.Vistas
 
                 this.reguladorTableAdapter.UpdateTablaRegulador(this.reguladorTableAdapter.ObtenerMarca(comboMarca.Text),
                 this.reguladorTableAdapter.ObtenerModelo(comboModelo.Text),
-                 this.reguladorTableAdapter.ObtenerEstado(comboEstado.Text), 
+                 this.reguladorTableAdapter.ObtenerEstado(comboEstado.Text),
                  this.reguladorTableAdapter.ObtenerTipo(comboTipo.Text), txtRegulador.Text.Trim());
             }
 
+            FuncionesUtiles.OBSERVACION += "Regulador: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
 
+        }
 
-            this.reguladorTableAdapter.Fill(this.sistemasFCNMDataSet.Regulador);
-            ApagarBotones();
-            gridRegulador.Enabled = true;
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+           
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+        private void habilitarBotones()
+        {
+            
+            txtRegulador.Enabled = true;
+            comboTipo.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
+            txtSerie.Enabled = true;
+        }
+
+        private void reguladorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    this.reguladorTableAdapter.Fill(this.sistemasFCNMDataSet.Regulador);
+                    ApagarBotones();
+                    gridRegulador.Enabled = true;
+                    return;
+
+                case "No":
+                    this.reguladorTableAdapter.Fill(this.sistemasFCNMDataSet.Regulador);
+                    ApagarBotones();
+                    gridRegulador.Enabled = true;
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+           
 
         }
 

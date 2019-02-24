@@ -202,7 +202,6 @@ namespace sistemaFCNM
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Equipo' Puede moverla o quitarla según sea necesario.
             this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
 
-            Datos.writeCSV(gridInventario, "C:\\Users\\JULIO\\Downloads\\equipos.csv"); 
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -278,21 +277,21 @@ namespace sistemaFCNM
             FuncionesUtiles.ID_PANTALLAPROY = int.Parse("" + this.equipoTableAdapter.getIdPantallaProyeccion(FuncionesUtiles.INVENTARIO_EQUIPO));
             FuncionesUtiles.ID_RADIO = int.Parse("" + this.equipoTableAdapter.getIdRadio(FuncionesUtiles.INVENTARIO_EQUIPO));
             limpiarTxtandWait();
-        }     
+        }
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVO EQUIPO", "Ingrese Numero de Inventario Equipo", "", 600);
-            
+
             try
             {
-                if(NuevoInventario == "") { return; }
-                
-                if(this.equipoTableAdapter.ObtenerInventarioEquipo(NuevoInventario).ToString().Length != 0)
+                if (NuevoInventario == "") { return; }
+
+                if (this.equipoTableAdapter.ObtenerInventarioEquipo(NuevoInventario).ToString().Length != 0)
                 {
                     MessageBox.Show("Numero Ingresado ya Exite");
                     return;
                 }
-                
+
             }
             catch (NullReferenceException)
             {
@@ -317,17 +316,17 @@ namespace sistemaFCNM
 
 
                 this.equipoTableAdapter.InsertEquipo((int)this.equipoTableAdapter.ObtenerInventarioEquipo(NuevoInventario),
-                    (int)FuncionesEquipo.cpu.ObtenerIDCPU("N/A"),(int)this.equipoTableAdapter.getIdNombreOficina("N/A"), (int)FuncionesEquipo.micro.ObtenerIdMicro("N/A"),
+                    (int)FuncionesEquipo.cpu.ObtenerIDCPU("N/A"), (int)this.equipoTableAdapter.getIdNombreOficina("N/A"), (int)FuncionesEquipo.micro.ObtenerIdMicro("N/A"),
                     (int)FuncionesEquipo.telefono.ObtenerIdTelefono("N/A"), (int)FuncionesEquipo.pp.ObtenerIdPP("N/A"),
                     (int)FuncionesEquipo.radio.ObtenerIdRadio("N/A"), (int)FuncionesEquipo.pantalla.ObtenerIdPantalla("N/A"), (int)FuncionesEquipo.teclado.ObtenerIdTeclado("N/A"),
                     (int)FuncionesEquipo.mouse.ObtenerIdMouse("N/A"), (int)FuncionesEquipo.parlante.ObtenerIdParlante("N/A"), (int)FuncionesEquipo.regulador.ObtenerIdRegulador("N/A"),
-                    (int)FuncionesEquipo.impresora.ObtenerIdImpresora("N/A"), (int)FuncionesEquipo.proyector.ObtenerIdProyector("N/A"),(int) this.equipoTableAdapter.getIdPropietario("JOSE FLORES"));
+                    (int)FuncionesEquipo.impresora.ObtenerIdImpresora("N/A"), (int)FuncionesEquipo.proyector.ObtenerIdProyector("N/A"), (int)this.equipoTableAdapter.getIdPropietario("JOSE FLORES"));
 
                 FechaInventarioTableAdapter fecha = new FechaInventarioTableAdapter();
                 int var16 = 0;
                 try
                 {
-                    if(fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd")).ToString().Length != 0)
+                    if (fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd")).ToString().Length != 0)
                     {
                         var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
                     }
@@ -345,9 +344,9 @@ namespace sistemaFCNM
                 }
 
                 UsuarioTableAdapter usuario = new UsuarioTableAdapter();
-                int var17 =(int) usuario.ObtenerIDUsuario(FuncionesUtiles.USUARIO);
+                int var17 = (int)usuario.ObtenerIDUsuario(FuncionesUtiles.USUARIO);
 
-                int var18 = (int) this.equipoTableAdapter.getIdEquipo(NuevoInventario);
+                int var18 = (int)this.equipoTableAdapter.getIdEquipo(NuevoInventario);
 
                 InventarioTableAdapter inventario = new InventarioTableAdapter();
                 inventario.InsertInventario(var16, var17, "", var18);
@@ -355,14 +354,14 @@ namespace sistemaFCNM
                 this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
                 busqueda(NuevoInventario);
             }
-            
+
         }
         private void equipoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             switch (FuncionesUtiles.ventanaDialogo())
             {
                 case "Yes":
-                    if (GuardadoValido()){guardado();}
+                    if (GuardadoValido()) { guardado(); }
                     return;
                 case "No":
                     ApagarBotones();
@@ -872,8 +871,8 @@ namespace sistemaFCNM
 
                 FuncionesEquipo._actualizarOficina(comboOficina.Text, txtEquipo.Text.Trim());
             }
-            
-            
+
+
             ApagarBotones();
             gridInventario.Enabled = true;
             this.equipoTableAdapter.Fill(this.sistemasFCNMDataSet.Equipo);
@@ -1015,7 +1014,7 @@ namespace sistemaFCNM
 
             }
             this.txtPantalla.Enabled = false;
-        }    
+        }
         private void btnBusquedaTeclado_Click(object sender, EventArgs e)
         {
             try
@@ -1230,7 +1229,7 @@ namespace sistemaFCNM
 
         #endregion
 
-       
+
     }
 
 }

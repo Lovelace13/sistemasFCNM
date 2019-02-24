@@ -1,4 +1,5 @@
-﻿using sistemaFCNM.sistemasFCNMDataSetTableAdapters;
+﻿using sistemaFCNM.Clases;
+using sistemaFCNM.sistemasFCNMDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -96,6 +97,40 @@ namespace sistemaFCNM.Controlador
         public static void _actualizarOficina(String NombreOficina, String InventarioEquipo)
         {
             equipo.actualizarOficina(equipo.ObtenerIdOficina(NombreOficina), InventarioEquipo);
+        }
+        public static void ActualizarInventario(String observacion)
+        {
+            FechaInventarioTableAdapter fecha = new FechaInventarioTableAdapter();
+            int var16 = 0;
+            try
+            {
+                if (fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd")).ToString().Length != 0)
+                {
+                    var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                }
+                else
+                {
+                    fecha.InsertFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                    var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                fecha.InsertFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+            }
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
+
+            UsuarioTableAdapter usuario = new UsuarioTableAdapter();
+            int var17 = (int)usuario.ObtenerIDUsuario(FuncionesUtiles.USUARIO);
+
+            EquipoTableAdapter equipo = new EquipoTableAdapter();
+            int var18 = (int)equipo.getIdEquipo(FuncionesUtiles.INVENTARIO_EQUIPO);
+
+            InventarioTableAdapter inventario = new InventarioTableAdapter();
+
+            inventario.UpdateInventario(var16, var17, observacion,var18);
         }
     }
 }

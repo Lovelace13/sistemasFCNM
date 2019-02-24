@@ -91,7 +91,7 @@ namespace sistemaFCNM
 
         private void btnScanner_Click(object sender, EventArgs e)
         {
-            
+            apagarBotones();
             FuncionesUtiles.siguienteActiva = true;
             FuncionesUtiles.abrirVentanas(new Equipos(), contenedor);
            
@@ -166,18 +166,18 @@ namespace sistemaFCNM
 
         private void apagarBotones()
         {
-            btnCpu.Enabled = false;
-            btnPantalla.Enabled = false;
-            btnTeclado.Enabled = false;
-            btnMouse.Enabled = false;
-            btnParlante.Enabled = false;
-            btnImpresora.Enabled = false;
-            btnProyector.Enabled = false;
-            btnRegulador.Enabled = false;
-            btnMicro.Enabled = false;
-            btnTelefono.Enabled = false;
-            btnPproyeccion.Enabled = false;
-            btnRadio.Enabled = false;
+            btnCpu.Visible = false;
+            btnPantalla.Visible = false;
+            btnTeclado.Visible = false;
+            btnMouse.Visible = false;
+            btnParlante.Visible = false;
+            btnImpresora.Visible = false;
+            btnProyector.Visible = false;
+            btnRegulador.Visible = false;
+            btnMicro.Visible = false;
+            btnTelefono.Visible = false;
+            btnPproyeccion.Visible = false;
+            btnRadio.Visible = false;
 
         }
 
@@ -198,6 +198,30 @@ namespace sistemaFCNM
         private void cargarDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Datos().crearListaObjetos();
+        }
+
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+            mainPrincipal.btn13.Visible = true;
+            mainPrincipal.btn1.Visible = true;
+            mainPrincipal.btn2.Visible = true;
+            mainPrincipal.btn3.Visible = true;
+            mainPrincipal.btn4.Visible = true;
+            mainPrincipal.btn5.Visible = true;
+            mainPrincipal.btn6.Visible = true;
+            mainPrincipal.btn7.Visible = true;
+            mainPrincipal.btn8.Visible = true;
+            mainPrincipal.btn9.Visible = true;
+            mainPrincipal.btn10.Visible = true;
+            mainPrincipal.btn11.Visible = true;
+            mainPrincipal.btn12.Visible = true;
+            FuncionesUtiles.siguienteActiva = false;
+            FuncionesUtiles.INVENTARIO_EQUIPO = "";
+            FuncionesUtiles.masdetallesActiva = false;
+            FuncionesUtiles.OBSERVACION = "";
+            this.Visible = false;
+            FuncionesUtiles.form1 = new mainPrincipal();
+            FuncionesUtiles.form1.Show();
         }
     }
 }

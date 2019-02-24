@@ -497,7 +497,8 @@
             // 
             this.guardarMenuItem.Name = "guardarMenuItem";
             this.guardarMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.guardarMenuItem.Text = "Crear Equipo";
+            this.guardarMenuItem.Text = "Regresar Menu";
+            this.guardarMenuItem.Click += new System.EventHandler(this.guardarMenuItem_Click);
             // 
             // cargarDocumentoToolStripMenuItem
             // 

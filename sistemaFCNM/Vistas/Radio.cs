@@ -114,63 +114,7 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-            
-        }
-
-        private void guardarMenuItem_Click(object sender, EventArgs e)
-        {
-            guardar();
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-           
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            habilitarBotones();
-        }
-        private void habilitarBotones()
-        {
-            txtRadio.Enabled = true;            
-            comboEstado.Enabled = true;
-            comboMarca.Enabled = true;
-            comboModelo.Enabled = true;
-            txtSerie.Enabled = true;
-        }
-
-        private void btnFinalizar_Click(object sender, EventArgs e)
-        {
-            FuncionesUtiles.OBSERVACION = Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600);
-
-
-            mainPrincipal.btn13.Enabled = true;
-            mainPrincipal.btn1.Enabled = true;
-            mainPrincipal.btn2.Enabled = true;
-            mainPrincipal.btn3.Enabled = true;
-            mainPrincipal.btn4.Enabled = true;
-            mainPrincipal.btn5.Enabled = true;
-            mainPrincipal.btn6.Enabled = true;
-            mainPrincipal.btn7.Enabled = true;
-            mainPrincipal.btn8.Enabled = true;
-            mainPrincipal.btn9.Enabled = true;
-            mainPrincipal.btn10.Enabled = true;
-            mainPrincipal.btn11.Enabled = true;
-            mainPrincipal.btn12.Enabled = true;
-            FuncionesUtiles.siguienteActiva = false;
-            FuncionesUtiles.INVENTARIO_EQUIPO = "";
-            FuncionesUtiles.masdetallesActiva = false;
-        }
-
-        private void radioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {  //Update Inventario
+            //Update Inventario
             try
             {
                 if (this.radioTableAdapter.ObtenerIdRadio(txtRadio.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtRadio.Text.Trim())
@@ -232,15 +176,96 @@ namespace sistemaFCNM.Vistas
             {
 
                 this.radioTableAdapter.UpdateTablaRadio(this.radioTableAdapter.ObtenerMarca(comboMarca.Text),
-               (int) this.radioTableAdapter.ObtenerModelo(comboModelo.Text),
+               (int)this.radioTableAdapter.ObtenerModelo(comboModelo.Text),
                  this.radioTableAdapter.ObtenerEstado(comboEstado.Text), txtRadio.Text.Trim());
             }
+            FuncionesUtiles.OBSERVACION += "Radio: "+Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600)+" ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
+        }
+
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+           
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+        private void habilitarBotones()
+        {
+            txtRadio.Enabled = true;            
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
+            txtSerie.Enabled = true;
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            
 
 
+            mainPrincipal.btn13.Visible = true;
+            mainPrincipal.btn1.Visible = true;
+            mainPrincipal.btn2.Visible = true;
+            mainPrincipal.btn3.Visible = true;
+            mainPrincipal.btn4.Visible = true;
+            mainPrincipal.btn5.Visible = true;
+            mainPrincipal.btn6.Visible = true;
+            mainPrincipal.btn7.Visible = true;
+            mainPrincipal.btn8.Visible = true;
+            mainPrincipal.btn9.Visible = true;
+            mainPrincipal.btn10.Visible = true;
+            mainPrincipal.btn11.Visible = true;
+            mainPrincipal.btn12.Visible = true;
+            FuncionesUtiles.siguienteActiva = false;
+            FuncionesUtiles.INVENTARIO_EQUIPO = "";
+            FuncionesUtiles.masdetallesActiva = false;
+            FuncionesUtiles.OBSERVACION = "";
+            MessageBox.Show("Inventario Finalizado");
+            this.Visible = false;
+            FuncionesUtiles.form1 = new mainPrincipal();
+            FuncionesUtiles.form1.Show();
+        }
 
-            this.radioTableAdapter.Fill(this.sistemasFCNMDataSet.Radio);
-            ApagarBotones();
-            gridRadio.Enabled = true;
+        private void radioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    this.radioTableAdapter.Fill(this.sistemasFCNMDataSet.Radio);
+                    ApagarBotones();
+                    gridRadio.Enabled = true;
+                    return;
+
+                case "No":
+                    this.radioTableAdapter.Fill(this.sistemasFCNMDataSet.Radio);
+                    ApagarBotones();
+                    gridRadio.Enabled = true;
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+            
 
         }
 

@@ -1,5 +1,6 @@
 ﻿using sistemaFCNM.Clases;
 using sistemaFCNM.Controlador;
+using sistemaFCNM.sistemasFCNMDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,14 +26,14 @@ namespace sistemaFCNM.Vistas
         private void Microfono_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Microfono' Puede moverla o quitarla según sea necesario.
-           
+
             this.microfonoTableAdapter.Fill(this.sistemasFCNMDataSet.Microfono);
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
                 this.microfonoTableAdapter.FillBy(this.sistemasFCNMDataSet.Microfono, FuncionesUtiles.ID_MICROFONO);
             }
-            
+
 
         }
 
@@ -86,76 +87,15 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-        }
-
-        private void guardarMenuItem_Click(object sender, EventArgs e)
-        {
-            guardar();
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-            switch (FuncionesUtiles.ventanaDialogo())
-            {
-                case "Yes":
-                    FuncionesUtiles.siguienteActiva = false;
-                    FuncionesUtiles.activarMenu();
-                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
-                    guardar();
-                    this.Close();
-                    return;
-
-                case "No":
-                    FuncionesUtiles.siguienteActiva = false;
-                    FuncionesUtiles.activarMenu();
-                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
-                    this.Close();
-                    return;
-
-                case "Cancel":
-                    return;
-
-                default:
-                    return;
-            }
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            habilitarBotones();
-        }
-        private void habilitarBotones()
-        {
-                   
-            comboTipo.Enabled = true;
-            txtMicro.Enabled = true;
-            comboEstado.Enabled = true;
-            comboMarca.Enabled = true;
-            txtSerie.Enabled = true;
-        }
-
-        private void microfonoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
             //Update Inventario
             try
             {
-                
+
                 if (this.microfonoTableAdapter.ObtenerIdMicro(txtMicro.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtMicro.Text.Trim())
                 {
                     MessageBox.Show("Inventario Repetido ");
                 }
-                else if (this.microfonoTableAdapter.ObtenerIdMicro(txtMicro.Text.Trim()).ToString().Length== 0 && this.InventarioAnterior != txtMicro.Text.Trim())
+                else if (this.microfonoTableAdapter.ObtenerIdMicro(txtMicro.Text.Trim()).ToString().Length == 0 && this.InventarioAnterior != txtMicro.Text.Trim())
                 {
                     this.microfonoTableAdapter.UpdateInventario(txtMicro.Text.Trim(), this.InventarioAnterior);
                 }
@@ -218,9 +158,91 @@ namespace sistemaFCNM.Vistas
                 this.microfonoTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
             }
 
-            this.microfonoTableAdapter.Fill(this.sistemasFCNMDataSet.Microfono);
-            ApagarBotones();
-            gridMicrofono.Enabled = true;
+            FuncionesUtiles.OBSERVACION += "Microfono: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
+
+        }
+
+       
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+                    FuncionesUtiles.siguienteActiva = false;
+                    FuncionesUtiles.activarMenu();
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    guardar();
+                    this.Close();
+                    return;
+
+                case "No":
+                    FuncionesUtiles.siguienteActiva = false;
+                    FuncionesUtiles.activarMenu();
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    this.Close();
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+        private void habilitarBotones()
+        {
+
+            comboTipo.Enabled = true;
+            txtMicro.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            txtSerie.Enabled = true;
+        }
+
+        private void microfonoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    this.microfonoTableAdapter.Fill(this.sistemasFCNMDataSet.Microfono);
+                    ApagarBotones();
+                    gridMicrofono.Enabled = true;
+                    return;
+
+                case "No":
+                    this.microfonoTableAdapter.Fill(this.sistemasFCNMDataSet.Microfono);
+                    ApagarBotones();
+                    gridMicrofono.Enabled = true;
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+
 
         }
 

@@ -26,7 +26,7 @@ namespace sistemaFCNM.Vistas
         public CPU()
         {
             InitializeComponent();
-            
+
         }
         void myButton_Click(Object sender, System.EventArgs e)
         {
@@ -36,21 +36,21 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Cpu' Puede moverla o quitarla según sea necesario.
             this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
-           
+
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
-                this.cpuTableAdapter.FillBy(this.sistemasFCNMDataSet.Cpu,FuncionesUtiles.ID_CPU);
+                this.cpuTableAdapter.FillBy(this.sistemasFCNMDataSet.Cpu, FuncionesUtiles.ID_CPU);
             }
 
-           
+
 
         }
 
-     
+
         private void btnNext_Click(object sender, EventArgs e)
         {
-            
+
             FuncionesUtiles.abrirVentanas(new Pantalla(), mainPrincipal.contenedor);
         }
 
@@ -58,17 +58,17 @@ namespace sistemaFCNM.Vistas
         {
 
             guardar();
-            
+
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
             switch (FuncionesUtiles.ventanaDialogo())
             {
                 case "Yes":
@@ -93,7 +93,7 @@ namespace sistemaFCNM.Vistas
                 default:
                     return;
             }
-           
+
 
         }
 
@@ -311,36 +311,8 @@ namespace sistemaFCNM.Vistas
                 this.cpuTableAdapter.UpdateTablaCpuDisco(this.cpuTableAdapter.ObtenerDisco(comboDisco.Text), txtCpu.Text.Trim());
             }
 
-            FechaInventarioTableAdapter fecha = new FechaInventarioTableAdapter();
-            int var16 = 0;
-            try
-            {
-                if (fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd")).ToString().Length != 0)
-                {
-                    var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
-                }
-                else
-                {
-                    fecha.InsertFecha(DateTime.Now.ToString("yyyy-MM-dd"));
-                    var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
-                }
-            }
-            catch (NullReferenceException)
-            {
-
-                fecha.InsertFecha(DateTime.Now.ToString("yyyy-MM-dd"));
-                var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
-            }
-            if(FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
-
-            UsuarioTableAdapter usuario = new UsuarioTableAdapter();
-            int var17 = (int)usuario.ObtenerIDUsuario(FuncionesUtiles.USUARIO);
-
-            EquipoTableAdapter equipo = new EquipoTableAdapter();
-            int var18 = (int) equipo.getIdEquipo(FuncionesUtiles.INVENTARIO_EQUIPO);
-
-            InventarioTableAdapter inventario = new InventarioTableAdapter();
-            inventario.InsertInventario(var16, var17, "", var18);
+            FuncionesUtiles.OBSERVACION += "Cpu: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
         }
 
         private void CerrarSesion_Click(object sender, EventArgs e)
@@ -373,19 +345,19 @@ namespace sistemaFCNM.Vistas
                 default:
                     return;
             }
-           
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
-       
+
         private void habilitarBotones()
         {
-            
+
             txtCpu.Enabled = true;
             txtNombre.Enabled = true;
             comboTipo.Enabled = true;
@@ -430,13 +402,13 @@ namespace sistemaFCNM.Vistas
                     guardar();
                     this.gridCpu.Enabled = true;
                     this.ApagarBotones();
-                    this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
+                    CPU_Load(sender, e);
                     return;
 
                 case "No":
                     ApagarBotones();
                     gridCpu.Enabled = true;
-                    this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
+                    CPU_Load(sender, e);
                     return;
 
                 case "Cancel":
@@ -446,7 +418,7 @@ namespace sistemaFCNM.Vistas
                     return;
             }
 
-           
+
 
         }
 
@@ -468,7 +440,7 @@ namespace sistemaFCNM.Vistas
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVO CPU", "Ingrese Numero de Inventario Cpu", "", 600);
-            if(NuevoInventario == "") { return; }
+            if (NuevoInventario == "") { return; }
             try
             {
                 if (this.cpuTableAdapter.obtenerInventario(NuevoInventario).ToString().Length != 0) { MessageBox.Show("Inventario Existe"); return; }
@@ -490,7 +462,7 @@ namespace sistemaFCNM.Vistas
                 int var11 = (int)this.cpuTableAdapter.ObtenerTipo("N/A");
                 int var12 = (int)this.cpuTableAdapter.ObtenerIDCpuInventario(NuevoInventario);
 
-                this.cpuTableAdapter.InsertCpu(var12,var6,var11,var7,var10,var2,var8,var5,var3,var1,var4,var9,var0);
+                this.cpuTableAdapter.InsertCpu(var12, var6, var11, var7, var10, var2, var8, var5, var3, var1, var4, var9, var0);
                 MessageBox.Show("Nuevo Inventario Creado!!");
                 this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
                 this.cpuTableAdapter.FillBy(this.sistemasFCNMDataSet.Cpu, (int)this.cpuTableAdapter.ObtenerIDCPU(NuevoInventario));
@@ -517,6 +489,12 @@ namespace sistemaFCNM.Vistas
             comboProcesador.Items.AddRange(Datos._obtenerProcesador());
             comboDisco.Items.AddRange(Datos._obtenerDisco());
             comboMemoria.Items.AddRange(Datos._obtenerMemoria());
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Datos.writeCSV(gridCpu, "C:\\Users\\JULIO\\Downloads\\CpuReporte.csv");
+            MessageBox.Show("Descargado!!");
         }
     }
 }

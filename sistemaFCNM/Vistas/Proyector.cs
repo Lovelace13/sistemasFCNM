@@ -87,64 +87,6 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-           
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-            switch (FuncionesUtiles.ventanaDialogo())
-            {
-                case "Yes":
-                    FuncionesUtiles.siguienteActiva = false;
-                    FuncionesUtiles.activarMenu();
-                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
-                    guardar();
-                    this.Close();
-                    return;
-
-                case "No":
-                    FuncionesUtiles.siguienteActiva = false;
-                    FuncionesUtiles.activarMenu();
-                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
-                    this.Close();
-                    return;
-
-                case "Cancel":
-                    return;
-
-                default:
-                    return;
-            }
-        }
-
-        private void guardarMenuItem_Click(object sender, EventArgs e)
-        {
-            guardar();
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-        
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            habilitarBotones();
-        }
-        private void habilitarBotones()
-        {
-            txtProyector.Enabled = true;
-            txtEspolTech.Enabled = true;
-            comboEstado.Enabled = true;
-            comboMarca.Enabled = true;
-            comboModelo.Enabled = true;
-            txtSerie.Enabled = true;
-        }
-
-        private void proyectorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
             //Update Inventario
             try
             {
@@ -251,11 +193,90 @@ namespace sistemaFCNM.Vistas
                  this.proyectorTableAdapter.ObtenerEstado(comboEstado.Text), txtProyector.Text.Trim());
             }
 
+            FuncionesUtiles.OBSERVACION += "Proyector: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
+        }
 
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+                case "Yes":
+                    FuncionesUtiles.siguienteActiva = false;
+                    FuncionesUtiles.activarMenu();
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    guardar();
+                    this.Close();
+                    return;
 
-            this.proyectorTableAdapter.Fill(this.sistemasFCNMDataSet.Proyector);
-            ApagarBotones();
-            gridProyector.Enabled = true;
+                case "No":
+                    FuncionesUtiles.siguienteActiva = false;
+                    FuncionesUtiles.activarMenu();
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    this.Close();
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+        }
+
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+        
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+        private void habilitarBotones()
+        {
+            txtProyector.Enabled = true;
+            txtEspolTech.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
+            txtSerie.Enabled = true;
+        }
+
+        private void proyectorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    this.proyectorTableAdapter.Fill(this.sistemasFCNMDataSet.Proyector);
+                    ApagarBotones();
+                    gridProyector.Enabled = true;
+                    return;
+
+                case "No":
+                    this.proyectorTableAdapter.Fill(this.sistemasFCNMDataSet.Proyector);
+                    ApagarBotones();
+                    gridProyector.Enabled = true;
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+
+            
 
         }
 

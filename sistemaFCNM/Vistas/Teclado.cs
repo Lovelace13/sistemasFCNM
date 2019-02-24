@@ -110,41 +110,6 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-           
-        }
-
-        private void guardarMenuItem_Click(object sender, EventArgs e)
-        {
-            guardar();
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
-           
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            habilitarBotones();
-        }
-        private void habilitarBotones()
-        {
-            
-            txtTeclado.Enabled = true;
-            comboEstado.Enabled = true;
-            comboMarca.Enabled = true;
-            comboModelo.Enabled = true;
-            txtSerie.Enabled = true;
-        }
-
-        private void tecladoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
             //Update Inventario
             try
             {
@@ -211,11 +176,67 @@ namespace sistemaFCNM.Vistas
                  this.tecladoTableAdapter.ObtenerEstado(comboEstado.Text), txtTeclado.Text.Trim());
             }
 
+            FuncionesUtiles.OBSERVACION += "Teclado: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
+        }
 
+        private void guardarMenuItem_Click(object sender, EventArgs e)
+        {
+            guardar();
+        }
 
-            this.tecladoTableAdapter.Fill(this.sistemasFCNMDataSet.Teclado);
-            ApagarBotones();
-            gridTeclado.Enabled = true;
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FuncionesUtiles.INVENTARIO_EQUIPO = Microsoft.VisualBasic.Interaction.InputBox("Inventario Equipo", "Registrar Busqueda", "", 600);
+           
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            habilitarBotones();
+        }
+        private void habilitarBotones()
+        {
+            
+            txtTeclado.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            comboModelo.Enabled = true;
+            txtSerie.Enabled = true;
+        }
+
+        private void tecladoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    this.tecladoTableAdapter.Fill(this.sistemasFCNMDataSet.Teclado);
+                    ApagarBotones();
+                    gridTeclado.Enabled = true;
+                    return;
+
+                case "No":
+                    this.tecladoTableAdapter.Fill(this.sistemasFCNMDataSet.Teclado);
+                    ApagarBotones();
+                    gridTeclado.Enabled = true;
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+
+           
 
         }
 

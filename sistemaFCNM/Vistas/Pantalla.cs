@@ -1,5 +1,6 @@
 ﻿using sistemaFCNM.Clases;
 using sistemaFCNM.Controlador;
+using sistemaFCNM.sistemasFCNMDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -151,6 +152,8 @@ namespace sistemaFCNM.Vistas
                  this.pantallaTableAdapter.ObtenerPulgadas(comboPulgadas.Text), this.pantallaTableAdapter.ObtenerModelo(comboModelo.Text),
                  this.pantallaTableAdapter.ObtenerEstado(comboEstado.Text), txtPantalla.Text.Trim());
             }
+            FuncionesUtiles.OBSERVACION += "Pantalla: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
+            FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
 
 
 
