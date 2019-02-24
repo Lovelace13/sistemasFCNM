@@ -684,6 +684,32 @@ namespace sistemaFCNM.Clases
             return lista.ToArray();
 
         }
+        public static String[] _obtenerEdificio()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            EdificioTableAdapter tabla = new EdificioTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Bloque"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
+        public static String[] _obtenerArea()
+        {
+            LinkedList<String> lista = new LinkedList<string>();
+            AreaOficinaTableAdapter tabla = new AreaOficinaTableAdapter();
+            for (int i = 0; i < tabla.GetData().Rows.Count; i++)
+            {
+                string var = tabla.GetData().Rows[i]["Area"].ToString();
+                lista.AddFirst(var);
+            }
+
+            return lista.ToArray();
+
+        }
         #endregion
 
         #region Funciones de Texto Plano
@@ -1252,6 +1278,7 @@ namespace sistemaFCNM.Clases
 
         public static void writeCSV(DataGridView gridIn, string outputFile)
         {
+            if (System.IO.File.Exists(outputFile)){ File.Delete(outputFile); }
             //test to see if the DataGridView has any rows
             if (gridIn.RowCount > 0)
             {
@@ -1264,7 +1291,7 @@ namespace sistemaFCNM.Clases
                 {
                     if (i > 0)
                     {
-                        swOut.Write(",");
+                        swOut.Write(";");
                     }
                     swOut.Write(gridIn.Columns[i].HeaderText);
                 }
@@ -1285,12 +1312,12 @@ namespace sistemaFCNM.Clases
                     {
                         if (i > 0)
                         {
-                            swOut.Write(",");
+                            swOut.Write(";");
                         }
 
                         value = dr.Cells[i].Value.ToString();
                         //replace comma's with spaces
-                        value = value.Replace(',', ' ');
+                        value = value.Replace(';', ' ');
                         //replace embedded newlines with spaces
                         value = value.Replace(Environment.NewLine, " ");
 

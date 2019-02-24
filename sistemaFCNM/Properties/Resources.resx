@@ -154,11 +154,14 @@
   <data name="IconoMaximizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono Maximizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconocerrarFN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono cerrar FN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconoMinimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icono Minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="impresora1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\impresora1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="microfono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\microfono1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +172,8 @@
   <data name="espolLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\espolLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconoMinimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono Minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Salir1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="teclado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teclado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,8 +226,8 @@
   <data name="proyector1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proyector1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="microfono" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\microfono1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconocerrarFN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icono cerrar FN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondooo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondooo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,7 +247,7 @@
   <data name="altavoces1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\altavoces1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Salir1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="adicionar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adicionar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -285,9 +285,11 @@ namespace sistemaFCNM
         }
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVO EQUIPO", "Ingrese Numero de INventario Equipo", "", 600);
+            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVO EQUIPO", "Ingrese Numero de Inventario Equipo", "", 600);
+            
             try
             {
+                if(NuevoInventario == "") { return; }
                 
                 if(this.equipoTableAdapter.ObtenerInventarioEquipo(NuevoInventario).ToString().Length != 0)
                 {
@@ -333,6 +335,11 @@ namespace sistemaFCNM
                     {
                         var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
                     }
+                    else
+                    {
+                        fecha.InsertFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                        var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                    }
                 }
                 catch (NullReferenceException)
                 {
@@ -340,7 +347,7 @@ namespace sistemaFCNM
                     fecha.InsertFecha(DateTime.Now.ToString("yyyy-MM-dd"));
                     var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
                 }
-                
+
                 UsuarioTableAdapter usuario = new UsuarioTableAdapter();
                 int var17 =(int) usuario.ObtenerIDUsuario(FuncionesUtiles.USUARIO);
 
@@ -377,6 +384,7 @@ namespace sistemaFCNM
             HabilitarBotones();
 
             //LLenar Lista de Oficina
+            comboOficina.Items.Clear();
             comboOficina.Items.AddRange(Datos._obtenerCampoNombreOficina());
 
             //Deshabilitar tabla de inventarios
@@ -1212,9 +1220,14 @@ namespace sistemaFCNM
             this.txtRadio.Enabled = false;
         }
 
+
         #endregion
 
-       
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            new RegistroOficina().Show();
+            
+        }
     }
 
 }

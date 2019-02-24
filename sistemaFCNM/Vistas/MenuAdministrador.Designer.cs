@@ -220,6 +220,7 @@
             this.btnNewUser.Size = new System.Drawing.Size(103, 74);
             this.btnNewUser.TabIndex = 0;
             this.btnNewUser.UseVisualStyleBackColor = false;
+            this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
             // 
             // MenuAdministrador
             // 

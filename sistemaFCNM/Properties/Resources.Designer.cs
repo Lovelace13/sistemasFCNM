@@ -63,6 +63,16 @@ namespace sistemaFCNM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adicionar {
+            get {
+                object obj = ResourceManager.GetObject("adicionar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap altavoces1 {
             get {
                 object obj = ResourceManager.GetObject("altavoces1", resourceCulture);

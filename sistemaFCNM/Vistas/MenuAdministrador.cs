@@ -40,7 +40,12 @@ namespace sistemaFCNM.Vistas
 
         private void btnDescargar_Click(object sender, EventArgs e)
         {
-            Datos.DescargarCsv();
+            new AllInventory().Show();
+        }
+
+        private void btnNewUser_Click(object sender, EventArgs e)
+        {
+            new RegistrarUsuario().Show();
         }
     }
 }

@@ -124,6 +124,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sistemasFCNMDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\AllInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AllInventory.Designer.cs">
+      <DependentUpon>AllInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\CPU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,18 @@
     <Compile Include="Vistas\Radio.Designer.cs">
       <DependentUpon>Radio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\RegistrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RegistrarUsuario.Designer.cs">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RegistroOficina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RegistroOficina.Designer.cs">
+      <DependentUpon>RegistroOficina.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Regulador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +247,9 @@
     <Compile Include="Vistas\Telefono.Designer.cs">
       <DependentUpon>Telefono.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\AllInventory.resx">
+      <DependentUpon>AllInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\CPU.resx">
       <DependentUpon>CPU.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +285,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Radio.resx">
       <DependentUpon>Radio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RegistrarUsuario.resx">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RegistroOficina.resx">
+      <DependentUpon>RegistroOficina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Regulador.resx">
       <DependentUpon>Regulador.cs</DependentUpon>
@@ -493,6 +520,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DESCARGA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

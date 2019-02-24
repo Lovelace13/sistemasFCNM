@@ -35,8 +35,6 @@ namespace sistemaFCNM.Vistas
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.cpuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -61,8 +59,14 @@ namespace sistemaFCNM.Vistas
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboPerfil = new System.Windows.Forms.ComboBox();
             this.comboTipo = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboMemoria = new System.Windows.Forms.ComboBox();
+            this.comboDisco = new System.Windows.Forms.ComboBox();
+            this.comboProcesador = new System.Windows.Forms.ComboBox();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevius = new System.Windows.Forms.Button();
@@ -94,32 +98,18 @@ namespace sistemaFCNM.Vistas
             this.tagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoPCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
             this.cpuTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.CpuTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
-            this.comboPerfil = new System.Windows.Forms.ComboBox();
-            this.comboMarca = new System.Windows.Forms.ComboBox();
-            this.comboEstado = new System.Windows.Forms.ComboBox();
-            this.comboMemoria = new System.Windows.Forms.ComboBox();
-            this.comboDisco = new System.Windows.Forms.ComboBox();
-            this.comboProcesador = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cpuBindingNavigator)).BeginInit();
             this.cpuBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cpuBindingSource
-            // 
-            this.cpuBindingSource.DataMember = "Cpu";
-            this.cpuBindingSource.DataSource = this.sistemasFCNMDataSet;
-            // 
-            // sistemasFCNMDataSet
-            // 
-            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
-            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label10
             // 
@@ -413,6 +403,16 @@ namespace sistemaFCNM.Vistas
             this.groupBox1.Text = "CPU DATOS BASICOS";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // comboPerfil
+            // 
+            this.comboPerfil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Perfil", true));
+            this.comboPerfil.Enabled = false;
+            this.comboPerfil.FormattingEnabled = true;
+            this.comboPerfil.Location = new System.Drawing.Point(129, 182);
+            this.comboPerfil.Name = "comboPerfil";
+            this.comboPerfil.Size = new System.Drawing.Size(172, 21);
+            this.comboPerfil.TabIndex = 111;
+            // 
             // comboTipo
             // 
             this.comboTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "TipoPC", true));
@@ -448,6 +448,56 @@ namespace sistemaFCNM.Vistas
             this.groupBox2.TabIndex = 126;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Caracteristicas";
+            // 
+            // comboMemoria
+            // 
+            this.comboMemoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Memoria", true));
+            this.comboMemoria.Enabled = false;
+            this.comboMemoria.FormattingEnabled = true;
+            this.comboMemoria.Location = new System.Drawing.Point(144, 260);
+            this.comboMemoria.Name = "comboMemoria";
+            this.comboMemoria.Size = new System.Drawing.Size(63, 21);
+            this.comboMemoria.TabIndex = 132;
+            // 
+            // comboDisco
+            // 
+            this.comboDisco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Disco", true));
+            this.comboDisco.Enabled = false;
+            this.comboDisco.FormattingEnabled = true;
+            this.comboDisco.Location = new System.Drawing.Point(289, 197);
+            this.comboDisco.Name = "comboDisco";
+            this.comboDisco.Size = new System.Drawing.Size(58, 21);
+            this.comboDisco.TabIndex = 133;
+            // 
+            // comboProcesador
+            // 
+            this.comboProcesador.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Procesador", true));
+            this.comboProcesador.Enabled = false;
+            this.comboProcesador.FormattingEnabled = true;
+            this.comboProcesador.Location = new System.Drawing.Point(144, 197);
+            this.comboProcesador.Name = "comboProcesador";
+            this.comboProcesador.Size = new System.Drawing.Size(63, 21);
+            this.comboProcesador.TabIndex = 134;
+            // 
+            // comboEstado
+            // 
+            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Estado", true));
+            this.comboEstado.Enabled = false;
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(165, 113);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(172, 21);
+            this.comboEstado.TabIndex = 113;
+            // 
+            // comboMarca
+            // 
+            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Marca", true));
+            this.comboMarca.Enabled = false;
+            this.comboMarca.FormattingEnabled = true;
+            this.comboMarca.Location = new System.Drawing.Point(165, 29);
+            this.comboMarca.Name = "comboMarca";
+            this.comboMarca.Size = new System.Drawing.Size(172, 21);
+            this.comboMarca.TabIndex = 112;
             // 
             // panel1
             // 
@@ -519,7 +569,7 @@ namespace sistemaFCNM.Vistas
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Image = global::sistemaFCNM.Properties.Resources.Nuevo;
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
@@ -536,7 +586,7 @@ namespace sistemaFCNM.Vistas
             // bindingNavigatorDeleteItem
             // 
             this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Image = global::sistemaFCNM.Properties.Resources.Borrar2;
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
@@ -606,7 +656,7 @@ namespace sistemaFCNM.Vistas
             // cpuBindingNavigatorSaveItem
             // 
             this.cpuBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.cpuBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("cpuBindingNavigatorSaveItem.Image")));
+            this.cpuBindingNavigatorSaveItem.Image = global::sistemaFCNM.Properties.Resources.Guardar;
             this.cpuBindingNavigatorSaveItem.Name = "cpuBindingNavigatorSaveItem";
             this.cpuBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.cpuBindingNavigatorSaveItem.Text = "Guardar datos";
@@ -793,6 +843,16 @@ namespace sistemaFCNM.Vistas
             this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
             this.estadoDataGridViewTextBoxColumn.Width = 75;
             // 
+            // cpuBindingSource
+            // 
+            this.cpuBindingSource.DataMember = "Cpu";
+            this.cpuBindingSource.DataSource = this.sistemasFCNMDataSet;
+            // 
+            // sistemasFCNMDataSet
+            // 
+            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
+            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cpuTableAdapter
             // 
             this.cpuTableAdapter.ClearBeforeFill = true;
@@ -876,66 +936,6 @@ namespace sistemaFCNM.Vistas
             this.tableAdapterManager.UpdateOrder = sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
             // 
-            // comboPerfil
-            // 
-            this.comboPerfil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Perfil", true));
-            this.comboPerfil.Enabled = false;
-            this.comboPerfil.FormattingEnabled = true;
-            this.comboPerfil.Location = new System.Drawing.Point(129, 182);
-            this.comboPerfil.Name = "comboPerfil";
-            this.comboPerfil.Size = new System.Drawing.Size(172, 21);
-            this.comboPerfil.TabIndex = 111;
-            // 
-            // comboMarca
-            // 
-            this.comboMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Marca", true));
-            this.comboMarca.Enabled = false;
-            this.comboMarca.FormattingEnabled = true;
-            this.comboMarca.Location = new System.Drawing.Point(165, 29);
-            this.comboMarca.Name = "comboMarca";
-            this.comboMarca.Size = new System.Drawing.Size(172, 21);
-            this.comboMarca.TabIndex = 112;
-            // 
-            // comboEstado
-            // 
-            this.comboEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Estado", true));
-            this.comboEstado.Enabled = false;
-            this.comboEstado.FormattingEnabled = true;
-            this.comboEstado.Location = new System.Drawing.Point(165, 113);
-            this.comboEstado.Name = "comboEstado";
-            this.comboEstado.Size = new System.Drawing.Size(172, 21);
-            this.comboEstado.TabIndex = 113;
-            // 
-            // comboMemoria
-            // 
-            this.comboMemoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Memoria", true));
-            this.comboMemoria.Enabled = false;
-            this.comboMemoria.FormattingEnabled = true;
-            this.comboMemoria.Location = new System.Drawing.Point(144, 260);
-            this.comboMemoria.Name = "comboMemoria";
-            this.comboMemoria.Size = new System.Drawing.Size(63, 21);
-            this.comboMemoria.TabIndex = 132;
-            // 
-            // comboDisco
-            // 
-            this.comboDisco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Disco", true));
-            this.comboDisco.Enabled = false;
-            this.comboDisco.FormattingEnabled = true;
-            this.comboDisco.Location = new System.Drawing.Point(289, 197);
-            this.comboDisco.Name = "comboDisco";
-            this.comboDisco.Size = new System.Drawing.Size(58, 21);
-            this.comboDisco.TabIndex = 133;
-            // 
-            // comboProcesador
-            // 
-            this.comboProcesador.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cpuBindingSource, "Procesador", true));
-            this.comboProcesador.Enabled = false;
-            this.comboProcesador.FormattingEnabled = true;
-            this.comboProcesador.Location = new System.Drawing.Point(144, 197);
-            this.comboProcesador.Name = "comboProcesador";
-            this.comboProcesador.Size = new System.Drawing.Size(63, 21);
-            this.comboProcesador.TabIndex = 134;
-            // 
             // CPU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -963,8 +963,6 @@ namespace sistemaFCNM.Vistas
             this.Text = "CPU";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CPU_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -973,6 +971,8 @@ namespace sistemaFCNM.Vistas
             this.cpuBindingNavigator.ResumeLayout(false);
             this.cpuBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCpu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

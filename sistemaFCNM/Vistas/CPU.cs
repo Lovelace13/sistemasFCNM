@@ -1,5 +1,6 @@
 ﻿using sistemaFCNM.Clases;
 using sistemaFCNM.Controlador;
+using sistemaFCNM.sistemasFCNMDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -98,91 +99,10 @@ namespace sistemaFCNM.Vistas
 
         private void guardar()
         {
-        }
-
-        private void CerrarSesion_Click(object sender, EventArgs e)
-        {
-            login log;
-            switch (FuncionesUtiles.ventanaDialogo())
-            {
-
-                case "Yes":
-
-                    guardar();
-                    log = new login();
-                    log.Show();
-                    this.Visible = false;
-                    FuncionesUtiles.form1.Visible = false;
-                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
-                    return;
-
-                case "No":
-                    log = new login();
-                    log.Show();
-                    this.Visible = false;
-                    FuncionesUtiles.form1.Visible = false;
-                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
-                    return;
-
-                case "Cancel":
-                    return;
-
-                default:
-                    return;
-            }
-           
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
-       
-        private void habilitarBotones()
-        {
-            
-            txtCpu.Enabled = true;
-            txtNombre.Enabled = true;
-            comboTipo.Enabled = true;
-            txtTag.Enabled = true;
-            txtCode.Enabled = true;
-            comboPerfil.Enabled = true;
-            comboProcesador.Enabled = true;
-            comboMemoria.Enabled = true;
-            comboDisco.Enabled = true;
-            comboEstado.Enabled = true;
-            comboMarca.Enabled = true;
-            txtModelo.Enabled = true;
-            txtSerie.Enabled = true;
-            txtLote.Enabled = true;
-        }
-        private void ApagarBotones()
-        {
-
-            txtCpu.Enabled = false;
-            txtNombre.Enabled = false;
-            comboTipo.Enabled = false;
-            txtTag.Enabled = false;
-            txtCode.Enabled = false;
-            comboPerfil.Enabled = false;
-            comboProcesador.Enabled = false;
-            comboMemoria.Enabled = false;
-            comboDisco.Enabled = false;
-            comboEstado.Enabled = false;
-            comboMarca.Enabled = false;
-            txtModelo.Enabled = false;
-            txtSerie.Enabled = false;
-            txtLote.Enabled = false;
-        }
-
-        private void cpuBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
             //Update Inventario
             try
             {
-                if(this.cpuTableAdapter.ObtenerIDCPU(txtCpu.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtCpu.Text.Trim())
+                if (this.cpuTableAdapter.ObtenerIDCPU(txtCpu.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtCpu.Text.Trim())
                 {
                     MessageBox.Show("Inventario Repetido ");
                 }
@@ -198,7 +118,7 @@ namespace sistemaFCNM.Vistas
             {
                 if (txtLote.Text.Trim() != "N/A")
                 {
-                    if (this.cpuTableAdapter.ObtenerAdicionalLote(txtLote.Text.Trim()).ToString().Length != 0 && this.LoteAnterior!="N/A")
+                    if (this.cpuTableAdapter.ObtenerAdicionalLote(txtLote.Text.Trim()).ToString().Length != 0 && this.LoteAnterior != "N/A")
                     {
                         this.cpuTableAdapter.UpdateAdicionalLote(txtLote.Text.Trim(), txtCpu.Text.Trim());
                     }
@@ -390,9 +310,141 @@ namespace sistemaFCNM.Vistas
 
                 this.cpuTableAdapter.UpdateTablaCpuDisco(this.cpuTableAdapter.ObtenerDisco(comboDisco.Text), txtCpu.Text.Trim());
             }
-            this.gridCpu.Enabled = true;
-            this.ApagarBotones();
-            this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
+
+            FechaInventarioTableAdapter fecha = new FechaInventarioTableAdapter();
+            int var16 = 0;
+            try
+            {
+                if (fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd")).ToString().Length != 0)
+                {
+                    var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                }
+                else
+                {
+                    fecha.InsertFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                    var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                }
+            }
+            catch (NullReferenceException)
+            {
+
+                fecha.InsertFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+                var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
+            }
+            if(FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
+
+            UsuarioTableAdapter usuario = new UsuarioTableAdapter();
+            int var17 = (int)usuario.ObtenerIDUsuario(FuncionesUtiles.USUARIO);
+
+            EquipoTableAdapter equipo = new EquipoTableAdapter();
+            int var18 = (int) equipo.getIdEquipo(FuncionesUtiles.INVENTARIO_EQUIPO);
+
+            InventarioTableAdapter inventario = new InventarioTableAdapter();
+            inventario.InsertInventario(var16, var17, "", var18);
+        }
+
+        private void CerrarSesion_Click(object sender, EventArgs e)
+        {
+            login log;
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    log = new login();
+                    log.Show();
+                    this.Visible = false;
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    return;
+
+                case "No":
+                    log = new login();
+                    log.Show();
+                    this.Visible = false;
+                    FuncionesUtiles.form1.Visible = false;
+                    FuncionesUtiles.INVENTARIO_EQUIPO = "";
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+           
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+       
+        private void habilitarBotones()
+        {
+            
+            txtCpu.Enabled = true;
+            txtNombre.Enabled = true;
+            comboTipo.Enabled = true;
+            txtTag.Enabled = true;
+            txtCode.Enabled = true;
+            comboPerfil.Enabled = true;
+            comboProcesador.Enabled = true;
+            comboMemoria.Enabled = true;
+            comboDisco.Enabled = true;
+            comboEstado.Enabled = true;
+            comboMarca.Enabled = true;
+            txtModelo.Enabled = true;
+            txtSerie.Enabled = true;
+            txtLote.Enabled = true;
+        }
+        private void ApagarBotones()
+        {
+
+            txtCpu.Enabled = false;
+            txtNombre.Enabled = false;
+            comboTipo.Enabled = false;
+            txtTag.Enabled = false;
+            txtCode.Enabled = false;
+            comboPerfil.Enabled = false;
+            comboProcesador.Enabled = false;
+            comboMemoria.Enabled = false;
+            comboDisco.Enabled = false;
+            comboEstado.Enabled = false;
+            comboMarca.Enabled = false;
+            txtModelo.Enabled = false;
+            txtSerie.Enabled = false;
+            txtLote.Enabled = false;
+        }
+
+        private void cpuBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            switch (FuncionesUtiles.ventanaDialogo())
+            {
+
+                case "Yes":
+
+                    guardar();
+                    this.gridCpu.Enabled = true;
+                    this.ApagarBotones();
+                    this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
+                    return;
+
+                case "No":
+                    this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
+                    return;
+
+                case "Cancel":
+                    return;
+
+                default:
+                    return;
+            }
+
+           
 
         }
 
@@ -413,7 +465,35 @@ namespace sistemaFCNM.Vistas
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+            string NuevoInventario = Microsoft.VisualBasic.Interaction.InputBox("NUEVO CPU", "Ingrese Numero de Inventario Cpu", "", 600);
+            if(NuevoInventario == "") { return; }
+            try
+            {
+                if (this.cpuTableAdapter.obtenerInventario(NuevoInventario).ToString().Length != 0) { MessageBox.Show("Inventario Existe"); return; }
+            }
+            catch (NullReferenceException)
+            {
+                this.cpuTableAdapter.InsertInventario(NuevoInventario);
+                int var0 = (int)FuncionesEquipo.estado.ObtenerEstado("BUENO");
+                int var1 = (int)this.cpuTableAdapter.ObtenerAdicionalLote("N/A");
+                int var2 = (int)this.cpuTableAdapter.ObtenerCode("N/A");
+                int var3 = (int)this.cpuTableAdapter.ObtenerDisco("N/A");
+                int var4 = (int)this.cpuTableAdapter.ObtenerMarca("N/A");
+                int var5 = (int)this.cpuTableAdapter.ObtenerMemoria("N/A");
+                int var6 = (int)this.cpuTableAdapter.ObtenerNombrePc("N/A");
+                int var7 = (int)this.cpuTableAdapter.ObtenerPerfil("N/A");
+                int var8 = (int)this.cpuTableAdapter.ObtenerProcesador("N/A");
+                int var9 = (int)this.cpuTableAdapter.ObtenerSerie("N/A");
+                int var10 = (int)this.cpuTableAdapter.ObtenerTag("N/A");
+                int var11 = (int)this.cpuTableAdapter.ObtenerTipo("N/A");
+                int var12 = (int)this.cpuTableAdapter.ObtenerIDCpuInventario(NuevoInventario);
 
+                this.cpuTableAdapter.InsertCpu(var12,var6,var11,var7,var10,var2,var8,var5,var3,var1,var4,var9,var0);
+                MessageBox.Show("Nuevo Inventario Creado!!");
+                this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
+                this.cpuTableAdapter.FillBy(this.sistemasFCNMDataSet.Cpu, (int)this.cpuTableAdapter.ObtenerIDCPU(NuevoInventario));
+
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

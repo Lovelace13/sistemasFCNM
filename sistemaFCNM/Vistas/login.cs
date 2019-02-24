@@ -62,7 +62,7 @@ namespace sistemaFCNM.Vistas
                 {
                     MenuAdministrador admin = new MenuAdministrador();
                     this.Visible = false;
-                    FuncionesUtiles.USUARIO = user.NombreUsuario;
+                    FuncionesUtiles.USUARIO = user.IdUsuario;
                     admin.Show();
                 }
                 
