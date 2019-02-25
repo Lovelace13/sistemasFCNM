@@ -63,6 +63,7 @@ namespace sistemaFCNM.Vistas
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
             string dellUser = Microsoft.VisualBasic.Interaction.InputBox("ELIMINAR USUARIO", "Ingrese Usuario Espol", "", 600);
+            if(dellUser == "") { return; }
             UsuarioTableAdapter user = new UsuarioTableAdapter();
             user.UpdateTipo(3,dellUser);
             MessageBox.Show("Permisos Eliminados");
@@ -71,6 +72,7 @@ namespace sistemaFCNM.Vistas
         private void button1_Click(object sender, EventArgs e)
         {
             string dellUser = Microsoft.VisualBasic.Interaction.InputBox("Otorgar Permiso Usuario", "Ingrese Usuario Espol", "", 600);
+            if (dellUser == "") { return; }
             UsuarioTableAdapter user = new UsuarioTableAdapter();
             user.UpdateTipo(1, dellUser);
             MessageBox.Show("Permisos Otorgados");
@@ -79,6 +81,7 @@ namespace sistemaFCNM.Vistas
         private void button2_Click(object sender, EventArgs e)
         {
             string dellUser = Microsoft.VisualBasic.Interaction.InputBox("Otorgar Permiso Usuario", "Ingrese Usuario Espol", "", 600);
+            if (dellUser == "") { return; }
             UsuarioTableAdapter user = new UsuarioTableAdapter();
             user.UpdateTipo(2, dellUser);
             MessageBox.Show("Permisos Administrador Otorgados");

@@ -33,7 +33,7 @@ namespace sistemaFCNM.Vistas
             if (radioAyudante.Checked)
                 user.InsertUser(txtUser.Text, 1, txtNombre.Text.ToUpper() + txtApellido.Text.ToUpper(), txtPass.Text);
             if (radioAdmin.Checked)
-                user.InsertUser(txtUser.Text, 2, txtNombre.Text.ToUpper() + " " +txtApellido.Text.ToUpper(), txtPass.Text);
+                user.InsertUser(txtUser.Text, 2, txtNombre.Text.ToUpper() + "  " +txtApellido.Text.ToUpper(), txtPass.Text);
 
             MessageBox.Show("Usuario Creado");
             this.Close();
