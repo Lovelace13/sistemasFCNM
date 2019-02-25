@@ -293,5 +293,48 @@ namespace sistemaFCNM.Vistas
 
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MARCA", "Ingrese Marca", "", 600);
+            if ((int)this.parlanteTableAdapter.ObtenerMarca(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.parlanteTableAdapter.InsertMarca(var);
+            comboMarca.Items.Clear();
+            comboMarca.Items.AddRange(Datos._obtenerMarcaParlante());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO ESTADO", "Ingrese Estado", "", 600);
+            if (FuncionesEquipo.estado.ObtenerEstado(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            FuncionesEquipo.estado.InsertEstado(var);
+            comboEstado.Items.Clear();
+            comboEstado.Items.AddRange(Datos._obtenerEstado());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MODELO", "Ingrese Modelo", "", 600);
+            if ((int)this.parlanteTableAdapter.ObtenerModelo(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.parlanteTableAdapter.InsertModelo(var);
+            comboModelo.Items.Clear();
+            comboModelo.Items.AddRange(Datos._obtenerModeloParlante());
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            String Text = Environment.UserName;
+            Datos.writeCSV(gridParlante, "C:\\Users\\"+Text+"\\Downloads\\ParlanteReporte.csv");
+            MessageBox.Show("Descargado!!");
+        }
     }
 }

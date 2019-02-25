@@ -321,5 +321,48 @@ namespace sistemaFCNM.Vistas
 
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO ESTADO", "Ingrese Estado", "", 600);
+            if (FuncionesEquipo.estado.ObtenerEstado(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            FuncionesEquipo.estado.InsertEstado(var);
+            comboEstado.Items.Clear();
+            comboEstado.Items.AddRange(Datos._obtenerEstado());
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MARCA", "Ingrese Marca", "", 600);
+            if ((int)this.mouseTableAdapter.ObtenerMarca(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.mouseTableAdapter.InsertMarca(var);
+            comboMarca.Items.Clear();
+            comboMarca.Items.AddRange(Datos._obtenerMarcaMouse());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MODELO", "Ingrese Modelo", "", 600);
+            if ((int)this.mouseTableAdapter.ObtenerModelo(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.mouseTableAdapter.InsertModelo(var);
+            comboModelo.Items.Clear();
+            comboModelo.Items.AddRange(Datos._obtenerModeloMouse());
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            String Text = Environment.UserName;
+            Datos.writeCSV(gridMouse, "C:\\Users\\"+Text+"\\Downloads\\MouseReporte.csv");
+            MessageBox.Show("Descargado!!");
+        }
     }
 }

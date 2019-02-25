@@ -47,5 +47,10 @@ namespace sistemaFCNM.Vistas
         {
             new RegistrarUsuario().Show();
         }
+
+        private void btnEliminarUsuario_Click(object sender, EventArgs e)
+        {
+            string dellUser = Microsoft.VisualBasic.Interaction.InputBox("ELIMINAR USUARIO", "Ingrese Usuario Espol", "", 600);
+        }
     }
 }

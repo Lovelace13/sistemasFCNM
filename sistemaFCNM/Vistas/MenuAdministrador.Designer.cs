@@ -32,14 +32,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnDescargar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.btnCrear = new System.Windows.Forms.Button();
             this.btnCargarDoc = new System.Windows.Forms.Button();
             this.btnEliminarUsuario = new System.Windows.Forms.Button();
             this.btnNewUser = new System.Windows.Forms.Button();
@@ -79,22 +77,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(62, 259);
+            this.label4.Location = new System.Drawing.Point(155, 259);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(229, 24);
             this.label4.TabIndex = 6;
             this.label4.Text = "Cargar Documento CSV";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(314, 259);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 24);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Crear Equipo";
             // 
             // label6
             // 
@@ -120,7 +108,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(467, 259);
+            this.label8.Location = new System.Drawing.Point(410, 259);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(149, 24);
             this.label8.TabIndex = 14;
@@ -133,7 +121,7 @@
             this.btnDescargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDescargar.FlatAppearance.BorderSize = 0;
             this.btnDescargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDescargar.Location = new System.Drawing.Point(495, 182);
+            this.btnDescargar.Location = new System.Drawing.Point(438, 182);
             this.btnDescargar.Name = "btnDescargar";
             this.btnDescargar.Size = new System.Drawing.Size(103, 74);
             this.btnDescargar.TabIndex = 13;
@@ -168,19 +156,6 @@
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
-            // btnCrear
-            // 
-            this.btnCrear.BackColor = System.Drawing.Color.Transparent;
-            this.btnCrear.BackgroundImage = global::sistemaFCNM.Properties.Resources.nuevoDocumento;
-            this.btnCrear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCrear.FlatAppearance.BorderSize = 0;
-            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrear.Location = new System.Drawing.Point(318, 182);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(103, 74);
-            this.btnCrear.TabIndex = 7;
-            this.btnCrear.UseVisualStyleBackColor = false;
-            // 
             // btnCargarDoc
             // 
             this.btnCargarDoc.BackColor = System.Drawing.Color.Transparent;
@@ -188,7 +163,7 @@
             this.btnCargarDoc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCargarDoc.FlatAppearance.BorderSize = 0;
             this.btnCargarDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargarDoc.Location = new System.Drawing.Point(129, 182);
+            this.btnCargarDoc.Location = new System.Drawing.Point(222, 182);
             this.btnCargarDoc.Name = "btnCargarDoc";
             this.btnCargarDoc.Size = new System.Drawing.Size(103, 74);
             this.btnCargarDoc.TabIndex = 5;
@@ -207,6 +182,7 @@
             this.btnEliminarUsuario.Size = new System.Drawing.Size(103, 74);
             this.btnEliminarUsuario.TabIndex = 3;
             this.btnEliminarUsuario.UseVisualStyleBackColor = false;
+            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
             // 
             // btnNewUser
             // 
@@ -233,8 +209,6 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnInventario);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCargarDoc);
             this.Controls.Add(this.label3);
@@ -260,8 +234,6 @@
         private System.Windows.Forms.Button btnEliminarUsuario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCargarDoc;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnInventario;
         private System.Windows.Forms.Label label7;

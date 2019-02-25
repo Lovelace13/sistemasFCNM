@@ -190,7 +190,6 @@ namespace sistemaFCNM
         {
             login log = new login();
             log.Show();
-            this.Close();
             FuncionesUtiles.form1.Visible = false;
             FuncionesUtiles.INVENTARIO_EQUIPO = "";
         }

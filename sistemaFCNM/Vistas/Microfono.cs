@@ -258,6 +258,10 @@ namespace sistemaFCNM.Vistas
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
             habilitarBotones();
+            comboTipo.Items.Clear();
+            comboMarca.Items.Clear();
+            comboEstado.Items.Clear();
+
             comboEstado.Items.AddRange(Datos._obtenerEstado());
             comboMarca.Items.AddRange(Datos._obtenerMarcaMicro());
             comboTipo.Items.AddRange(Datos._obtenerTipoMicro());
@@ -292,6 +296,53 @@ namespace sistemaFCNM.Vistas
                 this.microfonoTableAdapter.FillBy(this.sistemasFCNMDataSet.Microfono, (int)this.microfonoTableAdapter.ObtenerIdMicro(NuevoInventario));
 
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            String Text = Environment.UserName;
+            Datos.writeCSV(gridMicrofono, "C:\\Users\\"+Text+"\\Downloads\\MicrofonoReporte.csv");
+            MessageBox.Show("Descargado!!");
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO TIPO", "Ingrese Tipo", "", 600);
+            if ((int)this.microfonoTableAdapter.ObtenerTipo(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+
+
+            this.microfonoTableAdapter.Inserttipo(var);
+            comboTipo.Items.Clear();
+            comboTipo.Items.AddRange(Datos._obtenerTipoMicro());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MARCA", "Ingrese Marca", "", 600);
+            if ((int)this.microfonoTableAdapter.ObtenerMarca(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+
+
+            this.microfonoTableAdapter.InsertMarca(var);
+            comboMarca.Items.Clear();
+            comboMarca.Items.AddRange(Datos._obtenerMarcaMicro());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO ESTADO", "Ingrese Estado", "", 600);
+            if (FuncionesEquipo.estado.ObtenerEstado(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            FuncionesEquipo.estado.InsertEstado(var);
+            comboEstado.Items.Clear();
+            comboEstado.Items.AddRange(Datos._obtenerEstado());
         }
     }
 }

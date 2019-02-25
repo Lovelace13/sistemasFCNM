@@ -287,5 +287,48 @@ namespace sistemaFCNM.Vistas
 
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MARCA", "Ingrese Marca", "", 600);
+            if ((int)this.tecladoTableAdapter.ObtenerMarca(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.tecladoTableAdapter.InsertMarca(var);
+            comboMarca.Items.Clear();
+            comboMarca.Items.AddRange(Datos._obtenerMarcaTeclado());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO ESTADO", "Ingrese Estado", "", 600);
+            if (FuncionesEquipo.estado.ObtenerEstado(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            FuncionesEquipo.estado.InsertEstado(var);
+            comboEstado.Items.Clear();
+            comboEstado.Items.AddRange(Datos._obtenerEstado());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MODELO", "Ingrese Modelo", "", 600);
+            if ((int)this.tecladoTableAdapter.ObtenerModelo(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.tecladoTableAdapter.InsertModelo(var);
+            comboModelo.Items.Clear();
+            comboModelo.Items.AddRange(Datos._obtenerModeloTeclado());
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            String Text = Environment.UserName;
+            Datos.writeCSV(gridTeclado, "C:\\Users\\"+Text+"\\Downloads\\TecladoReporte.csv");
+            MessageBox.Show("Descargado!!");
+        }
     }
 }

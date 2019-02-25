@@ -296,5 +296,60 @@ namespace sistemaFCNM.Vistas
 
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MARCA", "Ingrese Marca", "", 600);
+            if ((int)this.reguladorTableAdapter.ObtenerMarca(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.reguladorTableAdapter.InsertMarca(var);
+            comboMarca.Items.Clear();
+            comboMarca.Items.AddRange(Datos._obtenerMarcaRegulador());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO ESTADO", "Ingrese Estado", "", 600);
+            if (FuncionesEquipo.estado.ObtenerEstado(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            FuncionesEquipo.estado.InsertEstado(var);
+            comboEstado.Items.Clear();
+            comboEstado.Items.AddRange(Datos._obtenerEstado());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MODELO", "Ingrese Modelo", "", 600);
+            if ((int)this.reguladorTableAdapter.ObtenerModelo(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.reguladorTableAdapter.InsertModelo(var);
+            comboModelo.Items.Clear();
+            comboModelo.Items.AddRange(Datos._obtenerModeloregulador());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO TIPO", "Ingrese Tipo", "", 600);
+            if ((int)this.reguladorTableAdapter.ObtenerTipo(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.reguladorTableAdapter.InsertTipo(var);
+            comboTipo.Items.Clear();
+            comboTipo.Items.AddRange(Datos._obtenerTipoRegulador());
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            String Text = Environment.UserName;
+            Datos.writeCSV(gridRegulador, "C:\\Users\\"+Text+"\\Downloads\\ReguladorReporte.csv");
+            MessageBox.Show("Descargado!!");
+        }
     }
 }

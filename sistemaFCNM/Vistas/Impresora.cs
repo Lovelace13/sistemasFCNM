@@ -255,6 +255,10 @@ namespace sistemaFCNM.Vistas
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             habilitarBotones();
+            comboMarca.Items.Clear();
+            comboModelo.Items.Clear();
+            comboEstado.Items.Clear();
+
             comboEstado.Items.AddRange(Datos._obtenerEstado());
             comboMarca.Items.AddRange(Datos._obtenerMarcaImpresora());
             comboModelo.Items.AddRange(Datos._obtenerModeloImpresora());
@@ -290,6 +294,49 @@ namespace sistemaFCNM.Vistas
                 this.impresoraTableAdapter.FillBy(this.sistemasFCNMDataSet.Impresora, (int)this.impresoraTableAdapter.ObtenerIdImpresora(NuevoInventario));
 
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MARCA", "Ingrese Marca", "", 600);
+            if ((int)this.impresoraTableAdapter.ObtenerMarca(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.impresoraTableAdapter.InsertMarca(var);
+            comboMarca.Items.Clear();
+            comboMarca.Items.AddRange(Datos._obtenerMarcaImpresora());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MODELO", "Ingrese Modelo", "", 600);
+            if ((int)this.impresoraTableAdapter.ObtenerModelo(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.impresoraTableAdapter.InsertModelo(var);
+            comboModelo.Items.Clear();
+            comboModelo.Items.AddRange(Datos._obtenerModeloImpresora());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO ESTADO", "Ingrese Estado", "", 600);
+            if (FuncionesEquipo.estado.ObtenerEstado(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            FuncionesEquipo.estado.InsertEstado(var);
+            comboEstado.Items.Clear();
+            comboEstado.Items.AddRange(Datos._obtenerEstado());
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            String Text = Environment.UserName;
+            Datos.writeCSV(gridImpresora, "C:\\Users\\"+Text+"\\Downloads\\ImpresoraReporte.csv");
+            MessageBox.Show("Descargado!!");
         }
     }
 }

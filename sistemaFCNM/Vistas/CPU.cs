@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -481,6 +482,13 @@ namespace sistemaFCNM.Vistas
             this.TagAnterior = txtTag.Text.Trim();
 
             this.gridCpu.Enabled = false;
+            comboTipo.Items.Clear();
+            comboPerfil.Items.Clear();
+            comboMarca.Items.Clear();
+            comboEstado.Items.Clear();
+            comboProcesador.Items.Clear();
+            comboDisco.Items.Clear();
+            comboMemoria.Items.Clear();
 
             comboTipo.Items.AddRange(Datos._obtenerTipoPC());
             comboPerfil.Items.AddRange(Datos._obtenerPerfil());
@@ -493,8 +501,115 @@ namespace sistemaFCNM.Vistas
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Datos.writeCSV(gridCpu, "C:\\Users\\JULIO\\Downloads\\CpuReporte.csv");
+            
+            String Text = Environment.UserName;
+
+            Datos.writeCSV(gridCpu, "C:\\Users\\"+Text+"\\Downloads\\CpuReporte.csv");
             MessageBox.Show("Descargado!!");
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO TIPO PC", "Ingrese Tipo Pc", "", 600);
+
+            if ((int)this.cpuTableAdapter.ObtenerTipo(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+
+
+
+            this.cpuTableAdapter.InsertTipo(var);
+            comboTipo.Items.Clear();
+            comboTipo.Items.AddRange(Datos._obtenerTipoPC());
+
+
+
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO PERFIL", "Ingrese Perfil", "", 600);
+            if ((int)this.cpuTableAdapter.ObtenerPerfil(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+
+
+            this.cpuTableAdapter.InsertPerfil(var);
+            comboPerfil.Items.Clear();
+            comboPerfil.Items.AddRange(Datos._obtenerPerfil());
+
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MARCA", "Ingrese Marca", "", 600);
+            if ((int)this.cpuTableAdapter.ObtenerMarca(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.cpuTableAdapter.InsertMarca(var);
+            comboMarca.Items.Clear();
+            comboMarca.Items.AddRange(Datos._obtenerMarca());
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO ESTADO", "Ingrese Estado", "", 600);
+            if (FuncionesEquipo.estado.ObtenerEstado(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            FuncionesEquipo.estado.InsertEstado(var);
+            comboEstado.Items.Clear();
+            comboEstado.Items.AddRange(Datos._obtenerEstado());
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO PROCESADOR", "Ingrese Procesador", "", 600);
+            if ((int)this.cpuTableAdapter.ObtenerProcesador(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.cpuTableAdapter.InsertProcesador(var);
+            comboProcesador.Items.Clear();
+            comboProcesador.Items.AddRange(Datos._obtenerProcesador());
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO DISCO", "Ingrese Disco", "", 600);
+            if ((int)this.cpuTableAdapter.ObtenerDisco(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.cpuTableAdapter.InsertDisco(var);
+            comboDisco.Items.Clear();
+            comboDisco.Items.AddRange(Datos._obtenerDisco());
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string var = Microsoft.VisualBasic.Interaction.InputBox("NUEVO MEMORIA", "Ingrese Memoria", "", 600);
+            if ((int)this.cpuTableAdapter.ObtenerMemoria(var).ToString().Length != 0)
+            {
+                MessageBox.Show("Dato ya Existe!!"); return;
+            }
+            this.cpuTableAdapter.InsertMemoria(var);
+            comboMemoria.Items.Clear();
+            comboMemoria.Items.AddRange(Datos._obtenerMemoria());
         }
     }
 }

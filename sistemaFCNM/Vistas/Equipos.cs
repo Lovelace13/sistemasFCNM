@@ -892,7 +892,8 @@ namespace sistemaFCNM
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Datos.writeCSV(gridInventario, "C:\\Users\\JULIO\\Downloads\\EquiposReporte.csv");
+            String Text = Environment.UserName;
+            Datos.writeCSV(gridInventario, "C:\\Users\\"+Text+"\\Downloads\\EquiposReporte.csv");
             MessageBox.Show("Descargado!!");
         }
         #endregion
