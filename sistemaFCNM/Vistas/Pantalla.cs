@@ -27,6 +27,7 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Pantalla' Puede moverla o quitarla según sea necesario.
             this.pantallaTableAdapter.Fill(this.sistemasFCNMDataSet.Pantalla);
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -92,7 +93,8 @@ namespace sistemaFCNM.Vistas
             {
                 if (this.pantallaTableAdapter.ObtenerIdPantalla(txtPantalla.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtPantalla.Text.Trim())
                 {
-                    MessageBox.Show("Inventario Repetido ");
+                    if (txtPantalla.Enabled)
+                        MessageBox.Show("Inventario Repetido ");
                 }
             }
             catch (NullReferenceException)
@@ -152,6 +154,7 @@ namespace sistemaFCNM.Vistas
                  this.pantallaTableAdapter.ObtenerPulgadas(comboPulgadas.Text), this.pantallaTableAdapter.ObtenerModelo(comboModelo.Text),
                  this.pantallaTableAdapter.ObtenerEstado(comboEstado.Text), txtPantalla.Text.Trim());
             }
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Pantalla: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
 
@@ -240,13 +243,13 @@ namespace sistemaFCNM.Vistas
                     guardar();
                     this.gridPantalla.Enabled = true;
                     this.ApagarBotones();
-                    this.pantallaTableAdapter.Fill(this.sistemasFCNMDataSet.Pantalla);
+                    Pantalla_Load( sender,  e);
                     return;
 
                 case "No":
                     ApagarBotones();
                     gridPantalla.Enabled = true;
-                    this.pantallaTableAdapter.Fill(this.sistemasFCNMDataSet.Pantalla);
+                    Pantalla_Load( sender,  e);
                     return;
 
                 case "Cancel":

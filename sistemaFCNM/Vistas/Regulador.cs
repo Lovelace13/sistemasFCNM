@@ -27,6 +27,7 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Regulador' Puede moverla o quitarla según sea necesario.
             this.reguladorTableAdapter.Fill(this.sistemasFCNMDataSet.Regulador);
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -118,7 +119,8 @@ namespace sistemaFCNM.Vistas
             {
                 if (this.reguladorTableAdapter.ObtenerIdRegulador(txtRegulador.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtRegulador.Text.Trim())
                 {
-                    MessageBox.Show("Inventario Repetido ");
+                    if (txtRegulador.Enabled)
+                        MessageBox.Show("Inventario Repetido ");
                 }
             }
             catch (NullReferenceException)
@@ -180,7 +182,7 @@ namespace sistemaFCNM.Vistas
                  this.reguladorTableAdapter.ObtenerEstado(comboEstado.Text),
                  this.reguladorTableAdapter.ObtenerTipo(comboTipo.Text), txtRegulador.Text.Trim());
             }
-
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Regulador: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
 
@@ -225,13 +227,13 @@ namespace sistemaFCNM.Vistas
                 case "Yes":
 
                     guardar();
-                    this.reguladorTableAdapter.Fill(this.sistemasFCNMDataSet.Regulador);
+                    Regulador_Load( sender,  e);
                     ApagarBotones();
                     gridRegulador.Enabled = true;
                     return;
 
                 case "No":
-                    this.reguladorTableAdapter.Fill(this.sistemasFCNMDataSet.Regulador);
+                    Regulador_Load( sender,  e);
                     ApagarBotones();
                     gridRegulador.Enabled = true;
                     return;

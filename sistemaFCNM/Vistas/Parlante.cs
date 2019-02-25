@@ -27,6 +27,7 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Parlante' Puede moverla o quitarla según sea necesario.
             this.parlanteTableAdapter.Fill(this.sistemasFCNMDataSet.Parlante);
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -91,7 +92,8 @@ namespace sistemaFCNM.Vistas
 
                 if (this.parlanteTableAdapter.ObtenerIdParlante(txtParlante.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtParlante.Text.Trim())
                 {
-                    MessageBox.Show("Inventario Repetido ");
+                    if (txtParlante.Enabled)
+                        MessageBox.Show("Inventario Repetido ");
                 }
 
             }
@@ -152,6 +154,7 @@ namespace sistemaFCNM.Vistas
                 this.parlanteTableAdapter.ObtenerModelo(comboModelo.Text),
                 this.parlanteTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
             }
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Parlante: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
         }
@@ -224,13 +227,13 @@ namespace sistemaFCNM.Vistas
                 case "Yes":
 
                     guardar();
-                    this.parlanteTableAdapter.Fill(this.sistemasFCNMDataSet.Parlante);
+                    Parlante_Load( sender,  e);
                     ApagarBotones();
                     gridParlante.Enabled = true;
                     return;
 
                 case "No":
-                    this.parlanteTableAdapter.Fill(this.sistemasFCNMDataSet.Parlante);
+                    Parlante_Load( sender,  e);
                     ApagarBotones();
                     gridParlante.Enabled = true;
                     return;

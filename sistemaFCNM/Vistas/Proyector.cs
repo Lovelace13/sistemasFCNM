@@ -27,6 +27,7 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Proyector' Puede moverla o quitarla según sea necesario.
             this.proyectorTableAdapter.Fill(this.sistemasFCNMDataSet.Proyector);
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -92,7 +93,8 @@ namespace sistemaFCNM.Vistas
             {
                 if (this.proyectorTableAdapter.ObtenerIdProyector(txtProyector.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtProyector.Text.Trim())
                 {
-                    MessageBox.Show("Inventario Repetido ");
+                    if (txtProyector.Enabled)
+                        MessageBox.Show("Inventario Repetido ");
                 }
             }
             catch (NullReferenceException)
@@ -192,7 +194,7 @@ namespace sistemaFCNM.Vistas
                  this.proyectorTableAdapter.ObtenerModelo(comboModelo.Text),
                  this.proyectorTableAdapter.ObtenerEstado(comboEstado.Text), txtProyector.Text.Trim());
             }
-
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Proyector: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
         }
@@ -258,13 +260,13 @@ namespace sistemaFCNM.Vistas
                 case "Yes":
 
                     guardar();
-                    this.proyectorTableAdapter.Fill(this.sistemasFCNMDataSet.Proyector);
+                    Proyector_Load( sender,  e);
                     ApagarBotones();
                     gridProyector.Enabled = true;
                     return;
 
                 case "No":
-                    this.proyectorTableAdapter.Fill(this.sistemasFCNMDataSet.Proyector);
+                    Proyector_Load( sender,  e);
                     ApagarBotones();
                     gridProyector.Enabled = true;
                     return;

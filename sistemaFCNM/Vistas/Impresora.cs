@@ -28,7 +28,7 @@ namespace sistemaFCNM.Vistas
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Impresora' Puede moverla o quitarla según sea necesario.
             this.impresoraTableAdapter.Fill(this.sistemasFCNMDataSet.Impresora);
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Impresora' Puede moverla o quitarla según sea necesario.
-
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -125,7 +125,8 @@ namespace sistemaFCNM.Vistas
 
                 if (this.impresoraTableAdapter.ObtenerIdImpresora(txtImpresora.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtImpresora.Text.Trim())
                 {
-                    MessageBox.Show("Inventario Repetido ");
+                    if (txtImpresora.Enabled)
+                        MessageBox.Show("Inventario Repetido ");
                 }
 
             }
@@ -186,7 +187,7 @@ namespace sistemaFCNM.Vistas
                 this.impresoraTableAdapter.ObtenerModelo(comboModelo.Text),
                 this.impresoraTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
             }
-
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Impresora: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
 
@@ -224,13 +225,13 @@ namespace sistemaFCNM.Vistas
                     guardar();
                     this.gridImpresora.Enabled = true;
                     this.ApagarBotones();
-                    this.impresoraTableAdapter.Fill(this.sistemasFCNMDataSet.Impresora);
+                    Impresora_Load(sender, e);
                     return;
 
                 case "No":
                     this.gridImpresora.Enabled = true;
                     this.ApagarBotones();
-                    this.impresoraTableAdapter.Fill(this.sistemasFCNMDataSet.Impresora);
+                    Impresora_Load(sender, e);
                     return;
 
                 case "Cancel":

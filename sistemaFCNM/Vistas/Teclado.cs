@@ -26,6 +26,7 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Teclado' Puede moverla o quitarla según sea necesario.
             this.tecladoTableAdapter.Fill(this.sistemasFCNMDataSet.Teclado);
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -115,7 +116,8 @@ namespace sistemaFCNM.Vistas
             {
                 if (this.tecladoTableAdapter.ObtenerIdTeclado(txtTeclado.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtTeclado.Text.Trim())
                 {
-                    MessageBox.Show("Inventario Repetido ");
+                    if (txtTeclado.Enabled)
+                        MessageBox.Show("Inventario Repetido ");
                 }
             }
             catch (NullReferenceException)
@@ -175,7 +177,7 @@ namespace sistemaFCNM.Vistas
                  this.tecladoTableAdapter.ObtenerModelo(comboModelo.Text),
                  this.tecladoTableAdapter.ObtenerEstado(comboEstado.Text), txtTeclado.Text.Trim());
             }
-
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Teclado: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
         }
@@ -218,13 +220,13 @@ namespace sistemaFCNM.Vistas
                 case "Yes":
 
                     guardar();
-                    this.tecladoTableAdapter.Fill(this.sistemasFCNMDataSet.Teclado);
+                    Teclado_Load( sender,  e);
                     ApagarBotones();
                     gridTeclado.Enabled = true;
                     return;
 
                 case "No":
-                    this.tecladoTableAdapter.Fill(this.sistemasFCNMDataSet.Teclado);
+                    Teclado_Load( sender,  e);
                     ApagarBotones();
                     gridTeclado.Enabled = true;
                     return;

@@ -100,6 +100,7 @@ namespace sistemaFCNM.Controlador
         }
         public static void ActualizarInventario(String observacion)
         {
+            
             FechaInventarioTableAdapter fecha = new FechaInventarioTableAdapter();
             int var16 = 0;
             try
@@ -120,7 +121,7 @@ namespace sistemaFCNM.Controlador
                 fecha.InsertFecha(DateTime.Now.ToString("yyyy-MM-dd"));
                 var16 = (int)fecha.ObtenerFecha(DateTime.Now.ToString("yyyy-MM-dd"));
             }
-            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
+           
 
             UsuarioTableAdapter usuario = new UsuarioTableAdapter();
             int var17 = (int)usuario.ObtenerIDUsuario(FuncionesUtiles.USUARIO);

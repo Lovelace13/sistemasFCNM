@@ -255,6 +255,7 @@
             // comboTipo
             // 
             this.comboTipo.Enabled = false;
+            this.comboTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reguladorBindingSource, "Tipo", true));
             this.comboTipo.FormattingEnabled = true;
             this.comboTipo.Location = new System.Drawing.Point(160, 120);
             this.comboTipo.Name = "comboTipo";

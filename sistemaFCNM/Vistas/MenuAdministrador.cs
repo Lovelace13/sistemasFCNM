@@ -36,7 +36,18 @@ namespace sistemaFCNM.Vistas
 
         private void btnCargarDoc_Click(object sender, EventArgs e)
         {
-            new Datos().crearListaObjetos();
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                new Datos().crearListaObjetos();
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception)
+            {
+
+                
+            }
+            
         }
 
         private void btnDescargar_Click(object sender, EventArgs e)

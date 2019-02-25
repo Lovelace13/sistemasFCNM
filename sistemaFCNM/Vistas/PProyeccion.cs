@@ -26,6 +26,7 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.PantallaProyeccion' Puede moverla o quitarla según sea necesario.
             this.pantallaProyeccionTableAdapter.Fill(this.sistemasFCNMDataSet.PantallaProyeccion);
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -118,7 +119,8 @@ namespace sistemaFCNM.Vistas
             {
                 if (this.pantallaProyeccionTableAdapter.ObtenerIdPP(txtPproyeccion.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtPproyeccion.Text.Trim())
                 {
-                    MessageBox.Show("Inventario Repetido ");
+                    if (txtPproyeccion.Enabled)
+                        MessageBox.Show("Inventario Repetido ");
                 }
             }
             catch (NullReferenceException)
@@ -180,7 +182,7 @@ namespace sistemaFCNM.Vistas
                  this.pantallaProyeccionTableAdapter.ObtenerEstado(comboEstado.Text),
                  this.pantallaProyeccionTableAdapter.ObtenerDimensiones(comboDimensiones.Text), txtPproyeccion.Text.Trim());
             }
-
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Pantalla Proyeccion: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
         }
@@ -225,13 +227,13 @@ namespace sistemaFCNM.Vistas
                 case "Yes":
 
                     guardar();
-                    this.pantallaProyeccionTableAdapter.Fill(this.sistemasFCNMDataSet.PantallaProyeccion);
+                    PProyeccion_Load( sender,  e);
                     ApagarBotones();
                     gridPP.Enabled = true;
                     return;
 
                 case "No":
-                    this.pantallaProyeccionTableAdapter.Fill(this.sistemasFCNMDataSet.PantallaProyeccion);
+                    PProyeccion_Load( sender,  e);
                     ApagarBotones();
                     gridPP.Enabled = true;
                     return;

@@ -37,7 +37,7 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Cpu' Puede moverla o quitarla según sea necesario.
             this.cpuTableAdapter.Fill(this.sistemasFCNMDataSet.Cpu);
-
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -105,6 +105,7 @@ namespace sistemaFCNM.Vistas
             {
                 if (this.cpuTableAdapter.ObtenerIDCPU(txtCpu.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtCpu.Text.Trim())
                 {
+                    if(txtCpu.Enabled)
                     MessageBox.Show("Inventario Repetido ");
                 }
             }
@@ -311,7 +312,7 @@ namespace sistemaFCNM.Vistas
 
                 this.cpuTableAdapter.UpdateTablaCpuDisco(this.cpuTableAdapter.ObtenerDisco(comboDisco.Text), txtCpu.Text.Trim());
             }
-
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Cpu: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
         }

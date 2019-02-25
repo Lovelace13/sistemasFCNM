@@ -28,6 +28,7 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Radio' Puede moverla o quitarla según sea necesario.
             this.radioTableAdapter.Fill(this.sistemasFCNMDataSet.Radio);
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -119,7 +120,8 @@ namespace sistemaFCNM.Vistas
             {
                 if (this.radioTableAdapter.ObtenerIdRadio(txtRadio.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtRadio.Text.Trim())
                 {
-                    MessageBox.Show("Inventario Repetido ");
+                    if (txtRadio.Enabled)
+                        MessageBox.Show("Inventario Repetido ");
                 }
             }
             catch (NullReferenceException)
@@ -179,6 +181,7 @@ namespace sistemaFCNM.Vistas
                (int)this.radioTableAdapter.ObtenerModelo(comboModelo.Text),
                  this.radioTableAdapter.ObtenerEstado(comboEstado.Text), txtRadio.Text.Trim());
             }
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Radio: "+Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600)+" ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
         }
@@ -248,13 +251,13 @@ namespace sistemaFCNM.Vistas
                 case "Yes":
 
                     guardar();
-                    this.radioTableAdapter.Fill(this.sistemasFCNMDataSet.Radio);
+                    Radio_Load( sender,  e);
                     ApagarBotones();
                     gridRadio.Enabled = true;
                     return;
 
                 case "No":
-                    this.radioTableAdapter.Fill(this.sistemasFCNMDataSet.Radio);
+                    Radio_Load( sender,  e);
                     ApagarBotones();
                     gridRadio.Enabled = true;
                     return;

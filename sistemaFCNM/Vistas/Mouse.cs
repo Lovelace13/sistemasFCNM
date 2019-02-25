@@ -27,6 +27,7 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Mouse' Puede moverla o quitarla según sea necesario.
             this.mouseTableAdapter.Fill(this.sistemasFCNMDataSet.Mouse);
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -119,7 +120,8 @@ namespace sistemaFCNM.Vistas
             {
                 if (this.mouseTableAdapter.ObtenerIdMouse(txtMouse.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtMouse.Text.Trim())
                 {
-                    MessageBox.Show("Inventario Repetido ");
+                    if (txtMouse.Enabled)
+                        MessageBox.Show("Inventario Repetido ");
                 }
             }
             catch (NullReferenceException)
@@ -179,6 +181,7 @@ namespace sistemaFCNM.Vistas
                 this.mouseTableAdapter.ObtenerModelo(comboModelo.Text),
                 this.mouseTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
             }
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Mouse: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
 
@@ -250,13 +253,13 @@ namespace sistemaFCNM.Vistas
                 case "Yes":
 
                     guardar();
-                    this.mouseTableAdapter.Fill(this.sistemasFCNMDataSet.Mouse);
+                    Mouse_Load( sender,  e);
                     ApagarBotones();
                     gridMouse.Enabled = true;
                     return;
 
                 case "No":
-                    this.mouseTableAdapter.Fill(this.sistemasFCNMDataSet.Mouse);
+                    Mouse_Load( sender,  e);
                     ApagarBotones();
                     gridMouse.Enabled = true;
                     return;

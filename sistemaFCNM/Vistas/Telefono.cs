@@ -28,6 +28,7 @@ namespace sistemaFCNM.Vistas
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Telefono' Puede moverla o quitarla según sea necesario.
             this.telefonoTableAdapter.Fill(this.sistemasFCNMDataSet.Telefono);
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -120,7 +121,8 @@ namespace sistemaFCNM.Vistas
             {
                 if (this.telefonoTableAdapter.ObtenerIdTelefono(txtTelefono.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtTelefono.Text.Trim())
                 {
-                    MessageBox.Show("Inventario Repetido ");
+                    if (txtTelefono.Enabled)
+                        MessageBox.Show("Inventario Repetido ");
                 }
             }
             catch (NullReferenceException)
@@ -219,7 +221,7 @@ namespace sistemaFCNM.Vistas
                 this.telefonoTableAdapter.ObtenerEstado(comboEstado.Text),
                 this.telefonoTableAdapter.ObtenerTipo(comboTipo.Text), txtTelefono.Text.Trim());
             }
-
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Telefono: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
 
@@ -264,13 +266,13 @@ namespace sistemaFCNM.Vistas
                 case "Yes":
 
                     guardar();
-                    this.telefonoTableAdapter.Fill(this.sistemasFCNMDataSet.Telefono);
+                    Telefono_Load( sender,  e);
                     ApagarBotones();
                     gridTelefono.Enabled = true;
                     return;
 
                 case "No":
-                    this.telefonoTableAdapter.Fill(this.sistemasFCNMDataSet.Telefono);
+                    Telefono_Load( sender,  e);
                     ApagarBotones();
                     gridTelefono.Enabled = true;
                     return;

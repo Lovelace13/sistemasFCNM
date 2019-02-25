@@ -28,6 +28,7 @@ namespace sistemaFCNM.Vistas
             // TODO: esta línea de código carga datos en la tabla 'sistemasFCNMDataSet.Microfono' Puede moverla o quitarla según sea necesario.
 
             this.microfonoTableAdapter.Fill(this.sistemasFCNMDataSet.Microfono);
+            txtEquipo.Text = FuncionesUtiles.INVENTARIO_EQUIPO;
             if (FuncionesUtiles.masdetallesActiva || FuncionesUtiles.siguienteActiva)
             {
                 FuncionesUtiles.masdetallesActiva = false;
@@ -93,7 +94,8 @@ namespace sistemaFCNM.Vistas
 
                 if (this.microfonoTableAdapter.ObtenerIdMicro(txtMicro.Text.Trim()).ToString().Length != 0 && this.InventarioAnterior != txtMicro.Text.Trim())
                 {
-                    MessageBox.Show("Inventario Repetido ");
+                    if (txtMicro.Enabled)
+                        MessageBox.Show("Inventario Repetido ");
                 }
                 else if (this.microfonoTableAdapter.ObtenerIdMicro(txtMicro.Text.Trim()).ToString().Length == 0 && this.InventarioAnterior != txtMicro.Text.Trim())
                 {
@@ -157,7 +159,7 @@ namespace sistemaFCNM.Vistas
                 this.microfonoTableAdapter.ObtenerTipo(comboTipo.Text),
                 this.microfonoTableAdapter.ObtenerEstado(comboEstado.Text), txtSerie.Text.Trim());
             }
-
+            if (FuncionesUtiles.INVENTARIO_EQUIPO == "" || FuncionesUtiles.INVENTARIO_EQUIPO == null) { return; }
             FuncionesUtiles.OBSERVACION += "Microfono: " + Microsoft.VisualBasic.Interaction.InputBox("OBSERVACION", "Ingrese Su Observacion", "", 600) + " ; ";
             FuncionesEquipo.ActualizarInventario(FuncionesUtiles.OBSERVACION);
 
@@ -225,13 +227,13 @@ namespace sistemaFCNM.Vistas
                 case "Yes":
 
                     guardar();
-                    this.microfonoTableAdapter.Fill(this.sistemasFCNMDataSet.Microfono);
+                    Microfono_Load( sender,  e);
                     ApagarBotones();
                     gridMicrofono.Enabled = true;
                     return;
 
                 case "No":
-                    this.microfonoTableAdapter.Fill(this.sistemasFCNMDataSet.Microfono);
+                    Microfono_Load( sender,  e);
                     ApagarBotones();
                     gridMicrofono.Enabled = true;
                     return;
