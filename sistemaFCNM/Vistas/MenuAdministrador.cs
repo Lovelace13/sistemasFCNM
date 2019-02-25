@@ -1,4 +1,5 @@
 ﻿using sistemaFCNM.Clases;
+using sistemaFCNM.sistemasFCNMDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,7 @@ namespace sistemaFCNM.Vistas
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("BIENVENIDO " + FuncionesUtiles.USUARIO);
+            MessageBox.Show("BIENVENIDO " + FuncionesUtiles.NOMBRE_ADMIN);
             this.Visible = false;
             FuncionesUtiles.form1 = new mainPrincipal();
             FuncionesUtiles.form1.Show();
@@ -51,6 +52,25 @@ namespace sistemaFCNM.Vistas
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
             string dellUser = Microsoft.VisualBasic.Interaction.InputBox("ELIMINAR USUARIO", "Ingrese Usuario Espol", "", 600);
+            UsuarioTableAdapter user = new UsuarioTableAdapter();
+            user.UpdateTipo(3,dellUser);
+            MessageBox.Show("Permisos Eliminados");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string dellUser = Microsoft.VisualBasic.Interaction.InputBox("Otorgar Permiso Usuario", "Ingrese Usuario Espol", "", 600);
+            UsuarioTableAdapter user = new UsuarioTableAdapter();
+            user.UpdateTipo(1, dellUser);
+            MessageBox.Show("Permisos Otorgados");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string dellUser = Microsoft.VisualBasic.Interaction.InputBox("Otorgar Permiso Usuario", "Ingrese Usuario Espol", "", 600);
+            UsuarioTableAdapter user = new UsuarioTableAdapter();
+            user.UpdateTipo(2, dellUser);
+            MessageBox.Show("Permisos Administrador Otorgados");
         }
     }
 }

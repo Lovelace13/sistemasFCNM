@@ -35,6 +35,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnDescargar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
@@ -66,18 +70,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(285, 134);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(520, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 24);
+            this.label3.Size = new System.Drawing.Size(170, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Eliminar Usuario";
+            this.label3.Text = "Quitar Permisos Usuario";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(155, 259);
+            this.label4.Location = new System.Drawing.Point(40, 259);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(229, 24);
             this.label4.TabIndex = 6;
@@ -88,7 +92,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(457, 134);
+            this.label6.Location = new System.Drawing.Point(297, 134);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(164, 24);
             this.label6.TabIndex = 10;
@@ -108,11 +112,59 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(410, 259);
+            this.label8.Location = new System.Drawing.Point(311, 259);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(149, 24);
             this.label8.TabIndex = 14;
             this.label8.Text = "Descargar CSV";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(520, 199);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(186, 17);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Otorgar Permiso Ayudante ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(500, 288);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(215, 17);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Otorgar Permiso Administrador";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::sistemaFCNM.Properties.Resources.fb2ca85f6f69c17e297267f6b1cae6c3;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(558, 219);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 80);
+            this.button2.TabIndex = 19;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::sistemaFCNM.Properties.Resources.newUser;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(587, 144);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 52);
+            this.button1.TabIndex = 17;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDescargar
             // 
@@ -121,7 +173,7 @@
             this.btnDescargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDescargar.FlatAppearance.BorderSize = 0;
             this.btnDescargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDescargar.Location = new System.Drawing.Point(438, 182);
+            this.btnDescargar.Location = new System.Drawing.Point(339, 182);
             this.btnDescargar.Name = "btnDescargar";
             this.btnDescargar.Size = new System.Drawing.Size(103, 74);
             this.btnDescargar.TabIndex = 13;
@@ -149,7 +201,7 @@
             this.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnInventario.FlatAppearance.BorderSize = 0;
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventario.Location = new System.Drawing.Point(485, 57);
+            this.btnInventario.Location = new System.Drawing.Point(325, 57);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(103, 74);
             this.btnInventario.TabIndex = 9;
@@ -163,7 +215,7 @@
             this.btnCargarDoc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCargarDoc.FlatAppearance.BorderSize = 0;
             this.btnCargarDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargarDoc.Location = new System.Drawing.Point(222, 182);
+            this.btnCargarDoc.Location = new System.Drawing.Point(107, 182);
             this.btnCargarDoc.Name = "btnCargarDoc";
             this.btnCargarDoc.Size = new System.Drawing.Size(103, 74);
             this.btnCargarDoc.TabIndex = 5;
@@ -177,9 +229,9 @@
             this.btnEliminarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEliminarUsuario.FlatAppearance.BorderSize = 0;
             this.btnEliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(313, 57);
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(571, 57);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
-            this.btnEliminarUsuario.Size = new System.Drawing.Size(103, 74);
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(71, 51);
             this.btnEliminarUsuario.TabIndex = 3;
             this.btnEliminarUsuario.UseVisualStyleBackColor = false;
             this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
@@ -203,6 +255,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 417);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnDescargar);
             this.Controls.Add(this.label7);
@@ -240,5 +296,9 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnDescargar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -61,9 +61,14 @@ namespace sistemaFCNM.Vistas
                 else if(user.TipoUsuario == "ADMINISTRADOR")
                 {
                     MenuAdministrador admin = new MenuAdministrador();
-                    this.Visible = false;
+                    FuncionesUtiles.NOMBRE_ADMIN = user.NombreUsuario;
                     FuncionesUtiles.USUARIO = user.IdUsuario;
+                    this.Visible = false;
                     admin.Show();
+                }
+                else
+                {
+                    MessageBox.Show("USUARIO NO TIENE PERMISOS !!");
                 }
                 
                 

@@ -26,6 +26,7 @@ namespace sistemaFCNM.Clases
         public static string OBSERVACION;
         public static bool nuevoRegistro = false;
         public static mainPrincipal form1;
+        public static String NOMBRE_ADMIN = "";
         #endregion
 
         #region Funciones Estaticas para navegar entre ventanas

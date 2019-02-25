@@ -10,6 +10,9 @@ VALUES ('AYUDANTE');
 INSERT INTO TipoUsuario(tipo)
 VALUES ('ADMINISTRADOR'); 
 
+INSERT INTO TipoUsuario(tipo)
+VALUES ('ESTUDIANTE');
+
 insert into Oficina (edificio,nombre_oficina,area)
 values('31AyB','25AB-001','Prueba');
 USE [SistemasFCNM]
@@ -81,3 +84,5 @@ FROM            Cpu INNER JOIN
                          Equipo ON Cpu.ID = Equipo.Cpu INNER JOIN
                          EquipoInventario ON Equipo.Inventario = EquipoInventario.ID
 WHERE        (EquipoInventario.Inventario = '2018-007')
+
+select * from Inventario;
