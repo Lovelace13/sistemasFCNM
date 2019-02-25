@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.Nombre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.radioAyudante = new System.Windows.Forms.RadioButton();
+            this.radioAdmin = new System.Windows.Forms.RadioButton();
+            this.txtconfirmPass = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Nombre
@@ -52,12 +52,12 @@
             this.Nombre.TabIndex = 0;
             this.Nombre.Text = "Nombre";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNombre.Location = new System.Drawing.Point(128, 62);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(189, 20);
+            this.txtNombre.TabIndex = 1;
             // 
             // label2
             // 
@@ -68,19 +68,19 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Apellido";
             // 
-            // textBox2
+            // txtApellido
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(189, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtApellido.Location = new System.Drawing.Point(128, 102);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(189, 20);
+            this.txtApellido.TabIndex = 3;
             // 
-            // textBox3
+            // txtUser
             // 
-            this.textBox3.Location = new System.Drawing.Point(128, 142);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(189, 20);
-            this.textBox3.TabIndex = 5;
+            this.txtUser.Location = new System.Drawing.Point(128, 142);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(189, 20);
+            this.txtUser.TabIndex = 5;
             // 
             // label1
             // 
@@ -91,13 +91,13 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Usuario Espol";
             // 
-            // textBox4
+            // txtPass
             // 
-            this.textBox4.Location = new System.Drawing.Point(128, 184);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(189, 20);
-            this.textBox4.TabIndex = 7;
+            this.txtPass.Location = new System.Drawing.Point(128, 184);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(189, 20);
+            this.txtPass.TabIndex = 7;
             // 
             // label3
             // 
@@ -108,35 +108,35 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Password";
             // 
-            // radioButton1
+            // radioAyudante
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(89, 298);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(70, 17);
-            this.radioButton1.TabIndex = 8;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Ayudante";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioAyudante.AutoSize = true;
+            this.radioAyudante.Location = new System.Drawing.Point(89, 298);
+            this.radioAyudante.Name = "radioAyudante";
+            this.radioAyudante.Size = new System.Drawing.Size(70, 17);
+            this.radioAyudante.TabIndex = 8;
+            this.radioAyudante.TabStop = true;
+            this.radioAyudante.Text = "Ayudante";
+            this.radioAyudante.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioAdmin
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(233, 298);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(88, 17);
-            this.radioButton2.TabIndex = 9;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Administrador";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioAdmin.AutoSize = true;
+            this.radioAdmin.Location = new System.Drawing.Point(233, 298);
+            this.radioAdmin.Name = "radioAdmin";
+            this.radioAdmin.Size = new System.Drawing.Size(88, 17);
+            this.radioAdmin.TabIndex = 9;
+            this.radioAdmin.TabStop = true;
+            this.radioAdmin.Text = "Administrador";
+            this.radioAdmin.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // txtconfirmPass
             // 
-            this.textBox5.Location = new System.Drawing.Point(128, 227);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '*';
-            this.textBox5.Size = new System.Drawing.Size(189, 20);
-            this.textBox5.TabIndex = 11;
+            this.txtconfirmPass.Location = new System.Drawing.Point(128, 227);
+            this.txtconfirmPass.Name = "txtconfirmPass";
+            this.txtconfirmPass.PasswordChar = '*';
+            this.txtconfirmPass.Size = new System.Drawing.Size(189, 20);
+            this.txtconfirmPass.TabIndex = 11;
             // 
             // label4
             // 
@@ -147,32 +147,33 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Confirm Password";
             // 
-            // button1
+            // btnReg
             // 
-            this.button1.Location = new System.Drawing.Point(178, 365);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Registrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnReg.Location = new System.Drawing.Point(178, 365);
+            this.btnReg.Name = "btnReg";
+            this.btnReg.Size = new System.Drawing.Size(75, 23);
+            this.btnReg.TabIndex = 12;
+            this.btnReg.Text = "Registrar";
+            this.btnReg.UseVisualStyleBackColor = true;
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
             // RegistrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 522);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.btnReg);
+            this.Controls.Add(this.txtconfirmPass);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.radioAdmin);
+            this.Controls.Add(this.radioAyudante);
+            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.Nombre);
             this.Name = "RegistrarUsuario";
             this.Text = "RegistrarUsuario";
@@ -184,17 +185,17 @@
         #endregion
 
         private System.Windows.Forms.Label Nombre;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.RadioButton radioAyudante;
+        private System.Windows.Forms.RadioButton radioAdmin;
+        private System.Windows.Forms.TextBox txtconfirmPass;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReg;
     }
 }
