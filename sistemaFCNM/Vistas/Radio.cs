@@ -39,7 +39,7 @@ namespace sistemaFCNM.Vistas
 
         private void btnPrevius_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new PProyeccion(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new PProyeccion());
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -217,29 +217,29 @@ namespace sistemaFCNM.Vistas
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            
 
 
-            mainPrincipal.btn13.Visible = true;
-            mainPrincipal.btn1.Visible = true;
-            mainPrincipal.btn2.Visible = true;
-            mainPrincipal.btn3.Visible = true;
-            mainPrincipal.btn4.Visible = true;
-            mainPrincipal.btn5.Visible = true;
-            mainPrincipal.btn6.Visible = true;
-            mainPrincipal.btn7.Visible = true;
-            mainPrincipal.btn8.Visible = true;
-            mainPrincipal.btn9.Visible = true;
-            mainPrincipal.btn10.Visible = true;
-            mainPrincipal.btn11.Visible = true;
-            mainPrincipal.btn12.Visible = true;
+
+            Main.btn13.Visible = true;
+            Main.btn1.Visible = true;
+            Main.btn2.Visible = true;
+            Main.btn3.Visible = true;
+            Main.btn4.Visible = true;
+            Main.btn5.Visible = true;
+            Main.btn6.Visible = true;
+            Main.btn7.Visible = true;
+            Main.btn8.Visible = true;
+            Main.btn9.Visible = true;
+            Main.btn10.Visible = true;
+            Main.btn11.Visible = true;
+            Main.btn12.Visible = true;
             FuncionesUtiles.siguienteActiva = false;
             FuncionesUtiles.INVENTARIO_EQUIPO = "";
             FuncionesUtiles.masdetallesActiva = false;
             FuncionesUtiles.OBSERVACION = "";
             MessageBox.Show("Inventario Finalizado");
             this.Visible = false;
-            FuncionesUtiles.form1 = new mainPrincipal();
+            FuncionesUtiles.form1 = new Main();
             FuncionesUtiles.form1.Show();
         }
 

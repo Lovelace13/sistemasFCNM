@@ -39,12 +39,12 @@ namespace sistemaFCNM.Vistas
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Impresora(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Impresora());
         }
 
         private void btnPrevius_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Regulador(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Regulador());
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

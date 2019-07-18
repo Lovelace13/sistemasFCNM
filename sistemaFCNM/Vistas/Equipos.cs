@@ -65,7 +65,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new CPU());
         }
         private void btnDetalleTeclado_Click(object sender, EventArgs e)
         {
@@ -74,7 +74,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new Vistas.Teclado(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Teclado());
         }
         private void btnDetallePantalla_Click(object sender, EventArgs e)
         {
@@ -83,7 +83,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new Vistas.Pantalla(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Pantalla());
         }
         private void btnDetalleMouse_Click(object sender, EventArgs e)
         {
@@ -93,7 +93,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new Vistas.Mouse(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Mouse());
         }
         private void btnDetalleMicro_Click(object sender, EventArgs e)
         {
@@ -102,7 +102,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new Vistas.Microfono(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Microfono());
         }
         private void btnDetallePproyeccion_Click(object sender, EventArgs e)
         {
@@ -111,7 +111,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new PProyeccion(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new PProyeccion());
         }
         private void btnDetalleRegulador_Click(object sender, EventArgs e)
         {
@@ -120,7 +120,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new Vistas.Regulador(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Regulador());
         }
         private void btnDetalleProyector_Click(object sender, EventArgs e)
         {
@@ -129,7 +129,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new Vistas.Proyector(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Proyector());
         }
         private void btnDetalleImpresora_Click(object sender, EventArgs e)
         {
@@ -138,7 +138,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new Vistas.Impresora(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Impresora());
         }
         private void btnDetalleParlante_Click(object sender, EventArgs e)
         {
@@ -147,7 +147,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new Vistas.Parlante(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Parlante());
         }
         private void btnDetalleTelef_Click(object sender, EventArgs e)
         {
@@ -156,7 +156,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new Vistas.Telefono(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Telefono());
         }
         private void btnDetalleRadio_Click(object sender, EventArgs e)
         {
@@ -165,7 +165,7 @@ namespace sistemaFCNM
                 FuncionesUtiles.masdetallesActiva = true;
             }
 
-            FuncionesUtiles.abrirVentanas(new Vistas.Radio(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Vistas.Radio());
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -187,7 +187,7 @@ namespace sistemaFCNM
 
             FuncionesUtiles.desactivarMenu();
 
-            FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new CPU());
         }
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {

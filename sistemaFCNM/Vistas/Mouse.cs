@@ -40,12 +40,12 @@ namespace sistemaFCNM.Vistas
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Regulador(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Regulador());
         }
 
         private void btnPrevius_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Teclado(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Teclado());
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -206,7 +206,7 @@ namespace sistemaFCNM.Vistas
                     FuncionesUtiles.form1.Visible = false;
                     FuncionesUtiles.siguienteActiva = true;
                     FuncionesUtiles.desactivarMenu();
-                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
+                    FuncionesUtiles.abrirVentanas(new CPU());
                     return;
 
                 case "No":
@@ -215,7 +215,7 @@ namespace sistemaFCNM.Vistas
                     FuncionesUtiles.form1.Visible = false;
                     FuncionesUtiles.siguienteActiva = true;
                     FuncionesUtiles.desactivarMenu();
-                    FuncionesUtiles.abrirVentanas(new CPU(), mainPrincipal.contenedor);
+                    FuncionesUtiles.abrirVentanas(new CPU());
                     return;
 
                 case "Cancel":

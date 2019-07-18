@@ -25,7 +25,7 @@ namespace sistemaFCNM.Vistas
         {
             MessageBox.Show("BIENVENIDO " + FuncionesUtiles.NOMBRE_ADMIN);
             this.Visible = false;
-            FuncionesUtiles.form1 = new mainPrincipal();
+            FuncionesUtiles.form1 = new Main();
             FuncionesUtiles.form1.Show();
         }
 
