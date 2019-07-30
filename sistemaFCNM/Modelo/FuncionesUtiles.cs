@@ -1,5 +1,4 @@
-﻿using sistemaFCNM.Vistas;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace sistemaFCNM.Clases
@@ -26,17 +25,23 @@ namespace sistemaFCNM.Clases
         public static string USUARIO;
         public static string OBSERVACION;
         public static bool nuevoRegistro = false;
-        public static Main form1;
+        public static mainPrincipal form1;
         public static String NOMBRE_ADMIN = "";
         #endregion
 
         #region Funciones Estaticas para navegar entre ventanas
-        public static void abrirVentanas(Form ventana)
+        public static void abrirVentanas(Form ventana, FlowLayoutPanel panelContenedor)
         {
-            ventana.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            ventana.ControlBox = true;
-            ventana.WindowState = FormWindowState.Normal;
-            ventana.StartPosition = FormStartPosition.CenterScreen;
+            if (panelContenedor.Controls.Count > 0)
+            {
+                panelContenedor.Controls.RemoveAt(0);
+
+            }
+            ventana.TopLevel = false;
+            ventana.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            ventana.Dock = DockStyle.Fill;
+            panelContenedor.Controls.Add(ventana);
+            panelContenedor.Tag = ventana;
             ventana.Show();
         }
         public static string ventanaDialogo()
@@ -57,35 +62,35 @@ namespace sistemaFCNM.Clases
         }
         public static void desactivarMenu()
         {
-            Main.btn13.Enabled = false;
-            Main.btn1.Enabled = false;
-            Main.btn2.Enabled = false;
-            Main.btn3.Enabled = false;
-            Main.btn4.Enabled = false;
-            Main.btn5.Enabled = false;
-            Main.btn6.Enabled = false;
-            Main.btn7.Enabled = false;
-            Main.btn8.Enabled = false;
-            Main.btn9.Enabled = false;
-            Main.btn10.Enabled = false;
-            Main.btn11.Enabled = false;
-            Main.btn12.Enabled = false;
+            mainPrincipal.btn13.Enabled = false;
+            mainPrincipal.btn1.Enabled = false;
+            mainPrincipal.btn2.Enabled = false;
+            mainPrincipal.btn3.Enabled = false;
+            mainPrincipal.btn4.Enabled = false;
+            mainPrincipal.btn5.Enabled = false;
+            mainPrincipal.btn6.Enabled = false;
+            mainPrincipal.btn7.Enabled = false;
+            mainPrincipal.btn8.Enabled = false;
+            mainPrincipal.btn9.Enabled = false;
+            mainPrincipal.btn10.Enabled = false;
+            mainPrincipal.btn11.Enabled = false;
+            mainPrincipal.btn12.Enabled = false;
         }
         public static void activarMenu()
         {
-            Main.btn13.Enabled = true;
-            Main.btn1.Enabled = true;
-            Main.btn2.Enabled = true;
-            Main.btn3.Enabled = true;
-            Main.btn4.Enabled = true;
-            Main.btn5.Enabled = true;
-            Main.btn6.Enabled = true;
-            Main.btn7.Enabled = true;
-            Main.btn8.Enabled = true;
-            Main.btn9.Enabled = true;
-            Main.btn10.Enabled = true;
-            Main.btn11.Enabled = true;
-            Main.btn12.Enabled = true;
+            mainPrincipal.btn13.Enabled = true;
+            mainPrincipal.btn1.Enabled = true;
+            mainPrincipal.btn2.Enabled = true;
+            mainPrincipal.btn3.Enabled = true;
+            mainPrincipal.btn4.Enabled = true;
+            mainPrincipal.btn5.Enabled = true;
+            mainPrincipal.btn6.Enabled = true;
+            mainPrincipal.btn7.Enabled = true;
+            mainPrincipal.btn8.Enabled = true;
+            mainPrincipal.btn9.Enabled = true;
+            mainPrincipal.btn10.Enabled = true;
+            mainPrincipal.btn11.Enabled = true;
+            mainPrincipal.btn12.Enabled = true;
         }
         #endregion
 

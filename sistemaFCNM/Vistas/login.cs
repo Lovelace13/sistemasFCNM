@@ -27,8 +27,8 @@ namespace sistemaFCNM.Vistas
         #region Accion Botones Login
         private void panelCabecera_Paint(object sender, PaintEventArgs e)
         {
-          
-            
+            MouseMovimiento mouseMove = new MouseMovimiento(this);
+            this.panelCabecera.MouseMove += new System.Windows.Forms.MouseEventHandler(mouseMove.Form1_MouseMove);
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -53,19 +53,17 @@ namespace sistemaFCNM.Vistas
                 if(user.TipoUsuario == "AYUDANTE")
                 {
                     MessageBox.Show("BIENVENIDO " + user.NombreUsuario);
-                    this.Hide();
+                    this.Visible = false;
                     FuncionesUtiles.USUARIO = user.IdUsuario;
-                    FuncionesUtiles.form1 = new Main();
+                    FuncionesUtiles.form1 = new mainPrincipal();
                     FuncionesUtiles.form1.Show();
-                   
-                   
                 }
                 else if(user.TipoUsuario == "ADMINISTRADOR")
                 {
                     MenuAdministrador admin = new MenuAdministrador();
                     FuncionesUtiles.NOMBRE_ADMIN = user.NombreUsuario;
                     FuncionesUtiles.USUARIO = user.IdUsuario;
-                    this.Hide();
+                    this.Visible = false;
                     admin.Show();
                 }
                 else
