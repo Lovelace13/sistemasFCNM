@@ -36,12 +36,12 @@ namespace sistemaFCNM.Vistas
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Mouse(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Mouse());
         }
 
         private void btnPrevius_Click(object sender, EventArgs e)
         {
-            FuncionesUtiles.abrirVentanas(new Pantalla(), mainPrincipal.contenedor);
+            FuncionesUtiles.abrirVentanas(new Pantalla());
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

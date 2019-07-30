@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtTeclado = new System.Windows.Forms.TextBox();
+            this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
             this.lblTeclado = new System.Windows.Forms.Label();
             this.txtMouse = new System.Windows.Forms.TextBox();
             this.lblMouse = new System.Windows.Forms.Label();
@@ -124,13 +126,6 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.gridInventario = new System.Windows.Forms.DataGridView();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.txtIp = new System.Windows.Forms.TextBox();
-            this.btnEncender = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,19 +138,24 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemasFCNMDataSet = new sistemaFCNM.sistemasFCNMDataSet();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.txtIp = new System.Windows.Forms.TextBox();
+            this.btnEncender = new System.Windows.Forms.Button();
             this.equipoTableAdapter = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.EquipoTableAdapter();
             this.tableAdapterManager = new sistemaFCNM.sistemasFCNMDataSetTableAdapters.TableAdapterManager();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.equipoBindingNavigator)).BeginInit();
             this.equipoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTeclado
@@ -171,6 +171,16 @@
             this.txtTeclado.Size = new System.Drawing.Size(198, 19);
             this.txtTeclado.TabIndex = 5;
             this.txtTeclado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // equipoBindingSource
+            // 
+            this.equipoBindingSource.DataMember = "Equipo";
+            this.equipoBindingSource.DataSource = this.sistemasFCNMDataSet;
+            // 
+            // sistemasFCNMDataSet
+            // 
+            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
+            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblTeclado
             // 
@@ -1201,7 +1211,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImage = global::sistemaFCNM.Properties.Resources.espolLogo;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Location = new System.Drawing.Point(18, 28);
             this.panel1.Name = "panel1";
@@ -1252,8 +1262,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorMoveFirstItem
@@ -1411,73 +1421,6 @@
             this.gridInventario.Size = new System.Drawing.Size(1114, 265);
             this.gridInventario.TabIndex = 130;
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.listView1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.listView1.Location = new System.Drawing.Point(1091, 40);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(119, 219);
-            this.listView1.TabIndex = 141;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "QR Inventario";
-            this.columnHeader1.Width = 118;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(18, 650);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 23);
-            this.progressBar1.TabIndex = 142;
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::sistemaFCNM.Properties.Resources.Buscar;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 23);
-            this.toolStripButton2.Text = "btnBuscar";
-            // 
-            // txtIp
-            // 
-            this.txtIp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtIp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIp.Location = new System.Drawing.Point(1091, 267);
-            this.txtIp.Multiline = true;
-            this.txtIp.Name = "txtIp";
-            this.txtIp.Size = new System.Drawing.Size(119, 25);
-            this.txtIp.TabIndex = 143;
-            this.txtIp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnEncender
-            // 
-            this.btnEncender.BackgroundImage = global::sistemaFCNM.Properties.Resources.Salir1;
-            this.btnEncender.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEncender.FlatAppearance.BorderSize = 0;
-            this.btnEncender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEncender.Location = new System.Drawing.Point(1149, 302);
-            this.btnEncender.Name = "btnEncender";
-            this.btnEncender.Size = new System.Drawing.Size(23, 24);
-            this.btnEncender.TabIndex = 157;
-            this.btnEncender.UseVisualStyleBackColor = true;
-            this.btnEncender.Click += new System.EventHandler(this.btnEncender_Click);
-            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Cpu";
@@ -1573,15 +1516,72 @@
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
             this.dataGridViewTextBoxColumn14.Width = 86;
             // 
-            // equipoBindingSource
+            // timer1
             // 
-            this.equipoBindingSource.DataMember = "Equipo";
-            this.equipoBindingSource.DataSource = this.sistemasFCNMDataSet;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // sistemasFCNMDataSet
+            // listView1
             // 
-            this.sistemasFCNMDataSet.DataSetName = "sistemasFCNMDataSet";
-            this.sistemasFCNMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.listView1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.listView1.Location = new System.Drawing.Point(1091, 40);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(119, 219);
+            this.listView1.TabIndex = 141;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "QR Inventario";
+            this.columnHeader1.Width = 118;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(18, 650);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.TabIndex = 142;
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::sistemaFCNM.Properties.Resources.Buscar;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 23);
+            this.toolStripButton2.Text = "btnBuscar";
+            // 
+            // txtIp
+            // 
+            this.txtIp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtIp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIp.Location = new System.Drawing.Point(1091, 267);
+            this.txtIp.Multiline = true;
+            this.txtIp.Name = "txtIp";
+            this.txtIp.Size = new System.Drawing.Size(119, 25);
+            this.txtIp.TabIndex = 143;
+            this.txtIp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnEncender
+            // 
+            this.btnEncender.BackgroundImage = global::sistemaFCNM.Properties.Resources.Salir1;
+            this.btnEncender.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEncender.FlatAppearance.BorderSize = 0;
+            this.btnEncender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncender.Location = new System.Drawing.Point(1149, 302);
+            this.btnEncender.Name = "btnEncender";
+            this.btnEncender.Size = new System.Drawing.Size(23, 24);
+            this.btnEncender.TabIndex = 157;
+            this.btnEncender.UseVisualStyleBackColor = true;
+            this.btnEncender.Click += new System.EventHandler(this.btnEncender_Click);
             // 
             // equipoTableAdapter
             // 
@@ -1699,7 +1699,6 @@
             this.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondooo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1222, 685);
-            this.ControlBox = false;
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.btnEncender);
@@ -1713,7 +1712,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtScanner);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -1721,8 +1720,9 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scanner";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Equipos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1731,8 +1731,6 @@
             this.equipoBindingNavigator.ResumeLayout(false);
             this.equipoBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemasFCNMDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

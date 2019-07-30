@@ -462,7 +462,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor.BackgroundImage = global::sistemaFCNM.Properties.Resources.fondo2;
             this.panelContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelContenedor.Location = new System.Drawing.Point(71, 46);
+            this.panelContenedor.Location = new System.Drawing.Point(92, 63);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1229, 684);
             this.panelContenedor.TabIndex = 4;
